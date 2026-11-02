@@ -1,4 +1,5 @@
 import 'server-only'
+import { samplePhotos } from './photos'
 import { animalRecordSchema } from '@/features/animals/schemas'
 import { base, ids, location, verification } from './shared'
 const names = [
@@ -35,18 +36,24 @@ export const animals = names.map((name, index) =>
     adoptable: index < 15,
     status: 'sheltered',
     location,
-    photo: null,
+    photo: samplePhotos[index] ?? null,
     shelterId: `shelter-${(index % 5) + 1}`,
     hordeId: `horde-${(index % 5) + 1}`,
     verification,
     description: `Meet ${name}, an illustrative animal in the PawTrail demo.`,
     appearance:
-      index % 2 ? 'Short fur with tabby markings' : 'Short brown and white fur',
+      index === 0
+        ? 'Brown and white coat; stock photograph is illustrative'
+        : index === 1
+          ? 'Cat at a window; stock photograph is illustrative'
+          : index % 2
+            ? 'Short fur with tabby markings'
+            : 'Short brown and white fur',
     observedCondition:
       'Sample observation: alert during a community visit. No medical diagnosis.',
     personality: ['curious', 'gentle'],
     behavior: ['enjoys quiet company'],
-    characteristics: ['short coat'],
+    characteristics: index === 0 ? ['medium-length coat'] : ['short coat'],
     badges: ['Sample animal'],
     gallery: [],
     needs: {

@@ -31,6 +31,7 @@ export type Destination = {
 }
 /** Add an exact pathname only when its route and behavior have shipped. Never enable a whole prefix. */
 export const READY_ROUTES: ReadonlySet<string> = new Set([
+  '/',
   '/login',
   '/register',
 ])

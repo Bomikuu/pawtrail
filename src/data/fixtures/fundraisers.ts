@@ -1,4 +1,5 @@
 import 'server-only'
+import { samplePhotos } from './photos'
 import { campaignDetailSchema } from '@/features/fundraising/schemas'
 import { contributions } from './activity'
 import { base, ids, location, verification } from './shared'
@@ -19,7 +20,7 @@ export const fundraisers = ids('campaign', 10).map((id, i) =>
     shelterId: `shelter-${(i % 5) + 1}`,
     animalId: `animal-${i + 1}`,
     location,
-    photo: null,
+    photo: samplePhotos[i] ?? null,
     verification,
     story:
       'Illustrative fundraising story. Contributions are simulated; no money is transferred.',
