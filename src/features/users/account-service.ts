@@ -81,6 +81,7 @@ export function installAccount(
     return write('users.update', p, options, (d, u) => {
       u.displayName = p.displayName
       u.bio = p.bio
+      if (p.bannerId !== undefined) u.bannerId = p.bannerId
       u.location = p.areaId ? areaLocation(d, p.areaId) : null
       if (p.avatarId !== u.avatar?.id) {
         const preset = p.avatarId ? avatarPresetImage(p.avatarId) : null

@@ -9,6 +9,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select } from '@/components/ui/select'
 import { UploadField } from '@/features/media/upload-field'
 import type { MediaAsset } from '@/features/media/types'
+import { BannerPicker } from '@/features/users/banner-picker'
 import { AvatarPicker } from '@/features/users/avatar-picker'
 import type { PrivateUser } from '@/features/users/types'
 import { useSession } from '@/features/auth/session-provider'
@@ -62,7 +63,9 @@ export function WorkflowForm({
     queries = useQueryClient()
   const { session, updateIdentity } = useSession()
   const [avatarId, setAvatarId] = useState(extra.avatarId ?? null)
-  const resolvedExtra = operation === 'profile' ? { ...extra, avatarId } : extra
+  const [bannerId, setBannerId] = useState(extra.bannerId ?? 'meadow')
+  const resolvedExtra =
+    operation === 'profile' ? { ...extra, avatarId, bannerId } : extra
   const [values, setValues] = useState<Record<string, string | boolean>>(() =>
     Object.fromEntries(
       fields.map((f) => [
@@ -178,13 +181,20 @@ export function WorkflowForm({
         </ol>
       )}
       {operation === 'profile' && (
-        <AvatarPicker
-          value={avatarId}
-          onChange={setAvatarId}
-          current={initialAvatar}
-          name={String(values.displayName ?? 'Your profile')}
-          disabled={pending}
-        />
+        <>
+          <BannerPicker
+            value={bannerId}
+            onChange={setBannerId}
+            disabled={pending}
+          />
+          <AvatarPicker
+            value={avatarId}
+            onChange={setAvatarId}
+            current={initialAvatar}
+            name={String(values.displayName ?? 'Your profile')}
+            disabled={pending}
+          />
+        </>
       )}
       <fieldset disabled={pending} className="workflow-fields">
         <legend className="sr-only">{steps?.[step] ?? 'Details'}</legend>

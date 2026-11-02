@@ -18,7 +18,7 @@ import { paginate } from '@/lib/api/pagination'
 import { getApiConfig } from '@/lib/api/config'
 import { toPublicAnimal, toPublicUser } from '@/lib/server/projections'
 import { animalSummarySchema } from '@/features/animals/schemas'
-import { publicProfileSchema } from './schemas'
+import { publicProfileSchema, profileActivitySchema } from './schemas'
 export function currentUser(draft: DemoDraft) {
   const user = draft.data.users.find((u) => u.id === draft.auth.actorId)
   if (!user) throw new ApiError('UNAUTHENTICATED', 'Sign in to continue', 401)
@@ -72,13 +72,19 @@ export function createUserService(
           (p) =>
             p.volunteerId === user.id &&
             p.state === 'approved' &&
+            !!p.reviewerId &&
+            p.reviewerId !== user.id &&
             visible.missions.some((m) => m.id === p.missionId),
         )
         const donations = visible.contributions.filter(
           (c) =>
             c.contributorId === user.id &&
             !c.anonymous &&
-            visible.fundraisers.some((f) => f.id === c.campaignId),
+            visible.fundraisers.some(
+              (f) =>
+                f.id === c.campaignId &&
+                ['active', 'completed', 'closed'].includes(f.state),
+            ),
         )
         // Only these published, attributed contributions can establish an animal-help association.
         const animalIds = new Set([
@@ -97,7 +103,71 @@ export function createUserService(
           stories: stories.length,
           sightings: sightings.length,
           missions: missions.length,
-          donations: donations.length,
+          donations: new Set(donations.map((donation) => donation.campaignId))
+            .size,
+        }
+        const now = demoClock.now().toISOString()
+        const kibbleEarned = Math.max(
+          0,
+          draft.data.kibbleEntries
+            .filter((entry) => entry.userId === user.id)
+            .reduce((sum, entry) => sum + entry.amount, 0),
+        )
+        const activity: z.infer<typeof profileActivitySchema>[] = []
+        for (const sighting of sightings) {
+          const animal = visible.animals.find(
+            (animal) => animal.id === sighting.animalId,
+          )
+          if (animal)
+            activity.push({
+              id: sighting.id,
+              kind: 'sighting',
+              title: 'Sighting of ' + animal.name,
+              description: sighting.observation,
+              href: '/pets/' + encodeURIComponent(animal.slug),
+              createdAt: sighting.observedAt,
+            })
+        }
+        for (const participation of missions) {
+          const mission = visible.missions.find(
+            (mission) => mission.id === participation.missionId,
+          )!
+          const approvedAt =
+            participation.reviewedAt ??
+            draft.data.kibbleEntries.find(
+              (entry) =>
+                entry.contributionId === participation.id &&
+                entry.reason === 'mission_approved',
+            )?.createdAt ??
+            participation.createdAt
+          activity.push({
+            id: participation.id,
+            kind: 'mission',
+            title: mission.title,
+            description: 'Completed with independently approved evidence.',
+            href: '/missions/' + encodeURIComponent(mission.slug),
+            createdAt: approvedAt,
+          })
+        }
+        const supportedCampaigns = new Set<string>()
+        for (const donation of [...donations].sort((a, b) =>
+          b.createdAt.localeCompare(a.createdAt),
+        )) {
+          if (supportedCampaigns.has(donation.campaignId)) continue
+          supportedCampaigns.add(donation.campaignId)
+          const campaign = visible.fundraisers.find(
+            (campaign) => campaign.id === donation.campaignId,
+          )!
+          activity.push({
+            id: donation.id,
+            kind: 'fundraiser',
+            title: campaign.title,
+            description: donation.simulated
+              ? 'Demo fundraiser support — no money transferred.'
+              : 'Public fundraiser support.',
+            href: '/fundraisers/' + encodeURIComponent(campaign.slug),
+            createdAt: donation.createdAt,
+          })
         }
         return parseResponse(publicProfileSchema, {
           ...profile,
@@ -107,17 +177,36 @@ export function createUserService(
             summary.missions +
             summary.donations,
           summary,
-          leaderboardRank: recognitionRanks.get(user.id) ?? null,
-          level:
-            1 +
-            Math.floor(
-              Math.max(
-                0,
-                draft.data.kibbleEntries
-                  .filter((e) => e.userId === user.id)
-                  .reduce((n, e) => n + e.amount, 0),
-              ) / 100,
+          activities: activity.sort(
+            (a, b) =>
+              b.createdAt.localeCompare(a.createdAt) ||
+              a.id.localeCompare(b.id),
+          ),
+          impact: {
+            kibbleEarned,
+            eventsJoined: new Set(
+              visible.rsvps
+                .filter(
+                  (rsvp) =>
+                    rsvp.userId === user.id &&
+                    visible.events.some(
+                      (event) =>
+                        event.id === rsvp.eventId &&
+                        event.state !== 'cancelled',
+                    ),
+                )
+                .map((rsvp) => rsvp.eventId),
+            ).size,
+            membershipDays: Math.max(
+              0,
+              Math.floor(
+                (Date.parse(now) - Date.parse(user.createdAt)) / 86400000,
+              ),
             ),
+            levelProgress: kibbleEarned % 100,
+          },
+          leaderboardRank: recognitionRanks.get(user.id) ?? null,
+          level: 1 + Math.floor(kibbleEarned / 100),
           ...publicAchievementShowcase(
             draft,
             user.id,

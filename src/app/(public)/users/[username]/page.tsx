@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getServerApi } from '@/lib/api/server'
 import { ApiError } from '@/lib/api/errors'
 import { getApiConfig } from '@/lib/api/config'
+import type { ProfileTab } from '@/features/users/profile-activity'
 import { PublicProfile } from '@/features/users/public-profile'
 import { PublicJsonLd } from '@/lib/seo/public-json-ld'
 async function profile(username: string) {
@@ -46,10 +47,23 @@ export async function generateMetadata({
 }
 export default async function UserPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ username: string }>
+  searchParams: Promise<{ tab?: string }>
 }) {
-  const user = await profile((await params).username)
+  const [user, session, query] = await Promise.all([
+    profile((await params).username),
+    (await getServerApi()).auth.session(),
+    searchParams,
+  ])
+  const tab: ProfileTab =
+    query.tab === 'stories' ||
+    query.tab === 'sightings' ||
+    query.tab === 'missions' ||
+    query.tab === 'contributions'
+      ? query.tab
+      : 'overview'
   return (
     <>
       <PublicJsonLd
@@ -57,7 +71,11 @@ export default async function UserPage({
         description={user.bio}
         path={`/users/${encodeURIComponent(user.username)}`}
       />
-      <PublicProfile profile={user} />
+      <PublicProfile
+        profile={user}
+        tab={tab}
+        isOwn={session.actor?.id === user.id}
+      />
     </>
   )
 }

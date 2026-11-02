@@ -37,6 +37,7 @@ export type Extra = {
   draftId?: string
   resubmit?: boolean
   avatarId?: string | null
+  bannerId?: string
 }
 export function parsePHPAmount(value: string) {
   if (!/^(?:0|[1-9]\d{0,11})(?:\.\d{1,2})?$/.test(value.trim()))
@@ -437,6 +438,7 @@ export async function performOperation(
           displayName: text('displayName'),
           bio: text('bio'),
           avatarId: photos[0] ?? extra.avatarId ?? null,
+          bannerId: extra.bannerId,
           areaId: v.showArea === true ? (location?.areaId ?? null) : null,
         }),
         options,

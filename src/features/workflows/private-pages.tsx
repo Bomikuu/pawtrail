@@ -92,14 +92,29 @@ export async function ProfilePage() {
         title="Your community profile"
         description="Share what you would like neighbors to know. Privacy settings control whether your profile, area and contributions appear publicly."
         action={
-          <ButtonLink href="/dashboard/settings" variant="outline">
-            Privacy settings
-          </ButtonLink>
+          <div className="profile-editor-actions">
+            {u.settings.discoverable && (
+              <ButtonLink
+                href={'/users/' + encodeURIComponent(u.username)}
+                variant="outline"
+              >
+                View public profile
+              </ButtonLink>
+            )}
+            <ButtonLink href="/dashboard/settings" variant="outline">
+              Privacy settings
+            </ButtonLink>
+          </div>
         }
       />
       <WorkflowForm
+        key={u.id}
         operation="profile"
-        extra={{ location, avatarId: u.avatar?.id ?? null }}
+        extra={{
+          location,
+          avatarId: u.avatar?.id ?? null,
+          bannerId: u.bannerId,
+        }}
         initialAvatar={u.avatar}
         fields={[
           {

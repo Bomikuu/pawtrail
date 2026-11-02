@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { profileBannerIds } from './banner-presets'
 import { leaderboardRankSchema } from '@/features/kibble/recognition-schema'
 import { achievementSummarySchema } from '@/features/achievements/schemas'
 import { animalSummarySchema } from '@/features/animals/schemas'
@@ -16,6 +17,7 @@ export const privacySettingsSchema = z.object({
   discoverable: z.boolean(),
 })
 export const publicUserSchema = baseSchema.extend({
+  bannerId: z.enum(profileBannerIds).default('meadow'),
   username: z.string().min(1),
   displayName: z.string().min(1),
   bio: z.string(),
@@ -30,6 +32,7 @@ export const privateUserSchema = publicUserSchema.extend({
   shelterIds: z.array(idSchema),
 })
 export const profileInputSchema = z.object({
+  bannerId: z.enum(profileBannerIds).optional(),
   displayName: z.string().min(1),
   bio: z.string().max(1000),
   avatarId: idSchema.nullable(),
@@ -43,8 +46,27 @@ export const dashboardSummarySchema = z.object({
   kibbleBalance: z.number().int().nonnegative(),
 })
 
+export const profileActivitySchema = z.object({
+  id: idSchema,
+  kind: z.enum(['sighting', 'mission', 'fundraiser']),
+  title: z.string(),
+  description: z.string(),
+  href: z.string().startsWith('/'),
+  createdAt: z.iso.datetime({ offset: true }),
+})
+
 /** Public activity only. Private records and anonymous contribution identities never enter this DTO. */
 export const publicProfileSchema = publicUserSchema.extend({
+  activities: z.array(profileActivitySchema).nullable().default(null),
+  impact: z
+    .object({
+      kibbleEarned: z.number().int().nonnegative(),
+      eventsJoined: z.number().int().nonnegative(),
+      membershipDays: z.number().int().nonnegative(),
+      levelProgress: z.number().int().min(0).max(99),
+    })
+    .nullable()
+    .default(null),
   leaderboardRank: leaderboardRankSchema,
   mastery: achievementSummarySchema.nullable().default(null),
   level: z.number().int().positive().nullable(),

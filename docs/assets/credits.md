@@ -55,3 +55,7 @@ The upstream OFL text is preserved verbatim apart from trailing-whitespace norma
 ## Owner-supplied leaderboard banner
 
 The owner supplied `codex-clipboard-500fdf6d-3932-4063-8511-6de46be0e4ef.png` (2172 × 724) specifically for the leaderboard banner. The full composition is preserved without cropping or generated changes. Sharp encodes responsive WebP derivatives at quality 82: `public/images/pawtrail/leaderboard-banner-640.webp` (28,962 bytes), `leaderboard-banner-1280.webp` (66,208 bytes), and `leaderboard-banner-1920.webp` (105,740 bytes). The original PNG is not shipped. The page selects one source for the viewport and retains a semantic heading/subtitle equivalent to the baked-in text. No external ownership or exclusive license is claimed.
+
+## Generated profile cover collection
+
+Meadow, Garden, Coast and Starlight were created with the built-in image-generation tool for selectable PawTrail covers, using the user's profile reference as direction. The application ships responsive WebP derivatives, not the original PNGs. See [profile banner assets and prompts](profile-banners.md) for saved paths, full prompt set and provenance. These illustrations do not represent real community activity or animals.
