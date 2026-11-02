@@ -24,7 +24,7 @@ S1 verifies public projection/metadata; S2 tests optimistic rollback, cursor dup
 
 **Interfaces:** Implement `animals.get`, `animals.setSaved`; produce `getPublicAnimal(slug: string): Promise<AnimalProfile>`, `animalMetadata(animal: AnimalProfile): Metadata`, `animalJsonLd(animal: AnimalProfile): JsonLdDocument`, `safeJsonLd(value: JsonLdDocument): string`. Public/profile types come from F2; private fields never enter these helpers.
 
-- [ ] Write tests named `renders_public_story_without_map_or_session`, `rejects_private_fields_in_all_public_outputs`, and `rolls_back_failed_save`. Include these assertions:
+- [x] Write tests named `renders_public_story_without_map_or_session`, `rejects_private_fields_in_all_public_outputs`, and `rolls_back_failed_save`. Include these assertions:
 
 ```ts
 expect(html).toContain('Mochi')
@@ -34,10 +34,10 @@ expect(animalMetadata(animal).alternates?.canonical).toBe(`${siteOrigin}/pets/mo
 expect(savedAfterRejectedRequest).toBe(false)
 ```
 
-- [ ] Run `npm run test:unit -- tests/unit/animals tests/unit/seo/animal.test.ts`; expect missing profile/projection helpers to fail.
-- [ ] Implement server fetching/notFound/metadata, identity/gallery/description/appearance/condition/personality/behavior/characteristics/badges, verified provenance, activity timeline, help links, helper anonymity, discussion target, sticky sighting/help/share/save/adopt controls, and time-filtered historical sighting list. D2 adds the live behavior-map island; retain the list when it cannot load. Use appropriate WebPage/Thing/BreadcrumbList only, escape JSON-LD, reserve image dimensions, and set mock noindex. Call `router.refresh`/query invalidation after mutations rather than leaving server text stale.
-- [ ] Run those tests, typecheck, UI check; expect pass.
-- [ ] Commit `feat: publish server-rendered animal profiles`.
+- [x] Run `npm run test:unit -- tests/unit/animals tests/unit/seo/animal.test.ts`; expect missing profile/projection helpers to fail.
+- [x] Implement server fetching/notFound/metadata, identity/gallery/description/appearance/condition/personality/behavior/characteristics/badges, verified provenance, activity timeline, help links, helper anonymity, discussion target, sticky sighting/help/share/save/adopt controls, and time-filtered historical sighting list. D2 adds the live behavior-map island; retain the list when it cannot load. Use appropriate WebPage/Thing/BreadcrumbList only, escape JSON-LD, reserve image dimensions, and set mock noindex. Call `router.refresh`/query invalidation after mutations rather than leaving server text stale.
+- [x] Run those tests, typecheck, UI check; expect pass.
+- [x] Commit `feat: publish server-rendered animal profiles`.
 
 ### Task S2: Feed, photo composer, post details, reactions and saved posts
 
