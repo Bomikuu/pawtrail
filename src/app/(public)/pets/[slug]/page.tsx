@@ -14,7 +14,7 @@ import { getServerApi } from '@/lib/api/server'
 import { demoClock, systemClock } from '@/lib/api/clock'
 import { getApiConfig } from '@/lib/api/config'
 import { DataState } from '@/components/shared/data-state'
-import { ButtonAnchor } from '@/components/ui/button-anchor'
+import { SightingRetry } from '@/features/animals/sighting-retry'
 type Props = {
   params: Promise<{ slug: string }>
   searchParams: Promise<{ period?: string; cursor?: string }>
@@ -93,12 +93,7 @@ export default async function AnimalPage({ params, searchParams }: Props) {
             state="error"
             errorMessage="Sightings couldn’t load. Your animal’s story is still available."
           />
-          <ButtonAnchor
-            href={`/pets/${encodeURIComponent(animal.slug)}#sightings`}
-            variant="outline"
-          >
-            Reload sightings
-          </ButtonAnchor>
+          <SightingRetry />
         </section>
       )}
       <section
