@@ -1,4 +1,6 @@
 import 'server-only'
+import { handleDemoLifecycle } from './demo/session'
+import type { DemoRepository } from './demo/repository'
 import type { PawTrailApi } from '@/lib/api/contracts'
 import {
   ApiError,
@@ -10,6 +12,7 @@ import { apiRoutes, type ApiRoute } from './api-routes'
 export interface ApiContext {
   api: PawTrailApi
   mode: 'mock' | 'real'
+  demo?: { sessionId: string; repository: DemoRepository }
 }
 const reserved = [
   { method: 'POST', path: '/demo/session' },
@@ -105,6 +108,8 @@ export async function dispatchApi(
           403,
         )
     }
+    if (path === '/demo/session' || path === '/demo/reset')
+      return await handleDemoLifecycle(request, path, headers)
     let body: unknown
     if (request.headers.get('content-type')?.includes('multipart/form-data')) {
       const form = await request.formData()

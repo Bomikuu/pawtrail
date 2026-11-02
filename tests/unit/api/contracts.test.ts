@@ -8,6 +8,9 @@ import { parseResponse } from '@/lib/api/validation'
 import { animalProfileSchema } from '@/features/animals/schemas'
 
 vi.mock('server-only', () => ({}))
+vi.mock('next/headers', () => ({
+  cookies: async () => ({ get: () => undefined }),
+}))
 
 describe('API foundation', () => {
   it('does not fall back to mock records in real mode without an origin', () => {
