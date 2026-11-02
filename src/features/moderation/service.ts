@@ -152,6 +152,14 @@ export function mayReviewMedia(draft: DemoDraft, mediaId: string) {
   const media = draft.media.find((m) => m.asset.id === mediaId)
   if (!media?.attached) return false
   if (
+    media.purpose === 'private_evidence' &&
+    draft.workflow?.achievements?.proofs.some(
+      (proof) =>
+        proof.mediaIds.includes(mediaId) && proof.userId === media.ownerId,
+    )
+  )
+    return true
+  if (
     media.purpose === 'public_image' &&
     (draft.moderation.subjects.some(
       (s) =>

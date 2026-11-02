@@ -5,6 +5,7 @@ import {
   HandHeart,
   MessagesSquare,
   Trophy,
+  Award,
   MapPin,
   House,
   CalendarDays,
@@ -75,6 +76,8 @@ export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/dashboard/fundraisers',
   '/dashboard/missions',
   '/dashboard/kibble',
+  '/dashboard/achievements',
+  '/dashboard/achievements/review',
   '/dashboard/events',
   '/dashboard/shelter',
   '/dashboard/animals/[slug]/edit',
@@ -115,6 +118,7 @@ export const dashboardDestinations: Destination[] = [
   { label: 'Saved', href: '/dashboard/saved', icon: Bookmark },
   { label: 'Notifications', href: '/dashboard/notifications', icon: Bell },
   { label: 'Kibble', href: '/dashboard/kibble', icon: Cookie },
+  { label: 'Achievements', href: '/dashboard/achievements', icon: Award },
   { label: 'Settings', href: '/dashboard/settings', icon: Settings },
   {
     label: 'Shelter management',
@@ -131,6 +135,12 @@ export const dashboardDestinations: Destination[] = [
   {
     label: 'Moderation',
     href: '/dashboard/moderation',
+    icon: ShieldCheck,
+    role: 'moderator',
+  },
+  {
+    label: 'Achievement evidence',
+    href: '/dashboard/achievements/review',
     icon: ShieldCheck,
     role: 'moderator',
   },

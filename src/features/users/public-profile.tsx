@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { CommunityAvatar } from '@/components/shared/community-avatar'
 import { StatusBadge } from '@/components/shared/status-badge'
 import { FollowButton } from './follow-button'
+import { BadgeShelf, MasteryPanel } from '@/features/achievements/badge-shelf'
+import { ButtonLink } from '@/components/ui/button-link'
 import type { PublicProfile as Profile } from './types'
 export function PublicProfile({ profile }: { profile: Profile }) {
   const returnTo = `/users/${encodeURIComponent(profile.username)}`
@@ -66,18 +68,28 @@ export function PublicProfile({ profile }: { profile: Profile }) {
                 ? 'Level is not available yet.'
                 : `Level ${profile.level}`}
             </p>
-            {profile.badges.length ? (
-              <ul aria-label="Earned badges">
-                {profile.badges.map((b) => (
-                  <li key={b.id}>{b.label}</li>
-                ))}
-              </ul>
-            ) : (
-              <p>No earned badges recorded yet.</p>
-            )}
           </>
         )}
       </section>
+      {profile.summary && (
+        <section
+          className="profile-section"
+          aria-labelledby="profile-achievements"
+        >
+          <div className="rail-heading">
+            <h2 id="profile-achievements">Achievement showcase</h2>
+            <ButtonLink href="/dashboard/achievements" variant="ghost">
+              Explore badges
+            </ButtonLink>
+          </div>
+          {profile.mastery && <MasteryPanel summary={profile.mastery} />}
+          {profile.badges.length ? (
+            <BadgeShelf badges={profile.badges} />
+          ) : (
+            <p>No badges showcased yet.</p>
+          )}
+        </section>
+      )}
       {profile.summary && (
         <>
           <section

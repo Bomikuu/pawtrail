@@ -38,6 +38,15 @@ export function createUnimplementedApi(): PawTrailApi {
       updateSettings: notImplemented,
       summary: notImplemented,
     },
+    achievements: {
+      overview: notImplemented,
+      claim: notImplemented,
+      showcase: notImplemented,
+      record: notImplemented,
+      proofs: notImplemented,
+      submitProof: notImplemented,
+      review: notImplemented,
+    },
     notifications: {
       list: notImplemented,
       markRead: notImplemented,

@@ -1,4 +1,6 @@
 import 'server-only'
+import { publicAchievementShowcase } from '@/features/achievements/engine'
+import { demoClock } from '@/lib/api/clock'
 import { z } from 'zod'
 import type { FixtureSeed } from '@/data/fixtures'
 import type { PawTrailApi } from '@/lib/api/contracts'
@@ -109,14 +111,11 @@ export function createUserService(
                   .reduce((n, e) => n + e.amount, 0),
               ) / 100,
             ),
-          badges: missions.length
-            ? [
-                {
-                  id: 'helping-paw',
-                  label: 'Helping Paw — reviewed mission contribution',
-                },
-              ]
-            : [],
+          ...publicAchievementShowcase(
+            draft,
+            user.id,
+            demoClock.now().toISOString(),
+          ),
           animalsHelped: visible.animals
             .filter((a) => animalIds.has(a.id))
             .map((a) =>

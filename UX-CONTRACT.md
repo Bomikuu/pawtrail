@@ -1,5 +1,7 @@
 # PawTrail interface contract
 
+Achievement ownership: `features/achievements` owns private progress, explicit one-time claims, versioned independent evidence review and opt-in public showcase. Shared `components/ui/progress.tsx` owns progress presentation. Claims/reviews/sharing preserve drafts on failure and have duplicate-submit guards; irreversible approval reversal uses `ConfirmDialog`. The server derives all counters, enforces privacy and appends reward corrections atomically with source changes. Profile badges never expose private proof or application answers. Full earning rules are in `docs/implementation/achievements.md`.
+
 The product requirements and `docs/contracts/django-api.md` own business rules. `DESIGN.md` owns the accepted social/management composition. Existing services, server permissions and moderated public projections remain authoritative.
 
 | Capability            | Canonical owner                                                | Contract                                                                                                                                                                                       |

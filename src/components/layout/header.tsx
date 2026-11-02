@@ -160,6 +160,7 @@ export function Header({
                       '/dashboard',
                       '/dashboard/profile',
                       '/dashboard/settings',
+                      '/dashboard/achievements',
                     ].includes(item.href),
                   )
                   .map((item) => {

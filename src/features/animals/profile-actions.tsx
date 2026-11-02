@@ -74,6 +74,19 @@ export function ProfileActions({
         await navigator.clipboard.writeText(url)
         toast.success('Profile link copied')
       }
+      if (session.actor) {
+        try {
+          await getBrowserApi().achievements.record({
+            kind: 'share',
+            ref: { kind: 'animal', id },
+          })
+          await client.invalidateQueries()
+        } catch {
+          toast.error(
+            'Link shared, but achievement progress could not sync. You can retry sharing.',
+          )
+        }
+      }
     } catch (error) {
       if (!(error instanceof Error && error.name === 'AbortError'))
         setError(

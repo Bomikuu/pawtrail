@@ -1,4 +1,5 @@
 import 'server-only'
+import { reconcileAchievementRewards } from '@/features/achievements/engine'
 import { constants } from 'node:fs'
 import {
   lstat,
@@ -147,6 +148,7 @@ export async function openDemoRepository(
         const receiptActorId = document.auth.actorId
         const draft = snapshot(document)
         const result = await command.execute(draft, demoClock)
+        reconcileAchievementRewards(draft, demoClock.now().toISOString())
         // Verify output before any file write, including commands without a receipt.
         const storedResult =
           result === undefined ? undefined : JSON.parse(canonicalJson(result))

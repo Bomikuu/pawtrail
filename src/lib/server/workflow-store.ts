@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { achievementStoreSchema } from '@/features/achievements/schemas'
 import {
   adoptionApplicationSchema,
   adoptionPreferencesSchema,
@@ -6,6 +7,9 @@ import {
 import { campaignDraftSchema } from '@/features/fundraising/schemas'
 
 export const workflowStoreSchema = z.object({
+  achievements: achievementStoreSchema.default(() =>
+    achievementStoreSchema.parse({}),
+  ),
   expenseReceipts: z
     .array(
       z.object({

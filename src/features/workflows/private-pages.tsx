@@ -118,6 +118,11 @@ export async function ProfilePage() {
         ]}
         submitLabel="Save profile"
       />
+      <p>
+        <Link href="/dashboard/achievements">
+          Choose achievement badges and mastery to show on your profile
+        </Link>
+      </p>
       {u.settings.discoverable && (
         <p>
           <Link href={`/users/${u.username}`}>View your public profile</Link>

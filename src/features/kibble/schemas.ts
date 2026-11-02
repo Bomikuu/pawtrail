@@ -7,7 +7,13 @@ export const kibbleEntrySchema = baseSchema.extend({
     .number()
     .int()
     .refine((n) => n !== 0),
-  reason: z.enum(['mission_approved', 'mission_reversed', 'sample_naming']),
+  reason: z.enum([
+    'mission_approved',
+    'mission_reversed',
+    'sample_naming',
+    'achievement_awarded',
+    'achievement_reversed',
+  ]),
   contributionId: idSchema,
   description: z.string(),
 })

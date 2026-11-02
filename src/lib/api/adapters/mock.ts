@@ -6,6 +6,7 @@ import { installAdoption } from '@/features/adoption/service'
 import { installFundraising } from '@/features/fundraising/service'
 import { installMissions } from '@/features/missions/service'
 import { installEvents } from '@/features/events/service'
+import { installAchievements } from '@/features/achievements/service'
 import { createUserService } from '@/features/users/service'
 import { createNotificationService } from '@/features/notifications/service'
 import {
@@ -424,5 +425,6 @@ export function createMockApi(
   installFundraising(api, data, repository)
   installMissions(api, data, repository)
   installEvents(api, data, repository)
+  installAchievements(api, data, repository)
   return api
 }

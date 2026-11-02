@@ -6,6 +6,15 @@ import type {
   RequestOptions,
 } from '@/types/common'
 import type { LoginInput, RegisterInput, Session } from '@/features/auth/types'
+import type {
+  AchievementOverview,
+  AchievementProof,
+  AchievementProofInput,
+  AchievementReviewInput,
+  AchievementRecordInput,
+  AchievementShowcaseInput,
+  AchievementProofFilters,
+} from '@/features/achievements/schemas'
 import type { MediaAsset, MediaUpload } from '@/features/media/types'
 import type {
   AnimalFilters,
@@ -174,6 +183,30 @@ export interface PawTrailApi {
       options?: RequestOptions,
     ): Promise<PrivacySettings>
     summary(options?: RequestOptions): Promise<DashboardSummary>
+  }
+  achievements: {
+    overview(options?: RequestOptions): Promise<AchievementOverview>
+    claim(badgeId: Id, options?: RequestOptions): Promise<AchievementOverview>
+    showcase(
+      input: AchievementShowcaseInput,
+      options?: RequestOptions,
+    ): Promise<AchievementOverview>
+    record(
+      input: AchievementRecordInput,
+      options?: RequestOptions,
+    ): Promise<AchievementOverview>
+    proofs(
+      input: AchievementProofFilters,
+      options?: RequestOptions,
+    ): Promise<Page<AchievementProof>>
+    submitProof(
+      input: AchievementProofInput,
+      options?: RequestOptions,
+    ): Promise<AchievementProof>
+    review(
+      input: AchievementReviewInput,
+      options?: RequestOptions,
+    ): Promise<AchievementProof>
   }
   notifications: {
     list(

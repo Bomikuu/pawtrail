@@ -1,3 +1,4 @@
+import { AchievementActivity } from '@/features/achievements/activity'
 import { ChartPanel } from './chart-panel'
 import { ResourceDiscussion } from './discussion'
 import { PublicJsonLd } from '@/lib/seo/public-json-ld'
@@ -447,6 +448,10 @@ export async function FundraiserPage({ slug }: { slug: string }) {
         title={f.title}
         description={`${f.location.neighborhood} · ${f.verification.label}`}
       />
+      <AchievementActivity
+        target={{ kind: 'fundraiser', id: f.id }}
+        href={'/fundraisers/' + f.slug}
+      />
       {f.photo && <AnimalImage image={f.photo} className="detail-cover" />}
       <DetailBody>
         <p className="prose-copy">{f.story}</p>
@@ -653,6 +658,10 @@ export async function MissionPage({ slug }: { slug: string }) {
         title={m.title}
         description={`${m.location.neighborhood} · ${m.state} · ${m.kind}`}
       />
+      <AchievementActivity
+        target={{ kind: 'mission', id: m.id }}
+        href={'/missions/' + m.slug}
+      />
       <DetailBody>
         <p>{m.description}</p>
         <p>
@@ -677,8 +686,9 @@ export async function MissionPage({ slug }: { slug: string }) {
           </ButtonLink>
         )}
         <p>
-          Accepting a mission does not earn points. Submit your evidence from My
-          missions after completing the contribution.
+          Mission rewards require independent approval. Submit evidence from My
+          missions after completing the contribution. A separate Volunteer
+          achievement can be unlocked for joining.
         </p>
       </DetailBody>
       <ResourceDiscussion

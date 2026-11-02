@@ -6,6 +6,7 @@ import * as animals from '@/features/animals/schemas'
 import * as community from '@/features/community/schemas'
 import * as follows from '@/features/follows/schemas'
 import * as users from '@/features/users/schemas'
+import * as achievements from '@/features/achievements/schemas'
 import * as notifications from '@/features/notifications/schemas'
 import * as moderation from '@/features/moderation/schemas'
 import * as sightings from '@/features/sightings/schemas'
@@ -294,6 +295,75 @@ export function createApiClient(
           users.dashboardSummarySchema,
           undefined,
           undefined,
+          options,
+        ),
+    },
+    achievements: {
+      overview: (options) =>
+        request(
+          'GET',
+          '/me/achievements',
+          achievements.achievementOverviewSchema,
+          undefined,
+          undefined,
+          options,
+        ),
+      claim: (badgeId, options) =>
+        request(
+          'POST',
+          '/me/achievements/claim',
+          achievements.achievementOverviewSchema,
+          undefined,
+          { badgeId },
+          options,
+        ),
+      showcase: (input, options) =>
+        request(
+          'PATCH',
+          '/me/achievements/showcase',
+          achievements.achievementOverviewSchema,
+          undefined,
+          input,
+          options,
+        ),
+      record: (input, options) =>
+        request(
+          'POST',
+          '/me/achievements/activity',
+          achievements.achievementOverviewSchema,
+          undefined,
+          input,
+          options,
+        ),
+      proofs: (input, options) =>
+        request(
+          'GET',
+          input.scope === 'review'
+            ? '/moderation/achievement-proofs'
+            : '/me/achievement-proofs',
+          pageSchema(achievements.achievementProofSchema),
+          input,
+          undefined,
+          options,
+        ),
+      submitProof: (input, options) =>
+        request(
+          'POST',
+          '/me/achievement-proofs',
+          achievements.achievementProofSchema,
+          undefined,
+          input,
+          options,
+        ),
+      review: (input, options) =>
+        request(
+          'POST',
+          '/moderation/achievement-proofs/' +
+            encodeURIComponent(input.id) +
+            '/review',
+          achievements.achievementProofSchema,
+          undefined,
+          input,
           options,
         ),
     },

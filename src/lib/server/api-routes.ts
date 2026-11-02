@@ -12,6 +12,7 @@ import * as animals from '@/features/animals/schemas'
 import * as community from '@/features/community/schemas'
 import * as follows from '@/features/follows/schemas'
 import * as users from '@/features/users/schemas'
+import * as achievements from '@/features/achievements/schemas'
 import * as notifications from '@/features/notifications/schemas'
 import * as moderation from '@/features/moderation/schemas'
 import * as sightings from '@/features/sightings/schemas'
@@ -39,6 +40,109 @@ export interface ApiRoute {
   ): Promise<unknown>
 }
 export const apiRoutes: ApiRoute[] = [
+  {
+    method: 'GET',
+    path: '/me/achievements',
+    invoke: async (api, _p, _q, _b, options) =>
+      parseResponse(
+        achievements.achievementOverviewSchema,
+        await api.achievements.overview(options),
+      ),
+  },
+  {
+    method: 'POST',
+    path: '/me/achievements/claim',
+    invoke: async (api, _p, _q, body, options) =>
+      parseResponse(
+        achievements.achievementOverviewSchema,
+        await api.achievements.claim(
+          parseInput(z.object({ badgeId: idSchema }), body).badgeId,
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'PATCH',
+    path: '/me/achievements/showcase',
+    invoke: async (api, _p, _q, body, options) =>
+      parseResponse(
+        achievements.achievementOverviewSchema,
+        await api.achievements.showcase(
+          parseInput(achievements.achievementShowcaseInputSchema, body),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'POST',
+    path: '/me/achievements/activity',
+    invoke: async (api, _p, _q, body, options) =>
+      parseResponse(
+        achievements.achievementOverviewSchema,
+        await api.achievements.record(
+          parseInput(achievements.achievementRecordInputSchema, body),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'GET',
+    path: '/me/achievement-proofs',
+    invoke: async (api, _p, query, _b, options) =>
+      parseResponse(
+        pageSchema(achievements.achievementProofSchema),
+        await api.achievements.proofs(
+          parseInput(achievements.achievementProofFiltersSchema, {
+            ...query,
+            scope: 'mine',
+          }),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'POST',
+    path: '/me/achievement-proofs',
+    invoke: async (api, _p, _q, body, options) =>
+      parseResponse(
+        achievements.achievementProofSchema,
+        await api.achievements.submitProof(
+          parseInput(achievements.achievementProofInputSchema, body),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'GET',
+    path: '/moderation/achievement-proofs',
+    invoke: async (api, _p, query, _b, options) =>
+      parseResponse(
+        pageSchema(achievements.achievementProofSchema),
+        await api.achievements.proofs(
+          parseInput(achievements.achievementProofFiltersSchema, {
+            ...query,
+            scope: 'review',
+          }),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'POST',
+    path: '/moderation/achievement-proofs/:id/review',
+    invoke: async (api, params, _q, body, options) =>
+      parseResponse(
+        achievements.achievementProofSchema,
+        await api.achievements.review(
+          parseInput(achievements.achievementReviewInputSchema, {
+            ...parseInput(z.record(z.string(), z.unknown()), body),
+            id: params.id,
+          }),
+          options,
+        ),
+      ),
+  },
+
   {
     method: 'GET',
     path: '/me/profile',

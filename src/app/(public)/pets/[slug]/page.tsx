@@ -10,6 +10,7 @@ import {
   SightingHistory,
 } from '@/features/animals/activity-timeline'
 import { ProfileActions } from '@/features/animals/profile-actions'
+import { AchievementActivity } from '@/features/achievements/activity'
 import { animalMetadata } from '@/lib/seo/metadata'
 import { animalJsonLd, safeJsonLd } from '@/lib/seo/json-ld'
 import { animalUrl } from '@/lib/seo/origin'
@@ -74,6 +75,11 @@ export default async function AnimalPage({ params, searchParams }: Props) {
         }
       />
       <HelpPanel animal={animal} />
+      <AchievementActivity
+        target={{ kind: 'animal', id: animal.id }}
+        href={'/pets/' + animal.slug}
+        showShare={false}
+      />
       <HelperWall animal={animal} />
       {posts.status === 'fulfilled' ? (
         <ActivityTimeline posts={posts.value.items} />
