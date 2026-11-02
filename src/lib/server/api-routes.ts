@@ -205,7 +205,7 @@ export const apiRoutes: ApiRoute[] = [
         community.postSchema,
         await api.community.update(
           parseInput(idSchema, params['id']),
-          parseInput(community.postInputSchema, body),
+          parseInput(community.postUpdateInputSchema, body),
           options,
         ),
       ),

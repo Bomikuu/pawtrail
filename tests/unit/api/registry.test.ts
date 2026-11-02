@@ -129,3 +129,83 @@ describe('BFF boundaries', () => {
     ).toEqual(await context.api.fundraisers.supporters('campaign-1', {}))
   })
 })
+
+describe('post edit version preconditions', () => {
+  const input = {
+    text: 'Updated sample story',
+    type: 'story' as const,
+    mediaIds: [],
+    refs: [],
+  }
+  const mutation = (method: string, path: string, body: object) =>
+    new Request(`http://localhost/api/v1${path}`, {
+      method,
+      headers: {
+        origin: 'http://localhost',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+
+  it('preserves expectedVersion through the browser client and PATCH validation', async () => {
+    const { getBrowserApi } = await import('@/lib/api/client')
+    const api = createMockApi()
+    const update = vi
+      .spyOn(api.community, 'update')
+      .mockResolvedValue(await api.community.get('post-1'))
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (url: string, init: RequestInit) => {
+        const headers = new Headers(init.headers)
+        headers.set('origin', 'http://localhost')
+        return dispatchApi(
+          new Request(`http://localhost${url}`, { ...init, headers }),
+          { ...context, api },
+        )
+      }),
+    )
+    await getBrowserApi().community.update('post-1', {
+      ...input,
+      expectedVersion: 7,
+    })
+    expect(update).toHaveBeenCalledWith(
+      'post-1',
+      { ...input, expectedVersion: 7 },
+      expect.any(Object),
+    )
+  })
+
+  it.each([undefined, 0, -1, 1.5, '7'])(
+    'rejects post edits with invalid expectedVersion %s before reaching the adapter',
+    async (expectedVersion) => {
+      const api = createMockApi()
+      const update = vi.spyOn(api.community, 'update')
+      const response = await dispatchApi(
+        mutation('PATCH', '/community/posts/post-1', {
+          ...input,
+          expectedVersion,
+        }),
+        { ...context, api },
+      )
+      expect(response.status).toBe(400)
+      expect(await response.json()).toMatchObject({
+        code: 'VALIDATION_ERROR',
+        fieldErrors: { expectedVersion: expect.any(Array) },
+      })
+      expect(update).not.toHaveBeenCalled()
+    },
+  )
+
+  it('continues to accept versionless post creation', async () => {
+    const api = createMockApi()
+    const create = vi
+      .spyOn(api.community, 'create')
+      .mockResolvedValue(await api.community.get('post-1'))
+    const response = await dispatchApi(
+      mutation('POST', '/community/posts', input),
+      { ...context, api },
+    )
+    expect(response.status).toBe(200)
+    expect(create).toHaveBeenCalledWith(input, expect.any(Object))
+  })
+})

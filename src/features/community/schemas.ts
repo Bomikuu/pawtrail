@@ -22,6 +22,10 @@ export const postInputSchema = z.object({
   ]),
   mediaIds: z.array(idSchema),
   refs: z.array(resourceRefSchema),
+  expectedVersion: versionSchema.optional(),
+})
+export const postUpdateInputSchema = postInputSchema.required({
+  expectedVersion: true,
 })
 export const postSchema = baseSchema.extend({
   authorId: idSchema,
