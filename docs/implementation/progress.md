@@ -8,7 +8,7 @@ Execution method: user-approved subagent-driven. Code-first community-journal di
 | F2 — Domain contracts, fixtures, and request-scoped API entry points | Complete | abaca78; independent spec/quality review and version-precondition fix re-review approved; 26 API tests plus 14 targeted registry tests, typecheck, UI check and formatting passed |
 | F3 — Persistent, session-isolated demo repository | Complete | aef4565; independent spec/quality review approved; 54 demo/API tests and scoped checks passed; Unicode key-order minor deferred to final review |
 | F4 — Authentication, permissions, protected routes, and cache lifecycle | Complete | 997bcb1; independent spec/quality and logout-failure fix re-review approved; 77 relevant tests plus amended 11 and regression 5 passed; checks passed |
-| F5 — Media upload, preview, and protected evidence delivery | Pending |  |
+| F5 — Media upload, preview, and protected evidence delivery | Complete | c9c83a4; independent spec/quality and two-finding fix re-review approved; 97 relevant tests then 77 covering tests passed; scoped checks passed |
 | F6 — Design contract, shared controls, and responsive navigation | Pending |  |
 | F7 — Landing page and real asset provenance | Pending |  |
 | S1 — Public animal profiles, saving, and shared SEO primitives | Pending |  |
@@ -50,3 +50,5 @@ Ruling: Keep the plan’s alphanumeric task IDs in records, but normalize task h
 Ruling: A safe minimal root layout and empty global stylesheet in F1 are infrastructure, with visual direction deferred to F6 as planned — cost if wrong: replace the unstyled shell before shipping, no product content is committed.
 
 Ruling: F4 and F5 may introduce only the canonical Shadcn primitives and approved design-contract files they need before F6 — their forms precede the shared-controls task, while the UI-boundary and Impeccable requirements already bind — cost if wrong: consolidate those early primitives and tokens during F6; no duplicate feature controls or new design direction.
+
+Ruling: The six-attachment cap applies to the combined public-photo and private-evidence IDs submitted for one campaign — F5 says more than six attachments must be rejected and does not define separate budgets — cost if wrong: revise the schema/UI cap together if separate gallery/evidence budgets are later required.

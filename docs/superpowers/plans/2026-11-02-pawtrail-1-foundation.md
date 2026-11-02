@@ -106,7 +106,7 @@ it('denies_cross_scope_access_and_stale_credentials', async () => {
 
 **Interfaces:** Produce `media.upload(MediaUpload): Promise<MediaAsset>`; `MediaAsset = { id: Id, url: string, alt: string, visibility: 'public' | 'private', mimeType: string, bytes: number }`; `validateUpload(file: UploadCandidate, purpose: MediaPurpose): ValidatedUpload`. API payloads reference media IDs, not user-supplied filesystem paths.
 
-- [ ] Test allowed JPEG/PNG/WebP content against signature and MIME; reject SVG, executable/disguised content, files over 10 MiB, more than 6 attachments, and unauthorized private reads. Image previews create/revoke object URLs on removal/unmount; failed uploads preserve the form; a publicly rendered record never contains private evidence URLs.
+- [x] Test allowed JPEG/PNG/WebP content against signature and MIME; reject SVG, executable/disguised content, files over 10 MiB, more than 6 attachments, and unauthorized private reads. Image previews create/revoke object URLs on removal/unmount; failed uploads preserve the form; a publicly rendered record never contains private evidence URLs.
 
 ```ts
 it('rejects_unsafe_media_and_private_access', async () => {
@@ -115,10 +115,10 @@ it('rejects_unsafe_media_and_private_access', async () => {
   expect(revokedPreviewUrls).toEqual(createdPreviewUrls)
 })
 ```
-- [ ] Run `npm run test:unit -- tests/unit/media`; expect missing validation/storage/preview failures.
-- [ ] Implement image inputs/previews/alt fields, bounded image validation, PDF evidence accepted only as private document uploads (10 MiB maximum), randomized filenames, owner/organization authorization, safe content disposition, and clean removal of abandoned uploads. Public approved media is promoted explicitly. Keep files outside `public/` until approved, exclude private documents from Next image optimization, and use an accessible image fallback.
-- [ ] Run media/auth tests, typecheck, UI check; expect pass.
-- [ ] Commit `feat: support safe demo media and evidence uploads`.
+- [x] Run `npm run test:unit -- tests/unit/media`; expect missing validation/storage/preview failures.
+- [x] Implement image inputs/previews/alt fields, bounded image validation, PDF evidence accepted only as private document uploads (10 MiB maximum), randomized filenames, owner/organization authorization, safe content disposition, and clean removal of abandoned uploads. Public approved media is promoted explicitly. Keep files outside `public/` until approved, exclude private documents from Next image optimization, and use an accessible image fallback.
+- [x] Run media/auth tests, typecheck, UI check; expect pass.
+- [x] Commit `feat: support safe demo media and evidence uploads`.
 
 ### Task F6: Design contract, shared controls, and responsive navigation
 
