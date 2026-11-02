@@ -20,7 +20,11 @@ import {
   profileInputSchema,
   privacySettingsSchema,
 } from './schemas'
-import { publicSnapshot } from '@/features/moderation/service'
+import {
+  publicSnapshot,
+  reconcilePublicMedia,
+} from '@/features/moderation/service'
+import { avatarPresetImage, personAvatar } from './avatar-presets'
 import { listQuerySchema } from '@/lib/api/schemas'
 import { leaderboardEntrySchema } from '@/features/kibble/schemas'
 import { demoClock } from '@/lib/api/clock'
@@ -55,7 +59,14 @@ export function installAccount(
         ),
       ),
     )
-  api.users.me = () => read((d) => privateUserSchema.parse(currentUser(d)))
+  api.users.me = () =>
+    read((d) => {
+      const user = currentUser(d)
+      return privateUserSchema.parse({
+        ...user,
+        avatar: personAvatar(user.avatar, user.id),
+      })
+    })
   api.users.settings = () =>
     read((d) => structuredClone(currentUser(d).settings))
   api.users.updateSettings = (input, options) => {
@@ -72,7 +83,28 @@ export function installAccount(
       u.bio = p.bio
       u.location = p.areaId ? areaLocation(d, p.areaId) : null
       if (p.avatarId !== u.avatar?.id) {
-        if (p.avatarId)
+        const preset = p.avatarId ? avatarPresetImage(p.avatarId) : null
+        if (p.avatarId?.startsWith('pawtrail-avatar-') && !preset)
+          fail('Choose an avatar from the available collection.')
+        if (preset || !p.avatarId) {
+          const previous = u.avatar?.id
+          const subject = d.moderation.subjects.find(
+            (s) => s.ref.kind === 'user' && s.ref.id === u.id,
+          )
+          const pendingPhotos = subject?.photoIds ?? []
+          u.avatar = preset ?? personAvatar(null, u.id)
+          if (subject) {
+            // Withdraw an obsolete avatar-photo review. Keep removed/rejected profile decisions intact.
+            if (subject.state === 'pending' && pendingPhotos.length)
+              subject.state = 'published'
+            subject.photoIds = []
+            subject.version++
+          }
+          reconcilePublicMedia(d, [
+            ...pendingPhotos,
+            ...(previous ? [previous] : []),
+          ])
+        } else {
           registerSubject(
             d,
             { kind: 'user', id: u.id },
@@ -84,10 +116,14 @@ export function installAccount(
               (s) => s.ref.kind === 'user' && s.ref.id === u.id,
             )?.version ?? 0) + 1,
           )
-        // Uploaded avatars remain private until a separate publication review; no private URL is returned as an image.
-        u.avatar = null
+          // Arbitrary uploads still need publication review. Curated preset IDs never accept submitted URLs.
+          u.avatar = null
+        }
       }
-      return privateUserSchema.parse(u)
+      return privateUserSchema.parse({
+        ...u,
+        avatar: personAvatar(u.avatar, u.id),
+      })
     })
   }
   api.users.summary = () =>

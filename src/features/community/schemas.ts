@@ -58,6 +58,7 @@ export const postViewSchema = postSchema
     author: z.object({
       displayName: z.string(),
       username: z.string().nullable(),
+      avatar: imageSchema.nullable().optional(),
     }),
     linkedEntities: z.array(
       z.object({ ref: resourceRefSchema, title: z.string(), href: z.string() }),
@@ -96,6 +97,7 @@ export const commentSchema = commentRecordSchema.extend({
   author: z.object({
     displayName: z.string(),
     username: z.string().nullable(),
+    avatar: imageSchema.nullable().optional(),
   }),
   viewerOwns: z.boolean(),
 })

@@ -1,4 +1,5 @@
 import 'server-only'
+import { personAvatar } from '@/features/users/avatar-presets'
 import { randomUUID } from 'node:crypto'
 import {
   actorSchema,
@@ -31,7 +32,12 @@ export function anonymousSession(mode: 'mock' | 'real' = 'mock'): Session {
 }
 function projectSession(draft: DemoDraft): Session {
   const record = draft.data.users.find((user) => user.id === draft.auth.actorId)
-  const actor = record ? actorSchema.parse(record) : null
+  const actor = record
+    ? actorSchema.parse({
+        ...record,
+        avatar: personAvatar(record.avatar, record.id),
+      })
+    : null
   return sessionSchema.parse({
     actor,
     roles: actor?.roles ?? [],

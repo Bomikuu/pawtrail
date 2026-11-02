@@ -3,6 +3,7 @@ import type { AnimalRecord, AnimalProfile } from '@/features/animals/types'
 import { animalProfileSchema } from '@/features/animals/schemas'
 import type { PrivateUser, PublicUser } from '@/features/users/types'
 import { publicUserSchema } from '@/features/users/schemas'
+import { personAvatar } from '@/features/users/avatar-presets'
 import type {
   DemoContribution,
   PublicSupporter,
@@ -40,6 +41,7 @@ export function toPublicUser(record: PrivateUser): PublicUser {
   if (!record.settings.discoverable)
     throw new ApiError('NOT_FOUND', 'Profile not found', 404)
   const user = parseResponse(publicUserSchema, record)
+  user.avatar = personAvatar(user.avatar, user.id)
   user.location = record.settings.showLocation ? user.location : null
   user.contributionCount = record.settings.showContributions
     ? user.contributionCount

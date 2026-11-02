@@ -1,4 +1,5 @@
 import 'server-only'
+import { personAvatar } from '@/features/users/avatar-presets'
 import {
   postMediaIds,
   publicSnapshot,
@@ -120,6 +121,7 @@ export function projectPost(draft: DemoDraft, row: StoredPost): Post {
     author: {
       displayName: identifiable ? user!.displayName : 'Community member',
       username: identifiable ? user!.username : null,
+      avatar: identifiable ? personAvatar(user!.avatar, user!.id) : null,
     },
     text: row.text,
     type: row.type,

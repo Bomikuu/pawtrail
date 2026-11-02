@@ -85,7 +85,11 @@ export function PostCard({
       aria-label={`${postTypes[post.type]} by ${post.author.displayName}`}
     >
       <header className="post-heading">
-        <CommunityAvatar name={post.author.displayName} />
+        <CommunityAvatar
+          name={post.author.displayName}
+          image={post.author.avatar}
+          userId={post.authorId}
+        />
         <div className="post-author">
           <strong>
             {userHref && isRouteReady(userHref, READY_ROUTES) ? (

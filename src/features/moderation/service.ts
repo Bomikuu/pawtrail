@@ -1,4 +1,5 @@
 import 'server-only'
+import { personAvatar } from '@/features/users/avatar-presets'
 import { notify } from '@/features/notifications/service'
 import { randomUUID } from 'node:crypto'
 import type { FixtureSeed } from '@/data/fixtures'
@@ -197,6 +198,7 @@ function commentView(draft: DemoDraft, row: FixtureSeed['comments'][number]) {
     author: {
       displayName: visible ? user.displayName : 'Community member',
       username: visible ? user.username : null,
+      avatar: visible ? personAvatar(user.avatar, user.id) : null,
     },
     viewerOwns: row.authorId === draft.auth.actorId,
   })

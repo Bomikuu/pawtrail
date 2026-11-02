@@ -7,6 +7,7 @@ import * as event from '@/features/events/schemas'
 import * as user from '@/features/users/schemas'
 import { sightingInputSchema } from '@/features/sightings/schemas'
 import type { PublicLocation } from '@/types/common'
+import type { Actor } from '@/features/auth/types'
 
 export type Operation =
   | 'animal'
@@ -54,7 +55,11 @@ export async function performOperation(
   evidence: string[],
   key: string,
   draft = false,
-): Promise<{ href?: string; message: string }> {
+): Promise<{
+  href?: string
+  message: string
+  identity?: Pick<Actor, 'id' | 'displayName' | 'avatar'>
+}> {
   const api = getBrowserApi(),
     options = { idempotencyKey: key }
   const text = (k: string) => String(v[k] ?? '')
@@ -426,8 +431,8 @@ export async function performOperation(
         message: 'Event saved. Venue information is intentionally public.',
       }
     }
-    case 'profile':
-      await api.users.update(
+    case 'profile': {
+      const profile = await api.users.update(
         user.profileInputSchema.parse({
           displayName: text('displayName'),
           bio: text('bio'),
@@ -437,10 +442,16 @@ export async function performOperation(
         options,
       )
       return {
+        identity: {
+          id: profile.id,
+          displayName: profile.displayName,
+          avatar: profile.avatar,
+        },
         message: photos.length
           ? 'Profile saved; your new photograph awaits publication review.'
           : 'Profile saved.',
       }
+    }
     case 'privacy':
       await api.users.updateSettings(
         {

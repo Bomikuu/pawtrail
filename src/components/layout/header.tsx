@@ -141,7 +141,12 @@ export function Header({
                   variant="outline"
                   aria-label={`Account for ${session.actor.displayName}`}
                 >
-                  <CommunityAvatar name={session.actor.displayName} small />
+                  <CommunityAvatar
+                    name={session.actor.displayName}
+                    image={session.actor.avatar}
+                    userId={session.actor.id}
+                    small
+                  />
                   <span className="account-name">
                     {session.actor.displayName}
                   </span>

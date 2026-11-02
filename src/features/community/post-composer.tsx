@@ -123,7 +123,11 @@ export function PostComposer({
         createdAt: new Date().toISOString(),
         provenance: { kind: 'demo', label: 'Submitting demo post' },
         authorId: session.actor!.id,
-        author: { displayName: session.actor!.displayName, username: null },
+        author: {
+          displayName: session.actor!.displayName,
+          username: null,
+          avatar: session.actor!.avatar ?? null,
+        },
         text: result.data.text,
         type,
         refs,
@@ -175,7 +179,11 @@ export function PostComposer({
     >
       {post && <h2>Edit your story</h2>}
       <div className="composer-entry">
-        <CommunityAvatar name={session.actor.displayName} />
+        <CommunityAvatar
+          name={session.actor.displayName}
+          image={session.actor.avatar}
+          userId={session.actor.id}
+        />
         <div className="composer-writing">
           <label htmlFor={id} className="sr-only">
             Your update

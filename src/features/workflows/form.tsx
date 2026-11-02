@@ -9,6 +9,9 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select } from '@/components/ui/select'
 import { UploadField } from '@/features/media/upload-field'
 import type { MediaAsset } from '@/features/media/types'
+import { AvatarPicker } from '@/features/users/avatar-picker'
+import type { PrivateUser } from '@/features/users/types'
+import { useSession } from '@/features/auth/session-provider'
 import { performOperation, type Operation, type Extra } from './actions'
 
 export type Field = {
@@ -41,6 +44,7 @@ export function WorkflowForm({
   allowDraft = false,
   initialPhotos = [],
   initialEvidence = [],
+  initialAvatar,
 }: {
   operation: Operation
   fields: Field[]
@@ -51,10 +55,14 @@ export function WorkflowForm({
   allowDraft?: boolean
   initialPhotos?: string[]
   initialEvidence?: string[]
+  initialAvatar?: PrivateUser['avatar']
 }) {
   const prefix = useId(),
     router = useRouter(),
     queries = useQueryClient()
+  const { session, updateIdentity } = useSession()
+  const [avatarId, setAvatarId] = useState(extra.avatarId ?? null)
+  const resolvedExtra = operation === 'profile' ? { ...extra, avatarId } : extra
   const [values, setValues] = useState<Record<string, string | boolean>>(() =>
     Object.fromEntries(
       fields.map((f) => [
@@ -89,7 +97,7 @@ export function WorkflowForm({
     const fingerprint = JSON.stringify({
       operation,
       values,
-      extra,
+      extra: resolvedExtra,
       photos: photoIds,
       evidence: evidenceIds,
       draft,
@@ -103,13 +111,14 @@ export function WorkflowForm({
       const r = await performOperation(
         operation,
         values,
-        extra,
+        resolvedExtra,
         photoIds,
         evidenceIds,
         receipt.current.key,
         draft,
       )
       setMessage(r.message)
+      if (r.identity) updateIdentity(r.identity, session.cacheScope)
       await queries.invalidateQueries()
       router.refresh()
       if (
@@ -167,6 +176,15 @@ export function WorkflowForm({
             </li>
           ))}
         </ol>
+      )}
+      {operation === 'profile' && (
+        <AvatarPicker
+          value={avatarId}
+          onChange={setAvatarId}
+          current={initialAvatar}
+          name={String(values.displayName ?? 'Your profile')}
+          disabled={pending}
+        />
       )}
       <fieldset disabled={pending} className="workflow-fields">
         <legend className="sr-only">{steps?.[step] ?? 'Details'}</legend>

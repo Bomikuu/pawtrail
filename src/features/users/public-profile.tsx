@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AnimalImage } from '@/components/shared/animal-image'
+import { CommunityAvatar } from '@/components/shared/community-avatar'
 import { StatusBadge } from '@/components/shared/status-badge'
 import { FollowButton } from './follow-button'
 import type { PublicProfile as Profile } from './types'
@@ -8,9 +8,11 @@ export function PublicProfile({ profile }: { profile: Profile }) {
   return (
     <article className="user-profile">
       <header className="user-identity">
-        {profile.avatar && (
-          <AnimalImage image={profile.avatar} className="user-avatar" />
-        )}
+        <CommunityAvatar
+          name={profile.displayName}
+          image={profile.avatar}
+          large
+        />
         <div>
           <h1>{profile.displayName}</h1>
           <p>@{profile.username}</p>

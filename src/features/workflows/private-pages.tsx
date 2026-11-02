@@ -100,6 +100,7 @@ export async function ProfilePage() {
       <WorkflowForm
         operation="profile"
         extra={{ location, avatarId: u.avatar?.id ?? null }}
+        initialAvatar={u.avatar}
         fields={[
           {
             name: 'displayName',
@@ -115,7 +116,6 @@ export async function ProfilePage() {
             value: !!u.location,
           },
         ]}
-        uploads="photos"
         submitLabel="Save profile"
       />
       {u.settings.discoverable && (

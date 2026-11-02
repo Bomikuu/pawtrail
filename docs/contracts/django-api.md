@@ -1,5 +1,7 @@
 # Proposed Django API contract
 
+Profile avatars: the existing `avatar_id` accepts the reserved curated IDs `pawtrail-avatar-01` through `pawtrail-avatar-30`. The backend resolves them from the fixed PawTrail catalog into public image DTOs; it must not accept caller-supplied URLs as curated assets. Other media IDs retain owner/publication checks. Profile responses return the selected image; session actors and visible post/comment author projections may include the same optional `avatar` image. Hidden contribution identities return no identifying image. Live backend conformance remains unverified.
+
 Status: proposed backend contract with a frontend adapter implementation; no live conformance is claimed. Test-authoring/execution steps were skipped by explicit user instruction. The [specification](../superpowers/specs/2026-11-02-pawtrail-design.md) owns domain signatures and privacy/state invariants.
 
 ## Transport rules

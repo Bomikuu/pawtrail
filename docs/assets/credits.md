@@ -1,5 +1,7 @@
 # PawTrail asset credits
 
+The owner also supplied the 30 illustrated people avatars; see [selectable people avatars](people-avatars.md) for source, preparation, dimensions and use.
+
 Retrieved and verified on 2026-11-02. The original foundation used provisional brand artwork; the owner subsequently supplied the illustration sheet documented in [PawTrail illustration crops](pawtrail-illustration.md). No real animal photographs were supplied. Stock subjects illustrate fictional records: their names, locations, care needs, and stories are not claims about the photographed animals. These assets do not document an actual rescue, adoption, payment, or endorsement. The same photo follows the same fictional animal through its profile, campaign, and post. Only Milo and Luna have assigned photographs; remaining records retain the shared honest fallback.
 
 ## Photographs

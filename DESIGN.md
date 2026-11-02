@@ -167,7 +167,7 @@ Marketing and authentication retain their existing route-specific layouts. The r
 | Management/help       | `--teal`                            | `#0F766E`               | Focus, links, selected management navigation |
 | Scrollbar             | `--scroll-thumb` / `--scroll-track` | `#B7B4AE` / transparent | Global scrollable surfaces                   |
 
-Social headings use 26px Nunito; posts use 15px Inter and a readable text measure within the flexible feed. Initials are identity fallbacks, not invented author photographs. Hover, focus, selected, disabled, loading, empty and error treatments reuse maintained components. No new business lifecycle is introduced by the visual split.
+Social headings use 26px Nunito; posts use 15px Inter and a readable text measure within the flexible feed. People use the owner's 30 illustrated portraits, selected in the profile form and rendered through `CommunityAvatar`. Stable record-based illustrations supply defaults for identifiable people; initials remain the anonymous/unavailable fallback. The controlled picker uses shared Buttons, visible selection, descriptive accessible names and a constrained scrolling grid. All 30 WebP files total approximately 151 KB; see `docs/assets/people-avatars.md`. Hover, focus, selected, disabled, loading, empty and error treatments reuse maintained components.
 
 ## Elevation & Depth
 

@@ -17,4 +17,6 @@ The product requirements and `docs/contracts/django-api.md` own business rules. 
 
 Locale stays en-PH with Asia/Manila dates and integer PHP centavos. New artwork is decorative and receives empty alt text; data photographs keep their existing descriptions. Icon-only navigation/actions carry explicit accessible names. No new payment, permission, deletion or adoption policy is introduced here.
 
+People avatars use the curated catalog in `features/users/avatar-presets.ts`, the controlled `AvatarPicker` inside the existing profile form, and the shared `CommunityAvatar` renderer. Selecting previews a choice; **Save profile** commits it with the other profile fields. Failure preserves the draft. Successful saves refresh queries and update only the same session actor's display name/avatar, preserving roles and account scope. Existing identifiable people get stable defaults; hidden attribution never receives a stable identifying avatar. Arbitrary media still follows publication review.
+
 No automated tests, type/UI checks, builds or rendered browser verification were run for this redesign, following the user's standing instruction. These are implementation contracts, not a conformance claim.

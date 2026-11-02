@@ -92,7 +92,12 @@ export function PlatformSidebar({
           href={'/users/' + encodeURIComponent(session.actor.username)}
           className="sidebar-account"
         >
-          <CommunityAvatar name={session.actor.displayName} small />
+          <CommunityAvatar
+            name={session.actor.displayName}
+            image={session.actor.avatar}
+            userId={session.actor.id}
+            small
+          />
           <span>
             <strong>{session.actor.displayName}</strong>
             <small>@{session.actor.username}</small>

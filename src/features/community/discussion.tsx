@@ -4,6 +4,7 @@ import { useInfiniteQuery } from '@tanstack/react-query'
 import { Button } from '@/components/ui/button'
 import { DataState } from '@/components/shared/data-state'
 import { StatusBadge } from '@/components/shared/status-badge'
+import { CommunityAvatar } from '@/components/shared/community-avatar'
 import { useSession } from '@/features/auth/session-provider'
 import { getBrowserApi } from '@/lib/api/client'
 import { queryKeys } from '@/lib/api/keys'
@@ -60,6 +61,12 @@ export function Discussion({
           {comments.map((comment) => (
             <li key={comment.id}>
               <div className="discussion-byline">
+                <CommunityAvatar
+                  name={comment.author.displayName}
+                  image={comment.author.avatar}
+                  userId={comment.authorId}
+                  small
+                />
                 <strong>{comment.author.displayName}</strong>
                 <time dateTime={comment.createdAt}>
                   {new Intl.DateTimeFormat('en-PH', {

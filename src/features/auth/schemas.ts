@@ -1,10 +1,11 @@
 import { z } from 'zod'
-import { idSchema, timestampSchema } from '@/lib/api/schemas'
+import { idSchema, timestampSchema, imageSchema } from '@/lib/api/schemas'
 
 export const actorSchema = z.object({
   id: idSchema,
   username: z.string().min(1),
   displayName: z.string().min(1),
+  avatar: imageSchema.nullable().optional(),
   roles: z.array(z.enum(['member', 'shelter_staff', 'moderator'])),
   shelterIds: z.array(idSchema),
 })

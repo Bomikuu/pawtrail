@@ -10,7 +10,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { getBrowserApi } from '@/lib/api/client'
 import { ApiError } from '@/lib/api/errors'
 import type { PawTrailApi } from '@/lib/api/contracts'
-import type { LoginInput, RegisterInput, Session } from './types'
+import type { Actor, LoginInput, RegisterInput, Session } from './types'
 import { sessionSchema } from './schemas'
 export async function clearSessionCache(client: QueryClient) {
   await client.cancelQueries()
@@ -34,6 +34,10 @@ interface SessionContext {
   register(input: RegisterInput): Promise<Session>
   selectDemoActor(id: string): Promise<Session>
   logout(): Promise<void>
+  updateIdentity(
+    profile: Pick<Actor, 'id' | 'displayName' | 'avatar'>,
+    scope: string,
+  ): void
 }
 const Context = createContext<SessionContext | null>(null)
 export function SessionProvider({
@@ -75,6 +79,20 @@ export function SessionProvider({
       value={{
         session,
         pending,
+        updateIdentity: (profile, scope) => {
+          setSession((current) =>
+            current.cacheScope === scope && current.actor?.id === profile.id
+              ? {
+                  ...current,
+                  actor: {
+                    ...current.actor,
+                    displayName: profile.displayName,
+                    avatar: profile.avatar,
+                  },
+                }
+              : current,
+          )
+        },
         login: (input) => change(() => api.auth.login(input)),
         register: (input) => change(() => api.auth.register(input)),
         selectDemoActor: (id) => {
