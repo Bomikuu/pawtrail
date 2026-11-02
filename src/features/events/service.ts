@@ -16,6 +16,9 @@ import {
 import { currentUser } from '@/features/users/service'
 import { publicSnapshot } from '@/features/moderation/service'
 import { notify } from '@/features/notifications/service'
+import { toPublicUser } from '@/lib/server/projections'
+import { can } from '@/lib/server/permissions'
+import { demoClock } from '@/lib/api/clock'
 import * as s from './schemas'
 
 export function installEvents(
@@ -26,12 +29,54 @@ export function installEvents(
   const { read, write } = context(data, repository)
   const detail = (d: DemoDraft, id: string) => {
     const row = found(d.data.events.find((e) => e.id === id || e.slug === id))
+    const visible = publicSnapshot(d)
+    const rsvps = d.data.rsvps.filter((r) => r.eventId === row.id)
+    const attendeeIds = new Set(rsvps.map((r) => r.userId))
+    const attendees = visible.users
+      .filter((u) => attendeeIds.has(u.id) && u.settings.showContributions)
+      .map((u) => s.eventAttendeeSchema.parse(toPublicUser(u)))
+      .sort(
+        (a, b) =>
+          a.displayName.localeCompare(b.displayName) ||
+          a.id.localeCompare(b.id),
+      )
+    const shelter = visible.shelters.find((s) => s.id === row.shelterId)
+    const organizer = visible.users.find(
+      (u) => u.id === row.organizerId && u.settings.showContributions,
+    )
+    const viewer = d.data.users.find((u) => u.id === d.auth.actorId)
     return s.eventDetailSchema.parse({
       ...row,
-      attendanceCount: d.data.rsvps.filter((r) => r.eventId === row.id).length,
-      viewerAttending: d.data.rsvps.some(
-        (r) => r.eventId === row.id && r.userId === d.auth.actorId,
-      ),
+      attendanceCount: rsvps.length,
+      viewerAttending: attendeeIds.has(d.auth.actorId ?? ''),
+      viewerCanManage:
+        !!viewer &&
+        can(viewer, 'manage_resource', {
+          ownerId: row.organizerId,
+          shelterId: row.shelterId,
+        }),
+      rsvpOpen:
+        row.state === 'scheduled' &&
+        Date.parse(row.endsAt) > demoClock.now().getTime(),
+      attendees: attendees.slice(0, 24),
+      publicAttendeeCount: attendees.length,
+      host: shelter
+        ? {
+            kind: 'shelter',
+            id: shelter.id,
+            name: shelter.name,
+            href: `/shelters/${encodeURIComponent(shelter.slug)}`,
+            avatar: null,
+          }
+        : organizer
+          ? {
+              kind: 'user',
+              id: organizer.id,
+              name: organizer.displayName,
+              href: `/users/${encodeURIComponent(organizer.username)}`,
+              avatar: toPublicUser(organizer).avatar,
+            }
+          : null,
     })
   }
   api.events.list = (input) => {
@@ -52,7 +97,13 @@ export function installEvents(
               (!q.from || Date.parse(e.startsAt) >= Date.parse(q.from)) &&
               (!q.to || Date.parse(e.startsAt) <= Date.parse(q.to)),
           )
-          .map((e) => s.eventSummarySchema.parse(detail(d, e.id))),
+          .map((e) =>
+            s.eventSummarySchema.parse({
+              ...e,
+              attendanceCount: d.data.rsvps.filter((r) => r.eventId === e.id)
+                .length,
+            }),
+          ),
         q,
         `events:${u?.id ?? 'public'}:${filterScope(q)}`,
       )

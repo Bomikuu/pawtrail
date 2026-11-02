@@ -5,7 +5,15 @@ import {
   listQuerySchema,
   baseSchema,
   versionSchema,
+  imageSchema,
 } from '@/lib/api/schemas'
+
+export const eventAttendeeSchema = z.object({
+  id: idSchema,
+  username: z.string(),
+  displayName: z.string(),
+  avatar: imageSchema.nullable(),
+})
 
 export const eventInputSchema = z.object({
   title: z.string().min(1),
@@ -38,6 +46,20 @@ export const eventSummarySchema = baseSchema.extend({
 })
 export const eventDetailSchema = eventSummarySchema.extend({
   viewerAttending: z.boolean().default(false),
+  viewerCanManage: z.boolean().default(false),
+  rsvpOpen: z.boolean().default(false),
+  attendees: z.array(eventAttendeeSchema).default([]),
+  publicAttendeeCount: z.number().int().nonnegative().default(0),
+  host: z
+    .object({
+      kind: z.enum(['user', 'shelter']),
+      id: idSchema,
+      name: z.string(),
+      href: z.string().regex(/^\/(?:users|shelters)\/[A-Za-z0-9_%.-]+$/),
+      avatar: imageSchema.nullable(),
+    })
+    .nullable()
+    .default(null),
   description: z.string(),
   version: versionSchema,
 })
