@@ -45,7 +45,7 @@ it('rejects_feature_primitives_and_allows_shared_controls', () => {
 
 **Interfaces:** Produce `PawTrailApi` exactly as spec §5; `getServerApi(): Promise<PawTrailApi>`; `getBrowserApi(): PawTrailApi`; `queryKeys(scope: string): QueryKeyFactory`; `ApiError`; `toPublicAnimal(record: AnimalRecord): AnimalProfile`. `dispatchApi(request: Request, context: ApiContext): Promise<Response>` maps allowlisted method/path patterns. Domain methods with no implementation yet fail explicitly rather than return success.
 
-- [ ] Write tests asserting fixture counts `[20,5,15,10,10,10,5,5,20]` for animals/Hordes/adoptable subset/fundraisers/missions/posts/shelters/events/leaderboard users; every relation resolves. Add assertions that malicious private fields are absent from `toPublicAnimal`, limits default to 12/cap at 50, malformed records throw `ApiError`, unknown BFF paths return 404, wrong methods 405, and real mode without an origin fails rather than selecting mocks.
+- [x] Write tests asserting fixture counts `[20,5,15,10,10,10,5,5,20]` for animals/Hordes/adoptable subset/fundraisers/missions/posts/shelters/events/leaderboard users; every relation resolves. Add assertions that malicious private fields are absent from `toPublicAnimal`, limits default to 12/cap at 50, malformed records throw `ApiError`, unknown BFF paths return 404, wrong methods 405, and real mode without an origin fails rather than selecting mocks.
 
 ```ts
 it('preserves_sample_counts_and_public_projection', () => {
@@ -54,10 +54,10 @@ it('preserves_sample_counts_and_public_projection', () => {
   expect(toPublicAnimal(privateAnimal)).not.toHaveProperty('exactLatitude')
 })
 ```
-- [ ] Run `npm run test:unit -- tests/unit/api`; expect missing contracts/fixtures/projection/registry failures.
-- [ ] Implement schemas and deterministic fixtures using the clock in spec §10, domain API signatures, public projections, request cancellation, error normalization, and query-key scoping. Add public sample provenance fields, supporting activity records and representative error/empty fixtures. Define only explicit BFF handlers, without a general URL proxy. I1 completes the Django adapter implementation.
-- [ ] Run the same API tests, typecheck, UI check; expect pass.
-- [ ] Commit `feat: define PawTrail domain API and sample records`.
+- [x] Run `npm run test:unit -- tests/unit/api`; expect missing contracts/fixtures/projection/registry failures.
+- [x] Implement schemas and deterministic fixtures using the clock in spec §10, domain API signatures, public projections, request cancellation, error normalization, and query-key scoping. Add public sample provenance fields, supporting activity records and representative error/empty fixtures. Define only explicit BFF handlers, without a general URL proxy. I1 completes the Django adapter implementation.
+- [x] Run the same API tests, typecheck, UI check; expect pass.
+- [x] Commit `feat: define PawTrail domain API and sample records`.
 
 ### Task F3: Persistent, session-isolated demo repository
 
