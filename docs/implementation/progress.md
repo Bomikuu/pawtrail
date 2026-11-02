@@ -12,7 +12,7 @@ Execution method: user-approved subagent-driven. Code-first community-journal di
 | F6 — Design contract, shared controls, and responsive navigation | Complete | 75bf337; independent source/spec/quality and docs-fix re-review approved; 153 tests including 21 F6 tests and scoped checks passed; rendered quality unverified |
 | F7 — Landing page and real asset provenance | Complete | 285d924; independent spec/quality and two fix re-reviews approved; 21 initial and 10 responsive tests passed; fresh typegen/dev HTTP+metadata hash checks passed |
 | S1 — Public animal profiles, saving, and shared SEO primitives | Complete | 1b4835d; independent privacy/spec/quality and retry-fix re-review approved; 122 shared and 37 focused tests plus 3 retry tests passed; source checks passed |
-| S2 — Feed, photo composer, post details, reactions and saved posts | Pending |  |
+| S2 — Feed, photo composer, post details, reactions and saved posts | Complete | ab70a39; fresh spec/privacy/quality review approved; 69 scoped tests and final 9 regression tests passed; typecheck/UI/format passed |
 | S3 — Discussions, reporting and moderator review | Pending |  |
 | S4 — Public users, following and activity notifications | Pending |  |
 | S5 — Private dashboard, animal management and privacy settings | Pending |  |
@@ -60,3 +60,5 @@ Ruling: Starting in S1, route readiness may register explicit implemented filesy
 Ruling: Treat next-env.d.ts as ignored framework-generated state and generate route types before tsc; retain the managed Next AGENTS guidance and dev-type include — installed Next TypeScript docs explicitly require generated declarations to be untracked, and first dev startup otherwise dirties the checkout — cost if wrong: revise the generation step or tracked-file policy; authored source keeps the no-semicolon rule and no production build is introduced.
 
 Ruling: S2 retains the established Post.moderation field and tests its pending value rather than adding a duplicate moderationState alias for assertion pseudocode — current DTOs, fixtures and API projections already share that canonical field — cost if wrong: rename the Post DTO and consumers coherently; no publication semantics change.
+
+Ruling: S2 may introduce initially empty typed follow edges and the existing public neighborhood-search reader, while S4/D1 retain their full mutation/geographic workflows — Following/Nearby consume these prerequisites before their feature packages execute — cost if wrong: adapt the shared read scaffolds with those owners; no fake follows or location inference is permitted.

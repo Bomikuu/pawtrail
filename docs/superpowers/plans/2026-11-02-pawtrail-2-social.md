@@ -45,7 +45,7 @@ expect(savedAfterRejectedRequest).toBe(false)
 
 **Interfaces:** Implement `community.list/get/create/update/remove/setReaction/setSaved`. `PostFilters = ListQuery & { tab?: 'for_you' | 'following' | 'nearby', animalId?: Id, authorId?: Id, saved?: boolean, areaId?: Id }`. `PostInput` contains text (1–2,000 characters), up to 6 public-eligible media IDs, a brief content type, and associated animal/Horde/fundraiser/mission references. Referenced records must exist and be visible.
 
-- [ ] Write tests `creates_pending_photo_post_and_survives_refresh`, `deduplicates_cursor_items`, `retries_create_without_duplicate`, and `rolls_back_failed_reaction`. Pin:
+- [x] Write tests `creates_pending_photo_post_and_survives_refresh`, `deduplicates_cursor_items`, `retries_create_without_duplicate`, and `rolls_back_failed_reaction`. Pin:
 
 ```ts
 expect(created.moderationState).toBe('pending')
@@ -56,10 +56,10 @@ expect(retried.id).toBe(created.id)
 expect(reactionCountAfterFailure).toBe(initialCount)
 ```
 
-- [ ] Run `npm run test:unit -- tests/unit/community`; expect missing feed/mutations to fail.
-- [ ] Implement SSR initial posts plus scoped hydration, For you/Following/Nearby tabs, honest chronological “For you,” location opt-in, pagination, reusable cards for all seven brief content types, upload previews, linked-entity picker, edit/delete ownership, share fallback, single user reaction, and saved posts. Unpublished records appear only to their author/reviewer. Preserve draft text on failures, disable duplicate submit, reconcile optimistic IDs with server IDs, and restore counts after failures. No optimistic “published” state before moderation.
-- [ ] Run these tests, typecheck, UI check; expect pass.
-- [ ] Commit `feat: add PawTrail social feed and publishing flow`.
+- [x] Run `npm run test:unit -- tests/unit/community`; expect missing feed/mutations to fail.
+- [x] Implement SSR initial posts plus scoped hydration, For you/Following/Nearby tabs, honest chronological “For you,” location opt-in, pagination, reusable cards for all seven brief content types, upload previews, linked-entity picker, edit/delete ownership, share fallback, single user reaction, and saved posts. Unpublished records appear only to their author/reviewer. Preserve draft text on failures, disable duplicate submit, reconcile optimistic IDs with server IDs, and restore counts after failures. No optimistic “published” state before moderation.
+- [x] Run these tests, typecheck, UI check; expect pass.
+- [x] Commit `feat: add PawTrail social feed and publishing flow`.
 
 ### Task S3: Discussions, reporting and moderator review
 
