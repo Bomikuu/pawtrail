@@ -14,5 +14,11 @@
   },
   "application_tests": "not run: documentation only",
   "production_builds": "not run: not requested",
-  "visual_or_manual_verification": "not run: not requested"
+  "visual_or_manual_verification": "not run: not requested",
+  "git_integrity": {
+    "full_fsck": "incomplete: Git refs helper terminated by signal 7",
+    "direct_loose_object_hashes_and_sizes": 31,
+    "tree_commit_and_branch_references": "passed",
+    "commit_readability": "passed"
+  }
 }

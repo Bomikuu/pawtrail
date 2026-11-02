@@ -25,3 +25,7 @@ The [requirements findings](graphify-findings.md) and [graph snapshot](requireme
 ## Handoff boundaries
 
 This repository is local and documentation-only. No app dependencies, product code, external Git repository, production build, browser/manual inspection, hosted Site, real payment, or live Django/Google Maps verification was created or run. Execution method and visual composition remain for user review. The plan preserves explicit demo behavior and identifies external production dependencies.
+
+## Git tooling limitation
+
+The initial documentation commit succeeded and is readable, with a clean working tree before this record was added. Git 2.53.0 reported signal-7 failures in automatic maintenance and `fsck` helper subprocesses. A second scoped fsck attempt still failed in the refs helper; no global configuration was changed. Direct automated zlib/size/SHA-1 validation of every loose object, plus tree/commit/branch-reference existence checks, passed. Full Git fsck therefore remains unverified despite the readable commit and valid stored objects. This tooling issue does not change the document link/task checks or imply application tests were run.
