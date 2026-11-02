@@ -67,7 +67,10 @@ it('switches actor cache identity and logs out through the provider', async () =
   await act(async () => {
     await actions.logout()
   })
-  await waitFor(() => expect(screen.getByText('anonymous')).toBeInTheDocument())
+  await waitFor(() => expect(actions.session.actor).toBeNull())
+  expect(actions!.session.cacheScope).toMatch(/^anonymous:/)
+  expect(actions!.session.cacheScope).not.toBe('anonymous')
+  expect(api.auth.session).not.toHaveBeenCalled()
 })
 it('remounts query observers into the new actor client instead of retaining the old client', async () => {
   const { useQuery, useQueryClient } = await import('@tanstack/react-query')
@@ -105,4 +108,65 @@ it('remounts query observers into the new actor client instead of retaining the 
       ?.getQueryData(['pawtrail', 'next-scope', 'private']),
   ).toBe('next-scope-record')
   expect(clients.get('anonymous')).not.toBe(clients.get('next-scope'))
+})
+it('discards the signed-out actor and private observers even when session retrieval is unavailable', async () => {
+  const { useQuery, useQueryClient } = await import('@tanstack/react-query')
+  const signedIn: Session = {
+    ...anonymous,
+    cacheScope: 'actor-one',
+    actor: {
+      id: 'one',
+      username: 'one',
+      displayName: 'One',
+      roles: ['member'],
+      shelterIds: [],
+    },
+    roles: ['member'],
+  }
+  const api = createUnimplementedApi()
+  api.auth.logout = vi.fn(async () => undefined)
+  api.auth.session = vi.fn(async () => {
+    throw new Error('Session retrieval unavailable')
+  })
+  const clients = new Map<string, QueryClient>()
+  let actions: ReturnType<typeof useSession>
+  function PrivateApplication() {
+    actions = useSession()
+    const { session } = actions
+    clients.set(session.cacheScope, useQueryClient())
+    const result = useQuery({
+      queryKey: ['pawtrail', session.cacheScope, 'applications'],
+      queryFn: async () => 'Private application answers',
+      enabled: !!session.actor,
+    })
+    return <p>{result.data ?? 'No private application loaded'}</p>
+  }
+  render(
+    <Providers initialSession={signedIn} api={api}>
+      <PrivateApplication />
+    </Providers>,
+  )
+  await screen.findByText('Private application answers')
+  await act(async () => {
+    await expect(actions.logout()).resolves.toBeUndefined()
+  })
+  expect(api.auth.logout).toHaveBeenCalledTimes(1)
+  expect(api.auth.session).not.toHaveBeenCalled()
+  expect(actions!.session).toMatchObject({
+    actor: null,
+    roles: [],
+    mode: 'mock',
+    demo: true,
+    expiresAt: null,
+  })
+  expect(actions!.session.cacheScope).not.toBe('actor-one')
+  expect(actions!.pending).toBe(false)
+  expect(
+    screen.queryByText('Private application answers'),
+  ).not.toBeInTheDocument()
+  expect(screen.getByText('No private application loaded')).toBeVisible()
+  expect(clients.get('actor-one')?.getQueryCache().getAll()).toEqual([])
+  expect(clients.get(actions!.session.cacheScope)).not.toBe(
+    clients.get('actor-one'),
+  )
 })

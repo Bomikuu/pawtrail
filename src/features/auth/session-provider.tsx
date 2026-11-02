@@ -86,8 +86,18 @@ export function SessionProvider({
         },
         logout: async () => {
           await change(async () => {
+            // Prepare the next identity before logout so no fallible reconciliation
+            // can restore private observers after the server has signed out.
+            const signedOut: Session = {
+              actor: null,
+              roles: [],
+              demo: session.demo,
+              mode: session.mode,
+              cacheScope: `anonymous:${crypto.randomUUID()}`,
+              expiresAt: null,
+            }
             await api.auth.logout()
-            return api.auth.session()
+            return signedOut
           })
         },
       }}
