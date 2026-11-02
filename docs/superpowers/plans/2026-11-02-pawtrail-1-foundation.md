@@ -24,8 +24,8 @@ F2 covers public DTO allowlists and invalid data; F3 covers refresh/session isol
 
 **Interfaces:** Produce `scanUiSource(path: string, source: string): UiViolation[]`, where `UiViolation = { path: string, line: number, tag: string }`; scripts specified in the master plan. Later tasks consume the strict `@/*` path alias and test setup.
 
-- [ ] Bootstrap only the tooling needed to run tests, resolving compatible stable dependencies from official metadata. Record Node LTS and package versions in the lockfile. Do not run `next build`.
-- [ ] Add failing scanner tests: `<button />` in `src/features/community/x.tsx` yields one violation at line 1; raw `input/select/textarea/table/thead/tbody/tfoot/tr/th/td` also fail; identical code under `src/components/ui/` passes; `<Button />` and ordinary links pass. AST traversal must inspect nested JSX, not grep source text.
+- [x] Bootstrap only the tooling needed to run tests, resolving compatible stable dependencies from official metadata. Record Node LTS and package versions in the lockfile. Do not run `next build`.
+- [x] Add failing scanner tests: `<button />` in `src/features/community/x.tsx` yields one violation at line 1; raw `input/select/textarea/table/thead/tbody/tfoot/tr/th/td` also fail; identical code under `src/components/ui/` passes; `<Button />` and ordinary links pass. AST traversal must inspect nested JSX, not grep source text.
 
 ```ts
 it('rejects_feature_primitives_and_allows_shared_controls', () => {
@@ -33,11 +33,11 @@ it('rejects_feature_primitives_and_allows_shared_controls', () => {
   expect(scanUiSource('src/components/ui/button.tsx', '<button />')).toEqual([])
 })
 ```
-- [ ] Run `npm run test:unit -- tests/unit/tooling/ui-boundary.test.ts`; expect failure for the missing scanner.
-- [ ] Implement the scanner, nonzero CLI exit on violations, global layout, and empty theme entry. Configure Prettier `semi: false`, strict TypeScript, test isolation, and `.env.example` names from the master plan. Avoid adding unrelated libraries.
-- [ ] Run that test, `npm run typecheck`, and `npm run check:ui`; expect pass.
-- [ ] Run format checks for the created files; expect pass.
-- [ ] Commit `chore: establish PawTrail application tooling`.
+- [x] Run `npm run test:unit -- tests/unit/tooling/ui-boundary.test.ts`; expect failure for the missing scanner.
+- [x] Implement the scanner, nonzero CLI exit on violations, global layout, and empty theme entry. Configure Prettier `semi: false`, strict TypeScript, test isolation, and `.env.example` names from the master plan. Avoid adding unrelated libraries.
+- [x] Run that test, `npm run typecheck`, and `npm run check:ui`; expect pass.
+- [x] Run format checks for the created files; expect pass.
+- [x] Commit `chore: establish PawTrail application tooling`.
 
 ### Task F2: Domain contracts, fixtures, and request-scoped API entry points
 
