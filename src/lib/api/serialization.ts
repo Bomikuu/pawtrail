@@ -7,6 +7,7 @@ const fields = [
   'cacheScope',
   'expiresAt',
   'avatarId',
+  'leaderboardRank',
   'activeHelpers',
   'previousCursor',
   'reviewedAt',

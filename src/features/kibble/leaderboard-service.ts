@@ -12,10 +12,10 @@ import {
 } from './schemas'
 
 /** One public projection supplies the podium, totals and paginated recognition rows. */
-export function communityLeaderboard(
+function rankedCommunityContributors(
   d: DemoDraft,
   period: LeaderboardPeriod,
-  q: LeaderboardFilters,
+  category: LeaderboardFilters['category'],
   now: string,
 ) {
   const data = publicSnapshot(d)
@@ -88,7 +88,6 @@ export function communityLeaderboard(
           .filter((e) => e.userId === u.id && inPeriod(e.createdAt))
           .reduce((sum, e) => sum + e.amount, 0),
       )
-      const showcase = publicAchievementShowcase(d, u.id, now)
       return {
         id: u.id,
         userId: u.id,
@@ -99,8 +98,6 @@ export function communityLeaderboard(
         kibble,
         rank: 1,
         contributions: { missions: missions.length, sightings, fundraisers },
-        badges: showcase.badges,
-        mastery: showcase.mastery,
         provenance: u.provenance,
       }
     })
@@ -121,15 +118,15 @@ export function communityLeaderboard(
     animalsHelped: supportedAnimals.size,
   }
   const metric = (r: (typeof rows)[number]) =>
-    q.category === 'missions'
+    category === 'missions'
       ? r.contributions.missions
-      : q.category === 'sightings'
+      : category === 'sightings'
         ? r.contributions.sightings
-        : q.category === 'fundraisers'
+        : category === 'fundraisers'
           ? r.contributions.fundraisers
           : r.kibble
   const ranked = rows
-    .filter((r) => q.category === 'all' || metric(r) > 0)
+    .filter((r) => category === 'all' || metric(r) > 0)
     .sort(
       (a, b) =>
         metric(b) - metric(a) ||
@@ -138,6 +135,34 @@ export function communityLeaderboard(
     )
   ranked.forEach((r, i) => {
     r.rank = i + 1
+  })
+  return { ranked, summary, today }
+}
+
+/** Current public all-time rank, calculated once per response; no persisted or client-selected crowns. */
+export function topTenRecognitionRanks(
+  d: DemoDraft,
+  now: string,
+): ReadonlyMap<string, number> {
+  const { ranked } = rankedCommunityContributors(d, 'all', 'all', now)
+  return new Map(ranked.slice(0, 10).map((row) => [row.userId, row.rank]))
+}
+
+export function communityLeaderboard(
+  d: DemoDraft,
+  period: LeaderboardPeriod,
+  q: LeaderboardFilters,
+  now: string,
+) {
+  const { ranked, summary, today } = rankedCommunityContributors(
+    d,
+    period,
+    q.category,
+    now,
+  )
+  const project = (row: (typeof ranked)[number]) => ({
+    ...row,
+    ...publicAchievementShowcase(d, row.userId, now),
   })
   const matching = ranked.filter(
     (r) =>
@@ -154,7 +179,8 @@ export function communityLeaderboard(
   const previous = offset > q.limit ? matching[offset - q.limit - 1] : undefined
   return leaderboardPageSchema.parse({
     ...result,
-    podium: ranked.slice(0, 3),
+    items: result.items.map(project),
+    podium: ranked.slice(0, 3).map(project),
     summary,
     offset,
     previousCursor: previous

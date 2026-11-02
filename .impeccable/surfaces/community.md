@@ -11,3 +11,5 @@ ART: Five compact crops from the supplied PawTrail illustration; only decorative
 RESPONSIVE: Rail drops at 76rem; intermediate tablet uses icon navigation; mobile uses one feed, drawer and bottom navigation. No fixed content cap.
 
 VERIFICATION: Source implementation only. No agents, automated tests/checks, builds, detectors or browser inspection under the user override. Rendered quality remains unverified.
+
+RECOGNITION: Attributed post and comment authors in the current all-time top ten have a crown and numbered rank. Use the shared RankCrown and authoritative nullable DTO field, with natural wrapping and a link to the all-time board; no client-authored or persistent rank decoration.

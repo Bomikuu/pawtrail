@@ -1,4 +1,5 @@
 import 'server-only'
+import { topTenRecognitionRanks } from '@/features/kibble/leaderboard-service'
 import { publicAchievementShowcase } from '@/features/achievements/engine'
 import { demoClock } from '@/lib/api/clock'
 import { z } from 'zod'
@@ -53,11 +54,16 @@ export function createUserService(
             ...profile,
             contributionCount: null,
             summary: null,
+            leaderboardRank: null,
             level: null,
             badges: [],
             stories: [],
             animalsHelped: [],
           })
+        const recognitionRanks = topTenRecognitionRanks(
+          draft,
+          demoClock.now().toISOString(),
+        )
         const stories = visible.posts.filter((p) => p.authorId === user.id)
         const sightings = visible.sightings.filter(
           (s) => s.reporterId === user.id && s.moderation === 'published',
@@ -101,6 +107,7 @@ export function createUserService(
             summary.missions +
             summary.donations,
           summary,
+          leaderboardRank: recognitionRanks.get(user.id) ?? null,
           level:
             1 +
             Math.floor(
@@ -130,7 +137,7 @@ export function createUserService(
                 Date.parse(b.createdAt) - Date.parse(a.createdAt) ||
                 b.id.localeCompare(a.id),
             )
-            .map((p) => projectPost(draft, p)),
+            .map((p) => projectPost(draft, p, recognitionRanks)),
         })
       })
     },

@@ -1,4 +1,6 @@
 import 'server-only'
+import { topTenRecognitionRanks } from '@/features/kibble/leaderboard-service'
+import { demoClock } from '@/lib/api/clock'
 import { personAvatar } from '@/features/users/avatar-presets'
 import { notify } from '@/features/notifications/service'
 import { randomUUID } from 'node:crypto'
@@ -197,13 +199,23 @@ export function mayReviewMedia(draft: DemoDraft, mediaId: string) {
         (s.ref.kind === 'shelter' && media.shelterId === s.ref.id)),
   )
 }
-function commentView(draft: DemoDraft, row: FixtureSeed['comments'][number]) {
+function commentView(
+  draft: DemoDraft,
+  row: FixtureSeed['comments'][number],
+  recognitionRanks?: ReadonlyMap<string, number>,
+) {
   const user = publicSnapshot(draft).users.find((u) => u.id === row.authorId)
   const visible = user?.settings.discoverable && user.settings.showContributions
   return parseResponse(commentSchema, {
     ...row,
     authorId: visible ? row.authorId : null,
     author: {
+      leaderboardRank: visible
+        ? ((
+            recognitionRanks ??
+            topTenRecognitionRanks(draft, demoClock.now().toISOString())
+          ).get(user.id) ?? null)
+        : null,
       displayName: visible ? user.displayName : 'Community member',
       username: visible ? user.username : null,
       avatar: visible ? personAvatar(user.avatar, user.id) : null,
@@ -498,8 +510,12 @@ export function createModerationService(
                 c.authorId === draft.auth.actorId)) &&
             (!valid.q || c.text.toLowerCase().includes(valid.q.toLowerCase())),
         )
+        const recognitionRanks = topTenRecognitionRanks(
+          draft,
+          demoClock.now().toISOString(),
+        )
         return paginate(
-          rows.map((c) => commentView(draft, c)),
+          rows.map((c) => commentView(draft, c, recognitionRanks)),
           valid,
           `comments:${draft.auth.cacheScope}:${target.kind}:${target.id}:${valid.q ?? ''}`,
         )

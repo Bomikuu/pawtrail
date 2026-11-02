@@ -1,4 +1,5 @@
 'use client'
+import { RankCrown } from '@/features/kibble/rank-crown'
 import { FollowButton } from '@/features/users/follow-button'
 import { useState } from 'react'
 import Link from 'next/link'
@@ -91,11 +92,14 @@ export function PostCard({
           userId={post.authorId}
         />
         <div className="post-author">
-          <strong>
+          <strong className="recognized-author-name">
             {userHref && isRouteReady(userHref, READY_ROUTES) ? (
               <Link href={userHref}>{post.author.displayName}</Link>
             ) : (
               post.author.displayName
+            )}
+            {post.author.username && (
+              <RankCrown rank={post.author.leaderboardRank} />
             )}
           </strong>
           <p>

@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { leaderboardRankSchema } from '@/features/kibble/recognition-schema'
 import { achievementSummarySchema } from '@/features/achievements/schemas'
 import { animalSummarySchema } from '@/features/animals/schemas'
 import { postViewSchema } from '@/features/community/schemas'
@@ -44,6 +45,7 @@ export const dashboardSummarySchema = z.object({
 
 /** Public activity only. Private records and anonymous contribution identities never enter this DTO. */
 export const publicProfileSchema = publicUserSchema.extend({
+  leaderboardRank: leaderboardRankSchema,
   mastery: achievementSummarySchema.nullable().default(null),
   level: z.number().int().positive().nullable(),
   badges: z.array(z.object({ id: idSchema, label: z.string().min(1) })),

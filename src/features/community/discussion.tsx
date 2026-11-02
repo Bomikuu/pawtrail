@@ -1,4 +1,5 @@
 'use client'
+import { RankCrown } from '@/features/kibble/rank-crown'
 import { useState } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { Button } from '@/components/ui/button'
@@ -67,7 +68,12 @@ export function Discussion({
                   userId={comment.authorId}
                   small
                 />
-                <strong>{comment.author.displayName}</strong>
+                <strong className="recognized-author-name">
+                  {comment.author.displayName}
+                  {comment.author.username && (
+                    <RankCrown rank={comment.author.leaderboardRank} />
+                  )}
+                </strong>
                 <time dateTime={comment.createdAt}>
                   {new Intl.DateTimeFormat('en-PH', {
                     dateStyle: 'medium',

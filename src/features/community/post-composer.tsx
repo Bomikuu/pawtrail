@@ -124,6 +124,7 @@ export function PostComposer({
         provenance: { kind: 'demo', label: 'Submitting demo post' },
         authorId: session.actor!.id,
         author: {
+          leaderboardRank: null,
           displayName: session.actor!.displayName,
           username: null,
           avatar: session.actor!.avatar ?? null,

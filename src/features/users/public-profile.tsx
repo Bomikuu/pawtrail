@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { RankCrown } from '@/features/kibble/rank-crown'
 import { CommunityAvatar } from '@/components/shared/community-avatar'
 import { StatusBadge } from '@/components/shared/status-badge'
 import { FollowButton } from './follow-button'
@@ -16,7 +17,10 @@ export function PublicProfile({ profile }: { profile: Profile }) {
           large
         />
         <div>
-          <h1>{profile.displayName}</h1>
+          <div className="profile-recognized-name">
+            <h1>{profile.displayName}</h1>
+            <RankCrown rank={profile.leaderboardRank} prominent />
+          </div>
           <p>@{profile.username}</p>
           <StatusBadge>{profile.provenance.label}</StatusBadge>
         </div>

@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { leaderboardRankSchema } from '@/features/kibble/recognition-schema'
 import { mediaAssetSchema } from '@/features/media/schemas'
 import {
   idSchema,
@@ -56,6 +57,7 @@ export const ownerPostMediaSchema = mediaAssetSchema.extend({
 export const postViewSchema = postSchema
   .extend({
     author: z.object({
+      leaderboardRank: leaderboardRankSchema,
       displayName: z.string(),
       username: z.string().nullable(),
       avatar: imageSchema.nullable().optional(),
@@ -95,6 +97,7 @@ export const commentRecordSchema = baseSchema.extend({
 export const commentSchema = commentRecordSchema.extend({
   authorId: idSchema.nullable(),
   author: z.object({
+    leaderboardRank: leaderboardRankSchema,
     displayName: z.string(),
     username: z.string().nullable(),
     avatar: imageSchema.nullable().optional(),

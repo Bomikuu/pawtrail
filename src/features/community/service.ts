@@ -1,4 +1,6 @@
 import 'server-only'
+import { topTenRecognitionRanks } from '@/features/kibble/leaderboard-service'
+import { demoClock } from '@/lib/api/clock'
 import { personAvatar } from '@/features/users/avatar-presets'
 import {
   postMediaIds,
@@ -85,7 +87,11 @@ function visible(draft: DemoDraft, post: StoredPost) {
   return !!user && can(actorSchema.parse(user), 'moderate')
 }
 /** Owner media is a separate private projection; public media always passes imageSchema. */
-export function projectPost(draft: DemoDraft, row: StoredPost): Post {
+export function projectPost(
+  draft: DemoDraft,
+  row: StoredPost,
+  recognitionRanks?: ReadonlyMap<string, number>,
+): Post {
   if (!visible(draft, row)) missing()
   const owner = !!draft.auth.actorId && row.authorId === draft.auth.actorId
   const publicData = publicSnapshot(draft)
@@ -119,6 +125,12 @@ export function projectPost(draft: DemoDraft, row: StoredPost): Post {
     provenance: row.provenance,
     authorId: identifiable ? row.authorId : null,
     author: {
+      leaderboardRank: identifiable
+        ? ((
+            recognitionRanks ??
+            topTenRecognitionRanks(draft, demoClock.now().toISOString())
+          ).get(user!.id) ?? null)
+        : null,
       displayName: identifiable ? user!.displayName : 'Community member',
       username: identifiable ? user!.username : null,
       avatar: identifiable ? personAvatar(user!.avatar, user!.id) : null,
@@ -291,6 +303,10 @@ export function createCommunityService(
             400,
           )
         const publicData = publicSnapshot(draft)
+        const recognitionRanks = topTenRecognitionRanks(
+          draft,
+          demoClock.now().toISOString(),
+        )
         const rows = draft.data.posts
           .filter(
             (row) =>
@@ -351,7 +367,7 @@ export function createCommunityService(
                       )),
                 )),
           )
-          .map((row) => projectPost(draft, row))
+          .map((row) => projectPost(draft, row, recognitionRanks))
         const scope = JSON.stringify(
           Object.fromEntries(
             Object.entries(query)
