@@ -68,7 +68,10 @@ export function PostCard({
       <PostComposer
         post={post}
         options={options}
-        onComplete={() => setEditing(false)}
+        onComplete={() => {
+          setEditing(false)
+          router.refresh()
+        }}
         onCancel={() => setEditing(false)}
       />
     )

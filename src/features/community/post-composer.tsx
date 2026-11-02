@@ -33,11 +33,13 @@ export function PostComposer({
   onCancel,
   initialRefs = [],
   initialType = 'story',
+  prompt = 'What’s your pet up to?',
 }: {
   options: LinkedOption[]
   post?: Post
   initialRefs?: PostInput['refs']
   initialType?: PostInput['type']
+  prompt?: string
   onComplete?(post: Post): void
   onCancel?(): void
 }) {
@@ -73,7 +75,7 @@ export function PostComposer({
             variant="ghost"
             href={loginPath('/community/create')}
           >
-            What’s your pet up to?
+            {prompt}
           </ButtonLink>
         </div>
         <div className="composer-toolbar">
@@ -153,7 +155,7 @@ export function PostComposer({
       setText('')
       setAssets([])
       setRetained([])
-      setRefs([])
+      setRefs(initialRefs)
       retry.current = { input: '', key: '' }
       await invalidateCommunity(client, session.cacheScope)
       toast.success(
@@ -196,7 +198,7 @@ export function PostComposer({
             rows={2}
             disabled={pending || changing}
             onChange={(event) => setText(event.target.value)}
-            placeholder="What’s your pet up to? Share a moment…"
+            placeholder={prompt + '…'}
             aria-invalid={!!error}
             aria-describedby={`${id}-help`}
           />

@@ -1,4 +1,8 @@
 import type {
+  AnimalActivityPage,
+  AnimalActivityFilters,
+} from '@/features/animals/activity-schemas'
+import type {
   Id,
   ListQuery,
   Page,
@@ -133,6 +137,11 @@ export interface PawTrailApi {
       options?: RequestOptions,
     ): Promise<Page<AnimalSummary>>
     get(slug: string, options?: RequestOptions): Promise<AnimalProfile>
+    activity(
+      slug: string,
+      query: AnimalActivityFilters,
+      options?: RequestOptions,
+    ): Promise<AnimalActivityPage>
     report(
       input: AnimalReportInput,
       options?: RequestOptions,

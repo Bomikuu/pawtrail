@@ -65,7 +65,11 @@ export function WorkflowForm({
   const [avatarId, setAvatarId] = useState(extra.avatarId ?? null)
   const [bannerId, setBannerId] = useState(extra.bannerId ?? 'meadow')
   const resolvedExtra =
-    operation === 'profile' ? { ...extra, avatarId, bannerId } : extra
+    operation === 'profile'
+      ? { ...extra, avatarId, bannerId }
+      : operation === 'animal_edit'
+        ? { ...extra, bannerId }
+        : extra
   const [values, setValues] = useState<Record<string, string | boolean>>(() =>
     Object.fromEntries(
       fields.map((f) => [
@@ -180,21 +184,22 @@ export function WorkflowForm({
           ))}
         </ol>
       )}
+      {(operation === 'profile' || operation === 'animal_edit') && (
+        <BannerPicker
+          kind={operation === 'animal_edit' ? 'animal' : 'person'}
+          value={bannerId}
+          onChange={setBannerId}
+          disabled={pending}
+        />
+      )}
       {operation === 'profile' && (
-        <>
-          <BannerPicker
-            value={bannerId}
-            onChange={setBannerId}
-            disabled={pending}
-          />
-          <AvatarPicker
-            value={avatarId}
-            onChange={setAvatarId}
-            current={initialAvatar}
-            name={String(values.displayName ?? 'Your profile')}
-            disabled={pending}
-          />
-        </>
+        <AvatarPicker
+          value={avatarId}
+          onChange={setAvatarId}
+          current={initialAvatar}
+          name={String(values.displayName ?? 'Your profile')}
+          disabled={pending}
+        />
       )}
       <fieldset disabled={pending} className="workflow-fields">
         <legend className="sr-only">{steps?.[step] ?? 'Details'}</legend>

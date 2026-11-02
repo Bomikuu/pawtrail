@@ -49,6 +49,8 @@ The original implementation brief is at `docs/requirements/pawtrail-original-bri
 
 ## Product Principles
 
+Pet profiles are community-maintained identities, not posting accounts. People author stories, report sightings, request help and tag animals. A pet's activity feed gathers its public sightings, help requests, approved help and tagged stories, prioritizing practical care while keeping human attribution and privacy intact.
+
 1. An animal's story stays connected across social and welfare features.
 2. Helping and expressing adoption interest have clear next steps and honest statuses.
 3. Privacy and verification are enforced in data projections as well as the interface.

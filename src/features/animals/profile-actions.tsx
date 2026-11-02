@@ -3,15 +3,21 @@ import { FollowButton } from '@/features/users/follow-button'
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { Bookmark, Share2 } from 'lucide-react'
+import { Bookmark, Share2, MoreHorizontal, MapPin } from 'lucide-react'
+import Link from 'next/link'
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from '@/components/ui/dropdown-menu'
 import { useSession } from '@/features/auth/session-provider'
 import { loginPath } from '@/features/auth/return-path'
 import { getBrowserApi } from '@/lib/api/client'
 import { Button } from '@/components/ui/button'
-import { ButtonLink } from '@/components/ui/button-link'
 import { ButtonAnchor } from '@/components/ui/button-anchor'
 import { toast } from '@/components/ui/sonner'
-import { AnimalDestination } from './help-panel'
 export function ProfileActions({
   id,
   slug,
@@ -90,64 +96,80 @@ export function ProfileActions({
     } catch (error) {
       if (!(error instanceof Error && error.name === 'AbortError'))
         setError(
-          'Couldn’t share this link. Use the permanent profile link below.',
+          'Couldn’t share this link. Use the permanent profile link in More actions.',
         )
     }
   }
   return (
     <div className="animal-action-bar" aria-label={`Actions for ${name}`}>
       <div className="profile-link-row">
-        <AnimalDestination
-          href={`/sightings/create?animalId=${encodeURIComponent(id)}`}
-        >
-          Add a sighting
-        </AnimalDestination>
         <FollowButton
           target={{ kind: 'animal', id }}
           name={name}
-          returnTo={`/pets/${encodeURIComponent(slug)}`}
+          returnTo={'/pets/' + encodeURIComponent(slug)}
+          compact
         />
         <ButtonAnchor href="#help">Help {name}</ButtonAnchor>
-        <Button onClick={share} variant="outline">
-          <Share2 aria-hidden="true" size={18} />
-          Share
-        </Button>
-        {session.actor ? (
-          <Button
-            onClick={save}
-            variant="outline"
-            aria-pressed={saved}
-            disabled={
-              pending ||
-              changingSession ||
-              savedState.isPending ||
-              savedState.isError
-            }
-          >
-            <Bookmark aria-hidden="true" size={18} />
-            {pending
-              ? 'Saving…'
-              : savedState.isPending
-                ? 'Loading saved state…'
-                : saved
-                  ? 'Saved'
-                  : 'Save'}
-          </Button>
-        ) : (
-          <ButtonLink
-            href={loginPath(`/pets/${encodeURIComponent(slug)}`)}
-            variant="outline"
-          >
-            Sign in to save
-          </ButtonLink>
-        )}
-        {adoptable && (
-          <AnimalDestination
-            href={`/adopt/applications/new?animalId=${encodeURIComponent(id)}`}
-          >
-            Adopt
-          </AnimalDestination>
-        )}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" aria-label={'More actions for ' + name}>
+              <MoreHorizontal size={20} aria-hidden="true" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem asChild>
+              <Link
+                href={'/sightings/create?animalId=' + encodeURIComponent(id)}
+              >
+                <MapPin size={16} aria-hidden="true" />
+                Add a sighting
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem onSelect={() => void share()}>
+              <Share2 size={16} aria-hidden="true" />
+              Share profile
+            </DropdownMenuItem>
+            {session.actor ? (
+              <DropdownMenuItem
+                disabled={
+                  pending ||
+                  changingSession ||
+                  savedState.isPending ||
+                  savedState.isError
+                }
+                onSelect={() => void save()}
+              >
+                <Bookmark size={16} aria-hidden="true" />
+                {pending
+                  ? 'Saving…'
+                  : saved
+                    ? 'Remove from saved'
+                    : 'Save animal'}
+              </DropdownMenuItem>
+            ) : (
+              <DropdownMenuItem asChild>
+                <Link href={loginPath('/pets/' + encodeURIComponent(slug))}>
+                  Sign in to save
+                </Link>
+              </DropdownMenuItem>
+            )}
+            {adoptable && (
+              <DropdownMenuItem asChild>
+                <Link
+                  href={
+                    '/adopt/applications/new?animalId=' + encodeURIComponent(id)
+                  }
+                >
+                  Ask about adoption
+                </Link>
+              </DropdownMenuItem>
+            )}
+            <DropdownMenuSeparator />
+            <DropdownMenuItem asChild>
+              <a href={url}>Permanent profile link</a>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       {savedState.isError && (
         <div>
@@ -158,9 +180,6 @@ export function ProfileActions({
         </div>
       )}
       {error && <p role="alert">{error}</p>}
-      <a className="profile-permalink" href={url}>
-        Permanent profile link
-      </a>
     </div>
   )
 }

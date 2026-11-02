@@ -12,6 +12,7 @@ export function createUnimplementedApi(): PawTrailApi {
     },
     media: { upload: notImplemented, remove: notImplemented },
     animals: {
+      activity: notImplemented,
       list: notImplemented,
       get: notImplemented,
       report: notImplemented,

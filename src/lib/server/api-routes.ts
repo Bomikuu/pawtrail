@@ -9,6 +9,7 @@ import {
 import * as auth from '@/features/auth/schemas'
 import * as media from '@/features/media/schemas'
 import * as animals from '@/features/animals/schemas'
+import * as animalActivity from '@/features/animals/activity-schemas'
 import * as community from '@/features/community/schemas'
 import * as follows from '@/features/follows/schemas'
 import * as users from '@/features/users/schemas'
@@ -223,6 +224,19 @@ export const apiRoutes: ApiRoute[] = [
         pageSchema(animals.animalSummarySchema),
         await api.animals.list(
           parseInput(animals.animalFiltersSchema, query),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'GET',
+    path: '/animals/:slug/activity',
+    invoke: async (api, params, query, body, options) =>
+      parseResponse(
+        animalActivity.animalActivityPageSchema,
+        await api.animals.activity(
+          parseInput(z.string(), params['slug']),
+          parseInput(animalActivity.animalActivityFiltersSchema, query),
           options,
         ),
       ),

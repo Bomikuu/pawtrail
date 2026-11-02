@@ -1,3 +1,4 @@
+import { animalActivityPageSchema } from '@/features/animals/activity-schemas'
 import { z } from 'zod'
 import { pageSchema } from '@/lib/api/schemas'
 import * as auth from '@/features/auth/schemas'
@@ -93,6 +94,15 @@ export function createApiClient(
         ),
     },
     animals: {
+      activity: (slug, query, options) =>
+        request(
+          'GET',
+          `/animals/${encodeURIComponent(slug)}/activity`,
+          animalActivityPageSchema,
+          query,
+          undefined,
+          options,
+        ),
       list: (filters, options) =>
         request(
           'GET',

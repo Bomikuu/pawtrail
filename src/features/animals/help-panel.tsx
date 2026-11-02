@@ -31,10 +31,20 @@ export function HelpPanel({ animal }: { animal: AnimalProfile }) {
       <h2 id="help-heading">Help {animal.name}</h2>
       <p>
         {animal.adoptable
-          ? 'A home could be the next chapter. Adoption and welfare requests will open here as those services become available.'
+          ? 'A home could be the next chapter. Ask the responsible shelter about adoption, or help with a public care request.'
           : 'Share this story and keep community observations connected to this profile.'}
       </p>
       <div className="profile-link-row">
+        <ButtonLink
+          href={
+            '/pets/' +
+            encodeURIComponent(animal.slug) +
+            '?tab=activity&kind=help#pet-activity'
+          }
+          variant="outline"
+        >
+          See help requests
+        </ButtonLink>
         {animal.adoptable && (
           <AnimalDestination
             href={`/adopt/applications/new?animalId=${encodeURIComponent(animal.id)}`}

@@ -113,6 +113,7 @@ export function installDiscovery(
       if (p.shelterId && !u.shelterIds.includes(p.shelterId))
         fail('Choose a shelter you manage.', 403)
       const a = animalRecordSchema.parse({
+        bannerId: p.bannerId,
         ...stamp(now),
         slug: `${p.name
           .toLowerCase()
@@ -176,6 +177,7 @@ export function installDiscovery(
       const subject = d.moderation.subjects.find(
         (s) => s.ref.kind === 'animal' && s.ref.id === id,
       )
+      if (p.bannerId !== undefined) a.bannerId = p.bannerId
       if (p.name) a.name = p.name
       if (p.species) a.species = p.species
       if (p.description) a.description = p.description

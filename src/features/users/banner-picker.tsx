@@ -7,10 +7,12 @@ export function BannerPicker({
   value,
   onChange,
   disabled = false,
+  kind = 'person',
 }: {
   value: string
   onChange: (id: string) => void
   disabled?: boolean
+  kind?: 'person' | 'animal'
 }) {
   const selected = getProfileBanner(value)
   return (
@@ -19,7 +21,11 @@ export function BannerPicker({
       id="profile-banner-picker"
       disabled={disabled}
     >
-      <legend>Choose your profile banner</legend>
+      <legend>
+        {kind === 'animal'
+          ? 'Choose this pet’s cover'
+          : 'Choose your profile banner'}
+      </legend>
       <div className="profile-banner-preview">
         <ProfileBanner id={selected.id} />
         <span>{selected.label}</span>
@@ -50,8 +56,9 @@ export function BannerPicker({
         ))}
       </div>
       <p className="field-help">
-        Save your profile to apply your choice. Banners are visible on your
-        public profile; your privacy settings still apply.
+        {kind === 'animal'
+          ? 'Submit changes for review to apply this cover. Pet profile edits remain private until publication is approved.'
+          : 'Save your profile to apply your choice. Banners are visible on your public profile; your privacy settings still apply.'}
       </p>
     </fieldset>
   )

@@ -1,4 +1,5 @@
 import 'server-only'
+import { installAnimalActivity } from '@/features/animals/activity-service'
 import { animalProfileSchema } from '@/features/animals/schemas'
 import { installDiscovery } from '@/features/discovery/service'
 import { installAccount } from '@/features/users/account-service'
@@ -124,19 +125,23 @@ export function createMockApi(
       snapshot: FixtureSeed,
       actorId: string | null,
       saved: { actorId: string; animalId: string }[],
+      viewerCanManage = false,
     ) => {
       const record = snapshot.animals.find(
         (row) => row.slug === slug || row.id === slug,
       )
       if (!record) throw new ApiError('NOT_FOUND', 'Animal not found', 404)
-      return toPublicAnimal(
-        record,
-        snapshot.users,
-        !!actorId &&
-          saved.some(
-            (row) => row.actorId === actorId && row.animalId === record.id,
-          ),
-      )
+      return {
+        ...toPublicAnimal(
+          record,
+          snapshot.users,
+          !!actorId &&
+            saved.some(
+              (row) => row.actorId === actorId && row.animalId === record.id,
+            ),
+        ),
+        viewerCanManage,
+      }
     }
     return repository
       ? repository.read((draft) => {
@@ -158,11 +163,13 @@ export function createMockApi(
               helperIds: [],
               helpers: [],
               viewerSaved: false,
+              viewerCanManage: true,
             })
           return read(
             publicSnapshot(draft),
             draft.auth.actorId,
             draft.savedAnimals,
+            !!owned,
           )
         })
       : read(data, null, [])
@@ -210,6 +217,7 @@ export function createMockApi(
     })
   }
   Object.assign(api.community, createCommunityService(data, repository))
+  installAnimalActivity(api, data, repository)
   const reviewServices = createModerationService(data, repository)
   Object.assign(api.community, reviewServices.community)
   api.moderation = reviewServices.moderation

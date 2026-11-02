@@ -71,6 +71,7 @@ export async function performOperation(
     case 'animal':
     case 'animal_edit': {
       const payload = {
+        bannerId: extra.bannerId,
         name: text('name'),
         species: text('species'),
         description: text('description'),

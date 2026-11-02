@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { profileBannerIds } from '@/features/users/banner-presets'
 import {
   idSchema,
   moderationStateSchema,
@@ -38,6 +39,8 @@ export const animalHelperSchema = z.object({
   userId: idSchema.nullable(),
 })
 export const animalProfileSchema = animalSummarySchema.extend({
+  bannerId: z.enum(profileBannerIds).default('meadow'),
+  viewerCanManage: z.boolean().default(false),
   description: z.string(),
   appearance: z.string(),
   observedCondition: z.string(),
@@ -58,7 +61,7 @@ export const animalProfileSchema = animalSummarySchema.extend({
   version: versionSchema,
 })
 export const animalRecordSchema = animalProfileSchema
-  .omit({ helpers: true, viewerSaved: true })
+  .omit({ helpers: true, viewerSaved: true, viewerCanManage: true })
   .extend({
     ownerId: idSchema,
     moderation: moderationStateSchema,
@@ -75,6 +78,7 @@ export const animalFiltersSchema = listQuerySchema.extend({
   areaId: idSchema.optional(),
 })
 export const animalReportInputSchema = z.object({
+  bannerId: z.enum(profileBannerIds).optional(),
   name: z.string().min(1),
   species: animalSummarySchema.shape.species,
   description: z.string().min(1),

@@ -292,8 +292,14 @@ export async function AnimalEditPage({ slug }: { slug: string }) {
         description="Edits are private until reviewed. Existing attachments are retained unless you submit replacements."
       />
       <WorkflowForm
+        key={a.id}
         operation="animal_edit"
-        extra={{ id: a.id, version: a.version, location: a.location }}
+        extra={{
+          id: a.id,
+          version: a.version,
+          location: a.location,
+          bannerId: a.bannerId,
+        }}
         fields={fields}
         uploads="both"
         submitLabel="Submit changes for review"

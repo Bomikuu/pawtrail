@@ -58,8 +58,8 @@ export function SightingHistory({
     >
       <h2 id="sightings-heading">Where the story has been</h2>
       <p>
-        Historical sightings show approximate areas. A live map is planned; this
-        list stays available independently.
+        Published sightings show approximate areas. The history remains
+        available when the map cannot load.
       </p>
       <nav aria-label="Sighting time range" className="profile-filter-row">
         {[
@@ -69,7 +69,7 @@ export function SightingHistory({
         ].map(([value, label]) => (
           <Link
             key={value}
-            href={`${path}?period=${value}#sightings`}
+            href={`${path}?tab=location&period=${value}#sightings`}
             aria-current={period === value ? 'page' : undefined}
           >
             {label}
@@ -94,7 +94,7 @@ export function SightingHistory({
       )}
       {nextCursor && (
         <Link
-          href={`${path}?period=${period}&cursor=${encodeURIComponent(nextCursor)}#sightings`}
+          href={`${path}?tab=location&period=${period}&sightingCursor=${encodeURIComponent(nextCursor)}#sightings`}
         >
           Older sightings
         </Link>
