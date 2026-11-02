@@ -1,6 +1,9 @@
 import 'server-only'
 import { createDemoMedia } from '@/lib/server/media/storage'
-import { createDemoAuth } from '@/lib/server/auth'
+import { createDemoAuth, requireActor } from '@/lib/server/auth'
+import { actorSchema } from '@/features/auth/schemas'
+import { can } from '@/lib/server/permissions'
+import { getApiConfig } from '../config'
 import type { DemoRepository } from '@/lib/server/demo/repository'
 import { z } from 'zod'
 import type { PawTrailApi } from '../contracts'
@@ -10,7 +13,7 @@ import { createUnimplementedApi } from '../unimplemented'
 import { checkCancelled, ApiError } from '../errors'
 import { paginate } from '../pagination'
 import { parseInput, parseResponse } from '../validation'
-import { listQuerySchema } from '../schemas'
+import { listQuerySchema, idSchema } from '../schemas'
 import {
   toPublicAnimal,
   toPublicUser,
@@ -106,9 +109,69 @@ export function createMockApi(
   }
   api.animals.get = async (slug, options) => {
     checkCancelled(options?.signal)
-    const record = data.animals.find((row) => row.slug === slug)
-    if (!record) throw new ApiError('NOT_FOUND', 'Animal not found', 404)
-    return toPublicAnimal(record)
+    const read = (
+      snapshot: FixtureSeed,
+      actorId: string | null,
+      saved: { actorId: string; animalId: string }[],
+    ) => {
+      const record = snapshot.animals.find((row) => row.slug === slug)
+      if (!record) throw new ApiError('NOT_FOUND', 'Animal not found', 404)
+      return toPublicAnimal(
+        record,
+        snapshot.users,
+        !!actorId &&
+          saved.some(
+            (row) => row.actorId === actorId && row.animalId === record.id,
+          ),
+      )
+    }
+    return repository
+      ? repository.read((draft) =>
+          read(draft.data, draft.auth.actorId, draft.savedAnimals),
+        )
+      : read(data, null, [])
+  }
+  api.animals.setSaved = async (id, saved, options) => {
+    checkCancelled(options?.signal)
+    const input = parseInput(z.object({ id: idSchema, saved: z.boolean() }), {
+      id,
+      saved,
+    })
+    if (getApiConfig().mode !== 'mock')
+      throw new ApiError('DEMO_ONLY', 'Demo mode is required', 403)
+    if (!repository)
+      throw new ApiError('UNAUTHENTICATED', 'Sign in to save animals', 401)
+    await repository.transact({
+      name: 'animals.setSaved',
+      input,
+      idempotencyKey: options?.idempotencyKey,
+      execute(draft) {
+        checkCancelled(options?.signal)
+        const record = draft.data.users.find(
+          (user) => user.id === draft.auth.actorId,
+        )
+        const actor = requireActor({
+          api,
+          mode: 'mock',
+          actor: record ? actorSchema.parse(record) : null,
+        })
+        if (!can(actor, 'contribute'))
+          throw new ApiError(
+            'FORBIDDEN',
+            'A community account is required',
+            403,
+          )
+        const animal = draft.data.animals.find(
+          (row) => row.id === input.id && row.moderation === 'published',
+        )
+        if (!animal) throw new ApiError('NOT_FOUND', 'Animal not found', 404)
+        draft.savedAnimals = draft.savedAnimals.filter(
+          (row) => row.actorId !== actor.id || row.animalId !== input.id,
+        )
+        if (input.saved)
+          draft.savedAnimals.push({ actorId: actor.id, animalId: input.id })
+      },
+    })
   }
   api.community.list = async (filters, options) => {
     const query = parseInput(postFiltersSchema, filters)

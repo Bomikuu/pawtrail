@@ -153,6 +153,7 @@ export async function openDemoRepository(
         document.overlay = overlayFrom(draft)
         document.auth = draft.auth
         document.media = draft.media
+        document.savedAnimals = draft.savedAnimals
         if (command.idempotencyKey !== undefined)
           document.receipts.push({
             name: command.name,

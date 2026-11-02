@@ -32,6 +32,10 @@ export const animalSummarySchema = baseSchema.extend({
   hordeId: idSchema.nullable(),
   verification: verificationSchema,
 })
+export const animalHelperSchema = z.object({
+  displayName: z.string().min(1),
+  userId: idSchema.nullable(),
+})
 export const animalProfileSchema = animalSummarySchema.extend({
   description: z.string(),
   appearance: z.string(),
@@ -47,13 +51,18 @@ export const animalProfileSchema = animalSummarySchema.extend({
   fundraiserIds: z.array(idSchema),
   missionIds: z.array(idSchema),
   helperIds: z.array(idSchema),
+  helpers: z.array(animalHelperSchema).default([]),
+  /** Read state for the current viewer only; never contains another actor's saves. */
+  viewerSaved: z.boolean().default(false),
   version: versionSchema,
 })
-export const animalRecordSchema = animalProfileSchema.extend({
-  ownerId: idSchema,
-  moderation: moderationStateSchema,
-  privateNotes: z.string(),
-})
+export const animalRecordSchema = animalProfileSchema
+  .omit({ helpers: true, viewerSaved: true })
+  .extend({
+    ownerId: idSchema,
+    moderation: moderationStateSchema,
+    privateNotes: z.string(),
+  })
 export const animalFiltersSchema = listQuerySchema.extend({
   species: animalSummarySchema.shape.species.optional(),
   adoptable: z.boolean().optional(),

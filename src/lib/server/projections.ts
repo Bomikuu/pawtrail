@@ -11,10 +11,30 @@ import { publicSupporterSchema } from '@/features/fundraising/schemas'
 import { parseResponse } from '@/lib/api/validation'
 import { ApiError } from '@/lib/api/errors'
 /** Zod object shapes recursively select only declared public fields. */
-export function toPublicAnimal(record: AnimalRecord): AnimalProfile {
+export function toPublicAnimal(
+  record: AnimalRecord,
+  users: PrivateUser[] = [],
+  viewerSaved = false,
+): AnimalProfile {
   if (record.moderation !== 'published')
     throw new ApiError('NOT_FOUND', 'Animal not found', 404)
-  return parseResponse(animalProfileSchema, record)
+  const helpers = record.helperIds.map((id) => {
+    const user = users.find((user) => user.id === id)
+    const visible =
+      user?.settings.discoverable && user.settings.showContributions
+    return {
+      displayName: visible ? user.displayName : 'Anonymous helper',
+      userId: visible ? user.id : null,
+    }
+  })
+  return parseResponse(animalProfileSchema, {
+    ...record,
+    helpers,
+    helperIds: helpers.flatMap((helper) =>
+      helper.userId ? [helper.userId] : [],
+    ),
+    viewerSaved,
+  })
 }
 export function toPublicUser(record: PrivateUser): PublicUser {
   if (!record.settings.discoverable)

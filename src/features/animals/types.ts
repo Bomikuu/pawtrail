@@ -1,5 +1,6 @@
 import type { z } from 'zod'
 import type * as schemas from './schemas'
+export type AnimalHelper = z.infer<typeof schemas.animalHelperSchema>
 export type AnimalNeeds = z.infer<typeof schemas.animalNeedsSchema>
 export type AnimalSummary = z.infer<typeof schemas.animalSummarySchema>
 export type AnimalProfile = z.infer<typeof schemas.animalProfileSchema>

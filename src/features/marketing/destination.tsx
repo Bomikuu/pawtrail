@@ -3,6 +3,7 @@ import { ButtonAnchor } from '@/components/ui/button-anchor'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { ButtonLink } from '@/components/ui/button-link'
+import { isRouteReady } from '@/lib/route-readiness'
 import { READY_ROUTES } from '@/components/layout/navigation'
 export function MarketingDestination({
   href,
@@ -17,7 +18,7 @@ export function MarketingDestination({
   action?: boolean
   secondary?: boolean
 }) {
-  if (!readyRoutes.has(href))
+  if (!isRouteReady(href, readyRoutes))
     return (
       <span
         className={

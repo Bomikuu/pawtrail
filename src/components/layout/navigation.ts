@@ -22,6 +22,7 @@ import {
 import type { LucideIcon } from 'lucide-react'
 import type { Session } from '@/features/auth/types'
 import { loginPath } from '@/features/auth/return-path'
+import { isRouteReady } from '@/lib/route-readiness'
 export type Destination = {
   label: string
   href: string
@@ -29,11 +30,12 @@ export type Destination = {
   protected?: boolean
   role?: 'shelter_staff' | 'moderator'
 }
-/** Add an exact pathname only when its route and behavior have shipped. Never enable a whole prefix. */
+/** Register an exact pathname or explicit dynamic page pattern only after its route ships. Never enable a whole prefix. */
 export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/',
   '/login',
   '/register',
+  '/pets/[slug]',
 ])
 export const mainDestinations: Destination[] = [
   { label: 'Explore', href: '/explore', icon: Compass },
@@ -91,7 +93,7 @@ export function destinationHref(
   session: Session,
   readyRoutes: ReadonlySet<string>,
 ): string | null {
-  if (!readyRoutes.has(destination.href)) return null
+  if (!isRouteReady(destination.href, readyRoutes)) return null
   if (destination.role && !session.roles.includes(destination.role)) return null
   return destination.protected && !session.actor
     ? loginPath(destination.href)

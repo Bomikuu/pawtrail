@@ -715,3 +715,153 @@ h3 {
     scroll-behavior: auto !important;
   }
 }
+
+.animal-profile {
+  max-width: 56rem;
+}
+.animal-profile-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.animal-profile-header p {
+  margin-top: 0.5rem;
+  color: var(--secondary-text);
+}
+.animal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1rem;
+}
+.animal-gallery figure {
+  margin: 0;
+}
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  background: var(--surface);
+}
+.animal-image-fallback.profile-photo {
+  display: grid;
+  place-items: center;
+  color: var(--secondary-text);
+  border: 1px solid var(--border);
+}
+.animal-gallery figcaption,
+.profile-note,
+.animal-timeline small {
+  font-size: 0.875rem;
+  color: var(--secondary-text);
+  margin-top: 0.5rem;
+}
+.profile-section {
+  padding-block: 2rem;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 6rem;
+}
+.profile-section h2 {
+  margin-bottom: 0.75rem;
+}
+.profile-prose,
+.profile-section > p {
+  max-width: 70ch;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.animal-badges,
+.profile-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.animal-traits {
+  display: grid;
+  gap: 1.25rem;
+}
+.animal-traits dt {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.animal-traits dd {
+  margin: 0;
+  max-width: 70ch;
+}
+.profile-verification {
+  margin-top: 1rem;
+}
+.helper-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  padding: 0;
+  list-style: none;
+  margin-top: 1rem;
+}
+.animal-timeline {
+  list-style: none;
+  padding: 0;
+}
+.animal-timeline li {
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.animal-timeline time {
+  font-size: 0.875rem;
+  color: var(--secondary-text);
+}
+.animal-timeline p {
+  max-width: 70ch;
+  margin-top: 0.5rem;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.animal-action-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
+}
+.animal-action-bar .profile-link-row {
+  margin-top: 0;
+}
+.animal-unavailable {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: 0.875rem;
+  color: var(--secondary-text);
+  padding: 0.5rem;
+}
+.animal-unavailable small {
+  font-size: 0.75rem;
+}
+.profile-permalink {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+.profile-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.profile-filter-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+.profile-filter-row a[aria-current] {
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+}

@@ -6,6 +6,7 @@ import { ApiError } from '@/lib/api/errors'
 
 export interface DemoDraft {
   media: StoredMedia[]
+  savedAnimals: { actorId: string; animalId: string }[]
   data: FixtureSeed
   auth: { actorId: string | null; cacheScope: string }
 }
