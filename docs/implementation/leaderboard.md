@@ -4,8 +4,8 @@ Implemented directly in the main session, following the owner's supplied leaderb
 
 ## Surface
 
-- Full-width public platform page at `/leaderboard` with an illustrated cream banner, four impact totals, teal period controls and responsive gold/silver/bronze podium.
-- Reuses the owner's existing compact pet illustrations and achievement trophy; no screenshot text or sampled numeric values are shipped as product facts. Avatars use each person's selected illustration.
+- Full-width public platform page at `/leaderboard` with the owner-supplied cat-and-dog trophy banner, four impact totals, teal period controls and responsive gold/silver/bronze podium.
+- Uses the owner's dedicated 3:1 leaderboard banner with a semantic heading equivalent to its illustrated title; no sampled numeric values are shipped as product facts. Avatars use each person's selected illustration.
 - Real helper rows show contribution totals, the existing lifetime Kibble level, optional public mastery progress, up to three chosen badge thumbnails and a link to the remaining chosen badges.
 - All time, month and Monday-start week; category ranking for mission helpers, animal spotters and fundraiser supporters; name/username search; ten-row cursor pagination with previous/next and actual range.
 - Podium remains the selected category's top three when searching, so a search result is not promoted to first place. Empty search/periods have working recovery links. The existing public loading and error boundaries remain in effect.
@@ -36,3 +36,7 @@ Public profile names, post authors (feed, detail and profile stories) and commen
 The board and crown map consume the same `rankedCommunityContributors` projection. Feed, profile-story and comment-list responses compute the rank map once per response; standalone post/comment views derive it from that request's snapshot. There is no persisted rank flag, global cache or self-assigned input. A new read reflects changed rewards, tie-breaks or privacy. Falling outside ten or opting out removes the crown on the next fetch; this is not real-time push. Optimistic posts omit the crown until the server supplies a current attributed rank. Private identities have null rank; the UI also requires author attribution before rendering. Existing post content does not need to be rewritten when standings change.
 
 No new agents, automated tests/checks, detector checks, builds or browser verification were used. Jev evaluated a synthetic canonical-ranking-versus-fixed-crown policy (410 input / 31 output tokens), with no private records. Graphify remained a truncated repository/adapter locator, supplemented by direct source reading. Runtime and rendered behavior remain unverified under the user's testing override.
+
+## Supplied banner replacement
+
+The dedicated 2172 × 724 leaderboard illustration replaces the earlier composite header. Three proportional WebP assets (640, 1280 and 1920 pixels wide) preserve the entire scene and deliver approximately 29/66/106 KB per selected source. The image is high priority with intrinsic dimensions and responsive `srcSet`; it has no fixed-height crop on mobile. Equivalent HTML heading/subtitle text remains available to screen readers. The old composite-banner CSS and redundant visible headline were removed. No agents, tests, builds, detectors or browser checks were run.

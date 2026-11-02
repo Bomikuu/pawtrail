@@ -51,3 +51,7 @@ The upstream OFL text is preserved verbatim apart from trailing-whitespace norma
 | `public/images/illustrations/pet-companions.webp.json` |    930 | `1f0b679393c2207bd49b6c27e3e12f950436d55bac9414d7ef21cedec1eaad16` |
 | `public/images/pets/luna-cat.jpg`                      | 159031 | `7b3ebd4b5dd0488cd9b96f4c0ce37f8448bcf128e2318c65c85faeed37d53cc1` |
 | `public/images/pets/milo-dog.jpg`                      |  89678 | `549ecbbffd008a5e82579d6e574da867611b085f2d0aa150be3ad35734054df2` |
+
+## Owner-supplied leaderboard banner
+
+The owner supplied `codex-clipboard-500fdf6d-3932-4063-8511-6de46be0e4ef.png` (2172 × 724) specifically for the leaderboard banner. The full composition is preserved without cropping or generated changes. Sharp encodes responsive WebP derivatives at quality 82: `public/images/pawtrail/leaderboard-banner-640.webp` (28,962 bytes), `leaderboard-banner-1280.webp` (66,208 bytes), and `leaderboard-banner-1920.webp` (105,740 bytes). The original PNG is not shipped. The page selects one source for the viewport and retains a semantic heading/subtitle equivalent to the baked-in text. No external ownership or exclusive license is claimed.

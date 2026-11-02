@@ -242,30 +242,16 @@ export async function CommunityLeaderboard({
   return (
     <div className="recognition-board">
       <header className="recognition-banner">
+        <h1 className="sr-only">PawPal Leaderboard</h1>
+        <p className="sr-only">Celebrating our community of animal heroes!</p>
         <img
-          className="recognition-banner-pets"
-          src="/images/pawtrail/care-circle.webp"
-          width={504}
-          height={245}
+          src="/images/pawtrail/leaderboard-banner-1280.webp"
+          srcSet="/images/pawtrail/leaderboard-banner-640.webp 640w, /images/pawtrail/leaderboard-banner-1280.webp 1280w, /images/pawtrail/leaderboard-banner-1920.webp 1920w"
+          sizes="(max-width: 48rem) 100vw, (max-width: 65rem) calc(100vw - 8rem), calc(100vw - 19rem)"
+          width={1920}
+          height={640}
           alt=""
-        />
-        <div>
-          <img
-            className="recognition-banner-trophy"
-            src="/images/badges/mission-complete.webp"
-            width={72}
-            height={72}
-            alt=""
-          />
-          <h1>PawPal Leaderboard</h1>
-          <p>Celebrating our community of animal heroes</p>
-        </div>
-        <img
-          className="recognition-banner-friends"
-          src="/images/pawtrail/community-friends.webp"
-          width={264}
-          height={122}
-          alt=""
+          fetchPriority="high"
         />
       </header>
       <section
