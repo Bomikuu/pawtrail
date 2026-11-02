@@ -48,11 +48,11 @@ export function toPublicUser(record: PrivateUser): PublicUser {
 }
 export function toPublicSupporter(
   record: DemoContribution,
-  user: PrivateUser,
+  user: PrivateUser | undefined,
 ): PublicSupporter {
   const visible =
     !record.anonymous &&
-    user.settings.showContributions &&
+    user?.settings.showContributions &&
     user.settings.discoverable
   return parseResponse(publicSupporterSchema, {
     id: record.id,

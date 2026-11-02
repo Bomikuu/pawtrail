@@ -257,12 +257,6 @@ export function createMockApi(
       .filter((row) => row.campaignId === id)
       .map((row) => {
         const user = data.users.find((user) => user.id === row.contributorId)
-        if (!user)
-          throw new ApiError(
-            'INVALID_RESPONSE',
-            'Invalid supporter record',
-            502,
-          )
         return toPublicSupporter(row, user)
       })
     return list(

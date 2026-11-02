@@ -98,3 +98,51 @@ it('does not expose a withdrawn profile through comment or post author projectio
       .authorId,
   ).toBeNull()
 })
+
+it.each(['hidden', 'removed'] as const)(
+  'preserves named and anonymous contributions when their contributors are %s',
+  async (state) => {
+    const { api, repo } = await setup(store.dir)
+    for (const index of [1, 2]) {
+      const campaignId = `campaign-${index}`
+      const userId = `user-${index}`
+      const before = await api.fundraisers.supporters(campaignId, {})
+      expect(before.items).toHaveLength(1)
+      expect(before.items[0].userId).toBe(index === 1 ? null : userId)
+      if (state === 'hidden')
+        await repo.transact({
+          name: 'test.hide-contributor',
+          input: { userId },
+          execute(d) {
+            d.data.users.find(
+              (user) => user.id === userId,
+            )!.settings.discoverable = false
+          },
+        })
+      else {
+        await api.moderation.report({
+          target: { kind: 'user', id: userId },
+          reason: 'privacy',
+        })
+        const item = await itemFor(api, userId)
+        await api.moderation.review({
+          id: item.id,
+          expectedVersion: item.version,
+          action: 'remove',
+          reason,
+          evidenceRefs: [],
+        })
+      }
+      await api.auth.logout()
+      const after = await api.fundraisers.supporters(campaignId, {})
+      expect(after.items).toEqual(
+        before.items.map((row) => ({
+          ...row,
+          displayName: 'Anonymous helper',
+          userId: null,
+        })),
+      )
+      await api.auth.selectDemoActor('user-20')
+    }
+  },
+)

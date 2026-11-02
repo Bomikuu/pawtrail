@@ -332,10 +332,19 @@ function publishPostPhotos(draft: DemoDraft, id: string) {
     return [publicMedia(item)]
   })
 }
-function withdrawPostPhotos(draft: DemoDraft, id: string) {
-  const ids =
-    draft.community.attachments.find((a) => a.postId === id)?.mediaIds ?? []
-  for (const mediaId of ids) {
+export function postMediaIds(draft: DemoDraft, id: string): string[] {
+  return [
+    ...(draft.community.attachments.find((a) => a.postId === id)?.mediaIds ??
+      []),
+    ...(draft.data.posts
+      .find((post) => post.id === id)
+      ?.media.map((image) => image.id) ?? []),
+  ]
+}
+/** Reconcile after changing references, on the same draft as the content mutation. */
+export function reconcilePublicMedia(draft: DemoDraft, ids: string[]) {
+  const publicData = publicSnapshot(draft)
+  for (const mediaId of new Set(ids)) {
     const referenced = (value: unknown): boolean => {
       if (Array.isArray(value)) return value.some(referenced)
       if (!value || typeof value !== 'object') return false
@@ -345,7 +354,7 @@ function withdrawPostPhotos(draft: DemoDraft, id: string) {
         Object.values(row).some(referenced)
       )
     }
-    if (referenced(publicSnapshot(draft))) continue
+    if (referenced(publicData)) continue
     const item = draft.media.find((m) => m.asset.id === mediaId)
     if (item) {
       item.approved = false
@@ -608,7 +617,7 @@ export function createModerationService(
             else s.metadata.state = state
             if (item.ref.kind === 'post') {
               if (state === 'published') publishPostPhotos(draft, item.ref.id)
-              else withdrawPostPhotos(draft, item.ref.id)
+              else reconcilePublicMedia(draft, postMediaIds(draft, item.ref.id))
             }
           }
         }

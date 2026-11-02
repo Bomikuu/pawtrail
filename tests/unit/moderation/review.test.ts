@@ -233,3 +233,104 @@ it('retains rejected photos privately for the author to correct and resubmit', a
     ownerMedia: [{ id: media.id }],
   })
 })
+
+it.each([
+  ['delete', false],
+  ['detach', false],
+  ['retain', false],
+  ['delete', true],
+  ['detach', true],
+  ['retain', true],
+] as const)(
+  'reconciles public photos after author %s with shared reference %s',
+  async (action, shared) => {
+    const { api, repo } = await setup(store.dir, 'user-1')
+    const { png } = await import('../media/helpers')
+    const { readMedia } = await import('@/lib/server/media/delivery')
+    const media = await api.media.upload({
+      file: new Blob([png], { type: 'image/png' }),
+      filename: 'cat.png',
+      alt: 'Shared sample cat',
+      purpose: 'public_image',
+      sensitive: false,
+    })
+    const publish = async () => {
+      await api.auth.selectDemoActor('user-1')
+      const post = await api.community.create({
+        text: 'A photograph for review',
+        type: 'photo',
+        mediaIds: [media.id],
+        refs: [],
+      })
+      await api.auth.selectDemoActor('user-20')
+      const item = await itemFor(api, post.id)
+      await api.moderation.review({
+        id: item.id,
+        expectedVersion: item.version,
+        action: 'publish',
+        reason,
+        evidenceRefs: [],
+      })
+      return api.community.get(post.id)
+    }
+    const post = await publish()
+    const second = shared ? await publish() : undefined
+    await api.auth.selectDemoActor('user-1')
+    if (action === 'delete') await api.community.remove(post.id)
+    else {
+      const updated = await api.community.update(post.id, {
+        text: 'Corrected observation awaiting review',
+        type: 'story',
+        mediaIds: action === 'retain' ? [media.id] : [],
+        refs: [],
+        expectedVersion: post.version,
+      })
+      expect(updated.moderation).toBe('pending')
+      if (action === 'retain' && !shared)
+        expect(updated).toMatchObject({
+          media: [],
+          ownerMedia: [{ id: media.id, visibility: 'private' }],
+        })
+    }
+    await api.auth.logout()
+    if (second) {
+      expect((await readMedia(repo, media.id, true)).status).toBe(200)
+      expect((await api.community.get(second.id)).media[0].id).toBe(media.id)
+      await api.auth.selectDemoActor('user-1')
+      await api.community.remove(second.id)
+      await api.auth.logout()
+    }
+    await expect(readMedia(repo, media.id, true)).rejects.toMatchObject({
+      status: 404,
+    })
+    await expect(readMedia(repo, media.id)).rejects.toMatchObject({
+      status: 404,
+    })
+    expect(await repo.read((d) => d.media[0])).toMatchObject({
+      approved: false,
+      asset: {
+        visibility: 'private',
+        url: `/api/v1/media/${media.id}/content`,
+      },
+    })
+    if (action === 'retain') {
+      await api.auth.selectDemoActor('user-1')
+      expect(await api.community.get(post.id)).toMatchObject({
+        media: [],
+        ownerMedia: [{ id: media.id, visibility: 'private' }],
+      })
+      await api.auth.selectDemoActor('user-20')
+      const item = await itemFor(api, post.id)
+      await api.moderation.review({
+        id: item.id,
+        expectedVersion: item.version,
+        action: 'publish',
+        reason,
+        evidenceRefs: [],
+      })
+      await api.auth.logout()
+      expect((await readMedia(repo, media.id, true)).status).toBe(200)
+      expect((await api.community.get(post.id)).media[0].id).toBe(media.id)
+    }
+  },
+)

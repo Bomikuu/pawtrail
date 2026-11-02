@@ -1,5 +1,9 @@
 import 'server-only'
-import { publicSnapshot } from '@/features/moderation/service'
+import {
+  postMediaIds,
+  publicSnapshot,
+  reconcilePublicMedia,
+} from '@/features/moderation/service'
 import { freshModeration } from '@/lib/server/demo/migrations'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
@@ -119,7 +123,10 @@ export function projectPost(draft: DemoDraft, row: StoredPost): Post {
     },
     text: row.text,
     type: row.type,
-    media: row.media,
+    media: row.media.filter((image) => {
+      const item = draft.media.find((item) => item.asset.id === image.id)
+      return !item || item.approved
+    }),
     refs: links.map((link) => link.ref),
     linkedEntities: links,
     moderation: row.moderation,
@@ -395,6 +402,7 @@ export function createCommunityService(
             'This post changed. Refresh before editing again.',
             409,
           )
+        const previousMediaIds = postMediaIds(draft, id)
         const media = validateContent(draft, valid, row)
         Object.assign(row, {
           text: valid.text,
@@ -411,6 +419,10 @@ export function createCommunityService(
           postId: id,
           mediaIds: valid.mediaIds,
         })
+        reconcilePublicMedia(draft, [
+          ...previousMediaIds,
+          ...postMediaIds(draft, id),
+        ])
       })
       return get(id, options)
     },
@@ -420,6 +432,7 @@ export function createCommunityService(
         const row = owned(draft, id)
         row.moderation = 'removed'
         row.version += 1
+        reconcilePublicMedia(draft, postMediaIds(draft, id))
       })
     },
     async setReaction(id, active, options) {
