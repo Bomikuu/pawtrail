@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+coverage/
+.pawtrail/
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store

@@ -1,0 +1,1900 @@
+# PAWTRAIL — FULL APPLICATION IMPLEMENTATION PROMPT
+
+## 1. Project Overview
+
+Build a complete, modern, responsive web application called **PawTrail**.
+
+**Tagline:** Every Paw Has a Story.
+
+**Secondary tagline:** Discover. Care. Connect.
+
+PawTrail is a community-powered animal welfare platform that combines animal discovery, location-based assistance, pet adoption, community fundraising, gamification, and social interaction.
+
+The platform should feel like a combination of:
+
+- **Google Maps:** Discover animals and animal welfare activities around you.
+- **Tinder:** Swipe through adoptable animals and find a compatible companion.
+- **GoFundMe / Kickstarter:** Raise money for animal operations, food, rescue expenses, and shelter needs.
+- **Petfinder:** Explore adoptable animals and detailed animal profiles.
+- **Social Media:** Share sightings, rescue stories, feeding activities, and animal updates.
+- **Gamified Community Platform:** Earn Kibble for helping animals and compete on the Top PawPal leaderboard.
+
+Despite supporting multiple features, PawTrail must maintain a unified experience focused on helping animals.
+
+**Core philosophy:**
+
+Every animal has a story, every location matters, and every act of kindness should make a difference.
+
+---
+
+# 2. Technology Stack
+
+Use the following technologies.
+
+### Frontend
+
+- Next.js with App Router
+- TypeScript
+- React
+- Tailwind CSS
+- shadcn/ui
+- Lucide React for icons
+- Google Maps JavaScript API
+- `@vis.gl/react-google-maps` for React map integration
+- TanStack Query for API data fetching and caching
+- Zustand for lightweight client-side state
+- React Hook Form with Zod validation
+- Framer Motion or Motion for animations
+- Recharts for dashboards and analytics
+
+### Backend
+
+The actual backend will use:
+
+- Django
+- Django REST Framework
+- GeoDjango
+- PostgreSQL
+- PostGIS
+- JWT authentication
+- Docker containers for deployment
+
+For this implementation, focus on the **Next.js frontend**.
+
+Build a complete application using realistic mock data and a centralized API service layer.
+
+The application should be designed so mock implementations can later be replaced with Django REST Framework endpoints without rebuilding the frontend.
+
+Use TypeScript interfaces and domain-specific API modules.
+
+### Development requirements
+
+- Use functional React components.
+- Prefer Server Components whenever appropriate.
+- Use Client Components only where interactivity is required.
+- Follow Next.js App Router conventions.
+- Use Tailwind for styling.
+- Use shadcn/ui as the primary component system.
+- Do not use semicolons in frontend TypeScript or JavaScript.
+- Keep code consistently formatted.
+- Create reusable components.
+- Implement loading, empty, and error states.
+- Do not leave broken buttons or nonfunctional interactions.
+- Avoid excessive dependencies and unnecessary abstractions.
+
+---
+
+# 3. Branding and Visual Identity
+
+The application should use a playful but professional visual identity.
+
+## Logo Direction
+
+Use the established PawTrail logo concept:
+
+- Cute orange-and-white cat.
+- Cute cream-and-brown dog.
+- Orange map location marker containing a paw.
+- Rounded, hand-drawn illustration style.
+- Flat 2D artwork with thick, friendly outlines.
+
+The design should resemble a modern community application rather than a corporate veterinary management dashboard.
+
+## Color Palette
+
+Use a warm, friendly palette.
+
+| Purpose | Color | Hex |
+|---|---|---|
+| Primary | Warm Orange | `#F97316` |
+| Primary Dark | Deep Orange | `#EA580C` |
+| Secondary | Forest Teal | `#0F766E` |
+| Accent | Soft Green | `#84CC16` |
+| Background | Warm Cream | `#FFFBF5` |
+| Card Background | White | `#FFFFFF` |
+| Primary Text | Dark Brown | `#3B2416` |
+| Muted Text | Warm Gray | `#78716C` |
+| Border | Light Beige | `#EDE5D8` |
+
+Use orange for primary actions and important highlights.
+
+Use teal or green for positive community actions, verified statuses, and welfare-related information.
+
+## Typography
+
+Use a friendly rounded typeface for headings, such as Nunito.
+
+Use a highly readable typeface for body text, such as Inter.
+
+## Design Rules
+
+1. Use a clean, modern layout.
+2. Keep generous spacing between sections.
+3. Use rounded cards and buttons.
+4. Use subtle borders and very light shadows.
+5. Avoid glossy elements and heavy gradients.
+6. Avoid excessive decorative elements.
+7. Use flat doodle-style animal illustrations.
+8. Add meaningful hover states.
+9. Support light mode first.
+10. Ensure the application works well on mobile devices.
+
+The design should be visually engaging without becoming childish.
+
+### Doodle Illustration Style
+
+Use a consistent illustration system:
+
+- Flat colors.
+- Thick rounded outlines.
+- Simple facial expressions.
+- Minimal shading.
+- Orange, brown, cream, teal, and green accents.
+- Cute cats, dogs, paw prints, trails, and map markers.
+
+Use illustrations primarily for landing pages, onboarding, and empty states.
+
+Use real animal photographs for listings, profiles, adoption cards, and fundraising campaigns.
+
+---
+
+# 4. Global Application Layout
+
+## Desktop Navigation
+
+Create a clean navigation bar.
+
+**Left:**
+PawTrail logo.
+
+**Center:**
+
+- Explore
+- Adopt
+- Fundraisers
+- Missions
+- Community
+- Leaderboard
+
+**Right:**
+
+- Search
+- Notifications
+- Kibble balance
+- Create button
+- User avatar
+
+The Create button should open a dropdown containing:
+
+- Report Animal
+- Create Sighting
+- Start Fundraiser
+- Create Community Post
+- Create Quest
+
+Use appropriate authentication checks for protected actions.
+
+## Mobile Navigation
+
+Use a mobile-first bottom navigation.
+
+Items:
+
+1. Explore
+2. Adopt
+3. Create
+4. Community
+5. Profile
+
+The central Create button should be visually emphasized.
+
+Additional pages should remain accessible from the profile menu and mobile navigation drawer.
+
+---
+
+# 5. Landing Page
+
+Route:
+
+`/`
+
+Create a polished homepage that introduces PawTrail and encourages users to participate.
+
+## Hero Section
+
+### Headline
+
+**Every Paw Has a Story.**
+
+### Description
+
+Discover animals in your neighborhood, connect with loving companions, support rescue missions, and become part of a community making every paw count.
+
+### Primary CTA
+
+**Explore the Map**
+
+### Secondary CTA
+
+**Find Your Companion**
+
+### Hero Visual
+
+Use a creative composition featuring:
+
+- A friendly cat and dog illustration.
+- A simplified map.
+- Paw-shaped map markers.
+- Small animal profile cards.
+- A floating community assistance card.
+
+Avoid large glossy illustrations.
+
+The hero should be approachable, colorful, and clean.
+
+## Community Statistics
+
+Below the hero, display summary cards:
+
+- Animals Discovered
+- Animals Adopted
+- Community Helpers
+- Successful Fundraisers
+
+Use mock statistics and clearly identify them as sample data during development.
+
+## Main Sections
+
+### Discover Animals Near You
+
+Display a preview of the map with nearby animal cards.
+
+CTA: Explore Animals
+
+### Find Your Perfect Companion
+
+Introduce swipe-based adoption.
+
+CTA: Start Matching
+
+### Every Paw Deserves Help
+
+Display active fundraising campaigns.
+
+CTA: Support a Fundraiser
+
+### Become a PawPal
+
+Explain how people can earn Kibble by helping animals.
+
+CTA: Join the Community
+
+### Stories Worth Sharing
+
+Display community rescue stories, adoption stories, and recent achievements.
+
+---
+
+# 6. Explore — Interactive Animal Map
+
+Route:
+
+`/explore`
+
+This is one of PawTrail's most important features.
+
+Use **Google Maps**.
+
+## Layout
+
+### Desktop
+
+Use a split-screen layout.
+
+**Left panel:**
+
+- Search
+- Location filters
+- Animal list
+- Animal cards
+
+**Right panel:**
+
+- Interactive Google Map
+
+Allow the list panel to collapse or resize.
+
+### Mobile
+
+Make the map the primary view.
+
+Provide a draggable bottom sheet containing animal results.
+
+## Map Features
+
+Implement:
+
+- Google Maps integration.
+- Marker clustering.
+- Custom animal markers.
+- Animal group markers.
+- Mission markers.
+- Fundraising markers where relevant.
+- Event markers.
+- Current location button.
+- Search by location.
+- Search by map bounds.
+- Map zoom controls.
+- Animal information windows.
+- Marker selection.
+- List/map synchronization.
+
+## Marker Types
+
+Use different visual styles:
+
+**Individual Cat:** Orange paw marker.
+
+**Individual Dog:** Teal paw marker.
+
+**Horde:** Group marker.
+
+**Urgent Mission:** Orange or red assistance marker.
+
+**Fundraiser:** Heart marker.
+
+**Event:** Calendar marker.
+
+## Animal Card
+
+Each card should display:
+
+- Animal photograph.
+- Name.
+- Species.
+- Approximate location.
+- Last seen.
+- Status.
+- Personality tags.
+- Health observations.
+- Badges.
+- View Profile button.
+
+Example:
+
+**Mochi — The Void**
+
+Black Cat  
+Matina, Davao City  
+Last seen 2 hours ago
+
+Friendly · Likes Patting
+
+CTA: View Mochi
+
+## Filters
+
+Include:
+
+- Cats
+- Dogs
+- Other Animals
+- Nearby
+- Needs Help
+- Missing
+- Recently Seen
+- Adoptable
+- Hordes
+
+Use Google Maps only for geographical visualization. Animal information and map queries must come from PawTrail's API.
+
+Exact sensitive locations must not be publicly exposed.
+
+---
+
+# 7. Public Animal Profiles — SEO Priority
+
+Route:
+
+`/pets/[slug]`
+
+Animal profile pages are a **major SEO priority**.
+
+Implement them using Next.js App Router with Server Components.
+
+Do not make the entire animal profile page client-side rendered.
+
+## SEO Requirements
+
+Implement:
+
+- Server-side data fetching.
+- Dynamic metadata.
+- Canonical URLs.
+- Open Graph images.
+- Twitter/social card metadata.
+- Structured data using appropriate Schema.org types.
+- Descriptive image alt text.
+- Dynamic XML sitemaps.
+- Robots configuration.
+- Proper 404 handling.
+- Cache revalidation.
+- Human-readable slugs.
+
+Do not create fictional structured-data properties or unsupported schema types.
+
+## Example URL
+
+`/pets/mochi-the-void`
+
+## Animal Profile Layout
+
+### Header
+
+Large animal cover photograph.
+
+Display:
+
+- Animal name.
+- Species.
+- Approximate age.
+- Gender.
+- Location.
+- Status.
+- Verification badge.
+
+### Animal Information
+
+Include:
+
+- Description
+- Appearance
+- Body condition
+- Personality
+- Behavior
+- Known characteristics
+
+### Badges
+
+Display colorful badges such as:
+
+- The Void
+- Ginger Dynamo
+- Chonky Legend
+- Spicy Nugget
+- Neighborhood Favorite
+- TNR Verified
+
+### Activity Timeline
+
+Show:
+
+- Sightings.
+- Feeding reports.
+- Community observations.
+- Rescue activities.
+- Medical assistance.
+- Adoption updates.
+
+### Behavior Map
+
+Display historical sightings using Google Maps.
+
+Provide filters:
+
+- Morning
+- Afternoon
+- Evening
+- All Time
+
+Use generalized locations where appropriate.
+
+### Help This Animal
+
+Display active Missions and Fundraisers associated with the animal.
+
+### Wall of Helpers
+
+Display community members who have helped the animal.
+
+Include an anonymous contribution option.
+
+### Community Discussion
+
+Allow authenticated users to:
+
+- Leave comments.
+- Share updates.
+- Upload relevant photographs.
+- Report misinformation.
+
+### Sticky Action Bar
+
+Provide:
+
+- Report Sighting
+- Help This Animal
+- Share Profile
+- Save Animal
+
+For adoptable animals, include:
+
+**Apply to Adopt**
+
+Public animal pages must be accessible without authentication.
+
+---
+
+# 8. Tinder-Style Animal Adoption
+
+Route:
+
+`/adopt`
+
+Create a modern **swipe-based adoption discovery experience**.
+
+The visual interaction should feel inspired by Tinder, but the purpose is responsible animal adoption.
+
+Do not make the interface look like a dating application.
+
+## Main Experience
+
+Display a large animal card in the center.
+
+The card contains:
+
+- Large animal photograph.
+- Name.
+- Age.
+- Species.
+- Gender.
+- Approximate location.
+- Personality traits.
+- Adoption availability.
+- Shelter or rescuer name.
+
+### Swipe Interactions
+
+**Swipe Left:** Pass.
+
+**Swipe Right:** Interested.
+
+**Swipe Up:** View full profile.
+
+Provide equivalent accessible buttons:
+
+- Pass
+- Interested
+- View Profile
+
+Do not require swipe gestures to perform any action.
+
+Add smooth, restrained animations.
+
+## Example Adoption Card
+
+**Luna**
+
+Female · 8 months  
+Mixed Breed  
+Davao City
+
+Playful · Friendly · Loves Attention
+
+Buttons:
+
+❌ Pass  
+❤️ Interested  
+👁 View Profile
+
+## Matching Logic
+
+When a user marks an animal as Interested:
+
+1. Save the animal to the user's interested list.
+2. Allow the user to review its full profile.
+3. Allow the user to submit an adoption application.
+4. Notify the responsible shelter or rescuer.
+5. The shelter reviews the application.
+6. If approved, PawTrail enables the next adoption steps.
+
+**Swiping right does not automatically approve adoption.**
+
+An adoption match means the user has expressed interest and may be compatible—not that an adoption has been finalized.
+
+## Adoption Preferences
+
+Before starting, users can optionally answer a questionnaire.
+
+Questions include:
+
+- Preferred animal species.
+- Preferred age range.
+- Preferred animal size.
+- Living environment.
+- Experience with animals.
+- Other pets at home.
+- Activity level.
+- Preferred personality.
+- Maximum travel distance.
+
+## Compatibility Recommendations
+
+Use a simple rule-based compatibility system initially.
+
+Do not require AI.
+
+For example:
+
+```text
+Compatibility Score:
+
+Species Preference          20%
+Living Environment          20%
+Lifestyle Compatibility     20%
+Experience                  15%
+Other Pets Compatibility    15%
+Distance Preference         10%
+```
+
+These are illustrative weights, not validated animal welfare criteria.
+
+The platform should show explanations such as:
+
+**Good Match — 87%**
+
+"Your active lifestyle and experience with dogs may suit Luna's playful personality."
+
+Avoid presenting compatibility as a guarantee.
+
+## Adoption Pages
+
+Implement:
+
+`/adopt` — Swipe discovery
+
+`/adopt/preferences` — Adoption preferences
+
+`/adopt/interested` — Saved animals
+
+`/adopt/applications` — Submitted applications
+
+`/adopt/applications/[id]` — Application details
+
+## Adoption Application
+
+Use a multi-step form.
+
+Collect only information necessary for the initial application.
+
+Include:
+
+- Basic applicant information.
+- Preferred animal.
+- Living situation.
+- Animal care experience.
+- Adoption motivation.
+- Agreement to responsible adoption policies.
+
+Sensitive information should not appear on public profiles.
+
+## Adoption Management
+
+For shelters and rescuers:
+
+- Review applications.
+- View applicant responses.
+- Approve or reject applications.
+- Request additional information.
+- Track adoption status.
+
+Use mock data and local state initially.
+
+---
+
+# 9. Fundraising — GoFundMe / Kickstarter Inspired
+
+Route:
+
+`/fundraisers`
+
+Build a complete fundraising experience for animal welfare.
+
+The design should feel like a modern crowdfunding platform.
+
+Fundraising must be one of PawTrail's primary features.
+
+## Fundraising Categories
+
+Support campaigns for:
+
+### Medical Operations
+
+Examples:
+
+- Emergency surgery.
+- Fracture treatment.
+- Veterinary hospitalization.
+- Diagnostic procedures.
+- Medication.
+- Rehabilitation.
+
+### Food and Supplies
+
+Examples:
+
+- Monthly feeding programs.
+- Cat food.
+- Dog food.
+- Drinking water.
+- Feeding bowls.
+- Blankets.
+- Shelter cleaning supplies.
+
+### Rescue Operations
+
+Examples:
+
+- Animal transportation.
+- Emergency rescue.
+- Temporary boarding.
+- Animal rehabilitation.
+- Rescue equipment.
+
+### Shelter Support
+
+Examples:
+
+- Shelter repairs.
+- New kennels.
+- Animal enclosures.
+- Ventilation improvements.
+- Sanitation facilities.
+
+### Community Programs
+
+Examples:
+
+- Libre Kapon.
+- Vaccination drives.
+- Adoption events.
+- Community feeding programs.
+
+## Fundraiser Discovery Page
+
+Design a card-based grid.
+
+### Fundraiser Card
+
+Each card should display:
+
+- Campaign cover photograph.
+- Campaign title.
+- Animal or organization.
+- Location.
+- Fundraising category.
+- Amount raised.
+- Funding target.
+- Progress bar.
+- Supporter count.
+- Campaign status.
+- Donate button.
+
+### Example Campaign
+
+**Help Mochi Get His Eye Surgery**
+
+Organized by: Davao Animal Rescue
+
+Category: Medical
+
+Raised: ₱12,500  
+Goal: ₱20,000
+
+Progress: 62.5%
+
+42 supporters
+
+CTA: Donate Now
+
+## Filtering
+
+Allow users to filter campaigns by:
+
+- Medical
+- Food
+- Rescue
+- Shelter
+- Community
+- Most Urgent
+- Nearly Funded
+- Recently Created
+- Near Me
+- Completed
+
+Add sorting options.
+
+---
+
+# 10. Fundraiser Detail Page
+
+Route:
+
+`/fundraisers/[slug]`
+
+Create a polished crowdfunding page.
+
+## Desktop Layout
+
+Use a two-column layout.
+
+### Left Column
+
+- Cover photograph.
+- Campaign title.
+- Organizer information.
+- Campaign story.
+- Animal information.
+- Gallery.
+- Updates.
+- Expense breakdown.
+- Supporter messages.
+
+### Right Column
+
+Sticky donation card containing:
+
+- Amount raised.
+- Target amount.
+- Progress percentage.
+- Number of supporters.
+- Donation button.
+- Share button.
+- Campaign verification status.
+
+## Campaign Example
+
+### Help Mochi Recover From Surgery
+
+Mochi is a community cat who was recently found with an eye injury.
+
+A local volunteer brought him to a veterinary clinic.
+
+The veterinarian recommended treatment and possible surgery.
+
+Our goal is to raise ₱20,000 to cover veterinary expenses and recovery supplies.
+
+### Expense Breakdown
+
+| Expense | Estimated Cost |
+|---|---:|
+| Veterinary Consultation | ₱1,000 |
+| Diagnostic Procedures | ₱3,000 |
+| Surgery | ₱12,000 |
+| Medication | ₱2,000 |
+| Recovery Supplies | ₱2,000 |
+| **Total** | **₱20,000** |
+
+## Fundraising Progress
+
+Display:
+
+- Amount raised.
+- Total target.
+- Percentage funded.
+- Number of contributors.
+- Remaining amount.
+
+## Campaign Updates
+
+Allow organizers to publish updates.
+
+Examples:
+
+- Veterinary consultation completed.
+- Surgery scheduled.
+- Operation completed.
+- Recovery progress.
+- Medication purchased.
+
+Updates may include photographs and supporting documents.
+
+## Donation Transparency
+
+Include a dedicated transparency section.
+
+Display:
+
+- Campaign target.
+- Total donations.
+- Recorded expenses.
+- Available campaign balance.
+- Expense descriptions.
+- Supporting receipts when available.
+- Payout or disbursement status.
+
+Support redaction of private medical, identity, and banking information.
+
+## Donation Interface
+
+Clicking Donate opens a clean modal.
+
+Include:
+
+- Preset donation amounts.
+- Custom amount.
+- Optional message.
+- Anonymous donation option.
+- Donation summary.
+
+Use Philippine peso formatting.
+
+Example amounts:
+
+₱100 · ₱250 · ₱500 · ₱1,000
+
+### Important Payment Scope
+
+For now, implement a **mock donation flow** only.
+
+Show a clear development/demo indicator.
+
+Do not simulate successful real-money transfers or claim donations were processed.
+
+Actual payment processing will be implemented later through the Django backend and a supported payment provider.
+
+Future options may include GCash, cards, and bank-based payment methods, subject to provider support and compliance.
+
+---
+
+# 11. Create Fundraiser
+
+Route:
+
+`/fundraisers/create`
+
+Implement a multi-step campaign creation wizard.
+
+## Step 1 — Campaign Type
+
+Select:
+
+- Medical
+- Food
+- Rescue
+- Shelter
+- Community Program
+
+## Step 2 — Campaign Details
+
+Fields:
+
+- Campaign title.
+- Description.
+- Cover photograph.
+- Supporting images.
+- Animal or Horde.
+- Beneficiary.
+- Location.
+
+## Step 3 — Funding Target
+
+Fields:
+
+- Target amount.
+- Expense breakdown.
+- Expected timeline.
+
+## Step 4 — Supporting Evidence
+
+Support:
+
+- Veterinary estimates.
+- Relevant receipts.
+- Animal photographs.
+- Shelter or rescuer documentation.
+
+## Step 5 — Review and Publish
+
+Display a complete preview.
+
+Campaigns requiring verification should enter an appropriate review state before receiving real donations.
+
+---
+
+# 12. Fundraising Management Dashboard
+
+Route:
+
+`/dashboard/fundraisers`
+
+Create a dashboard for organizers.
+
+## Summary Cards
+
+- Active Campaigns
+- Total Raised
+- Total Supporters
+- Completed Campaigns
+
+## Campaign Cards
+
+Display:
+
+- Campaign information.
+- Progress bar.
+- Recent donations.
+- Funding status.
+- Edit button.
+- Post Update button.
+- View Campaign button.
+
+## Additional Functionality
+
+Organizers should be able to:
+
+- Edit permitted campaign information.
+- Publish updates.
+- Add expense records.
+- Upload receipts.
+- View supporter history.
+- Mark approved campaign milestones.
+- Close a campaign.
+
+Avoid allowing organizers to silently modify financial history or erase completed transactions.
+
+---
+
+# 13. Help Missions
+
+Route:
+
+`/missions`
+
+Missions represent assistance requests for community animals.
+
+Examples:
+
+- Feed a hungry cat.
+- Provide drinking water.
+- Help transport an animal to a veterinarian.
+- Check the condition of an injured animal.
+- Deliver supplies to a shelter.
+
+## Mission Card
+
+Display:
+
+- Animal photograph.
+- Mission title.
+- Priority.
+- Location.
+- Required activity.
+- Deadline, when applicable.
+- Kibble reward.
+- Number of volunteers.
+
+CTA:
+
+**Help This Animal**
+
+## Mission Detail
+
+Include:
+
+- Animal information.
+- Location.
+- Mission instructions.
+- Safety notes.
+- Required supplies.
+- Verification requirements.
+- Activity history.
+
+## Mission Flow
+
+1. User opens a mission.
+2. User accepts the mission.
+3. Mission appears in their dashboard.
+4. User completes the activity.
+5. User submits evidence.
+6. Submission is reviewed.
+7. Mission is completed.
+8. Eligible Kibble is awarded.
+
+Use mock backend behavior initially.
+
+---
+
+# 14. Kibble Rewards
+
+Kibble is PawTrail's community reward system.
+
+Initially, implement it as a non-cash community points system.
+
+## User Wallet
+
+Route:
+
+`/dashboard/kibble`
+
+Display:
+
+- Current Kibble balance.
+- Total Kibble earned.
+- Monthly Kibble earned.
+- Completed contributions.
+- Recent transactions.
+
+## Kibble Activity
+
+Example:
+
+```text
++20 Kibble — Verified Animal Sighting
++8 Kibble — Feeding Contribution
++30 Kibble — Completed Help Mission
++15 Kibble — Winning Animal Name
+```
+
+## Leaderboard
+
+Route:
+
+`/leaderboard`
+
+Create a polished leaderboard with:
+
+- Top three PawPal users.
+- User avatars.
+- Rankings.
+- Kibble earned this month.
+- Contribution counts.
+- Achievement badges.
+- Monthly and all-time tabs.
+
+Use a custom, flat 2D animal illustration in the leaderboard hero.
+
+Avoid excessive dashboard decorations.
+
+Purchased points must not count toward volunteer rankings.
+
+Future paid Kibble and cash-out functionality should be modeled separately from community rewards.
+
+---
+
+# 15. Animal Groups — Hordes
+
+Routes:
+
+`/hordes`
+
+`/hordes/[slug]`
+
+Hordes represent groups of animals sharing an area.
+
+Example:
+
+**The Orange Horde**
+
+7 Cats  
+Matina, Davao City
+
+## Horde Page
+
+Display:
+
+- Group photograph.
+- Group name.
+- Location.
+- Estimated number of animals.
+- Member animal cards.
+- Recent sightings.
+- Shared feeding history.
+- Group needs.
+- Active Missions.
+- Active Fundraisers.
+- Contributors.
+
+### Group Fundraising
+
+Allow fundraisers to target an entire Horde.
+
+Example:
+
+**Monthly Food Supply for the Orange Horde**
+
+Goal: ₱5,000
+
+Purpose: Cat food and basic feeding supplies.
+
+---
+
+# 16. Community Feed
+
+Route:
+
+`/community`
+
+Create a social feed focused on animal welfare.
+
+## Content Types
+
+- Sighting updates.
+- Feeding reports.
+- Rescue stories.
+- Adoption stories.
+- Fundraiser updates.
+- Community announcements.
+- Animal photographs.
+
+## Post Card
+
+Include:
+
+- Author avatar.
+- Display name.
+- Post date.
+- Associated animal.
+- Post content.
+- Attached photographs.
+- Comments.
+- Share button.
+- Report button.
+
+Create reusable post components.
+
+## Post Creation
+
+Authenticated users can:
+
+- Write a post.
+- Upload photographs.
+- Link an animal.
+- Link a Horde.
+- Link a fundraiser.
+- Link a mission.
+
+Use moderation states for submitted content.
+
+---
+
+# 17. User Profiles
+
+Routes:
+
+`/users/[username]`
+
+`/dashboard/profile`
+
+## Public Profile
+
+Display:
+
+- Profile photograph.
+- Display name.
+- Bio.
+- Location, if voluntarily shared.
+- PawPal level.
+- Badges.
+- Contribution statistics.
+- Animals helped.
+- Missions completed.
+- Fundraisers supported.
+- Community posts.
+
+Include privacy settings.
+
+## Private Dashboard
+
+Display:
+
+- My Animals
+- My Sightings
+- My Missions
+- My Adoption Interests
+- My Adoption Applications
+- My Fundraisers
+- My Kibble
+- Saved Animals
+- Notifications
+- Account Settings
+
+---
+
+# 18. Shelters and Rescuers
+
+Routes:
+
+`/shelters`
+
+`/shelters/[slug]`
+
+Create organization profiles.
+
+Each profile should include:
+
+- Organization name.
+- Logo.
+- Description.
+- Verification status.
+- General location.
+- Adoptable animals.
+- Active fundraisers.
+- Events.
+- Community updates.
+- Contact options.
+
+### Shelter Dashboard
+
+Provide sections for:
+
+- Animals.
+- Adoption Applications.
+- Fundraisers.
+- Missions.
+- Events.
+- Volunteers.
+
+Role-based functionality should be enforced by the backend when connected.
+
+---
+
+# 19. Events
+
+Routes:
+
+`/events`
+
+`/events/[slug]`
+
+Create a location-based event discovery experience.
+
+Examples:
+
+- Libre Kapon.
+- Adoption Day.
+- Vaccination Drive.
+- Community Feeding.
+- Animal Welfare Fundraiser.
+
+Display:
+
+- Cover photo.
+- Organizer.
+- Location.
+- Schedule.
+- Event description.
+- Attendee count.
+- RSVP button.
+
+Events should also be discoverable from the Google Maps interface.
+
+---
+
+# 20. Search Experience
+
+Create a global search interface.
+
+Search across:
+
+- Animals.
+- Hordes.
+- Shelters.
+- Fundraisers.
+- Missions.
+- Events.
+
+Provide autocomplete suggestions.
+
+Use categorized search results.
+
+Example:
+
+Search: `Mochi`
+
+Results:
+
+**Animals**
+Mochi — Black Cat
+
+**Fundraisers**
+Help Mochi Get Eye Surgery
+
+**Community**
+Mochi Recovery Update
+
+Search results should link directly to the relevant public pages.
+
+---
+
+# 21. SEO Implementation
+
+SEO must be treated as a core architectural requirement.
+
+The following pages should support server-rendered content:
+
+- Animal profiles.
+- Horde profiles.
+- Fundraiser pages.
+- Shelter profiles.
+- Event pages.
+- Public user profiles, subject to privacy settings.
+
+## Requirements
+
+Use Next.js metadata generation.
+
+Implement:
+
+- `generateMetadata`
+- Server Components
+- Route-level loading states
+- `notFound()`
+- `sitemap.ts`
+- `robots.ts`
+- Canonical tags
+- Open Graph metadata
+- Twitter cards
+- Appropriate JSON-LD structured data
+- Descriptive page titles
+- Semantic HTML
+- Image optimization
+
+The Google Maps component should be client-rendered within otherwise server-rendered pages.
+
+Do not use a site-wide `ssr: false` configuration.
+
+Ensure important profile text remains available to search engines without requiring the map to load.
+
+## Example Animal Metadata
+
+Title:
+
+**Mochi — Community Cat in Davao City | PawTrail**
+
+Description:
+
+Meet Mochi, a friendly black community cat in Davao City. View recent sightings, personality traits, photographs, and ways to help on PawTrail.
+
+## Example Fundraiser Metadata
+
+Title:
+
+**Help Mochi Get Eye Surgery | PawTrail Fundraiser**
+
+Description:
+
+Support Mochi's veterinary treatment and recovery. View the campaign goal, updates, and verified expense information.
+
+---
+
+# 22. Suggested Next.js Project Structure
+
+Use a feature-based architecture.
+
+```text
+src/
+├── app/
+│   ├── (marketing)/
+│   │   └── page.tsx
+│   │
+│   ├── (public)/
+│   │   ├── explore/
+│   │   ├── pets/
+│   │   │   └── [slug]/
+│   │   ├── hordes/
+│   │   ├── adopt/
+│   │   │   ├── preferences/
+│   │   │   ├── interested/
+│   │   │   └── applications/
+│   │   ├── fundraisers/
+│   │   │   ├── [slug]/
+│   │   │   └── create/
+│   │   ├── missions/
+│   │   ├── community/
+│   │   ├── leaderboard/
+│   │   ├── shelters/
+│   │   ├── events/
+│   │   └── users/
+│   │
+│   ├── (auth)/
+│   │   ├── login/
+│   │   └── register/
+│   │
+│   ├── (dashboard)/
+│   │   └── dashboard/
+│   │       ├── profile/
+│   │       ├── animals/
+│   │       ├── sightings/
+│   │       ├── missions/
+│   │       ├── adoptions/
+│   │       ├── fundraisers/
+│   │       ├── kibble/
+│   │       └── settings/
+│   │
+│   ├── layout.tsx
+│   ├── sitemap.ts
+│   ├── robots.ts
+│   └── not-found.tsx
+│
+├── components/
+│   ├── ui/
+│   ├── layout/
+│   ├── shared/
+│   ├── maps/
+│   └── illustrations/
+│
+├── features/
+│   ├── auth/
+│   ├── animals/
+│   ├── hordes/
+│   ├── sightings/
+│   ├── adoption/
+│   ├── fundraising/
+│   ├── missions/
+│   ├── kibble/
+│   ├── community/
+│   ├── shelters/
+│   ├── events/
+│   └── leaderboard/
+│
+├── lib/
+│   ├── api/
+│   ├── google-maps/
+│   ├── utils/
+│   └── validations/
+│
+├── hooks/
+├── stores/
+├── types/
+├── data/
+└── styles/
+```
+
+Keep domain-specific components within their corresponding feature directories.
+
+Avoid putting all application logic in a single page or component.
+
+---
+
+# 23. Mock Data and API Integration
+
+Use realistic mock data while the Django backend is under development.
+
+Provide sample data for:
+
+- 20 animals.
+- 5 Hordes.
+- 15 adoptable animals.
+- 10 fundraisers.
+- 10 missions.
+- 10 community posts.
+- 5 shelters.
+- 5 events.
+- 20 leaderboard users.
+
+Use locations around Davao City for initial demonstration data.
+
+All mock data must be clearly distinguishable from real community records.
+
+## API Layer
+
+Prepare API modules such as:
+
+```text
+lib/api/
+├── client.ts
+├── auth.ts
+├── animals.ts
+├── sightings.ts
+├── hordes.ts
+├── adoption.ts
+├── fundraisers.ts
+├── missions.ts
+├── kibble.ts
+├── shelters.ts
+└── events.ts
+```
+
+Use consistent request and response types.
+
+Include pagination, filtering, and error handling.
+
+Provide a configurable mock mode.
+
+Example environment variable:
+
+`NEXT_PUBLIC_USE_MOCK_API=true`
+
+The application should be able to switch to the Django REST API later through configuration.
+
+---
+
+# 24. Responsive Design
+
+Design mobile-first.
+
+## Desktop
+
+- Full navigation.
+- Split map/list interface.
+- Multi-column card grids.
+- Two-column fundraiser detail pages.
+- Sidebar-enabled dashboards.
+
+## Tablet
+
+- Responsive grids.
+- Collapsible navigation.
+- Adaptive map panels.
+
+## Mobile
+
+- Bottom navigation.
+- Full-screen adoption swipes.
+- Map with bottom sheet.
+- Single-column fundraiser cards.
+- Sticky primary action buttons.
+- Touch-friendly forms and controls.
+
+Avoid horizontal scrolling and oversized page headers.
+
+Ensure primary actions remain easy to reach.
+
+---
+
+# 25. UX Requirements
+
+Every major interaction should feel complete.
+
+Implement:
+
+- Skeleton loading states.
+- Helpful empty states.
+- Toast notifications.
+- Confirmation dialogs.
+- Form validation.
+- Image upload previews.
+- Search feedback.
+- Pagination or infinite loading.
+- Accessible dropdowns.
+- Responsive dialogs and drawers.
+- Hover and focus states.
+- Optimistic updates where appropriate.
+
+Use shadcn/ui components such as:
+
+- Button
+- Card
+- Badge
+- Tabs
+- Dialog
+- Drawer
+- Sheet
+- Input
+- Textarea
+- Select
+- Avatar
+- Skeleton
+- Tooltip
+- Dropdown Menu
+- Progress
+- Alert
+- Form
+- Toast / Sonner
+
+### Empty State Example
+
+**No animals found nearby**
+
+Try exploring another area or adjusting your filters.
+
+CTA: Reset Filters
+
+Display a small flat doodle illustration of a cat looking through binoculars.
+
+---
+
+# 26. Trust, Privacy, and Safety
+
+Implement frontend support for:
+
+- Content moderation states.
+- User reporting.
+- Campaign verification badges.
+- Adoption application privacy.
+- Animal location privacy.
+- Anonymous donations.
+- Sensitive media handling.
+- Protected account routes.
+- Verified community contributions.
+
+Do not expose exact home addresses for adopted animals.
+
+Do not display private applicant information publicly.
+
+Do not label unverified fundraisers as verified.
+
+Do not claim medical conditions have been diagnosed by AI.
+
+All payment-related functionality must remain clearly in demo mode until actual backend and provider integrations are implemented.
+
+---
+
+# 27. Implementation Order
+
+Build the application in the following order.
+
+## Phase 1 — Design System and Foundation
+
+Implement:
+
+1. Next.js project setup.
+2. Tailwind CSS.
+3. shadcn/ui configuration.
+4. Global theme.
+5. Navigation.
+6. Mobile navigation.
+7. Shared components.
+8. Mock data.
+9. API abstraction layer.
+10. Landing page.
+
+## Phase 2 — Core Animal Discovery
+
+Implement:
+
+1. Google Maps integration.
+2. Explore page.
+3. Custom map markers.
+4. Animal cards.
+5. Animal filtering.
+6. Public animal profiles.
+7. Animal galleries.
+8. Sighting forms.
+9. SEO metadata.
+
+## Phase 3 — Adoption Matching
+
+Implement:
+
+1. Adoption discovery page.
+2. Swipeable animal cards.
+3. Adoption preferences.
+4. Compatibility recommendations.
+5. Interested animals.
+6. Adoption applications.
+7. Adoption status tracking.
+
+## Phase 4 — Fundraising
+
+Implement:
+
+1. Fundraiser discovery.
+2. Fundraiser cards.
+3. Fundraiser detail pages.
+4. Progress tracking.
+5. Donation demo modal.
+6. Campaign creation wizard.
+7. Campaign updates.
+8. Expense breakdown.
+9. Organizer dashboard.
+
+## Phase 5 — Community
+
+Implement:
+
+1. Hordes.
+2. Missions.
+3. Community feed.
+4. User profiles.
+5. Shelters.
+6. Events.
+7. Kibble wallet.
+8. Leaderboard.
+
+## Phase 6 — Integration and Refinement
+
+Implement:
+
+1. Django REST API integration.
+2. Authentication integration.
+3. Error handling.
+4. Backend pagination.
+5. Permission-aware interface.
+6. SEO verification.
+7. Accessibility improvements.
+8. Performance optimization.
+9. Automated tests.
+
+---
+
+# 28. Final Quality Requirements
+
+The final interface should feel like a real consumer application rather than a generic admin dashboard.
+
+Avoid:
+
+- Excessive gradients.
+- Glossy icons.
+- Generic corporate dashboards.
+- Overly dense information.
+- Large empty headers.
+- Inconsistent typography.
+- Unnecessary illustrations.
+- Decorative elements without purpose.
+- Broken controls.
+- Placeholder pages without meaningful content.
+
+Prefer:
+
+- Minimal and friendly layouts.
+- Animal-focused photography.
+- Small doodle illustrations.
+- Warm colors.
+- Clear information hierarchy.
+- Smooth interactions.
+- Well-designed cards.
+- Strong primary CTAs.
+- Consistent component behavior.
+- Helpful loading and empty states.
+
+The application should make it easy for a new visitor to understand three important actions:
+
+**Find an Animal. Adopt a Companion. Help a Paw in Need.**
+
+---
+
+# 29. Expected Deliverables
+
+Generate a functional Next.js application with:
+
+- Complete landing page.
+- Working Google Maps integration.
+- Animal discovery experience.
+- SEO-friendly animal profiles.
+- Tinder-style adoption interface.
+- Adoption application workflows.
+- Crowdfunding discovery and campaign pages.
+- Fundraiser creation and management.
+- Mission discovery.
+- Community feed.
+- Animal groups.
+- User profiles.
+- Shelter profiles.
+- Events.
+- Kibble rewards interface.
+- Top PawPal leaderboard.
+- Responsive navigation.
+- Shared UI component library.
+- Mock data and API architecture.
+
+Include setup instructions and required environment variables.
+
+Implement the actual application code, not merely mockup screenshots or a written plan.
+
+Use coherent architecture and reusable components.
+
+**Prioritize making the foundation and core flows genuinely functional before adding advanced features.**
+
+The final product should be visually cohesive, SEO-friendly, mobile-responsive, and ready for future integration with the PawTrail Django backend.
