@@ -120,3 +120,32 @@ it('excludes owner private posts and withdrawn campaign/mission associations fro
     animalsHelped: [],
   })
 })
+it.each(['pending', 'rejected', 'removed', 'published'] as const)(
+  'counts only published sightings while their animal remains public: %s',
+  async (moderation) => {
+    const { api, repo } = await setup(disk.dir)
+    const before = await api.users.get('sample-helper-2')
+    expect(before.summary?.sightings).toBe(1)
+    await repo.transact({
+      name: 'test.sighting-eligibility',
+      input: { moderation },
+      execute(draft) {
+        const sighting = draft.data.sightings.find(
+          (row) => row.reporterId === 'user-2',
+        )!
+        const animal = draft.data.animals.find(
+          (row) => row.id === sighting.animalId,
+        )!
+        expect(animal.moderation).toBe('published')
+        sighting.moderation = moderation
+      },
+    })
+    const after = await api.users.get('sample-helper-2')
+    const eligible = moderation === 'published'
+    expect(after.summary?.sightings).toBe(eligible ? 1 : 0)
+    expect(after.contributionCount).toBe(
+      before.contributionCount! - (eligible ? 0 : 1),
+    )
+    expect((await api.animals.get('luna')).id).toBe('animal-2')
+  },
+)

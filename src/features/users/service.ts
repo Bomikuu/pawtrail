@@ -58,7 +58,7 @@ export function createUserService(
           })
         const stories = visible.posts.filter((p) => p.authorId === user.id)
         const sightings = visible.sightings.filter(
-          (s) => s.reporterId === user.id,
+          (s) => s.reporterId === user.id && s.moderation === 'published',
         )
         const missions = visible.participations.filter(
           (p) =>
