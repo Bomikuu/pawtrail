@@ -112,3 +112,44 @@ it('preserves files if expiry metadata cannot commit, sweeps orphans and clears 
   })
   expect((await readMedia(other, otherAsset.id)).status).toBe(200)
 })
+
+it.each(['expired', 'removed', 'missing-file'] as const)(
+  'rejects stale upload receipts after %s and permits a fresh upload',
+  async (state) => {
+    const repository = await openDemoRepository(sessionId(), env.dir)
+    const api = createMockApi(undefined, repository)
+    await api.auth.selectDemoActor('user-6')
+    const input = {
+      file: new NodeBlob(['%PDF-1.7\n%%EOF'], {
+        type: 'application/pdf',
+      }) as Blob,
+      filename: 'sample.pdf',
+      alt: 'Sample evidence',
+      purpose: 'private_evidence' as const,
+      sensitive: false,
+    }
+    const asset = await api.media.upload(input, {
+      idempotencyKey: 'original-upload',
+    })
+    if (state === 'expired')
+      await cleanupAbandonedUploads(repository, Date.now() + 2 * 86400000)
+    else if (state === 'removed') await api.media.remove(asset.id)
+    else {
+      const { unlink } = await import('node:fs/promises')
+      const key = await repository.read(
+        (draft) =>
+          draft.media.find((item) => item.asset.id === asset.id)!.storageKey,
+      )
+      await unlink(join(repository.mediaRoot, key))
+    }
+    await expect(
+      api.media.upload(input, { idempotencyKey: 'original-upload' }),
+    ).rejects.toMatchObject({ code: 'UPLOAD_EXPIRED', status: 410 })
+    const replacement = await api.media.upload(input, {
+      idempotencyKey: 'replacement-upload',
+    })
+    expect(replacement.id).not.toBe(asset.id)
+    expect((await readMedia(repository, replacement.id)).status).toBe(200)
+    expect(await readdir(repository.mediaRoot)).toHaveLength(1)
+  },
+)

@@ -55,3 +55,80 @@ describe('bounded upload validation', () => {
     ).toBe(false)
   })
 })
+
+describe('campaign attachment budget', () => {
+  const values = {
+    title: 'Sample campaign',
+    story: 'Sample care story',
+    category: 'medical',
+    urgency: 'normal',
+    goalMinor: 10000,
+    currency: 'PHP',
+    animalId: null,
+    shelterId: null,
+    location: {
+      areaId: 'davao',
+      neighborhood: 'Sample area',
+      latitude: 7,
+      longitude: 125,
+      approximateRadiusMeters: 500,
+    },
+    mediaIds: [],
+    privateEvidenceIds: [],
+  }
+  it('caps private evidence and the combined public/private campaign attachments', async () => {
+    const { campaignInputSchema } =
+      await import('@/features/fundraising/schemas')
+    const ids = Array.from({ length: 7 }, (_, i) => `evidence-${i}`)
+    expect(
+      campaignInputSchema.safeParse({ ...values, privateEvidenceIds: ids })
+        .success,
+    ).toBe(false)
+    expect(
+      campaignInputSchema.safeParse({
+        ...values,
+        mediaIds: ids.slice(0, 4),
+        privateEvidenceIds: ids.slice(0, 3),
+      }).success,
+    ).toBe(false)
+    expect(
+      campaignInputSchema.safeParse({
+        ...values,
+        mediaIds: ids.slice(0, 3),
+        privateEvidenceIds: ids.slice(0, 3),
+      }).success,
+    ).toBe(true)
+  })
+  it('keeps partial draft and update fields optional while enforcing supplied attachment budgets', async () => {
+    const { campaignDraftSchema, campaignUpdateInputSchema } =
+      await import('@/features/fundraising/schemas')
+    const ids = Array.from({ length: 7 }, (_, i) => `evidence-${i}`)
+    for (const attachments of [
+      { privateEvidenceIds: ids },
+      { mediaIds: ids.slice(0, 4), privateEvidenceIds: ids.slice(0, 3) },
+    ]) {
+      expect(
+        campaignDraftSchema.safeParse({ values: attachments }).success,
+      ).toBe(false)
+      expect(
+        campaignUpdateInputSchema.safeParse({
+          ...attachments,
+          expectedVersion: 1,
+        }).success,
+      ).toBe(false)
+    }
+    for (const fields of [
+      { title: 'Sample campaign' },
+      { privateEvidenceIds: ids.slice(0, 6) },
+      { mediaIds: ids.slice(0, 3), privateEvidenceIds: ids.slice(0, 3) },
+    ]) {
+      expect(campaignDraftSchema.safeParse({ values: fields }).success).toBe(
+        true,
+      )
+      expect(
+        campaignUpdateInputSchema.safeParse({ ...fields, expectedVersion: 1 })
+          .success,
+      ).toBe(true)
+    }
+  })
+})

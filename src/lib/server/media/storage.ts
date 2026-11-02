@@ -202,8 +202,9 @@ export function createDemoMedia(
         )
       await cleanupAbandonedUploads(repo)
       let written: string | undefined
+      let result: MediaAsset
       try {
-        return await repo.transact({
+        result = await repo.transact({
           name: 'media.upload',
           idempotencyKey: options?.idempotencyKey,
           input: {
@@ -265,6 +266,26 @@ export function createDemoMedia(
         if (written) await removeFile(repo, written)
         throw error
       }
+      // Receipts outlive pending upload retention. Return only a currently available, authorized asset.
+      return repo.read(async (draft) => {
+        const unavailable = () =>
+          new ApiError(
+            'UPLOAD_EXPIRED',
+            'This upload is no longer available. Upload the file again.',
+            410,
+          )
+        const item = draft.media.find((item) => item.asset.id === result.id)
+        if (!item) throw unavailable()
+        if (!ownsMedia(draft, item)) missingMedia()
+        try {
+          await readStoredFile(repo, item.storageKey)
+        } catch (error) {
+          if (error instanceof ApiError && error.status === 404)
+            throw unavailable()
+          throw error
+        }
+        return item.asset
+      })
     },
     async remove(id, options) {
       checkCancelled(options?.signal)

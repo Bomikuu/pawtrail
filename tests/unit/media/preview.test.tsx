@@ -154,3 +154,62 @@ it('labels private PDF evidence without an object URL and gates sensitive public
   fireEvent.click(screen.getByRole('button', { name: 'Show photograph' }))
   expect(screen.getByRole('img', { name: 'A sample cat' })).toBeInTheDocument()
 })
+
+it('preserves an expired selection and renews its upload key for a successful retry', async () => {
+  const { ApiError } = await import('@/lib/api/errors')
+  vi.stubGlobal(
+    'URL',
+    class extends URL {
+      static createObjectURL() {
+        return 'blob:sample'
+      }
+      static revokeObjectURL() {}
+    },
+  )
+  const upload = vi
+    .fn()
+    .mockRejectedValueOnce(
+      new ApiError(
+        'UPLOAD_EXPIRED',
+        'This upload is no longer available. Upload the file again.',
+        410,
+      ),
+    )
+    .mockResolvedValueOnce({
+      id: 'replacement',
+      url: '/api/v1/media/replacement/content',
+      alt: 'A sample cat',
+      visibility: 'private',
+      mimeType: 'image/png',
+      bytes: 6,
+    })
+  function Form() {
+    const [value, setValue] = useState<MediaAsset[]>([])
+    return (
+      <UploadField
+        value={value}
+        onChange={setValue}
+        api={{ upload, remove: vi.fn() }}
+      />
+    )
+  }
+  render(<Form />)
+  fireEvent.change(screen.getByLabelText('Attachments'), {
+    target: { files: [new File(['sample'], 'cat.png', { type: 'image/png' })] },
+  })
+  fireEvent.change(screen.getByLabelText('Description for cat.png'), {
+    target: { value: 'A sample cat' },
+  })
+  fireEvent.click(screen.getByRole('button', { name: 'Upload attachments' }))
+  expect(await screen.findByRole('alert')).toHaveTextContent(
+    'Upload the file again',
+  )
+  expect(screen.getByLabelText('Description for cat.png')).toHaveValue(
+    'A sample cat',
+  )
+  fireEvent.click(screen.getByRole('button', { name: 'Upload attachments' }))
+  expect(await screen.findByText('Uploaded privately')).toBeInTheDocument()
+  expect(upload.mock.calls[1][1].idempotencyKey).not.toBe(
+    upload.mock.calls[0][1].idempotencyKey,
+  )
+})

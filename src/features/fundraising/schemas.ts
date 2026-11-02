@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { MAX_ATTACHMENTS } from '@/features/media/schemas'
 import {
   idSchema,
   timestampSchema,
@@ -68,7 +69,7 @@ export const campaignDetailSchema = campaignSummarySchema.extend({
   payoutStatus: z.enum(['demo_no_payout', 'not_requested', 'pending', 'paid']),
   version: versionSchema,
 })
-export const campaignInputSchema = z.object({
+const campaignFieldsSchema = z.object({
   title: z.string().min(1),
   story: z.string().min(1),
   category: campaignSummarySchema.shape.category,
@@ -79,20 +80,40 @@ export const campaignInputSchema = z.object({
   shelterId: idSchema.nullable(),
   location: publicLocationSchema,
   mediaIds: z.array(idSchema).max(6),
-  privateEvidenceIds: z.array(idSchema),
+  privateEvidenceIds: z.array(idSchema).max(MAX_ATTACHMENTS),
   draftId: idSchema.optional(),
   expectedVersion: versionSchema.optional(),
 })
-export const campaignUpdateInputSchema = campaignInputSchema
+function withinAttachmentBudget(values: {
+  mediaIds?: string[]
+  privateEvidenceIds?: string[]
+}) {
+  return (
+    (values.mediaIds?.length ?? 0) + (values.privateEvidenceIds?.length ?? 0) <=
+    MAX_ATTACHMENTS
+  )
+}
+const attachmentBudgetIssue = {
+  message:
+    'Choose up to six public photos and private evidence attachments in total',
+  path: ['privateEvidenceIds'],
+}
+export const campaignInputSchema = campaignFieldsSchema.refine(
+  withinAttachmentBudget,
+  attachmentBudgetIssue,
+)
+export const campaignUpdateInputSchema = campaignFieldsSchema
   .omit({ draftId: true })
   .partial()
   .extend({ expectedVersion: versionSchema })
+  .refine(withinAttachmentBudget, attachmentBudgetIssue)
 export const campaignDraftSchema = z.object({
   id: idSchema.optional(),
   expectedVersion: versionSchema.optional(),
-  values: campaignInputSchema
+  values: campaignFieldsSchema
     .omit({ draftId: true, expectedVersion: true })
-    .partial(),
+    .partial()
+    .refine(withinAttachmentBudget, attachmentBudgetIssue),
 })
 export const campaignDraftSummarySchema = baseSchema.extend({
   title: z.string(),

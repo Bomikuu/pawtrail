@@ -3,6 +3,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { getBrowserApi } from '@/lib/api/client'
+import { ApiError } from '@/lib/api/errors'
 import type { PawTrailApi } from '@/lib/api/contracts'
 import type { MediaAsset, MediaUpload } from './types'
 import { MAX_ATTACHMENTS } from './schemas'
@@ -87,8 +88,10 @@ export function UploadField({
     const controller = new AbortController()
     active.current = controller
     const uploaded = [...value]
+    let uploadingId: string | undefined
     try {
       for (const item of drafts) {
+        uploadingId = item.id
         const asset = await service().upload(
           {
             file: item.file!,
@@ -106,6 +109,20 @@ export function UploadField({
         setDrafts((current) => current.filter((entry) => entry.id !== item.id))
       }
     } catch (reason) {
+      if (
+        !controller.signal.aborted &&
+        reason instanceof ApiError &&
+        reason.code === 'UPLOAD_EXPIRED'
+      ) {
+        // The old receipt cannot be reused. Preserve the file and description for a fresh attempt.
+        setDrafts((current) =>
+          current.map((item) =>
+            item.id === uploadingId
+              ? { ...item, id: crypto.randomUUID() }
+              : item,
+          ),
+        )
+      }
       if (!controller.signal.aborted)
         setError(
           reason instanceof Error
