@@ -9,7 +9,7 @@ Execution method: user-approved subagent-driven. Code-first community-journal di
 | F3 — Persistent, session-isolated demo repository | Complete | aef4565; independent spec/quality review approved; 54 demo/API tests and scoped checks passed; Unicode key-order minor deferred to final review |
 | F4 — Authentication, permissions, protected routes, and cache lifecycle | Complete | 997bcb1; independent spec/quality and logout-failure fix re-review approved; 77 relevant tests plus amended 11 and regression 5 passed; checks passed |
 | F5 — Media upload, preview, and protected evidence delivery | Complete | c9c83a4; independent spec/quality and two-finding fix re-review approved; 97 relevant tests then 77 covering tests passed; scoped checks passed |
-| F6 — Design contract, shared controls, and responsive navigation | Pending |  |
+| F6 — Design contract, shared controls, and responsive navigation | Complete | 75bf337; independent source/spec/quality and docs-fix re-review approved; 153 tests including 21 F6 tests and scoped checks passed; rendered quality unverified |
 | F7 — Landing page and real asset provenance | Pending |  |
 | S1 — Public animal profiles, saving, and shared SEO primitives | Pending |  |
 | S2 — Feed, photo composer, post details, reactions and saved posts | Pending |  |
@@ -52,3 +52,5 @@ Ruling: A safe minimal root layout and empty global stylesheet in F1 are infrast
 Ruling: F4 and F5 may introduce only the canonical Shadcn primitives and approved design-contract files they need before F6 — their forms precede the shared-controls task, while the UI-boundary and Impeccable requirements already bind — cost if wrong: consolidate those early primitives and tokens during F6; no duplicate feature controls or new design direction.
 
 Ruling: The six-attachment cap applies to the combined public-photo and private-evidence IDs submitted for one campaign — F5 says more than six attachments must be rejected and does not define separate budgets — cost if wrong: revise the schema/UI cap together if separate gallery/evidence budgets are later required.
+
+Ruling: F7 preserves the required CTA labels and target mappings while keeping unimplemented destinations inert through route readiness — F7 destination contracts and F6 honest readiness must both hold during staged work — cost if wrong: adjust readiness/test scenarios; no placeholder feature or final scope reduction.

@@ -126,8 +126,8 @@ it('rejects_unsafe_media_and_private_access', async () => {
 
 **Interfaces:** Produce `AppShell({children})`, `ButtonLink({href,children,...buttonProps})`, `ButtonAnchor({href,children,...buttonProps})`, `DataState({state,retry,emptyAction,children})`, and `formatPHP(amount: MoneyMinor): string`. State names are loading/empty/error/ready; notices use an accessible Sonner live region.
 
-- [ ] Complete the Impeccable direction workflow before UI edits, preserve pinned branding, and record the selected world/surface contracts. Respect its comp/code preference workflow and launcher-unavailable fallback. No visual verification is implied by this task.
-- [ ] Add failing component tests for all desktop destinations, mobile Explore/Adopt/Create/Community/Profile order, keyboard-operated Create/dropdown/drawer, authenticated redirects, unread count, Kibble balance, focus restoration, visible sample labeling, and accessible contrast-safe action colors. Every Create action maps to the spec route inventory; unfinished destinations are not exposed as working links until implemented.
+- [x] Complete the Impeccable direction workflow before UI edits, preserve pinned branding, and record the selected world/surface contracts. Respect its comp/code preference workflow and launcher-unavailable fallback. No visual verification is implied by this task.
+- [x] Add failing component tests for all desktop destinations, mobile Explore/Adopt/Create/Community/Profile order, keyboard-operated Create/dropdown/drawer, authenticated redirects, unread count, Kibble balance, focus restoration, visible sample labeling, and accessible contrast-safe action colors. Every Create action maps to the spec route inventory; unfinished destinations are not exposed as working links until implemented.
 
 ```ts
 it('keeps_create_navigation_keyboard_accessible', async () => {
@@ -137,10 +137,10 @@ it('keeps_create_navigation_keyboard_accessible', async () => {
   expect(actionTextContrast).toBeGreaterThanOrEqual(4.5)
 })
 ```
-- [ ] Run `npm run test:unit -- tests/unit/layout tests/unit/design`; expect missing shell/control behavior.
-- [ ] Read craft-floor, implement canonical Shadcn controls, typography/tokens, header/mobile/drawer/dashboard shells, create-menu auth checks, data states, accessible money/status components, and reduced-motion behavior. Keep Zustand free of fetched records and private form answers.
-- [ ] Run these tests, typecheck, UI check, changed-file format check; expect pass.
-- [ ] Commit `feat: establish PawTrail design system and navigation`.
+- [x] Run `npm run test:unit -- tests/unit/layout tests/unit/design`; expect missing shell/control behavior.
+- [x] Read craft-floor, implement canonical Shadcn controls, typography/tokens, header/mobile/drawer/dashboard shells, create-menu auth checks, data states, accessible money/status components, and reduced-motion behavior. Keep Zustand free of fetched records and private form answers.
+- [x] Run these tests, typecheck, UI check, changed-file format check; expect pass.
+- [x] Commit `feat: establish PawTrail design system and navigation`.
 
 ### Task F7: Landing page and real asset provenance
 
