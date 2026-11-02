@@ -1,0 +1,3 @@
+# Framework-owned output; never format generated declarations
+next-env.d.ts
+.next/

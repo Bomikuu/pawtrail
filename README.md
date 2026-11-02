@@ -12,6 +12,14 @@ The plan has seven work packages, covering 35 independently testable tasks. The 
 
 No Git remote, hosted site, or deployment has been created. Repository verification rules are in [AGENTS.md](AGENTS.md).
 
+## Local setup and automated checks
+
+Use the Node version in `.nvmrc`, then run `npm ci`. Copy `.env.example` to `.env.local` and keep `NEXT_PUBLIC_USE_MOCK_API=true` for the sample community. Start development with `npm run dev`.
+
+`npm run typecheck` runs `next typegen` before `tsc --noEmit`, so it works on a fresh checkout without starting the server. Type generation does not run a production build. `npm run check:ui` checks the shared component boundary; `npm run format:check` checks authored source and configuration. Run scoped unit tests with `npm run test:unit -- <test-path>`.
+
+Next owns `next-env.d.ts` and `.next/`; both are ignored, regenerated, and excluded from formatting. Do not edit or commit generated declarations, including their formatting. `tsconfig.json` retains both normal and development route-type includes. The managed Next guidance in `AGENTS.md` is intentionally tracked because `next dev` maintains it. Authored TypeScript and JavaScript continue to use no semicolons.
+
 ## Local demo storage
 
 Demo mode (`NEXT_PUBLIC_USE_MOCK_API=true`) supports one Node process with writable local disk. Session overlays live in the ignored `.pawtrail/demo/` directory, or the server-only `DEMO_DATA_DIR`. This repository is unsuitable for stateless or multiple-process hosting; use Django or replace the repository with shared storage for those deployments. Keep the directory private to the application OS account. Session JSON files use owner-only permissions and must never be committed, published, or served as static content.
