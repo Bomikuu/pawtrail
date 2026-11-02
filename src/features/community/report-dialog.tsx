@@ -2,6 +2,7 @@
 import { useId, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
+import { Flag } from 'lucide-react'
 import { Textarea } from '@/components/ui/textarea'
 import {
   Dialog,
@@ -26,9 +27,11 @@ export const reportReasons: Record<ReportReason, string> = {
 export function ReportDialog({
   target,
   returnTo,
+  compact = false,
 }: {
   target: ResourceRef
   returnTo: string
+  compact?: boolean
 }) {
   const { session, pending: changing } = useSession()
   const id = useId()
@@ -41,14 +44,25 @@ export function ReportDialog({
   const retry = useRef({ input: '', key: '' })
   if (!session.actor)
     return (
-      <ButtonLink variant="ghost" href={loginPath(returnTo)}>
-        Sign in to report
+      <ButtonLink
+        variant="ghost"
+        href={loginPath(returnTo)}
+        aria-label="Sign in to report a concern"
+        title="Report a concern"
+      >
+        {compact ? <Flag size={17} aria-hidden="true" /> : 'Sign in to report'}
       </ButtonLink>
     )
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="ghost">Report</Button>
+        <Button
+          variant="ghost"
+          aria-label="Report a concern"
+          title="Report a concern"
+        >
+          {compact ? <Flag size={17} aria-hidden="true" /> : 'Report'}
+        </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogTitle>Report a concern</DialogTitle>

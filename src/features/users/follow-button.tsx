@@ -13,10 +13,12 @@ export function FollowButton({
   target,
   name,
   returnTo,
+  compact = false,
 }: {
   target: Follow['target']
   name: string
   returnTo: string
+  compact?: boolean
 }) {
   const { session, pending: changing } = useSession()
   const client = useQueryClient()
@@ -45,8 +47,13 @@ export function FollowButton({
   if (self) return null
   if (!session.actor)
     return (
-      <ButtonLink href={loginPath(returnTo)} variant="outline">
-        Sign in to follow {name}
+      <ButtonLink
+        href={loginPath(returnTo)}
+        variant={compact ? 'ghost' : 'outline'}
+        aria-label={'Sign in to follow ' + name}
+        className={compact ? 'follow-compact' : undefined}
+      >
+        {compact ? 'Follow' : 'Sign in to follow ' + name}
       </ButtonLink>
     )
   const followed =
@@ -86,16 +93,24 @@ export function FollowButton({
   return (
     <span className="follow-control">
       <Button
-        variant="outline"
+        variant={compact ? 'ghost' : 'outline'}
+        className={compact ? 'follow-compact' : undefined}
+        aria-label={(followed ? 'Unfollow ' : 'Follow ') + name}
         aria-pressed={followed}
         disabled={saving || changing || follows.isPending || follows.isError}
         onClick={toggle}
       >
-        {saving
-          ? 'Updating following…'
-          : follows.isPending
-            ? `Loading follow state for ${name}…`
-            : `${followed ? 'Unfollow' : 'Follow'} ${name}`}
+        {compact
+          ? saving || follows.isPending
+            ? 'Loading…'
+            : followed
+              ? 'Following'
+              : 'Follow'
+          : saving
+            ? 'Updating following…'
+            : follows.isPending
+              ? `Loading follow state for ${name}…`
+              : `${followed ? 'Unfollow' : 'Follow'} ${name}`}
       </Button>
       {follows.isError && (
         <>

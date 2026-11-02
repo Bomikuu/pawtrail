@@ -5,6 +5,8 @@ import { useQueryClient } from '@tanstack/react-query'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { Textarea } from '@/components/ui/textarea'
+import { CommunityAvatar } from '@/components/shared/community-avatar'
+import { ImagePlus, PawPrint } from 'lucide-react'
 import { toast } from '@/components/ui/sonner'
 import { UploadField } from '@/features/media/upload-field'
 import type { MediaAsset } from '@/features/media/types'
@@ -64,11 +66,25 @@ export function PostComposer({
   if (!session.actor)
     return (
       <section className="post-composer">
-        <h2>Every paw has a story.</h2>
-        <p>Share a photograph, a small update, or a way to help.</p>
-        <ButtonLink href={loginPath('/community/create')}>
-          Sign in to post
-        </ButtonLink>
+        <div className="composer-entry">
+          <CommunityAvatar name="Your story" />
+          <ButtonLink
+            className="composer-prompt"
+            variant="ghost"
+            href={loginPath('/community/create')}
+          >
+            What’s your pet up to?
+          </ButtonLink>
+        </div>
+        <div className="composer-toolbar">
+          <span>
+            <ImagePlus size={18} aria-hidden="true" />
+            Photos & updates
+          </span>
+          <ButtonLink href={loginPath('/community/create')}>
+            Sign in to post
+          </ButtonLink>
+        </div>
       </section>
     )
   async function submit(event: React.FormEvent) {
@@ -151,39 +167,53 @@ export function PostComposer({
     }
   }
   return (
-    <form onSubmit={submit} className="post-composer" aria-busy={pending}>
-      <h2>
-        {post ? 'Edit your story' : 'What’s happening in your care circle?'}
-      </h2>
-      <label htmlFor={id}>Your update</label>
-      <Textarea
-        id={id}
-        value={text}
-        maxLength={2000}
-        rows={3}
-        disabled={pending || changing}
-        onChange={(event) => setText(event.target.value)}
-        placeholder="A familiar face, a little progress, a moment worth sharing…"
-        aria-describedby={`${id}-help`}
-      />
+    <form
+      onSubmit={submit}
+      className="post-composer"
+      aria-busy={pending}
+      noValidate
+    >
+      {post && <h2>Edit your story</h2>}
+      <div className="composer-entry">
+        <CommunityAvatar name={session.actor.displayName} />
+        <div className="composer-writing">
+          <label htmlFor={id} className="sr-only">
+            Your update
+          </label>
+          <Textarea
+            id={id}
+            value={text}
+            maxLength={2000}
+            rows={2}
+            disabled={pending || changing}
+            onChange={(event) => setText(event.target.value)}
+            placeholder="What’s your pet up to? Share a moment…"
+            aria-invalid={!!error}
+            aria-describedby={`${id}-help`}
+          />
+        </div>
+      </div>
       <p id={`${id}-help`} className="composer-help">
-        {text.length}/2,000 · New and edited posts go through review.
+        {text.length > 0 && <span>{text.length}/2,000 · </span>}Posts are
+        reviewed before appearing publicly.
       </p>
-      <div className="community-choice-row">
+      <div className="composer-toolbar">
         <Button
           type="button"
-          variant="outline"
+          variant="ghost"
           aria-expanded={expanded}
           onClick={() => setExpanded(!expanded)}
           disabled={pending}
         >
-          Photos & story details
+          <ImagePlus size={19} aria-hidden="true" />
+          Photos<span className="composer-details-label"> & details</span>
+          <PawPrint size={17} aria-hidden="true" />
         </Button>
         <Button
           type="submit"
           disabled={pending || changing || !uploadsReady || !text.trim()}
         >
-          {pending ? 'Submitting…' : 'Submit for review'}
+          {pending ? 'Submitting…' : 'Submit post'}
         </Button>
         {onCancel && (
           <Button

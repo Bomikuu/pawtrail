@@ -1,7 +1,14 @@
 'use client'
 import { useRef, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
-import { Heart, Bookmark, Share2 } from 'lucide-react'
+import {
+  Heart,
+  Bookmark,
+  Share2,
+  MessageCircle,
+  Pencil,
+  Trash2,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { Input } from '@/components/ui/input'
@@ -86,59 +93,107 @@ export function PostActions({
   const working = pending || changing || post.id.startsWith('pending:')
   return (
     <div className="post-actions">
-      <div className="community-choice-row">
+      <div className="social-actions-row">
         {session.actor ? (
           <>
             <Button
               variant="ghost"
               aria-pressed={post.viewerReacted}
+              aria-label={
+                (post.viewerReacted ? 'Unlike post, ' : 'Like post, ') +
+                post.reactionCount +
+                ' reactions'
+              }
               disabled={working || post.moderation !== 'published'}
               onClick={() => void toggle('reaction')}
             >
-              <Heart size={18} aria-hidden="true" />
-              {post.viewerReacted ? 'Reacted' : 'React'} · {post.reactionCount}
-            </Button>
-            <Button
-              variant="ghost"
-              aria-pressed={post.viewerSaved}
-              disabled={working}
-              onClick={() => void toggle('saved')}
-            >
-              <Bookmark size={18} aria-hidden="true" />
-              {post.viewerSaved ? 'Saved' : 'Save'}
+              <Heart
+                size={19}
+                aria-hidden="true"
+                fill={post.viewerReacted ? 'currentColor' : 'none'}
+              />
+              <span className="social-action-label">
+                {post.viewerReacted ? 'Liked' : 'Like'}
+              </span>
+              <span>{post.reactionCount}</span>
             </Button>
           </>
         ) : (
           <ButtonLink
             variant="ghost"
+            aria-label="Sign in to like this post"
             href={loginPath(`/community/${encodeURIComponent(post.id)}`)}
           >
-            Sign in to react or save
+            <Heart size={19} aria-hidden="true" />
+            <span className="social-action-label">Like</span>{' '}
+            {post.reactionCount}
+          </ButtonLink>
+        )}
+        {!post.id.startsWith('pending:') && (
+          <ButtonLink
+            variant="ghost"
+            href={'/community/' + encodeURIComponent(post.id) + '#discussion'}
+            aria-label={post.commentCount + ' comments. Join the conversation'}
+          >
+            <MessageCircle size={19} aria-hidden="true" />
+            <span className="social-action-label">Comment</span>
+            {post.commentCount}
           </ButtonLink>
         )}
         <Button
           variant="ghost"
           onClick={() => void share()}
+          aria-label="Share post"
+          title="Share post"
           disabled={post.moderation !== 'published'}
         >
-          <Share2 size={18} aria-hidden="true" />
-          Share
+          <Share2 size={19} aria-hidden="true" />
+          <span className="social-action-label">Share</span>
         </Button>
+        {session.actor && (
+          <Button
+            variant="ghost"
+            className="social-save"
+            aria-label={post.viewerSaved ? 'Unsave post' : 'Save post'}
+            title={post.viewerSaved ? 'Unsave post' : 'Save post'}
+            aria-pressed={post.viewerSaved}
+            disabled={working}
+            onClick={() => void toggle('saved')}
+          >
+            <Bookmark
+              size={19}
+              aria-hidden="true"
+              fill={post.viewerSaved ? 'currentColor' : 'none'}
+            />
+          </Button>
+        )}
         {post.moderation === 'published' && (
           <ReportDialog
             target={{ kind: 'post', id: post.id }}
             returnTo={`/community/${encodeURIComponent(post.id)}`}
+            compact
           />
         )}
         {post.viewerOwns && (
           <>
-            <Button variant="ghost" disabled={working} onClick={onEdit}>
-              Edit
+            <Button
+              variant="ghost"
+              disabled={working}
+              onClick={onEdit}
+              aria-label="Edit your post"
+              title="Edit post"
+            >
+              <Pencil size={17} aria-hidden="true" />
             </Button>
             <ConfirmDialog
               trigger={
-                <Button variant="ghost" disabled={working}>
-                  Delete
+                <Button
+                  variant="ghost"
+                  disabled={working}
+                  aria-label="Delete your post"
+                  title="Delete post"
+                >
+                  <Trash2 size={17} aria-hidden="true" />
                 </Button>
               }
               title="Delete this story?"

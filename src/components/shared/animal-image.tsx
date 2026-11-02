@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { PawPrint } from 'lucide-react'
 interface AnimalPhoto {
   url: string
   alt: string
@@ -12,10 +13,12 @@ export function AnimalImage({
   image,
   sensitive = image?.sensitive ?? false,
   className,
+  compact = false,
 }: {
   image?: AnimalPhoto | null
   sensitive?: boolean
   className?: string
+  compact?: boolean
 }) {
   const [failedUrl, setFailedUrl] = useState<string | null>(null)
   const [revealedUrl, setRevealedUrl] = useState<string | null>(null)
@@ -36,7 +39,11 @@ export function AnimalImage({
             : 'Animal photograph unavailable'
         }
       >
-        Photograph unavailable
+        {compact ? (
+          <PawPrint size={22} aria-hidden="true" />
+        ) : (
+          'Photograph unavailable'
+        )}
       </div>
     )
   if (sensitive && revealedUrl !== image.url)

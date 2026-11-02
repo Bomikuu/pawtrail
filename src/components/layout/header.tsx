@@ -2,7 +2,9 @@
 import Link from 'next/link'
 import { GlobalSearch } from '@/features/search/global-search'
 import { NotificationMenu } from '@/features/notifications/notification-menu'
-import { Bell, Cookie, Search, UserRound, PawPrint } from 'lucide-react'
+import { Bell, Cookie, Search, ChevronDown, ArrowUpRight } from 'lucide-react'
+import { CommunityAvatar } from '@/components/shared/community-avatar'
+import { Brand } from './brand'
 import { useState } from 'react'
 import { useSession } from '@/features/auth/session-provider'
 import { Button } from '@/components/ui/button'
@@ -29,20 +31,17 @@ export function Header({
   readyRoutes = READY_ROUTES,
   unreadCount,
   kibbleBalance,
+  variant = 'platform',
 }: {
   readyRoutes?: ReadonlySet<string>
   unreadCount?: number
   kibbleBalance?: number
+  variant?: 'platform' | 'management'
 }) {
   const { session, pending, logout } = useSession()
   const [signingOut, setSigningOut] = useState(false)
-  const home = session.actor ? '/community' : '/'
-  const brand = (
-    <>
-      <PawPrint aria-hidden="true" size={26} />
-      <span>PawTrail</span>
-    </>
-  )
+  const home = variant === 'management' ? '/dashboard' : '/community'
+  const brand = <Brand />
   const unread = validCount(unreadCount)
     ? `${unreadCount} unread`
     : 'Unread count unavailable'
@@ -62,7 +61,7 @@ export function Header({
   return (
     <header className="app-header">
       <div className="header-inner">
-        <NavigationDrawer readyRoutes={readyRoutes} />
+        <NavigationDrawer readyRoutes={readyRoutes} variant={variant} />
         {readyRoutes.has(home) ? (
           <Link href={home} className="wordmark" aria-label="PawTrail home">
             {brand}
@@ -72,10 +71,17 @@ export function Header({
             {brand}
           </span>
         )}
+        {variant === 'management' && (
+          <span className="header-workspace-name">Management</span>
+        )}
+        {readyRoutes.has('/search') && <GlobalSearch />}
         <div className="header-utilities">
-          {readyRoutes.has('/search') && <GlobalSearch />}
           {readyRoutes.has('/search') ? (
-            <Link className="utility-link" href="/search">
+            <Link
+              className="utility-link mobile-search-link"
+              href="/search"
+              aria-label="Search PawTrail"
+            >
               <Search size={20} aria-hidden="true" />
               <span className="utility-label">Search</span>
             </Link>
@@ -96,7 +102,7 @@ export function Header({
                 {readyRoutes.has('/dashboard/kibble') ? (
                   <Link className="utility-link" href="/dashboard/kibble">
                     <Cookie aria-hidden="true" size={18} />
-                    <span>{kibble}</span>
+                    <span>{validCount(kibbleBalance) ? kibble : 'Kibble'}</span>
                   </Link>
                 ) : (
                   <span>{kibble}</span>
@@ -116,6 +122,15 @@ export function Header({
               )}
             </>
           )}
+          {variant === 'management' && (
+            <ButtonLink
+              href="/community"
+              variant="ghost"
+              className="management-platform-link"
+            >
+              Open community <ArrowUpRight size={16} aria-hidden="true" />
+            </ButtonLink>
+          )}
           <div className="header-create">
             <CreateMenu readyRoutes={readyRoutes} />
           </div>
@@ -126,10 +141,11 @@ export function Header({
                   variant="outline"
                   aria-label={`Account for ${session.actor.displayName}`}
                 >
-                  <UserRound aria-hidden="true" size={20} />
+                  <CommunityAvatar name={session.actor.displayName} small />
                   <span className="account-name">
                     {session.actor.displayName}
                   </span>
+                  <ChevronDown size={15} aria-hidden="true" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" aria-label="Your account">

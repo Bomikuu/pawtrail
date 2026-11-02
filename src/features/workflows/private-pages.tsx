@@ -26,8 +26,13 @@ export async function DashboardPage() {
   return (
     <>
       <PageHeading
-        title={`Welcome back, ${session.actor!.displayName}`}
-        description="Your stories, your contributions, and the next small thing you can do."
+        title="Overview"
+        description={
+          'Welcome back, ' +
+          session.actor!.displayName +
+          '. Manage your animals, applications and community contributions.'
+        }
+        action={<ButtonLink href="/animals/report">Add an animal</ButtonLink>}
       />
       <dl className="dashboard-summary">
         {[

@@ -14,10 +14,13 @@ import { useUiStore } from '@/stores/ui'
 import { mainDestinations, extraDestinations } from './navigation'
 import { NavItem } from './nav-item'
 import { DashboardNav } from './dashboard-nav'
+import { ButtonLink } from '@/components/ui/button-link'
 export function NavigationDrawer({
   readyRoutes,
+  variant = 'platform',
 }: {
   readyRoutes: ReadonlySet<string>
+  variant?: 'platform' | 'management'
 }) {
   const open = useUiStore((state) => state.navigationOpen)
   const setOpen = useUiStore((state) => state.setNavigationOpen)
@@ -40,28 +43,52 @@ export function NavigationDrawer({
         className="navigation-drawer"
         closeLabel="Close navigation"
       >
-        <DialogTitle>More ways to help</DialogTitle>
+        <DialogTitle>
+          {variant === 'management'
+            ? 'Your management workspace'
+            : 'Explore PawTrail'}
+        </DialogTitle>
         <DialogDescription>
           Find animals, connect with neighbors, and manage your contributions.
         </DialogDescription>
-        <nav aria-label="All destinations">
-          <ul>
-            {[...mainDestinations, ...extraDestinations].map((item) => (
-              <li key={item.href}>
-                <NavItem
-                  destination={item}
-                  readyRoutes={readyRoutes}
-                  onNavigate={() => setOpen(false)}
-                />
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <h3>Your space</h3>
-        <DashboardNav
-          readyRoutes={readyRoutes}
-          onNavigate={() => setOpen(false)}
-        />
+        {variant === 'platform' && (
+          <nav aria-label="All destinations">
+            <ul>
+              {[...mainDestinations, ...extraDestinations].map((item) => (
+                <li key={item.href}>
+                  <NavItem
+                    destination={item}
+                    readyRoutes={readyRoutes}
+                    onNavigate={() => setOpen(false)}
+                  />
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+        {variant === 'management' ? (
+          <DashboardNav
+            readyRoutes={readyRoutes}
+            onNavigate={() => setOpen(false)}
+          />
+        ) : (
+          <ButtonLink
+            href="/dashboard"
+            variant="outline"
+            onClick={() => setOpen(false)}
+          >
+            Management dashboard
+          </ButtonLink>
+        )}
+        {variant === 'management' && (
+          <ButtonLink
+            href="/community"
+            variant="outline"
+            onClick={() => setOpen(false)}
+          >
+            Back to community
+          </ButtonLink>
+        )}
       </DialogContent>
     </Dialog>
   )

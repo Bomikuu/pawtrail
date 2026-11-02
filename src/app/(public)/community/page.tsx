@@ -8,7 +8,7 @@ export default async function CommunityPage() {
     api.community.list({ tab: 'for_you' }),
     communityChoices(api),
     api.discovery.searchAreas(''),
-    api.animals.list({ limit: 2, adoptable: true }),
+    api.animals.list({ limit: 4, adoptable: true }),
   ])
   return (
     <Feed

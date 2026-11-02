@@ -1,5 +1,5 @@
 ---
-name: PawTrail community journal
+name: PawTrail social platform
 description: Every Paw Has a Story.
 colors:
   primary: '#F97316'
@@ -116,11 +116,11 @@ components:
 
 ## Overview
 
-**Creative North Star: "Community journal with a pet story feed"**
+**Creative North Star: "A neighborhood social network, with a separate management workspace"**
 
-An animal story is the useful center of PawTrail. Warm cream ground, white story surfaces, brown text, and recognizable animal identities connect community responses to practical help. Photography belongs to the content; clear names and native links carry identification across posts, profiles, maps, and help requests.
+The platform is a familiar, full-width social network for pets and their people. A light neutral canvas, white posts, orange actions, recognizable identities and generous photographs make the feed easy to scan. Pet stories remain connected to practical help. The management dashboard uses a distinct task-oriented shell, restrained teal navigation and a wide workspace.
 
-The user approved code-first implementation and the community-journal direction on 2026-11-02. The durable approved direction contracts, including candidate 5 and seed `0cbeff46`, live in `.impeccable/surfaces/{marketing,community,discovery,adoption,fundraising,dashboard}.md`. These development-only briefs carry each surface’s composition, signature interaction, and finish condition. The chosen world inherits the challengers' discipline in identity, status hierarchy, space budgets, and reduced motion without borrowing their unrelated materials.
+The user explicitly replaced the journal composition with a social layout comparable to X/Facebook, requested full viewport width and a separate management dashboard, and supplied a PawTrail illustration sheet. This supersedes the earlier journal layout. The code-first preference, Nunito/Inter type, orange identity, existing functionality and privacy boundaries remain. Tests and browser verification remain disabled by user instruction.
 
 **Key Characteristics:**
 
@@ -144,11 +144,30 @@ Marketing display typography uses 3.25–5.5rem on desktop and 3.25–4.5rem on 
 
 ## Layout
 
-The app uses a utility header, compact left navigation, central content, and an optional contextual right rail. Section destinations belong in the sidebar, avoiding duplicate top/side copies. Header utilities are search, Create, notifications, non-cash Kibble, and account. Signed-in home goes to Community when that route is implemented.
+The platform uses all available viewport width. `AppShell` defaults to the `platform` variant: a sticky 68px utility header, a 224px navigation rail, a flexible feed and a contextual discovery column. There is no 80rem outer cap or 48rem content cap. The community page uses compact feed filters, a small composer, photo-led posts and actual reaction/comment counts. Supplemental guidance belongs in the discovery rail, not above every post.
 
-The app grid is capped at 80rem with a 14.5rem sidebar, flexible content, 1.5rem outer gutters, and 2rem gaps. At 80rem and above, supplied contextual content gains a 16rem right rail. Below that threshold the optional rail is omitted; essential tasks must remain in the center. At 48rem and below, the sidebar collapses into a dialog drawer, content becomes one column with 1rem gutters, and the fixed bottom order is Explore / Adopt / Create / Community / Profile. The drawer keeps extra destinations and account management reachable. Bottom safe-area padding and document scroll padding keep content and focus clear of the fixed navigation.
+At 76rem and below the discovery rail drops; at intermediate tablet widths platform navigation becomes an icon rail with explicit accessible names. At 48rem and below the sidebar becomes a Radix drawer and the platform uses one feed plus bottom navigation. All primary social actions remain reachable. Page content owns document scrolling; only the desktop sidebar has bounded overflow.
 
-Marketing is a distinct Persuade surface with its own navigation, owned by F7. Auth retains one 30rem form column. Use `AppShell` only for app routes; the dashboard layout already integrates it. Community/discovery/adoption/fundraising route layouts should opt into it as they ship.
+`/dashboard/**` explicitly uses the `management` variant: management-only grouped navigation, a breadcrumb, real contribution summaries and full-width task content. It does not render the social sidebar or mobile social bottom bar. Management destinations remain available through its mobile drawer. Forms retain a readable measure inside the wide workspace; tables and lists can use the remaining width. A visible link connects both workspaces.
+
+Marketing and authentication retain their existing route-specific layouts. The redesign does not replace them or change data/permission rules.
+
+## Runtime token ownership
+
+`src/app/globals.css` remains the canonical runtime token source (existing-runtime ownership). This file mirrors the roles; it does not generate a competing theme. Shadcn/Radix controls continue to use the canonical `src/components/ui` layer.
+
+| Role                  | Runtime variable                    | Value                   | Consumers                                    |
+| --------------------- | ----------------------------------- | ----------------------- | -------------------------------------------- |
+| Brand action          | `--primary`                         | `#F97316`               | Button, selected feed indicator              |
+| General foreground    | `--foreground`                      | `#3B2416`               | Text, controls, identity                     |
+| Social canvas         | `--social-canvas`                   | `#F5F6F7`               | Both workspace backgrounds, search           |
+| Social separation     | `--social-line`                     | `#E4E7EB`               | Header, posts, management divisions          |
+| Social secondary text | `--social-muted`                    | `#626873`               | Metadata, labels, supporting text            |
+| Surface               | `--surface`                         | `#FFFFFF`               | Header, posts, management forms              |
+| Management/help       | `--teal`                            | `#0F766E`               | Focus, links, selected management navigation |
+| Scrollbar             | `--scroll-thumb` / `--scroll-track` | `#B7B4AE` / transparent | Global scrollable surfaces                   |
+
+Social headings use 26px Nunito; posts use 15px Inter and a readable text measure within the flexible feed. Initials are identity fallbacks, not invented author photographs. Hover, focus, selected, disabled, loading, empty and error treatments reuse maintained components. No new business lifecycle is introduced by the visual split.
 
 ## Elevation & Depth
 
@@ -156,7 +175,7 @@ Surfaces are flat at rest, separated by warm borders. Portaled menus use `0 8px 
 
 ## Shapes
 
-Controls use 0.75rem corners; menu items 0.5rem; status labels 0.375rem. Images preserve useful pet identity and meaningful alt text. The shared AnimalImage fallback/sensitivity contract remains authoritative. Lucide provides consistent line icons; the temporary PawTrail wordmark uses its paw icon until approved identity assets are supplied.
+Controls use 0.75rem corners; menu items 0.5rem; status labels 0.375rem. Images preserve useful pet identity and meaningful alt text. The shared AnimalImage fallback/sensitivity contract remains authoritative. Lucide provides consistent line icons; the PawTrail lockup uses a compact crop of the user-supplied cat/dog illustration beside the wordmark. Other supplied crops appear in the discovery rail and empty/404 states; all five WebP assets total about 33 KB. See `docs/assets/pawtrail-illustration.md`.
 
 ## Components
 

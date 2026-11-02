@@ -9,6 +9,7 @@ export function DataState({
   emptyTitle = 'Nothing here yet',
   emptyDescription = 'Try another filter or add your first update.',
   errorMessage = 'We couldn’t load this content. Check your connection and try again.',
+  emptyIllustration,
 }: {
   state: 'loading' | 'empty' | 'error' | 'ready'
   retry?: () => void
@@ -17,6 +18,7 @@ export function DataState({
   emptyTitle?: string
   emptyDescription?: string
   errorMessage?: string
+  emptyIllustration?: 'caught-up'
 }) {
   if (state === 'ready') return <>{children}</>
   if (state === 'loading')
@@ -41,6 +43,16 @@ export function DataState({
     )
   return (
     <div className="data-state">
+      {emptyIllustration && (
+        <img
+          className="empty-illustration"
+          src={'/images/pawtrail/' + emptyIllustration + '.webp'}
+          width={239}
+          height={119}
+          alt=""
+          loading="lazy"
+        />
+      )}
       <h2>{emptyTitle}</h2>
       <p>{emptyDescription}</p>
       {emptyAction}

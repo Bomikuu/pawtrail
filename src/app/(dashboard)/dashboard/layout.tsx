@@ -6,7 +6,7 @@ export const metadata = { robots: { index: false, follow: false } }
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <RequireSession returnTo="/dashboard">
-      <AppShell>{children}</AppShell>
+      <AppShell variant="management">{children}</AppShell>
     </RequireSession>
   )
 }

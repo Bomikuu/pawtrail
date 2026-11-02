@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Search } from 'lucide-react'
+import { Search, X } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { getBrowserApi } from '@/lib/api/client'
@@ -16,10 +16,12 @@ export function GlobalSearch() {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(-1)
   const [error, setError] = useState('')
+  const [composing, setComposing] = useState(false)
+  const input = useRef<HTMLInputElement>(null)
   useEffect(() => {
     setItems([])
     setIndex(-1)
-    if (q.trim().length < 2) return
+    if (q.trim().length < 2 || composing) return
     const controller = new AbortController()
     const timer = setTimeout(() => {
       void getBrowserApi()
@@ -39,13 +41,17 @@ export function GlobalSearch() {
       clearTimeout(timer)
       controller.abort()
     }
-  }, [q])
+  }, [q, composing])
   return (
     <div className="global-search">
       <form
         action="/search"
         method="get"
         onSubmit={(e) => {
+          if (composing) {
+            e.preventDefault()
+            return
+          }
           if (index >= 0 && items[index]) {
             e.preventDefault()
             router.push(items[index].path)
@@ -57,6 +63,7 @@ export function GlobalSearch() {
           Search PawTrail
         </label>
         <Input
+          ref={input}
           id={id}
           role="combobox"
           aria-autocomplete="list"
@@ -67,16 +74,20 @@ export function GlobalSearch() {
           }
           name="q"
           type="search"
-          placeholder="Find a story…"
+          placeholder="Search pets, people, stories…"
           maxLength={200}
           value={q}
           onFocus={() => setOpen(true)}
           onBlur={() => setTimeout(() => setOpen(false), 150)}
           onChange={(e) => {
             setQ(e.target.value)
+            setError('')
             setOpen(true)
           }}
+          onCompositionStart={() => setComposing(true)}
+          onCompositionEnd={() => setComposing(false)}
           onKeyDown={(e) => {
+            if (e.nativeEvent.isComposing) return
             if (e.key === 'Escape') {
               setOpen(false)
               setIndex(-1)
@@ -96,6 +107,24 @@ export function GlobalSearch() {
         <Button type="submit" variant="ghost" aria-label="Search">
           <Search size={18} aria-hidden="true" />
         </Button>
+        {!!q && (
+          <Button
+            type="button"
+            variant="ghost"
+            aria-label="Clear search"
+            className="search-clear"
+            onClick={() => {
+              setQ('')
+              setError('')
+              setItems([])
+              setIndex(-1)
+              setOpen(false)
+              input.current?.focus()
+            }}
+          >
+            <X size={16} aria-hidden="true" />
+          </Button>
+        )}
       </form>
       <ul
         className="search-suggestions"

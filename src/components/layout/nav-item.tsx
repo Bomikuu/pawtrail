@@ -44,6 +44,7 @@ export function NavItem({
     <Link
       href={href}
       className="nav-item"
+      aria-label={destination.label}
       aria-current={
         isCurrentDestination(pathname, destination.href) ? 'page' : undefined
       }

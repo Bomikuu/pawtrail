@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { ArrowUpRight, MapPin, ArrowRight, PawPrint } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { AnimalImage } from '@/components/shared/animal-image'
@@ -49,17 +50,28 @@ export function Feed({
     <div className="community-layout">
       <div className="community-journal">
         <header className="community-intro">
-          <h1>The community journal</h1>
-          <p>Little moments. Familiar faces. More ways to care.</p>
+          <div>
+            <h1>Community</h1>
+            <p>Your daily dose of paws & people.</p>
+          </div>
+          <Link href="/explore" className="feed-location">
+            <MapPin size={16} aria-hidden="true" />
+            Explore nearby
+          </Link>
         </header>
-        <PostComposer options={options} />
         <nav aria-label="Community feeds" className="feed-tabs">
           {(['for_you', 'following', 'nearby'] as const).map((value) => (
             <Button
               key={value}
               variant="ghost"
-              aria-pressed={tab === value}
-              onClick={() => setTab(value)}
+              aria-pressed={!saved && tab === value}
+              onClick={() => {
+                setTab(value)
+                setSaved(false)
+              }}
+              className={
+                !saved && tab === value ? 'feed-tab-current' : undefined
+              }
             >
               {value === 'for_you'
                 ? 'For you'
@@ -71,18 +83,20 @@ export function Feed({
           <Button
             variant="ghost"
             aria-pressed={saved}
+            className={saved ? 'feed-tab-current' : undefined}
             onClick={() => setSaved(!saved)}
           >
-            Saved posts
+            Saved
           </Button>
         </nav>
-        <p className="feed-explanation">
+        <PostComposer options={options} />
+        <p className="feed-explanation" aria-live="polite">
           {saved
             ? 'Your saved stories, newest first.'
             : tab === 'for_you'
-              ? 'For you is a chronological feed — the newest stories come first.'
+              ? 'Latest from the community'
               : tab === 'following'
-                ? 'Stories from the people and animals you follow. Follow them from profiles or story cards.'
+                ? 'From the people and pets you follow'
                 : 'Choose a public neighborhood. Your current location is never requested.'}
         </p>
         {tab === 'nearby' && (
@@ -146,6 +160,7 @@ export function Feed({
                     ? 'This feed will fill when you follow people and animals.'
                     : 'Share a moment or try another feed.'
               }
+              emptyIllustration="caught-up"
             >
               {posts.map((post) => (
                 <PostCard key={post.id} post={post} options={options} />
@@ -176,30 +191,71 @@ export function Feed({
         )}
       </div>
       <aside className="community-rail" aria-label="Animals to know">
-        <h2>A familiar face to care for</h2>
-        <p>
-          Sample animals connected to the community. Learn their needs before
-          taking the next step.
-        </p>
-        {animals.slice(0, 2).map((animal) => (
-          <section key={animal.id}>
-            <AnimalImage image={animal.photo} />
-            <h3>
-              <Link href={`/pets/${encodeURIComponent(animal.slug)}`}>
-                {animal.name}
-              </Link>
-            </h3>
-            <p>
-              {animal.location.neighborhood} ·{' '}
-              {animal.adoptable
-                ? 'Open to adoption enquiries'
-                : 'Meet their care circle'}
-            </p>
-            <Link href={`/pets/${encodeURIComponent(animal.slug)}#help`}>
-              See ways to help {animal.name}
+        <section className="community-welcome">
+          <img
+            src="/images/pawtrail/care-circle.webp"
+            width={504}
+            height={245}
+            alt=""
+            loading="lazy"
+          />
+          <div>
+            <h2>Every paw has a story.</h2>
+            <p>Find your people. Meet their pets. Make a little difference.</p>
+            <ButtonLink href="/adopt" variant="outline">
+              Find a companion <ArrowUpRight size={17} aria-hidden="true" />
+            </ButtonLink>
+          </div>
+        </section>
+        <section className="rail-neighbors">
+          <div className="rail-heading">
+            <h2>Looking for a home</h2>
+            <Link href="/adopt" aria-label="See all adoptable animals">
+              <ArrowRight size={18} aria-hidden="true" />
             </Link>
-          </section>
-        ))}
+          </div>
+          {animals.length ? (
+            animals.slice(0, 4).map((animal) => (
+              <Link
+                key={animal.id}
+                className="rail-animal"
+                href={'/pets/' + encodeURIComponent(animal.slug)}
+              >
+                <AnimalImage image={animal.photo} compact />
+                <span>
+                  <strong>{animal.name}</strong>
+                  <small>{animal.location.neighborhood}</small>
+                  <span className="rail-animal-status">
+                    Meet {animal.name}{' '}
+                    <ArrowUpRight size={13} aria-hidden="true" />
+                  </span>
+                </span>
+              </Link>
+            ))
+          ) : (
+            <p>No public adoption profiles right now. Check back soon.</p>
+          )}
+          {session.demo && (
+            <p className="rail-sample-note">Illustrative community profiles</p>
+          )}
+        </section>
+        <section className="rail-help">
+          <PawPrint size={22} aria-hidden="true" />
+          <h2>A small act. A happier paw.</h2>
+          <p>
+            A meal, a short walk, a helping hand. There’s a way for you to get
+            involved.
+          </p>
+          <Link href="/missions">
+            Explore missions <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </section>
+        <footer className="community-rail-footer">
+          <Link href="/shelters">Shelters</Link>
+          <Link href="/events">Events</Link>
+          <Link href="/dashboard/settings">Privacy settings</Link>
+          <span>PawTrail · Every Paw Has a Story.</span>
+        </footer>
       </aside>
     </div>
   )

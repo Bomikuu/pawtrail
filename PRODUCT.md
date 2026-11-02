@@ -41,11 +41,11 @@ Mobile-first consumer web application with desktop discovery and management layo
 
 ## Brand Commitments
 
-PawTrail; “Every Paw Has a Story.”; “Discover. Care. Connect.” Warm orange and cream with teal and green accents. Friendly rounded headings, readable body text, restrained flat animal doodles, real animal photographs, and a consumer community feel. The brief supplies a cat/dog/paw-marker logo concept; no finished logo asset has been supplied.
+PawTrail; “Every Paw Has a Story.”; “Discover. Care. Connect.” Warm orange and cream with teal and green accents. Friendly rounded headings, readable body text, restrained flat animal doodles, real animal photographs, and a consumer community feel. The brief supplies a cat/dog/paw-marker logo concept; a PawTrail illustration sheet with logo artwork has now been supplied for compact brand and empty-state use.
 
 ## Evidence on Hand
 
-The original implementation brief is at `docs/requirements/pawtrail-original-brief.txt`. No real community records, testimonials, financial transactions, photographs, or final brand assets have been supplied. Sample records and licensed stock photographs must be identified as illustrative.
+The original implementation brief is at `docs/requirements/pawtrail-original-brief.txt`. A PawTrail illustration sheet was supplied for this redesign. No real community records, testimonials, financial transactions or animal photographs have been supplied. Sample records and licensed stock photographs must be identified as illustrative.
 
 ## Product Principles
 

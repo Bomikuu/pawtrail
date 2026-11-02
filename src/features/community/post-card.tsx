@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { StatusBadge } from '@/components/shared/status-badge'
+import { CommunityAvatar } from '@/components/shared/community-avatar'
+import { PawPrint } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DataState } from '@/components/shared/data-state'
 import { READY_ROUTES } from '@/components/layout/navigation'
@@ -72,13 +74,19 @@ export function PostCard({
   const userHref = post.author.username
     ? `/users/${encodeURIComponent(post.author.username)}`
     : null
+  const createdLabel = new Intl.DateTimeFormat('en-PH', {
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'Asia/Manila',
+  }).format(new Date(post.createdAt))
   return (
     <article
       className="post-card"
       aria-label={`${postTypes[post.type]} by ${post.author.displayName}`}
     >
       <header className="post-heading">
-        <div>
+        <CommunityAvatar name={post.author.displayName} />
+        <div className="post-author">
           <strong>
             {userHref && isRouteReady(userHref, READY_ROUTES) ? (
               <Link href={userHref}>{post.author.displayName}</Link>
@@ -87,11 +95,22 @@ export function PostCard({
             )}
           </strong>
           <p>
+            {post.author.username && (
+              <span className="post-handle">
+                @{post.author.username} <span aria-hidden="true">· </span>
+              </span>
+            )}
             <time dateTime={post.createdAt}>
-              {new Intl.DateTimeFormat('en-PH', {
-                dateStyle: 'medium',
-                timeZone: 'Asia/Manila',
-              }).format(new Date(post.createdAt))}
+              {post.id.startsWith('pending:') ? (
+                createdLabel
+              ) : (
+                <Link
+                  className="post-time-link"
+                  href={'/community/' + encodeURIComponent(post.id)}
+                >
+                  {createdLabel}
+                </Link>
+              )}
             </time>{' '}
             · {postTypes[post.type]}
           </p>
@@ -101,9 +120,9 @@ export function PostCard({
             target={{ kind: 'user', id: post.authorId }}
             name={post.author.displayName}
             returnTo={`/community/${encodeURIComponent(post.id)}`}
+            compact
           />
         )}
-        <StatusBadge>{post.provenance.label}</StatusBadge>
       </header>
       {post.moderation !== 'published' && (
         <p className="post-review">
@@ -121,26 +140,27 @@ export function PostCard({
           {post.linkedEntities.map((entity) => (
             <li key={`${entity.ref.kind}:${entity.ref.id}`}>
               {isRouteReady(entity.href, READY_ROUTES) ? (
-                <Link href={entity.href}>{entity.title}</Link>
+                <Link href={entity.href}>
+                  <PawPrint size={14} aria-hidden="true" />
+                  {entity.title}
+                </Link>
               ) : (
                 <span>
                   {entity.title}{' '}
                   <small>· {entity.ref.kind}, page coming soon</small>
                 </span>
               )}
-              {entity.ref.kind === 'animal' && (
-                <FollowButton
-                  target={{ kind: 'animal', id: entity.ref.id }}
-                  name={entity.title}
-                  returnTo={`/community/${encodeURIComponent(post.id)}`}
-                />
-              )}
             </li>
           ))}
         </ul>
       )}
       {!!post.media.length && (
-        <div className="post-photos">
+        <div
+          className={
+            'post-photos' +
+            (post.media.length > 1 ? ' post-photos-multiple' : '')
+          }
+        >
           {post.media.map((image) => (
             <AnimalImage key={image.id} image={image} />
           ))}
@@ -166,15 +186,14 @@ export function PostCard({
       <footer className="post-footer">
         {!detail && !post.id.startsWith('pending:') && (
           <Link href={`/community/${encodeURIComponent(post.id)}`}>
-            Read story
+            View conversation
           </Link>
         )}
-        {post.moderation === 'published' && (
-          <Link href={`/community/${encodeURIComponent(post.id)}#discussion`}>
-            {post.commentCount}{' '}
-            {post.commentCount === 1 ? 'comment' : 'comments'}
-          </Link>
-        )}
+        <span title={post.provenance.label}>
+          {post.provenance.kind === 'demo'
+            ? 'Sample post'
+            : post.provenance.label}
+        </span>
       </footer>
       {detail && post.moderation === 'published' && (
         <section id="discussion" className="profile-section">
