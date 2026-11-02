@@ -90,7 +90,10 @@ export function CommunityPreview({
             error="Community stories could not load."
           >
             {data.stories.items.map((post) => (
-              <article key={post.id} className="story-preview">
+              <article
+                key={post.id}
+                className={`story-preview${post.media[0] ? ' story-preview-with-media' : ''}`}
+              >
                 {post.media[0] && <AnimalImage image={post.media[0]} />}
                 <div>
                   <h3>
