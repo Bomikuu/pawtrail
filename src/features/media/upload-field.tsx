@@ -16,6 +16,8 @@ export function UploadField({
   shelterId,
   api,
   disabled = false,
+  maxAttachments = MAX_ATTACHMENTS,
+  onReadyChange,
 }: {
   value: MediaAsset[]
   onChange(assets: MediaAsset[]): void
@@ -23,12 +25,17 @@ export function UploadField({
   shelterId?: string
   api?: PawTrailApi['media']
   disabled?: boolean
+  maxAttachments?: number
+  onReadyChange?(ready: boolean): void
 }) {
   const id = useId()
   const [drafts, setDrafts] = useState<MediaPreview[]>([])
   const [error, setError] = useState('')
   const [pending, setPending] = useState(false)
   const [sensitive, setSensitive] = useState(false)
+  useEffect(() => {
+    onReadyChange?.(!pending && drafts.length === 0)
+  }, [pending, drafts.length, onReadyChange])
   const active = useRef<AbortController | null>(null)
   useEffect(() => () => active.current?.abort(), [])
   const service = () => api ?? getBrowserApi().media
@@ -45,8 +52,12 @@ export function UploadField({
     if (!files) return
     setError('')
     const next = Array.from(files)
-    if (items.length + next.length > MAX_ATTACHMENTS) {
-      setError('Choose up to six attachments in total.')
+    if (items.length + next.length > maxAttachments) {
+      setError(
+        maxAttachments === 6
+          ? 'Choose up to six attachments in total.'
+          : `Choose up to ${maxAttachments} attachments in total.`,
+      )
       return
     }
     const types = [

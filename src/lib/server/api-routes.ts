@@ -169,7 +169,7 @@ export const apiRoutes: ApiRoute[] = [
     path: '/community/posts',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        pageSchema(community.postSchema),
+        pageSchema(community.postViewSchema),
         await api.community.list(
           parseInput(community.postFiltersSchema, query),
           options,
@@ -181,7 +181,7 @@ export const apiRoutes: ApiRoute[] = [
     path: '/community/posts/:id',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        community.postSchema,
+        community.postViewSchema,
         await api.community.get(parseInput(idSchema, params['id']), options),
       ),
   },
@@ -190,7 +190,7 @@ export const apiRoutes: ApiRoute[] = [
     path: '/community/posts',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        community.postSchema,
+        community.postViewSchema,
         await api.community.create(
           parseInput(community.postInputSchema, body),
           options,
@@ -202,7 +202,7 @@ export const apiRoutes: ApiRoute[] = [
     path: '/community/posts/:id',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        community.postSchema,
+        community.postViewSchema,
         await api.community.update(
           parseInput(idSchema, params['id']),
           parseInput(community.postUpdateInputSchema, body),
@@ -224,7 +224,7 @@ export const apiRoutes: ApiRoute[] = [
     path: '/community/posts/:id/reaction',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        community.postSchema,
+        community.postViewSchema,
         await api.community.setReaction(
           parseInput(idSchema, params['id']),
           parseInput(z.object({ active: z.boolean() }), body).active,

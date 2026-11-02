@@ -1,0 +1,178 @@
+'use client'
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { AnimalImage } from '@/components/shared/animal-image'
+import { StatusBadge } from '@/components/shared/status-badge'
+import { Button } from '@/components/ui/button'
+import { DataState } from '@/components/shared/data-state'
+import { READY_ROUTES } from '@/components/layout/navigation'
+import { isRouteReady } from '@/lib/route-readiness'
+import { PostActions } from './post-actions'
+import { PostComposer, postTypes } from './post-composer'
+import type { LinkedOption } from './linked-entity-picker'
+import { usePost } from './queries'
+import type { Post } from './types'
+function PrivatePhoto({
+  image,
+}: {
+  image: NonNullable<Post['ownerMedia']>[number]
+}) {
+  const [revealed, setRevealed] = useState(!image.sensitive)
+  const [failed, setFailed] = useState(false)
+  if (failed)
+    return <p>Private photograph unavailable. Refresh to try again.</p>
+  if (!revealed)
+    return (
+      <div>
+        <p>This private photograph may show an animal in distress.</p>
+        <Button variant="outline" onClick={() => setRevealed(true)}>
+          Show private photograph
+        </Button>
+      </div>
+    )
+  return (
+    <figure>
+      <img
+        src={image.url}
+        alt={image.alt}
+        width={640}
+        height={480}
+        loading="lazy"
+        onError={() => setFailed(true)}
+      />
+      <figcaption>Private preview · awaiting review</figcaption>
+    </figure>
+  )
+}
+export function PostCard({
+  post,
+  options,
+  detail = false,
+}: {
+  post: Post
+  options: LinkedOption[]
+  detail?: boolean
+}) {
+  const [editing, setEditing] = useState(false)
+  const [deleted, setDeleted] = useState(false)
+  const router = useRouter()
+  if (deleted) return <p role="status">Story deleted.</p>
+  if (editing)
+    return (
+      <PostComposer
+        post={post}
+        options={options}
+        onComplete={() => setEditing(false)}
+        onCancel={() => setEditing(false)}
+      />
+    )
+  const userHref = post.author.username
+    ? `/users/${encodeURIComponent(post.author.username)}`
+    : null
+  return (
+    <article
+      className="post-card"
+      aria-label={`${postTypes[post.type]} by ${post.author.displayName}`}
+    >
+      <header className="post-heading">
+        <div>
+          <strong>
+            {userHref && isRouteReady(userHref, READY_ROUTES) ? (
+              <Link href={userHref}>{post.author.displayName}</Link>
+            ) : (
+              post.author.displayName
+            )}
+          </strong>
+          <p>
+            <time dateTime={post.createdAt}>
+              {new Intl.DateTimeFormat('en-PH', {
+                dateStyle: 'medium',
+                timeZone: 'Asia/Manila',
+              }).format(new Date(post.createdAt))}
+            </time>{' '}
+            · {postTypes[post.type]}
+          </p>
+        </div>
+        <StatusBadge>{post.provenance.label}</StatusBadge>
+      </header>
+      {post.moderation !== 'published' && (
+        <p className="post-review">
+          <StatusBadge tone="warning">
+            {post.moderation === 'pending' ? 'Pending review' : 'Not published'}
+          </StatusBadge>{' '}
+          Visible only to the author and reviewers.
+        </p>
+      )}
+      <p className="post-text">{post.text}</p>
+      {!!post.linkedEntities.length && (
+        <ul className="post-identities" aria-label="Connected stories">
+          {post.linkedEntities.map((entity) => (
+            <li key={`${entity.ref.kind}:${entity.ref.id}`}>
+              {isRouteReady(entity.href, READY_ROUTES) ? (
+                <Link href={entity.href}>{entity.title}</Link>
+              ) : (
+                <span>
+                  {entity.title}{' '}
+                  <small>· {entity.ref.kind}, page coming soon</small>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+      {!!post.media.length && (
+        <div className="post-photos">
+          {post.media.map((image) => (
+            <AnimalImage key={image.id} image={image} />
+          ))}
+        </div>
+      )}
+      {post.ownerMedia && post.moderation === 'pending' && post.viewerOwns && (
+        <div className="post-photos">
+          {post.ownerMedia.map((image) => (
+            <PrivatePhoto key={image.id} image={image} />
+          ))}
+        </div>
+      )}
+      <PostActions
+        post={post}
+        onEdit={() => setEditing(true)}
+        onDeleted={() => {
+          setDeleted(true)
+          if (detail) router.push('/community')
+        }}
+      />
+      <footer className="post-footer">
+        {!detail && !post.id.startsWith('pending:') && (
+          <Link href={`/community/${encodeURIComponent(post.id)}`}>
+            Read story
+          </Link>
+        )}
+        <span>
+          {post.commentCount} {post.commentCount === 1 ? 'comment' : 'comments'}{' '}
+          · discussion coming soon
+        </span>
+      </footer>
+    </article>
+  )
+}
+export function PostDetail({
+  initial,
+  scope,
+  options,
+}: {
+  initial: Post
+  scope: string
+  options: LinkedOption[]
+}) {
+  const query = usePost(initial.id, { post: initial, scope })
+  return (
+    <DataState
+      state={query.isPending ? 'loading' : query.isError ? 'error' : 'ready'}
+      retry={() => void query.refetch()}
+    >
+      {query.data && <PostCard post={query.data} options={options} detail />}
+    </DataState>
+  )
+}

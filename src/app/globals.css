@@ -865,3 +865,222 @@ h3 {
   font-weight: 700;
   text-decoration-thickness: 2px;
 }
+
+/* The community journal: compact composer, readable stories, contextual care. */
+.community-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+.community-journal {
+  min-width: 0;
+}
+.community-intro {
+  margin-bottom: 1.5rem;
+}
+.community-intro h1 {
+  margin-bottom: 0.5rem;
+}
+.community-intro p,
+.feed-explanation,
+.composer-help,
+.post-heading p,
+.post-footer,
+.community-rail p {
+  color: var(--secondary-text);
+}
+.post-composer,
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+}
+.post-composer h2 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+.post-composer label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.ui-textarea {
+  min-height: 6.5rem;
+  height: auto;
+  resize: vertical;
+  width: 100%;
+}
+.composer-help {
+  font-size: 0.875rem;
+  margin: 0.5rem 0 1rem;
+}
+.community-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.community-choice-row [aria-pressed='true'],
+.feed-tabs [aria-pressed='true'] {
+  background: var(--teal);
+  color: var(--surface);
+}
+.composer-details {
+  margin-top: 1.5rem;
+  padding: 0;
+  border: 0;
+}
+.composer-details legend,
+.linked-picker legend {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.linked-picker {
+  border: 0;
+  padding: 1.5rem 0 0;
+}
+.linked-picker .community-choice-row {
+  margin-top: 0.75rem;
+}
+.feed-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+.feed-explanation {
+  font-size: 0.875rem;
+  margin: 0.75rem 0 1.5rem;
+}
+.post-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+.post-heading p {
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+}
+.post-heading .status-badge {
+  max-width: 10rem;
+}
+.post-review {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+.post-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.65;
+  margin: 1rem 0;
+}
+.post-identities {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+.post-identities a {
+  color: var(--teal);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+.post-identities small {
+  color: var(--secondary-text);
+}
+.post-photos {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem -1.25rem;
+}
+.post-photos img {
+  width: 100%;
+  height: auto;
+  max-height: 34rem;
+  object-fit: cover;
+}
+.post-photos figcaption,
+.post-photos > p {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+.post-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  margin-top: 0.75rem;
+}
+.community-detail {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+.community-detail > h1 {
+  margin: 1rem 0 1.5rem;
+}
+.community-rail {
+  display: none;
+}
+@media (min-width: 80rem) {
+  .community-layout {
+    grid-template-columns: minmax(0, 1fr) 14rem;
+  }
+  .community-rail {
+    display: block;
+  }
+  .community-rail h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  .community-rail p {
+    font-size: 0.875rem;
+  }
+  .community-rail section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .community-rail img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+  }
+  .community-rail h3 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 48rem) {
+  .post-heading {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .post-composer,
+  .post-card {
+    padding: 1rem;
+  }
+  .post-photos {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
+.ui-button-ghost {
+  background: transparent;
+  color: var(--foreground);
+  border-color: transparent;
+}
+.ui-button-ghost:hover {
+  background: var(--border);
+}

@@ -48,11 +48,22 @@ it('announces unfinished actions and never offers them as links', async () => {
   const user = userEvent.setup()
   renderSession(<CreateMenu />)
   await user.click(screen.getByRole('button', { name: 'Create' }))
-  for (const [label] of actions) {
+  for (const [label] of actions.filter(
+    ([label]) => label !== 'Create Community Post',
+  )) {
     const item = screen.getByRole('menuitem', {
       name: `${label} — Coming soon`,
     })
     expect(item).toHaveAttribute('aria-disabled', 'true')
     expect(item).not.toHaveAttribute('href')
   }
+})
+
+it('activates the implemented community composer', async () => {
+  const user = userEvent.setup()
+  renderSession(<CreateMenu />)
+  await user.click(screen.getByRole('button', { name: 'Create' }))
+  expect(
+    screen.getByRole('menuitem', { name: 'Create Community Post' }),
+  ).toHaveAttribute('href', '/community/create')
 })

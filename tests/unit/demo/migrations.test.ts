@@ -42,21 +42,24 @@ describe('recoverable schema state', () => {
       ).toHaveLength(10)
     },
   )
-  it('requires an explicit reset for schema3 rather than dropping old state', async () => {
-    const id = sessionId()
-    const repo = await openDemoRepository(id, env.dir)
-    await repo.transact(addPost('schema3-story'))
-    const path = join(env.dir, `${id}.json`)
-    const document = JSON.parse(await readFile(path, 'utf8'))
-    document.schemaVersion = 3
-    delete document.savedAnimals
-    const old = JSON.stringify(document)
-    await writeFile(path, old)
-    await expect(openDemoRepository(id, env.dir)).rejects.toMatchObject({
-      code: 'DEMO_RESET_REQUIRED',
-    })
-    expect(await readFile(path, 'utf8')).toBe(old)
-  })
+  it.each([3, 4])(
+    'requires an explicit reset for schema%s rather than dropping old state',
+    async (version) => {
+      const id = sessionId()
+      const repo = await openDemoRepository(id, env.dir)
+      await repo.transact(addPost('schema3-story'))
+      const path = join(env.dir, `${id}.json`)
+      const document = JSON.parse(await readFile(path, 'utf8'))
+      document.schemaVersion = version
+      delete document.savedAnimals
+      const old = JSON.stringify(document)
+      await writeFile(path, old)
+      await expect(openDemoRepository(id, env.dir)).rejects.toMatchObject({
+        code: 'DEMO_RESET_REQUIRED',
+      })
+      expect(await readFile(path, 'utf8')).toBe(old)
+    },
+  )
   it('treats corrupt JSON as reset-required, preserving it until reset', async () => {
     const id = sessionId()
     const path = join(env.dir, `${id}.json`)

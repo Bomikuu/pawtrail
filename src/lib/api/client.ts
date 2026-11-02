@@ -141,7 +141,7 @@ export function getBrowserApi(): PawTrailApi {
         request(
           'GET',
           `/community/posts`,
-          pageSchema(community.postSchema),
+          pageSchema(community.postViewSchema),
           filters,
           undefined,
           options,
@@ -150,7 +150,7 @@ export function getBrowserApi(): PawTrailApi {
         request(
           'GET',
           `/community/posts/${encodeURIComponent(id)}`,
-          community.postSchema,
+          community.postViewSchema,
           undefined,
           undefined,
           options,
@@ -159,7 +159,7 @@ export function getBrowserApi(): PawTrailApi {
         request(
           'POST',
           `/community/posts`,
-          community.postSchema,
+          community.postViewSchema,
           undefined,
           input,
           options,
@@ -168,7 +168,7 @@ export function getBrowserApi(): PawTrailApi {
         request(
           'PATCH',
           `/community/posts/${encodeURIComponent(id)}`,
-          community.postSchema,
+          community.postViewSchema,
           undefined,
           input,
           options,
@@ -186,7 +186,7 @@ export function getBrowserApi(): PawTrailApi {
         request(
           'PUT',
           `/community/posts/${encodeURIComponent(id)}/reaction`,
-          community.postSchema,
+          community.postViewSchema,
           undefined,
           { active: active },
           options,

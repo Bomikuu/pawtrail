@@ -1,12 +1,13 @@
 import 'server-only'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
+import { resourceRefSchema } from '@/lib/api/schemas'
 import { storedMediaSchema } from '@/lib/server/media/storage'
 import { seed, type FixtureSeed } from '@/data/fixtures'
 import { ApiError } from '@/lib/api/errors'
 import { canonicalJson, type DemoDraft } from './transactions'
 
-export const DEMO_SCHEMA_VERSION = 4
+export const DEMO_SCHEMA_VERSION = 5
 export const DEMO_FIXTURE_VERSION = 1
 const collectionSchema = z.array(
   z.object({ id: z.string().min(1) }).catchall(z.json()),
@@ -24,6 +25,33 @@ const storedSchema = z
     fixtureVersion: z.literal(DEMO_FIXTURE_VERSION),
     overlay: overlaySchema,
     media: z.array(storedMediaSchema),
+    community: z
+      .object({
+        follows: z.array(
+          z
+            .object({ actorId: z.string().min(1), ref: resourceRefSchema })
+            .strict(),
+        ),
+        reactions: z.array(
+          z
+            .object({ actorId: z.string().min(1), postId: z.string().min(1) })
+            .strict(),
+        ),
+        saved: z.array(
+          z
+            .object({ actorId: z.string().min(1), postId: z.string().min(1) })
+            .strict(),
+        ),
+        attachments: z.array(
+          z
+            .object({
+              postId: z.string().min(1),
+              mediaIds: z.array(z.string().min(1)).max(6),
+            })
+            .strict(),
+        ),
+      })
+      .strict(),
     savedAnimals: z.array(
       z
         .object({ actorId: z.string().min(1), animalId: z.string().min(1) })
@@ -49,6 +77,7 @@ export interface StoredDemo {
   schemaVersion: number
   fixtureVersion: number
   auth: DemoDraft['auth']
+  community: DemoDraft['community']
   media: DemoDraft['media']
   savedAnimals: DemoDraft['savedAnimals']
   overlay: Partial<FixtureSeed>
@@ -66,6 +95,7 @@ export function freshDocument(): StoredDemo {
     fixtureVersion: DEMO_FIXTURE_VERSION,
     overlay: {},
     media: [],
+    community: { follows: [], reactions: [], saved: [], attachments: [] },
     savedAnimals: [],
     auth: { actorId: null, cacheScope: randomUUID() },
     receipts: [],
@@ -85,6 +115,7 @@ export function parseDocument(text: string): StoredDemo {
 }
 export function snapshot(document: StoredDemo): DemoDraft {
   return {
+    community: structuredClone(document.community),
     media: structuredClone(document.media),
     savedAnimals: structuredClone(document.savedAnimals),
     data: structuredClone({ ...seed, ...document.overlay }),

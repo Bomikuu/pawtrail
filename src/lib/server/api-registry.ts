@@ -59,7 +59,7 @@ function readQuery(search: URLSearchParams): Record<string, unknown> {
   for (const [key, value] of search) {
     if (['limit', 'radiusMeters', 'latitude', 'longitude'].includes(key))
       query[key] = Number(value)
-    else if (['adoptable', 'nearlyFunded'].includes(key))
+    else if (['adoptable', 'nearlyFunded', 'saved'].includes(key))
       query[key] = value === 'true' ? true : value === 'false' ? false : value
     else if (['preferences', 'bounds', 'kinds'].includes(key)) {
       try {

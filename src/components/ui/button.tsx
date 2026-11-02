@@ -4,7 +4,11 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 export const buttonVariants = cva('ui-button', {
   variants: {
-    variant: { default: 'ui-button-primary', outline: 'ui-button-outline' },
+    variant: {
+      default: 'ui-button-primary',
+      outline: 'ui-button-outline',
+      ghost: 'ui-button-ghost',
+    },
   },
   defaultVariants: { variant: 'default' },
 })

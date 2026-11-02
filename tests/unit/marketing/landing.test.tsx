@@ -55,7 +55,11 @@ describe('PawTrail introduction', () => {
     expect(screen.getAllByTestId('sample-statistic')).toHaveLength(4)
     for (const stat of screen.getAllByTestId('sample-statistic'))
       expect(stat).toHaveTextContent(/sample/i)
-    expect(screen.getByText(/non-cash/)).toBeVisible()
+    expect(
+      screen.getByText(
+        'Kibble is a non-cash community reward. It cannot be spent or withdrawn as money.',
+      ),
+    ).toBeVisible()
     expect(
       screen
         .getAllByRole('img')

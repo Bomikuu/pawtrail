@@ -78,13 +78,17 @@ it('keeps the exact mobile order and gates unfinished routes without fabricated 
       .getAllByTestId('mobile-destination')
       .map((item) => item.textContent),
   ).toEqual(['Explore', 'Adopt', 'Create', 'Community', 'Profile'])
-  expect(within(mobile).queryByRole('link')).not.toBeInTheDocument()
+  expect(within(mobile).getAllByRole('link')).toHaveLength(1)
+  expect(
+    within(mobile).getByRole('link', { name: 'Community' }),
+  ).toHaveAttribute('href', '/community')
   expect(screen.getByText('Unread count unavailable')).toBeVisible()
   expect(screen.getByText('Kibble balance unavailable')).toBeVisible()
   expect(screen.queryByText('0 Kibble')).not.toBeInTheDocument()
-  expect(
-    screen.queryByRole('link', { name: 'PawTrail home' }),
-  ).not.toBeInTheDocument()
+  expect(screen.getByRole('link', { name: 'PawTrail home' })).toHaveAttribute(
+    'href',
+    '/community',
+  )
 })
 it('opens the mobile drawer by keyboard, reaches extra routes, and restores focus', async () => {
   const user = userEvent.setup()

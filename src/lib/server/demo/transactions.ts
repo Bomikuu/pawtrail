@@ -1,10 +1,17 @@
 import 'server-only'
+import type { ResourceRef } from '@/types/common'
 import type { StoredMedia } from '@/lib/server/media/storage'
 import type { FixtureSeed } from '@/data/fixtures'
 import type { Clock } from './clock'
 import { ApiError } from '@/lib/api/errors'
 
 export interface DemoDraft {
+  community: {
+    follows: { actorId: string; ref: ResourceRef }[]
+    reactions: { actorId: string; postId: string }[]
+    saved: { actorId: string; postId: string }[]
+    attachments: { postId: string; mediaIds: string[] }[]
+  }
   media: StoredMedia[]
   savedAnimals: { actorId: string; animalId: string }[]
   data: FixtureSeed

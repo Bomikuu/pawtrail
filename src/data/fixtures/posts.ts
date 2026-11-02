@@ -5,6 +5,10 @@ import { base, ids } from './shared'
 export const posts = ids('post', 10).map((id, i) =>
   postSchema.parse({
     ...base(id),
+    // Stagger sample stories so the chronological journal opens on its photo-led story.
+    createdAt: new Date(
+      Date.parse(base(id).createdAt) - (i + 1) * 3_600_000,
+    ).toISOString(),
     authorId: `user-${i + 1}`,
     text:
       [
@@ -15,7 +19,15 @@ export const posts = ids('post', 10).map((id, i) =>
       (i % 3 === 2
         ? 'Sample community achievement: volunteers practice logging a reviewed feeding mission in the demo. No real activity is claimed.'
         : `Sample update ${i + 1}: sharing an animal’s story with the community.`),
-    type: 'story',
+    type: [
+      'rescue',
+      'adoption',
+      'feeding',
+      'photo',
+      'sighting',
+      'help',
+      'story',
+    ][i % 7],
     media: samplePhotos[i] ? [samplePhotos[i]] : [],
     refs: [
       { kind: 'animal', id: `animal-${i + 1}` },

@@ -1,4 +1,6 @@
 import 'server-only'
+import { createCommunityService } from '@/features/community/service'
+import { geoAreaSchema } from '@/features/discovery/schemas'
 import { createDemoMedia } from '@/lib/server/media/storage'
 import { createDemoAuth, requireActor } from '@/lib/server/auth'
 import { actorSchema } from '@/features/auth/schemas'
@@ -23,7 +25,6 @@ import {
   animalFiltersSchema,
   animalSummarySchema,
 } from '@/features/animals/schemas'
-import { postFiltersSchema, postSchema } from '@/features/community/schemas'
 import {
   hordeSummarySchema,
   hordeProfileSchema,
@@ -173,47 +174,18 @@ export function createMockApi(
       },
     })
   }
-  api.community.list = async (filters, options) => {
-    const query = parseInput(postFiltersSchema, filters)
-    if (query.feed && query.feed !== 'for_you')
-      throw new ApiError(
-        'NOT_IMPLEMENTED',
-        'This feed is not implemented yet',
-        501,
-      )
-    const rows = data.posts.filter(
-      (row) =>
-        row.moderation === 'published' &&
-        (!query.authorId || row.authorId === query.authorId) &&
-        (!query.animalId ||
-          row.refs.some(
-            (ref) => ref.kind === 'animal' && ref.id === query.animalId,
-          )) &&
-        (!query.hordeId ||
-          row.refs.some(
-            (ref) => ref.kind === 'horde' && ref.id === query.hordeId,
-          )),
-    )
-    if (query.areaId)
-      throw new ApiError(
-        'NOT_IMPLEMENTED',
-        'Area feed filtering is not implemented yet',
-        501,
-      )
-    return list(
-      rows.map((row) => parseResponse(postSchema, row)),
-      query,
-      'posts',
-      options,
-    )
+  Object.assign(api.community, createCommunityService(data, repository))
+  api.discovery.searchAreas = async (q, options) => {
+    checkCancelled(options?.signal)
+    const query = parseInput(z.string().max(200), q).toLowerCase()
+    const read = (snapshot: FixtureSeed) =>
+      snapshot.areas
+        .filter((area) => area.name.toLowerCase().includes(query))
+        .map((area) => parseResponse(geoAreaSchema, area))
+    return repository
+      ? repository.read((draft) => read(draft.data))
+      : read(data)
   }
-  api.community.get = async (id, options) =>
-    get(
-      data.posts.filter((row) => row.moderation === 'published'),
-      id,
-      postSchema,
-      options,
-    )
   api.users.get = async (username, options) => {
     checkCancelled(options?.signal)
     const record = data.users.find((row) => row.username === username)

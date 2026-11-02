@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { mediaAssetSchema } from '@/features/media/schemas'
 import {
   idSchema,
   resourceRefSchema,
@@ -10,7 +11,7 @@ import {
 } from '@/lib/api/schemas'
 
 export const postInputSchema = z.object({
-  text: z.string().min(1).max(5000),
+  text: z.string().trim().min(1).max(2000),
   type: z.enum([
     'story',
     'photo',
@@ -21,14 +22,21 @@ export const postInputSchema = z.object({
     'help',
   ]),
   mediaIds: z.array(idSchema).max(6),
-  refs: z.array(resourceRefSchema),
+  refs: z
+    .array(resourceRefSchema)
+    .refine(
+      (refs) =>
+        new Set(refs.map((ref) => `${ref.kind}:${ref.id}`)).size ===
+        refs.length,
+      'Choose each linked record once',
+    ),
   expectedVersion: versionSchema.optional(),
 })
 export const postUpdateInputSchema = postInputSchema.required({
   expectedVersion: true,
 })
 export const postSchema = baseSchema.extend({
-  authorId: idSchema,
+  authorId: idSchema.nullable(),
   text: z.string(),
   type: postInputSchema.shape.type,
   media: z.array(imageSchema),
@@ -38,12 +46,40 @@ export const postSchema = baseSchema.extend({
   commentCount: z.number().int().nonnegative(),
   version: versionSchema,
 })
+export const ownerPostMediaSchema = mediaAssetSchema.extend({
+  visibility: z.literal('private'),
+  mimeType: z.enum(['image/jpeg', 'image/png', 'image/webp']),
+  url: z.string().regex(/^\/api\/v1\/media\/[a-f0-9-]{36}\/content$/),
+  sensitive: z.boolean(),
+})
+/** Public fields are an allowlist; private preview assets never belong to postSchema. */
+export const postViewSchema = postSchema
+  .extend({
+    author: z.object({
+      displayName: z.string(),
+      username: z.string().nullable(),
+    }),
+    linkedEntities: z.array(
+      z.object({ ref: resourceRefSchema, title: z.string(), href: z.string() }),
+    ),
+    viewerReacted: z.boolean(),
+    viewerSaved: z.boolean(),
+    viewerOwns: z.boolean(),
+    ownerMedia: z.array(ownerPostMediaSchema).optional(),
+  })
+  .refine(
+    (post) =>
+      post.ownerMedia === undefined ||
+      (post.viewerOwns && post.moderation === 'pending'),
+    'Private previews require an owner pending projection',
+  )
 export const postFiltersSchema = listQuerySchema.extend({
-  feed: z.enum(['for_you', 'following', 'nearby']).optional(),
+  tab: z.enum(['for_you', 'following', 'nearby']).optional(),
   authorId: idSchema.optional(),
   animalId: idSchema.optional(),
   hordeId: idSchema.optional(),
   areaId: idSchema.optional(),
+  saved: z.boolean().optional(),
 })
 export const commentInputSchema = z.object({
   text: z.string().min(1).max(2000),
