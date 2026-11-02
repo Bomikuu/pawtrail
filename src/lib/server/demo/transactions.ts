@@ -1,4 +1,5 @@
 import 'server-only'
+import type { ModerationStore } from '@/features/moderation/types'
 import type { ResourceRef } from '@/types/common'
 import type { StoredMedia } from '@/lib/server/media/storage'
 import type { FixtureSeed } from '@/data/fixtures'
@@ -6,6 +7,7 @@ import type { Clock } from './clock'
 import { ApiError } from '@/lib/api/errors'
 
 export interface DemoDraft {
+  moderation: ModerationStore
   community: {
     follows: { actorId: string; ref: ResourceRef }[]
     reactions: { actorId: string; postId: string }[]

@@ -11,6 +11,7 @@ import { useSession } from '@/features/auth/session-provider'
 import { loginPath } from '@/features/auth/return-path'
 import { getBrowserApi } from '@/lib/api/client'
 import { optimisticPostChange, invalidateCommunity } from './mutations'
+import { ReportDialog } from './report-dialog'
 import type { Post } from './types'
 export function PostActions({
   post,
@@ -123,6 +124,12 @@ export function PostActions({
           <Share2 size={18} aria-hidden="true" />
           Share
         </Button>
+        {post.moderation === 'published' && (
+          <ReportDialog
+            target={{ kind: 'post', id: post.id }}
+            returnTo={`/community/${encodeURIComponent(post.id)}`}
+          />
+        )}
         {post.viewerOwns && (
           <>
             <Button variant="ghost" disabled={working} onClick={onEdit}>

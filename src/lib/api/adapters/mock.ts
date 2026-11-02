@@ -1,4 +1,8 @@
 import 'server-only'
+import {
+  createModerationService,
+  publicSnapshot,
+} from '@/features/moderation/service'
 import { createCommunityService } from '@/features/community/service'
 import { geoAreaSchema } from '@/features/discovery/schemas'
 import { createDemoMedia } from '@/lib/server/media/storage'
@@ -128,7 +132,7 @@ export function createMockApi(
     }
     return repository
       ? repository.read((draft) =>
-          read(draft.data, draft.auth.actorId, draft.savedAnimals),
+          read(publicSnapshot(draft), draft.auth.actorId, draft.savedAnimals),
         )
       : read(data, null, [])
   }
@@ -175,6 +179,9 @@ export function createMockApi(
     })
   }
   Object.assign(api.community, createCommunityService(data, repository))
+  const reviewServices = createModerationService(data, repository)
+  Object.assign(api.community, reviewServices.community)
+  api.moderation = reviewServices.moderation
   api.discovery.searchAreas = async (q, options) => {
     checkCancelled(options?.signal)
     const query = parseInput(z.string().max(200), q).toLowerCase()
@@ -329,6 +336,69 @@ export function createMockApi(
       'sightings',
       options,
     )
+  }
+  if (repository) {
+    // Every public projection reads current committed state, including already-created adapters.
+    api.animals.list = (filters, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).animals.list(filters, options),
+      )
+    api.hordes.list = (filters, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).hordes.list(filters, options),
+      )
+    api.fundraisers.list = (filters, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).fundraisers.list(filters, options),
+      )
+    api.missions.list = (filters, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).missions.list(filters, options),
+      )
+    api.shelters.list = (filters, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).shelters.list(filters, options),
+      )
+    api.events.list = (filters, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).events.list(filters, options),
+      )
+    api.sightings.list = (filters, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).sightings.list(filters, options),
+      )
+    api.hordes.get = (key, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).hordes.get(key, options),
+      )
+    api.fundraisers.get = (key, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).fundraisers.get(key, options),
+      )
+    api.missions.get = (key, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).missions.get(key, options),
+      )
+    api.shelters.get = (key, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).shelters.get(key, options),
+      )
+    api.events.get = (key, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).events.get(key, options),
+      )
+    api.users.get = (key, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).users.get(key, options),
+      )
+    api.fundraisers.supporters = (id, query, options) =>
+      repository.read((draft) =>
+        createMockApi(publicSnapshot(draft)).fundraisers.supporters(
+          id,
+          query,
+          options,
+        ),
+      )
   }
   return api
 }

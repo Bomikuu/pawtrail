@@ -1,3 +1,5 @@
+import { Discussion } from '@/features/community/discussion'
+import { ReportDialog } from '@/features/community/report-dialog'
 import { getPublicAnimal } from '@/features/animals/server'
 import { PublicAnimalStory } from '@/features/animals/profile-header'
 import { HelpPanel } from '@/features/animals/help-panel'
@@ -102,10 +104,21 @@ export default async function AnimalPage({ params, searchParams }: Props) {
         aria-labelledby="discussion-heading"
       >
         <h2 id="discussion-heading">Talk about {animal.name}</h2>
-        <p>
-          Comment threads are coming soon. Community stories and observations
-          above remain available to read.
-        </p>
+        <ReportDialog
+          target={{ kind: 'animal', id: animal.id }}
+          returnTo={`/pets/${animal.slug}`}
+        />
+        <Discussion
+          target={{ kind: 'animal', id: animal.id }}
+          returnTo={`/pets/${animal.slug}`}
+          photoContext={[
+            {
+              ref: { kind: 'animal', id: animal.id },
+              title: animal.name,
+              href: `/pets/${animal.slug}`,
+            },
+          ]}
+        />
       </section>
     </article>
   )

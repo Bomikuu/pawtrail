@@ -30,6 +30,8 @@ it('server renders the complete public route with list, help and discussion targ
     expect(html).toContain(`id="${id}"`)
   expect(html).toContain('application/ld+json')
   expect(html).toContain('Sign in to save')
+  expect(html).toContain('Sign in to comment')
+  expect(html).toContain('Sign in to report')
   expect(html).toContain('Illustrative')
   expect(html).not.toContain('exactLatitude')
   expect((await generateMetadata(props)).alternates?.canonical).toContain(

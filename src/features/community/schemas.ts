@@ -70,8 +70,8 @@ export const postViewSchema = postSchema
   .refine(
     (post) =>
       post.ownerMedia === undefined ||
-      (post.viewerOwns && post.moderation === 'pending'),
-    'Private previews require an owner pending projection',
+      (post.viewerOwns && ['pending', 'rejected'].includes(post.moderation)),
+    'Private previews require an owner unpublished projection',
   )
 export const postFiltersSchema = listQuerySchema.extend({
   tab: z.enum(['for_you', 'following', 'nearby']).optional(),
@@ -82,11 +82,20 @@ export const postFiltersSchema = listQuerySchema.extend({
   saved: z.boolean().optional(),
 })
 export const commentInputSchema = z.object({
-  text: z.string().min(1).max(2000),
+  text: z.string().trim().min(1).max(1000),
 })
-export const commentSchema = baseSchema.extend({
+export const commentRecordSchema = baseSchema.extend({
   ref: resourceRefSchema,
   authorId: idSchema,
   text: z.string(),
   moderation: moderationStateSchema,
+  version: versionSchema.default(1),
+})
+export const commentSchema = commentRecordSchema.extend({
+  authorId: idSchema.nullable(),
+  author: z.object({
+    displayName: z.string(),
+    username: z.string().nullable(),
+  }),
+  viewerOwns: z.boolean(),
 })

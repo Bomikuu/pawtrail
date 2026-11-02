@@ -152,6 +152,7 @@ export async function openDemoRepository(
           result === undefined ? undefined : JSON.parse(canonicalJson(result))
         document.overlay = overlayFrom(draft)
         document.auth = draft.auth
+        document.moderation = draft.moderation
         document.community = draft.community
         document.media = draft.media
         document.savedAnimals = draft.savedAnimals

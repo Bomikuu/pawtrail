@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache'
 import { resolveDemoContext } from '@/lib/server/demo/session'
 import { normalizeError } from '@/lib/api/errors'
 import { dispatchApi } from '@/lib/server/api-registry'
@@ -5,7 +6,21 @@ export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 async function handle(request: Request) {
   try {
-    return await dispatchApi(request, await resolveDemoContext(request))
+    const response = await dispatchApi(
+      request,
+      await resolveDemoContext(request),
+    )
+    if (
+      response.ok &&
+      request.method === 'POST' &&
+      /^\/api\/v1\/moderation\/[^/]+\/review$/.test(
+        new URL(request.url).pathname,
+      )
+    ) {
+      // Reviews affect linked records throughout public feed, detail, search and profile routes.
+      revalidatePath('/', 'layout')
+    }
+    return response
   } catch (error) {
     const normalized = normalizeError(error)
     return Response.json(normalized.toJSON(), {

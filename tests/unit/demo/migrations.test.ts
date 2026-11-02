@@ -42,7 +42,7 @@ describe('recoverable schema state', () => {
       ).toHaveLength(10)
     },
   )
-  it.each([3, 4])(
+  it.each([3, 4, 5])(
     'requires an explicit reset for schema%s rather than dropping old state',
     async (version) => {
       const id = sessionId()

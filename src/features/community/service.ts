@@ -1,4 +1,6 @@
 import 'server-only'
+import { publicSnapshot } from '@/features/moderation/service'
+import { freshModeration } from '@/lib/server/demo/migrations'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
 import type { FixtureSeed } from '@/data/fixtures'
@@ -81,14 +83,15 @@ function visible(draft: DemoDraft, post: StoredPost) {
 export function projectPost(draft: DemoDraft, row: StoredPost): Post {
   if (!visible(draft, row)) missing()
   const owner = !!draft.auth.actorId && row.authorId === draft.auth.actorId
-  const user = draft.data.users.find((user) => user.id === row.authorId)
+  const publicData = publicSnapshot(draft)
+  const user = publicData.users.find((user) => user.id === row.authorId)
   const identifiable =
     !!user?.settings.discoverable && user.settings.showContributions
   const attachments =
     draft.community.attachments.find((item) => item.postId === row.id)
       ?.mediaIds ?? []
   const privateMedia =
-    row.moderation === 'pending' && owner
+    ['pending', 'rejected'].includes(row.moderation) && owner
       ? attachments.flatMap((id) => {
           const item = draft.media.find(
             (item) =>
@@ -102,7 +105,7 @@ export function projectPost(draft: DemoDraft, row: StoredPost): Post {
         })
       : undefined
   const links = row.refs.flatMap((ref) => {
-    const link = linkedEntity(draft.data, ref)
+    const link = linkedEntity(publicData, ref)
     return link ? [link] : []
   })
   return parseResponse(postViewSchema, {
@@ -138,7 +141,8 @@ function validateContent(
   input: PostInput,
   existing?: StoredPost,
 ) {
-  for (const ref of input.refs) if (!linkedEntity(draft.data, ref)) missing()
+  const publicData = publicSnapshot(draft)
+  for (const ref of input.refs) if (!linkedEntity(publicData, ref)) missing()
   if (
     input.refs.some(
       (ref) => !['animal', 'horde', 'fundraiser', 'mission'].includes(ref.kind),
@@ -197,6 +201,7 @@ export function createCommunityService(
   'list' | 'get' | 'create' | 'update' | 'remove' | 'setReaction' | 'setSaved'
 > {
   const anonymous: DemoDraft = {
+    moderation: freshModeration(),
     data: snapshot,
     auth: { actorId: null, cacheScope: 'anonymous' },
     media: [],
@@ -276,6 +281,7 @@ export function createCommunityService(
             'Choose an available neighborhood',
             400,
           )
+        const publicData = publicSnapshot(draft)
         const rows = draft.data.posts
           .filter(
             (row) =>
@@ -283,7 +289,7 @@ export function createCommunityService(
               (!query.authorId ||
                 (row.authorId === query.authorId &&
                   (row.authorId === draft.auth.actorId ||
-                    draft.data.users.some(
+                    publicData.users.some(
                       (user) =>
                         user.id === row.authorId &&
                         user.settings.discoverable &&
@@ -294,14 +300,14 @@ export function createCommunityService(
                   (ref) =>
                     ref.kind === 'animal' &&
                     ref.id === query.animalId &&
-                    !!linkedEntity(draft.data, ref),
+                    !!linkedEntity(publicData, ref),
                 )) &&
               (!query.hordeId ||
                 row.refs.some(
                   (ref) =>
                     ref.kind === 'horde' &&
                     ref.id === query.hordeId &&
-                    !!linkedEntity(draft.data, ref),
+                    !!linkedEntity(publicData, ref),
                 )) &&
               (!query.q ||
                 row.text.toLowerCase().includes(query.q.toLowerCase())) &&
@@ -314,7 +320,7 @@ export function createCommunityService(
               (!query.areaId ||
                 row.refs.some(
                   (ref) =>
-                    linkedEntity(draft.data, ref)?.areaId === query.areaId,
+                    linkedEntity(publicData, ref)?.areaId === query.areaId,
                 )) &&
               (query.tab !== 'following' ||
                 draft.community.follows.some(
@@ -322,7 +328,7 @@ export function createCommunityService(
                     edge.actorId === draft.auth.actorId &&
                     ((edge.ref.kind === 'user' &&
                       edge.ref.id === row.authorId &&
-                      draft.data.users.some(
+                      publicData.users.some(
                         (user) =>
                           user.id === row.authorId &&
                           user.settings.discoverable &&
@@ -332,7 +338,7 @@ export function createCommunityService(
                         (ref) =>
                           ref.kind === edge.ref.kind &&
                           ref.id === edge.ref.id &&
-                          !!linkedEntity(draft.data, ref),
+                          !!linkedEntity(publicData, ref),
                       )),
                 )),
           )

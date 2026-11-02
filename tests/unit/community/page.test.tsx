@@ -36,3 +36,15 @@ it('uses a real not-found response for absent detail IDs', async () => {
     Detail({ params: Promise.resolve({ id: 'absent' }) }),
   ).rejects.toThrow('NEXT_NOT_FOUND')
 })
+
+it('renders discussion and reporting on the actual public post route', async () => {
+  const page = await Detail({ params: Promise.resolve({ id: 'post-1' }) })
+  const html = renderToStaticMarkup(
+    <Providers initialSession={{ ...guest, cacheScope: 'anonymous:mock' }}>
+      {page}
+    </Providers>,
+  )
+  expect(html).toContain('id="discussion"')
+  expect(html).toContain('Sign in to comment')
+  expect(html).toContain('Sign in to report')
+})

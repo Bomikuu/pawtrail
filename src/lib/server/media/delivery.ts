@@ -1,4 +1,5 @@
 import 'server-only'
+import { mayReviewMedia } from '@/features/moderation/service'
 import type { MediaAsset } from '@/features/media/types'
 import type { DemoRepository } from '@/lib/server/demo/repository'
 import { can } from '@/lib/server/permissions'
@@ -22,7 +23,9 @@ export async function readMedia(
       !item ||
       (publicOnly
         ? !item.approved || item.asset.visibility !== 'public'
-        : item.asset.visibility !== 'public' && !ownsMedia(draft, item))
+        : item.asset.visibility !== 'public' &&
+          !ownsMedia(draft, item) &&
+          !mayReviewMedia(draft, id))
     )
       return missingMedia()
     const bytes = await readStoredFile(repository, item.storageKey)

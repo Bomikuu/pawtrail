@@ -29,27 +29,31 @@ export function PostComposer({
   post,
   onComplete,
   onCancel,
+  initialRefs = [],
+  initialType = 'story',
 }: {
   options: LinkedOption[]
   post?: Post
+  initialRefs?: PostInput['refs']
+  initialType?: PostInput['type']
   onComplete?(post: Post): void
   onCancel?(): void
 }) {
   const { session, pending: changing } = useSession()
   const id = useId()
   const [text, setText] = useState(post?.text ?? '')
-  const [type, setType] = useState<PostInput['type']>(post?.type ?? 'story')
+  const [type, setType] = useState<PostInput['type']>(post?.type ?? initialType)
   const [refs, setRefs] = useState(
     post?.refs.filter((ref) =>
       ['animal', 'horde', 'fundraiser', 'mission'].includes(ref.kind),
-    ) ?? [],
+    ) ?? initialRefs,
   )
   const [assets, setAssets] = useState<MediaAsset[]>([])
   const [retained, setRetained] = useState([
     ...(post?.media ?? []),
     ...(post?.ownerMedia ?? []),
   ])
-  const [expanded, setExpanded] = useState(!!post)
+  const [expanded, setExpanded] = useState(!!post || initialType === 'photo')
   const [uploadsReady, setUploadsReady] = useState(true)
   const [completed, setCompleted] = useState<Post>()
   const [pending, setPending] = useState(false)

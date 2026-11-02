@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { DataState } from '@/components/shared/data-state'
 import { READY_ROUTES } from '@/components/layout/navigation'
 import { isRouteReady } from '@/lib/route-readiness'
+import { Discussion } from './discussion'
 import { PostActions } from './post-actions'
 import { PostComposer, postTypes } from './post-composer'
 import type { LinkedOption } from './linked-entity-picker'
@@ -41,7 +42,7 @@ function PrivatePhoto({
         loading="lazy"
         onError={() => setFailed(true)}
       />
-      <figcaption>Private preview · awaiting review</figcaption>
+      <figcaption>Private author preview</figcaption>
     </figure>
   )
 }
@@ -99,7 +100,9 @@ export function PostCard({
       {post.moderation !== 'published' && (
         <p className="post-review">
           <StatusBadge tone="warning">
-            {post.moderation === 'pending' ? 'Pending review' : 'Not published'}
+            {post.moderation === 'pending'
+              ? 'Pending review'
+              : 'Rejected · not published'}
           </StatusBadge>{' '}
           Visible only to the author and reviewers.
         </p>
@@ -128,13 +131,15 @@ export function PostCard({
           ))}
         </div>
       )}
-      {post.ownerMedia && post.moderation === 'pending' && post.viewerOwns && (
-        <div className="post-photos">
-          {post.ownerMedia.map((image) => (
-            <PrivatePhoto key={image.id} image={image} />
-          ))}
-        </div>
-      )}
+      {post.ownerMedia &&
+        ['pending', 'rejected'].includes(post.moderation) &&
+        post.viewerOwns && (
+          <div className="post-photos">
+            {post.ownerMedia.map((image) => (
+              <PrivatePhoto key={image.id} image={image} />
+            ))}
+          </div>
+        )}
       <PostActions
         post={post}
         onEdit={() => setEditing(true)}
@@ -149,11 +154,23 @@ export function PostCard({
             Read story
           </Link>
         )}
-        <span>
-          {post.commentCount} {post.commentCount === 1 ? 'comment' : 'comments'}{' '}
-          · discussion coming soon
-        </span>
+        {post.moderation === 'published' && (
+          <Link href={`/community/${encodeURIComponent(post.id)}#discussion`}>
+            {post.commentCount}{' '}
+            {post.commentCount === 1 ? 'comment' : 'comments'}
+          </Link>
+        )}
       </footer>
+      {detail && post.moderation === 'published' && (
+        <section id="discussion" className="profile-section">
+          <h2>Join the conversation</h2>
+          <Discussion
+            target={{ kind: 'post', id: post.id }}
+            returnTo={`/community/${encodeURIComponent(post.id)}`}
+            photoContext={post.linkedEntities}
+          />
+        </section>
+      )}
     </article>
   )
 }

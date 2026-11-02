@@ -1,13 +1,14 @@
 import 'server-only'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
+import { moderationStoreSchema } from '@/features/moderation/schemas'
 import { resourceRefSchema } from '@/lib/api/schemas'
 import { storedMediaSchema } from '@/lib/server/media/storage'
 import { seed, type FixtureSeed } from '@/data/fixtures'
 import { ApiError } from '@/lib/api/errors'
 import { canonicalJson, type DemoDraft } from './transactions'
 
-export const DEMO_SCHEMA_VERSION = 5
+export const DEMO_SCHEMA_VERSION = 6
 export const DEMO_FIXTURE_VERSION = 1
 const collectionSchema = z.array(
   z.object({ id: z.string().min(1) }).catchall(z.json()),
@@ -25,6 +26,7 @@ const storedSchema = z
     fixtureVersion: z.literal(DEMO_FIXTURE_VERSION),
     overlay: overlaySchema,
     media: z.array(storedMediaSchema),
+    moderation: moderationStoreSchema,
     community: z
       .object({
         follows: z.array(
@@ -77,6 +79,7 @@ export interface StoredDemo {
   schemaVersion: number
   fixtureVersion: number
   auth: DemoDraft['auth']
+  moderation: DemoDraft['moderation']
   community: DemoDraft['community']
   media: DemoDraft['media']
   savedAnimals: DemoDraft['savedAnimals']
@@ -95,6 +98,7 @@ export function freshDocument(): StoredDemo {
     fixtureVersion: DEMO_FIXTURE_VERSION,
     overlay: {},
     media: [],
+    moderation: freshModeration(),
     community: { follows: [], reactions: [], saved: [], attachments: [] },
     savedAnimals: [],
     auth: { actorId: null, cacheScope: randomUUID() },
@@ -115,6 +119,7 @@ export function parseDocument(text: string): StoredDemo {
 }
 export function snapshot(document: StoredDemo): DemoDraft {
   return {
+    moderation: structuredClone(document.moderation),
     community: structuredClone(document.community),
     media: structuredClone(document.media),
     savedAnimals: structuredClone(document.savedAnimals),
@@ -137,4 +142,50 @@ export function overlayFrom(draft: DemoDraft): Partial<FixtureSeed> {
   if (!overlaySchema.safeParse(overlay).success)
     throw new ApiError('INVALID_DEMO_DATA', 'Invalid demo collection', 400)
   return overlay as Partial<FixtureSeed>
+}
+
+/** Explicit illustrative creator metadata; membership never serves as verification evidence. */
+export function freshModeration(): DemoDraft['moderation'] {
+  return {
+    reports: [],
+    audit: [],
+    notifications: [],
+    subjects: [
+      {
+        ref: { kind: 'shelter', id: 'shelter-1' },
+        creatorIds: ['user-1'],
+        evidenceIds: [],
+        version: 1,
+        state: 'published',
+      },
+      {
+        ref: { kind: 'shelter', id: 'shelter-2' },
+        creatorIds: ['user-2'],
+        evidenceIds: [],
+        version: 1,
+        state: 'published',
+      },
+      {
+        ref: { kind: 'shelter', id: 'shelter-3' },
+        creatorIds: ['user-3'],
+        evidenceIds: [],
+        version: 1,
+        state: 'published',
+      },
+      {
+        ref: { kind: 'shelter', id: 'shelter-4' },
+        creatorIds: ['user-4'],
+        evidenceIds: [],
+        version: 1,
+        state: 'published',
+      },
+      {
+        ref: { kind: 'shelter', id: 'shelter-5' },
+        creatorIds: ['user-5'],
+        evidenceIds: [],
+        version: 1,
+        state: 'published',
+      },
+    ],
+  }
 }

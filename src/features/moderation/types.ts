@@ -7,3 +7,5 @@ export type ModerationFilters = z.input<typeof schemas.moderationFiltersSchema>
 export type ModerationDecision = z.infer<
   typeof schemas.moderationDecisionSchema
 >
+export type ReportReason = z.infer<typeof schemas.reportReasonSchema>
+export type ModerationStore = z.infer<typeof schemas.moderationStoreSchema>

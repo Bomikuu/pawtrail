@@ -10,6 +10,7 @@ const state = vi.hoisted(() => ({
   list: vi.fn(),
   react: vi.fn(),
   save: vi.fn(),
+  comments: vi.fn(),
 }))
 vi.mock('next/navigation', () => ({ useRouter: () => ({ push: vi.fn() }) }))
 vi.mock('@/lib/api/client', () => ({
@@ -19,6 +20,7 @@ vi.mock('@/lib/api/client', () => ({
       list: state.list,
       setReaction: state.react,
       setSaved: state.save,
+      comments: state.comments,
     },
   }),
 }))
@@ -42,6 +44,7 @@ const post: Post = {
   viewerOwns: false,
 }
 beforeEach(() => {
+  state.comments.mockResolvedValue({ items: [], count: 0, nextCursor: null })
   state.get.mockResolvedValue(post)
   state.list.mockResolvedValue({ items: [post], count: 1, nextCursor: null })
 })
@@ -103,7 +106,11 @@ it.each(Object.entries(postTypes))(
       'href',
       '/pets/milo',
     )
-    expect(screen.getByText(/discussion coming soon/)).toBeVisible()
+    expect(screen.getByRole('link', { name: '1 comment' })).toHaveAttribute(
+      'href',
+      '/community/post-1#discussion',
+    )
+    expect(screen.getByRole('button', { name: 'Report' })).toBeVisible()
   },
 )
 it('falls back from share and clipboard failures to a selectable permalink', async () => {

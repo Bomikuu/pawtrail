@@ -1,6 +1,6 @@
 import 'server-only'
 import { sightingSchema } from '@/features/sightings/schemas'
-import { commentSchema } from '@/features/community/schemas'
+import { commentRecordSchema } from '@/features/community/schemas'
 import { demoContributionSchema } from '@/features/fundraising/schemas'
 import { kibbleEntrySchema } from '@/features/kibble/schemas'
 import { missionParticipationSchema } from '@/features/missions/schemas'
@@ -19,7 +19,7 @@ export const sightings = ids('sighting', 20).map((id, i) =>
   }),
 )
 export const comments = ids('comment', 10).map((id, i) =>
-  commentSchema.parse({
+  commentRecordSchema.parse({
     ...base(id),
     ref: { kind: 'post', id: `post-${i + 1}` },
     authorId: `user-${i + 1}`,
