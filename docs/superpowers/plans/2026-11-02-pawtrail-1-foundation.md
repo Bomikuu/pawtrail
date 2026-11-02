@@ -148,7 +148,7 @@ it('keeps_create_navigation_keyboard_accessible', async () => {
 
 **Interfaces:** Consume fixture/API summaries, shared shell, image/money components. Produce `LandingPage` and `getCommunitySampleStats(): Promise<CommunitySampleStats>` with documented fixture-derived definitions; real mode later uses backend summaries rather than summing one paginated result page.
 
-- [ ] Test “Every Paw Has a Story.”, Explore the Map → `/explore`, Find Your Companion → `/adopt`, four explicitly sample-labeled statistics, discovery/adoption/fundraising/PawPal/story sections, descriptive image alt text, and real destination URLs. Empty/failure previews retain usable CTAs.
+- [x] Test “Every Paw Has a Story.”, Explore the Map → `/explore`, Find Your Companion → `/adopt`, four explicitly sample-labeled statistics, discovery/adoption/fundraising/PawPal/story sections, descriptive image alt text, and real destination URLs. Empty/failure previews retain usable CTAs.
 
 ```ts
 it('introduces_every_core_action_with_honest_sample_stats', () => {
@@ -157,14 +157,14 @@ it('introduces_every_core_action_with_honest_sample_stats', () => {
   expect(sampleStatisticLabels).toHaveLength(4)
 })
 ```
-- [ ] Run `npm run test:unit -- tests/unit/marketing/landing.test.tsx`; expect missing page behavior.
-- [ ] Implement all brief landing sections, original/approved doodles, licensed local pet photographs, self-hosted fonts, attribution records, reserved image dimensions, and data-state handling. Do not invent testimonials, adoption counts, or actual fund transfers. A recognizable cat/dog/paw-marker brand mark is an implementation asset, with review status recorded.
-- [ ] Run landing tests, typecheck, UI check; expect pass.
-- [ ] Commit `feat: introduce PawTrail with a complete landing page`.
+- [x] Run `npm run test:unit -- tests/unit/marketing/landing.test.tsx`; expect missing page behavior.
+- [x] Implement all brief landing sections, original/approved doodles, licensed local pet photographs, self-hosted fonts, attribution records, reserved image dimensions, and data-state handling. Do not invent testimonials, adoption counts, or actual fund transfers. A recognizable cat/dog/paw-marker brand mark is an implementation asset, with review status recorded.
+- [x] Run landing tests, typecheck, UI check; expect pass.
+- [x] Commit `feat: introduce PawTrail with a complete landing page`.
 
 ## Package acceptance
 
-- [ ] A fresh local setup can run the shell/landing in Next dev without a Maps credential.
-- [ ] Server/client API tests read identical sample data and isolated persistent mutations.
-- [ ] Roles, CSRF, cache clearing, upload authorization, and UI boundaries pass automated tests.
-- [ ] No production build or unrequested visual/manual verification was performed.
+- [x] A fresh local setup can run the shell/landing in Next dev without a Maps credential.
+- [x] Server/client API tests read identical sample data and isolated persistent mutations.
+- [x] Roles, CSRF, cache clearing, upload authorization, and UI boundaries pass automated tests.
+- [x] No production build or unrequested visual/manual verification was performed.

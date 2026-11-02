@@ -96,7 +96,7 @@ Use `npm run test:unit -- <listed files>` for scoped work. After frontend edits 
 
 ## Script contracts
 
-F1 creates `dev` (Next dev), `typecheck` (`tsc --noEmit`), `check:ui` (TypeScript-AST boundary scanner), `format:check` (Prettier check with `semi: false`), and `test:unit` (Vitest run). I5 creates `test:routes`, which launches an isolated Next dev process, injects a temporary demo directory and test clock, polls readiness, executes HTTP assertions, and reliably terminates the process/cleans temporary files. I6 creates `check` as the ordered automated aggregate. A conventional `build` script can exist for future explicit requests, but no task runs it and CI does not invoke it.
+F1 creates `dev` (Next dev), `typecheck` (now `next typegen && tsc --noEmit` after the F7 generated-metadata ruling), `check:ui` (TypeScript-AST boundary scanner), `format:check` (Prettier check with `semi: false`), and `test:unit` (Vitest run). I5 creates `test:routes`, which launches an isolated Next dev process, injects a temporary demo directory and test clock, polls readiness, executes HTTP assertions, and reliably terminates the process/cleans temporary files. I6 creates `check` as the ordered automated aggregate. A conventional `build` script can exist for future explicit requests, but no task runs it and CI does not invoke it.
 
 ## Brief coverage matrix
 

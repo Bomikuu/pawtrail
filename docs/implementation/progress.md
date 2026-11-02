@@ -10,7 +10,7 @@ Execution method: user-approved subagent-driven. Code-first community-journal di
 | F4 — Authentication, permissions, protected routes, and cache lifecycle | Complete | 997bcb1; independent spec/quality and logout-failure fix re-review approved; 77 relevant tests plus amended 11 and regression 5 passed; checks passed |
 | F5 — Media upload, preview, and protected evidence delivery | Complete | c9c83a4; independent spec/quality and two-finding fix re-review approved; 97 relevant tests then 77 covering tests passed; scoped checks passed |
 | F6 — Design contract, shared controls, and responsive navigation | Complete | 75bf337; independent source/spec/quality and docs-fix re-review approved; 153 tests including 21 F6 tests and scoped checks passed; rendered quality unverified |
-| F7 — Landing page and real asset provenance | Pending |  |
+| F7 — Landing page and real asset provenance | Complete | 285d924; independent spec/quality and two fix re-reviews approved; 21 initial and 10 responsive tests passed; fresh typegen/dev HTTP+metadata hash checks passed |
 | S1 — Public animal profiles, saving, and shared SEO primitives | Pending |  |
 | S2 — Feed, photo composer, post details, reactions and saved posts | Pending |  |
 | S3 — Discussions, reporting and moderator review | Pending |  |
@@ -54,3 +54,7 @@ Ruling: F4 and F5 may introduce only the canonical Shadcn primitives and approve
 Ruling: The six-attachment cap applies to the combined public-photo and private-evidence IDs submitted for one campaign — F5 says more than six attachments must be rejected and does not define separate budgets — cost if wrong: revise the schema/UI cap together if separate gallery/evidence budgets are later required.
 
 Ruling: F7 preserves the required CTA labels and target mappings while keeping unimplemented destinations inert through route readiness — F7 destination contracts and F6 honest readiness must both hold during staged work — cost if wrong: adjust readiness/test scenarios; no placeholder feature or final scope reduction.
+
+Ruling: Starting in S1, route readiness may register explicit implemented filesystem patterns such as /pets/[slug] and match all pathname segments — dynamic detail links cannot enumerate every current and future record, while broad prefix activation remains forbidden — cost if wrong: disable the dynamic entries and revise the matcher; underlying pages and records remain unchanged.
+
+Ruling: Treat next-env.d.ts as ignored framework-generated state and generate route types before tsc; retain the managed Next AGENTS guidance and dev-type include — installed Next TypeScript docs explicitly require generated declarations to be untracked, and first dev startup otherwise dirties the checkout — cost if wrong: revise the generation step or tracked-file policy; authored source keeps the no-semicolon rule and no production build is introduced.
