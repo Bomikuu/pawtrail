@@ -4,12 +4,12 @@ The owner requested the supplied profile screenshot's composition and a banner s
 
 ## Covers and saving
 
-- Four presets: Meadow companions, Garden nap, Coastal wanderers and Starlight friends. Stable IDs are `meadow`, `garden`, `coast`, `starlight`; old accounts default to Meadow.
+- Eight owner-supplied presets: Sunny companions, Sunset together, Campfire dreams, Trail explorers, Home sweet home, Hearts in the sky, Neighborhood wanderers and Little champions. The four original stable IDs remain valid; `sunset`, `explorer`, `home` and `champion` extend the collection. Old accounts default to Sunny companions (`meadow`).
 - `BannerPicker` provides a selected preview, descriptive buttons, visible/announced pressed state and pending/disabled treatment. It shares the existing profile form save operation, inline errors, idempotency receipts and success feedback. Unsaved selection is not published.
 - `profileInputSchema` validates the optional preset ID before any mutation. Omission preserves the current banner. Stored URLs, arbitrary uploads and client-authored crop positions are not accepted. The server resolves display assets from the allowlist.
 - Banner ID is included in the existing persisted user record and public/private DTOs. No destructive session reset or unrelated migration is introduced. Form identity is keyed by user ID.
 - The current owner's public profile has Change banner and Edit profile actions. The management form has View public profile when discoverable. Other visitors retain the real follow action. No placeholder messaging/menu or invented online presence is added.
-- Twelve small WebP derivatives (384/768/1440 pixels for each preset) total 634,664 bytes. Only the chosen responsive cover and lazy picker thumbnails load as needed. Source PNGs remain in the generation directory; provenance and full prompts are recorded in `docs/assets/profile-banners.md`.
+- Sixteen WebP crops (384px and native 752px for each supplied banner) total 233,598 bytes. Only the chosen responsive cover and lazy picker thumbnails load as needed. Previous generated WebP files were removed from the app; their original outputs outside the repository remain untouched. Crop provenance is recorded in `docs/assets/profile-banners.md`.
 
 ## Recorded data and privacy
 
