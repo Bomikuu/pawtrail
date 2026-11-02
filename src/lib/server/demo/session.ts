@@ -4,6 +4,7 @@ import { resolve } from 'node:path'
 import { createMockApi } from '@/lib/api/adapters/mock'
 import { createDjangoApi } from '@/lib/api/adapters/django'
 import { getApiConfig } from '@/lib/api/config'
+import { actorSchema } from '@/features/auth/schemas'
 import { ApiError } from '@/lib/api/errors'
 import type { ApiContext } from '@/lib/server/api-registry'
 import {
@@ -40,8 +41,13 @@ export async function resolveDemoContext(
   )
   if (!sessionId || lifecycle) return { api: createMockApi(), mode: 'mock' }
   const repository = await openDemoRepository(sessionId, demoDataDir())
+  const snapshot = await repository.read((state) => state)
+  const user = snapshot.data.users.find(
+    (user) => user.id === snapshot.auth.actorId,
+  )
   return {
-    api: createMockApi(await repository.read((state) => state.data)),
+    api: createMockApi(snapshot.data, repository),
+    actor: user ? actorSchema.parse(user) : null,
     mode: 'mock',
     demo: { sessionId, repository },
   }
@@ -82,4 +88,29 @@ export async function handleDemoLifecycle(
     )
   }
   return new Response(null, { status: 204, headers })
+}
+
+/** Initialize cookie-only demo auth at the BFF boundary after CSRF/body validation. */
+export async function initializeAuthContext(
+  request: Request,
+  headers: Headers,
+): Promise<ApiContext> {
+  if (getApiConfig().mode !== 'mock')
+    throw new ApiError('DEMO_ONLY', 'Demo mode is required', 403)
+  const sessionId =
+    readDemoSessionId(request.headers.get('cookie')) ??
+    randomBytes(32).toString('hex')
+  const repository = await openDemoRepository(sessionId, demoDataDir())
+  headers.set(
+    'Set-Cookie',
+    `${DEMO_COOKIE}=${sessionId}; Path=/; HttpOnly; SameSite=Lax${new URL(request.url).protocol === 'https:' ? '; Secure' : ''}`,
+  )
+  return {
+    mode: 'mock',
+    api: createMockApi(
+      await repository.read((state) => state.data),
+      repository,
+    ),
+    demo: { sessionId, repository },
+  }
 }

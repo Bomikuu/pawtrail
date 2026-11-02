@@ -34,7 +34,7 @@ describe('API foundation', () => {
   })
   it('fails unfinished features explicitly and honors cancellation', async () => {
     const api = createMockApi()
-    await expect(api.auth.session()).rejects.toMatchObject({
+    await expect(api.users.settings()).rejects.toMatchObject({
       code: 'NOT_IMPLEMENTED',
       status: 501,
     })

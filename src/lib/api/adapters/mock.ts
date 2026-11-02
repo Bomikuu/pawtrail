@@ -1,4 +1,6 @@
 import 'server-only'
+import { createDemoAuth } from '@/lib/server/auth'
+import type { DemoRepository } from '@/lib/server/demo/repository'
 import { z } from 'zod'
 import type { PawTrailApi } from '../contracts'
 import type { ListQuery, RequestOptions } from '@/types/common'
@@ -46,10 +48,14 @@ import {
   sightingSchema,
 } from '@/features/sightings/schemas'
 
-export function createMockApi(snapshot: FixtureSeed = seed): PawTrailApi {
+export function createMockApi(
+  snapshot: FixtureSeed = seed,
+  repository?: DemoRepository,
+): PawTrailApi {
   // Each request owns its snapshot. Returned mutable DTOs cannot change the shared seed.
   const data = structuredClone(snapshot)
   const api = createUnimplementedApi()
+  api.auth = createDemoAuth(repository)
   function list<T extends { id: string; createdAt: string }>(
     rows: T[],
     query: ListQuery,

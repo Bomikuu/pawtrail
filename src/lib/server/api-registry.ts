@@ -1,5 +1,9 @@
 import 'server-only'
-import { handleDemoLifecycle } from './demo/session'
+import type { Actor } from '@/features/auth/types'
+import { requireActor } from './auth'
+import { can } from './permissions'
+import { assertSameOrigin } from './csrf'
+import { handleDemoLifecycle, initializeAuthContext } from './demo/session'
 import type { DemoRepository } from './demo/repository'
 import type { PawTrailApi } from '@/lib/api/contracts'
 import {
@@ -12,6 +16,7 @@ import { apiRoutes, type ApiRoute } from './api-routes'
 export interface ApiContext {
   api: PawTrailApi
   mode: 'mock' | 'real'
+  actor?: Actor | null
   demo?: { sessionId: string; repository: DemoRepository }
 }
 const reserved = [
@@ -99,14 +104,10 @@ export async function dispatchApi(
         'This operation is available only in demo mode',
         403,
       )
-    if (!['GET', 'HEAD', 'OPTIONS'].includes(request.method)) {
-      const origin = request.headers.get('origin')
-      if (!origin || origin !== url.origin)
-        throw new ApiError(
-          'FORBIDDEN',
-          'A same-origin request is required',
-          403,
-        )
+    assertSameOrigin(request)
+    if (path === '/moderation' || path.startsWith('/moderation/')) {
+      if (!can(requireActor(context), 'moderate'))
+        throw new ApiError('FORBIDDEN', 'Moderator permission is required', 403)
     }
     if (path === '/demo/session' || path === '/demo/reset')
       return await handleDemoLifecycle(request, path, headers)
@@ -128,6 +129,12 @@ export async function dispatchApi(
         )
       }
     }
+    if (
+      context.mode === 'mock' &&
+      !context.demo &&
+      ['/auth/login', '/auth/register', '/demo/actor'].includes(path)
+    )
+      context = await initializeAuthContext(request, headers)
     const result = await route.invoke(
       context.api,
       match(route.path, path)!,

@@ -5,10 +5,11 @@ import { ApiError } from '@/lib/api/errors'
 
 export interface DemoDraft {
   data: FixtureSeed
+  auth: { actorId: string | null; cacheScope: string }
 }
 export type DemoQuery<T> = (snapshot: DemoDraft) => T | Promise<T>
 export interface DemoCommand<T> {
-  /** Include operation and actor scope in this stable name when authorization exists. */
+  /** Stable operation name. Repository receipts automatically include the current actor. */
   name: string
   input: unknown
   idempotencyKey?: string

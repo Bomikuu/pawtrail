@@ -1,1 +1,147 @@
-/* Theme implementation belongs to the shared UI foundation (F6). */
+@import 'tailwindcss';
+:root {
+  --primary: #f97316;
+  --primary-dark: #ea580c;
+  --teal: #0f766e;
+  --green: #84cc16;
+  --background: #fffbf5;
+  --surface: #ffffff;
+  --foreground: #3b2416;
+  --muted: #78716c;
+  --border: #ede5d8;
+  --radius: 0.75rem;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, sans-serif;
+  line-height: 1.6;
+}
+h1,
+h2 {
+  font-family: Nunito, sans-serif;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+a {
+  color: var(--teal);
+  text-underline-offset: 0.2em;
+}
+::selection {
+  background: var(--primary);
+  color: var(--foreground);
+}
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+.auth-page {
+  padding: 3rem 1.25rem;
+}
+.auth-surface {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+.auth-surface h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+.auth-surface h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+.auth-form {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.auth-field {
+  display: grid;
+  gap: 0.5rem;
+}
+.auth-field label {
+  font-weight: 600;
+}
+.ui-input {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  caret-color: var(--teal);
+}
+.ui-input[aria-invalid='true'] {
+  border-color: var(--foreground);
+  outline: 1px solid var(--foreground);
+}
+.ui-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.625rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ui-button-primary {
+  background: var(--primary);
+  color: var(--foreground);
+}
+.ui-button-primary:hover {
+  background: var(--primary-dark);
+}
+.ui-button-outline {
+  border-color: var(--muted);
+  background: var(--surface);
+  color: var(--foreground);
+}
+.ui-button-outline:hover {
+  background: var(--background);
+}
+.ui-button:active {
+  transform: translateY(1px);
+}
+.ui-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.field-error {
+  margin: 0;
+  color: var(--foreground);
+  font-weight: 600;
+}
+.demo-notice {
+  border-block: 1px solid var(--border);
+  padding-block: 1rem;
+}
+.demo-personas {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+.auth-alternative {
+  margin-top: 2rem;
+}
+@media (max-width: 40rem) {
+  .auth-page {
+    padding-top: 2rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-button:active {
+    transform: none;
+  }
+}

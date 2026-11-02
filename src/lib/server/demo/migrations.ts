@@ -1,10 +1,11 @@
 import 'server-only'
+import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
 import { seed, type FixtureSeed } from '@/data/fixtures'
 import { ApiError } from '@/lib/api/errors'
 import { canonicalJson, type DemoDraft } from './transactions'
 
-export const DEMO_SCHEMA_VERSION = 1
+export const DEMO_SCHEMA_VERSION = 2
 export const DEMO_FIXTURE_VERSION = 1
 const collectionSchema = z.array(
   z.object({ id: z.string().min(1) }).catchall(z.json()),
@@ -21,10 +22,14 @@ const storedSchema = z
     schemaVersion: z.literal(DEMO_SCHEMA_VERSION),
     fixtureVersion: z.literal(DEMO_FIXTURE_VERSION),
     overlay: overlaySchema,
+    auth: z
+      .object({ actorId: z.string().nullable(), cacheScope: z.string().uuid() })
+      .strict(),
     receipts: z.array(
       z
         .object({
           name: z.string(),
+          actorId: z.string().nullable(),
           key: z.string(),
           fingerprint: z.string(),
           result: z.json().optional(),
@@ -36,8 +41,10 @@ const storedSchema = z
 export interface StoredDemo {
   schemaVersion: number
   fixtureVersion: number
+  auth: DemoDraft['auth']
   overlay: Partial<FixtureSeed>
   receipts: {
+    actorId: string | null
     name: string
     key: string
     fingerprint: string
@@ -49,6 +56,7 @@ export function freshDocument(): StoredDemo {
     schemaVersion: DEMO_SCHEMA_VERSION,
     fixtureVersion: DEMO_FIXTURE_VERSION,
     overlay: {},
+    auth: { actorId: null, cacheScope: randomUUID() },
     receipts: [],
   }
 }
@@ -65,7 +73,10 @@ export function parseDocument(text: string): StoredDemo {
   }
 }
 export function snapshot(document: StoredDemo): DemoDraft {
-  return { data: structuredClone({ ...seed, ...document.overlay }) }
+  return {
+    data: structuredClone({ ...seed, ...document.overlay }),
+    auth: structuredClone(document.auth),
+  }
 }
 export function overlayFrom(draft: DemoDraft): Partial<FixtureSeed> {
   // Collection replacement supports inserts, edits, and removals without duplicating unchanged fixtures.

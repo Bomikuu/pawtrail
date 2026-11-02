@@ -29,7 +29,7 @@ describe('explicit BFF registry', () => {
       (await dispatchApi(request('/fundraisers/drafts'), context)).status,
     ).toBe(501)
     expect((await dispatchApi(request('/auth/session'), context)).status).toBe(
-      501,
+      200,
     )
     expect(
       (
@@ -76,7 +76,7 @@ describe('BFF boundaries', () => {
       method: 'POST',
       headers: { origin: 'http://localhost' },
     })
-    expect((await dispatchApi(valid, context)).status).toBe(501)
+    expect((await dispatchApi(valid, context)).status).toBe(204)
     const invalid = new Request(
       'http://localhost/api/v1/animals/animal-1/saved',
       {

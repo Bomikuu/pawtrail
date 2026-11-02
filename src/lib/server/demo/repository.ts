@@ -119,6 +119,7 @@ export async function openDemoRepository(
             ? undefined
             : document.receipts.find(
                 (entry) =>
+                  entry.actorId === document.auth.actorId &&
                   entry.name === command.name &&
                   entry.key === command.idempotencyKey,
               )
@@ -133,19 +134,23 @@ export async function openDemoRepository(
             ReturnType<typeof command.execute>
           >
         }
+        const receiptActorId = document.auth.actorId
         const draft = snapshot(document)
         const result = await command.execute(draft, demoClock)
         // Verify output before any file write, including commands without a receipt.
         const storedResult =
           result === undefined ? undefined : JSON.parse(canonicalJson(result))
         document.overlay = overlayFrom(draft)
+        document.auth = draft.auth
         if (command.idempotencyKey !== undefined)
           document.receipts.push({
             name: command.name,
+            actorId: receiptActorId,
             key: command.idempotencyKey,
             fingerprint,
             ...(storedResult === undefined ? {} : { result: storedResult }),
           })
+        parseDocument(canonicalJson(document))
         await replace(path, document)
         return structuredClone(storedResult)
       })

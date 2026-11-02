@@ -13,5 +13,5 @@ export async function getServerApi(): Promise<PawTrailApi> {
   const sessionId = (await cookies()).get(DEMO_COOKIE)?.value
   if (!sessionId) return createMockApi()
   const repository = await openDemoRepository(sessionId, demoDataDir())
-  return createMockApi(await repository.read((state) => state.data))
+  return createMockApi(await repository.read((state) => state.data), repository)
 }

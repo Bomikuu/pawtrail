@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T00:00:00+08:00",
+  "title": "Design System: PawTrail early authentication",
+  "extensions": { "breakpoints": [{ "name": "compact", "value": "40rem" }] },
+  "components": [],
+  "narrative": {
+    "northStar": "Community journal with a pet story feed",
+    "overview": "Early F4 form contract. F6 completes and audits the shared system.",
+    "rules": [
+      {
+        "name": "Honest samples",
+        "body": "Demo profiles and sample personas are explicitly identified.",
+        "section": "components"
+      }
+    ]
+  }
+}
