@@ -7,7 +7,7 @@ Execution method: user-approved subagent-driven. Code-first community-journal di
 | F1 — Application tooling and UI boundary enforcement | Complete | 4d9a7c0; independent spec/quality review approved; 29 tests, typecheck, UI check, formatting passed |
 | F2 — Domain contracts, fixtures, and request-scoped API entry points | Complete | abaca78; independent spec/quality review and version-precondition fix re-review approved; 26 API tests plus 14 targeted registry tests, typecheck, UI check and formatting passed |
 | F3 — Persistent, session-isolated demo repository | Complete | aef4565; independent spec/quality review approved; 54 demo/API tests and scoped checks passed; Unicode key-order minor deferred to final review |
-| F4 — Authentication, permissions, protected routes, and cache lifecycle | Pending |  |
+| F4 — Authentication, permissions, protected routes, and cache lifecycle | Complete | 997bcb1; independent spec/quality and logout-failure fix re-review approved; 77 relevant tests plus amended 11 and regression 5 passed; checks passed |
 | F5 — Media upload, preview, and protected evidence delivery | Pending |  |
 | F6 — Design contract, shared controls, and responsive navigation | Pending |  |
 | F7 — Landing page and real asset provenance | Pending |  |

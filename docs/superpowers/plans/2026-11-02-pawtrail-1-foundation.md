@@ -85,7 +85,7 @@ it('persists_one_mutation_without_cross_session_visibility', async () => {
 
 **Interfaces:** Produce `requireActor(context: ApiContext): Actor`, `can(actor: Actor, action: Permission, resource?: OwnedResource): boolean`, `validateReturnPath(input: string | null): string`, and spec §5 `auth` methods. Return-path validation falls back to `/community` and allows local application paths only. `Session` exposes a sanitized actor, roles, demo flag, and non-secret cache scope, never tokens. Roles are member, shelter/rescuer staff, and moderator; organization membership scopes management actions.
 
-- [ ] Test anonymous protected action → login with a validated local return path; reject external return URLs; member cannot view another applicant's data or manage another shelter; moderator approval requires server permission; demo actor selection is disabled in real mode; cross-origin mutation is denied; logout/actor switch clears cached private records. Add expired-token tests: one serialized refresh/replay, then logout on failure, never an infinite loop.
+- [x] Test anonymous protected action → login with a validated local return path; reject external return URLs; member cannot view another applicant's data or manage another shelter; moderator approval requires server permission; demo actor selection is disabled in real mode; cross-origin mutation is denied; logout/actor switch clears cached private records. Add expired-token tests: one serialized refresh/replay, then logout on failure, never an infinite loop.
 
 ```ts
 it('denies_cross_scope_access_and_stale_credentials', async () => {
@@ -95,10 +95,10 @@ it('denies_cross_scope_access_and_stale_credentials', async () => {
   expect(privateQueriesAfterLogout).toEqual([])
 })
 ```
-- [ ] Run `npm run test:unit -- tests/unit/auth`; expect missing guard/session/CSRF failures.
-- [ ] Implement mock personas, demo registration/login feedback, real-mode form contracts, server guards, query providers/hydration, cookie-only credential handling, accessible form errors and return navigation. Do not persist submitted passwords in demo storage or logs. Refresh mechanics use controlled adapter fixtures until I1 integration.
-- [ ] Run auth/API/demo tests, typecheck, UI check; expect pass.
-- [ ] Commit `feat: add session and role-aware PawTrail access`.
+- [x] Run `npm run test:unit -- tests/unit/auth`; expect missing guard/session/CSRF failures.
+- [x] Implement mock personas, demo registration/login feedback, real-mode form contracts, server guards, query providers/hydration, cookie-only credential handling, accessible form errors and return navigation. Do not persist submitted passwords in demo storage or logs. Refresh mechanics use controlled adapter fixtures until I1 integration.
+- [x] Run auth/API/demo tests, typecheck, UI check; expect pass.
+- [x] Commit `feat: add session and role-aware PawTrail access`.
 
 ### Task F5: Media upload, preview, and protected evidence delivery
 
