@@ -16,6 +16,7 @@ import type {
 import { actorSchema } from '@/features/auth/schemas'
 import { commentInputSchema, commentSchema } from '@/features/community/schemas'
 import { freshModeration } from '@/lib/server/demo/migrations'
+import { applySamplePack } from '@/data/fixtures/sample-pack'
 import { ApiError, checkCancelled } from '@/lib/api/errors'
 import { getApiConfig } from '@/lib/api/config'
 import { listQuerySchema, resourceRefSchema } from '@/lib/api/schemas'
@@ -465,13 +466,14 @@ export function createModerationService(
   repository?: DemoRepository,
 ) {
   const anonymous: DemoDraft = {
-    data: snapshot,
+    data: structuredClone(snapshot),
     auth: { actorId: null, cacheScope: 'anonymous' },
     media: [],
     community: { follows: [], reactions: [], saved: [], attachments: [] },
     savedAnimals: [],
     moderation: freshModeration(),
   }
+  applySamplePack(anonymous)
   const read = <T>(fn: (draft: DemoDraft) => T) =>
     repository ? repository.read(fn) : Promise.resolve(fn(anonymous))
   async function command<T>(

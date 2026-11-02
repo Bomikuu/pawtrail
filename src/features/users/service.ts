@@ -25,9 +25,7 @@ export function currentUser(draft: DemoDraft) {
   return user
 }
 export function fixtureDraft(data: FixtureSeed): DemoDraft {
-  const draft = snapshot(freshDocument())
-  draft.data = structuredClone(data)
-  return draft
+  return snapshot(freshDocument(), data)
 }
 export function createUserService(
   data: FixtureSeed,

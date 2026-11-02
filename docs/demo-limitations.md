@@ -1,5 +1,7 @@
 # Demonstration boundaries
 
+The expanded community sample pack populates public content and private workflows for sample personas, including achievement progress and showcased badges. Existing sessions receive an additive versioned update on access without a reset; their edits and current moderation remain authoritative. See `docs/implementation/sample-community.md` for the authored inventory and migration behavior. Refresh the app to load the new sample state.
+
 - All sample people, animal care activity, events, rewards, verification and financial support are illustrative. No actual adoption, rescue, diagnosis, accreditation, donation or payout is performed.
 - The filesystem store requires one Node process and private writable disk. It is not a multi-worker or stateless production database. Each browser cookie has a separate overlay; sample personas in that overlay are perspectives for trying a workflow, not independent authenticated users.
 - Demo login does not validate passwords. Real mode requires the external Django backend and the documented session contract.

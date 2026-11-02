@@ -1,42 +1,59 @@
 import 'server-only'
-import { samplePhotos } from './photos'
 import { postSchema } from '@/features/community/schemas'
 import { base, ids } from './shared'
-export const posts = ids('post', 10).map((id, i) =>
-  postSchema.parse({
+import { animalNames, hordeNames, sampleAnimalPhoto } from './scenarios'
+const storyTypes = [
+  'rescue',
+  'adoption',
+  'feeding',
+  'photo',
+  'sighting',
+  'help',
+  'story',
+] as const
+const updates = [
+  (name: string) =>
+    `We checked in on ${name} during the neighborhood care round. The next step is a quiet resting spot and a coordinated supply drop.`,
+  (name: string) =>
+    `${name} is ready for a thoughtful introduction. Read their needs, talk with the sample shelter, and take the adoption process one step at a time.`,
+  (name: string) =>
+    `Fresh bowls and a tidy feeding corner for ${name} today. We logged what was offered so the next volunteer can pick up where we left off.`,
+  (name: string) =>
+    `A little portrait break with ${name}. Share the small moments that help neighbors recognize the animals in their care circle.`,
+  (name: string) =>
+    `Spotted ${name} near the familiar community route. The sighting is logged with a general neighborhood location so helpers can coordinate responsibly.`,
+  (name: string) =>
+    `${name}’s care circle could use a hand sorting blankets and preparing a welcome kit. The linked mission has the next steps and evidence requirements.`,
+  (name: string) =>
+    `${name} took their time getting comfortable with the group. Patient company can make a neighborhood feel a little kinder.`,
+]
+export const posts = ids('post', 105).map((id, i) => {
+  const animalIndex = i % 20
+  const author = i < 100 ? (i % 20) + 1 : 6
+  const typeIndex = i % storyTypes.length
+  return postSchema.parse({
     ...base(id),
-    // Stagger sample stories so the chronological journal opens on its photo-led story.
     createdAt: new Date(
-      Date.parse(base(id).createdAt) - (i + 1) * 3_600_000,
+      Date.parse(base(id).createdAt) - (i + 1) * 3600000,
     ).toISOString(),
-    authorId: `user-${i + 1}`,
-    text:
-      [
-        'Sample rescue story: Milo’s care circle is planning food and a quiet place to rest. This is a fictional example of coordinating help.',
-        'Sample adoption story: Luna’s profile helps a potential adopter learn about her needs before expressing interest. No adoption has taken place.',
-        'Sample community achievement: a feeding mission shows how reviewed contributions earn non-cash Kibble in the demo.',
-      ][i] ??
-      (i % 3 === 2
-        ? 'Sample community achievement: volunteers practice logging a reviewed feeding mission in the demo. No real activity is claimed.'
-        : `Sample update ${i + 1}: sharing an animal’s story with the community.`),
-    type: [
-      'rescue',
-      'adoption',
-      'feeding',
-      'photo',
-      'sighting',
-      'help',
-      'story',
-    ][i % 7],
-    media: samplePhotos[i] ? [samplePhotos[i]] : [],
+    authorId: `user-${author}`,
+    text: `Sample community story · ${updates[typeIndex]!(animalNames[animalIndex]!)} ${hordeNames[animalIndex % 5]} is an illustrative care group; no real activity is claimed.`,
+    type: storyTypes[typeIndex],
+    media: [sampleAnimalPhoto(animalIndex)],
     refs: [
-      { kind: 'animal', id: `animal-${i + 1}` },
-      { kind: 'horde', id: `horde-${(i % 5) + 1}` },
-      { kind: 'shelter', id: `shelter-${(i % 5) + 1}` },
+      { kind: 'animal', id: `animal-${animalIndex + 1}` },
+      { kind: 'horde', id: `horde-${(animalIndex % 5) + 1}` },
+      { kind: 'shelter', id: `shelter-${(animalIndex % 5) + 1}` },
+      ...(storyTypes[typeIndex] === 'help'
+        ? [{ kind: 'mission', id: `mission-${animalIndex + 1}` }]
+        : []),
+      ...(storyTypes[typeIndex] === 'rescue'
+        ? [{ kind: 'fundraiser', id: `campaign-${animalIndex + 1}` }]
+        : []),
     ],
     moderation: 'published',
-    reactionCount: 0,
-    commentCount: 1,
+    reactionCount: 3 + (i % 5),
+    commentCount: 2,
     version: 1,
-  }),
-)
+  })
+})

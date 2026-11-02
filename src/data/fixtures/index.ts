@@ -17,17 +17,17 @@ import {
   rsvps,
 } from './activity'
 import { geoAreaSchema } from '@/features/discovery/schemas'
-import { location } from './shared'
+import { sampleAreas } from './scenarios'
 import { ApiError } from '@/lib/api/errors'
-export const areas = [
+export const areas = sampleAreas.map((area) =>
   geoAreaSchema.parse({
-    id: location.areaId,
-    name: location.neighborhood,
-    latitude: location.latitude,
-    longitude: location.longitude,
-    approximateRadiusMeters: location.approximateRadiusMeters,
+    id: area.areaId,
+    name: area.name,
+    latitude: area.latitude,
+    longitude: area.longitude,
+    approximateRadiusMeters: area.approximateRadiusMeters,
   }),
-]
+)
 export const seed = {
   animals,
   hordes,

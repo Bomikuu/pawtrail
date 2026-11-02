@@ -8,6 +8,7 @@ import {
   reconcilePublicMedia,
 } from '@/features/moderation/service'
 import { freshModeration } from '@/lib/server/demo/migrations'
+import { applySamplePack } from '@/data/fixtures/sample-pack'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
 import type { FixtureSeed } from '@/data/fixtures'
@@ -223,12 +224,13 @@ export function createCommunityService(
 > {
   const anonymous: DemoDraft = {
     moderation: freshModeration(),
-    data: snapshot,
+    data: structuredClone(snapshot),
     auth: { actorId: null, cacheScope: 'anonymous' },
     media: [],
     savedAnimals: [],
     community: { follows: [], reactions: [], saved: [], attachments: [] },
   }
+  applySamplePack(anonymous)
   const read = <T>(query: (draft: DemoDraft) => T) =>
     repository ? repository.read(query) : Promise.resolve(query(anonymous))
   function writable() {

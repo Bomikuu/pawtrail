@@ -7,6 +7,7 @@ import {
 import { campaignDraftSchema } from '@/features/fundraising/schemas'
 
 export const workflowStoreSchema = z.object({
+  samplePackVersion: z.number().int().nonnegative().default(0),
   achievements: achievementStoreSchema.default(() =>
     achievementStoreSchema.parse({}),
   ),

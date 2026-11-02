@@ -8,6 +8,11 @@ import { seed, type FixtureSeed } from '@/data/fixtures'
 import { ApiError } from '@/lib/api/errors'
 import { workflowStoreSchema, emptyWorkflow } from '@/lib/server/workflow-store'
 import { canonicalJson, type DemoDraft } from './transactions'
+import {
+  applySamplePack,
+  mergeExpandedSamples,
+  SAMPLE_PACK_VERSION,
+} from '@/data/fixtures/sample-pack'
 
 export const DEMO_SCHEMA_VERSION = 7
 export const DEMO_FIXTURE_VERSION = 1
@@ -125,16 +130,24 @@ export function parseDocument(text: string): StoredDemo {
     )
   }
 }
-export function snapshot(document: StoredDemo): DemoDraft {
-  return {
+export function snapshot(
+  document: StoredDemo,
+  baseline: FixtureSeed = seed,
+): DemoDraft {
+  const draft: DemoDraft = {
     workflow: structuredClone(document.workflow ?? emptyWorkflow()),
     moderation: structuredClone(document.moderation),
     community: structuredClone(document.community),
     media: structuredClone(document.media),
     savedAnimals: structuredClone(document.savedAnimals),
-    data: structuredClone({ ...seed, ...document.overlay }),
+    data: structuredClone({ ...baseline, ...document.overlay }),
     auth: structuredClone(document.auth),
   }
+  if ((draft.workflow?.samplePackVersion ?? 0) < SAMPLE_PACK_VERSION) {
+    if (baseline === seed) mergeExpandedSamples(draft, seed)
+    applySamplePack(draft)
+  }
+  return draft
 }
 export function overlayFrom(draft: DemoDraft): Partial<FixtureSeed> {
   // Collection replacement supports inserts, edits, and removals without duplicating unchanged fixtures.
