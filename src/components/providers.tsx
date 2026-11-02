@@ -1,5 +1,6 @@
 'use client'
 import type { ReactNode } from 'react'
+import { Toaster } from '@/components/ui/sonner'
 import { HydrationBoundary, type DehydratedState } from '@tanstack/react-query'
 import { SessionProvider, useSession } from '@/features/auth/session-provider'
 import type { Session } from '@/features/auth/types'
@@ -50,6 +51,7 @@ export function Providers({
       api={api}
     >
       <Hydration state={dehydratedState}>{children}</Hydration>
+      <Toaster />
     </SessionProvider>
   )
 }

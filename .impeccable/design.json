@@ -1,18 +1,101 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-11-02T00:00:00+08:00",
-  "title": "Design System: PawTrail early authentication",
-  "extensions": { "breakpoints": [{ "name": "compact", "value": "40rem" }] },
-  "components": [],
+  "title": "Design System: PawTrail",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "menu",
+        "value": "0 8px 24px rgb(59 36 22 / 12%)",
+        "purpose": "Temporary elevation for portaled menus."
+      }
+    ],
+    "motion": [
+      {
+        "name": "intent-color",
+        "value": "150ms ease-out",
+        "purpose": "Action color feedback; removed with reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "auth-compact",
+        "value": "40rem"
+      },
+      {
+        "name": "mobile-shell",
+        "value": "48rem"
+      },
+      {
+        "name": "compact-utilities",
+        "value": "75rem"
+      },
+      {
+        "name": "contextual-rail",
+        "value": "80rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The next useful action, with contrast-safe hover and a clear focus ring.",
+      "html": "<button class=\"ds-button\">Share an update</button>",
+      "css": ".ds-button { display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;padding:0.625rem 1rem;border:1px solid transparent;border-radius:var(--radius,0.75rem);font:600 1rem/1.6 Inter,sans-serif;background:var(--primary,#F97316);color:var(--foreground,#3B2416);cursor:pointer;transition:background-color 150ms ease-out,color 150ms ease-out } .ds-button:hover { background:var(--action-hover,#9A3412);color:var(--surface,#FFFFFF) } .ds-button:focus-visible { outline:2px solid var(--teal,#0F766E);outline-offset:3px } .ds-button:active { transform:translateY(1px) } .ds-button:disabled { background:var(--border,#EDE5D8);color:var(--secondary-text,#6B625B);cursor:not-allowed;transform:none } @media(prefers-reduced-motion:reduce) { .ds-button { transition:none } .ds-button:active { transform:none } }"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "A quieter action with a visible boundary.",
+      "html": "<button class=\"ds-button ds-outline\">Cancel</button>",
+      "css": ".ds-button { display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;padding:0.625rem 1rem;border:1px solid transparent;border-radius:var(--radius,0.75rem);font:600 1rem/1.6 Inter,sans-serif;background:var(--primary,#F97316);color:var(--foreground,#3B2416);cursor:pointer;transition:background-color 150ms ease-out,color 150ms ease-out } .ds-button:hover { background:var(--action-hover,#9A3412);color:var(--surface,#FFFFFF) } .ds-button:focus-visible { outline:2px solid var(--teal,#0F766E);outline-offset:3px } .ds-button:active { transform:translateY(1px) } .ds-button:disabled { background:var(--border,#EDE5D8);color:var(--secondary-text,#6B625B);cursor:not-allowed;transform:none } @media(prefers-reduced-motion:reduce) { .ds-button { transition:none } .ds-button:active { transform:none } } .ds-outline { background:var(--surface,#FFFFFF);color:var(--foreground,#3B2416);border-color:var(--muted,#78716C) } .ds-outline:hover { background:var(--background,#FFFBF5);color:var(--foreground,#3B2416) }"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A labeled native input in the shared Shadcn layer.",
+      "html": "<label class=\"ds-field\">Animal name<input placeholder=\"Enter a name\" /></label>",
+      "css": ".ds-field { display:grid;gap:0.5rem;font:600 1rem/1.6 Inter,sans-serif;color:var(--foreground,#3B2416) } .ds-field input { min-height:2.75rem;padding:0.625rem 0.75rem;border:1px solid var(--muted,#78716C);border-radius:var(--radius,0.75rem);background:var(--surface,#FFFFFF);color:var(--foreground,#3B2416);font:400 1rem/1.6 Inter,sans-serif;caret-color:var(--teal,#0F766E) } .ds-field input::placeholder { color:var(--secondary-text,#6B625B) } .ds-field input:focus-visible { outline:2px solid var(--teal,#0F766E);outline-offset:3px }"
+    },
+    {
+      "name": "Current section",
+      "kind": "nav",
+      "refersTo": "navigation-current",
+      "description": "Readable text identifies the current journal section.",
+      "html": "<a class=\"ds-nav\" href=\"#community\" aria-current=\"page\">Community</a>",
+      "css": ".ds-nav { display:flex;min-height:2.75rem;align-items:center;padding:0.625rem 0.75rem;border-radius:var(--radius,0.75rem);background:var(--surface,#FFFFFF);color:var(--teal,#0F766E);font:700 0.9375rem/1.4 Inter,sans-serif;text-decoration:none;box-shadow:inset 0 0 0 1px var(--border,#EDE5D8) } .ds-nav:hover { background:var(--border,#EDE5D8);color:var(--foreground,#3B2416) } .ds-nav:focus-visible { outline:2px solid var(--teal,#0F766E);outline-offset:3px }"
+    },
+    {
+      "name": "Explicit sample status",
+      "kind": "chip",
+      "refersTo": "status-success",
+      "description": "Color supplements a truthful text status.",
+      "html": "<span class=\"ds-status\">Sample verified</span>",
+      "css": ".ds-status { display:inline-flex;padding:0.125rem 0.5rem;border-radius:0.375rem;background:var(--teal,#0F766E);color:var(--surface,#FFFFFF);font:600 0.8125rem/1.6 Inter,sans-serif }"
+    }
+  ],
   "narrative": {
     "northStar": "Community journal with a pet story feed",
-    "overview": "Early F4 form contract. F6 completes and audits the shared system.",
-    "rules": [
-      {
-        "name": "Honest samples",
-        "body": "Demo profiles and sample personas are explicitly identified.",
-        "section": "components"
-      }
+    "overview": "An animal story is the useful center of PawTrail. Warm cream ground, white story surfaces, brown text, and recognizable animal identities connect community responses to practical help. Photography belongs to the content; clear names and native links carry identification across posts, profiles, maps, and help requests.",
+    "keyCharacteristics": [
+      "Animal identity leads; supporting chrome stays compact.",
+      "Warm, flat surfaces with clear text and native interaction.",
+      "Honest sample labels, permissions, unavailable states, and recovery."
+    ],
+    "rules": [],
+    "dos": [
+      "Do keep pet identity, readable names, status words, and the next useful action together.",
+      "Do use shared primitives, safe return paths, truthful readiness, and visible recovery.",
+      "Do preserve all pinned brand tokens and test actual foreground/background pairs."
+    ],
+    "donts": [
+      "Don't invent counts, balances, verification, testimonials, or rescue outcomes.",
+      "Don't expose unfinished destinations as working links.",
+      "Don't claim rendered visual verification from source or component tests."
     ]
   }
 }
