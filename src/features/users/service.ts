@@ -99,8 +99,24 @@ export function createUserService(
             summary.missions +
             summary.donations,
           summary,
-          level: null,
-          badges: [],
+          level:
+            1 +
+            Math.floor(
+              Math.max(
+                0,
+                draft.data.kibbleEntries
+                  .filter((e) => e.userId === user.id)
+                  .reduce((n, e) => n + e.amount, 0),
+              ) / 100,
+            ),
+          badges: missions.length
+            ? [
+                {
+                  id: 'helping-paw',
+                  label: 'Helping Paw — reviewed mission contribution',
+                },
+              ]
+            : [],
           animalsHelped: visible.animals
             .filter((a) => animalIds.has(a.id))
             .map((a) =>

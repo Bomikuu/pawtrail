@@ -1,33 +1,47 @@
 # PawTrail
 
-**Every Paw Has a Story.** Discover. Care. Connect.
+Every Paw Has a Story. A pet community application connecting stories with nearby care, responsible adoption and practical animal welfare support.
 
-PawTrail is a planned social community for pets and animal welfare: stories and pet profiles connect to nearby sightings, adoption, fundraising, and volunteer help.
+## Run locally
 
-This repository contains the implementation planning package, application scaffold, typed API boundary, and isolated local demo storage. Feature implementation is in progress.
+Use Node 24 from `.nvmrc`:
 
-Start with the [master implementation plan](docs/superpowers/plans/2026-11-02-pawtrail-implementation.md), then read the [architecture specification](docs/superpowers/specs/2026-11-02-pawtrail-design.md). The [original brief](docs/requirements/pawtrail-original-brief.txt) is preserved verbatim.
+```sh
+npm ci
+cp .env.example .env.local
+npm run dev
+```
 
-The plan has seven work packages, covering 35 independently testable tasks. The frontend uses Next.js App Router, React, TypeScript, Tailwind, and Shadcn. Initial data and workflows run in explicit demo mode behind an API boundary prepared for Django REST Framework.
+Open http://localhost:3000. Keep `NEXT_PUBLIC_USE_MOCK_API=true` for the sample community. Choose Sample member, Sample shelter staff or Sample moderator on Sign in. The current worktree preview uses http://127.0.0.1:3000.
 
-No Git remote, hosted site, or deployment has been created. Repository verification rules are in [AGENTS.md](AGENTS.md).
+## Implemented journeys
 
-## Local setup and automated checks
+| Journey                                                                                                         | Entry points                                                                                    |
+| --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Community stories, photos, reactions, saving, following and comments                                            | `/community`, `/pets/[slug]`, `/users/[username]`                                               |
+| Approximate geographic discovery, map/list fallback, sightings, Hordes and public search                        | `/explore`, `/animals/report`, `/sightings/create`, `/hordes`, `/search`                        |
+| Optional compatibility, swipe/button discovery, interests, private drafts and adoption applications             | `/adopt`, `/adopt/preferences`, `/adopt/interested`, `/adopt/applications`                      |
+| Reviewed campaigns, Horde beneficiaries, estimated budgets, simulated support, updates and transparent spending | `/fundraisers`, `/fundraisers/create`, `/dashboard/fundraisers`                                 |
+| Evidence-reviewed missions, immutable earned/reversed non-cash rewards, wallet and leaderboard                  | `/missions`, `/dashboard/missions`, `/dashboard/kibble`, `/leaderboard`                         |
+| Shelters, independent evidence review, events and transactional RSVPs                                           | `/shelters`, `/dashboard/shelter`, `/events`, `/dashboard/events`                               |
+| Private activity, profile/privacy choices, organization application review and moderation                       | `/dashboard`, `/dashboard/settings`, `/dashboard/shelter/applications`, `/dashboard/moderation` |
 
-Use the Node version in `.nvmrc`, then run `npm ci`. Copy `.env.example` to `.env.local` and keep `NEXT_PUBLIC_USE_MOCK_API=true` for the sample community. Start development with `npm run dev`.
+Public stories render on the server. Maps, charts and gesture interactions are separate client islands. Private documents, exact sightings, applicant answers and drafts stay behind the service and BFF boundaries. The demo uses one Node process with private writable disk, isolated by an HttpOnly browser cookie. It does not perform real authentication, payments, adoption arrangements or accreditation.
 
-`npm run typecheck` runs `next typegen` before `tsc --noEmit`, so it works on a fresh checkout without starting the server. Type generation does not run a production build. `npm run check:ui` checks the shared component boundary; `npm run format:check` checks authored source and configuration. Run scoped unit tests with `npm run test:unit -- <test-path>`.
+## Delivery and validation status
 
-Next owns `next-env.d.ts` and `.next/`; both are ignored, regenerated, and excluded from formatting. Do not edit or commit generated declarations, including their formatting. `tsconfig.json` retains both normal and development route-type includes. The managed Next guidance in `AGENTS.md` is intentionally tracked because `next dev` maintains it. Authored TypeScript and JavaScript continue to use no semicolons.
+The owner requested direct implementation without subagents and explicitly stopped automated testing. The remaining production workflows were implemented in the main session. No new automated tests, type/UI checks, builds, browser inspections or live backend conformance checks were run. Historical foundation/social test results do not certify the later tree. See `docs/implementation/native-delivery.md` and `docs/quality/verification-matrix.md`.
 
-## Local demo storage
+Google Maps needs a restricted browser key; lists work without one. Real mode needs a separately implemented matching Django backend and private session configuration. The real adapter has source implementation but no live conformance evidence. No real payment processing or external email/messages are included.
 
-Demo mode (`NEXT_PUBLIC_USE_MOCK_API=true`) supports one Node process with writable local disk. Session overlays live in the ignored `.pawtrail/demo/` directory, or the server-only `DEMO_DATA_DIR`. This repository is unsuitable for stateless or multiple-process hosting; use Django or replace the repository with shared storage for those deployments. Keep the directory private to the application OS account. Session JSON files use owner-only permissions and must never be committed, published, or served as static content.
+## Documentation
 
-Anonymous reads use base fixtures without a cookie. Send a same-origin `POST /api/v1/demo/session` to initialize an isolated session. The response sets an opaque HttpOnly, SameSite=Lax cookie (Secure over HTTPS). New content belongs only to that browser session and remains available after refresh. Public RSC and BFF reads load the same current snapshot; Server Components only read cookies. Both projections and the explicit API route allowlist remain enforced. Feature mutations and actor login are supplied by their owning packages.
+- [Setup and sample personas](docs/setup.md)
+- [Architecture and privacy boundaries](docs/architecture.md)
+- [Django integration contract](docs/backend-integration.md)
+- [Demo limitations](docs/demo-limitations.md)
+- [Native implementation record](docs/implementation/native-delivery.md)
+- [Release checklist and explicitly optional checks](docs/quality/release-checklist.md)
+- [Asset provenance](docs/assets/credits.md)
 
-Set `DEMO_ALLOW_RESET=true` explicitly to enable same-origin `POST /api/v1/demo/reset`. Reset affects only the session named by the request cookie, including its idempotency receipts. Both lifecycle endpoints are disabled in real mode. Old schema/fixture versions and damaged documents return `DEMO_RESET_REQUIRED` (HTTP 409), preserving the file until an explicit reset; there is no silent fallback to another session. If reset is disabled, the host must opt in before recovery.
-
-Repository commands receive a private mutable `draft.data` and the shared frozen demo clock (`2026-11-02T00:00:00+08:00`). Commands must validate domain permissions/invariants and use JSON-safe inputs/results. Name idempotent commands by operation and actor scope, supplying the same input and key on retries. Receipts commit atomically with collection overlays, and conflicting reuse returns `CONFLICT`. Different handles share a process-level queue keyed by canonical file path. Queries and command outputs are detached from stored state. Do not call repository operations recursively inside a command. When new persistent collections or storage formats are introduced, update the schema version; changing the base fixtures requires updating the fixture version.
-
-Commits sync a private temporary file before atomic rename. Failed commands or failed replacement leave the previous file valid, and a normal replacement failure removes its temporary file. This does not provide distributed locking, arbitrary power-loss recovery, automatic expiry/cleanup, or protection from another privileged local process modifying the data directory.
+Existing validation commands remain available only on explicit request. CI has no push, pull-request or schedule trigger; its manual workflow also requires the validation flag. No deployment or remote repository push has been performed.

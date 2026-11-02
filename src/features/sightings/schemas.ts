@@ -24,8 +24,8 @@ export const sightingInputSchema = z.object({
   hordeId: idSchema.optional(),
   observedAt: timestampSchema,
   areaId: idSchema,
-  exactLatitude: z.number().min(-90).max(90),
-  exactLongitude: z.number().min(-180).max(180),
+  exactLatitude: z.number().min(-90).max(90).optional(),
+  exactLongitude: z.number().min(-180).max(180).optional(),
   observation: z.string().min(1),
   mediaIds: z.array(idSchema).max(6),
 })
@@ -34,6 +34,7 @@ export const privateSightingSchema = sightingSchema.extend({
   exactLongitude: z.number().min(-180).max(180),
 })
 export const sightingFiltersSchema = listQuerySchema.extend({
+  scope: z.enum(['public', 'mine']).optional(),
   animalId: idSchema.optional(),
   hordeId: idSchema.optional(),
   since: timestampSchema.optional(),

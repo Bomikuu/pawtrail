@@ -46,6 +46,7 @@ export const moderationDecisionSchema = z.object({
   evidenceRefs: z.array(idSchema).max(6).default([]),
 })
 export const moderationItemSchema = baseSchema.extend({
+  sightingId: idSchema.optional(),
   ref: resourceRefSchema,
   commentId: idSchema.optional(),
   creatorId: idSchema.nullable(),
@@ -69,6 +70,7 @@ export const moderationFiltersSchema = listQuerySchema.extend({
   kind: reviewKindSchema.optional(),
 })
 export const auditSchema = baseSchema.extend({
+  sightingId: idSchema.optional(),
   itemId: idSchema,
   ref: resourceRefSchema,
   commentId: idSchema.optional(),
@@ -83,6 +85,7 @@ export const auditSchema = baseSchema.extend({
 })
 /** Only trusted domain commands register evidence. Public report input cannot grant access. */
 export const reviewSubjectSchema = z.object({
+  photoIds: z.array(idSchema).max(6).optional(),
   ref: resourceRefSchema,
   creatorIds: z.array(idSchema),
   evidenceIds: z.array(idSchema).max(6),

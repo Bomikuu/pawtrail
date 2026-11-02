@@ -41,6 +41,12 @@ export interface ApiRoute {
 export const apiRoutes: ApiRoute[] = [
   {
     method: 'GET',
+    path: '/me/profile',
+    invoke: async (api, _p, _q, _b, options) =>
+      parseResponse(users.privateUserSchema, await api.users.me(options)),
+  },
+  {
+    method: 'GET',
     path: '/auth/session',
     invoke: async (api, params, query, body, options) =>
       parseResponse(auth.sessionSchema, await api.auth.session(options)),

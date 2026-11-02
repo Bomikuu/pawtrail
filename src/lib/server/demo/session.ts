@@ -32,8 +32,18 @@ export async function resolveDemoContext(
   request: Request,
 ): Promise<ApiContext> {
   const config = getApiConfig()
-  if (config.mode === 'real')
-    return { api: createDjangoApi(config.djangoOrigin), mode: 'real' }
+  if (config.mode === 'real') {
+    const api = createDjangoApi(config.djangoOrigin, {
+      allowCookieWrites: true,
+    })
+    const authMutation = [
+      '/api/v1/auth/login',
+      '/api/v1/auth/register',
+      '/api/v1/auth/logout',
+    ].includes(new URL(request.url).pathname)
+    const actor = authMutation ? null : (await api.auth.session()).actor
+    return { api, actor, mode: 'real' }
+  }
   const sessionId = readDemoSessionId(request.headers.get('cookie'))
   // Recovery routes must remain reachable even when the stored schema is incompatible.
   const lifecycle = ['/api/v1/demo/session', '/api/v1/demo/reset'].includes(
@@ -45,8 +55,25 @@ export async function resolveDemoContext(
   const user = snapshot.data.users.find(
     (user) => user.id === snapshot.auth.actorId,
   )
+  const scopedRepository: typeof repository = {
+    mediaRoot: repository.mediaRoot,
+    read: (query) => repository.read(query),
+    transact: (command) =>
+      repository.transact({
+        ...command,
+        execute(draft, clock) {
+          if (draft.auth.cacheScope !== snapshot.auth.cacheScope)
+            throw new ApiError(
+              'SESSION_CHANGED',
+              'Your account changed. Reload before submitting.',
+              401,
+            )
+          return command.execute(draft, clock)
+        },
+      }),
+  }
   return {
-    api: createMockApi(snapshot.data, repository),
+    api: createMockApi(snapshot.data, scopedRepository),
     actor: user ? actorSchema.parse(user) : null,
     mode: 'mock',
     demo: { sessionId, repository },

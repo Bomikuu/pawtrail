@@ -18,6 +18,7 @@ export const animalNeedsSchema = z.object({
   incompatiblePetTypes: z.array(z.enum(['cat', 'dog', 'other'])).optional(),
 })
 export const animalSummarySchema = baseSchema.extend({
+  reviewState: moderationStateSchema.optional(),
   slug: z.string().min(1),
   name: z.string().min(1),
   species: z.enum(['cat', 'dog', 'other']),
@@ -64,6 +65,9 @@ export const animalRecordSchema = animalProfileSchema
     privateNotes: z.string(),
   })
 export const animalFiltersSchema = listQuerySchema.extend({
+  ids: z.array(idSchema).max(1000).optional(),
+  scope: z.enum(['public', 'mine']).optional(),
+  saved: z.boolean().optional(),
   species: animalSummarySchema.shape.species.optional(),
   adoptable: z.boolean().optional(),
   shelterId: idSchema.optional(),
@@ -76,8 +80,15 @@ export const animalReportInputSchema = z.object({
   description: z.string().min(1),
   location: publicLocationSchema,
   mediaIds: z.array(idSchema).max(6),
+  verificationEvidenceIds: z.array(idSchema).max(6).optional(),
   shelterId: idSchema.optional(),
 })
 export const animalUpdateInputSchema = animalReportInputSchema
   .partial()
-  .extend({ expectedVersion: versionSchema })
+  .extend({
+    expectedVersion: versionSchema,
+    adoptable: z.boolean().optional(),
+    status: animalSummarySchema.shape.status.optional(),
+    ageMonths: z.number().int().nonnegative().optional(),
+    size: animalSummarySchema.shape.size.optional(),
+  })

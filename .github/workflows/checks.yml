@@ -1,0 +1,30 @@
+name: Explicitly requested validation
+on:
+  workflow_dispatch:
+    inputs:
+      run_validation:
+        description: Explicitly authorize running checks and the existing tests
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: read
+jobs:
+  requested-validation:
+    if: inputs.run_validation == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_PUBLIC_USE_MOCK_API: 'true'
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      DEMO_DATA_DIR: ${{ runner.temp }}/pawtrail-demo
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm run check

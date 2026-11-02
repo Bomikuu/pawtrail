@@ -1,4 +1,11 @@
 import 'server-only'
+import { animalProfileSchema } from '@/features/animals/schemas'
+import { installDiscovery } from '@/features/discovery/service'
+import { installAccount } from '@/features/users/account-service'
+import { installAdoption } from '@/features/adoption/service'
+import { installFundraising } from '@/features/fundraising/service'
+import { installMissions } from '@/features/missions/service'
+import { installEvents } from '@/features/events/service'
 import { createUserService } from '@/features/users/service'
 import { createNotificationService } from '@/features/notifications/service'
 import {
@@ -117,7 +124,9 @@ export function createMockApi(
       actorId: string | null,
       saved: { actorId: string; animalId: string }[],
     ) => {
-      const record = snapshot.animals.find((row) => row.slug === slug)
+      const record = snapshot.animals.find(
+        (row) => row.slug === slug || row.id === slug,
+      )
       if (!record) throw new ApiError('NOT_FOUND', 'Animal not found', 404)
       return toPublicAnimal(
         record,
@@ -129,9 +138,32 @@ export function createMockApi(
       )
     }
     return repository
-      ? repository.read((draft) =>
-          read(publicSnapshot(draft), draft.auth.actorId, draft.savedAnimals),
-        )
+      ? repository.read((draft) => {
+          const owned = draft.data.animals.find(
+            (a) =>
+              (a.slug === slug || a.id === slug) &&
+              (a.ownerId === draft.auth.actorId ||
+                draft.data.users.some(
+                  (u) =>
+                    u.id === draft.auth.actorId &&
+                    u.roles.includes('shelter_staff') &&
+                    u.shelterIds.includes(a.shelterId ?? ''),
+                )),
+          )
+          if (owned && owned.moderation !== 'published')
+            return animalProfileSchema.parse({
+              ...owned,
+              reviewState: owned.moderation,
+              helperIds: [],
+              helpers: [],
+              viewerSaved: false,
+            })
+          return read(
+            publicSnapshot(draft),
+            draft.auth.actorId,
+            draft.savedAnimals,
+          )
+        })
       : read(data, null, [])
   }
   api.animals.setSaved = async (id, saved, options) => {
@@ -386,5 +418,11 @@ export function createMockApi(
         ),
       )
   }
+  installDiscovery(api, data, repository)
+  installAccount(api, data, repository)
+  installAdoption(api, data, repository)
+  installFundraising(api, data, repository)
+  installMissions(api, data, repository)
+  installEvents(api, data, repository)
   return api
 }

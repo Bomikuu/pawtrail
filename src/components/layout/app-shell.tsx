@@ -1,5 +1,8 @@
 'use client'
 import { useUnreadCount } from '@/features/notifications/queries'
+import { useQuery } from '@tanstack/react-query'
+import { getBrowserApi } from '@/lib/api/client'
+import { queryKeys } from '@/lib/api/keys'
 import type { ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import { useSession } from '@/features/auth/session-provider'
@@ -25,6 +28,11 @@ export function AppShell({
   const { session } = useSession()
   const pathname = usePathname()
   const unread = useUnreadCount(readyRoutes.has('/dashboard/notifications'))
+  const wallet = useQuery({
+    queryKey: queryKeys(session.cacheScope).detail('kibble', 'wallet'),
+    queryFn: ({ signal }) => getBrowserApi().kibble.wallet({ signal }),
+    enabled: !!session.actor && readyRoutes.has('/dashboard/kibble'),
+  })
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main-content">
@@ -33,7 +41,7 @@ export function AppShell({
       <Header
         readyRoutes={readyRoutes}
         unreadCount={unreadCount ?? (unread.isError ? undefined : unread.data)}
-        kibbleBalance={kibbleBalance}
+        kibbleBalance={kibbleBalance ?? wallet.data?.balance}
       />
       {session.demo && <DemoBanner />}
       <div className={`app-columns${rightRail ? ' has-right-rail' : ''}`}>

@@ -213,9 +213,23 @@ export function createDemoMedia(
             purpose: valid.purpose,
             sensitive: valid.sensitive,
             shelterId: valid.shelterId ?? null,
+            verificationShelterId: valid.verificationShelterId ?? null,
           },
           async execute(draft) {
             const actor = mediaActor(draft)
+            if (
+              valid.verificationShelterId &&
+              (valid.purpose !== 'private_evidence' ||
+                valid.shelterId !== valid.verificationShelterId ||
+                !can(actor, 'manage_shelter', {
+                  shelterId: valid.verificationShelterId,
+                }))
+            )
+              throw new ApiError(
+                'FORBIDDEN',
+                'Only current responsible staff may submit private shelter verification evidence',
+                403,
+              )
             if (
               valid.shelterId &&
               !can(actor, 'manage_shelter', { shelterId: valid.shelterId })
@@ -256,9 +270,44 @@ export function createDemoMedia(
               purpose: valid.purpose,
               sensitive: valid.sensitive,
               approved: false,
-              attached: false,
+              attached: !!valid.verificationShelterId,
               createdAt: Date.now(),
             })
+            if (valid.verificationShelterId) {
+              const shelter = draft.data.shelters.find(
+                (s) => s.id === valid.verificationShelterId,
+              )
+              if (!shelter)
+                throw new ApiError('NOT_FOUND', 'Shelter not found', 404)
+              let subject = draft.moderation.subjects.find(
+                (s) => s.ref.kind === 'shelter' && s.ref.id === shelter.id,
+              )
+              if (!subject) {
+                subject = {
+                  ref: { kind: 'shelter', id: shelter.id },
+                  creatorIds: draft.data.users
+                    .filter((u) => u.shelterIds.includes(shelter.id))
+                    .map((u) => u.id),
+                  evidenceIds: [],
+                  version: 1,
+                  state: 'published',
+                }
+                draft.moderation.subjects.push(subject)
+              }
+              if (subject.evidenceIds.length >= 6)
+                throw new ApiError(
+                  'VALIDATION_ERROR',
+                  'This shelter already has six evidence attachments',
+                  400,
+                )
+              subject.evidenceIds.push(id)
+              subject.version++
+              shelter.verification = {
+                status: 'unverified',
+                label: 'New private evidence awaiting independent review',
+                evidenceRefs: [],
+              }
+            }
             return asset
           },
         })

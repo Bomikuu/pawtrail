@@ -9,9 +9,11 @@ import type { AnimalProfile } from './types'
 export const getPublicAnimal = cache(
   async (slug: string): Promise<AnimalProfile> => {
     try {
-      return animalProfileSchema.parse(
+      const animal = animalProfileSchema.parse(
         await (await getServerApi()).animals.get(slug),
       )
+      if (animal.reviewState && animal.reviewState !== 'published') notFound()
+      return animal
     } catch (error) {
       if (error instanceof ApiError && error.status === 404) notFound()
       throw error

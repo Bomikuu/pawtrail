@@ -4,6 +4,7 @@ import { getServerApi } from '@/lib/api/server'
 import { ApiError } from '@/lib/api/errors'
 import { getApiConfig } from '@/lib/api/config'
 import { PublicProfile } from '@/features/users/public-profile'
+import { PublicJsonLd } from '@/lib/seo/public-json-ld'
 async function profile(username: string) {
   try {
     return await (await getServerApi()).users.get(username)
@@ -28,8 +29,19 @@ export async function generateMetadata({
     description,
     alternates: { canonical: url },
     robots: { index: !noindex, follow: !noindex },
-    openGraph: { type: 'profile', title, description, url },
-    twitter: { card: 'summary', title, description },
+    openGraph: {
+      type: 'profile',
+      title,
+      description,
+      url,
+      images: [`${url}/opengraph-image`],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${url}/opengraph-image`],
+    },
   }
 }
 export default async function UserPage({
@@ -37,5 +49,15 @@ export default async function UserPage({
 }: {
   params: Promise<{ username: string }>
 }) {
-  return <PublicProfile profile={await profile((await params).username)} />
+  const user = await profile((await params).username)
+  return (
+    <>
+      <PublicJsonLd
+        name={user.displayName}
+        description={user.bio}
+        path={`/users/${encodeURIComponent(user.username)}`}
+      />
+      <PublicProfile profile={user} />
+    </>
+  )
 }

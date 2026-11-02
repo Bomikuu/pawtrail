@@ -128,7 +128,7 @@ The user approved code-first implementation and the community-journal direction 
 - Warm, flat surfaces with clear text and native interaction.
 - Honest sample labels, permissions, unavailable states, and recovery.
 
-This contract completes the F4/F5 foundation. F7 owns licensed self-hosted font and photographic assets. Rendered visual quality remains unverified under repository policy. Source checks and automated behavior/contrast tests are the current evidence; the parent implementation coordinates the final source-scope finish review and documentation.
+This contract records the approved world and its source implementation. Licensed fonts and credited photography are self-hosted. The user later selected direct implementation without agents or automated testing. Historical foundation checks predate the native feature changes; fresh automated and rendered verification have not been performed.
 
 ## Colors
 
@@ -138,7 +138,9 @@ Teal supports links, focus, current navigation, and successful states. Green is 
 
 ## Typography
 
-Nunito headings and wordmark; Inter body, labels, controls, and data, with sans-serif fallbacks until F7 supplies licensed assets. Body is 1rem/1.6. App headings are 2rem desktop and 1.75rem mobile; dialog/empty-state headings are 1.5rem. Navigation uses 0.9375rem/1.4. Mobile bottom labels use 0.6875rem while retaining 3.5rem targets. Long prose stays near 65–75ch. PHP amounts use tabular numerals and integer centavos.
+Nunito headings and wordmark; Inter body, labels, controls, and data, with self-hosted Latin and Latin Extended variable fonts and sans-serif fallbacks. Body is 1rem/1.6. App headings are 2rem desktop and 1.75rem mobile; dialog/empty-state headings are 1.5rem. Navigation uses 0.9375rem/1.4. Mobile bottom labels use 0.6875rem while retaining 3.5rem targets. Long prose stays near 65–75ch. PHP amounts use tabular numerals and integer centavos.
+
+Marketing display typography uses 3.25–5.5rem on desktop and 3.25–4.5rem on mobile; marketing section headings use 1.85–2.6rem. Application workspaces use the same Nunito/Inter roles, compact data rows, story surfaces, native semantics, and responsive control spacing. Maps and charts are lazy islands, and adoption transitions honor reduced motion.
 
 ## Layout
 

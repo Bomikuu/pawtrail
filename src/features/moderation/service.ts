@@ -131,9 +131,43 @@ function mayVerify(draft: DemoDraft, ref: ResourceRef) {
 export function mayReviewMedia(draft: DemoDraft, mediaId: string) {
   if (!draft.auth.actorId) return false
   const user = actor(draft)
+  if (
+    draft.data.participations.some(
+      (p) =>
+        p.state === 'submitted' &&
+        p.volunteerId !== user.id &&
+        p.evidence?.mediaIds.includes(mediaId) &&
+        draft.data.missions.some(
+          (m) =>
+            m.id === p.missionId &&
+            (m.organizerId === user.id ||
+              (user.roles.includes('shelter_staff') &&
+                user.shelterIds.includes(m.shelterId ?? ''))),
+        ),
+    )
+  )
+    return true
   if (!can(user, 'moderate')) return false
   const media = draft.media.find((m) => m.asset.id === mediaId)
   if (!media?.attached) return false
+  if (
+    media.purpose === 'public_image' &&
+    (draft.moderation.subjects.some(
+      (s) =>
+        s.photoIds?.includes(mediaId) &&
+        s.creatorIds.includes(media.ownerId) &&
+        subject(draft, s.ref).state === 'pending',
+    ) ||
+      draft.workflow?.preciseSightings.some(
+        (s) =>
+          s.photoIds?.includes(mediaId) &&
+          s.ownerId === media.ownerId &&
+          draft.data.sightings.some(
+            (r) => r.id === s.id && r.moderation === 'pending',
+          ),
+      ))
+  )
+    return true
   if (media.purpose === 'public_image')
     return draft.community.attachments.some(
       (a) =>
@@ -180,6 +214,7 @@ function items(draft: DemoDraft): ModerationItem[] {
       // Unsupported management domains appear only when explicitly reported.
       if (
         !['post', 'animal', 'shelter', 'fundraiser'].includes(kind) &&
+        !s.metadata?.photoIds?.length &&
         !reports.length
       )
         continue
@@ -187,7 +222,9 @@ function items(draft: DemoDraft): ModerationItem[] {
         kind === 'post' && s.state === 'pending'
           ? (draft.community.attachments.find((a) => a.postId === row.id)
               ?.mediaIds ?? [])
-          : []
+          : s.state === 'pending'
+            ? (s.metadata?.photoIds ?? [])
+            : []
       const evidenceIds = mayVerify(draft, ref)
         ? (s.metadata?.evidenceIds ?? []).filter((id) =>
             mayReviewMedia(draft, id),
@@ -285,7 +322,63 @@ function items(draft: DemoDraft): ModerationItem[] {
       }),
     )
   }
+  for (const row of draft.data.sightings) {
+    if (
+      !draft.data.animals.some(
+        (a) => a.id === row.animalId && a.moderation === 'published',
+      )
+    )
+      continue
+    const ids =
+      draft.workflow?.preciseSightings.find((s) => s.id === row.id)?.photoIds ??
+      []
+    result.push(
+      parseResponse(moderationItemSchema, {
+        id: `publication:sighting:${row.id}`,
+        createdAt: row.createdAt,
+        provenance: row.provenance,
+        ref: { kind: 'animal', id: row.animalId },
+        sightingId: row.id,
+        creatorId: row.reporterId,
+        kind: 'publication',
+        state: row.moderation,
+        version:
+          draft.moderation.audit.filter((a) => a.sightingId === row.id).length +
+          1,
+        reportCount: 0,
+        reports: [],
+        title: 'Animal sighting',
+        text: row.observation,
+        publicImages: row.media,
+        media: ids.flatMap((id) => {
+          const m = draft.media.find((m) => m.asset.id === id)
+          return m && mayReviewMedia(draft, id)
+            ? [{ ...m.asset, sensitive: m.sensitive }]
+            : []
+        }),
+        evidenceIds: [],
+        canVerify: false,
+        verification: null,
+      }),
+    )
+  }
   return result
+}
+function publishSubjectPhotos(draft: DemoDraft, ids: string[]) {
+  return ids.map((id) => {
+    const m = draft.media.find((m) => m.asset.id === id)
+    if (
+      !m ||
+      !m.attached ||
+      m.purpose !== 'public_image' ||
+      m.asset.mimeType === 'application/pdf'
+    )
+      return invalid('Only attached eligible photographs may be published')
+    m.approved = true
+    m.asset.visibility = 'public'
+    m.asset.url = `/api/v1/media/${id}/public`
+    return publicMedia(m)
+  })
 }
 function publishPostPhotos(draft: DemoDraft, id: string) {
   const post = draft.data.posts.find((p) => p.id === id)!
@@ -555,7 +648,22 @@ export function createModerationService(
               : valid.action === 'reject'
                 ? 'rejected'
                 : 'removed'
-          if (item.commentId) {
+          if (item.sightingId) {
+            const row = draft.data.sightings.find(
+              (r) => r.id === item.sightingId,
+            )!
+            row.moderation = state
+            const ids =
+              draft.workflow?.preciseSightings.find((s) => s.id === row.id)
+                ?.photoIds ?? []
+            if (state === 'published')
+              row.media = publishSubjectPhotos(draft, ids)
+            else {
+              const old = row.media.map((m) => m.id)
+              row.media = []
+              reconcilePublicMedia(draft, old)
+            }
+          } else if (item.commentId) {
             const comment = draft.data.comments.find(
               (c) => c.id === item.commentId,
             )!
@@ -598,15 +706,51 @@ export function createModerationService(
             if (item.ref.kind === 'post') {
               if (state === 'published') publishPostPhotos(draft, item.ref.id)
               else reconcilePublicMedia(draft, postMediaIds(draft, item.ref.id))
+              if (state === 'published')
+                for (const campaign of draft.data.fundraisers.filter((f) =>
+                  f.updates.some((u) => u.publicationPostId === item.ref.id),
+                ))
+                  for (const recipientId of new Set(
+                    draft.data.contributions
+                      .filter((c) => c.campaignId === campaign.id)
+                      .map((c) => c.contributorId),
+                  ))
+                    await notify({
+                      draft,
+                      recipientId,
+                      kind: 'fundraiser',
+                      ref: { kind: 'fundraiser', id: campaign.id },
+                      now,
+                    })
+            } else if (s.metadata?.photoIds?.length && 'gallery' in s.row) {
+              if (state === 'published') {
+                s.row.gallery = publishSubjectPhotos(draft, s.metadata.photoIds)
+                if ('photo' in s.row) s.row.photo = s.row.gallery[0] ?? null
+              } else {
+                const old = s.row.gallery.map((m) => m.id)
+                s.row.gallery = []
+                if ('photo' in s.row) s.row.photo = null
+                reconcilePublicMedia(draft, old)
+              }
+            } else if (s.metadata?.photoIds?.length && 'avatar' in s.row) {
+              if (state === 'published')
+                s.row.avatar =
+                  publishSubjectPhotos(draft, s.metadata.photoIds)[0] ?? null
+              else {
+                const old = s.row.avatar?.id
+                s.row.avatar = null
+                if (old) reconcilePublicMedia(draft, [old])
+              }
             }
           }
         }
-        if (!item.commentId) {
+        if (!item.commentId && !item.sightingId) {
           const s = subject(draft, item.ref)
           if ('version' in s.row) s.row.version++
           if (s.metadata) s.metadata.version = item.version + 1
         }
         const updated = items(draft).find((i) => i.id === item.id)!
+        if (item.sightingId) updated.version = item.version + 1
         draft.moderation.audit.push({
           id: randomUUID(),
           createdAt: now,
@@ -614,6 +758,7 @@ export function createModerationService(
           itemId: item.id,
           ref: item.ref,
           ...(item.commentId ? { commentId: item.commentId } : {}),
+          ...(item.sightingId ? { sightingId: item.sightingId } : {}),
           reviewerId: user.id,
           action: valid.action,
           reason: valid.reason,
@@ -678,8 +823,30 @@ export function publicSnapshot(draft: DemoDraft): FixtureSeed {
       }
   data.sightings = data.sightings.filter(
     (s) =>
+      s.moderation === 'published' &&
       (!s.animalId || visible({ kind: 'animal', id: s.animalId })) &&
       (!s.hordeId || visible({ kind: 'horde', id: s.hordeId })),
   )
+  for (const a of data.animals)
+    a.sightingIds = a.sightingIds.filter((id) =>
+      data.sightings.some((s) => s.id === id),
+    )
+  for (const h of data.hordes) {
+    h.sightingIds = h.sightingIds.filter((id) =>
+      data.sightings.some((s) => s.id === id),
+    )
+    h.contributorIds = h.contributorIds.filter((id) =>
+      data.users.some(
+        (u) =>
+          u.id === id &&
+          u.settings.discoverable &&
+          u.settings.showContributions,
+      ),
+    )
+  }
+  for (const s of data.shelters)
+    s.staffIds = s.staffIds.filter((id) =>
+      data.users.some((u) => u.id === id && u.settings.discoverable),
+    )
   return data
 }

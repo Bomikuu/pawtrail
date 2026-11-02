@@ -15,6 +15,7 @@ import {
 } from '@/lib/api/schemas'
 
 export const campaignSummarySchema = baseSchema.extend({
+  hordeId: idSchema.nullable().default(null),
   slug: z.string(),
   title: z.string(),
   category: z.enum(['medical', 'food', 'rescue', 'shelter', 'community']),
@@ -42,12 +43,14 @@ export const campaignStoryUpdateInputSchema = z.object({
   mediaIds: z.array(idSchema).max(6),
 })
 export const campaignStoryUpdateSchema = baseSchema.extend({
+  publicationPostId: idSchema.nullable().default(null),
   campaignId: idSchema,
   authorId: idSchema,
   text: z.string(),
   media: z.array(imageSchema),
 })
 export const expenseInputSchema = z.object({
+  receiptIds: z.array(idSchema).max(6).default([]),
   amountMinor: moneySchema.positive(),
   description: z.string().min(1),
   correctsEntryId: idSchema.optional(),
@@ -60,6 +63,15 @@ export const expenseEntrySchema = baseSchema.extend({
   authorId: idSchema,
 })
 export const campaignDetailSchema = campaignSummarySchema.extend({
+  budget: z
+    .array(
+      z.object({
+        description: z.string().min(1),
+        amountMinor: moneySchema.positive(),
+      }),
+    )
+    .default([]),
+  timeline: z.string().max(2000).default(''),
   story: z.string(),
   gallery: z.array(imageSchema),
   updates: z.array(campaignStoryUpdateSchema),
@@ -70,6 +82,16 @@ export const campaignDetailSchema = campaignSummarySchema.extend({
   version: versionSchema,
 })
 const campaignFieldsSchema = z.object({
+  hordeId: idSchema.nullable().default(null),
+  budget: z
+    .array(
+      z.object({
+        description: z.string().min(1),
+        amountMinor: moneySchema.positive(),
+      }),
+    )
+    .default([]),
+  timeline: z.string().max(2000).default(''),
   title: z.string().min(1),
   story: z.string().min(1),
   category: campaignSummarySchema.shape.category,
@@ -151,6 +173,9 @@ export const publicSupporterSchema = z.object({
   provenance: provenanceSchema,
 })
 export const fundraisingDashboardSchema = z.object({
+  receipts: z
+    .array(z.object({ expenseId: idSchema, mediaIds: z.array(idSchema) }))
+    .default([]),
   campaigns: z.array(campaignSummarySchema),
   contributionCount: z.number().int().nonnegative(),
   totalRaisedMinor: moneySchema,

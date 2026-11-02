@@ -1,0 +1,275 @@
+import type { Field } from './form'
+const choices = (values: string[], empty?: string) => [
+  ...(empty ? [{ value: '', label: empty }] : []),
+  ...values.map((value) => ({ value, label: value.replaceAll('_', ' ') })),
+]
+export const animalFields: Field[] = [
+  {
+    name: 'name',
+    label: 'Animal name or a descriptive nickname',
+    required: true,
+  },
+  {
+    name: 'species',
+    label: 'Species',
+    type: 'select',
+    options: choices(['cat', 'dog', 'other']),
+    value: 'cat',
+  },
+  {
+    name: 'description',
+    label: 'Their story and observed needs',
+    type: 'textarea',
+    required: true,
+    help: 'Describe observations without presenting a medical diagnosis.',
+  },
+]
+export const preferenceFields: Field[] = [
+  {
+    name: 'species',
+    label: 'Species',
+    type: 'select',
+    options: choices(['cat', 'dog', 'other'], 'No preference'),
+  },
+  {
+    name: 'homeType',
+    label: 'Living environment',
+    type: 'select',
+    options: choices(['apartment', 'house', 'farm'], 'Skip this question'),
+  },
+  {
+    name: 'activity',
+    label: 'Your activity level',
+    type: 'select',
+    options: choices(['low', 'medium', 'high'], 'Skip this question'),
+  },
+  {
+    name: 'experience',
+    label: 'Animal care experience',
+    type: 'select',
+    options: choices(['novice', 'experienced'], 'Skip this question'),
+  },
+  {
+    name: 'otherPets',
+    label: 'Other pets at home',
+    type: 'select',
+    options: [
+      { value: '', label: 'Skip this question' },
+      { value: 'none', label: 'No other pets' },
+      { value: 'cat', label: 'Cats' },
+      { value: 'dog', label: 'Dogs' },
+      { value: 'cat,dog', label: 'Cats and dogs' },
+    ],
+  },
+  {
+    name: 'size',
+    label: 'Size',
+    type: 'select',
+    options: choices(['small', 'medium', 'large'], 'No preference'),
+  },
+  {
+    name: 'minAgeMonths',
+    label: 'Minimum age in months',
+    type: 'number',
+    min: 0,
+  },
+  {
+    name: 'maxAgeMonths',
+    label: 'Maximum age in months',
+    type: 'number',
+    min: 0,
+  },
+  {
+    name: 'maxDistanceKm',
+    label: 'Maximum travel distance in km',
+    type: 'number',
+    min: 1,
+    help: 'Calculated from approximate public neighborhood centers.',
+  },
+  {
+    name: 'personality',
+    label: 'Personality tags',
+    help: 'Optional comma-separated tags, such as playful, gentle.',
+  },
+]
+export const applicationFields: Field[] = [
+  { name: 'fullName', label: 'Full name', required: true },
+  { name: 'email', label: 'Email address', type: 'email', required: true },
+  { name: 'phone', label: 'Contact number', type: 'tel', required: true },
+  {
+    name: 'livingSituation',
+    label: 'Your home and living situation',
+    type: 'textarea',
+    step: 1,
+    required: true,
+  },
+  {
+    name: 'careExperience',
+    label: 'Your experience caring for animals',
+    type: 'textarea',
+    step: 1,
+    required: true,
+  },
+  {
+    name: 'motivation',
+    label: 'Why you would like to adopt this animal',
+    type: 'textarea',
+    step: 1,
+    required: true,
+  },
+  {
+    name: 'agreement',
+    label:
+      'I understand this is an application for human review, and the demo does not arrange a real adoption.',
+    type: 'checkbox',
+    step: 2,
+    required: true,
+  },
+]
+export const campaignFields: Field[] = [
+  {
+    name: 'category',
+    label: 'Purpose',
+    type: 'select',
+    options: choices(['medical', 'food', 'rescue', 'shelter', 'community']),
+    value: 'food',
+  },
+  { name: 'title', label: 'Fundraiser title', required: true },
+  {
+    name: 'story',
+    label: 'Who needs help and how the funds would be used',
+    type: 'textarea',
+    step: 1,
+    required: true,
+  },
+  {
+    name: 'urgency',
+    label: 'Urgency',
+    type: 'select',
+    options: choices(['normal', 'high', 'critical']),
+    value: 'normal',
+    step: 1,
+  },
+  {
+    name: 'goal',
+    label: 'Goal in Philippine pesos',
+    step: 2,
+    required: true,
+    help: 'For example 1500.50. All contributions in this app are simulated.',
+  },
+  {
+    name: 'budget',
+    label: 'Estimated budget',
+    step: 2,
+    type: 'textarea',
+    help: 'One item per line: description | amount in PHP. Estimates stay separate from recorded spending.',
+  },
+  { name: 'timeline', label: 'Expected timeline', step: 2, type: 'textarea' },
+]
+export const missionFields: Field[] = [
+  { name: 'title', label: 'Help request title', required: true },
+  {
+    name: 'kind',
+    label: 'Type',
+    type: 'select',
+    options: choices(['mission', 'quest']),
+    value: 'mission',
+  },
+  {
+    name: 'description',
+    label: 'What help is needed',
+    type: 'textarea',
+    required: true,
+  },
+  {
+    name: 'urgency',
+    label: 'Urgency',
+    type: 'select',
+    options: choices(['normal', 'high', 'critical']),
+    value: 'normal',
+  },
+  {
+    name: 'deadline',
+    label: 'Deadline (your local time)',
+    type: 'datetime-local',
+    required: true,
+    value: '2026-11-15T17:00',
+  },
+  {
+    name: 'rewardKibble',
+    label: 'Non-cash Kibble reward',
+    type: 'number',
+    min: 0,
+    required: true,
+    value: '50',
+  },
+  {
+    name: 'requirements',
+    label: 'Evidence requirements',
+    type: 'textarea',
+    required: true,
+    value: 'A written account of the completed contribution',
+    help: 'One requirement per line.',
+  },
+]
+export const eventFields: Field[] = [
+  { name: 'title', label: 'Event title', required: true },
+  {
+    name: 'description',
+    label: 'About the event',
+    type: 'textarea',
+    required: true,
+  },
+  {
+    name: 'startsAt',
+    label: 'Starts (your local time)',
+    type: 'datetime-local',
+    required: true,
+    value: '2026-11-15T09:00',
+  },
+  {
+    name: 'endsAt',
+    label: 'Ends (your local time)',
+    type: 'datetime-local',
+    required: true,
+    value: '2026-11-15T12:00',
+  },
+  { name: 'venue', label: 'Public venue name', required: true },
+  { name: 'address', label: 'Public venue address', required: true },
+  {
+    name: 'latitude',
+    label: 'Venue latitude',
+    type: 'number',
+    required: true,
+    value: '7.073',
+  },
+  {
+    name: 'longitude',
+    label: 'Venue longitude',
+    type: 'number',
+    required: true,
+    value: '125.612',
+  },
+  {
+    name: 'capacity',
+    label: 'Capacity',
+    type: 'number',
+    min: 1,
+    required: true,
+    value: '30',
+  },
+  {
+    name: 'publicVenue',
+    label:
+      'I confirm this venue and its coordinates are intended to be public.',
+    type: 'checkbox',
+    required: true,
+  },
+  {
+    name: 'state',
+    label: 'Event status',
+    type: 'select',
+    options: choices(['scheduled', 'cancelled']),
+    value: 'scheduled',
+  },
+]

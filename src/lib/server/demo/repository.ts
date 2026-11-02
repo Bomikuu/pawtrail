@@ -156,6 +156,7 @@ export async function openDemoRepository(
         document.community = draft.community
         document.media = draft.media
         document.savedAnimals = draft.savedAnimals
+        document.workflow = draft.workflow
         if (command.idempotencyKey !== undefined)
           document.receipts.push({
             name: command.name,

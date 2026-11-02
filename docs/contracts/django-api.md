@@ -1,6 +1,6 @@
 # Proposed Django API contract
 
-Status: implementation proposal, not evidence that endpoints exist. I1 completes executable serializers, examples and conformance tests against this contract. The [specification](../superpowers/specs/2026-11-02-pawtrail-design.md) owns domain signatures and privacy/state invariants.
+Status: proposed backend contract with a frontend adapter implementation; no live conformance is claimed. Test-authoring/execution steps were skipped by explicit user instruction. The [specification](../superpowers/specs/2026-11-02-pawtrail-design.md) owns domain signatures and privacy/state invariants.
 
 ## Transport rules
 
@@ -16,39 +16,49 @@ Session cookies are HttpOnly with Secure in production, appropriate SameSite, ex
 
 Paths below are resource paths beneath `/api/v1`. Literal static paths (drafts/preferences/create actions) are matched before parameter patterns. They are proposed concrete mappings; any backend change is resolved in the adapter and contract tests, not feature components.
 
-| Domain | Method and path | Operation |
-| --- | --- | --- |
-| Auth | `GET /auth/session`; `POST /auth/login`; `POST /auth/register`; `POST /auth/logout`; `POST /auth/refresh` | Session lifecycle, sanitized actor response |
-| Demo only | `POST /demo/session`; `POST /demo/actor`; `POST /demo/reset` | Initialize/select seeded actor/reset current isolated overlay; disabled in real mode |
-| Media | `POST /media`; `DELETE /media/:id`; `GET /media/:id/content` | Multipart upload/removal and authorized content; approved public media may be anonymously readable |
-| Animals | `GET /animals`; `GET /animals/:slug`; `POST /animals/reports`; `PATCH /animals/:id`; `PUT /animals/:id/saved` | Filtered public records, member report, managed edit, saved state |
-| Posts | `GET /community/posts`; `POST /community/posts`; `GET/PATCH/DELETE /community/posts/:id` | Feed/create/detail/owned edit/soft removal |
-| Post actions | `PUT /community/posts/:id/reaction`; `PUT /community/posts/:id/saved` | Desired active state, never toggle blindly |
-| Discussion | `GET/POST /discussions/:kind/:id/comments` | Paged comments and reviewed author-scoped submission |
-| Following | `GET /follows`; `PUT /follows/:kind/:id` | Filtered follows; only user/animal targets |
-| Users | `GET /users/:username`; `PATCH /me/profile`; `GET/PATCH /me/settings`; `GET /me/summary` | Public projection, private settings and aggregated dashboard |
-| Notifications | `GET /me/notifications`; `POST /me/notifications/read`; `GET /me/notifications/unread-count` | Owner-only notification state |
-| Moderation | `POST /reports`; `GET /moderation`; `POST /moderation/:id/review` | Reports, authorized queue, versioned audited review |
-| Discovery | `GET /discovery/areas`; `GET /discovery/nearby` | Geographic area and public bounded feature query |
-| Sightings | `GET /sightings`; `POST /sightings` | Public authorized activity and private-coordinate submission |
-| Hordes | `GET /hordes`; `GET /hordes/:slug` | Group discovery and public profile composition |
-| Search | `GET /search` | Categorized public records with aggregate paging cursor |
-| Adoption preferences | `GET/PUT /adoption/preferences` | Owner-only optional questionnaire |
-| Adoption discovery | `GET /adoption/candidates`; `GET /adoption/interested`; `PUT /adoption/interested/:animalId` | Candidate paging and desired interested state |
-| Applications | `GET/POST /adoption/applications`; `GET /adoption/applications/:id`; `PUT /adoption/drafts/:animalId` | Owned/organization application lists, submission, private detail/draft resume |
-| Application transitions | `POST /adoption/applications/:id/withdraw`; `POST /adoption/applications/:id/resubmit`; `POST /adoption/applications/:id/review` | Explicit versioned status transitions |
-| Campaigns | `GET/POST /fundraisers`; `GET /fundraisers/:slug`; `PATCH /fundraisers/:id` | Public discovery, reviewed creation and permitted edits |
-| Campaign drafts | `GET /fundraisers/drafts`; `GET /fundraisers/drafts/:id`; `PUT /fundraisers/drafts` | Owner-only summaries/detail/upsert, optional ID on first save |
-| Campaign activity | `POST /fundraisers/:id/updates`; `POST /fundraisers/:id/expenses`; `POST /fundraisers/:id/close`; `GET /fundraisers/:id/supporters`; `GET /me/fundraising` | Organizer updates/immutable expenses/closure, public supporters and private dashboard |
-| Demo support | `POST /fundraisers/:id/demo-contributions` | Mock-only illustrative ledger entry; returns DEMO_ONLY in real mode |
-| Missions | `GET/POST /missions`; `GET /missions/:slug`; `POST /missions/:id/accept`; `GET /mission-participations` | Public help discovery/create and actor/organization participation lists |
-| Mission evidence | `POST /mission-participations/:id/evidence`; `POST /mission-participations/:id/review` | Private evidence submission and reviewer approval/rejection |
-| Rewards | `GET /me/kibble`; `GET /me/kibble/transactions`; `GET /leaderboard` | Earned non-cash wallet/history/month-or-all ranking |
-| Shelters | `GET /shelters`; `GET /shelters/:slug`; `GET /shelters/:id/dashboard` | Public organization and authorized management summaries |
-| Events | `GET/POST /events`; `GET /events/:slug`; `PATCH /events/:id`; `PUT /events/:id/rsvp` | Public/managed event operations, cancellation state and desired RSVP |
+| Domain                  | Method and path                                                                                                                                            | Operation                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Auth                    | `GET /auth/session`; `POST /auth/login`; `POST /auth/register`; `POST /auth/logout`; `POST /auth/refresh`                                                  | Session lifecycle, sanitized actor response                                                        |
+| Demo only               | `POST /demo/session`; `POST /demo/actor`; `POST /demo/reset`                                                                                               | Initialize/select seeded actor/reset current isolated overlay; disabled in real mode               |
+| Media                   | `POST /media`; `DELETE /media/:id`; `GET /media/:id/content`                                                                                               | Multipart upload/removal and authorized content; approved public media may be anonymously readable |
+| Animals                 | `GET /animals`; `GET /animals/:slug`; `POST /animals/reports`; `PATCH /animals/:id`; `PUT /animals/:id/saved`                                              | Filtered public records, member report, managed edit, saved state                                  |
+| Posts                   | `GET /community/posts`; `POST /community/posts`; `GET/PATCH/DELETE /community/posts/:id`                                                                   | Feed/create/detail/owned edit/soft removal                                                         |
+| Post actions            | `PUT /community/posts/:id/reaction`; `PUT /community/posts/:id/saved`                                                                                      | Desired active state, never toggle blindly                                                         |
+| Discussion              | `GET/POST /discussions/:kind/:id/comments`                                                                                                                 | Paged comments and reviewed author-scoped submission                                               |
+| Following               | `GET /follows`; `PUT /follows/:kind/:id`                                                                                                                   | Filtered follows; only user/animal targets                                                         |
+| Users                   | `GET /users/:username`; `GET/PATCH /me/profile`; `GET/PATCH /me/settings`; `GET /me/summary`                                                               | Public projection, private settings and aggregated dashboard                                       |
+| Notifications           | `GET /me/notifications`; `POST /me/notifications/read`; `GET /me/notifications/unread-count`                                                               | Owner-only notification state                                                                      |
+| Moderation              | `POST /reports`; `GET /moderation`; `POST /moderation/:id/review`                                                                                          | Reports, authorized queue, versioned audited review                                                |
+| Discovery               | `GET /discovery/areas`; `GET /discovery/nearby`                                                                                                            | Geographic area and public bounded feature query                                                   |
+| Sightings               | `GET /sightings`; `POST /sightings`                                                                                                                        | Public authorized activity and private-coordinate submission                                       |
+| Hordes                  | `GET /hordes`; `GET /hordes/:slug`                                                                                                                         | Group discovery and public profile composition                                                     |
+| Search                  | `GET /search`                                                                                                                                              | Categorized public records with aggregate paging cursor                                            |
+| Adoption preferences    | `GET/PUT /adoption/preferences`                                                                                                                            | Owner-only optional questionnaire                                                                  |
+| Adoption discovery      | `GET /adoption/candidates`; `GET /adoption/interested`; `PUT /adoption/interested/:animalId`                                                               | Candidate paging and desired interested state                                                      |
+| Applications            | `GET/POST /adoption/applications`; `GET /adoption/applications/:id`; `PUT /adoption/drafts/:animalId`                                                      | Owned/organization application lists, submission, private detail/draft resume                      |
+| Application transitions | `POST /adoption/applications/:id/withdraw`; `POST /adoption/applications/:id/resubmit`; `POST /adoption/applications/:id/review`                           | Explicit versioned status transitions                                                              |
+| Campaigns               | `GET/POST /fundraisers`; `GET /fundraisers/:slug`; `PATCH /fundraisers/:id`                                                                                | Public discovery, reviewed creation and permitted edits                                            |
+| Campaign drafts         | `GET /fundraisers/drafts`; `GET /fundraisers/drafts/:id`; `PUT /fundraisers/drafts`                                                                        | Owner-only summaries/detail/upsert, optional ID on first save                                      |
+| Campaign activity       | `POST /fundraisers/:id/updates`; `POST /fundraisers/:id/expenses`; `POST /fundraisers/:id/close`; `GET /fundraisers/:id/supporters`; `GET /me/fundraising` | Organizer updates/immutable expenses/closure, public supporters and private dashboard              |
+| Demo support            | `POST /fundraisers/:id/demo-contributions`                                                                                                                 | Mock-only illustrative ledger entry; returns DEMO_ONLY in real mode                                |
+| Missions                | `GET/POST /missions`; `GET /missions/:slug`; `POST /missions/:id/accept`; `GET /mission-participations`                                                    | Public help discovery/create and actor/organization participation lists                            |
+| Mission evidence        | `POST /mission-participations/:id/evidence`; `POST /mission-participations/:id/review`                                                                     | Private evidence submission and reviewer approval/rejection                                        |
+| Rewards                 | `GET /me/kibble`; `GET /me/kibble/transactions`; `GET /leaderboard`                                                                                        | Earned non-cash wallet/history/month-or-all ranking                                                |
+| Shelters                | `GET /shelters`; `GET /shelters/:slug`; `GET /shelters/:id/dashboard`                                                                                      | Public organization and authorized management summaries                                            |
+| Events                  | `GET/POST /events`; `GET /events/:slug`; `PATCH /events/:id`; `PUT /events/:id/rsvp`                                                                       | Public/managed event operations, cancellation state and desired RSVP                               |
 
 ## Required contract examples at I1
 
 I1 adds executable fixtures for list/detail/create, field validation, 401/403/404/409, expired session/refresh failure, idempotency replay/payload conflict, pending-vs-public visibility, canceled request, missing cursor page, malformed success and private media authorization. The same domain suite runs against mock storage and controlled Django HTTP fixtures. Fixed errors/retries may not silently fabricate real records or payments.
 
 The actual Django backend, durable production storage, provider tokens, geospatial indexes, review operations, external notifications and payment processing remain separate delivery work. A configured live environment is required before claiming live backend conformance.
+
+## Native implementation extensions
+
+The owner changed execution to direct implementation with no agents or automated testing. `GET /me/profile` supplies the current private profile for editing. Animals and sightings accept an explicit owner scope; events accept a current-user scope. Animal edits support care/adoption status and current versions. Animal verification evidence is attached through report/edit input, separately from public photos. Private shelter evidence uses an explicit verification target in the upload input, current organization permission, and the independent moderator queue.
+
+Campaigns support an optional Horde beneficiary, itemized estimated budget and timeline. Budget estimates remain separate from expenses. Expenses accept private receipt IDs; the owner/organization fundraising dashboard includes their authorized associations. Public expense DTOs never include receipt IDs. Photo updates use linked pending community publications and appear publicly only while that publication remains approved. Original financial history stays append-only; corrections supersede without deleting.
+
+Adoption application detail includes private versioned status history. Event detail includes only the current viewer's attendance flag. Reward reversal is a negative immutable Kibble entry. Ranking uses net earned points, approved contribution count and stable user ID. Public level advances once per 100 net earned Kibble, starting at one; Helping Paw requires approved mission participation.
+
+Login/registration returns `{access, refresh, session}`; the session uses the sanitized frontend shape. Refresh returns `{access, refresh?}`. Tokens are sealed in an HttpOnly same-origin cookie by the BFF and stripped from browser JSON. See `../backend-integration.md` for configuration and production limitations. No automated or live backend conformance run was performed.

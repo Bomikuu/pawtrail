@@ -85,6 +85,17 @@ export const adoptionApplicationSummarySchema = baseSchema.extend({
 })
 export const adoptionApplicationSchema =
   adoptionApplicationSummarySchema.extend({
+    history: z
+      .array(
+        z.object({
+          status: adoptionApplicationSummarySchema.shape.status,
+          message: z.string(),
+          actorId: idSchema,
+          createdAt: z.string(),
+          version: versionSchema,
+        }),
+      )
+      .default([]),
     answers: applicationAnswersSchema.partial(),
     reviewMessage: z.string().nullable(),
   })

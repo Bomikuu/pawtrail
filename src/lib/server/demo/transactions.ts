@@ -3,10 +3,12 @@ import type { ModerationStore } from '@/features/moderation/types'
 import type { ResourceRef } from '@/types/common'
 import type { StoredMedia } from '@/lib/server/media/storage'
 import type { FixtureSeed } from '@/data/fixtures'
+import type { WorkflowStore } from '@/lib/server/workflow-store'
 import type { Clock } from './clock'
 import { ApiError } from '@/lib/api/errors'
 
 export interface DemoDraft {
+  workflow?: WorkflowStore
   moderation: ModerationStore
   community: {
     follows: { actorId: string; ref: ResourceRef; createdAt: string }[]
@@ -82,7 +84,7 @@ export function canonicalJson(value: unknown): string {
       ? Array.from(item, normalize)
       : Object.fromEntries(
           Object.entries(item)
-            .sort(([a], [b]) => a.localeCompare(b))
+            .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
             .map(([key, child]) => [key, normalize(child)]),
         )
     active.delete(item)

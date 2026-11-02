@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { GlobalSearch } from '@/features/search/global-search'
 import { NotificationMenu } from '@/features/notifications/notification-menu'
 import { Bell, Cookie, Search, UserRound, PawPrint } from 'lucide-react'
 import { useState } from 'react'
@@ -72,6 +73,7 @@ export function Header({
           </span>
         )}
         <div className="header-utilities">
+          {readyRoutes.has('/search') && <GlobalSearch />}
           {readyRoutes.has('/search') ? (
             <Link className="utility-link" href="/search">
               <Search size={20} aria-hidden="true" />

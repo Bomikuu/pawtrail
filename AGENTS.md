@@ -1,5 +1,7 @@
 # PawTrail agent guidance
 
+- Current user override: implement directly in the main session, without subagents. Do not author or run automated tests, type/UI/format/detector checks, builds, or browser verification unless the user requests them. Source review is permitted. Keep the user's development preview running.
+
 - Use the `jev-cli` and `graphify` skills. Submit no secrets or private records to Jev; verify its judgments directly.
 - This is a standalone project. Do not modify PixelCore or `/home/bomiku1/projects/dineEase-web` while implementing it.
 - Read `PRODUCT.md`, the architecture spec, the master plan, and the selected work package before implementation.

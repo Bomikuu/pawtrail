@@ -1,5 +1,7 @@
 # PawTrail Full Application Implementation Plan
 
+> Execution update: the user replaced the subagent/test pipeline with direct main-session implementation and no automated testing. Current production coverage is recorded in `docs/implementation/native-delivery.md`; original test/review checklists below remain historical plan steps, not claims of completed validation.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Deliver a functional, social-first PawTrail frontend with every discovery, adoption, fundraising, welfare, and account flow in the supplied brief.
@@ -61,15 +63,15 @@ Do not centralize all feature behavior in a catch-all route or a large page. The
 
 ## Work packages and dependency order
 
-| Package | Tasks | Depends on | Working outcome |
-| --- | --- | --- | --- |
-| [1. Foundation](2026-11-02-pawtrail-1-foundation.md) | F1–F7 | planning baseline | Running shell, landing, API, demo persistence, auth, uploads |
-| [2. Social and profiles](2026-11-02-pawtrail-2-social.md) | S1–S5 | F1–F7 | Public pets, posting, comments, following, moderation, account workspace |
-| [3. Discovery](2026-11-02-pawtrail-3-discovery.md) | D1–D5 | F1–F7, S1/S3 | Map/list, sightings, animal reports, groups, global search |
-| [4. Adoption](2026-11-02-pawtrail-4-adoption.md) | A1–A4 | F1–F7, S1/S5 | Preferences, swipe/button interest, private applications, shelter review |
-| [5. Fundraising](2026-11-02-pawtrail-5-fundraising.md) | R1–R4 | F1–F7, S1/S3/S5 | Campaign discovery, demo support, creation, transparent organizer tools |
-| [6. Community programs](2026-11-02-pawtrail-6-programs.md) | W1–W4 | F1–F7, S1–S5, D1/D3/D4 | Evidence-reviewed help, rewards, shelters, events |
-| [7. Integration and acceptance](2026-11-02-pawtrail-7-integration.md) | I1–I6 | all feature packages | Adapter contracts, complete SEO, cross-feature acceptance, CI and handoff |
+| Package                                                               | Tasks | Depends on             | Working outcome                                                           |
+| --------------------------------------------------------------------- | ----- | ---------------------- | ------------------------------------------------------------------------- |
+| [1. Foundation](2026-11-02-pawtrail-1-foundation.md)                  | F1–F7 | planning baseline      | Running shell, landing, API, demo persistence, auth, uploads              |
+| [2. Social and profiles](2026-11-02-pawtrail-2-social.md)             | S1–S5 | F1–F7                  | Public pets, posting, comments, following, moderation, account workspace  |
+| [3. Discovery](2026-11-02-pawtrail-3-discovery.md)                    | D1–D5 | F1–F7, S1/S3           | Map/list, sightings, animal reports, groups, global search                |
+| [4. Adoption](2026-11-02-pawtrail-4-adoption.md)                      | A1–A4 | F1–F7, S1/S5           | Preferences, swipe/button interest, private applications, shelter review  |
+| [5. Fundraising](2026-11-02-pawtrail-5-fundraising.md)                | R1–R4 | F1–F7, S1/S3/S5        | Campaign discovery, demo support, creation, transparent organizer tools   |
+| [6. Community programs](2026-11-02-pawtrail-6-programs.md)            | W1–W4 | F1–F7, S1–S5, D1/D3/D4 | Evidence-reviewed help, rewards, shelters, events                         |
+| [7. Integration and acceptance](2026-11-02-pawtrail-7-integration.md) | I1–I6 | all feature packages   | Adapter contracts, complete SEO, cross-feature acceptance, CI and handoff |
 
 ```mermaid
 flowchart LR
@@ -100,30 +102,30 @@ F1 creates `dev` (Next dev), `typecheck` (now `next typegen && tsc --noEmit` aft
 
 ## Brief coverage matrix
 
-| Original brief sections | Implementing tasks |
-| --- | --- |
-| 1–3 overview, stack, identity | F1/F2/F6/F7, PRODUCT.md, spec §§1–4/9 |
-| 4 navigation and Create actions | F6, completed destinations D3/S2/R3/W1 |
-| 5 landing and sample statistics | F7; live data previews wired at I3 |
-| 6 animal map and filters | D1/D2/D3 |
-| 7 public animal profiles | S1, D3, I2 |
-| 8 adoption and shelter review | A1–A4 |
-| 9–12 fundraising and management | R1–R4 |
-| 13 missions | W1 |
-| 14 rewards and leaderboard | W2 |
-| 15 Hordes | D4 |
-| 16 community feed | S2/S3/S4 |
-| 17 public users/private dashboard | S4/S5 |
-| 18 shelters and rescuer tools | W3, A4/R4/W1/W4 |
-| 19 events | W4, D2 |
-| 20 global search | D5 |
-| 21 SEO | S1/I2 |
-| 22 feature structure | F1/F2, every package |
-| 23 fixture counts and API switching | F2/F3/I1 |
-| 24–25 responsive UX and states | F6, every UI task, I4/I5 |
-| 26 trust/privacy | F2/F4/F5, S3/S5, A3/A4, R2–R4, I2/I5 |
-| 27 implementation order | reordered for social-first emphasis; all phases retained |
-| 28–29 quality and final deliverables | I3–I6 and package exit criteria |
+| Original brief sections              | Implementing tasks                                       |
+| ------------------------------------ | -------------------------------------------------------- |
+| 1–3 overview, stack, identity        | F1/F2/F6/F7, PRODUCT.md, spec §§1–4/9                    |
+| 4 navigation and Create actions      | F6, completed destinations D3/S2/R3/W1                   |
+| 5 landing and sample statistics      | F7; live data previews wired at I3                       |
+| 6 animal map and filters             | D1/D2/D3                                                 |
+| 7 public animal profiles             | S1, D3, I2                                               |
+| 8 adoption and shelter review        | A1–A4                                                    |
+| 9–12 fundraising and management      | R1–R4                                                    |
+| 13 missions                          | W1                                                       |
+| 14 rewards and leaderboard           | W2                                                       |
+| 15 Hordes                            | D4                                                       |
+| 16 community feed                    | S2/S3/S4                                                 |
+| 17 public users/private dashboard    | S4/S5                                                    |
+| 18 shelters and rescuer tools        | W3, A4/R4/W1/W4                                          |
+| 19 events                            | W4, D2                                                   |
+| 20 global search                     | D5                                                       |
+| 21 SEO                               | S1/I2                                                    |
+| 22 feature structure                 | F1/F2, every package                                     |
+| 23 fixture counts and API switching  | F2/F3/I1                                                 |
+| 24–25 responsive UX and states       | F6, every UI task, I4/I5                                 |
+| 26 trust/privacy                     | F2/F4/F5, S3/S5, A3/A4, R2–R4, I2/I5                     |
+| 27 implementation order              | reordered for social-first emphasis; all phases retained |
+| 28–29 quality and final deliverables | I3–I6 and package exit criteria                          |
 
 ## Milestone exit criteria
 

@@ -19,8 +19,10 @@ import * as kibble from '@/features/kibble/schemas'
 import * as shelters from '@/features/shelters/schemas'
 import * as events from '@/features/events/schemas'
 import type { PawTrailApi } from './contracts'
-import { request } from './http'
-export function getBrowserApi(): PawTrailApi {
+import { request as browserRequest } from './http'
+export function createApiClient(
+  request: typeof browserRequest = browserRequest,
+): PawTrailApi {
   return {
     auth: {
       session: (options) =>
@@ -240,6 +242,15 @@ export function getBrowserApi(): PawTrailApi {
         ),
     },
     users: {
+      me: (options) =>
+        request(
+          'GET',
+          '/me/profile',
+          users.privateUserSchema,
+          undefined,
+          undefined,
+          options,
+        ),
       get: (username, options) =>
         request(
           'GET',
@@ -815,4 +826,7 @@ export function getBrowserApi(): PawTrailApi {
         ),
     },
   }
+}
+export function getBrowserApi(): PawTrailApi {
+  return createApiClient()
 }

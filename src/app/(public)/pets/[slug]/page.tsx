@@ -1,4 +1,5 @@
 import { Discussion } from '@/features/community/discussion'
+import { BehaviorMap } from '@/features/sightings/behavior-map'
 import { ReportDialog } from '@/features/community/report-dialog'
 import { getPublicAnimal } from '@/features/animals/server'
 import { PublicAnimalStory } from '@/features/animals/profile-header'
@@ -83,12 +84,18 @@ export default async function AnimalPage({ params, searchParams }: Props) {
         />
       )}
       {sightings.status === 'fulfilled' ? (
-        <SightingHistory
-          sightings={sightings.value.items}
-          slug={animal.slug}
-          period={period}
-          nextCursor={sightings.value.nextCursor}
-        />
+        <>
+          <SightingHistory
+            sightings={sightings.value.items}
+            slug={animal.slug}
+            period={period}
+            nextCursor={sightings.value.nextCursor}
+          />
+          <BehaviorMap
+            sightings={sightings.value.items}
+            animalSlug={animal.slug}
+          />
+        </>
       ) : (
         <section id="sightings">
           <DataState

@@ -10,13 +10,7 @@ async function handle(request: Request) {
       request,
       await resolveDemoContext(request),
     )
-    if (
-      response.ok &&
-      request.method === 'POST' &&
-      /^\/api\/v1\/moderation\/[^/]+\/review$/.test(
-        new URL(request.url).pathname,
-      )
-    ) {
+    if (response.ok && !['GET', 'HEAD', 'OPTIONS'].includes(request.method)) {
       // Reviews affect linked records throughout public feed, detail, search and profile routes.
       revalidatePath('/', 'layout')
     }

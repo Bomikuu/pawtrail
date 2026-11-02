@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { animalFiltersSchema } from '@/features/animals/schemas'
 import {
   idSchema,
   resourceRefSchema,
@@ -14,6 +15,7 @@ export const geoAreaSchema = z.object({
   approximateRadiusMeters: z.number().min(500),
 })
 export const discoveryQuerySchema = z.object({
+  filters: animalFiltersSchema.optional(),
   latitude: z.number().min(-90).max(90),
   longitude: z.number().min(-180).max(180),
   radiusMeters: z.number().positive().default(5000),
@@ -31,6 +33,10 @@ export const discoveryResultSchema = z.object({
   features: z.array(
     z.object({
       ref: resourceRefSchema,
+      href: z
+        .string()
+        .refine((p) => /^\/(?!\/)/.test(p) && !/[\\\u0000-\u001f]/.test(p))
+        .optional(),
       title: z.string(),
       location: publicLocationSchema,
       urgency: urgencySchema.optional(),

@@ -3,8 +3,11 @@ import { idSchema, provenanceSchema, baseSchema } from '@/lib/api/schemas'
 
 export const kibbleEntrySchema = baseSchema.extend({
   userId: idSchema,
-  amount: z.number().int().positive(),
-  reason: z.enum(['mission_approved', 'sample_naming']),
+  amount: z
+    .number()
+    .int()
+    .refine((n) => n !== 0),
+  reason: z.enum(['mission_approved', 'mission_reversed', 'sample_naming']),
   contributionId: idSchema,
   description: z.string(),
 })

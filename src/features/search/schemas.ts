@@ -9,7 +9,12 @@ export const searchResultsSchema = z.object({
     z.object({
       ref: resourceRefSchema,
       title: z.string(),
-      path: z.string(),
+      path: z
+        .string()
+        .refine(
+          (p) => /^\/(?!\/)/.test(p) && !/[\\\u0000-\u001f]/.test(p),
+          'Search destinations must stay inside PawTrail',
+        ),
       excerpt: z.string(),
     }),
   ),

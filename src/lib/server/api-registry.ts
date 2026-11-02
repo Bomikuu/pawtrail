@@ -1,4 +1,6 @@
 import 'server-only'
+import { djangoMedia, refreshDjangoSession } from '@/lib/api/adapters/django'
+import { getApiConfig } from '@/lib/api/config'
 import type { Actor } from '@/features/auth/types'
 import { readMedia } from './media/delivery'
 import { MAX_UPLOAD_BYTES } from './media/validation'
@@ -61,7 +63,9 @@ function readQuery(search: URLSearchParams): Record<string, unknown> {
       query[key] = Number(value)
     else if (['adoptable', 'nearlyFunded', 'saved'].includes(key))
       query[key] = value === 'true' ? true : value === 'false' ? false : value
-    else if (['preferences', 'bounds', 'kinds'].includes(key)) {
+    else if (
+      ['preferences', 'bounds', 'kinds', 'filters', 'ids'].includes(key)
+    ) {
       try {
         query[key] = JSON.parse(value)
       } catch {
@@ -108,6 +112,14 @@ export async function dispatchApi(
         403,
       )
     assertSameOrigin(request)
+    if (context.mode === 'real' && path === '/auth/refresh') {
+      const config = getApiConfig()
+      if (config.mode !== 'real')
+        throw new ApiError('CONFIGURATION_ERROR', 'Real mode required', 500)
+      return Response.json(await refreshDjangoSession(config.djangoOrigin), {
+        headers,
+      })
+    }
     if (path === '/moderation' || path.startsWith('/moderation/')) {
       if (!can(requireActor(context), 'moderate'))
         throw new ApiError('FORBIDDEN', 'Moderator permission is required', 403)
@@ -118,12 +130,12 @@ export async function dispatchApi(
       route.method === 'GET' &&
       ['/media/:id/content', '/media/:id/public'].includes(route.path)
     ) {
-      if (context.mode !== 'mock')
-        throw new ApiError(
-          'NOT_IMPLEMENTED',
-          'Media delivery requires the real backend adapter',
-          501,
-        )
+      if (context.mode !== 'mock') {
+        const config = getApiConfig()
+        if (config.mode !== 'real')
+          throw new ApiError('CONFIGURATION_ERROR', 'Real mode required', 500)
+        return djangoMedia(config.djangoOrigin, path, request.signal)
+      }
       if (!context.demo) throw new ApiError('NOT_FOUND', 'Media not found', 404)
       return await readMedia(
         context.demo.repository,

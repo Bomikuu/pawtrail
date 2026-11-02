@@ -10,6 +10,7 @@ import {
 } from '@/lib/api/schemas'
 
 export const missionSummarySchema = baseSchema.extend({
+  hordeId: idSchema.nullable().default(null),
   slug: z.string(),
   title: z.string(),
   kind: z.enum(['mission', 'quest']),
@@ -28,6 +29,7 @@ export const missionDetailSchema = missionSummarySchema.extend({
   version: versionSchema,
 })
 export const missionInputSchema = missionDetailSchema.pick({
+  hordeId: true,
   title: true,
   kind: true,
   urgency: true,

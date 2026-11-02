@@ -42,6 +42,47 @@ export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/dashboard/moderation',
   '/users/[username]',
   '/dashboard/notifications',
+  '/explore',
+  '/hordes',
+  '/hordes/[slug]',
+  '/search',
+  '/fundraisers',
+  '/fundraisers/[slug]',
+  '/fundraisers/create',
+  '/missions',
+  '/missions/[slug]',
+  '/missions/create',
+  '/events',
+  '/events/[slug]',
+  '/shelters',
+  '/shelters/[slug]',
+  '/leaderboard',
+  '/adopt',
+  '/adopt/preferences',
+  '/adopt/interested',
+  '/adopt/applications',
+  '/adopt/applications/new',
+  '/adopt/applications/[id]',
+  '/animals/report',
+  '/sightings/create',
+  '/dashboard',
+  '/dashboard/profile',
+  '/dashboard/settings',
+  '/dashboard/animals',
+  '/dashboard/sightings',
+  '/dashboard/saved',
+  '/dashboard/adoptions',
+  '/dashboard/fundraisers',
+  '/dashboard/missions',
+  '/dashboard/kibble',
+  '/dashboard/events',
+  '/dashboard/shelter',
+  '/dashboard/animals/[slug]/edit',
+  '/dashboard/fundraisers/[id]',
+  '/dashboard/events/create',
+  '/dashboard/events/[id]/edit',
+  '/dashboard/shelter/applications',
+  '/dashboard/shelter/applications/[id]',
 ])
 export const mainDestinations: Destination[] = [
   { label: 'Explore', href: '/explore', icon: Compass },
@@ -106,8 +147,19 @@ export function destinationHref(
     : destination.href
 }
 export function isCurrentDestination(pathname: string, href: string) {
+  const moreSpecific = [
+    ...mainDestinations,
+    ...extraDestinations,
+    ...dashboardDestinations,
+  ].some(
+    (d) =>
+      d.href !== href &&
+      d.href.startsWith(`${href}/`) &&
+      (pathname === d.href || pathname.startsWith(`${d.href}/`)),
+  )
   return (
-    pathname === href ||
-    (href !== '/dashboard' && pathname.startsWith(`${href}/`))
+    !moreSpecific &&
+    (pathname === href ||
+      (href !== '/dashboard' && pathname.startsWith(`${href}/`)))
   )
 }

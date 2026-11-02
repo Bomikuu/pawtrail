@@ -7,10 +7,10 @@ export type CampaignStoryUpdateInput = z.infer<
 export type CampaignStoryUpdate = z.infer<
   typeof schemas.campaignStoryUpdateSchema
 >
-export type ExpenseInput = z.infer<typeof schemas.expenseInputSchema>
+export type ExpenseInput = z.input<typeof schemas.expenseInputSchema>
 export type ExpenseEntry = z.infer<typeof schemas.expenseEntrySchema>
 export type CampaignDetail = z.infer<typeof schemas.campaignDetailSchema>
-export type CampaignInput = z.infer<typeof schemas.campaignInputSchema>
+export type CampaignInput = z.input<typeof schemas.campaignInputSchema>
 export type CampaignUpdateInput = z.infer<
   typeof schemas.campaignUpdateInputSchema
 >

@@ -165,6 +165,7 @@ export interface PawTrailApi {
     list(query: FollowFilters, options?: RequestOptions): Promise<Page<Follow>>
   }
   users: {
+    me(options?: RequestOptions): Promise<PrivateUser>
     get(username: string, options?: RequestOptions): Promise<PublicProfile>
     update(input: ProfileInput, options?: RequestOptions): Promise<PrivateUser>
     settings(options?: RequestOptions): Promise<PrivacySettings>

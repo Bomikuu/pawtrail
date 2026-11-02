@@ -16,3 +16,10 @@ export type Page<T> = { items: T[]; count: number; nextCursor: string | null }
 export type ListQuery = { q?: string; cursor?: string; limit?: number }
 export type ModerationState = 'pending' | 'published' | 'rejected' | 'removed'
 export type RequestOptions = { signal?: AbortSignal; idempotencyKey?: string }
+export interface PublicLocation {
+  areaId: string
+  neighborhood: string
+  latitude: number
+  longitude: number
+  approximateRadiusMeters: number
+}

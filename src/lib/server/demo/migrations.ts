@@ -6,6 +6,7 @@ import { resourceRefSchema, timestampSchema } from '@/lib/api/schemas'
 import { storedMediaSchema } from '@/lib/server/media/storage'
 import { seed, type FixtureSeed } from '@/data/fixtures'
 import { ApiError } from '@/lib/api/errors'
+import { workflowStoreSchema, emptyWorkflow } from '@/lib/server/workflow-store'
 import { canonicalJson, type DemoDraft } from './transactions'
 
 export const DEMO_SCHEMA_VERSION = 7
@@ -63,6 +64,7 @@ const storedSchema = z
         .object({ actorId: z.string().min(1), animalId: z.string().min(1) })
         .strict(),
     ),
+    workflow: workflowStoreSchema.optional(),
     auth: z
       .object({ actorId: z.string().nullable(), cacheScope: z.string().uuid() })
       .strict(),
@@ -80,6 +82,7 @@ const storedSchema = z
   })
   .strict()
 export interface StoredDemo {
+  workflow?: DemoDraft['workflow']
   schemaVersion: number
   fixtureVersion: number
   auth: DemoDraft['auth']
@@ -105,6 +108,7 @@ export function freshDocument(): StoredDemo {
     moderation: freshModeration(),
     community: { follows: [], reactions: [], saved: [], attachments: [] },
     savedAnimals: [],
+    workflow: emptyWorkflow(),
     auth: { actorId: null, cacheScope: randomUUID() },
     receipts: [],
   }
@@ -123,6 +127,7 @@ export function parseDocument(text: string): StoredDemo {
 }
 export function snapshot(document: StoredDemo): DemoDraft {
   return {
+    workflow: structuredClone(document.workflow ?? emptyWorkflow()),
     moderation: structuredClone(document.moderation),
     community: structuredClone(document.community),
     media: structuredClone(document.media),

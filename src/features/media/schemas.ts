@@ -20,6 +20,7 @@ export const mediaUploadSchema = z.object({
   purpose: z.enum(['public_image', 'private_evidence']),
   sensitive: z.boolean(),
   shelterId: idSchema.optional(),
+  verificationShelterId: idSchema.optional(),
 })
 export const mediaAssetSchema = z.object({
   id: idSchema,

@@ -37,10 +37,12 @@ export const eventSummarySchema = baseSchema.extend({
   organizerId: idSchema,
 })
 export const eventDetailSchema = eventSummarySchema.extend({
+  viewerAttending: z.boolean().default(false),
   description: z.string(),
   version: versionSchema,
 })
 export const eventFiltersSchema = listQuerySchema.extend({
+  scope: z.enum(['public', 'mine']).optional(),
   shelterId: idSchema.optional(),
   state: eventSummarySchema.shape.state.optional(),
   from: timestampSchema.optional(),

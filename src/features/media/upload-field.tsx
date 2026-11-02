@@ -14,6 +14,7 @@ export function UploadField({
   onChange,
   purpose = 'public_image',
   shelterId,
+  verificationShelterId,
   api,
   disabled = false,
   maxAttachments = MAX_ATTACHMENTS,
@@ -23,6 +24,7 @@ export function UploadField({
   onChange(assets: MediaAsset[]): void
   purpose?: MediaUpload['purpose']
   shelterId?: string
+  verificationShelterId?: string
   api?: PawTrailApi['media']
   disabled?: boolean
   maxAttachments?: number
@@ -111,6 +113,7 @@ export function UploadField({
             purpose,
             sensitive,
             ...(shelterId ? { shelterId } : {}),
+            ...(verificationShelterId ? { verificationShelterId } : {}),
           },
           { signal: controller.signal, idempotencyKey: item.id },
         )
