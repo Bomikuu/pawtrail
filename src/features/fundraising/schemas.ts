@@ -38,7 +38,7 @@ export const campaignSummarySchema = baseSchema.extend({
 })
 export const campaignStoryUpdateInputSchema = z.object({
   text: z.string().min(1),
-  mediaIds: z.array(idSchema),
+  mediaIds: z.array(idSchema).max(6),
 })
 export const campaignStoryUpdateSchema = baseSchema.extend({
   campaignId: idSchema,
@@ -78,7 +78,7 @@ export const campaignInputSchema = z.object({
   animalId: idSchema.nullable(),
   shelterId: idSchema.nullable(),
   location: publicLocationSchema,
-  mediaIds: z.array(idSchema),
+  mediaIds: z.array(idSchema).max(6),
   privateEvidenceIds: z.array(idSchema),
   draftId: idSchema.optional(),
   expectedVersion: versionSchema.optional(),

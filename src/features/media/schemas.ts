@@ -1,19 +1,40 @@
 import { z } from 'zod'
-import { baseSchema } from '@/lib/api/schemas'
-
+import { idSchema } from '@/lib/api/schemas'
+export const MAX_ATTACHMENTS = 6
 export const mediaUploadSchema = z.object({
-  file: z.instanceof(Blob),
-  filename: z.string().min(1),
-  alt: z.string().min(1),
+  file: z.custom<Blob>(
+    (value) =>
+      !!value &&
+      typeof value === 'object' &&
+      'size' in value &&
+      'type' in value &&
+      'arrayBuffer' in value &&
+      typeof value.arrayBuffer === 'function' &&
+      typeof value.size === 'number' &&
+      Number.isSafeInteger(value.size) &&
+      value.size > 0 &&
+      typeof value.type === 'string',
+  ),
+  filename: z.string().min(1).max(255),
+  alt: z.string().trim().min(1).max(500),
   purpose: z.enum(['public_image', 'private_evidence']),
   sensitive: z.boolean(),
+  shelterId: idSchema.optional(),
 })
-export const mediaAssetSchema = baseSchema.extend({
-  filename: z.string(),
-  mimeType: z.string(),
-  size: z.number().int().nonnegative(),
+export const mediaAssetSchema = z.object({
+  id: idSchema,
+  url: z.string().min(1),
   alt: z.string().min(1),
   visibility: z.enum(['public', 'private']),
-  contentPath: z.string(),
-  sensitive: z.boolean(),
+  mimeType: z.enum([
+    'image/jpeg',
+    'image/png',
+    'image/webp',
+    'application/pdf',
+  ]),
+  bytes: z
+    .number()
+    .int()
+    .positive()
+    .max(10 * 1024 * 1024),
 })

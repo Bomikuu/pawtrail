@@ -1,5 +1,7 @@
 import 'server-only'
 import type { Actor } from '@/features/auth/types'
+import { readMedia } from './media/delivery'
+import { MAX_UPLOAD_BYTES } from './media/validation'
 import { requireActor } from './auth'
 import { can } from './permissions'
 import { assertSameOrigin } from './csrf'
@@ -24,6 +26,7 @@ const reserved = [
   { method: 'POST', path: '/demo/reset' },
   { method: 'POST', path: '/auth/refresh' },
   { method: 'GET', path: '/media/:id/content' },
+  { method: 'GET', path: '/media/:id/public' },
 ]
 const routes: ApiRoute[] = [
   ...apiRoutes,
@@ -111,9 +114,64 @@ export async function dispatchApi(
     }
     if (path === '/demo/session' || path === '/demo/reset')
       return await handleDemoLifecycle(request, path, headers)
+    if (
+      route.method === 'GET' &&
+      ['/media/:id/content', '/media/:id/public'].includes(route.path)
+    ) {
+      if (context.mode !== 'mock')
+        throw new ApiError(
+          'NOT_IMPLEMENTED',
+          'Media delivery requires the real backend adapter',
+          501,
+        )
+      if (!context.demo) throw new ApiError('NOT_FOUND', 'Media not found', 404)
+      return await readMedia(
+        context.demo.repository,
+        match(route.path, path)!.id,
+        route.path.endsWith('/public'),
+      )
+    }
+    if (path === '/media' && request.method === 'POST') {
+      requireActor(context)
+      const length = Number(request.headers.get('content-length'))
+      if (length > MAX_UPLOAD_BYTES + 65536)
+        throw new ApiError('VALIDATION_ERROR', 'Upload is too large', 413)
+      const reader = request.body?.getReader()
+      if (!reader)
+        throw new ApiError('VALIDATION_ERROR', 'Upload is required', 400)
+      const chunks: Uint8Array[] = []
+      let total = 0
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        total += value.byteLength
+        if (total > MAX_UPLOAD_BYTES + 65536) {
+          await reader.cancel()
+          throw new ApiError('VALIDATION_ERROR', 'Upload is too large', 413)
+        }
+        chunks.push(value)
+      }
+      request = new Request(request.url, {
+        method: request.method,
+        headers: request.headers,
+        body: Buffer.concat(chunks),
+        signal: request.signal,
+      })
+    }
     let body: unknown
     if (request.headers.get('content-type')?.includes('multipart/form-data')) {
-      const form = await request.formData()
+      let form: FormData
+      try {
+        form = await request.formData()
+      } catch {
+        throw new ApiError('VALIDATION_ERROR', 'Invalid upload form', 400)
+      }
+      if (form.getAll('file').length !== 1 && path === '/media')
+        throw new ApiError(
+          'VALIDATION_ERROR',
+          'Upload one attachment at a time',
+          400,
+        )
       body = {
         ...Object.fromEntries(form),
         sensitive: form.get('sensitive') === 'true',

@@ -23,7 +23,7 @@ describe('persistent demo repository', () => {
       await readFile(join(env.dir, `${id}.json`), 'utf8'),
     )
     expect(Object.keys(document.overlay)).toEqual(['posts'])
-    expect(document.schemaVersion).toBe(2)
+    expect(document.schemaVersion).toBe(3)
     expect(document.fixtureVersion).toBe(1)
   })
   it('preserves the committed file and removes temporary files when atomic replacement fails', async () => {

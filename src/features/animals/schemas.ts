@@ -66,7 +66,7 @@ export const animalReportInputSchema = z.object({
   species: animalSummarySchema.shape.species,
   description: z.string().min(1),
   location: publicLocationSchema,
-  mediaIds: z.array(idSchema),
+  mediaIds: z.array(idSchema).max(6),
   shelterId: idSchema.optional(),
 })
 export const animalUpdateInputSchema = animalReportInputSchema

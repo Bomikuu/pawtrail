@@ -1,4 +1,5 @@
 import 'server-only'
+import { createDemoMedia } from '@/lib/server/media/storage'
 import { createDemoAuth } from '@/lib/server/auth'
 import type { DemoRepository } from '@/lib/server/demo/repository'
 import { z } from 'zod'
@@ -56,6 +57,7 @@ export function createMockApi(
   const data = structuredClone(snapshot)
   const api = createUnimplementedApi()
   api.auth = createDemoAuth(repository)
+  api.media = createDemoMedia(repository)
   function list<T extends { id: string; createdAt: string }>(
     rows: T[],
     query: ListQuery,

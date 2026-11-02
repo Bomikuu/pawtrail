@@ -46,7 +46,7 @@ export const missionFiltersSchema = listQuerySchema.extend({
 })
 export const missionEvidenceInputSchema = z.object({
   text: z.string().min(1),
-  mediaIds: z.array(idSchema),
+  mediaIds: z.array(idSchema).max(6),
   expectedVersion: versionSchema,
 })
 export const missionReviewInputSchema = z.object({

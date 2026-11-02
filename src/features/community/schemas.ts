@@ -20,7 +20,7 @@ export const postInputSchema = z.object({
     'adoption',
     'help',
   ]),
-  mediaIds: z.array(idSchema),
+  mediaIds: z.array(idSchema).max(6),
   refs: z.array(resourceRefSchema),
   expectedVersion: versionSchema.optional(),
 })

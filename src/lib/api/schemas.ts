@@ -53,7 +53,24 @@ export const verificationSchema = z.object({
 })
 export const imageSchema = z.object({
   id: idSchema,
-  url: z.string().min(1),
+  url: z
+    .string()
+    .min(1)
+    .refine((url) => {
+      try {
+        if (!/^(https:\/\/|\/(?!\/))/.test(url)) return false
+        const parsed = new URL(url, 'https://pawtrail.invalid')
+        if (parsed.pathname.startsWith('/api/'))
+          return (
+            /^\/api\/v1\/media\/[a-f0-9-]{36}\/public$/.test(parsed.pathname) &&
+            !parsed.search
+          )
+        return true
+      } catch {
+        return false
+      }
+    }, 'Private media cannot appear in public records'),
+  sensitive: z.boolean().optional(),
   alt: z.string().min(1),
   provenance: provenanceSchema,
 })

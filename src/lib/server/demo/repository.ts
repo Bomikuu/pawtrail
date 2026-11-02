@@ -1,6 +1,14 @@
 import 'server-only'
 import { constants } from 'node:fs'
-import { lstat, mkdir, open, realpath, rename, unlink } from 'node:fs/promises'
+import {
+  lstat,
+  mkdir,
+  open,
+  realpath,
+  rename,
+  rm,
+  unlink,
+} from 'node:fs/promises'
 import { createHash, randomUUID } from 'node:crypto'
 import { join, resolve } from 'node:path'
 import { ApiError } from '@/lib/api/errors'
@@ -20,6 +28,7 @@ import {
 } from './migrations'
 
 export interface DemoRepository {
+  readonly mediaRoot: string
   read<T>(query: DemoQuery<T>): Promise<T>
   transact<T>(command: DemoCommand<T>): Promise<T>
 }
@@ -93,6 +102,7 @@ export async function openDemoRepository(
   const path = await sessionPath(sessionId, dataDir)
   await serialize(path, () => load(path))
   return {
+    mediaRoot: join(resolve(dataDir), `${sessionId}.media`),
     async read(query) {
       const state = await serialize(path, () => load(path))
       return query(snapshot(state))
@@ -142,6 +152,7 @@ export async function openDemoRepository(
           result === undefined ? undefined : JSON.parse(canonicalJson(result))
         document.overlay = overlayFrom(draft)
         document.auth = draft.auth
+        document.media = draft.media
         if (command.idempotencyKey !== undefined)
           document.receipts.push({
             name: command.name,
@@ -163,5 +174,11 @@ export async function resetRepository(
   dataDir: string,
 ): Promise<void> {
   const path = await sessionPath(sessionId, dataDir)
-  await serialize(path, () => replace(path, freshDocument()))
+  await serialize(path, async () => {
+    await replace(path, freshDocument())
+    await rm(join(resolve(dataDir), `${sessionId}.media`), {
+      recursive: true,
+      force: true,
+    })
+  })
 }

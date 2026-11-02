@@ -1,11 +1,12 @@
 import 'server-only'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
+import { storedMediaSchema } from '@/lib/server/media/storage'
 import { seed, type FixtureSeed } from '@/data/fixtures'
 import { ApiError } from '@/lib/api/errors'
 import { canonicalJson, type DemoDraft } from './transactions'
 
-export const DEMO_SCHEMA_VERSION = 2
+export const DEMO_SCHEMA_VERSION = 3
 export const DEMO_FIXTURE_VERSION = 1
 const collectionSchema = z.array(
   z.object({ id: z.string().min(1) }).catchall(z.json()),
@@ -22,6 +23,7 @@ const storedSchema = z
     schemaVersion: z.literal(DEMO_SCHEMA_VERSION),
     fixtureVersion: z.literal(DEMO_FIXTURE_VERSION),
     overlay: overlaySchema,
+    media: z.array(storedMediaSchema),
     auth: z
       .object({ actorId: z.string().nullable(), cacheScope: z.string().uuid() })
       .strict(),
@@ -42,6 +44,7 @@ export interface StoredDemo {
   schemaVersion: number
   fixtureVersion: number
   auth: DemoDraft['auth']
+  media: DemoDraft['media']
   overlay: Partial<FixtureSeed>
   receipts: {
     actorId: string | null
@@ -56,6 +59,7 @@ export function freshDocument(): StoredDemo {
     schemaVersion: DEMO_SCHEMA_VERSION,
     fixtureVersion: DEMO_FIXTURE_VERSION,
     overlay: {},
+    media: [],
     auth: { actorId: null, cacheScope: randomUUID() },
     receipts: [],
   }
@@ -74,6 +78,7 @@ export function parseDocument(text: string): StoredDemo {
 }
 export function snapshot(document: StoredDemo): DemoDraft {
   return {
+    media: structuredClone(document.media),
     data: structuredClone({ ...seed, ...document.overlay }),
     auth: structuredClone(document.auth),
   }

@@ -1,9 +1,11 @@
 import 'server-only'
+import type { StoredMedia } from '@/lib/server/media/storage'
 import type { FixtureSeed } from '@/data/fixtures'
 import type { Clock } from './clock'
 import { ApiError } from '@/lib/api/errors'
 
 export interface DemoDraft {
+  media: StoredMedia[]
   data: FixtureSeed
   auth: { actorId: string | null; cacheScope: string }
 }

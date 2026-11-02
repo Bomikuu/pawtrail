@@ -27,7 +27,7 @@ export const sightingInputSchema = z.object({
   exactLatitude: z.number().min(-90).max(90),
   exactLongitude: z.number().min(-180).max(180),
   observation: z.string().min(1),
-  mediaIds: z.array(idSchema),
+  mediaIds: z.array(idSchema).max(6),
 })
 export const privateSightingSchema = sightingSchema.extend({
   exactLatitude: z.number().min(-90).max(90),
