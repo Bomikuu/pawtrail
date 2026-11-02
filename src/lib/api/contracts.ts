@@ -99,7 +99,9 @@ import type {
 import type {
   KibbleEntry,
   KibbleWallet,
-  LeaderboardEntry,
+  LeaderboardPage,
+  LeaderboardQuery,
+  LeaderboardPeriod,
 } from '@/features/kibble/types'
 import type {
   ShelterDashboard,
@@ -378,10 +380,10 @@ export interface PawTrailApi {
       options?: RequestOptions,
     ): Promise<Page<KibbleEntry>>
     leaderboard(
-      period: 'month' | 'all',
-      query: ListQuery,
+      period: LeaderboardPeriod,
+      query: LeaderboardQuery,
       options?: RequestOptions,
-    ): Promise<Page<LeaderboardEntry>>
+    ): Promise<LeaderboardPage>
   }
   shelters: {
     list(

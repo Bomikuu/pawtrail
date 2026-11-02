@@ -813,7 +813,7 @@ export function createApiClient(
         request(
           'GET',
           `/leaderboard`,
-          pageSchema(kibble.leaderboardEntrySchema),
+          kibble.leaderboardPageSchema,
           { ...query, period },
           undefined,
           options,

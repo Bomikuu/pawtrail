@@ -1024,10 +1024,10 @@ export const apiRoutes: ApiRoute[] = [
     path: '/leaderboard',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        pageSchema(kibble.leaderboardEntrySchema),
+        kibble.leaderboardPageSchema,
         await api.kibble.leaderboard(
-          parseInput(z.enum(['month', 'all']), query['period']),
-          parseInput(listQuerySchema, query),
+          parseInput(kibble.leaderboardPeriodSchema, query['period'] ?? 'all'),
+          parseInput(kibble.leaderboardFiltersSchema, query),
           options,
         ),
       ),

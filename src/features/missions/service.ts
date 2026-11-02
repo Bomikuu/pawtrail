@@ -213,6 +213,7 @@ export function installMissions(
         if (p.decision === 'approved' && !row.evidence?.text.trim())
           fail('Evidence is required before approval.')
         row.state = p.decision
+        row.reviewedAt = now
         row.reviewerId = u.id
         row.reviewReason = p.reason
         row.version++

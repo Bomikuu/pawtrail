@@ -906,52 +906,7 @@ export async function ShelterPage({ slug }: { slug: string }) {
     </>
   )
 }
-export async function LeaderboardPage({
-  searchParams,
-}: {
-  searchParams: SearchParams
-}) {
-  const p = await searchParams,
-    period = p.period === 'month' ? 'month' : 'all',
-    api = await getServerApi(),
-    rows = await api.kibble.leaderboard(period, {
-      cursor: queryValue(p.cursor),
-      limit: 50,
-    })
-  return (
-    <>
-      <PageHeading
-        title="Good deeds leave pawprints"
-        description="Meet the community helpers behind reviewed contributions. Kibble is non-cash; sample activity is illustrative."
-      />
-      <nav className="workspace-tabs" aria-label="Leaderboard period">
-        <Link
-          href="/leaderboard?period=all"
-          aria-current={period === 'all' ? 'page' : undefined}
-        >
-          All time
-        </Link>
-        <Link
-          href="/leaderboard?period=month"
-          aria-current={period === 'month' ? 'page' : undefined}
-        >
-          This month
-        </Link>
-      </nav>
-      <ol className="leaderboard-list">
-        {rows.items.map((r) => (
-          <li key={r.userId}>
-            <strong className="leaderboard-rank">{r.rank}</strong>
-            <Link href={`/users/${r.username}`}>{r.displayName}</Link>
-            <span>{r.kibble} Kibble</span>
-          </li>
-        ))}
-      </ol>
-      {!rows.count && <Empty>No eligible public contributions yet.</Empty>}
-      <NextPage cursor={rows.nextCursor} params={{ period }} />
-    </>
-  )
-}
+export { CommunityLeaderboard as LeaderboardPage } from '@/features/kibble/leaderboard'
 export async function AdoptPage({
   interested = false,
   searchParams,

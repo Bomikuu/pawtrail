@@ -179,6 +179,8 @@ Controls use 0.75rem corners; menu items 0.5rem; status labels 0.375rem. Images 
 
 ## Components
 
+The public leaderboard follows the owner's supplied recognition reference: an illustrated cream banner, contribution totals, teal period navigation, a gold/silver/bronze top-three podium, illustrated member identities, earned showcase badges and dense readable rows. It occupies the full platform content width. On mobile the podium remains visible and the semantic table scrolls inside a named, keyboard-focusable region. Recognition comes from recorded activity and consent, never follower/like counts. Levels retain the existing 100-lifetime-Kibble policy; mastery is shared only by explicit opt-in. See `docs/implementation/leaderboard.md`.
+
 Achievements use the owner's 45 illustrated badge assets, a compact responsive collection, native shared `Progress`, and separate requirement/reward/state text. `features/achievements/catalog.ts` owns the version-one one-time 10–500 Kibble schedule approved by the owner. Private progress and evidence stay in management; public profiles show at most six chosen unlocked badges and optional aggregate mastery. Do not infer real-world outcomes from clicks, RSVP or adoption approval. See `docs/implementation/achievements.md` for rules, provenance and unverified delivery status.
 
 Canonical Shadcn-style primitives live only in `src/components/ui`: Slot/CVA Button, Input, Radix DropdownMenu/Dialog/AlertDialog, and Sonner. Add other primitives only when a feature needs them. Internal route actions use ButtonLink; external/document actions use ButtonAnchor; ordinary navigation uses Link. Controls retain browser semantics, visible labels, minimum 2.75rem targets, and 2px teal focus outlines with 3px offset.

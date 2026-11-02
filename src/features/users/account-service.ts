@@ -10,7 +10,6 @@ import {
   attachments,
   provenance,
   workflows,
-  orderedPage,
   fail,
   registerSubject,
 } from '@/lib/server/workflow-context'
@@ -26,7 +25,8 @@ import {
 } from '@/features/moderation/service'
 import { avatarPresetImage, personAvatar } from './avatar-presets'
 import { listQuerySchema } from '@/lib/api/schemas'
-import { leaderboardEntrySchema } from '@/features/kibble/schemas'
+import { leaderboardFiltersSchema } from '@/features/kibble/schemas'
+import { communityLeaderboard } from '@/features/kibble/leaderboard-service'
 import { demoClock } from '@/lib/api/clock'
 import {
   shelterProfileSchema,
@@ -162,63 +162,10 @@ export function installAccount(
     )
   }
   api.kibble.leaderboard = (period, input) => {
-    const q = listQuerySchema.parse(input)
-    return read((d) => {
-      const month = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Manila',
-        year: 'numeric',
-        month: '2-digit',
-      }).format(demoClock.now())
-      const rows = publicSnapshot(d)
-        .users.filter((u) => u.settings.showContributions)
-        .map((u) => ({
-          id: u.id,
-          createdAt: u.createdAt,
-          userId: u.id,
-          username: u.username,
-          displayName: u.displayName,
-          kibble: d.data.kibbleEntries
-            .filter(
-              (e) =>
-                e.userId === u.id &&
-                (period === 'all' ||
-                  new Intl.DateTimeFormat('en-CA', {
-                    timeZone: 'Asia/Manila',
-                    year: 'numeric',
-                    month: '2-digit',
-                  }).format(new Date(e.createdAt)) === month),
-            )
-            .reduce((n, e) => n + e.amount, 0),
-          rank: 1,
-          provenance: u.provenance,
-        }))
-        .sort(
-          (a, b) =>
-            b.kibble - a.kibble ||
-            d.data.participations.filter(
-              (p) => p.volunteerId === b.userId && p.state === 'approved',
-            ).length -
-              d.data.participations.filter(
-                (p) => p.volunteerId === a.userId && p.state === 'approved',
-              ).length ||
-            a.userId.localeCompare(b.userId),
-        )
-      rows.forEach((r, i) => {
-        r.rank = i + 1
-      })
-      const result = orderedPage(
-        rows.filter(
-          (r) =>
-            !q.q || r.displayName.toLowerCase().includes(q.q.toLowerCase()),
-        ),
-        q,
-        `leaderboard:${period}:${q.q ?? ''}`,
-      )
-      return {
-        ...result,
-        items: result.items.map((r) => leaderboardEntrySchema.parse(r)),
-      }
-    })
+    const q = leaderboardFiltersSchema.parse(input)
+    return read((d) =>
+      communityLeaderboard(d, period, q, demoClock.now().toISOString()),
+    )
   }
   api.shelters.dashboard = (id) =>
     read((d) => {

@@ -57,6 +57,7 @@ export const missionReviewInputSchema = z.object({
   expectedVersion: versionSchema,
 })
 export const missionParticipationSchema = baseSchema.extend({
+  reviewedAt: timestampSchema.nullable().default(null),
   missionId: idSchema,
   volunteerId: idSchema,
   state: z.enum(['accepted', 'submitted', 'approved', 'rejected']),
