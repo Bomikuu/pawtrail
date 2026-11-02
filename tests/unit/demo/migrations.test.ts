@@ -42,7 +42,7 @@ describe('recoverable schema state', () => {
       ).toHaveLength(10)
     },
   )
-  it.each([3, 4, 5])(
+  it.each([3, 4, 5, 6])(
     'requires an explicit reset for schema%s rather than dropping old state',
     async (version) => {
       const id = sessionId()
@@ -51,7 +51,7 @@ describe('recoverable schema state', () => {
       const path = join(env.dir, `${id}.json`)
       const document = JSON.parse(await readFile(path, 'utf8'))
       document.schemaVersion = version
-      delete document.savedAnimals
+      if (version < 6) delete document.savedAnimals
       const old = JSON.stringify(document)
       await writeFile(path, old)
       await expect(openDemoRepository(id, env.dir)).rejects.toMatchObject({

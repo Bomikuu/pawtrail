@@ -21,3 +21,7 @@ export const notificationSchema = baseSchema.extend({
   ref: resourceRefSchema.nullable(),
   readAt: timestampSchema.nullable(),
 })
+
+export const notificationViewSchema = notificationSchema.extend({
+  destinationHref: z.string().startsWith('/').nullable(),
+})

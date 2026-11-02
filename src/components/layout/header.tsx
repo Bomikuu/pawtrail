@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { NotificationMenu } from '@/features/notifications/notification-menu'
 import { Bell, Cookie, Search, UserRound, PawPrint } from 'lucide-react'
 import { useState } from 'react'
 import { useSession } from '@/features/auth/session-provider'
@@ -101,14 +102,7 @@ export function Header({
                 <small>Non-cash rewards</small>
               </div>
               {readyRoutes.has('/dashboard/notifications') ? (
-                <Link
-                  className="utility-link notification-link"
-                  aria-label={`Notifications, ${unread}`}
-                  href="/dashboard/notifications"
-                >
-                  <Bell size={20} aria-hidden="true" />
-                  <span>{unread}</span>
-                </Link>
+                <NotificationMenu unread={unread} />
               ) : (
                 <span
                   className="utility-link nav-unavailable"

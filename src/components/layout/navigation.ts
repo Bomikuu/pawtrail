@@ -40,6 +40,8 @@ export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/community/[id]',
   '/community/create',
   '/dashboard/moderation',
+  '/users/[username]',
+  '/dashboard/notifications',
 ])
 export const mainDestinations: Destination[] = [
   { label: 'Explore', href: '/explore', icon: Compass },

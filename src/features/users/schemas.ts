@@ -1,4 +1,6 @@
 import { z } from 'zod'
+import { animalSummarySchema } from '@/features/animals/schemas'
+import { postViewSchema } from '@/features/community/schemas'
 import {
   idSchema,
   imageSchema,
@@ -37,4 +39,20 @@ export const dashboardSummarySchema = z.object({
   applications: z.number().int().nonnegative(),
   unreadNotifications: z.number().int().nonnegative(),
   kibbleBalance: z.number().int().nonnegative(),
+})
+
+/** Public activity only. Private records and anonymous contribution identities never enter this DTO. */
+export const publicProfileSchema = publicUserSchema.extend({
+  level: z.number().int().positive().nullable(),
+  badges: z.array(z.object({ id: idSchema, label: z.string().min(1) })),
+  summary: z
+    .object({
+      stories: z.number().int().nonnegative(),
+      sightings: z.number().int().nonnegative(),
+      missions: z.number().int().nonnegative(),
+      donations: z.number().int().nonnegative(),
+    })
+    .nullable(),
+  animalsHelped: z.array(animalSummarySchema),
+  stories: z.array(postViewSchema),
 })

@@ -1,4 +1,5 @@
 import 'server-only'
+import { notify } from '@/features/notifications/service'
 import { randomUUID } from 'node:crypto'
 import type { FixtureSeed } from '@/data/fixtures'
 import type { PawTrailApi } from '@/lib/api/contracts'
@@ -152,25 +153,6 @@ export function mayReviewMedia(draft: DemoDraft, mediaId: string) {
       (s.creatorIds.includes(media.ownerId) ||
         (s.ref.kind === 'shelter' && media.shelterId === s.ref.id)),
   )
-}
-function notify(
-  draft: DemoDraft,
-  recipientId: string,
-  kind: 'comment' | 'moderation',
-  ref: ResourceRef,
-  message: string,
-  now: string,
-) {
-  draft.moderation.notifications.push({
-    id: randomUUID(),
-    createdAt: now,
-    provenance,
-    recipientId,
-    kind,
-    ref,
-    message,
-    readAt: null,
-  })
 }
 function commentView(draft: DemoDraft, row: FixtureSeed['comments'][number]) {
   const user = publicSnapshot(draft).users.find((u) => u.id === row.authorId)
@@ -467,7 +449,7 @@ export function createModerationService(
         'moderation.report',
         { ...valid, details: valid.details ?? '' },
         options,
-        (draft, now) => {
+        async (draft, now) => {
           if (!can(actor(draft), 'contribute')) denied()
           publicResource(draft, valid.target)
           const report = {
@@ -482,14 +464,13 @@ export function createModerationService(
           for (const reviewer of draft.data.users.filter((user) =>
             user.roles.includes('moderator'),
           ))
-            notify(
+            await notify({
               draft,
-              reviewer.id,
-              'moderation',
-              valid.target,
-              'A new reported concern needs review.',
+              recipientId: reviewer.id,
+              kind: 'moderation',
+              ref: valid.target,
               now,
-            )
+            })
           return report.id
         },
       )
@@ -522,7 +503,7 @@ export function createModerationService(
     },
     async review(input, options) {
       const valid = parseInput(moderationDecisionSchema, input)
-      await command('moderation.review', valid, options, (draft, now) => {
+      await command('moderation.review', valid, options, async (draft, now) => {
         const user = moderator(draft)
         const item = items(draft).find((i) => i.id === valid.id)
         if (!item) return missing()
@@ -593,14 +574,13 @@ export function createModerationService(
             if (state === 'published')
               for (const owner of subject(draft, item.ref).creators)
                 if (owner !== comment.authorId)
-                  notify(
+                  await notify({
                     draft,
-                    owner,
-                    'comment',
-                    item.ref,
-                    'A reviewed comment was added to your story.',
+                    recipientId: owner,
+                    kind: 'comment',
+                    ref: item.ref,
                     now,
-                  )
+                  })
           } else {
             const s = subject(draft, item.ref)
             if ('moderation' in s.row) s.row.moderation = state
@@ -644,14 +624,13 @@ export function createModerationService(
           state: updated.state,
         })
         if (item.creatorId)
-          notify(
+          await notify({
             draft,
-            item.creatorId,
-            'moderation',
-            item.ref,
-            `Review decision: ${valid.action.replaceAll('_', ' ')}. ${valid.reason}`,
+            recipientId: item.creatorId,
+            kind: 'moderation',
+            ref: item.ref,
             now,
-          )
+          })
       })
       return read((draft) => {
         const result = items(draft).find((i) => i.id === valid.id)

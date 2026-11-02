@@ -25,6 +25,7 @@ it('supports following and explicit nearby without inferring profile location', 
     input: {},
     execute(d) {
       d.community.follows.push({
+        createdAt: '2026-11-02T00:00:00+08:00',
         actorId: 'user-1',
         ref: { kind: 'animal', id: 'animal-1' },
       })

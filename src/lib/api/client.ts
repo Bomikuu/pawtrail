@@ -244,7 +244,7 @@ export function getBrowserApi(): PawTrailApi {
         request(
           'GET',
           `/users/${encodeURIComponent(username)}`,
-          users.publicUserSchema,
+          users.publicProfileSchema,
           undefined,
           undefined,
           options,
@@ -291,7 +291,7 @@ export function getBrowserApi(): PawTrailApi {
         request(
           'GET',
           `/me/notifications`,
-          pageSchema(notifications.notificationSchema),
+          pageSchema(notifications.notificationViewSchema),
           query,
           undefined,
           options,

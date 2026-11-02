@@ -1,4 +1,5 @@
 'use client'
+import { FollowButton } from '@/features/users/follow-button'
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
@@ -88,6 +89,11 @@ export function ProfileActions({
         >
           Add a sighting
         </AnimalDestination>
+        <FollowButton
+          target={{ kind: 'animal', id }}
+          name={name}
+          returnTo={`/pets/${encodeURIComponent(slug)}`}
+        />
         <ButtonAnchor href="#help">Help {name}</ButtonAnchor>
         <Button onClick={share} variant="outline">
           <Share2 aria-hidden="true" size={18} />

@@ -82,7 +82,7 @@ export function Feed({
             : tab === 'for_you'
               ? 'For you is a chronological feed — the newest stories come first.'
               : tab === 'following'
-                ? 'Stories from the people and animals you follow. Follow controls are coming soon.'
+                ? 'Stories from the people and animals you follow. Follow them from profiles or story cards.'
                 : 'Choose a public neighborhood. Your current location is never requested.'}
         </p>
         {tab === 'nearby' && (

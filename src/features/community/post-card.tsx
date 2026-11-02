@@ -1,4 +1,5 @@
 'use client'
+import { FollowButton } from '@/features/users/follow-button'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -95,6 +96,13 @@ export function PostCard({
             · {postTypes[post.type]}
           </p>
         </div>
+        {post.authorId && (
+          <FollowButton
+            target={{ kind: 'user', id: post.authorId }}
+            name={post.author.displayName}
+            returnTo={`/community/${encodeURIComponent(post.id)}`}
+          />
+        )}
         <StatusBadge>{post.provenance.label}</StatusBadge>
       </header>
       {post.moderation !== 'published' && (
@@ -119,6 +127,13 @@ export function PostCard({
                   {entity.title}{' '}
                   <small>· {entity.ref.kind}, page coming soon</small>
                 </span>
+              )}
+              {entity.ref.kind === 'animal' && (
+                <FollowButton
+                  target={{ kind: 'animal', id: entity.ref.id }}
+                  name={entity.title}
+                  returnTo={`/community/${encodeURIComponent(post.id)}`}
+                />
               )}
             </li>
           ))}

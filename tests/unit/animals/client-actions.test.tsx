@@ -11,7 +11,10 @@ vi.mock('next/navigation', () => ({
   useRouter: () => ({ refresh: state.refresh }),
 }))
 vi.mock('@/lib/api/client', () => ({
-  getBrowserApi: () => ({ animals: { setSaved: state.save, get: state.get } }),
+  getBrowserApi: () => ({
+    animals: { setSaved: state.save, get: state.get },
+    follows: { list: async () => ({ items: [], count: 0, nextCursor: null }) },
+  }),
 }))
 beforeEach(() => {
   state.save.mockReset()

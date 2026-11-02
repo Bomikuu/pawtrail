@@ -304,7 +304,7 @@ export const apiRoutes: ApiRoute[] = [
     path: '/users/:username',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        users.publicUserSchema,
+        users.publicProfileSchema,
         await api.users.get(
           parseInput(z.string(), params['username']),
           options,
@@ -358,7 +358,7 @@ export const apiRoutes: ApiRoute[] = [
     path: '/me/notifications',
     invoke: async (api, params, query, body, options) =>
       parseResponse(
-        pageSchema(notifications.notificationSchema),
+        pageSchema(notifications.notificationViewSchema),
         await api.notifications.list(
           parseInput(listQuerySchema, query),
           options,

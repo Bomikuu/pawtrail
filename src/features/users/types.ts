@@ -5,3 +5,5 @@ export type PublicUser = z.infer<typeof schemas.publicUserSchema>
 export type PrivateUser = z.infer<typeof schemas.privateUserSchema>
 export type ProfileInput = z.infer<typeof schemas.profileInputSchema>
 export type DashboardSummary = z.infer<typeof schemas.dashboardSummarySchema>
+
+export type PublicProfile = z.infer<typeof schemas.publicProfileSchema>

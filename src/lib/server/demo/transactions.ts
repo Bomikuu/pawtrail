@@ -9,7 +9,7 @@ import { ApiError } from '@/lib/api/errors'
 export interface DemoDraft {
   moderation: ModerationStore
   community: {
-    follows: { actorId: string; ref: ResourceRef }[]
+    follows: { actorId: string; ref: ResourceRef; createdAt: string }[]
     reactions: { actorId: string; postId: string }[]
     saved: { actorId: string; postId: string }[]
     attachments: { postId: string; mediaIds: string[] }[]

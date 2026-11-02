@@ -1,4 +1,5 @@
 'use client'
+import { useUnreadCount } from '@/features/notifications/queries'
 import type { ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import { useSession } from '@/features/auth/session-provider'
@@ -23,6 +24,7 @@ export function AppShell({
 }) {
   const { session } = useSession()
   const pathname = usePathname()
+  const unread = useUnreadCount(readyRoutes.has('/dashboard/notifications'))
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main-content">
@@ -30,7 +32,7 @@ export function AppShell({
       </a>
       <Header
         readyRoutes={readyRoutes}
-        unreadCount={unreadCount}
+        unreadCount={unreadCount ?? (unread.isError ? undefined : unread.data)}
         kibbleBalance={kibbleBalance}
       />
       {session.demo && <DemoBanner />}

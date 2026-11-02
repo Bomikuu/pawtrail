@@ -1,4 +1,6 @@
 import 'server-only'
+import { createUserService } from '@/features/users/service'
+import { createNotificationService } from '@/features/notifications/service'
 import {
   createModerationService,
   publicSnapshot,
@@ -20,11 +22,7 @@ import { checkCancelled, ApiError } from '../errors'
 import { paginate } from '../pagination'
 import { parseInput, parseResponse } from '../validation'
 import { listQuerySchema, idSchema } from '../schemas'
-import {
-  toPublicAnimal,
-  toPublicUser,
-  toPublicSupporter,
-} from '@/lib/server/projections'
+import { toPublicAnimal, toPublicSupporter } from '@/lib/server/projections'
 import {
   animalFiltersSchema,
   animalSummarySchema,
@@ -193,12 +191,10 @@ export function createMockApi(
       ? repository.read((draft) => read(draft.data))
       : read(data)
   }
-  api.users.get = async (username, options) => {
-    checkCancelled(options?.signal)
-    const record = data.users.find((row) => row.username === username)
-    if (!record) throw new ApiError('NOT_FOUND', 'Profile not found', 404)
-    return toPublicUser(record)
-  }
+  const users = createUserService(data, repository)
+  api.users.get = users.get
+  api.follows = users.follows
+  api.notifications = createNotificationService(data, repository)
   api.hordes.list = async (filters, options) =>
     list(
       data.hordes.map((row) => parseResponse(hordeSummarySchema, row)),
@@ -380,10 +376,6 @@ export function createMockApi(
     api.events.get = (key, options) =>
       repository.read((draft) =>
         createMockApi(publicSnapshot(draft)).events.get(key, options),
-      )
-    api.users.get = (key, options) =>
-      repository.read((draft) =>
-        createMockApi(publicSnapshot(draft)).users.get(key, options),
       )
     api.fundraisers.supporters = (id, query, options) =>
       repository.read((draft) =>

@@ -2,13 +2,13 @@ import 'server-only'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
 import { moderationStoreSchema } from '@/features/moderation/schemas'
-import { resourceRefSchema } from '@/lib/api/schemas'
+import { resourceRefSchema, timestampSchema } from '@/lib/api/schemas'
 import { storedMediaSchema } from '@/lib/server/media/storage'
 import { seed, type FixtureSeed } from '@/data/fixtures'
 import { ApiError } from '@/lib/api/errors'
 import { canonicalJson, type DemoDraft } from './transactions'
 
-export const DEMO_SCHEMA_VERSION = 6
+export const DEMO_SCHEMA_VERSION = 7
 export const DEMO_FIXTURE_VERSION = 1
 const collectionSchema = z.array(
   z.object({ id: z.string().min(1) }).catchall(z.json()),
@@ -31,7 +31,11 @@ const storedSchema = z
       .object({
         follows: z.array(
           z
-            .object({ actorId: z.string().min(1), ref: resourceRefSchema })
+            .object({
+              actorId: z.string().min(1),
+              ref: resourceRefSchema,
+              createdAt: timestampSchema,
+            })
             .strict(),
         ),
         reactions: z.array(
