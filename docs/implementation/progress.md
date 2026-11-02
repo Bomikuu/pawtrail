@@ -13,7 +13,7 @@ Execution method: user-approved subagent-driven. Code-first community-journal di
 | F7 — Landing page and real asset provenance | Complete | 285d924; independent spec/quality and two fix re-reviews approved; 21 initial and 10 responsive tests passed; fresh typegen/dev HTTP+metadata hash checks passed |
 | S1 — Public animal profiles, saving, and shared SEO primitives | Complete | 1b4835d; independent privacy/spec/quality and retry-fix re-review approved; 122 shared and 37 focused tests plus 3 retry tests passed; source checks passed |
 | S2 — Feed, photo composer, post details, reactions and saved posts | Complete | ab70a39; fresh spec/privacy/quality review approved; 69 scoped tests and final 9 regression tests passed; typecheck/UI/format passed |
-| S3 — Discussions, reporting and moderator review | Pending |  |
+| S3 — Discussions, reporting and moderator review | Complete | 174e2f2; Independent spec/quality and scoped fix review approved; 185 initial + 35 fix tests pass, type/UI/format checks pass; evidence registration carried to D3/R3/W3/I3/I5 |
 | S4 — Public users, following and activity notifications | Pending |  |
 | S5 — Private dashboard, animal management and privacy settings | Pending |  |
 | D1 — Discovery service, filters and geographic query contracts | Pending |  |

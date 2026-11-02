@@ -67,7 +67,7 @@ expect(reactionCountAfterFailure).toBe(initialCount)
 
 **Interfaces:** Implement `community.comments/comment` for `ResourceRef`, `moderation.report/queue/review`. `CommentInput = { text: string }` (1–1,000 characters). `ReportInput = { target: ResourceRef, reason: ReportReason, details?: string }`. Review decisions contain item ID, expected version, decision publish/reject/remove/verify/revoke_verification, evidence IDs when verifying, and an audit reason. Verification actions are separate from publication actions, restricted to authorized moderators for animal/shelter/campaign subjects, and never available to the creator. Queue items identify publication versus verification review explicitly. Only moderators or explicitly scoped reviewers may review.
 
-- [ ] Test `rejects_anonymous_comment`, `does_not_reveal_removed_record_by_id`, `applies_review_to_every_public_projection`, and `prevents_stale_review_overwrite`:
+- [x] Test `rejects_anonymous_comment`, `does_not_reveal_removed_record_by_id`, `applies_review_to_every_public_projection`, and `prevents_stale_review_overwrite`:
 
 ```ts
 await expect(anonymous.community.comment(ref, { text: 'Update' })).rejects.toMatchObject({ status: 401 })
@@ -77,10 +77,10 @@ await expect(ordinaryMember.moderation.queue({})).rejects.toMatchObject({ status
 await expect(staleReview()).rejects.toMatchObject({ code: 'CONFLICT' })
 ```
 
-- [ ] Run `npm run test:unit -- tests/unit/community/discussion.test.tsx tests/unit/moderation`; expect missing moderation/discussion failures.
-- [ ] Implement paginated comments, photo updates through the existing composer, report reasons/confirmation, pending/rejected/removed states, review permissions, version conflicts, immutable audit records, and reporter confidentiality. Decisions invalidate public detail/feed/search/profile queries and notify the author. Sensitive images use a warning before display. Report count alone must not fabricate verification or automatically delete content.
-- [ ] Re-run these tests, typecheck, UI check; expect pass.
-- [ ] Commit `feat: add discussions and accountable content review`.
+- [x] Run `npm run test:unit -- tests/unit/community/discussion.test.tsx tests/unit/moderation`; expect missing moderation/discussion failures.
+- [x] Implement paginated comments, photo updates through the existing composer, report reasons/confirmation, pending/rejected/removed states, review permissions, version conflicts, immutable audit records, and reporter confidentiality. Decisions invalidate public detail/feed/search/profile queries and notify the author. Sensitive images use a warning before display. Report count alone must not fabricate verification or automatically delete content.
+- [x] Re-run these tests, typecheck, UI check; expect pass.
+- [x] Commit `feat: add discussions and accountable content review`.
 
 ### Task S4: Public users, following and activity notifications
 
