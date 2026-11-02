@@ -65,7 +65,7 @@ it('preserves_sample_counts_and_public_projection', () => {
 
 **Interfaces:** Produce `openDemoRepository(sessionId: string, dataDir: string): Promise<DemoRepository>`; `DemoRepository.read<T>(query: DemoQuery<T>): Promise<T>` and `transact<T>(command: DemoCommand<T>): Promise<T>`; `resolveDemoContext(request: Request): Promise<ApiContext>`; `resetDemoSession(sessionId: string): Promise<void>`; `Clock.now(): Date`. The repository is server-only and used identically by RSC reads and BFF reads.
 
-- [ ] Write tests that persist a new sample post, reopen the repository and read the same ID; a second session sees no post; two concurrent idempotent commands produce one record; failed transactions leave the old file valid; reset affects only the current session; old schemas return a recoverable reset state. IDs/path traversal cannot escape the configured data directory.
+- [x] Write tests that persist a new sample post, reopen the repository and read the same ID; a second session sees no post; two concurrent idempotent commands produce one record; failed transactions leave the old file valid; reset affects only the current session; old schemas return a recoverable reset state. IDs/path traversal cannot escape the configured data directory.
 
 ```ts
 it('persists_one_mutation_without_cross_session_visibility', async () => {
@@ -74,10 +74,10 @@ it('persists_one_mutation_without_cross_session_visibility', async () => {
   expect(await countRowsWithIdempotencyKey(key)).toBe(1)
 })
 ```
-- [ ] Run `npm run test:unit -- tests/unit/demo`; expect failures for missing persistence/session behavior.
-- [ ] Implement atomic file replacement and one-process transaction serialization, random session cookies, base-fixture overlays, versioning, frozen demo clock, and initialization/reset handlers with same-origin checks. Do not write cookies during Server Component render; establish sessions through route handlers. Public fixture-only reads need no cookie. Document the writable-disk/single-process boundary.
-- [ ] Re-run demo/API tests and typecheck; expect pass.
-- [ ] Commit `feat: persist isolated PawTrail demo sessions`.
+- [x] Run `npm run test:unit -- tests/unit/demo`; expect failures for missing persistence/session behavior.
+- [x] Implement atomic file replacement and one-process transaction serialization, random session cookies, base-fixture overlays, versioning, frozen demo clock, and initialization/reset handlers with same-origin checks. Do not write cookies during Server Component render; establish sessions through route handlers. Public fixture-only reads need no cookie. Document the writable-disk/single-process boundary.
+- [x] Re-run demo/API tests and typecheck; expect pass.
+- [x] Commit `feat: persist isolated PawTrail demo sessions`.
 
 ### Task F4: Authentication, permissions, protected routes, and cache lifecycle
 

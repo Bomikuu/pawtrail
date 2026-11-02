@@ -6,7 +6,7 @@ Execution method: user-approved subagent-driven. Code-first community-journal di
 | --- | --- | --- |
 | F1 — Application tooling and UI boundary enforcement | Complete | 4d9a7c0; independent spec/quality review approved; 29 tests, typecheck, UI check, formatting passed |
 | F2 — Domain contracts, fixtures, and request-scoped API entry points | Complete | abaca78; independent spec/quality review and version-precondition fix re-review approved; 26 API tests plus 14 targeted registry tests, typecheck, UI check and formatting passed |
-| F3 — Persistent, session-isolated demo repository | Pending |  |
+| F3 — Persistent, session-isolated demo repository | Complete | aef4565; independent spec/quality review approved; 54 demo/API tests and scoped checks passed; Unicode key-order minor deferred to final review |
 | F4 — Authentication, permissions, protected routes, and cache lifecycle | Pending |  |
 | F5 — Media upload, preview, and protected evidence delivery | Pending |  |
 | F6 — Design contract, shared controls, and responsive navigation | Pending |  |
@@ -48,3 +48,5 @@ Ruling: Work in a local linked PawTrail worktree using Git fallback — the nati
 Ruling: Use GIT_EXEC_PATH=/usr/bin for Git commands — the installed helper copy crashes whereas the main executable passes full fsck — cost if wrong: recheck Git operations with the corrected helper environment.
 Ruling: Keep the plan’s alphanumeric task IDs in records, but normalize task headings to 1–35 in an ignored execution copy — shipped extraction scripts only accept numeric headings — cost if wrong: regenerate scratch briefs; source plans remain unchanged.
 Ruling: A safe minimal root layout and empty global stylesheet in F1 are infrastructure, with visual direction deferred to F6 as planned — cost if wrong: replace the unstyled shell before shipping, no product content is committed.
+
+Ruling: F4 and F5 may introduce only the canonical Shadcn primitives and approved design-contract files they need before F6 — their forms precede the shared-controls task, while the UI-boundary and Impeccable requirements already bind — cost if wrong: consolidate those early primitives and tokens during F6; no duplicate feature controls or new design direction.
