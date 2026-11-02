@@ -3361,6 +3361,9 @@ html {
   font-variant-numeric: tabular-nums;
 }
 .recognition-banner {
+  width: 100%;
+  max-width: 45rem;
+  margin-inline: auto;
   position: relative;
   overflow: hidden;
   border-radius: 1rem;

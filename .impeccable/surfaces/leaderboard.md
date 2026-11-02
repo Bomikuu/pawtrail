@@ -11,3 +11,5 @@ Mobile preserves the three-person podium and scrolls the semantic table in a bou
 The user explicitly requested direct implementation without agents, automated checks/tests/builds/detectors, or browser verification. Source review only; rendered quality and runtime behavior remain unverified.
 
 BANNER: The dedicated illustration supplied as `codex-clipboard-500fdf6d-3932-4063-8511-6de46be0e4ef.png` supersedes the earlier composite banner. Preserve the complete 3:1 artwork on all screens; do not duplicate the rasterized headline visually. Keep equivalent HTML heading and subtitle for assistive technology. Responsive 640/1280/1920 WebP sources are about 29/66/106 KB.
+
+BANNER SIZE: At the owner’s request the proportional banner is centered and capped at 45rem wide (720 × 240px), scaling down on smaller viewports. Rankings and the rest of the board retain the full available width.

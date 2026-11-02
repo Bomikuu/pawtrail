@@ -247,7 +247,7 @@ export async function CommunityLeaderboard({
         <img
           src="/images/pawtrail/leaderboard-banner-1280.webp"
           srcSet="/images/pawtrail/leaderboard-banner-640.webp 640w, /images/pawtrail/leaderboard-banner-1280.webp 1280w, /images/pawtrail/leaderboard-banner-1920.webp 1920w"
-          sizes="(max-width: 48rem) 100vw, (max-width: 65rem) calc(100vw - 8rem), calc(100vw - 19rem)"
+          sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 65rem) calc(100vw - 8rem), 720px"
           width={1920}
           height={640}
           alt=""
