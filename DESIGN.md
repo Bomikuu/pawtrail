@@ -120,7 +120,7 @@ components:
 
 An animal story is the useful center of PawTrail. Warm cream ground, white story surfaces, brown text, and recognizable animal identities connect community responses to practical help. Photography belongs to the content; clear names and native links carry identification across posts, profiles, maps, and help requests.
 
-The user approved code-first implementation and the community-journal direction on 2026-11-02. Direction seed `0cbeff46`, candidate 5, and challenger verdicts are recorded in `.superpowers/sdd/2026-11-02-pawtrail-implementation/approved-direction.md`. The chosen world inherits the challengers' discipline in identity, status hierarchy, space budgets, and reduced motion without borrowing their unrelated materials.
+The user approved code-first implementation and the community-journal direction on 2026-11-02. The durable approved direction contracts, including candidate 5 and seed `0cbeff46`, live in `.impeccable/surfaces/{marketing,community,discovery,adoption,fundraising,dashboard}.md`. These development-only briefs carry each surface’s composition, signature interaction, and finish condition. The chosen world inherits the challengers' discipline in identity, status hierarchy, space budgets, and reduced motion without borrowing their unrelated materials.
 
 **Key Characteristics:**
 
