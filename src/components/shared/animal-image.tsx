@@ -42,23 +42,45 @@ export function AnimalImage({
         {compact ? (
           <PawPrint size={22} aria-hidden="true" />
         ) : (
-          'Photograph unavailable'
+          <>
+            <img
+              src="/images/pawtrail/care-circle.webp"
+              width={250}
+              height={119}
+              alt=""
+              loading="lazy"
+            />
+            <span>
+              {image ? 'Photograph unavailable' : 'No photograph added yet'}
+            </span>
+          </>
         )}
       </div>
     )
   if (sensitive && revealedUrl !== image.url)
-    return (
-      <div className={className}>
-        <p>This photograph may show an animal in distress.</p>
-        <Button
-          type="button"
-          variant="outline"
-          onClick={() => setRevealedUrl(image.url)}
+    if (compact)
+      return (
+        <span
+          className={`animal-image-fallback ${className ?? ''}`}
+          role="img"
+          aria-label="Sensitive photograph hidden"
         >
-          Show photograph
-        </Button>
-      </div>
-    )
+          <PawPrint size={22} aria-hidden="true" />
+        </span>
+      )
+    else
+      return (
+        <div className={className}>
+          <p>This photograph may show an animal in distress.</p>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => setRevealedUrl(image.url)}
+          >
+            Show photograph
+          </Button>
+        </div>
+      )
   return (
     <img
       className={className}

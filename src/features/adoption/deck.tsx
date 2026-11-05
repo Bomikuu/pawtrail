@@ -55,7 +55,13 @@ export function AdoptionDeck({
   if (!cards.length)
     return (
       <section className="journal-empty">
-        <Heart aria-hidden="true" size={32} />
+        <img
+          src="/images/pawtrail/caught-up.webp"
+          alt=""
+          width={239}
+          height={119}
+          loading="lazy"
+        />
         <h2>You’ve met this group</h2>
         <p>
           Your interested list keeps the animals you would like to learn more

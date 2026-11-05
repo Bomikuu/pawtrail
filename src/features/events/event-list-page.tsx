@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ParticipantFaces } from '@/components/shared/social-card'
 import {
   ArrowRight,
   CalendarDays,
@@ -117,6 +118,12 @@ export async function EventListPage({
                     </span>
                   </div>
                   <div className="event-card-body">
+                    <ParticipantFaces
+                      people={event.attendees}
+                      count={event.publicAttendeeCount}
+                      href={`/events/${encodeURIComponent(event.slug)}?section=attendees#event-content`}
+                      label="Public attendees"
+                    />
                     <StatusBadge tone={closed ? 'neutral' : 'success'}>
                       {label}
                     </StatusBadge>

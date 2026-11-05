@@ -1,4 +1,5 @@
 'use client'
+import { UnavailableIdentity } from '@/components/shared/social-card'
 import { useState } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { Button } from '@/components/ui/button'
@@ -111,6 +112,14 @@ export function ReviewQueue() {
             <ul className="review-list">
               {rows.map((item) => (
                 <li key={item.id}>
+                  <UnavailableIdentity
+                    label={
+                      item.commentId
+                        ? 'Comment review'
+                        : `${item.ref.kind} review`
+                    }
+                    meta={item.state}
+                  />
                   <div>
                     <h2>{item.title}</h2>
                     <p>

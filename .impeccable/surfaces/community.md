@@ -13,3 +13,7 @@ RESPONSIVE: Rail drops at 76rem; intermediate tablet uses icon navigation; mobil
 VERIFICATION: Source implementation only. No agents, automated tests/checks, builds, detectors or browser inspection under the user override. Rendered quality remains unverified.
 
 RECOGNITION: Attributed post and comment authors in the current all-time top ten have a crown and numbered rank. Use the shared RankCrown and authoritative nullable DTO field, with natural wrapping and a link to the all-time board; no client-authored or persistent rank decoration.
+
+## Whole-app social surface pass — 6 November 2026
+
+The supplied social-post reference extends the established world to resource directories, detail activity and supporting pages: contained semantic cards, compact genuine identities, current opted-in badge illustrations and top-ten crowns, public participant avatar strips, supplied-art empty/media placeholders and real next actions. Horde and saved stories reuse reactive post cards. Privacy and current moderation govern every identity. No fake faces, award claims or like controls fill missing data. Shared owner: `app/social-surfaces.css` and `components/shared/social-card.tsx`; source audit and route coverage: `docs/implementation/social-surface-audit.md`. Direct implementation, source review only; no agents or automated/browser verification.

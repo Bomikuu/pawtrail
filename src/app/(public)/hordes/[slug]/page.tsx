@@ -1,3 +1,4 @@
+import type { SearchParams } from '@/features/workflows/server'
 import { HordePage } from '@/features/workflows/public-pages'
 import { routeMetadata } from '@/lib/seo/public-entities'
 export async function generateMetadata({
@@ -9,8 +10,10 @@ export async function generateMetadata({
 }
 export default async function Page({
   params,
+  searchParams,
 }: {
+  searchParams: SearchParams
   params: Promise<{ slug: string }>
 }) {
-  return <HordePage slug={(await params).slug} />
+  return <HordePage slug={(await params).slug} searchParams={searchParams} />
 }

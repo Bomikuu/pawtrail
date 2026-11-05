@@ -1,4 +1,5 @@
 import 'server-only'
+import { publicAchievementShowcase } from '@/features/achievements/engine'
 import { topTenRecognitionRanks } from '@/features/kibble/leaderboard-service'
 import { demoClock } from '@/lib/api/clock'
 import { personAvatar } from '@/features/users/avatar-presets'
@@ -211,6 +212,13 @@ function commentView(
     ...row,
     authorId: visible ? row.authorId : null,
     author: {
+      badges: visible
+        ? publicAchievementShowcase(
+            draft,
+            user.id,
+            demoClock.now().toISOString(),
+          ).badges
+        : [],
       leaderboardRank: visible
         ? ((
             recognitionRanks ??

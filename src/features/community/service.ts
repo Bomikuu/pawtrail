@@ -1,4 +1,5 @@
 import 'server-only'
+import { publicAchievementShowcase } from '@/features/achievements/engine'
 import { topTenRecognitionRanks } from '@/features/kibble/leaderboard-service'
 import { demoClock } from '@/lib/api/clock'
 import { personAvatar } from '@/features/users/avatar-presets'
@@ -120,12 +121,44 @@ export function projectPost(
     const link = linkedEntity(publicData, ref)
     return link ? [link] : []
   })
+  const participantIds = new Set(
+    draft.data.comments
+      .filter(
+        (comment) =>
+          comment.ref.kind === 'post' &&
+          comment.ref.id === row.id &&
+          comment.moderation === 'published',
+      )
+      .map((comment) => comment.authorId),
+  )
+  const participants = publicData.users
+    .filter(
+      (person) =>
+        participantIds.has(person.id) &&
+        person.settings.discoverable &&
+        person.settings.showContributions,
+    )
+    .map((person) => ({
+      id: person.id,
+      username: person.username,
+      displayName: person.displayName,
+      avatar: personAvatar(person.avatar, person.id),
+    }))
   return parseResponse(postViewSchema, {
     id: row.id,
     createdAt: row.createdAt,
     provenance: row.provenance,
     authorId: identifiable ? row.authorId : null,
+    participants: participants.slice(0, 4),
+    participantCount: participants.length,
     author: {
+      badges: identifiable
+        ? publicAchievementShowcase(
+            draft,
+            user!.id,
+            demoClock.now().toISOString(),
+          ).badges
+        : [],
       leaderboardRank: identifiable
         ? ((
             recognitionRanks ??

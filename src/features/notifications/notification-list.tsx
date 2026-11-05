@@ -1,4 +1,5 @@
 'use client'
+import { Bell } from 'lucide-react'
 import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -28,6 +29,7 @@ export function NotificationItems({
           className={item.readAt ? 'activity-read' : 'activity-unread'}
         >
           <div className="activity-meta">
+            <Bell size={20} aria-hidden="true" />
             <strong>{item.readAt ? 'Read' : 'Unread'}</strong>
             <time dateTime={item.createdAt}>
               {new Intl.DateTimeFormat('en-PH', {

@@ -1,3 +1,7 @@
+import { ActivityCard } from '@/components/shared/social-card'
+import { ContributorLine, ContributorFaces } from './contributors'
+import { PostDetail } from '@/features/community/post-card'
+import { AnimalImage } from '@/components/shared/animal-image'
 import { ChartPanel } from './chart-panel'
 import Link from 'next/link'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -23,6 +27,10 @@ export async function DashboardPage() {
       api.users.summary(),
       api.auth.session(),
     ])
+  const recent = await api.community.list({
+    authorId: session.actor!.id,
+    limit: 3,
+  })
   return (
     <>
       <PageHeading
@@ -33,6 +41,12 @@ export async function DashboardPage() {
           '. Manage your animals, applications and community contributions.'
         }
         action={<ButtonLink href="/animals/report">Add an animal</ButtonLink>}
+      />
+      <ContributorLine
+        api={api}
+        id={session.actor!.id}
+        meta="Your community contributions and management workspace"
+        fallback="Your private workspace"
       />
       <dl className="dashboard-summary">
         {[
@@ -66,6 +80,30 @@ export async function DashboardPage() {
           { name: 'Applications', value: summary.applications },
         ]}
       />
+      <h2>Your latest stories</h2>
+      {recent.items.length ? (
+        recent.items.map((post) => (
+          <ActivityCard
+            key={post.id}
+            title={post.text.slice(0, 110) || 'Your photo story'}
+            href={`/community/${post.id}`}
+            identity={
+              <ContributorLine
+                api={api}
+                id={session.actor!.id}
+                meta={`${date(post.createdAt)} · ${post.moderation}`}
+                fallback="Your story"
+              />
+            }
+          >
+            <p>{post.text.slice(0, 200)}</p>
+          </ActivityCard>
+        ))
+      ) : (
+        <Empty href="/community/create" label="Share your first story">
+          Your community stories will appear here.
+        </Empty>
+      )}
       <h2>Keep a good thing going</h2>
       <div className="journal-grid">
         <CatalogCard
@@ -327,13 +365,25 @@ export async function MySightingsPage({
         }
       />
       {rows.items.map((s) => (
-        <article className="journal-row" key={s.id}>
-          <strong>{s.moderation}</strong>
+        <ActivityCard
+          key={s.id}
+          title="Your neighborhood sighting"
+          meta={s.moderation}
+          identity={
+            <ContributorLine
+              api={api}
+              id={s.reporterId}
+              meta={`${date(s.observedAt)} · ${s.moderation}`}
+              fallback="Your sighting"
+            />
+          }
+        >
           <p>{s.observation}</p>
-          <small>
-            {date(s.observedAt)} · {s.location.neighborhood}
-          </small>
-        </article>
+          <p className="journal-meta">{s.location.neighborhood}</p>
+          {s.media.length > 0 && (
+            <AnimalImage image={s.media[0]} className="activity-photo" />
+          )}
+        </ActivityCard>
       ))}
       {!rows.count && <Empty>No observations shared yet.</Empty>}
       <NextPage cursor={rows.nextCursor} />
@@ -342,9 +392,10 @@ export async function MySightingsPage({
 }
 export async function SavedPage() {
   const api = await privateApi('/dashboard/saved'),
-    [animals, stories] = await Promise.all([
+    [animals, stories, session] = await Promise.all([
       api.animals.list({ saved: true, limit: 50 }),
       api.community.list({ saved: true, limit: 50 }),
+      api.auth.session(),
     ])
   return (
     <>
@@ -363,16 +414,28 @@ export async function SavedPage() {
           />
         ))}
       </div>
-      {!animals.count && <p>No saved animal profiles.</p>}
+      {!animals.count && (
+        <Empty href="/explore" label="Meet nearby animals">
+          No saved animal profiles yet.
+        </Empty>
+      )}
       <h2>Community stories</h2>
-      {stories.items.map((p) => (
-        <article className="journal-row" key={p.id}>
-          <Link href={`/community/${p.id}`}>
-            {p.text.slice(0, 150) || 'Photo story'}
-          </Link>
-        </article>
-      ))}
-      {!stories.count && <p>No saved community stories.</p>}
+      <div className="resource-story-feed">
+        {stories.items.map((post) => (
+          <PostDetail
+            key={post.id}
+            initial={post}
+            scope={session.cacheScope}
+            options={post.linkedEntities}
+            detail={false}
+          />
+        ))}
+      </div>
+      {!stories.count && (
+        <Empty href="/community" label="Explore stories">
+          Save a community story to find it here later.
+        </Empty>
+      )}
     </>
   )
 }
@@ -399,24 +462,24 @@ export async function ApplicationsPage({
         action={!shelter && <ButtonLink href="/adopt">Meet animals</ButtonLink>}
       />
       {rows.items.map((a) => (
-        <article className="journal-row" key={a.id}>
-          <p className="journal-meta">
-            {a.status.replaceAll('_', ' ')} · {date(a.createdAt)}
+        <ActivityCard
+          key={a.id}
+          title={
+            animals.items.find((r) => r.id === a.animalId)?.name ??
+            'Animal application'
+          }
+          image={animals.items.find((r) => r.id === a.animalId)?.photo}
+          href={
+            shelter
+              ? `/dashboard/shelter/applications/${a.id}`
+              : `/adopt/applications/${a.id}`
+          }
+          meta={`${a.status.replaceAll('_', ' ')} · ${date(a.createdAt)}`}
+        >
+          <p className="private-card-note">
+            Private application · version {a.version}
           </p>
-          <h2>
-            <Link
-              href={
-                shelter
-                  ? `/dashboard/shelter/applications/${a.id}`
-                  : `/adopt/applications/${a.id}`
-              }
-            >
-              {animals.items.find((r) => r.id === a.animalId)?.name ??
-                'Animal application'}
-            </Link>
-          </h2>
-          <p>Version {a.version}</p>
-        </article>
+        </ActivityCard>
       ))}
       {!rows.count && <Empty>No applications in this workspace yet.</Empty>}
     </>
@@ -588,7 +651,9 @@ export async function ApplicationPage({ id }: { id: string }) {
           </article>
         ))
       ) : (
-        <p>No status transitions recorded yet.</p>
+        <Empty>
+          Status updates will appear here when the application moves forward.
+        </Empty>
       )}
     </>
   )
@@ -612,23 +677,44 @@ export async function MyFundraisersPage() {
         <section>
           <h2>Private drafts</h2>
           {drafts.items.map((d) => (
-            <p key={d.id}>
-              <Link href={`/fundraisers/create?draft=${d.id}`}>{d.title}</Link>
-            </p>
+            <CatalogCard
+              key={d.id}
+              href={`/fundraisers/create?draft=${d.id}`}
+              title={d.title}
+              meta="Private draft"
+              description="Continue preparing your campaign before submitting it for review."
+            />
           ))}
         </section>
       )}
+      {!drafts.items.length && (
+        <Empty href="/fundraisers/create" label="Prepare a campaign">
+          No private fundraiser drafts yet.
+        </Empty>
+      )}
+      <h2>Your campaigns</h2>
       {dashboard.campaigns.map((f) => (
         <CatalogCard
           key={f.id}
           href={`/dashboard/fundraisers/${f.id}`}
           title={f.title}
+          image={f.photo}
+          people={
+            <ContributorLine
+              api={api}
+              id={f.organizerId}
+              meta="Campaign organizer"
+            />
+          }
           description={`${php(f.raisedMinor)} / ${php(f.goalMinor)}`}
           meta={f.state}
         />
       ))}
-      {!dashboard.campaigns.length && !drafts.count && (
-        <Empty>No campaigns or private drafts yet.</Empty>
+      {!dashboard.campaigns.length && (
+        <Empty>
+          No submitted campaigns yet. Continue a draft or prepare your first
+          fundraiser.
+        </Empty>
       )}
     </>
   )
@@ -799,6 +885,12 @@ export async function MyMissionsPage() {
       <h2>Your missions</h2>
       {mine.items.map((p) => (
         <section className="workflow-panel" key={p.id}>
+          <ContributorLine
+            api={api}
+            id={p.volunteerId}
+            meta={`${p.state} · mission participation`}
+            fallback="Your mission participation"
+          />
           <h3>
             {missions.items.find((m) => m.id === p.missionId)?.title ??
               'Mission activity'}
@@ -825,12 +917,22 @@ export async function MyMissionsPage() {
           )}
         </section>
       ))}
-      {!mine.count && <p>You have not joined any missions yet.</p>}
+      {!mine.count && (
+        <Empty href="/missions" label="Find a mission">
+          Your next act of care starts with a mission.
+        </Empty>
+      )}
       <h2>Evidence for your organization</h2>
       {review.items
         .filter((p) => ['submitted', 'approved'].includes(p.state))
         .map((p) => (
           <section className="workflow-panel" key={p.id}>
+            <ContributorLine
+              api={api}
+              id={p.volunteerId}
+              meta="Private evidence for your organization"
+              fallback="Mission volunteer"
+            />
             <h3>
               {missions.items.find((m) => m.id === p.missionId)?.title ??
                 'Mission evidence'}
@@ -885,7 +987,12 @@ export async function MyMissionsPage() {
         ))}
       {!review.items.some((p) =>
         ['submitted', 'approved'].includes(p.state),
-      ) && <p>No evidence is ready for your review.</p>}
+      ) && (
+        <Empty>
+          No mission evidence is ready for your review. New submissions will
+          appear here.
+        </Empty>
+      )}
     </>
   )
 }
@@ -910,16 +1017,14 @@ export async function WalletPage({
       </p>
       <h2>Immutable activity record</h2>
       {ledger.items.map((e) => (
-        <article className="journal-row" key={e.id}>
-          <strong>
-            {e.amount > 0 ? '+' : ''}
-            {e.amount} Kibble
-          </strong>
+        <ActivityCard
+          key={e.id}
+          title={`${e.amount > 0 ? '+' : ''}${e.amount} Kibble`}
+          meta={date(e.createdAt)}
+        >
           <p>{e.description}</p>
-          <small>
-            {date(e.createdAt)} · {e.provenance.label}
-          </small>
-        </article>
+          <small>{e.provenance.label}</small>
+        </ActivityCard>
       ))}
       {!ledger.count && (
         <Empty href="/missions" label="Explore missions">
@@ -950,18 +1055,33 @@ export async function MyEventsPage({
         title="Your community gatherings"
         description="Events you organize or plan to attend."
         action={
-          <ButtonLink href="/dashboard/events/create">
-            Organize an event
-          </ButtonLink>
+          u.roles.some(
+            (role) => role === 'shelter_staff' || role === 'moderator',
+          ) ? (
+            <ButtonLink href="/dashboard/events/create">
+              Organize an event
+            </ButtonLink>
+          ) : (
+            <ButtonLink href="/events">Find a gathering</ButtonLink>
+          )
         }
       />
       {rows.items.map((e) => (
-        <section className="journal-row" key={e.id}>
-          <h2>
-            <Link href={`/events/${e.slug}`}>{e.title}</Link>
-          </h2>
+        <ActivityCard
+          key={e.id}
+          title={e.title}
+          href={`/events/${e.slug}`}
+          meta={`${date(e.startsAt)} · ${e.state}`}
+          identity={
+            <ContributorLine
+              api={api}
+              id={e.organizerId}
+              meta="Event organizer"
+            />
+          }
+        >
           <p>
-            {date(e.startsAt)} · {e.state} · {e.attendanceCount}/{e.capacity}
+            {e.attendanceCount} attending · {e.capacity} places
           </p>
           {(e.organizerId === u.id ||
             u.shelterIds.includes(e.shelterId ?? '')) && (
@@ -972,7 +1092,7 @@ export async function MyEventsPage({
               Manage event
             </ButtonLink>
           )}
-        </section>
+        </ActivityCard>
       ))}
       {!rows.count && (
         <Empty href="/events" label="Find a gathering">
@@ -1030,6 +1150,17 @@ export async function ShelterWorkspacePage() {
             {s.volunteerIds.length} eligible public volunteers linked to
             approved participation.
           </p>
+          <ContributorFaces
+            api={api}
+            ids={s.volunteerIds}
+            href={`/shelters/${shelters.items.find((r) => r.id === s.shelterId)?.slug ?? ''}`}
+          />
+          {!s.volunteerIds.length && (
+            <Empty>
+              No public volunteer profiles are connected to approved
+              participation yet.
+            </Empty>
+          )}
           <ul>
             {publicUsers.items
               .filter((u) => s.volunteerIds.includes(u.ref.id))

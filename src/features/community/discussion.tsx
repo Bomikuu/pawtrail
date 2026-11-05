@@ -1,4 +1,5 @@
 'use client'
+import { EarnedBadges } from '@/components/shared/social-card'
 import { RankCrown } from '@/features/kibble/rank-crown'
 import { useState } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
@@ -77,6 +78,9 @@ export function Discussion({
                   {comment.author.displayName}
                   {comment.author.username && (
                     <RankCrown rank={comment.author.leaderboardRank} />
+                  )}
+                  {comment.author.username && (
+                    <EarnedBadges badges={comment.author.badges} />
                   )}
                 </strong>
                 <time dateTime={comment.createdAt}>

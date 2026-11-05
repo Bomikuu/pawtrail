@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
-import { ArrowRight, PawPrint } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { Input } from '@/components/ui/input'
 import { Select } from '@/components/ui/select'
 import type { Field } from './form'
+import { ProfileBanner } from '@/features/users/profile-banner'
 
 export function PageHeading({
   title,
@@ -34,6 +35,7 @@ export function CatalogCard({
   meta,
   image,
   children,
+  people,
 }: {
   href: string
   title: string
@@ -41,17 +43,26 @@ export function CatalogCard({
   meta?: string
   image?: { url: string; alt: string; sensitive?: boolean } | null
   children?: ReactNode
+  people?: ReactNode
 }) {
   return (
     <article className="journal-card">
-      {image && <AnimalImage image={image} className="journal-photo" />}
+      {image !== undefined && (
+        <AnimalImage image={image} className="journal-photo" />
+      )}
       <div className="journal-card-body">
-        {meta && <p className="journal-meta">{meta}</p>}
-        <h2>
-          <Link href={href}>{title}</Link>
-        </h2>
+        <header className="resource-card-heading">
+          <AnimalImage image={image} compact className="resource-avatar" />
+          <div>
+            <h2>
+              <Link href={href}>{title}</Link>
+            </h2>
+            {meta && <p className="journal-meta">{meta}</p>}
+          </div>
+        </header>
         {description && <p>{description}</p>}
         {children}
+        {people}
         <Link className="story-link" href={href}>
           View details <ArrowRight aria-hidden="true" size={16} />
         </Link>
@@ -70,12 +81,49 @@ export function Empty({
 }) {
   return (
     <section className="journal-empty">
-      <PawPrint size={30} aria-hidden="true" />
+      <img
+        src="/images/pawtrail/caught-up.webp"
+        width={239}
+        height={119}
+        loading="lazy"
+        alt=""
+      />
       <p>{children}</p>
       {href && (
         <ButtonLink href={href}>{label ?? 'Explore the community'}</ButtonLink>
       )}
     </section>
+  )
+}
+export function ResourceHero({
+  title,
+  description,
+  image,
+  children,
+  banner = 'meadow',
+}: {
+  title: string
+  description: string
+  image?: { url: string; alt: string; sensitive?: boolean } | null
+  children?: ReactNode
+  banner?: string
+}) {
+  return (
+    <header className="resource-hero">
+      <div className="resource-hero-cover">
+        {image ? <AnimalImage image={image} /> : <ProfileBanner id={banner} />}
+      </div>
+      <div className="resource-hero-content">
+        <div className="resource-card-heading">
+          <AnimalImage image={image} compact className="resource-avatar" />
+          <div>
+            <h1>{title}</h1>
+            <p>{description}</p>
+          </div>
+        </div>
+        {children}
+      </div>
+    </header>
   )
 }
 export function FilterForm({ fields, q }: { fields?: Field[]; q?: string }) {

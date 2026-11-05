@@ -83,9 +83,10 @@ export function installEvents(
     const q = s.eventFiltersSchema.parse(input)
     return read((d) => {
       const u = q.scope === 'mine' ? currentUser(d) : null
+      const visible = publicSnapshot(d)
       return page(
-        publicSnapshot(d)
-          .events.filter(
+        visible.events
+          .filter(
             (e) =>
               (!u ||
                 e.organizerId === u.id ||
@@ -97,13 +98,25 @@ export function installEvents(
               (!q.from || Date.parse(e.startsAt) >= Date.parse(q.from)) &&
               (!q.to || Date.parse(e.startsAt) <= Date.parse(q.to)),
           )
-          .map((e) =>
-            s.eventSummarySchema.parse({
+          .map((e) => {
+            const attendeeIds = new Set(
+              d.data.rsvps
+                .filter((r) => r.eventId === e.id)
+                .map((r) => r.userId),
+            )
+            const attendees = visible.users
+              .filter(
+                (u) => attendeeIds.has(u.id) && u.settings.showContributions,
+              )
+              .map((u) => s.eventAttendeeSchema.parse(toPublicUser(u)))
+            return s.eventSummarySchema.parse({
               ...e,
+              attendees: attendees.slice(0, 4),
+              publicAttendeeCount: attendees.length,
               attendanceCount: d.data.rsvps.filter((r) => r.eventId === e.id)
                 .length,
-            }),
-          ),
+            })
+          }),
         q,
         `events:${u?.id ?? 'public'}:${filterScope(q)}`,
       )

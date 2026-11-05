@@ -43,6 +43,8 @@ export const eventSummarySchema = baseSchema.extend({
   shelterId: idSchema.nullable(),
   state: z.enum(['scheduled', 'cancelled']),
   organizerId: idSchema,
+  attendees: z.array(eventAttendeeSchema).max(4).default([]),
+  publicAttendeeCount: z.number().int().nonnegative().default(0),
 })
 export const eventDetailSchema = eventSummarySchema.extend({
   viewerAttending: z.boolean().default(false),

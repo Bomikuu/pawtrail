@@ -44,7 +44,9 @@ export function createUserService(
       parseInput(z.string().min(1).max(120), username)
       return read((draft) => {
         const visible = publicSnapshot(draft)
-        const user = visible.users.find((u) => u.username === username)
+        const user =
+          visible.users.find((u) => u.username === username) ??
+          visible.users.find((u) => u.id === username)
         if (!user) throw new ApiError('NOT_FOUND', 'Profile not found', 404)
         const profile = toPublicUser(user)
         if (!user.settings.showContributions)

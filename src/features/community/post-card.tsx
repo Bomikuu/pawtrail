@@ -1,4 +1,5 @@
 'use client'
+import { EarnedBadges, ParticipantFaces } from '@/components/shared/social-card'
 import { RankCrown } from '@/features/kibble/rank-crown'
 import { FollowButton } from '@/features/users/follow-button'
 import { useState } from 'react'
@@ -104,6 +105,9 @@ export function PostCard({
             {post.author.username && (
               <RankCrown rank={post.author.leaderboardRank} />
             )}
+            {post.author.username && (
+              <EarnedBadges badges={post.author.badges} />
+            )}
           </strong>
           <p>
             {post.author.username && (
@@ -194,6 +198,11 @@ export function PostCard({
           if (detail) router.push('/community')
         }}
       />
+      <ParticipantFaces
+        people={post.participants ?? []}
+        count={post.participantCount}
+        href={`/community/${encodeURIComponent(post.id)}#discussion`}
+      />
       <footer className="post-footer">
         {!detail && !post.id.startsWith('pending:') && (
           <Link href={`/community/${encodeURIComponent(post.id)}`}>
@@ -223,10 +232,12 @@ export function PostDetail({
   initial,
   scope,
   options,
+  detail = true,
 }: {
   initial: Post
   scope: string
   options: LinkedOption[]
+  detail?: boolean
 }) {
   const query = usePost(initial.id, { post: initial, scope })
   return (
@@ -234,7 +245,9 @@ export function PostDetail({
       state={query.isPending ? 'loading' : query.isError ? 'error' : 'ready'}
       retry={() => void query.refetch()}
     >
-      {query.data && <PostCard post={query.data} options={options} detail />}
+      {query.data && (
+        <PostCard post={query.data} options={options} detail={detail} />
+      )}
     </DataState>
   )
 }

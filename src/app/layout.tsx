@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { siteOrigin } from '@/lib/seo/origin'
 import './globals.css'
+import './social-surfaces.css'
 import { Providers } from '@/components/providers'
 import { getServerApi } from '@/lib/api/server'
 export const metadata: Metadata = {

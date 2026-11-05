@@ -54,14 +54,27 @@ export const ownerPostMediaSchema = mediaAssetSchema.extend({
   sensitive: z.boolean(),
 })
 /** Public fields are an allowlist; private preview assets never belong to postSchema. */
+export const publicConversationPersonSchema = z.object({
+  id: idSchema,
+  displayName: z.string(),
+  username: z.string(),
+  avatar: imageSchema.nullable(),
+})
+const bylineBadgesSchema = z
+  .array(z.object({ id: idSchema, label: z.string() }))
+  .max(6)
+  .default([])
 export const postViewSchema = postSchema
   .extend({
     author: z.object({
+      badges: bylineBadgesSchema,
       leaderboardRank: leaderboardRankSchema,
       displayName: z.string(),
       username: z.string().nullable(),
       avatar: imageSchema.nullable().optional(),
     }),
+    participants: z.array(publicConversationPersonSchema).max(4).default([]),
+    participantCount: z.number().int().nonnegative().default(0),
     linkedEntities: z.array(
       z.object({ ref: resourceRefSchema, title: z.string(), href: z.string() }),
     ),
@@ -97,6 +110,7 @@ export const commentRecordSchema = baseSchema.extend({
 export const commentSchema = commentRecordSchema.extend({
   authorId: idSchema.nullable(),
   author: z.object({
+    badges: bylineBadgesSchema,
     leaderboardRank: leaderboardRankSchema,
     displayName: z.string(),
     username: z.string().nullable(),

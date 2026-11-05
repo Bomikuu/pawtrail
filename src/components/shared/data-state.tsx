@@ -9,7 +9,7 @@ export function DataState({
   emptyTitle = 'Nothing here yet',
   emptyDescription = 'Try another filter or add your first update.',
   errorMessage = 'We couldn’t load this content. Check your connection and try again.',
-  emptyIllustration,
+  emptyIllustration = 'caught-up',
 }: {
   state: 'loading' | 'empty' | 'error' | 'ready'
   retry?: () => void

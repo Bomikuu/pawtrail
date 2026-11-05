@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-export default function ErrorPage({ reset }: { reset: () => void }) {
+export default function ErrorPage({ retry }: { retry: () => void }) {
   const path = usePathname()
   return (
     <section className="journal-empty">
@@ -11,7 +11,7 @@ export default function ErrorPage({ reset }: { reset: () => void }) {
         Your saved work has not been cleared. Try again, or clear the current
         page filters.
       </p>
-      <Button onClick={reset}>Try again</Button>
+      <Button onClick={retry}>Try again</Button>
       <Link href={path}>Clear filters and return to the first page</Link>
       <Link href="/community">Back to community</Link>
     </section>

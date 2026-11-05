@@ -1,3 +1,4 @@
+import { demoClock, systemClock } from '@/lib/api/clock'
 import { AchievementActivity } from '@/features/achievements/activity'
 import { ChartPanel } from './chart-panel'
 import { ResourceDiscussion } from './discussion'
@@ -8,6 +9,7 @@ import { ButtonLink } from '@/components/ui/button-link'
 import { AnimalImage } from '@/components/shared/animal-image'
 import {
   PageHeading,
+  ResourceHero,
   CatalogCard,
   Empty,
   FilterForm,
@@ -35,6 +37,9 @@ import {
   eventFields,
 } from './fields'
 import { DiscoveryMap } from '@/features/discovery/map-island'
+import { ActivityCard } from '@/components/shared/social-card'
+import { ContributorLine, ContributorFaces } from './contributors'
+import { PostDetail } from '@/features/community/post-card'
 import { AdoptionDeck } from '@/features/adoption/deck'
 
 export async function ExplorePage({
@@ -168,24 +173,50 @@ export async function HordesPage({
             title={h.name}
             href={`/hordes/${h.slug}`}
             description={h.description}
+            people={
+              <ContributorFaces
+                api={api}
+                ids={h.contributorIds}
+                href={`/hordes/${h.slug}`}
+              />
+            }
             meta={`${h.animalIds.length} known members · ${h.location.neighborhood}`}
             image={h.photo}
           />
         ))}
       </div>
+      {!rows.items.length && (
+        <Empty href="/explore" label="Explore animals">
+          No neighborhood Hordes match this search.
+        </Empty>
+      )}
       <NextPage cursor={rows.nextCursor} params={{ q }} />
     </>
   )
 }
-export async function HordePage({ slug }: { slug: string }) {
+export async function HordePage({
+  slug,
+  searchParams,
+}: {
+  slug: string
+  searchParams?: SearchParams
+}) {
+  const p: Awaited<SearchParams> = await (searchParams ?? Promise.resolve({}))
   const api = await getServerApi(),
     h = await publicRecord(() => api.hordes.get(slug)),
-    [animals, sightings, campaigns, missions] = await Promise.all([
-      api.animals.list({ hordeId: h.id, limit: 50 }),
-      api.sightings.list({ hordeId: h.id }),
-      api.fundraisers.list({ limit: 50 }),
-      api.missions.list({ limit: 50 }),
-    ])
+    [animals, sightings, campaigns, missions, stories, session] =
+      await Promise.all([
+        api.animals.list({ hordeId: h.id, limit: 50 }),
+        api.sightings.list({ hordeId: h.id }),
+        api.fundraisers.list({ limit: 50 }),
+        api.missions.list({ limit: 50 }),
+        api.community.list({
+          hordeId: h.id,
+          limit: 12,
+          cursor: queryValue(p.cursor),
+        }),
+        api.auth.session(),
+      ])
   return (
     <>
       <PublicJsonLd
@@ -193,11 +224,17 @@ export async function HordePage({ slug }: { slug: string }) {
         description={h.description}
         path={`/hordes/${h.slug}`}
       />
-      <PageHeading
+      <ResourceHero
+        image={h.photo}
         title={h.name}
         description={`${h.location.neighborhood} · approximate public area`}
-      />
-      {h.photo && <AnimalImage image={h.photo} className="detail-cover" />}
+      >
+        <ContributorFaces
+          api={api}
+          ids={h.contributorIds}
+          href={`/hordes/${h.slug}`}
+        />
+      </ResourceHero>
       <DetailBody>
         <p>{h.description}</p>
         <p>
@@ -227,43 +264,92 @@ export async function HordePage({ slug }: { slug: string }) {
         <h2>Shared observations</h2>
         {sightings.items.length ? (
           sightings.items.map((s) => (
-            <article className="journal-row" key={s.id}>
+            <ActivityCard
+              key={s.id}
+              title="Neighborhood sighting"
+              meta={date(s.observedAt)}
+              identity={
+                <ContributorLine
+                  api={api}
+                  id={s.reporterId}
+                  meta={date(s.observedAt)}
+                  fallback="Community observer"
+                />
+              }
+            >
               <p>{s.observation}</p>
-              <small>
-                {date(s.observedAt)} · {s.location.neighborhood}
-              </small>
-            </article>
+              <small>{s.location.neighborhood}</small>
+            </ActivityCard>
           ))
         ) : (
           <Empty>No published observations yet.</Empty>
         )}
+        {!animals.items.length && (
+          <Empty href="/explore" label="Explore nearby">
+            No animal profiles are connected to this group yet.
+          </Empty>
+        )}
         <h2>Ways to help</h2>
+        {!campaigns.items.some((f) => h.fundraiserIds.includes(f.id)) &&
+          !missions.items.some((m) => h.missionIds.includes(m.id)) && (
+            <Empty href="/missions" label="Explore ways to help">
+              No campaigns or missions are connected to this group yet.
+            </Empty>
+          )}
         {campaigns.items
           .filter((f) => h.fundraiserIds.includes(f.id))
           .map((f) => (
-            <p key={f.id}>
-              <Link href={`/fundraisers/${f.slug}`}>{f.title}</Link>
-            </p>
+            <CatalogCard
+              key={f.id}
+              title={f.title}
+              href={`/fundraisers/${f.slug}`}
+              image={f.photo}
+              meta={`${f.state} · ${php(f.raisedMinor)} raised`}
+              people={
+                <ContributorLine
+                  api={api}
+                  id={f.organizerId}
+                  meta="Campaign organizer"
+                />
+              }
+            />
           ))}
         {missions.items
           .filter((m) => h.missionIds.includes(m.id))
           .map((m) => (
-            <p key={m.id}>
-              <Link href={`/missions/${m.slug}`}>{m.title}</Link>
-            </p>
+            <CatalogCard
+              key={m.id}
+              title={m.title}
+              href={`/missions/${m.slug}`}
+              meta={`${m.state} · ${m.rewardKibble} Kibble after approval`}
+              people={
+                <ContributorLine
+                  api={api}
+                  id={m.organizerId}
+                  meta="Mission organizer"
+                />
+              }
+            />
           ))}
-        <h2>Community stories</h2>
-        {h.postIds.length ? (
-          h.postIds.map((id) => (
-            <p key={id}>
-              <Link href={`/community/${id}`}>
-                Read a story about this group
-              </Link>
-            </p>
-          ))
+        <h2 id="group-stories">Community stories</h2>
+        {stories.items.length ? (
+          <div className="resource-story-feed">
+            {stories.items.map((post) => (
+              <PostDetail
+                key={post.id}
+                initial={post}
+                scope={session.cacheScope}
+                options={post.linkedEntities}
+                detail={false}
+              />
+            ))}
+          </div>
         ) : (
-          <p>No published stories yet.</p>
+          <Empty href="/community/create" label="Share a story">
+            No published stories about this group yet.
+          </Empty>
         )}
+        <NextPage cursor={stories.nextCursor} />
       </DetailBody>
       <ResourceDiscussion
         target={{ kind: 'horde', id: h.id }}
@@ -333,17 +419,26 @@ export async function SearchPage({
                 ? 'Community members'
                 : `${kind.charAt(0).toUpperCase()}${kind.slice(1)} stories`}
             </h2>
-            {items.map((r) => (
-              <article
-                className="journal-row"
-                key={`${r.ref.kind}:${r.ref.id}`}
-              >
-                <h3>
-                  <Link href={r.path}>{r.title}</Link>
-                </h3>
-                <p>{r.excerpt}</p>
-              </article>
-            ))}
+            <div className="journal-grid">
+              {items.map((r) => (
+                <CatalogCard
+                  key={`${r.ref.kind}:${r.ref.id}`}
+                  href={r.path}
+                  title={r.title}
+                  description={r.excerpt}
+                  meta={r.ref.kind === 'user' ? 'Community member' : r.ref.kind}
+                  people={
+                    r.ref.kind === 'user' ? (
+                      <ContributorLine
+                        api={api}
+                        id={r.ref.id}
+                        fallback="Public member profile"
+                      />
+                    ) : undefined
+                  }
+                />
+              ))}
+            </div>
           </section>
         ) : null
       })}
@@ -411,6 +506,13 @@ export async function FundraisersPage({
             title={f.title}
             href={`/fundraisers/${f.slug}`}
             image={f.photo}
+            people={
+              <ContributorLine
+                api={api}
+                id={f.organizerId}
+                meta="Campaign organizer"
+              />
+            }
             meta={`${f.category} · ${f.urgency} priority`}
             description={`${php(f.raisedMinor)} of ${php(f.goalMinor)} · ${f.state}`}
           >
@@ -444,7 +546,8 @@ export async function FundraiserPage({ slug }: { slug: string }) {
         description={f.story}
         path={`/fundraisers/${f.slug}`}
       />
-      <PageHeading
+      <ResourceHero
+        image={f.photo}
         title={f.title}
         description={`${f.location.neighborhood} · ${f.verification.label}`}
       />
@@ -452,8 +555,12 @@ export async function FundraiserPage({ slug }: { slug: string }) {
         target={{ kind: 'fundraiser', id: f.id }}
         href={'/fundraisers/' + f.slug}
       />
-      {f.photo && <AnimalImage image={f.photo} className="detail-cover" />}
       <DetailBody>
+        <ContributorLine
+          api={api}
+          id={f.organizerId}
+          meta="Campaign organizer"
+        />
         <p className="prose-copy">{f.story}</p>
         <h2>Support, in full view</h2>
         <p className="funding-amount">
@@ -538,13 +645,13 @@ export async function FundraiserPage({ slug }: { slug: string }) {
             </p>
           ))
         ) : (
-          <p>No itemized estimate supplied.</p>
+          <Empty>The organizer has not added an itemized estimate yet.</Empty>
         )}
-        {f.timeline && (
-          <>
-            <h2>Expected timeline</h2>
-            <p>{f.timeline}</p>
-          </>
+        <h2>Expected timeline</h2>
+        {f.timeline ? (
+          <p>{f.timeline}</p>
+        ) : (
+          <Empty>The organizer has not shared a timeline yet.</Empty>
         )}
         <h2>Campaign updates</h2>
         {f.updates.length ? (
@@ -555,7 +662,9 @@ export async function FundraiserPage({ slug }: { slug: string }) {
             </article>
           ))
         ) : (
-          <p>No updates have been published.</p>
+          <Empty>
+            Campaign updates will appear here when the organizer shares them.
+          </Empty>
         )}
         <h2>Expense record</h2>
         {f.expenses.length ? (
@@ -573,18 +682,34 @@ export async function FundraiserPage({ slug }: { slug: string }) {
             </article>
           ))
         ) : (
-          <p>No spending has been recorded.</p>
+          <Empty>No expenses have been recorded for this campaign yet.</Empty>
         )}
         <h2>Supporters</h2>
         {supporters.items.map((s) => (
-          <article className="journal-row" key={s.id}>
-            <strong>
-              {s.displayName} · {php(s.amountMinor)}
-            </strong>
+          <ActivityCard
+            key={s.id}
+            title={`${php(s.amountMinor)} of support`}
+            identity={
+              s.userId ? (
+                <ContributorLine
+                  api={api}
+                  id={s.userId}
+                  meta="Campaign supporter"
+                  fallback={s.displayName}
+                />
+              ) : undefined
+            }
+          >
+            <strong>{!s.userId && s.displayName}</strong>
             <p>{s.message}</p>
-          </article>
+          </ActivityCard>
         ))}
-        {!supporters.count && <p>Be the first to try a demo contribution.</p>}
+        {!supporters.count && (
+          <Empty>
+            No supporters are shown yet. You can try a simulated contribution
+            above.
+          </Empty>
+        )}
       </DetailBody>
       <ResourceDiscussion
         target={{ kind: 'fundraiser', id: f.id }}
@@ -634,6 +759,13 @@ export async function MissionsPage({
           key={m.id}
           href={`/missions/${m.slug}`}
           title={m.title}
+          people={
+            <ContributorLine
+              api={api}
+              id={m.organizerId}
+              meta="Organizing this mission"
+            />
+          }
           meta={`${m.kind} · ${m.urgency} priority`}
           description={`${m.rewardKibble} Kibble after approval · deadline ${date(m.deadline)}`}
         />
@@ -647,6 +779,17 @@ export async function MissionPage({ slug }: { slug: string }) {
   const api = await getServerApi(),
     m = await publicRecord(() => api.missions.get(slug)),
     session = await api.auth.session()
+  const joinable =
+    m.state === 'open' &&
+    Date.parse(m.deadline) >
+      (session.demo ? demoClock : systemClock).now().getTime()
+  const existing = session.actor
+    ? await api.missions.participations({
+        scope: 'mine',
+        missionId: m.id,
+        limit: 1,
+      })
+    : null
   return (
     <>
       <PublicJsonLd
@@ -654,7 +797,8 @@ export async function MissionPage({ slug }: { slug: string }) {
         description={m.description}
         path={`/missions/${m.slug}`}
       />
-      <PageHeading
+      <ResourceHero
+        banner="explorer"
         title={m.title}
         description={`${m.location.neighborhood} · ${m.state} · ${m.kind}`}
       />
@@ -663,18 +807,36 @@ export async function MissionPage({ slug }: { slug: string }) {
         href={'/missions/' + m.slug}
       />
       <DetailBody>
+        <ContributorLine
+          api={api}
+          id={m.organizerId}
+          meta="Mission organizer"
+        />
         <p>{m.description}</p>
         <p>
           Deadline: {date(m.deadline)} · {m.rewardKibble} non-cash Kibble after
           independent approval
         </p>
         <h2>What to submit</h2>
+        {!m.evidenceRequirements.length && (
+          <Empty>
+            The organizer has not supplied evidence instructions yet.
+          </Empty>
+        )}
         <ul>
           {m.evidenceRequirements.map((r) => (
             <li key={r}>{r}</li>
           ))}
         </ul>
-        {session.actor ? (
+        {existing?.count ? (
+          <ButtonLink href="/dashboard/missions" variant="outline">
+            View your mission activity
+          </ButtonLink>
+        ) : !joinable ? (
+          <Empty href="/missions" label="Find another mission">
+            This mission is closed or its deadline has passed.
+          </Empty>
+        ) : session.actor ? (
           <ActionButton action="mission" id={m.id}>
             Join this mission
           </ActionButton>
@@ -729,6 +891,11 @@ export async function SheltersPage({
           />
         ))}
       </div>
+      {!rows.items.length && (
+        <Empty href="/missions" label="Find a way to help">
+          No public shelters match this search.
+        </Empty>
+      )}
       <NextPage cursor={rows.nextCursor} params={{ q }} />
     </>
   )
@@ -749,10 +916,18 @@ export async function ShelterPage({ slug }: { slug: string }) {
         description={s.description}
         path={`/shelters/${s.slug}`}
       />
-      <PageHeading
+      <ResourceHero
+        image={s.photo}
+        banner="home"
         title={s.name}
         description={`${s.location.neighborhood} · ${s.verification.label}`}
-      />
+      >
+        <ContributorFaces
+          api={api}
+          ids={s.staffIds}
+          href={`/shelters/${s.slug}`}
+        />
+      </ResourceHero>
       <DetailBody>
         <p>{s.description}</p>
         <h2>Contact and next steps</h2>
@@ -774,31 +949,71 @@ export async function ShelterPage({ slug }: { slug: string }) {
           ))}
         </div>
         {!animals.count && (
-          <p>No adoptable profiles are currently published.</p>
+          <Empty href="/adopt" label="Meet other animals">
+            No adoptable profiles are currently published by this shelter.
+          </Empty>
         )}
         <h2>Support their work</h2>
+        {!campaigns.items.some((f) => f.shelterId === s.id) && (
+          <Empty>
+            No public fundraising campaigns are linked to this shelter yet.
+          </Empty>
+        )}
         {campaigns.items
           .filter((f) => f.shelterId === s.id)
           .map((f) => (
-            <p key={f.id}>
-              <Link href={`/fundraisers/${f.slug}`}>{f.title}</Link>
-            </p>
+            <CatalogCard
+              key={f.id}
+              title={f.title}
+              href={`/fundraisers/${f.slug}`}
+              image={f.photo}
+              meta={`${f.state} · ${php(f.raisedMinor)} raised`}
+              people={
+                <ContributorLine
+                  api={api}
+                  id={f.organizerId}
+                  meta="Campaign organizer"
+                />
+              }
+            />
           ))}
         <h2>Volunteer</h2>
+        {!missions.items.some((m) => m.shelterId === s.id) && (
+          <Empty href="/missions" label="Find another mission">
+            No volunteer missions are linked to this shelter yet.
+          </Empty>
+        )}
         {missions.items
           .filter((m) => m.shelterId === s.id)
           .map((m) => (
-            <p key={m.id}>
-              <Link href={`/missions/${m.slug}`}>{m.title}</Link>
-            </p>
+            <CatalogCard
+              key={m.id}
+              title={m.title}
+              href={`/missions/${m.slug}`}
+              meta={`${m.state} · ${m.rewardKibble} Kibble after approval`}
+              people={
+                <ContributorLine
+                  api={api}
+                  id={m.organizerId}
+                  meta="Mission organizer"
+                />
+              }
+            />
           ))}
         <h2>Upcoming gatherings</h2>
+        {!events.items.length && (
+          <Empty href="/events" label="Find a gathering">
+            No community gatherings are listed for this shelter yet.
+          </Empty>
+        )}
         {events.items.map((e) => (
-          <p key={e.id}>
-            <Link href={`/events/${e.slug}`}>
-              {e.title} · {date(e.startsAt)}
-            </Link>
-          </p>
+          <CatalogCard
+            key={e.id}
+            title={e.title}
+            href={`/events/${e.slug}`}
+            meta={date(e.startsAt)}
+            description={`${e.attendanceCount} attending · ${e.capacity} places`}
+          />
         ))}
       </DetailBody>
       <ResourceDiscussion

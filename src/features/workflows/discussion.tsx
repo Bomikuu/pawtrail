@@ -15,6 +15,10 @@ export function ResourceDiscussion({
       <h2>Community conversation</h2>
       <ReportDialog target={target} returnTo={path} />
       <Discussion
+        composerFirst
+        allowPhotos={['animal', 'horde', 'fundraiser', 'mission'].includes(
+          target.kind,
+        )}
         target={target}
         returnTo={path}
         photoContext={[{ ref: target, title, href: path }]}

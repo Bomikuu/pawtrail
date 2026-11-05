@@ -125,7 +125,10 @@ export function PostComposer({
         createdAt: new Date().toISOString(),
         provenance: { kind: 'demo', label: 'Submitting demo post' },
         authorId: session.actor!.id,
+        participants: [],
+        participantCount: 0,
         author: {
+          badges: [],
           leaderboardRank: null,
           displayName: session.actor!.displayName,
           username: null,
