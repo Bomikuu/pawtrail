@@ -15,12 +15,16 @@ import {
   date,
   options,
   NextPage,
+  FilterForm,
 } from './catalog'
 import { privateApi, publicArea, queryValue, type SearchParams } from './server'
 import { WorkflowForm, type Field } from './form'
 import { ActionButton } from './action-button'
 import { applicationFields, campaignFields, animalFields } from './fields'
 import { ShelterEvidence } from '@/features/shelters/verification-evidence'
+import { DashboardAttention } from './dashboard-attention'
+import { StatusBadge } from '@/components/shared/status-badge'
+import { demoClock, systemClock } from '@/lib/api/clock'
 
 export async function DashboardPage() {
   const api = await privateApi('/dashboard'),
@@ -42,6 +46,11 @@ export async function DashboardPage() {
           '. Manage your animals, applications and community contributions.'
         }
         action={<ButtonLink href="/animals/report">Add an animal</ButtonLink>}
+      />
+      <DashboardAttention
+        api={api}
+        actor={session.actor!}
+        now={(session.demo ? demoClock : systemClock).now().toISOString()}
       />
       <ContributorLine
         api={api}
@@ -86,7 +95,7 @@ export async function DashboardPage() {
         recent.items.map((post) => (
           <ActivityCard
             key={post.id}
-            title={post.text.slice(0, 110) || 'Your photo story'}
+            title={`${post.type === 'photo' ? 'Photo' : 'Community'} story · ${new Intl.DateTimeFormat('en-PH', { month: 'short', day: 'numeric', timeZone: 'Asia/Manila' }).format(new Date(post.createdAt))}`}
             href={`/community/${post.id}`}
             identity={
               <ContributorLine
@@ -97,7 +106,10 @@ export async function DashboardPage() {
               />
             }
           >
-            <p>{post.text.slice(0, 200)}</p>
+            <p className="story-summary">{post.text}</p>
+            <Link className="story-link" href={`/community/${post.id}`}>
+              Read story
+            </Link>
           </ActivityCard>
         ))
       ) : (
@@ -474,9 +486,26 @@ export async function ApplicationsPage({
 }) {
   const params: Awaited<SearchParams> = await (searchParams ??
     Promise.resolve({}))
+  const status = [
+    'draft',
+    'submitted',
+    'needs_information',
+    'approved',
+    'rejected',
+    'withdrawn',
+  ].includes(queryValue(params.status) ?? '')
+    ? (queryValue(params.status) as
+        | 'draft'
+        | 'submitted'
+        | 'needs_information'
+        | 'approved'
+        | 'rejected'
+        | 'withdrawn')
+    : undefined
   const api = await privateApi('/adopt/applications'),
     rows = await api.adoption.applications({
       scope: shelter ? 'shelter' : 'mine',
+      status,
       cursor: queryValue(params.cursor),
       limit: 50,
     }),
@@ -494,6 +523,28 @@ export async function ApplicationsPage({
             : 'Saved interest, private drafts, and applications are separate steps. A shelter decision does not finalize an adoption.'
         }
         action={!shelter && <ButtonLink href="/adopt">Meet animals</ButtonLink>}
+      />
+      <FilterForm
+        search={false}
+        fields={[
+          {
+            name: 'status',
+            label: 'Application status',
+            type: 'select',
+            value: status ?? '',
+            options: options(
+              [
+                'submitted',
+                'needs_information',
+                'approved',
+                'rejected',
+                'withdrawn',
+                ...(!shelter ? ['draft'] : []),
+              ],
+              'All applications',
+            ),
+          },
+        ]}
       />
       {rows.items.map((a) => (
         <ActivityCard
@@ -515,8 +566,12 @@ export async function ApplicationsPage({
           </p>
         </ActivityCard>
       ))}
-      {!rows.count && <Empty>No applications in this workspace yet.</Empty>}
-      <NextPage cursor={rows.nextCursor} label="More applications" />
+      {!rows.count && <Empty>No applications match this status.</Empty>}
+      <NextPage
+        cursor={rows.nextCursor}
+        params={{ status }}
+        label="More applications"
+      />
     </>
   )
 }
@@ -973,16 +1028,31 @@ export async function MyMissionsPage({
     Promise.resolve({}))
   const reviewState =
     params.reviewState === 'approved' ? 'approved' : 'submitted'
-  const reviewHref = (state: 'submitted' | 'approved') => {
-    const query = new URLSearchParams({ reviewState: state })
+  const state =
+    params.state === 'submitted' ||
+    params.state === 'rejected' ||
+    params.state === 'approved' ||
+    params.state === 'all'
+      ? params.state
+      : 'accepted'
+  const participationNames = {
+    accepted: 'To do',
+    submitted: 'Awaiting review',
+    rejected: 'Needs changes',
+    approved: 'Completed',
+    all: 'All activity',
+  } as const
+  const reviewHref = (reviewStatus: 'submitted' | 'approved') => {
+    const query = new URLSearchParams({ reviewState: reviewStatus, state })
     const mineCursor = queryValue(params.mine)
     if (mineCursor) query.set('mine', mineCursor)
     return `?${query}#mission-review`
   }
   const api = await privateApi('/dashboard/missions'),
-    [mine, review, missions] = await Promise.all([
+    [mine, review, missions, session] = await Promise.all([
       api.missions.participations({
         scope: 'mine',
+        state: state === 'all' ? undefined : state,
         limit: 50,
         cursor: queryValue(params.mine),
       }),
@@ -993,6 +1063,7 @@ export async function MyMissionsPage({
         cursor: queryValue(params.review),
       }),
       api.missions.list({ limit: 50 }),
+      api.auth.session(),
     ])
   return (
     <>
@@ -1002,161 +1073,214 @@ export async function MyMissionsPage({
         action={<ButtonLink href="/missions">Find a mission</ButtonLink>}
       />
       <h2 id="my-mission-activity">Your missions</h2>
-      {mine.items.map((p) => (
-        <section className="workflow-panel" key={p.id}>
-          <ContributorLine
-            api={api}
-            id={p.volunteerId}
-            meta={`${p.state} · mission participation`}
-            fallback="Your mission participation"
-          />
-          <h3>
-            <Link href={`/missions/${p.missionId}`}>
-              {missions.items.find((m) => m.id === p.missionId)?.title ??
-                'Open mission details'}
-            </Link>
-          </h3>
-          <p>
-            {p.state} · {p.reviewReason ?? 'No review yet'}
-          </p>
-          {['accepted', 'rejected'].includes(p.state) && (
-            <WorkflowForm
-              operation="mission_evidence"
-              extra={{ id: p.id, version: p.version }}
-              fields={[
-                {
-                  name: 'text',
-                  label: 'Describe the completed contribution',
-                  type: 'textarea',
-                  value: p.evidence?.text ?? '',
-                  required: true,
-                },
-              ]}
-              uploads="evidence"
-              submitLabel="Submit private evidence"
+      <nav
+        className="workspace-tabs mission-state-tabs"
+        aria-label="Your mission status"
+      >
+        {Object.entries(participationNames).map(([key, label]) => (
+          <Link
+            key={key}
+            href={`?${new URLSearchParams({ state: key, reviewState })}#my-mission-activity`}
+            aria-current={state === key ? 'page' : undefined}
+          >
+            {label}
+          </Link>
+        ))}
+      </nav>
+      {mine.items.map((p) => {
+        const mission = missions.items.find((item) => item.id === p.missionId)
+        return (
+          <section className="workflow-panel" key={p.id}>
+            <ContributorLine
+              api={api}
+              id={p.volunteerId}
+              meta="Your mission participation"
+              fallback="Your mission participation"
             />
-          )}
-        </section>
-      ))}
+            <StatusBadge
+              tone={
+                p.state === 'approved'
+                  ? 'success'
+                  : p.state === 'rejected'
+                    ? 'warning'
+                    : 'neutral'
+              }
+            >
+              {participationNames[p.state]}
+            </StatusBadge>
+            <h3>
+              <Link href={`/missions/${mission?.slug ?? p.missionId}`}>
+                {mission?.title ?? 'Open mission details'}
+              </Link>
+            </h3>
+            <p className="mission-deadline">
+              {mission
+                ? `${Date.parse(mission.deadline) <= (session.demo ? demoClock : systemClock).now().getTime() ? 'Deadline passed' : 'Help by'} · ${date(mission.deadline)}`
+                : 'Open the mission for its latest deadline and instructions.'}
+            </p>
+            <p>
+              {p.reviewReason ??
+                (p.state === 'accepted'
+                  ? 'Complete the care task, then submit private evidence.'
+                  : 'Your evidence is waiting for an organizer’s review.')}
+            </p>
+            {['accepted', 'rejected'].includes(p.state) && (
+              <details className="mission-evidence-details">
+                <summary>
+                  {p.state === 'rejected'
+                    ? 'Update and resubmit evidence'
+                    : 'Submit evidence'}
+                </summary>
+                <WorkflowForm
+                  operation="mission_evidence"
+                  extra={{ id: p.id, version: p.version }}
+                  fields={[
+                    {
+                      name: 'text',
+                      label: 'Describe the completed contribution',
+                      type: 'textarea',
+                      value: p.evidence?.text ?? '',
+                      required: true,
+                    },
+                  ]}
+                  uploads="evidence"
+                  submitLabel="Submit private evidence"
+                />
+              </details>
+            )}
+          </section>
+        )
+      })}
       {!mine.count && (
         <Empty href="/missions" label="Find a mission">
-          Your next act of care starts with a mission.
+          No missions in “{participationNames[state]}”. Switch status to see
+          your other activity, or find a new way to help.
         </Empty>
       )}
       <NextPage
         cursor={mine.nextCursor}
         cursorKey="mine"
-        params={{ review: queryValue(params.review), reviewState }}
+        params={{ review: queryValue(params.review), reviewState, state }}
         anchor="my-mission-activity"
         label="More of your missions"
       />
-      <h2 id="mission-review">Evidence for your organization</h2>
-      <nav
-        className="workspace-tabs"
-        aria-label="Mission evidence review state"
-      >
-        <Link
-          href={reviewHref('submitted')}
-          aria-current={reviewState === 'submitted' ? 'page' : undefined}
-        >
-          Waiting for review
-        </Link>
-        <Link
-          href={reviewHref('approved')}
-          aria-current={reviewState === 'approved' ? 'page' : undefined}
-        >
-          Approved evidence
-        </Link>
-      </nav>
-      {review.items
-        .filter((p) => ['submitted', 'approved'].includes(p.state))
-        .map((p) => (
-          <section className="workflow-panel" key={p.id}>
-            <ContributorLine
-              api={api}
-              id={p.volunteerId}
-              meta="Private evidence for your organization"
-              fallback="Mission volunteer"
-            />
-            <h3>
-              <Link href={`/missions/${p.missionId}`}>
-                {missions.items.find((m) => m.id === p.missionId)?.title ??
-                  'Open mission details'}
-              </Link>
-            </h3>
-            <p>{p.evidence?.text || 'No evidence description was supplied.'}</p>
-            {p.evidence?.mediaIds.length ? (
-              <div className="activity-actions">
-                {p.evidence.mediaIds.map((id, index) => (
-                  <ButtonAnchor
-                    key={id}
-                    variant="outline"
-                    href={`/api/v1/media/${encodeURIComponent(id)}/content`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open private evidence {index + 1}
-                    <span className="sr-only"> (opens a new tab)</span>
-                  </ButtonAnchor>
-                ))}
-              </div>
-            ) : (
-              <p className="journal-meta">
-                No media attachments were supplied.
-              </p>
-            )}
-            <WorkflowForm
-              operation="mission_review"
-              extra={{ id: p.id, version: p.version }}
-              fields={[
-                {
-                  name: 'decision',
-                  label: 'Decision',
-                  type: 'select',
-                  value: p.state === 'approved' ? 'rejected' : 'approved',
-                  options:
-                    p.state === 'approved'
-                      ? [
-                          {
-                            value: 'rejected',
-                            label: 'Reverse approval and earned reward',
-                          },
-                        ]
-                      : [
-                          {
-                            value: 'approved',
-                            label: 'Approve evidence and award Kibble',
-                          },
-                          { value: 'rejected', label: 'Reject evidence' },
-                        ],
-                },
-                {
-                  name: 'reason',
-                  label: 'Review explanation',
-                  type: 'textarea',
-                  required: true,
-                },
-              ]}
-              submitLabel="Record evidence decision"
-            />
-          </section>
-        ))}
-      {!review.items.some((p) =>
-        ['submitted', 'approved'].includes(p.state),
+      {session.actor?.roles.some(
+        (role) => role === 'shelter_staff' || role === 'moderator',
       ) && (
-        <Empty>
-          {reviewState === 'approved'
-            ? 'No approved mission evidence is available in this queue yet.'
-            : 'No mission evidence is waiting for review. New submissions will appear here.'}
-        </Empty>
+        <>
+          <h2 id="mission-review">
+            Evidence for your organization ({review.count})
+          </h2>
+          <nav
+            className="workspace-tabs"
+            aria-label="Mission evidence review state"
+          >
+            <Link
+              href={reviewHref('submitted')}
+              aria-current={reviewState === 'submitted' ? 'page' : undefined}
+            >
+              Waiting for review
+            </Link>
+            <Link
+              href={reviewHref('approved')}
+              aria-current={reviewState === 'approved' ? 'page' : undefined}
+            >
+              Approved evidence
+            </Link>
+          </nav>
+          {review.items
+            .filter((p) => ['submitted', 'approved'].includes(p.state))
+            .map((p) => (
+              <section className="workflow-panel" key={p.id}>
+                <ContributorLine
+                  api={api}
+                  id={p.volunteerId}
+                  meta="Private evidence for your organization"
+                  fallback="Mission volunteer"
+                />
+                <h3>
+                  <Link href={`/missions/${p.missionId}`}>
+                    {missions.items.find((m) => m.id === p.missionId)?.title ??
+                      'Open mission details'}
+                  </Link>
+                </h3>
+                <p>
+                  {p.evidence?.text || 'No evidence description was supplied.'}
+                </p>
+                {p.evidence?.mediaIds.length ? (
+                  <div className="activity-actions">
+                    {p.evidence.mediaIds.map((id, index) => (
+                      <ButtonAnchor
+                        key={id}
+                        variant="outline"
+                        href={`/api/v1/media/${encodeURIComponent(id)}/content`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open private evidence {index + 1}
+                        <span className="sr-only"> (opens a new tab)</span>
+                      </ButtonAnchor>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="journal-meta">
+                    No media attachments were supplied.
+                  </p>
+                )}
+                <WorkflowForm
+                  operation="mission_review"
+                  extra={{ id: p.id, version: p.version }}
+                  fields={[
+                    {
+                      name: 'decision',
+                      label: 'Decision',
+                      type: 'select',
+                      value: p.state === 'approved' ? 'rejected' : 'approved',
+                      options:
+                        p.state === 'approved'
+                          ? [
+                              {
+                                value: 'rejected',
+                                label: 'Reverse approval and earned reward',
+                              },
+                            ]
+                          : [
+                              {
+                                value: 'approved',
+                                label: 'Approve evidence and award Kibble',
+                              },
+                              { value: 'rejected', label: 'Reject evidence' },
+                            ],
+                    },
+                    {
+                      name: 'reason',
+                      label: 'Review explanation',
+                      type: 'textarea',
+                      required: true,
+                    },
+                  ]}
+                  submitLabel="Record evidence decision"
+                />
+              </section>
+            ))}
+          {!review.items.some((p) =>
+            ['submitted', 'approved'].includes(p.state),
+          ) && (
+            <Empty>
+              {reviewState === 'approved'
+                ? 'No approved mission evidence is available in this queue yet.'
+                : 'No mission evidence is waiting for review. New submissions will appear here.'}
+            </Empty>
+          )}
+          <NextPage
+            cursor={review.nextCursor}
+            cursorKey="review"
+            params={{ mine: queryValue(params.mine), reviewState, state }}
+            anchor="mission-review"
+            label="More evidence records"
+          />
+        </>
       )}
-      <NextPage
-        cursor={review.nextCursor}
-        cursorKey="review"
-        params={{ mine: queryValue(params.mine), reviewState }}
-        anchor="mission-review"
-        label="More evidence records"
-      />
     </>
   )
 }

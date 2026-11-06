@@ -1,5 +1,7 @@
 # Discovery
 
+6 November live-review follow-up: responsive resource grids use distinct sample portraits and avoid repeated cover thumbnails. Open, urgent, expired and closed help have explicit availability. Neighborhood browsing uses real public records when Maps is unavailable; configuration instructions stay out of visitor copy. Hordes distinguish animal profiles from consenting community helpers. See `docs/implementation/live-review-follow-up.md` for source delivery limits.
+
 Mode: Operate. Approved build path: code. Inherits the community journal in DESIGN.md.
 
 Find animals and useful welfare activity nearby, then inspect the same animal identity in its public profile. D1–D5 own maps, filtering, search, and Hordes.

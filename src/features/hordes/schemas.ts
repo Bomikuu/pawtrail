@@ -13,11 +13,11 @@ export const hordeSummarySchema = baseSchema.extend({
   location: publicLocationSchema,
   photo: imageSchema.nullable(),
   animalIds: z.array(idSchema),
+  contributorIds: z.array(idSchema).default([]),
 })
 export const hordeProfileSchema = hordeSummarySchema.extend({
   sightingIds: z.array(idSchema),
   postIds: z.array(idSchema),
   fundraiserIds: z.array(idSchema),
   missionIds: z.array(idSchema),
-  contributorIds: z.array(idSchema),
 })

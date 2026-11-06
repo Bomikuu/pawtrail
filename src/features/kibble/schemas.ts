@@ -4,6 +4,7 @@ import {
   idSchema,
   provenanceSchema,
   baseSchema,
+  timestampSchema,
   imageSchema,
   listQuerySchema,
   pageSchema,
@@ -57,6 +58,23 @@ export const leaderboardEntrySchema = z.object({
 })
 
 export const leaderboardPageSchema = pageSchema(leaderboardEntrySchema).extend({
+  spotlights: z
+    .array(
+      z.object({
+        id: idSchema,
+        userId: idSchema,
+        displayName: z.string(),
+        username: z.string(),
+        avatar: imageSchema.nullable(),
+        label: z.string(),
+        description: z.string(),
+        missionTitle: z.string(),
+        href: z.string().regex(/^\/missions\/[A-Za-z0-9_%.-]+$/),
+        reviewedAt: timestampSchema,
+      }),
+    )
+    .max(3)
+    .default([]),
   podium: z.array(leaderboardEntrySchema).max(3),
   summary: z
     .object({

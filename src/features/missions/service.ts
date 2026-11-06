@@ -10,6 +10,8 @@ import {
   version,
   manage,
   page,
+  orderedPage,
+  filterScope,
   areaLocation,
   attachments,
 } from '@/lib/server/workflow-context'
@@ -18,6 +20,8 @@ import { publicSnapshot } from '@/features/moderation/service'
 import { kibbleEntrySchema } from '@/features/kibble/schemas'
 import { notify } from '@/features/notifications/service'
 import * as s from './schemas'
+import { demoClock } from '@/lib/api/clock'
+import { orderMissions } from './presentation'
 
 export function installMissions(
   api: PawTrailApi,
@@ -28,17 +32,21 @@ export function installMissions(
   api.missions.list = (input) => {
     const q = s.missionFiltersSchema.parse(input)
     return read((d) =>
-      page(
-        publicSnapshot(d)
-          .missions.filter(
-            (m) =>
-              (!q.kind || m.kind === q.kind) &&
-              (!q.urgency || m.urgency === q.urgency) &&
-              (!q.areaId || m.location.areaId === q.areaId),
-          )
-          .map((m) => s.missionSummarySchema.parse(m)),
+      orderedPage(
+        orderMissions(
+          publicSnapshot(d)
+            .missions.filter(
+              (m) =>
+                (!q.kind || m.kind === q.kind) &&
+                (!q.urgency || m.urgency === q.urgency) &&
+                (!q.areaId || m.location.areaId === q.areaId),
+            )
+            .map((m) => s.missionSummarySchema.parse(m)),
+          q,
+          demoClock.now().getTime(),
+        ),
         q,
-        `missions:${q.kind ?? ''}:${q.urgency ?? ''}:${q.areaId ?? ''}`,
+        `missions:${filterScope(q)}:${demoClock.now().toISOString().slice(0, 10)}`,
       ),
     )
   }

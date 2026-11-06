@@ -71,4 +71,5 @@ export const eventFiltersSchema = listQuerySchema.extend({
   state: eventSummarySchema.shape.state.optional(),
   from: timestampSchema.optional(),
   to: timestampSchema.optional(),
+  sort: z.enum(['recent', 'soonest']).optional(),
 })

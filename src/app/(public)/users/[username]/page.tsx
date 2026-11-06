@@ -50,7 +50,7 @@ export default async function UserPage({
   searchParams,
 }: {
   params: Promise<{ username: string }>
-  searchParams: Promise<{ tab?: string }>
+  searchParams: Promise<{ tab?: string; badge?: string }>
 }) {
   const [user, session, query] = await Promise.all([
     profile((await params).username),
@@ -75,6 +75,9 @@ export default async function UserPage({
         profile={user}
         tab={tab}
         isOwn={session.actor?.id === user.id}
+        selectedBadge={
+          typeof query.badge === 'string' ? query.badge : undefined
+        }
       />
     </>
   )

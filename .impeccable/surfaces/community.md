@@ -1,5 +1,7 @@
 # Community
 
+6 November live-review follow-up: start with a compact composer, expand long story text and extra tags in place, keep badges secondary and constrain photo height. Badge links open the author’s selected public showcase item and earning rule. Distinct locally served animal portraits persist across connected stories. See `docs/implementation/live-review-follow-up.md`; the updated rendering remains unverified.
+
 Mode: Operate. Build path: code. User-directed replacement of the journal composition with familiar X/Facebook social mechanics; see DESIGN.md.
 
 FIRST VIEWPORT: Full-width platform shell, compact left navigation, flexible photo-led feed and optional adoption/help rail. Community heading, four compact feed filters and a small composer leave room for actual posts. No marketing hero or management links mixed into the feed navigation.

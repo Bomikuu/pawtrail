@@ -69,13 +69,9 @@ export function samplePast(daysAgo: number, hour = 0) {
     Date.parse(DEMO_NOW) - daysAgo * 86400000 + hour * 3600000,
   ).toISOString()
 }
-/** Reused licensed stock illustrates fictional dogs/cats, never distinct real animals. */
+/** Each fictional animal keeps the same distinct licensed portrait across connected activity. */
 export function sampleAnimalPhoto(index: number) {
-  const photo = samplePhotos[index % 2]!
-  return {
-    ...photo,
-    alt: `${index % 2 ? 'Cat resting on a sunlit window ledge' : 'Brown and white dog on a beach'} — reused stock illustration for fictional ${animalNames[index % animalNames.length]}`,
-  }
+  return { ...samplePhotos[index % samplePhotos.length]! }
 }
 export const hordeNames = [
   'Riverside Paws',

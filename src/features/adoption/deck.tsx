@@ -107,7 +107,7 @@ export function AdoptionDeck({
           >
             <div
               className="adoption-photo"
-              style={{ touchAction: 'none' }}
+              style={{ touchAction: 'pan-y' }}
               onPointerDown={(e) => {
                 start.current = { x: e.clientX, y: e.clientY }
                 e.currentTarget.setPointerCapture(e.pointerId)

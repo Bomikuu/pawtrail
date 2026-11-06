@@ -36,14 +36,7 @@ export const animals = animalNames.map((name, index) =>
     hordeId: `horde-${(index % 5) + 1}`,
     verification,
     description: `Meet ${name}, a fictional ${index % 2 ? 'cat' : 'dog'} cared for by the ${sampleLocation(index).neighborhood} sample community. ${index < 15 ? 'Their care circle is looking for a patient home and regular neighborhood support.' : index >= 18 ? 'This sample profile illustrates an animal settling into an adoptive home.' : 'Neighbors share sightings and helpful updates here.'} Stock imagery is illustrative.`,
-    appearance:
-      index === 0
-        ? 'Brown and white coat; stock photograph is illustrative'
-        : index === 1
-          ? 'Cat at a window; stock photograph is illustrative'
-          : index % 2
-            ? 'Short fur with tabby markings'
-            : 'Short brown and white fur',
+    appearance: sampleAnimalPhoto(index).alt,
     observedCondition:
       'Sample observation: alert during a community visit. No medical diagnosis.',
     personality:
@@ -56,7 +49,7 @@ export const animals = animalNames.map((name, index) =>
       index % 2
         ? ['prefers calm introductions', 'enjoys a sunny resting spot']
         : ['enjoys gentle walks', 'responds to patient handling'],
-    characteristics: index === 0 ? ['medium-length coat'] : ['short coat'],
+    characteristics: index === 0 ? ['medium-length coat'] : [],
     badges: ['Sample animal'],
     gallery: [],
     needs: {

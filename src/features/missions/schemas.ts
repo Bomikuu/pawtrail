@@ -45,6 +45,8 @@ export const missionFiltersSchema = listQuerySchema.extend({
   kind: missionSummarySchema.shape.kind.optional(),
   urgency: urgencySchema.optional(),
   areaId: idSchema.optional(),
+  status: z.enum(['all', 'open', 'urgent', 'expired', 'closed']).optional(),
+  sort: z.enum(['recent', 'priority', 'deadline']).optional(),
 })
 export const missionEvidenceInputSchema = z.object({
   text: z.string().min(1),

@@ -62,10 +62,11 @@ export function ProfileStories({
                   </time>
                 </div>
                 <h3>
-                  <Link href={'/community/' + encodeURIComponent(post.id)}>
-                    {post.text.length > 140
-                      ? post.text.slice(0, 140) + '…'
-                      : post.text}
+                  <Link
+                    className="story-summary"
+                    href={'/community/' + encodeURIComponent(post.id)}
+                  >
+                    {post.text}
                   </Link>
                 </h3>
                 <div className="profile-story-footer">

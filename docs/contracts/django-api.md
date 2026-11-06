@@ -1,5 +1,17 @@
 # Proposed Django API contract
 
+## Live-review follow-up — 6 November 2026
+
+Mission listing adds optional `status=all|open|urgent|expired|closed` and `sort=recent|priority|deadline`. Apply search, geography, kind and availability before sorting and pagination. Open means state=open with a future deadline; urgent also requires high/critical priority. Closed is not a verified completion. The discovery page requests open/priority; omitted filters retain a general list. Bind all filters and the effective day to the cursor scope. Local demo reads and writes share the fixed demo clock.
+
+Event listing adds optional `sort=recent|soonest`. Soonest orders by start time, stable ID last, before pagination. Dashboard requests current-user scheduled events starting after now, soonest first, limit three. Existing public-list behavior remains when omitted.
+
+Horde summaries add `contributor_ids`, containing only discoverable members consenting to public contribution identity; omission defaults to an empty array. Identity lookup independently enforces the same boundary.
+
+Leaderboard response adds default-empty `spotlights` (maximum three), each with `id`, `user_id`, `display_name`, `username`, nullable `avatar`, `label`, `description`, `mission_title`, `href` and `reviewed_at`. These are public independent approvals from the last 30 days, independent of ranking filters. First-help labels require the member’s first eligible approval; consistent-care labels require approvals on at least three Manila dates. Never include private evidence. Rank, Kibble, crowns and opted-in badge rules do not change. The mock/BFF implements these additions; live Django conformance remains external.
+
+## Established service contracts
+
 Achievements add authenticated `GET /me/achievements`, `POST /me/achievements/claim`, `PATCH /me/achievements/showcase`, `POST /me/achievements/activity`, `GET/POST /me/achievement-proofs`, and moderator-only `GET /moderation/achievement-proofs` plus `POST /moderation/achievement-proofs/:id/review`. Shapes are in `features/achievements/schemas.ts`. Rewards are server-derived and atomically idempotent; review is independent/versioned. Immutable Kibble entries additionally support `achievement_awarded` and `achievement_reversed`. Public profiles optionally expose consented aggregate `mastery`; existing `badges` contain only selected active awards. No proof documents, private application data or activity references belong in public responses. Matching Django implementation/conformance remains external.
 
 Profile avatars: the existing `avatar_id` accepts the reserved curated IDs `pawtrail-avatar-01` through `pawtrail-avatar-30`. The backend resolves them from the fixed PawTrail catalog into public image DTOs; it must not accept caller-supplied URLs as curated assets. Other media IDs retain owner/publication checks. Profile responses return the selected image; session actors and visible post/comment author projections may include the same optional `avatar` image. Hidden contribution identities return no identifying image. Live backend conformance remains unverified.

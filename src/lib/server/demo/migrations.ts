@@ -1,4 +1,5 @@
 import 'server-only'
+import { refreshSamplePhotos } from '@/data/fixtures/photo-refresh'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
 import { moderationStoreSchema } from '@/features/moderation/schemas'
@@ -147,6 +148,7 @@ export function snapshot(
     if (baseline === seed) mergeExpandedSamples(draft, seed)
     applySamplePack(draft)
   }
+  if (baseline === seed) refreshSamplePhotos(draft, seed)
   return draft
 }
 export function overlayFrom(draft: DemoDraft): Partial<FixtureSeed> {

@@ -33,6 +33,7 @@ export type Destination = {
 }
 /** Register an exact pathname or explicit dynamic page pattern only after its route ships. Never enable a whole prefix. */
 export const READY_ROUTES: ReadonlySet<string> = new Set([
+  '/photo-credits',
   '/',
   '/login',
   '/register',

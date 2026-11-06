@@ -41,6 +41,9 @@ import { ActivityCard } from '@/components/shared/social-card'
 import { ContributorLine, ContributorFaces } from './contributors'
 import { PostDetail } from '@/features/community/post-card'
 import { AdoptionDeck } from '@/features/adoption/deck'
+import { StatusBadge } from '@/components/shared/status-badge'
+import { Progress } from '@/components/ui/progress'
+import { missionStatus } from '@/features/missions/presentation'
 
 export async function ExplorePage({
   searchParams,
@@ -116,7 +119,8 @@ export async function ExplorePage({
       />
       <DiscoveryMap features={map.features} center={{ latitude, longitude }} />
       <p>
-        {animals.count} animals · {area.neighborhood} · approximate locations
+        {animals.count} animals around {area.neighborhood} · approximate
+        locations
       </p>
       <div className="journal-grid">
         {animals.items.map((a) => (
@@ -180,7 +184,7 @@ export async function HordesPage({
                 href={`/hordes/${h.slug}`}
               />
             }
-            meta={`${h.animalIds.length} known members · ${h.location.neighborhood}`}
+            meta={`${h.animalIds.length} animals · ${h.location.neighborhood}`}
             image={h.photo}
           />
         ))}
@@ -238,8 +242,8 @@ export async function HordePage({
       <DetailBody>
         <p>{h.description}</p>
         <p>
-          {animals.count} confirmed profile members. A total population estimate
-          has not been supplied.
+          {animals.count} animal profiles in this group. A total population
+          estimate has not been supplied.
         </p>
         <p>
           <ButtonLink
@@ -249,7 +253,7 @@ export async function HordePage({
             Start a fundraiser for this group
           </ButtonLink>
         </p>
-        <h2>Meet the group</h2>
+        <h2>Animals in this group</h2>
         <div className="journal-grid">
           {animals.items.map((a) => (
             <CatalogCard
@@ -527,7 +531,7 @@ export async function FundraisersPage({
             meta={`${f.category} · ${f.urgency} priority`}
             description={`${php(f.raisedMinor)} of ${php(f.goalMinor)} · ${f.state}`}
           >
-            <progress
+            <Progress
               max={f.goalMinor}
               value={Math.min(f.raisedMinor, f.goalMinor)}
               aria-label={`${f.title} funding progress`}
@@ -588,7 +592,7 @@ export async function FundraiserPage({
         <p className="funding-amount">
           {php(f.raisedMinor)} <span>of {php(f.goalMinor)}</span>
         </p>
-        <progress
+        <Progress
           max={f.goalMinor}
           value={Math.min(f.goalMinor, f.raisedMinor)}
           aria-label="Funding progress"
@@ -789,24 +793,60 @@ export async function MissionsPage({
   const p = await searchParams,
     q = queryValue(p.q),
     kind = queryValue(p.kind),
-    api = await getServerApi(),
-    rows = await api.missions.list({
+    api = await getServerApi()
+  const status = ['all', 'open', 'urgent', 'expired', 'closed'].includes(
+    queryValue(p.status) ?? '',
+  )
+    ? (queryValue(p.status) as 'all' | 'open' | 'urgent' | 'expired' | 'closed')
+    : 'open'
+  const sort =
+    p.sort === 'recent' || p.sort === 'deadline' ? p.sort : 'priority'
+  const [rows, session] = await Promise.all([
+    api.missions.list({
       q,
       cursor: queryValue(p.cursor),
       kind: kind as 'mission' | 'quest' | undefined,
-    })
+      status,
+      sort,
+    }),
+    api.auth.session(),
+  ])
+  const now = (session.demo ? demoClock : systemClock).now().getTime()
   return (
     <>
       <PageHeading
         title="A little help goes a long way"
         description="Find practical ways to care for the animals around you. Earn non-cash Kibble after your evidence is reviewed."
         action={
-          <ButtonLink href="/missions/create">Create a help request</ButtonLink>
+          session.roles.some(
+            (role) => role === 'shelter_staff' || role === 'moderator',
+          ) ? (
+            <ButtonLink href="/missions/create">
+              Create a help request
+            </ButtonLink>
+          ) : session.actor ? (
+            <ButtonLink href="/dashboard/missions" variant="outline">
+              Your mission activity
+            </ButtonLink>
+          ) : undefined
         }
       />
       <FilterForm
         q={q}
         fields={[
+          {
+            name: 'status',
+            label: 'Availability',
+            type: 'select',
+            value: status,
+            options: [
+              { value: 'open', label: 'Open requests' },
+              { value: 'urgent', label: 'Urgent requests' },
+              { value: 'expired', label: 'Expired' },
+              { value: 'closed', label: 'Closed' },
+              { value: 'all', label: 'All requests' },
+            ],
+          },
           {
             name: 'kind',
             label: 'Type',
@@ -814,26 +854,60 @@ export async function MissionsPage({
             options: options(['mission', 'quest']),
             value: kind ?? '',
           },
+          {
+            name: 'sort',
+            label: 'Order',
+            type: 'select',
+            value: sort,
+            options: [
+              { value: 'priority', label: 'Care priority' },
+              { value: 'deadline', label: 'Deadline' },
+              { value: 'recent', label: 'Newest' },
+            ],
+          },
         ]}
       />
-      {rows.items.map((m) => (
-        <CatalogCard
-          key={m.id}
-          href={`/missions/${m.slug}`}
-          title={m.title}
-          people={
-            <ContributorLine
-              api={api}
-              id={m.organizerId}
-              meta="Organizing this mission"
-            />
-          }
-          meta={`${m.kind} · ${m.urgency} priority`}
-          description={`${m.rewardKibble} Kibble after approval · deadline ${date(m.deadline)}`}
-        />
-      ))}
+      <p className="catalog-count">
+        {rows.count} help requests ·{' '}
+        {status === 'open'
+          ? 'Open and accepting help'
+          : 'Filtered by availability'}
+      </p>
+      <div className="journal-grid mission-grid">
+        {rows.items.map((m) => (
+          <CatalogCard
+            key={m.id}
+            href={`/missions/${m.slug}`}
+            title={m.title}
+            people={
+              <ContributorLine
+                api={api}
+                id={m.organizerId}
+                meta="Organizing this mission"
+              />
+            }
+            meta={`${m.kind === 'quest' ? 'Community quest' : 'Help mission'} · ${m.location.neighborhood}`}
+            status={
+              <StatusBadge tone={missionStatus(m, now).tone}>
+                {missionStatus(m, now).label}
+              </StatusBadge>
+            }
+            description={`${m.rewardKibble} Kibble after approval`}
+            actionLabel={
+              missionStatus(m, now).actionable
+                ? 'See how to help'
+                : 'View mission history'
+            }
+          >
+            <p className="mission-deadline">
+              {Date.parse(m.deadline) <= now ? 'Deadline passed' : 'Help by'} ·{' '}
+              {date(m.deadline)}
+            </p>
+          </CatalogCard>
+        ))}
+      </div>
       {!rows.count && <Empty>No help requests match this search.</Empty>}
-      <NextPage cursor={rows.nextCursor} params={{ q, kind }} />
+      <NextPage cursor={rows.nextCursor} params={{ q, kind, status, sort }} />
     </>
   )
 }
@@ -869,6 +943,21 @@ export async function MissionPage({ slug }: { slug: string }) {
         href={'/missions/' + m.slug}
       />
       <DetailBody>
+        <StatusBadge
+          tone={
+            missionStatus(
+              m,
+              (session.demo ? demoClock : systemClock).now().getTime(),
+            ).tone
+          }
+        >
+          {
+            missionStatus(
+              m,
+              (session.demo ? demoClock : systemClock).now().getTime(),
+            ).label
+          }
+        </StatusBadge>
         <ContributorLine
           api={api}
           id={m.organizerId}

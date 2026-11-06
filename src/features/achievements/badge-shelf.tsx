@@ -39,8 +39,10 @@ export function MasteryPanel({ summary }: { summary: AchievementSummary }) {
 }
 export function BadgeShelf({
   badges,
+  selectedBadge,
 }: {
   badges: { id: string; label: string }[]
+  selectedBadge?: string
 }) {
   return (
     <ul
@@ -50,7 +52,13 @@ export function BadgeShelf({
       {badges.map((badge) => {
         const definition = findBadge(badge.id)
         return (
-          <li key={badge.id}>
+          <li
+            key={badge.id}
+            id={`badge-${badge.id}`}
+            className={
+              selectedBadge === badge.id ? 'badge-selected' : undefined
+            }
+          >
             {definition && (
               <img
                 src={definition.image}
@@ -63,10 +71,14 @@ export function BadgeShelf({
             <strong>{badge.label}</strong>
             {definition && (
               <>
-                <span>{definition.rewardKibble} Kibble milestone</span>
-                <details>
+                <span>{definition.rewardKibble} Kibble · one-time reward</span>
+                <details open={selectedBadge === badge.id || undefined}>
                   <summary>How to earn</summary>
                   <p>{definition.rule}</p>
+                  <p>
+                    Shared by this member as an unlocked achievement. Kibble is
+                    a non-cash reward.
+                  </p>
                 </details>
               </>
             )}

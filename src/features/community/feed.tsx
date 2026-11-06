@@ -89,7 +89,7 @@ export function Feed({
             Saved
           </Button>
         </nav>
-        <PostComposer options={options} />
+        <PostComposer options={options} compact />
         <p className="feed-explanation" aria-live="polite">
           {saved
             ? 'Your saved stories, newest first.'

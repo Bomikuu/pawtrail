@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, PawPrint } from 'lucide-react'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -36,6 +36,8 @@ export function CatalogCard({
   image,
   children,
   people,
+  status,
+  actionLabel = 'View details',
 }: {
   href: string
   title: string
@@ -44,15 +46,23 @@ export function CatalogCard({
   image?: { url: string; alt: string; sensitive?: boolean } | null
   children?: ReactNode
   people?: ReactNode
+  status?: ReactNode
+  actionLabel?: string
 }) {
   return (
-    <article className="journal-card">
+    <article
+      className={`journal-card${image === undefined ? ' journal-card-compact' : ''}`}
+    >
       {image !== undefined && (
         <AnimalImage image={image} className="journal-photo" />
       )}
       <div className="journal-card-body">
         <header className="resource-card-heading">
-          <AnimalImage image={image} compact className="resource-avatar" />
+          {image === undefined && (
+            <span className="resource-mark">
+              <PawPrint size={20} aria-hidden="true" />
+            </span>
+          )}
           <div>
             <h2>
               <Link href={href}>{title}</Link>
@@ -60,11 +70,12 @@ export function CatalogCard({
             {meta && <p className="journal-meta">{meta}</p>}
           </div>
         </header>
+        {status && <div className="resource-status">{status}</div>}
         {description && <p>{description}</p>}
         {children}
         {people}
         <Link className="story-link" href={href}>
-          View details <ArrowRight aria-hidden="true" size={16} />
+          {actionLabel} <ArrowRight aria-hidden="true" size={16} />
         </Link>
       </div>
     </article>
@@ -126,19 +137,29 @@ export function ResourceHero({
     </header>
   )
 }
-export function FilterForm({ fields, q }: { fields?: Field[]; q?: string }) {
+export function FilterForm({
+  fields,
+  q,
+  search = true,
+}: {
+  fields?: Field[]
+  q?: string
+  search?: boolean
+}) {
   return (
     <form className="catalog-filters" method="get">
-      <label>
-        Search
-        <Input
-          name="q"
-          defaultValue={q}
-          type="search"
-          placeholder="Name, story or neighborhood"
-          maxLength={200}
-        />
-      </label>
+      {search && (
+        <label>
+          Search
+          <Input
+            name="q"
+            defaultValue={q}
+            type="search"
+            placeholder="Name, story or neighborhood"
+            maxLength={200}
+          />
+        </label>
+      )}
       {fields?.map((f) => (
         <label key={f.name}>
           {f.label}

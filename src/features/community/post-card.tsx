@@ -2,7 +2,7 @@
 import { EarnedBadges, ParticipantFaces } from '@/components/shared/social-card'
 import { RankCrown } from '@/features/kibble/rank-crown'
 import { FollowButton } from '@/features/users/follow-button'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { AnimalImage } from '@/components/shared/animal-image'
@@ -62,6 +62,9 @@ export function PostCard({
 }) {
   const [editing, setEditing] = useState(false)
   const [deleted, setDeleted] = useState(false)
+  const [textExpanded, setTextExpanded] = useState(false)
+  const [tagsExpanded, setTagsExpanded] = useState(false)
+  const textId = useId()
   const router = useRouter()
   if (deleted) return <p role="status">Story deleted.</p>
   if (editing)
@@ -105,30 +108,35 @@ export function PostCard({
             {post.author.username && (
               <RankCrown rank={post.author.leaderboardRank} />
             )}
-            {post.author.username && (
-              <EarnedBadges badges={post.author.badges} />
-            )}
           </strong>
-          <p>
-            {post.author.username && (
-              <span className="post-handle">
-                @{post.author.username} <span aria-hidden="true">· </span>
-              </span>
-            )}
-            <time dateTime={post.createdAt}>
-              {post.id.startsWith('pending:') ? (
-                createdLabel
-              ) : (
-                <Link
-                  className="post-time-link"
-                  href={'/community/' + encodeURIComponent(post.id)}
-                >
-                  {createdLabel}
-                </Link>
+          <div className="post-author-meta">
+            <p>
+              {post.author.username && (
+                <span className="post-handle">
+                  @{post.author.username} <span aria-hidden="true">· </span>
+                </span>
               )}
-            </time>{' '}
-            · {postTypes[post.type]}
-          </p>
+              <time dateTime={post.createdAt}>
+                {post.id.startsWith('pending:') ? (
+                  createdLabel
+                ) : (
+                  <Link
+                    className="post-time-link"
+                    href={'/community/' + encodeURIComponent(post.id)}
+                  >
+                    {createdLabel}
+                  </Link>
+                )}
+              </time>{' '}
+              · {postTypes[post.type]}
+            </p>
+            {post.author.username && (
+              <EarnedBadges
+                badges={post.author.badges}
+                username={post.author.username}
+              />
+            )}
+          </div>
         </div>
         {post.authorId && (
           <FollowButton
@@ -149,10 +157,29 @@ export function PostCard({
           Visible only to the author and reviewers.
         </p>
       )}
-      <p className="post-text">{post.text}</p>
+      <p
+        id={textId}
+        className={`post-text${!detail && !textExpanded && post.text.length > 160 ? ' post-text-preview' : ''}`}
+      >
+        {post.text}
+      </p>
+      {!detail && post.text.length > 160 && (
+        <Button
+          className="post-text-toggle"
+          variant="ghost"
+          aria-expanded={textExpanded}
+          aria-controls={textId}
+          onClick={() => setTextExpanded(!textExpanded)}
+        >
+          {textExpanded ? 'Show less' : 'Read more'}
+        </Button>
+      )}
       {!!post.linkedEntities.length && (
         <ul className="post-identities" aria-label="Connected stories">
-          {post.linkedEntities.map((entity) => (
+          {(detail || tagsExpanded
+            ? post.linkedEntities
+            : post.linkedEntities.slice(0, 2)
+          ).map((entity) => (
             <li key={`${entity.ref.kind}:${entity.ref.id}`}>
               {isRouteReady(entity.href, READY_ROUTES) ? (
                 <Link href={entity.href}>
@@ -167,6 +194,20 @@ export function PostCard({
               )}
             </li>
           ))}
+          {!detail && post.linkedEntities.length > 2 && (
+            <li>
+              <Button
+                variant="ghost"
+                className="post-tags-toggle"
+                aria-expanded={tagsExpanded}
+                onClick={() => setTagsExpanded(!tagsExpanded)}
+              >
+                {tagsExpanded
+                  ? 'Fewer tags'
+                  : `+${post.linkedEntities.length - 2} more`}
+              </Button>
+            </li>
+          )}
         </ul>
       )}
       {!!post.media.length && (

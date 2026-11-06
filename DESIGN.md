@@ -201,6 +201,10 @@ Radix owns menu arrow keys, focus trapping, Escape, and trigger focus restoratio
 
 AppShell accepts optional supplied `unreadCount` and `kibbleBalance` as nonnegative safe integers. It displays unavailable until owning features supply genuine session-scoped data, and hides private values from guests. Kibble is explicitly non-cash. Zustand holds only ephemeral drawer visibility; fetched records and private answers stay out. DemoBanner labels sample profiles, activity, verification, and simulated contributions whenever session.demo is true.
 
+## Live-review refinements
+
+The owner approved a live-review follow-up on 6 November 2026: compact expandable feed composition, smaller badge/media presentation, responsive discovery grids, side-by-side desktop adoption, action-first dashboard queues and canonical progress styling. Badge links select the author’s public earned badge rather than the viewer’s collection. The leaderboard also recognizes recent approved care and first contributions beyond rank. Animal groups distinguish animals from consenting human helpers. Twenty small licensed portraits provide consistent sample animal identity across connected activity; `/photo-credits` records attribution. Without Maps credentials, a real neighborhood guide replaces technical setup copy. These refinements preserve the selected visual world. See `docs/implementation/live-review-follow-up.md` for source coverage and the unverified rendered result.
+
 ## Do's and Don'ts
 
 - Do keep pet identity, readable names, status words, and the next useful action together.

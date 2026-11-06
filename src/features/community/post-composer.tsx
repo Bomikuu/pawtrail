@@ -34,12 +34,14 @@ export function PostComposer({
   initialRefs = [],
   initialType = 'story',
   prompt = 'What’s your pet up to?',
+  compact = false,
 }: {
   options: LinkedOption[]
   post?: Post
   initialRefs?: PostInput['refs']
   initialType?: PostInput['type']
   prompt?: string
+  compact?: boolean
   onComplete?(post: Post): void
   onCancel?(): void
 }) {
@@ -58,6 +60,9 @@ export function PostComposer({
     ...(post?.ownerMedia ?? []),
   ])
   const [expanded, setExpanded] = useState(!!post || initialType === 'photo')
+  const [writing, setWriting] = useState(
+    !compact || !!post || initialType === 'photo',
+  )
   const [uploadsReady, setUploadsReady] = useState(true)
   const [completed, setCompleted] = useState<Post>()
   const [pending, setPending] = useState(false)
@@ -65,9 +70,43 @@ export function PostComposer({
   const busy = useRef(false)
   const retry = useRef({ input: '', key: '' })
   const client = useQueryClient()
+  if (session.actor && compact && !writing && !completed)
+    return (
+      <section
+        className="post-composer composer-collapsed"
+        aria-label="Share an update"
+      >
+        <div className="composer-entry">
+          <CommunityAvatar
+            name={session.actor.displayName}
+            image={session.actor.avatar}
+            userId={session.actor.id}
+          />
+          <Button
+            className="composer-prompt"
+            variant="ghost"
+            onClick={() => setWriting(true)}
+          >
+            {prompt}
+          </Button>
+          <Button
+            variant="ghost"
+            aria-label="Add photos to your update"
+            onClick={() => {
+              setWriting(true)
+              setExpanded(true)
+            }}
+          >
+            <ImagePlus size={21} aria-hidden="true" />
+          </Button>
+        </div>
+      </section>
+    )
   if (!session.actor)
     return (
-      <section className="post-composer">
+      <section
+        className={`post-composer${compact ? ' composer-collapsed' : ''}`}
+      >
         <div className="composer-entry">
           <CommunityAvatar name="Your story" />
           <ButtonLink
@@ -75,18 +114,20 @@ export function PostComposer({
             variant="ghost"
             href={loginPath('/community/create')}
           >
-            {prompt}
+            {compact ? 'Sign in to share an update' : prompt}
           </ButtonLink>
         </div>
-        <div className="composer-toolbar">
-          <span>
-            <ImagePlus size={18} aria-hidden="true" />
-            Photos & updates
-          </span>
-          <ButtonLink href={loginPath('/community/create')}>
-            Sign in to post
-          </ButtonLink>
-        </div>
+        {!compact && (
+          <div className="composer-toolbar">
+            <span>
+              <ImagePlus size={18} aria-hidden="true" />
+              Photos & updates
+            </span>
+            <ButtonLink href={loginPath('/community/create')}>
+              Sign in to post
+            </ButtonLink>
+          </div>
+        )}
       </section>
     )
   async function submit(event: React.FormEvent) {
@@ -196,6 +237,7 @@ export function PostComposer({
           </label>
           <Textarea
             id={id}
+            autoFocus={compact}
             value={text}
             maxLength={2000}
             rows={2}
@@ -237,6 +279,16 @@ export function PostComposer({
             disabled={pending}
           >
             Cancel editing
+          </Button>
+        )}
+        {compact && !post && !text && !assets.length && !retained.length && (
+          <Button
+            type="button"
+            variant="ghost"
+            disabled={pending}
+            onClick={() => setWriting(false)}
+          >
+            Close composer
           </Button>
         )}
       </div>

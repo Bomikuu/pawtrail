@@ -59,3 +59,7 @@ The owner supplied `codex-clipboard-500fdf6d-3932-4063-8511-6de46be0e4ef.png` (2
 ## Owner-supplied profile cover collection
 
 The owner supplied an eight-banner sheet (`codex-clipboard-6f3c040d-37e8-487c-a0d6-fb187088e66b.png`) to replace the generated covers and match the existing PawTrail avatars, badges and brand illustrations. Only small WebP crops of the supplied artwork are served. See [profile banner assets and provenance](profile-banners.md) for crop coordinates, stable IDs, saved paths and delivery sizes. The original image is not shipped; no external ownership or exclusive-license claim is made.
+
+## Distinct sample animal portraits — 6 November 2026
+
+The application now serves 20 individual 768 × 576 WebP portraits from `public/images/pets/portraits/` (approximately 1 MB combined). Milo and Luna use the two Unsplash sources credited above; eighteen additional photographs come from Wikimedia Commons under the individual licenses in `src/data/pet-photo-credits.json`. Each derivative has an adjacent provenance JSON file. Sources, creators, license links and crop/resize details are available at `/photo-credits`. ShareAlike image derivatives retain the source image license; this does not relicense application code. The photographs illustrate fictional profiles and assert no real animal identity, care history or Davao location. Original JPEGs remain for historical media compatibility.

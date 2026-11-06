@@ -1,5 +1,7 @@
 # Dashboard
 
+6 November live-review follow-up: lead with current private tasks and upcoming events, then contribution summaries and story previews. Separate mission statuses and disclose evidence forms on intent. Keep public badges/crowns at the page identity rather than repeating them on each private record. Shared page actions stay compact. Source delivery: `docs/implementation/live-review-follow-up.md`; no new rendered verification.
+
 Mode: Operate. Build path: code. Separate management workspace explicitly requested by the owner; see DESIGN.md and UX-CONTRACT.md.
 
 FIRST VIEWPORT: Own management-only navigation grouped by workspace, account and authorized organization work. Sticky utility header, breadcrumb, genuine summaries and wide task area. Clear return-to-community link. No social bottom bar or platform navigation mixed into desktop management.

@@ -5,6 +5,7 @@ import { publicAchievementShowcase } from '@/features/achievements/engine'
 import { personAvatar } from '@/features/users/avatar-presets'
 import { orderedPage } from '@/lib/server/workflow-context'
 import { manilaDay } from '@/features/achievements/engine'
+import { careSpotlights } from './care-spotlights'
 import {
   leaderboardPageSchema,
   type LeaderboardFilters,
@@ -179,6 +180,7 @@ export function communityLeaderboard(
   const previous = offset > q.limit ? matching[offset - q.limit - 1] : undefined
   return leaderboardPageSchema.parse({
     ...result,
+    spotlights: careSpotlights(d, now),
     items: result.items.map(project),
     podium: ranked.slice(0, 3).map(project),
     summary,

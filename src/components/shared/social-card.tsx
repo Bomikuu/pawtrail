@@ -8,8 +8,10 @@ import { findBadge } from '@/features/achievements/catalog'
 
 export function EarnedBadges({
   badges = [],
+  username,
 }: {
   badges?: { id: string; label: string }[]
+  username?: string | null
 }) {
   const known = badges
     .flatMap((badge) => {
@@ -17,15 +19,15 @@ export function EarnedBadges({
       return definition ? [definition] : []
     })
     .slice(0, 3)
-  if (!known.length) return null
+  if (!known.length || !username) return null
   return (
     <span className="byline-badges" aria-label="Showcased achievements">
       {known.map((badge) => (
         <Link
           key={badge.id}
-          href="/dashboard/achievements"
+          href={`/users/${encodeURIComponent(username)}?badge=${encodeURIComponent(badge.id)}#badge-${encodeURIComponent(badge.id)}`}
           title={badge.title}
-          aria-label={`Achievement: ${badge.title}`}
+          aria-label={`Showcased achievement: ${badge.title}. View how it is earned.`}
         >
           <img src={badge.image} alt="" width={30} height={30} loading="lazy" />
         </Link>
@@ -110,7 +112,7 @@ export function PersonByline({
             {person.displayName}
           </Link>
           <RankCrown rank={person.leaderboardRank ?? null} />
-          <EarnedBadges badges={person.badges} />
+          <EarnedBadges badges={person.badges} username={person.username} />
         </span>
         {meta && <small>{meta}</small>}
       </div>

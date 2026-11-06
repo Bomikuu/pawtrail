@@ -6,6 +6,7 @@ import { APIProvider, Map, InfoWindow, useMap } from '@vis.gl/react-google-maps'
 import { MarkerClusterer } from '@googlemaps/markerclusterer'
 import { Button } from '@/components/ui/button'
 import type { DiscoveryResult } from './types'
+import { NeighborhoodBrowse } from './neighborhood-browse'
 type Feature = DiscoveryResult['features'][number]
 function Markers({
   features,
@@ -121,16 +122,7 @@ export default function MapCanvas({
     return () => clearTimeout(timeout)
   }, [key, loaded])
   if (!key || error)
-    return (
-      <div className="map-fallback" role="status">
-        <p>
-          {!key
-            ? 'The live map is unavailable until a restricted Google Maps browser key is configured.'
-            : 'The map could not load. Check the map key, network and API restrictions.'}{' '}
-          Animal and event details remain available in the list.
-        </p>
-      </div>
-    )
+    return <NeighborhoodBrowse features={features} unavailable={!!key} />
   return (
     <APIProvider
       apiKey={key}

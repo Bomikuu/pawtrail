@@ -80,7 +80,10 @@ export function Discussion({
                     <RankCrown rank={comment.author.leaderboardRank} />
                   )}
                   {comment.author.username && (
-                    <EarnedBadges badges={comment.author.badges} />
+                    <EarnedBadges
+                      badges={comment.author.badges}
+                      username={comment.author.username}
+                    />
                   )}
                 </strong>
                 <time dateTime={comment.createdAt}>

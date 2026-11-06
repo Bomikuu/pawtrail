@@ -33,10 +33,12 @@ export function PublicProfile({
   profile,
   tab = 'overview',
   isOwn = false,
+  selectedBadge,
 }: {
   profile: Profile
   tab?: ProfileTab
   isOwn?: boolean
+  selectedBadge?: string
 }) {
   const returnTo = `/users/${encodeURIComponent(profile.username)}`
   const summary = profile.summary
@@ -272,7 +274,10 @@ export function PublicProfile({
                       </Link>
                     </div>
                     {profile.badges.length ? (
-                      <BadgeShelf badges={profile.badges} />
+                      <BadgeShelf
+                        badges={profile.badges}
+                        selectedBadge={selectedBadge}
+                      />
                     ) : (
                       <p className="profile-empty-copy">
                         No badges showcased yet.

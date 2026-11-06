@@ -91,8 +91,9 @@ export async function ContributorFaces({
   return people.length ? (
     <ParticipantFaces
       people={people.slice(0, 4)}
+      count={people.length}
       href={href}
-      label="Public care circle"
+      label="Community helpers"
     />
   ) : (
     <p className="contributor-empty">

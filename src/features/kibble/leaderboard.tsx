@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {
   CalendarDays,
+  ArrowRight,
   ChartNoAxesColumnIncreasing,
   Check,
   ChevronLeft,
@@ -483,6 +484,16 @@ export async function CommunityLeaderboard({
                     </TableCell>
                     <TableCell>
                       <Contributions entry={entry} />
+                      <p className="recognition-reason">
+                        <strong>Why recognized:</strong>{' '}
+                        {entry.contributions.missions > 0
+                          ? `${entry.contributions.missions} independently approved acts of help.`
+                          : entry.contributions.sightings > 0
+                            ? 'Published sightings help neighbors coordinate care.'
+                            : entry.contributions.fundraisers > 0
+                              ? 'Public support for animal welfare campaigns.'
+                              : 'Unlocked contribution milestones.'}
+                      </p>
                     </TableCell>
                     <TableCell>
                       <Badges entry={entry} />
@@ -557,6 +568,49 @@ export async function CommunityLeaderboard({
           <ButtonLink href={q ? href(period, category) : '/missions'}>
             {q ? 'Clear search' : 'Explore help missions'}
           </ButtonLink>
+        </section>
+      )}
+      {!!board.spotlights.length && (
+        <section
+          className="care-spotlights"
+          aria-labelledby="care-spotlights-heading"
+        >
+          <div className="recognition-section-heading">
+            <h2 id="care-spotlights-heading">The people behind the care</h2>
+            <p>Approved help from the last 30 days. Every beginning matters.</p>
+          </div>
+          <ul>
+            {board.spotlights.map((helper) => (
+              <li key={helper.id}>
+                <div className="social-byline">
+                  <Link
+                    href={`/users/${encodeURIComponent(helper.username)}`}
+                    aria-label={`View ${helper.displayName}’s profile`}
+                  >
+                    <CommunityAvatar
+                      name={helper.displayName}
+                      image={helper.avatar}
+                      userId={helper.userId}
+                      small
+                    />
+                  </Link>
+                  <div>
+                    <Link
+                      href={`/users/${encodeURIComponent(helper.username)}`}
+                    >
+                      <strong>{helper.displayName}</strong>
+                    </Link>
+                    <small>{helper.label}</small>
+                  </div>
+                </div>
+                <p>{helper.description}</p>
+                <Link className="story-link" href={helper.href}>
+                  {helper.missionTitle}
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
       <details className="recognition-method">

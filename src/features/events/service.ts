@@ -11,6 +11,7 @@ import {
   version,
   manage,
   page,
+  orderedPage,
   filterScope,
 } from '@/lib/server/workflow-context'
 import { currentUser } from '@/features/users/service'
@@ -84,42 +85,48 @@ export function installEvents(
     return read((d) => {
       const u = q.scope === 'mine' ? currentUser(d) : null
       const visible = publicSnapshot(d)
-      return page(
-        visible.events
-          .filter(
-            (e) =>
-              (!u ||
-                e.organizerId === u.id ||
-                d.data.rsvps.some(
-                  (r) => r.userId === u.id && r.eventId === e.id,
-                )) &&
-              (!q.shelterId || e.shelterId === q.shelterId) &&
-              (!q.state || e.state === q.state) &&
-              (!q.from || Date.parse(e.startsAt) >= Date.parse(q.from)) &&
-              (!q.to || Date.parse(e.startsAt) <= Date.parse(q.to)),
+      const rows = visible.events
+        .filter(
+          (e) =>
+            (!u ||
+              e.organizerId === u.id ||
+              d.data.rsvps.some(
+                (r) => r.userId === u.id && r.eventId === e.id,
+              )) &&
+            (!q.shelterId || e.shelterId === q.shelterId) &&
+            (!q.state || e.state === q.state) &&
+            (!q.from || Date.parse(e.startsAt) >= Date.parse(q.from)) &&
+            (!q.to || Date.parse(e.startsAt) <= Date.parse(q.to)),
+        )
+        .map((e) => {
+          const attendeeIds = new Set(
+            d.data.rsvps.filter((r) => r.eventId === e.id).map((r) => r.userId),
           )
-          .map((e) => {
-            const attendeeIds = new Set(
-              d.data.rsvps
-                .filter((r) => r.eventId === e.id)
-                .map((r) => r.userId),
+          const attendees = visible.users
+            .filter(
+              (u) => attendeeIds.has(u.id) && u.settings.showContributions,
             )
-            const attendees = visible.users
-              .filter(
-                (u) => attendeeIds.has(u.id) && u.settings.showContributions,
-              )
-              .map((u) => s.eventAttendeeSchema.parse(toPublicUser(u)))
-            return s.eventSummarySchema.parse({
-              ...e,
-              attendees: attendees.slice(0, 4),
-              publicAttendeeCount: attendees.length,
-              attendanceCount: d.data.rsvps.filter((r) => r.eventId === e.id)
-                .length,
-            })
-          }),
-        q,
-        `events:${u?.id ?? 'public'}:${filterScope(q)}`,
-      )
+            .map((u) => s.eventAttendeeSchema.parse(toPublicUser(u)))
+          return s.eventSummarySchema.parse({
+            ...e,
+            attendees: attendees.slice(0, 4),
+            publicAttendeeCount: attendees.length,
+            attendanceCount: d.data.rsvps.filter((r) => r.eventId === e.id)
+              .length,
+          })
+        })
+      const scope = `events:${u?.id ?? 'public'}:${filterScope(q)}`
+      if (q.sort === 'soonest')
+        return orderedPage(
+          rows.sort(
+            (a, b) =>
+              Date.parse(a.startsAt) - Date.parse(b.startsAt) ||
+              a.id.localeCompare(b.id),
+          ),
+          q,
+          scope,
+        )
+      return page(rows, q, scope)
     })
   }
   api.events.get = (slug) =>

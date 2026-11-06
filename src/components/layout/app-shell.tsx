@@ -105,6 +105,9 @@ export function AppShell({
           </aside>
         )}
       </div>
+      <footer className="app-credits">
+        <Link href="/photo-credits">Photo credits</Link>
+      </footer>
       {!management && <MobileNav readyRoutes={readyRoutes} />}
     </div>
   )
