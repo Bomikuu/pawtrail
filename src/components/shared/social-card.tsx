@@ -151,6 +151,7 @@ export function ActivityCard({
           {href ? <Link href={href}>{title}</Link> : title}
         </h3>
       )}
+      {identity && meta && <p className="activity-card-meta">{meta}</p>}
       <div className="activity-content">{children}</div>
       {actions && <footer className="activity-actions">{actions}</footer>}
     </article>

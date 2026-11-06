@@ -16,6 +16,23 @@ export const privacySettingsSchema = z.object({
   showContributions: z.boolean(),
   discoverable: z.boolean(),
 })
+export const publicIdentityQuerySchema = z
+  .object({
+    ids: z.array(idSchema).max(50),
+  })
+  .strict()
+/** Deliberately excludes full profiles, stories, location, roles and private progress. */
+export const publicIdentitySchema = z.object({
+  id: idSchema,
+  username: z.string().min(1),
+  displayName: z.string().min(1),
+  avatar: imageSchema.nullable(),
+  leaderboardRank: leaderboardRankSchema,
+  badges: z.array(z.object({ id: idSchema, label: z.string() })).max(6),
+})
+export const publicIdentitiesSchema = z.object({
+  items: z.array(publicIdentitySchema).max(50),
+})
 export const publicUserSchema = baseSchema.extend({
   bannerId: z.enum(profileBannerIds).default('meadow'),
   username: z.string().min(1),

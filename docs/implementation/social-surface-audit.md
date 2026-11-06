@@ -51,7 +51,16 @@ Every public and management `page.tsx` was inventoried by its owning feature. Th
 
 Post/comment author `badges` contains at most six current unlocked, explicitly showcased `{id,label}` entries. The client displays up to three from the known asset catalog; hidden or contribution-private authors get no badges. Post `participants` and `participantCount` derive only from published comments and currently discoverable/contribution-public people. Preview counts are public identities, not total comments or all attendees. No private proof, applicant answers, unreviewed comments or anonymous donation identities enter these previews.
 
-Public contributor lookup reuses `users.get` with a stable ID fallback while preserving canonical username lookup and current public projection. The helper checks the returned ID and requires public contributions; unavailable/private identities use a generic labeled resource mark. React request caching shares a lookup for repeated IDs. A live backend must support the same ID lookup or the optional byline safely falls back. Extra profile lookup cost has not been measured; a compact batch identity endpoint remains a possible backend optimization.
+Public contributor lookup now uses the compact `users.identities` batch contract rather than loading complete profiles. The read-only endpoint accepts up to 50 stable IDs, deduplicates requests, applies current public visibility and contribution consent, derives the current rank once per batch and returns only names, avatars, rank and showcased badges. React request-scoped loading coalesces sibling lookups and reuses their promises. Unknown/private identities and failed optional attribution use neutral placeholders. The endpoint does not return stories, bio, location, roles, private progress or proof. Live backend support and measured performance remain unverified.
+
+## Implemented follow-ups
+
+- Implemented the compact batch identity endpoint in the mock service, shared API contract/client and allowlisted BFF. The explicit `/users/identities/batch` route preserves canonical username routes without a reserved-name collision. Empty requests return no identities; hidden and unknown IDs are omitted.
+- Replaced full-profile byline requests with request-scoped batching, chunks of at most 50, duplicate-request reuse and safe optional-attribution failure handling. Care-circle previews resolve a bounded candidate set before selecting four public faces, so private people at the start of a list do not hide later public members. Preview cardinality does not claim the complete group size.
+- Corrected the shared activity card so supplied date/status metadata remains visible when the card also has a contributor byline. This affects calendars and other authored activity cards.
+- Added a neutral text placeholder when no public contributor preview is available, keeping existing supplied-art placeholders for empty collections.
+
+These follow-ups were source-reviewed and formatted only, under the same no-testing/build/browser-verification instruction. Structural payload reduction is implemented; no timing or rendering improvement is claimed as measured. The follow-up used the existing Graphify map as a truncated locator (164 nodes, 99 reachable, six shown) and direct source reading. Jev favored the bounded compact identity approach using synthetic policy state (392 input / 31 output tokens); no private records were submitted.
 
 ## Evidence and limits
 

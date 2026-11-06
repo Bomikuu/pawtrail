@@ -233,6 +233,7 @@ export function createMockApi(
       : read(data)
   }
   const users = createUserService(data, repository)
+  api.users.identities = users.identities
   api.users.get = users.get
   api.follows = users.follows
   api.notifications = createNotificationService(data, repository)

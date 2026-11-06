@@ -32,6 +32,7 @@ export function createUnimplementedApi(): PawTrailApi {
     },
     follows: { set: notImplemented, list: notImplemented },
     users: {
+      identities: notImplemented,
       me: notImplemented,
       get: notImplemented,
       update: notImplemented,

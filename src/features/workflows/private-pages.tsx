@@ -368,7 +368,6 @@ export async function MySightingsPage({
         <ActivityCard
           key={s.id}
           title="Your neighborhood sighting"
-          meta={s.moderation}
           identity={
             <ContributorLine
               api={api}

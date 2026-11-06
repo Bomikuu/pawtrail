@@ -253,6 +253,15 @@ export function createApiClient(
         ),
     },
     users: {
+      identities: (query, options) =>
+        request(
+          'GET',
+          '/users/identities/batch',
+          users.publicIdentitiesSchema,
+          users.publicIdentityQuerySchema.parse(query),
+          undefined,
+          options,
+        ),
       me: (options) =>
         request(
           'GET',

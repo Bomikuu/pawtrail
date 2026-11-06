@@ -18,7 +18,12 @@ import { paginate } from '@/lib/api/pagination'
 import { getApiConfig } from '@/lib/api/config'
 import { toPublicAnimal, toPublicUser } from '@/lib/server/projections'
 import { animalSummarySchema } from '@/features/animals/schemas'
-import { publicProfileSchema, profileActivitySchema } from './schemas'
+import {
+  publicProfileSchema,
+  profileActivitySchema,
+  publicIdentityQuerySchema,
+  publicIdentitiesSchema,
+} from './schemas'
 export function currentUser(draft: DemoDraft) {
   const user = draft.data.users.find((u) => u.id === draft.auth.actorId)
   if (!user) throw new ApiError('UNAUTHENTICATED', 'Sign in to continue', 401)
@@ -32,6 +37,7 @@ export function createUserService(
   repository?: DemoRepository,
 ): {
   get: PawTrailApi['users']['get']
+  identities: PawTrailApi['users']['identities']
   follows: PawTrailApi['follows']
 } {
   const read = <T>(query: (draft: DemoDraft) => T) =>
@@ -39,6 +45,46 @@ export function createUserService(
       ? repository.read(query)
       : Promise.resolve(query(fixtureDraft(data)))
   return {
+    async identities(input, options) {
+      checkCancelled(options?.signal)
+      const { ids } = parseInput(publicIdentityQuerySchema, input)
+      const requested = [...new Set(ids)]
+      if (!requested.length) return { items: [] }
+      return read((draft) => {
+        checkCancelled(options?.signal)
+        const visible = publicSnapshot(draft)
+        const wanted = new Set(requested)
+        const eligible = new Map(
+          visible.users
+            .filter(
+              (user) =>
+                wanted.has(user.id) &&
+                user.settings.discoverable &&
+                user.settings.showContributions,
+            )
+            .map((user) => [user.id, user]),
+        )
+        if (!eligible.size) return { items: [] }
+        const now = demoClock.now().toISOString()
+        const ranks = topTenRecognitionRanks(draft, now)
+        return parseResponse(publicIdentitiesSchema, {
+          items: requested.flatMap((id) => {
+            const user = eligible.get(id)
+            if (!user) return []
+            return [
+              {
+                id: user.id,
+                username: user.username,
+                displayName: user.displayName,
+                avatar: toPublicUser(user).avatar,
+                leaderboardRank: ranks.get(user.id) ?? null,
+                badges: publicAchievementShowcase(draft, user.id, now).badges,
+              },
+            ]
+          }),
+        })
+      })
+    },
     async get(username, options) {
       checkCancelled(options?.signal)
       parseInput(z.string().min(1).max(120), username)

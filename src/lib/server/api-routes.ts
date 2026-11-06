@@ -43,6 +43,18 @@ export interface ApiRoute {
 export const apiRoutes: ApiRoute[] = [
   {
     method: 'GET',
+    path: '/users/identities/batch',
+    invoke: async (api, _params, query, _body, options) =>
+      parseResponse(
+        users.publicIdentitiesSchema,
+        await api.users.identities(
+          parseInput(users.publicIdentityQuerySchema, query),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'GET',
     path: '/me/achievements',
     invoke: async (api, _p, _q, _b, options) =>
       parseResponse(

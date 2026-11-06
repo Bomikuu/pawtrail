@@ -513,3 +513,10 @@
     aspect-ratio: 16 / 9;
   }
 }
+
+.activity-card-meta,
+.contributor-empty {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--secondary-text);
+}

@@ -41,6 +41,8 @@ import type {
   PrivateUser,
   ProfileInput,
   PublicProfile,
+  PublicIdentityQuery,
+  PublicIdentities,
 } from '@/features/users/types'
 import type { Notification } from '@/features/notifications/types'
 import type {
@@ -185,6 +187,10 @@ export interface PawTrailApi {
     list(query: FollowFilters, options?: RequestOptions): Promise<Page<Follow>>
   }
   users: {
+    identities(
+      query: PublicIdentityQuery,
+      options?: RequestOptions,
+    ): Promise<PublicIdentities>
     me(options?: RequestOptions): Promise<PrivateUser>
     get(username: string, options?: RequestOptions): Promise<PublicProfile>
     update(input: ProfileInput, options?: RequestOptions): Promise<PrivateUser>

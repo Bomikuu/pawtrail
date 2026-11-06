@@ -267,7 +267,6 @@ export async function HordePage({
             <ActivityCard
               key={s.id}
               title="Neighborhood sighting"
-              meta={date(s.observedAt)}
               identity={
                 <ContributorLine
                   api={api}
