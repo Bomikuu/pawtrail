@@ -4,7 +4,7 @@ import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { useAppRouter as useRouter } from '@/components/layout/page-navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '@/components/ui/button'
+import { LoadingButton as Button } from '@/components/shared/loading-button'
 import { Input } from '@/components/ui/input'
 import { ApiError } from '@/lib/api/errors'
 import { loginInputSchema, registerInputSchema } from './schemas'
@@ -74,7 +74,12 @@ export function AuthForm({
     password: 'Password',
   }
   return (
-    <section className="auth-surface" aria-labelledby="auth-title">
+    <section
+      className={
+        'auth-surface max-w-120 [margin:0_auto] [&_h1]:text-[2rem] [&_h1]:[margin:0_0_1rem] [&_h2]:text-xl [&_h2]:[margin:0_0_0.75rem] [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none]'
+      }
+      aria-labelledby="auth-title"
+    >
       <h1 id="auth-title">
         {registration
           ? 'Join the PawTrail community'
@@ -86,7 +91,9 @@ export function AuthForm({
           : 'Return to the animals and people you care about.'}
       </p>
       {session.session.demo && (
-        <p className="demo-notice">
+        <p
+          className={'demo-notice [border-block:1px_solid_var(--border)] py-4'}
+        >
           Demo authentication. Sample personas and new demo profiles stay in
           this browser’s isolated session. Use a made-up email and password.
           Passwords are not saved or checked; no real account is created.
@@ -101,10 +108,13 @@ export function AuthForm({
               : session.login(values),
           ),
         )}
-        className="auth-form"
+        className={'auth-form grid gap-5 mt-8'}
       >
         {fields.map((field) => (
-          <div className="auth-field" key={field}>
+          <div
+            className={'auth-field grid gap-2 [&_label]:font-semibold'}
+            key={field}
+          >
             <label htmlFor={field}>{labels[field]}</label>
             <Input
               id={field}
@@ -129,14 +139,20 @@ export function AuthForm({
               {...register(field)}
             />
             {errors[field] && (
-              <p className="field-error" id={`${field}-error`}>
+              <p
+                className={'field-error m-0 text-foreground font-semibold'}
+                id={`${field}-error`}
+              >
                 {errors[field]?.message}
               </p>
             )}
           </div>
         ))}
         {message && (
-          <p role="alert" className="field-error">
+          <p
+            role="alert"
+            className={'field-error m-0 text-foreground font-semibold'}
+          >
             {message}
           </p>
         )}
@@ -157,7 +173,10 @@ export function AuthForm({
         </Button>
       </form>
       {!registration && session.session.demo && (
-        <div className="demo-personas" aria-label="Sample personas">
+        <div
+          className={'demo-personas grid gap-3 mt-10'}
+          aria-label="Sample personas"
+        >
           <h2>Try a sample perspective</h2>
           {(
             [
@@ -177,7 +196,7 @@ export function AuthForm({
           ))}
         </div>
       )}
-      <p className="auth-alternative">
+      <p className={'auth-alternative mt-8'}>
         {registration ? 'Already part of the community? ' : 'New to PawTrail? '}
         <Link
           href={`${registration ? '/login' : '/register'}?returnTo=${encodeURIComponent(destination)}`}

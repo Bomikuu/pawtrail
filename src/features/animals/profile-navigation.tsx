@@ -19,7 +19,12 @@ export function PetProfileTabs({ path }: { path: string }) {
         ? 'location'
         : 'activity'
   return (
-    <nav className="pet-profile-tabs" aria-label="Pet profile sections">
+    <nav
+      className={
+        'pet-profile-tabs [.dark_.app-shell_&_a[aria-current=page]]:bg-[#2b1c12] [.dark_.app-shell_&_a[aria-current=page]]:text-[#ffad70] [.dark_.app-shell_&_a[aria-current=page]]:border-[#a85721] [.dark_.app-shell_&_a:hover]:bg-[#242424] [.dark_.app-shell_&_a:hover]:text-[#ffb27d] [.dark_&]:border-[#333333] flex items-center gap-2 [padding:0.375rem_0] [margin:0_1.5rem] [border-top:1px_solid_#e9dece] [border-bottom:1px_solid_#e9dece] overflow-x-auto [&_a]:inline-flex [&_a]:items-center [&_a]:justify-center [&_a]:gap-2.5 [&_a]:min-h-12 [&_a]:[padding:0.5rem_1.75rem] [&_a]:no-underline [&_a]:text-sm [&_a]:font-bold [&_a]:text-muted-foreground [&_a]:[border-bottom:2px_solid_transparent] [&_a]:whitespace-nowrap [&_a:hover]:text-foreground [&_a:hover]:bg-[#f7efe2] [&_a[aria-current=page]]:text-[#b74d07] [&_a[aria-current=page]]:[border-bottom-color:#d85b08] max-[48rem]:mx-4 max-[48rem]:gap-1 max-[48rem]:[&_a]:[padding:0.5rem_0.625rem] max-[48rem]:[&_a]:[flex:1] max-[48rem]:[&_a]:gap-1.5 max-[48rem]:[&_a]:text-xs max-[48rem]:[&_svg]:w-4 max-[48rem]:[&_svg]:h-4 [@media(forced-colors:_active)]:[&_a[aria-current=page]]:[border-bottom-color:Highlight]'
+      }
+      aria-label="Pet profile sections"
+    >
       {[
         { id: 'activity', label: 'Activity', icon: Grid2X2 },
         { id: 'about', label: 'About', icon: Info },

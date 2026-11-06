@@ -19,8 +19,13 @@ export function MobileNav({
     profileDestination,
   ]
   return (
-    <nav className="mobile-nav" aria-label="Mobile navigation">
-      <ul>
+    <nav
+      className={
+        'mobile-nav fixed inset-x-0 bottom-0 z-40 border-t bg-card px-1 pt-1 pb-[max(0.375rem,env(safe-area-inset-bottom))] md:hidden'
+      }
+      aria-label="Mobile navigation"
+    >
+      <ul className="m-0 grid list-none grid-cols-5 items-stretch p-0">
         {items.map((item) => (
           <li key={item?.href ?? 'create'} data-testid="mobile-destination">
             {item ? (

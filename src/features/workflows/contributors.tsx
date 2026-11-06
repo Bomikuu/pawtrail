@@ -96,7 +96,11 @@ export async function ContributorFaces({
       label="Community helpers"
     />
   ) : (
-    <p className="contributor-empty">
+    <p
+      className={
+        'contributor-empty [margin:0.5rem_0_0] text-[0.8125rem] text-muted-foreground'
+      }
+    >
       Public contributor profiles aren’t available here yet.
     </p>
   )

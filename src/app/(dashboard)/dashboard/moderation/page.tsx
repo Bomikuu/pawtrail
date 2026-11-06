@@ -12,7 +12,11 @@ export default async function ModerationPage() {
       />
     )
   return (
-    <div className="community-detail">
+    <div
+      className={
+        'community-detail max-w-184 [margin:0_auto] [&_>_h1]:[margin:1rem_0_1.5rem] [.management-shell_&]:max-w-none [.management-shell_&]:w-full'
+      }
+    >
       <h1>Community review</h1>
       <p>
         Review each story in context. Publication controls visibility;

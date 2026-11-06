@@ -35,19 +35,20 @@ export function NavigationDrawer({
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="drawer-trigger"
+          className={'drawer-trigger size-10 shrink-0 md:hidden'}
           aria-label="Open navigation"
         >
           <Menu size={20} aria-hidden="true" />
         </Button>
       </DialogTrigger>
       <DialogContent
-        className="navigation-drawer"
-        closeLabel="Close navigation"
+        className={
+          'navigation-drawer inset-y-0 left-0 right-auto h-dvh max-h-dvh w-[min(19rem,calc(100vw-2rem))] max-w-none translate-x-0 translate-y-0 content-start gap-4 overflow-y-auto rounded-none border-r p-5 pb-[max(2rem,env(safe-area-inset-bottom))] sm:max-w-none [&_ul]:m-0 [&_ul]:list-none [&_ul]:p-0'
+        }
       >
         <DialogTitle>
           <NavigationLink
-            className="sidebar-brand"
+            className="sidebar-brand flex items-center gap-2 pr-6 font-heading text-2xl font-black text-foreground no-underline"
             href={variant === 'management' ? '/dashboard' : '/community'}
             onNavigate={() => setOpen(false)}
             aria-label="PawTrail home"

@@ -1,4 +1,5 @@
 'use client'
+import { Checkbox } from '@/components/ui/checkbox'
 import { useEffect, useId, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -170,7 +171,9 @@ export function UploadField({
   }
   return (
     <fieldset
-      className="media-upload"
+      className={
+        'media-upload [border:0] m-0 p-0 min-w-0 [&_legend]:font-semibold [&_>_p]:max-w-[65ch] [.achievement-proof-form_&]:mt-5'
+      }
       disabled={disabled || pending}
       aria-busy={pending}
     >
@@ -195,13 +198,17 @@ export function UploadField({
         }}
       />
       {purpose === 'public_image' && (
-        <label className="media-sensitive" htmlFor={`${id}-sensitive`}>
-          <Input
+        <label
+          className={'media-sensitive flex items-center gap-2 my-5'}
+          htmlFor={`${id}-sensitive`}
+        >
+          <Checkbox
             id={`${id}-sensitive`}
-            type="checkbox"
-            className="media-sensitive-input"
+            className={
+              'media-sensitive-input w-5 min-h-5 [accent-color:var(--teal)]'
+            }
             checked={sensitive}
-            onChange={(event) => setSensitive(event.target.checked)}
+            onCheckedChange={(checked) => setSensitive(checked === true)}
             disabled={disabled || pending}
           />
           Contains sensitive animal imagery
@@ -222,7 +229,10 @@ export function UploadField({
         }}
       />
       {error && (
-        <p role="alert" className="field-error">
+        <p
+          role="alert"
+          className={'field-error m-0 text-foreground font-semibold'}
+        >
           {error}
         </p>
       )}

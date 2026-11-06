@@ -10,7 +10,7 @@ export function NavigationContent({ children }: { children: ReactNode }) {
     <>
       {navigation?.pending && <PageLoading />}
       <div
-        className="standalone-navigation-content"
+        className={'standalone-navigation-content contents [&[hidden]]:hidden'}
         hidden={navigation?.pending}
       >
         {children}

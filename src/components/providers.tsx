@@ -1,4 +1,5 @@
 'use client'
+import { ThemeProvider } from 'next-themes'
 import type { ReactNode } from 'react'
 import { Toaster } from '@/components/ui/sonner'
 import { HydrationBoundary, type DehydratedState } from '@tanstack/react-query'
@@ -46,15 +47,23 @@ export function Providers({
   dehydratedState?: DehydratedState
 }) {
   return (
-    <PageNavigationProvider>
-      <SessionProvider
-        key={initialSession.cacheScope}
-        initialSession={initialSession}
-        api={api}
-      >
-        <Hydration state={dehydratedState}>{children}</Hydration>
-        <Toaster />
-      </SessionProvider>
-    </PageNavigationProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      storageKey="pawtrail:theme"
+      disableTransitionOnChange
+    >
+      <PageNavigationProvider>
+        <SessionProvider
+          key={initialSession.cacheScope}
+          initialSession={initialSession}
+          api={api}
+        >
+          <Hydration state={dehydratedState}>{children}</Hydration>
+          <Toaster position="top-center" closeButton />
+        </SessionProvider>
+      </PageNavigationProvider>
+    </ThemeProvider>
   )
 }

@@ -3,7 +3,10 @@ import { useId, useRef, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Select } from '@/components/ui/select'
+import {
+  NativeSelect as Select,
+  NativeSelectOption as SelectOption,
+} from '@/components/ui/native-select'
 import { Textarea } from '@/components/ui/textarea'
 import {
   Dialog,
@@ -15,7 +18,7 @@ import { UploadField } from '@/features/media/upload-field'
 import type { MediaAsset } from '@/features/media/types'
 import type { ResourceRef } from '@/types/common'
 import { getBrowserApi } from '@/lib/api/client'
-import { toast } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 import { achievementProofInputSchema, type AchievementProof } from './schemas'
 import type { BadgeDefinition } from './catalog'
 
@@ -74,7 +77,9 @@ export function ProofForm({
       }}
     >
       <DialogContent
-        className="achievement-proof-dialog"
+        className={
+          'achievement-proof-dialog w-[min(44rem,_calc(100vw_-_2rem))]'
+        }
         onEscapeKeyDown={(event) => {
           if (pending) event.preventDefault()
         }}
@@ -90,7 +95,9 @@ export function ProofForm({
           authorized reviewers.
         </DialogDescription>
         <form
-          className="achievement-proof-form"
+          className={
+            'achievement-proof-form mt-6 [&_fieldset]:[border:0] [&_fieldset]:p-0 [&_fieldset]:m-0 [&_fieldset]:min-w-0 [&_label]:block [&_label]:text-sm [&_label]:font-semibold [&_label]:[margin:1rem_0_0.5rem] [&_[data-slot=textarea]]:[resize:none] [&_[data-slot=textarea]]:min-h-32'
+          }
           noValidate
           aria-busy={pending}
           onSubmit={async (event) => {
@@ -164,11 +171,11 @@ export function ProofForm({
                 value={recordId}
                 onChange={(event) => setRecordId(event.target.value)}
               >
-                <option value="">Choose a record</option>
+                <SelectOption value="">Choose a record</SelectOption>
                 {options.map((choice) => (
-                  <option key={choice.ref.id} value={choice.ref.id}>
+                  <SelectOption key={choice.ref.id} value={choice.ref.id}>
                     {choice.title}
-                  </option>
+                  </SelectOption>
                 ))}
               </Select>
             )}
@@ -208,7 +215,12 @@ export function ProofForm({
               onChange={(event) => setDetails(event.target.value)}
               aria-describedby={id + '-help'}
             />
-            <p id={id + '-help'} className="field-help">
+            <p
+              id={id + '-help'}
+              className={
+                'field-help text-sm text-[#6b625b] m-0 [.avatar-picker_>_&]:m-0 [.avatar-picker_>_&]:max-w-[65ch] [.avatar-picker_>_&]:text-xs [.achievement-proof-form_&]:text-xs'
+              }
+            >
               Include the activity, your role and useful verification context.
               Do not include precise public animal locations.
             </p>
@@ -240,7 +252,9 @@ export function ProofForm({
             />
           </fieldset>
           {error && <p role="alert">{error}</p>}
-          <div className="dialog-actions">
+          <div
+            className={'dialog-actions flex gap-3 justify-end flex-wrap mt-6'}
+          >
             <Button
               type="button"
               variant="outline"

@@ -9,7 +9,9 @@ export function ProfileBanner({
   const banner = getProfileBanner(id)
   return (
     <img
-      className="profile-cover-image"
+      className={
+        'profile-cover-image block w-full h-full object-cover [.pet-cover_>_&]:w-full [.pet-cover_>_&]:h-full [.pet-cover_>_&]:object-cover'
+      }
       src={`/images/profile-banners/collection-${banner.id}-${preview ? 384 : 752}.webp`}
       srcSet={
         preview

@@ -122,7 +122,11 @@ export async function ExplorePage({
         {animals.count} animals around {area.neighborhood} · approximate
         locations
       </p>
-      <div className="journal-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+        }
+      >
         {animals.items.map((a) => (
           <CatalogCard
             key={a.id}
@@ -170,7 +174,11 @@ export async function HordesPage({
         description="A shared place, a familiar group, and a community looking out for them."
       />
       <FilterForm q={q} />
-      <div className="journal-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+        }
+      >
         {rows.items.map((h) => (
           <CatalogCard
             key={h.id}
@@ -254,7 +262,11 @@ export async function HordePage({
           </ButtonLink>
         </p>
         <h2>Animals in this group</h2>
-        <div className="journal-grid">
+        <div
+          className={
+            'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+          }
+        >
           {animals.items.map((a) => (
             <CatalogCard
               key={a.id}
@@ -343,7 +355,7 @@ export async function HordePage({
           ))}
         <h2 id="group-stories">Community stories</h2>
         {stories.items.length ? (
-          <div className="resource-story-feed">
+          <div className={'resource-story-feed grid gap-5 min-w-0'}>
             {stories.items.map((post) => (
               <PostDetail
                 key={post.id}
@@ -434,7 +446,11 @@ export async function SearchPage({
                 ? 'Community members'
                 : `${kind.charAt(0).toUpperCase()}${kind.slice(1)} stories`}
             </h2>
-            <div className="journal-grid">
+            <div
+              className={
+                'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+              }
+            >
               {items.map((r) => (
                 <CatalogCard
                   key={`${r.ref.kind}:${r.ref.id}`}
@@ -514,7 +530,11 @@ export async function FundraisersPage({
           },
         ]}
       />
-      <div className="journal-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+        }
+      >
         {rows.items.map((f) => (
           <CatalogCard
             key={f.id}
@@ -532,8 +552,11 @@ export async function FundraisersPage({
             description={`${php(f.raisedMinor)} of ${php(f.goalMinor)} · ${f.state}`}
           >
             <Progress
-              max={f.goalMinor}
-              value={Math.min(f.raisedMinor, f.goalMinor)}
+              max={100}
+              value={
+                (100 * Math.min(f.raisedMinor, f.goalMinor)) /
+                Math.max(1, f.goalMinor)
+              }
               aria-label={`${f.title} funding progress`}
             />
           </CatalogCard>
@@ -587,14 +610,21 @@ export async function FundraiserPage({
           id={f.organizerId}
           meta="Campaign organizer"
         />
-        <p className="prose-copy">{f.story}</p>
+        <p className={'prose-copy [white-space:pre-line]'}>{f.story}</p>
         <h2>Support, in full view</h2>
-        <p className="funding-amount">
+        <p
+          className={
+            'funding-amount font-heading text-[2rem] font-extrabold tabular-nums [&_span]:text-base [&_span]:font-normal'
+          }
+        >
           {php(f.raisedMinor)} <span>of {php(f.goalMinor)}</span>
         </p>
         <Progress
-          max={f.goalMinor}
-          value={Math.min(f.goalMinor, f.raisedMinor)}
+          max={100}
+          value={
+            (100 * Math.min(f.goalMinor, f.raisedMinor)) /
+            Math.max(1, f.goalMinor)
+          }
           aria-label="Funding progress"
         />
         <p>
@@ -612,7 +642,11 @@ export async function FundraiserPage({
           </Link>
         )}
         {session.demo && session.actor && f.state === 'active' ? (
-          <section className="workflow-panel">
+          <section
+            className={
+              'workflow-panel [padding:1.5rem_0] [border-top:1px_solid_#ede5d8] [margin:1.5rem_0] [&_h2]:mt-0 [&_h3]:mt-0 [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_&]:p-5 [.app-shell_&]:[margin:0_0_1rem] [.management-shell_&]:border-border [.management-shell_&_>_h3]:mt-4 [.management-shell_&_>_h2]:mt-4 max-[48rem]:[.app-shell_&]:p-4'
+            }
+          >
             <h2>Try a simulated contribution</h2>
             <p>
               No card details, charges or transfers. Your entry updates this
@@ -700,12 +734,18 @@ export async function FundraiserPage({
             >
               <p>{u.text}</p>
               {u.media.length ? (
-                <div className="post-photos">
+                <div
+                  className={
+                    'post-photos grid gap-3 [margin:1rem_-1.25rem] [&_img]:w-full [&_img]:h-auto [&_img]:max-h-136 [&_img]:object-cover [&_figcaption]:[padding:0.5rem_1.25rem] [&_figcaption]:text-sm [&_>_p]:[padding:0.5rem_1.25rem] [&_>_p]:text-sm max-[48rem]:ml-[-1rem] max-[48rem]:mr-[-1rem] [.app-shell_&]:[margin:0.875rem_-1.125rem_0.5rem] [.app-shell_&]:gap-1 [.app-shell_&]:bg-[#f0f1f2] [.app-shell_&_img]:block [.app-shell_&_img]:w-full [.app-shell_&_img]:h-auto [.app-shell_&_img]:max-h-104 [.app-shell_&_img]:object-contain max-[48rem]:[.app-shell_&]:mx-[-0.875rem] max-[48rem]:[.app-shell_&_img]:max-h-80 [.pet-social-profile_&]:px-4 [.pet-social-profile_&]:mb-4 [.pet-social-profile_&_>_img]:rounded-xl'
+                  }
+                >
                   {u.media.map((photo) => (
                     <AnimalImage
                       key={photo.id}
                       image={photo}
-                      className="activity-photo"
+                      className={
+                        'activity-photo w-full max-h-76 object-cover rounded-xl block mt-3.5'
+                      }
                     />
                   ))}
                 </div>
@@ -734,10 +774,22 @@ export async function FundraiserPage({
             >
               <p>{e.description}</p>
               {e.correctsEntryId && (
-                <p className="journal-meta">Correction to an earlier entry</p>
+                <p
+                  className={
+                    'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                  }
+                >
+                  Correction to an earlier entry
+                </p>
               )}
               {f.expenses.some((entry) => entry.correctsEntryId === e.id) && (
-                <p className="journal-meta">Superseded by a later correction</p>
+                <p
+                  className={
+                    'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                  }
+                >
+                  Superseded by a later correction
+                </p>
               )}
             </ActivityCard>
           ))
@@ -867,13 +919,17 @@ export async function MissionsPage({
           },
         ]}
       />
-      <p className="catalog-count">
+      <p className={'catalog-count text-muted-foreground text-[0.8125rem]'}>
         {rows.count} help requests ·{' '}
         {status === 'open'
           ? 'Open and accepting help'
           : 'Filtered by availability'}
       </p>
-      <div className="journal-grid mission-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1 mission-grid'
+        }
+      >
         {rows.items.map((m) => (
           <CatalogCard
             key={m.id}
@@ -899,7 +955,11 @@ export async function MissionsPage({
                 : 'View mission history'
             }
           >
-            <p className="mission-deadline">
+            <p
+              className={
+                'mission-deadline text-muted-foreground text-[0.8125rem] [.app-shell_&]:[margin:0_0_0.5rem]'
+              }
+            >
               {Date.parse(m.deadline) <= now ? 'Deadline passed' : 'Help by'} ·{' '}
               {date(m.deadline)}
             </p>
@@ -1030,7 +1090,11 @@ export async function SheltersPage({
         description="Meet the shelters and rescuers connecting animals with safer futures."
       />
       <FilterForm q={q} />
-      <div className="journal-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+        }
+      >
         {rows.items.map((s) => (
           <CatalogCard
             key={s.id}
@@ -1088,7 +1152,11 @@ export async function ShelterPage({ slug }: { slug: string }) {
           explore the demonstration workflows.
         </p>
         <h2>Looking for a home</h2>
-        <div className="journal-grid">
+        <div
+          className={
+            'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+          }
+        >
           {animals.items.map((a) => (
             <CatalogCard
               key={a.id}
@@ -1206,7 +1274,11 @@ export async function AdoptPage({
           </ButtonLink>
         }
       />
-      <nav className="workspace-tabs">
+      <nav
+        className={
+          'workspace-tabs flex flex-wrap gap-5 [padding:1rem_0] [border-bottom:1px_solid_#ede5d8] mb-6 [&_[aria-current]]:text-[#0f766e] [&_[aria-current]]:font-bold [&_[aria-current]]:[text-decoration-thickness:2px] [.management-shell_&_a]:inline-flex [.management-shell_&_a]:items-center [.management-shell_&_a]:min-h-11 [.management-shell_&_a]:[padding:0.625rem_0.875rem] [.management-shell_&_a]:rounded-xl [.management-shell_&_a[aria-current=page]]:bg-[var(--teal)] [.management-shell_&_a[aria-current=page]]:text-card'
+        }
+      >
         <Link href="/adopt">Discover</Link>
         <Link href="/adopt/interested">Interested</Link>
         <Link href="/adopt/applications">Applications</Link>

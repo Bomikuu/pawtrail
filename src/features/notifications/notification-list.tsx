@@ -22,13 +22,25 @@ export function NotificationItems({
   pending?: boolean
 }) {
   return (
-    <ul className="notification-list">
+    <ul
+      className={
+        'notification-list list-none [margin:1rem_0] p-0 [&_li]:py-5 [&_li]:[border-bottom:1px_solid_var(--border)] [&_p]:my-3 [&_p]:max-w-[68ch] [.app-shell_&_>_li]:min-w-0 [.app-shell_&_>_li]:bg-card [.app-shell_&_>_li]:[border:1px_solid_var(--social-line)] [.app-shell_&_>_li]:rounded-2xl [.app-shell_&_>_li]:[overflow-wrap:anywhere] [.app-shell_&_>_li]:p-5 [.app-shell_&_>_li]:m-0 [.app-shell_&]:p-0 [.app-shell_&]:list-none [.app-shell_&]:grid [.app-shell_&]:gap-3.5'
+      }
+    >
       {items.map((item) => (
         <li
           key={item.id}
-          className={item.readAt ? 'activity-read' : 'activity-unread'}
+          className={
+            item.readAt
+              ? 'activity-read'
+              : 'activity-unread [&_strong]:text-[color:var(--teal)] [.notification-list_&]:bg-[#fff9f0]'
+          }
         >
-          <div className="activity-meta">
+          <div
+            className={
+              'activity-meta flex flex-wrap justify-between gap-2 text-sm [.app-shell_.notification-list_&]:flex [.app-shell_.notification-list_&]:flex-wrap [.app-shell_.notification-list_&]:gap-2.5 [.app-shell_.notification-list_&]:items-center [.notification-list_&_>_svg]:shrink-0 [.notification-list_&_>_svg]:text-[color:var(--teal)]'
+            }
+          >
             <Bell size={20} aria-hidden="true" />
             <strong>{item.readAt ? 'Read' : 'Unread'}</strong>
             <time dateTime={item.createdAt}>
@@ -39,7 +51,11 @@ export function NotificationItems({
             </time>
           </div>
           <p>{item.message}</p>
-          <div className="profile-link-row">
+          <div
+            className={
+              'profile-link-row flex flex-wrap items-center gap-3 mt-4 [.animal-action-bar_&]:mt-0 max-[48rem]:[.app-shell_.notification-list_&]:flex-wrap [.pet-social-actions_&]:flex [.pet-social-actions_&]:flex-wrap [.pet-social-actions_&]:gap-2'
+            }
+          >
             {item.destinationHref &&
             isRouteReady(item.destinationHref, READY_ROUTES) ? (
               <Link

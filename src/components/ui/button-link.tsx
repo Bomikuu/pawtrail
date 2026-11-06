@@ -1,23 +1,18 @@
-import type Link from 'next/link'
-import { NavigationLink } from '@/components/layout/navigation-link'
 import type { ComponentProps } from 'react'
-import type { VariantProps } from 'class-variance-authority'
-import { buttonVariants } from './button'
-import { cn } from '@/lib/utils'
-/** Internal route action. Ordinary navigation should use Link directly. */
+import type Link from 'next/link'
+import { Button } from './button'
+import { NavigationLink } from '@/components/layout/navigation-link'
+/** Route action composed with the official shadcn Button. */
 export function ButtonLink({
-  className,
   variant,
-  children,
+  size,
+  className,
   ...props
-}: ComponentProps<typeof Link> & VariantProps<typeof buttonVariants>) {
+}: ComponentProps<typeof Link> &
+  Pick<ComponentProps<typeof Button>, 'variant' | 'size'>) {
   return (
-    <NavigationLink
-      data-slot="button-link"
-      className={cn(buttonVariants({ variant }), className)}
-      {...props}
-    >
-      {children}
-    </NavigationLink>
+    <Button variant={variant} size={size} asChild>
+      <NavigationLink {...props} className={className} />
+    </Button>
   )
 }

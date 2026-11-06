@@ -80,8 +80,16 @@ export function AchievementActivity({
     }
   }
   return (
-    <div className="achievement-activity">
-      <div className="workflow-actions">
+    <div
+      className={
+        'achievement-activity [margin:1rem_0] [&_p]:text-[0.8125rem] [&_p]:text-muted-foreground [.pet-social-profile_&]:p-3.5 [.pet-social-profile_&]:[border:1px_solid_#e8ddcf] [.pet-social-profile_&]:rounded-xl'
+      }
+    >
+      <div
+        className={
+          'workflow-actions flex items-center gap-3 flex-wrap [margin:0.75rem_0] [.discovery-map_&_p]:m-0 [.discovery-map_&_p]:text-sm [.discovery-map_&_p]:text-[#6b625b] max-[48rem]:[&_>_*]:max-w-full [.achievement-review-card_&]:mt-4 [.adoption-story_&]:gap-2.5 [.adoption-story_&_[data-slot=button]]:[flex:1_1_9rem]'
+        }
+      >
         {target.kind === 'animal' &&
           (session.actor ? (
             <Button

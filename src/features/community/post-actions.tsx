@@ -12,7 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { Input } from '@/components/ui/input'
-import { toast } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 import { ConfirmDialog } from '@/components/shared/confirm-dialog'
 import { useSession } from '@/features/auth/session-provider'
 import { loginPath } from '@/features/auth/return-path'
@@ -92,8 +92,16 @@ export function PostActions({
   }
   const working = pending || changing || post.id.startsWith('pending:')
   return (
-    <div className="post-actions">
-      <div className="social-actions-row">
+    <div
+      className={
+        'post-actions [border-top:1px_solid_var(--border)] pt-3 [.app-shell_&]:border-border [.app-shell_&]:pt-1.5 [.app-shell_&]:mt-2.5'
+      }
+    >
+      <div
+        className={
+          'social-actions-row flex items-center justify-between gap-1 flex-wrap [&_[data-slot=button]]:gap-1.5 [&_[data-slot=button]]:[padding:0.5rem_0.625rem] [&_[data-slot=button]]:min-h-11 [&_[data-slot=button]]:text-[0.8125rem] [&_[data-slot=button]]:text-muted-foreground [&_[data-slot=button]:hover]:bg-[#f5f6f7] [&_[data-slot=button]:hover]:text-foreground [&_[aria-pressed=true]]:text-[#b84311] max-[48rem]:[&_[data-slot=button]]:px-2 [.app-shell_&]:justify-start [.app-shell_&]:gap-1 [.app-shell_&_[data-slot=button]]:[flex:0_0_auto] [.app-shell_&_[data-slot=button]]:w-auto [.app-shell_&_[data-slot=button]]:[padding:0.5rem_0.625rem] [.app-shell_&_[data-slot=button]]:rounded-[0.625rem] [.app-shell_&_[data-slot=button]:hover]:bg-[var(--control-hover)] [.app-shell_&_[data-slot=button]:hover]:text-[#9a3412] [.app-shell_&_[aria-pressed=true]]:text-[#a63b13] [.app-shell_&_[aria-pressed=true]]:bg-[#fff4e9] [.dark_.app-shell_&_[data-slot=button]:hover]:bg-[#242424] [.dark_.app-shell_&_[data-slot=button]:hover]:text-[#ffb27d]'
+        }
+      >
         {session.actor ? (
           <>
             <Button
@@ -112,7 +120,7 @@ export function PostActions({
                 aria-hidden="true"
                 fill={post.viewerReacted ? 'currentColor' : 'none'}
               />
-              <span className="social-action-label">
+              <span className={'social-action-label max-[48rem]:hidden'}>
                 {post.viewerReacted ? 'Liked' : 'Like'}
               </span>
               <span>{post.reactionCount}</span>
@@ -125,7 +133,9 @@ export function PostActions({
             href={loginPath(`/community/${encodeURIComponent(post.id)}`)}
           >
             <Heart size={19} aria-hidden="true" />
-            <span className="social-action-label">Like</span>{' '}
+            <span className={'social-action-label max-[48rem]:hidden'}>
+              Like
+            </span>{' '}
             {post.reactionCount}
           </ButtonLink>
         )}
@@ -136,7 +146,9 @@ export function PostActions({
             aria-label={post.commentCount + ' comments. Join the conversation'}
           >
             <MessageCircle size={19} aria-hidden="true" />
-            <span className="social-action-label">Comment</span>
+            <span className={'social-action-label max-[48rem]:hidden'}>
+              Comment
+            </span>
             {post.commentCount}
           </ButtonLink>
         )}
@@ -148,12 +160,14 @@ export function PostActions({
           disabled={post.moderation !== 'published'}
         >
           <Share2 size={19} aria-hidden="true" />
-          <span className="social-action-label">Share</span>
+          <span className={'social-action-label max-[48rem]:hidden'}>
+            Share
+          </span>
         </Button>
         {session.actor && (
           <Button
             variant="ghost"
-            className="social-save"
+            className={'social-save [.app-shell_.social-actions-row_&]:ms-0'}
             aria-label={post.viewerSaved ? 'Unsave post' : 'Save post'}
             title={post.viewerSaved ? 'Unsave post' : 'Save post'}
             aria-pressed={post.viewerSaved}

@@ -1,17 +1,16 @@
 import type { ComponentProps } from 'react'
-import type { VariantProps } from 'class-variance-authority'
-import { buttonVariants } from './button'
-import { cn } from '@/lib/utils'
+import { Button } from './button'
+/** External/document action composed with the official shadcn Button. */
 export function ButtonAnchor({
-  className,
   variant,
+  size,
+  className,
   ...props
-}: ComponentProps<'a'> & VariantProps<typeof buttonVariants>) {
+}: ComponentProps<'a'> &
+  Pick<ComponentProps<typeof Button>, 'variant' | 'size'>) {
   return (
-    <a
-      data-slot="button-anchor"
-      className={cn(buttonVariants({ variant }), className)}
-      {...props}
-    />
+    <Button variant={variant} size={size} asChild>
+      <a {...props} className={className} />
+    </Button>
   )
 }

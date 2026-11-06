@@ -1,6 +1,9 @@
 'use client'
 import { useId, useState } from 'react'
-import { Select } from '@/components/ui/select'
+import {
+  NativeSelect as Select,
+  NativeSelectOption as SelectOption,
+} from '@/components/ui/native-select'
 import { DiscoveryMap } from '@/features/discovery/map-island'
 import type { Sighting } from './types'
 export function BehaviorMap({
@@ -31,7 +34,11 @@ export function BehaviorMap({
   })
   const center = rows[0]?.location ?? sightings[0]?.location
   return (
-    <section className="profile-section">
+    <section
+      className={
+        'profile-section py-8 [border-bottom:1px_solid_var(--border)] [scroll-margin-top:6rem] [&_h2]:mb-3 [&_>_p]:max-w-[70ch] [&_>_p]:[white-space:pre-line] [&_>_p]:[overflow-wrap:anywhere] [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none] [.pet-social-profile_&]:max-w-none [.pet-social-profile_&_>_h2]:font-[850] [.pet-social-profile_&_>_h2]:text-xl [.pet-social-profile_&_>_h2]:leading-[1.35] [.pet-social-profile_&_>_h2]:font-heading [.pet-social-profile_&_>_p]:text-sm'
+      }
+    >
       <h2>Patterns around the neighborhood</h2>
       <label htmlFor={id}>Time of day in Asia/Manila</label>
       <Select
@@ -39,10 +46,10 @@ export function BehaviorMap({
         value={period}
         onChange={(e) => setPeriod(e.target.value)}
       >
-        <option value="all">All times</option>
-        <option value="morning">Morning</option>
-        <option value="afternoon">Afternoon</option>
-        <option value="evening">Evening and night</option>
+        <SelectOption value="all">All times</SelectOption>
+        <SelectOption value="morning">Morning</SelectOption>
+        <SelectOption value="afternoon">Afternoon</SelectOption>
+        <SelectOption value="evening">Evening and night</SelectOption>
       </Select>
       <p>
         {rows.length} published observations. Map positions show generalized

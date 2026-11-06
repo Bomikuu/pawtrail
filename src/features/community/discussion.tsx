@@ -50,7 +50,11 @@ export function Discussion({
     ).values(),
   ]
   return (
-    <div className="discussion">
+    <div
+      className={
+        'discussion grid gap-6 min-w-0 [.app-shell_.profile-section_>_&]:min-w-0 [.app-shell_&]:pt-3'
+      }
+    >
       {composerFirst && (
         <CommentForm target={target} returnTo={returnTo} subject={subject} />
       )}
@@ -69,10 +73,18 @@ export function Discussion({
         emptyDescription="Share a thoughtful observation or a useful update."
         errorMessage="Comments couldn’t load. Try loading this discussion again."
       >
-        <ol className="discussion-list">
+        <ol
+          className={
+            'discussion-list list-none p-0 m-0 [&_>_li]:py-5 [&_>_li]:[border-bottom:1px_solid_var(--border)] [.app-shell_&]:grid [.app-shell_&]:gap-3.5 [.app-shell_&_>_li]:p-4.5 [.app-shell_&_>_li]:[border:1px_solid_var(--social-line)] [.app-shell_&_>_li]:rounded-[0.875rem] [.app-shell_&_>_li]:bg-card [.dark_.app-shell_&_>_li]:bg-card [.dark_.app-shell_&_>_li]:text-foreground [.dark_.app-shell_&_>_li]:border-border [.dark_.app-shell_&_>_li]:[box-shadow:none] [.event-community_&]:grid [.event-community_&]:gap-4 [.event-community_&_>_li]:bg-card [.event-community_&_>_li]:p-5 [.event-community_&_>_li]:[border:1px_solid_var(--border)] [.event-community_&_>_li]:rounded-2xl max-[40rem]:[.event-community_&_>_li]:p-4'
+          }
+        >
           {comments.map((comment) => (
             <li key={comment.id}>
-              <div className="discussion-byline">
+              <div
+                className={
+                  'discussion-byline flex items-center justify-between gap-2 flex-wrap [&_time]:text-sm [&_time]:text-muted-foreground [.app-shell_&]:justify-start [.app-shell_&]:items-center [.app-shell_&]:gap-2.5 [.app-shell_&_time]:ml-auto [.app-shell_&_time]:text-xs max-[48rem]:[.app-shell_&_time]:w-full max-[48rem]:[.app-shell_&_time]:ml-0 [.event-community_&]:justify-start [.event-community_&]:items-center [.event-community_&]:gap-2.5 [.event-community_&_time]:ml-auto [.event-community_&_time]:text-xs max-[40rem]:[.event-community_&_time]:w-full max-[40rem]:[.event-community_&_time]:ml-0'
+                }
+              >
                 {comment.author.username ? (
                   <ProfileLink
                     username={comment.author.username}
@@ -93,7 +105,11 @@ export function Discussion({
                     small
                   />
                 )}
-                <strong className="recognized-author-name">
+                <strong
+                  className={
+                    'recognized-author-name [.post-author_&]:flex [.post-author_&]:flex-wrap [.post-author_&]:items-center [.post-author_&]:gap-1.5 [.discussion-byline_&]:flex [.discussion-byline_&]:flex-wrap [.discussion-byline_&]:items-center [.discussion-byline_&]:gap-1.5 [.post-author_&_>_a:not(.rank-crown)]:[overflow-wrap:anywhere] max-[48rem]:[.discussion-byline_&]:min-w-0 [.app-shell_&]:flex [.app-shell_&]:flex-wrap [.app-shell_&]:items-center [.app-shell_&]:[gap:0.25rem_0.375rem] max-[48rem]:[.app-shell_.post-heading_&]:text-sm'
+                  }
+                >
                   {comment.author.username ? (
                     <ProfileLink username={comment.author.username}>
                       {comment.author.displayName}
@@ -118,7 +134,13 @@ export function Discussion({
                   }).format(new Date(comment.createdAt))}
                 </time>
               </div>
-              <p className="post-text">{comment.text}</p>
+              <p
+                className={
+                  'post-text whitespace-pre-wrap [overflow-wrap:anywhere] [line-height:1.65] [margin:1rem_0] [.app-shell_&]:[margin:0.875rem_0] [.app-shell_&]:text-[length:0.9375rem] [.app-shell_&]:max-w-[78ch] max-[48rem]:[.app-shell_&]:text-sm [.pet-social-profile_&]:px-4 [.event-community_&]:[margin:0.875rem_0_0]'
+                }
+              >
+                {comment.text}
+              </p>
               {comment.moderation !== 'published' && (
                 <StatusBadge tone="warning">
                   {comment.moderation === 'pending'
@@ -143,7 +165,11 @@ export function Discussion({
         <CommentForm target={target} returnTo={returnTo} subject={subject} />
       )}
       {allowPhotos && session.actor && (
-        <div className="discussion-photo">
+        <div
+          className={
+            'discussion-photo [border-top:1px_solid_var(--border)] pt-6'
+          }
+        >
           <p>Have a photograph to add to the story?</p>
           {photo ? (
             <PostComposer

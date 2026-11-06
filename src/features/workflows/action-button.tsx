@@ -2,7 +2,7 @@
 import { useRef, useState, type ReactNode } from 'react'
 import { useAppRouter as useRouter } from '@/components/layout/page-navigation'
 import { useQueryClient } from '@tanstack/react-query'
-import { Button } from '@/components/ui/button'
+import { LoadingButton as Button } from '@/components/shared/loading-button'
 import { getBrowserApi } from '@/lib/api/client'
 export function ActionButton({
   action,
@@ -53,7 +53,10 @@ export function ActionButton({
         {pending ? 'Saving…' : children}
       </Button>
       {error && (
-        <p role="alert" className="field-error">
+        <p
+          role="alert"
+          className={'field-error m-0 text-foreground font-semibold'}
+        >
           {error}
         </p>
       )}

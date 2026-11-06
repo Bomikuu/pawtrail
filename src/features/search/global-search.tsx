@@ -44,8 +44,13 @@ export function GlobalSearch() {
     }
   }, [q, composing])
   return (
-    <div className="global-search">
+    <div
+      className={
+        'global-search relative hidden min-w-0 flex-1 md:block md:max-w-[38rem]'
+      }
+    >
       <NavigationForm
+        className="flex items-center gap-1 rounded-full border bg-muted/50 px-2"
         action="/search"
         method="get"
         onSubmit={(e) => {
@@ -64,6 +69,7 @@ export function GlobalSearch() {
           Search PawTrail
         </label>
         <Input
+          className="h-10 border-0 bg-transparent shadow-none focus-visible:ring-0 dark:bg-transparent"
           ref={input}
           id={id}
           role="combobox"
@@ -113,7 +119,9 @@ export function GlobalSearch() {
             type="button"
             variant="ghost"
             aria-label="Clear search"
-            className="search-clear"
+            className={
+              'search-clear [.app-shell_.global-search_&]:absolute [.app-shell_.global-search_&]:right-0.5 [.app-shell_.global-search_&]:top-0 [.app-shell_.global-search_&]:p-2.5 [.app-shell_.global-search_&]:rounded-full'
+            }
             onClick={() => {
               setQ('')
               setError('')
@@ -128,7 +136,9 @@ export function GlobalSearch() {
         )}
       </NavigationForm>
       <ul
-        className="search-suggestions"
+        className={
+          'search-suggestions absolute z-50 mt-2 w-full rounded-xl border bg-popover p-2 text-popover-foreground shadow-lg'
+        }
         role="listbox"
         id={`${id}-results`}
         hidden={!open || !items.length}
@@ -138,9 +148,11 @@ export function GlobalSearch() {
             key={`${result.ref.kind}:${result.ref.id}`}
             role="option"
             id={`${id}-${i}`}
+            className="rounded-lg aria-selected:bg-accent"
             aria-selected={i === index}
           >
             <Link
+              className="grid gap-0.5 rounded-lg px-3 py-2 text-sm hover:bg-accent"
               href={result.path}
               tabIndex={-1}
               onClick={() => setOpen(false)}
@@ -152,7 +164,12 @@ export function GlobalSearch() {
         ))}
       </ul>
       {error && open && (
-        <p className="search-feedback" role="status">
+        <p
+          className={
+            'search-feedback absolute z-50 mt-2 w-full rounded-lg border bg-popover p-3 text-sm text-popover-foreground shadow-sm'
+          }
+          role="status"
+        >
           {error}
         </p>
       )}

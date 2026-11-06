@@ -88,7 +88,11 @@ function Controls() {
     )
   }
   return (
-    <div className="workflow-actions">
+    <div
+      className={
+        'workflow-actions flex items-center gap-3 flex-wrap [margin:0.75rem_0] [.discovery-map_&_p]:m-0 [.discovery-map_&_p]:text-sm [.discovery-map_&_p]:text-[#6b625b] max-[48rem]:[&_>_*]:max-w-full [.achievement-review-card_&]:mt-4 [.adoption-story_&]:gap-2.5 [.adoption-story_&_[data-slot=button]]:[flex:1_1_9rem]'
+      }
+    >
       <Button
         variant="outline"
         disabled={navigation?.pending}
@@ -133,7 +137,9 @@ export default function MapCanvas({
       onError={() => setError(true)}
     >
       <Map
-        className="map-canvas"
+        className={
+          'map-canvas w-full h-104 [border:1px_solid_#ede5d8] rounded-2xl overflow-hidden max-[48rem]:h-88'
+        }
         defaultCenter={{ lat: center.latitude, lng: center.longitude }}
         defaultZoom={14}
         gestureHandling="cooperative"
@@ -163,7 +169,12 @@ export default function MapCanvas({
         )}
       </Map>
       <Controls />
-      <div className="map-results" aria-label="Map feature selection">
+      <div
+        className={
+          'map-results flex flex-wrap gap-1 max-h-48 overflow-auto [margin:1rem_0]'
+        }
+        aria-label="Map feature selection"
+      >
         {rows.map((f, i) => (
           <Button
             variant="ghost"

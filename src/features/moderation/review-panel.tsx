@@ -4,7 +4,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { ButtonAnchor } from '@/components/ui/button-anchor'
-import { toast } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 import { Textarea } from '@/components/ui/textarea'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { StatusBadge } from '@/components/shared/status-badge'
@@ -18,7 +18,7 @@ function ReviewMedia({ media }: { media: ModerationItem['media'][number] }) {
   const [failed, setFailed] = useState(false)
   if (!shown)
     return (
-      <div className="review-warning">
+      <div className={'review-warning p-4 [border:1px_solid_var(--border)]'}>
         <p>This review image may show an animal in distress.</p>
         <Button variant="outline" onClick={() => setShown(true)}>
           Show review photograph
@@ -133,12 +133,18 @@ export function ReviewPanel({
       (!item.canVerify || !evidence.length || item.state !== 'published'))
   return (
     <section
-      className="review-panel"
+      className={
+        'review-panel grid gap-6 min-w-0 py-6 [border-block:1px_solid_var(--border)]'
+      }
       aria-label={`${item.kind} review of ${item.title}`}
     >
       <header>
         <h2>{item.title}</h2>
-        <div className="community-choice-row">
+        <div
+          className={
+            'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+          }
+        >
           <StatusBadge>
             {verification ? 'Verification review' : 'Publication review'}
           </StatusBadge>
@@ -147,19 +153,37 @@ export function ReviewPanel({
           </StatusBadge>
         </div>
       </header>
-      <p className="field-hint">
+      <p
+        className={
+          'field-hint text-sm text-muted-foreground [.dark_&]:text-muted-foreground'
+        }
+      >
         {item.ref.kind} · Version {item.version} · {item.provenance.label}
       </p>
-      <p className="post-text">{item.text}</p>
+      <p
+        className={
+          'post-text whitespace-pre-wrap [overflow-wrap:anywhere] [line-height:1.65] [margin:1rem_0] [.app-shell_&]:[margin:0.875rem_0] [.app-shell_&]:text-[length:0.9375rem] [.app-shell_&]:max-w-[78ch] max-[48rem]:[.app-shell_&]:text-sm [.pet-social-profile_&]:px-4 [.event-community_&]:[margin:0.875rem_0_0]'
+        }
+      >
+        {item.text}
+      </p>
       {item.publicImages.length > 0 && (
-        <div className="review-media">
+        <div
+          className={
+            'review-media grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_16rem),_1fr))] gap-4 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain'
+          }
+        >
           {item.publicImages.map((image) => (
             <AnimalImage key={image.id} image={image} />
           ))}
         </div>
       )}
       {item.media.length > 0 && (
-        <div className="review-media">
+        <div
+          className={
+            'review-media grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_16rem),_1fr))] gap-4 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain'
+          }
+        >
           {item.media.map((media) => (
             <ReviewMedia key={media.id} media={media} />
           ))}
@@ -176,7 +200,11 @@ export function ReviewPanel({
               </li>
             ))}
           </ul>
-          <p className="field-hint">
+          <p
+            className={
+              'field-hint text-sm text-muted-foreground [.dark_&]:text-muted-foreground'
+            }
+          >
             Reports inform your review; the count does not determine the
             outcome. Reporter identities are confidential.
           </p>
@@ -202,7 +230,11 @@ export function ReviewPanel({
           ) : (
             <fieldset>
               <legend>Evidence reviewed</legend>
-              <div className="community-choice-row">
+              <div
+                className={
+                  'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+                }
+              >
                 {item.evidenceIds.map((evidenceId, index) => (
                   <Button
                     key={evidenceId}
@@ -227,7 +259,11 @@ export function ReviewPanel({
         </div>
       )}
       {actions.length > 0 && (
-        <div className="discussion-form">
+        <div
+          className={
+            'discussion-form grid gap-3 [&_>_[data-slot=button]]:[justify-self:start] [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-[0.875rem] [.app-shell_&]:p-4 [.app-shell_&]:bg-card [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none] [.event-community_&]:p-5 [.event-community_&]:[border:1px_solid_var(--border)] [.event-community_&]:rounded-2xl [.event-community_&]:bg-card [.event-community_&_>_[data-slot=button]]:[justify-self:end] [.event-community_&_>_[data-slot=button]]:rounded-[2rem] [.event-community_&_textarea]:min-h-24 [.event-community_&_textarea]:[resize:vertical] max-[40rem]:[.event-community_&]:p-4'
+          }
+        >
           <label htmlFor={id}>Audit reason</label>
           <Textarea
             id={id}
@@ -237,11 +273,19 @@ export function ReviewPanel({
             disabled={pending}
             rows={3}
           />
-          <p className="field-hint">
+          <p
+            className={
+              'field-hint text-sm text-muted-foreground [.dark_&]:text-muted-foreground'
+            }
+          >
             This explanation is recorded permanently and sent to the author. Do
             not include reporter identities or private evidence details.
           </p>
-          <div className="community-choice-row">
+          <div
+            className={
+              'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+            }
+          >
             {actions.map(([action, label]) => (
               <Button
                 key={action}

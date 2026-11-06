@@ -59,7 +59,11 @@ export async function DashboardPage() {
         meta="Your community contributions and management workspace"
         fallback="Your private workspace"
       />
-      <dl className="dashboard-summary">
+      <dl
+        className={
+          'dashboard-summary [margin:0_0_2.5rem] [&_div]:flex [&_div]:items-center [&_div]:justify-between [&_div]:gap-4 [&_div]:[padding:1rem_0] [&_div]:[border-bottom:1px_solid_#ede5d8] [&_dd]:font-heading [&_dd]:text-2xl [&_dd]:m-0 [&_dd]:tabular-nums [.management-shell_&]:grid [.management-shell_&]:grid-cols-[repeat(auto-fit,_minmax(9rem,_1fr))] [.management-shell_&]:gap-4 [.management-shell_&]:[margin:1.75rem_0] [.management-shell_&]:[border:1px_solid_var(--social-line)] [.management-shell_&]:rounded-xl [.management-shell_&]:bg-card [.management-shell_&]:overflow-hidden [.management-shell_&_>_div]:p-5 [.management-shell_&_>_div]:[border:1px_solid_var(--social-line)] [.management-shell_&_>_div]:[border-right:1px_solid_var(--social-line)] [.management-shell_&_>_div]:rounded-[0.875rem] [.management-shell_&_>_div]:bg-card [.management-shell_&_>_div:last-child]:[border:0] [.management-shell_&_>_div:last-child]:border-border [.management-shell_&_dt_a]:text-muted-foreground [.management-shell_&_dt_a]:text-[0.8125rem] [.management-shell_&_dt_a]:no-underline [.management-shell_&_dt_a]:inline-flex [.management-shell_&_dt_a]:min-h-11 [.management-shell_&_dt_a]:items-center [.management-shell_&_dt_a:hover]:text-[color:var(--teal)] [.management-shell_&_dt_a:hover]:underline [.management-shell_&_dd]:font-[800] [.management-shell_&_dd]:text-[length:1.875rem] [.management-shell_&_dd]:leading-[1.3] [.management-shell_&_dd]:font-heading [.management-shell_&_dd]:[margin:0.75rem_0_0] max-[48rem]:[.management-shell_&]:grid-cols-2 max-[48rem]:[.management-shell_&_>_div]:[border-bottom:1px_solid_var(--social-line)] [.dark_.app-shell_&_>_div]:bg-card [.dark_.app-shell_&_>_div]:text-foreground [.dark_.app-shell_&_>_div]:border-border [.dark_.app-shell_&_>_div]:[box-shadow:none]'
+        }
+      >
         {[
           [summary.animals, 'Animals you look after', '/dashboard/animals'],
           [summary.sightings, 'Observations shared', '/dashboard/sightings'],
@@ -109,8 +113,19 @@ export async function DashboardPage() {
               />
             }
           >
-            <p className="story-summary">{post.text}</p>
-            <Link className="story-link" href={`/community/${post.id}`}>
+            <p
+              className={
+                'story-summary [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4] overflow-hidden'
+              }
+            >
+              {post.text}
+            </p>
+            <Link
+              className={
+                'story-link inline-flex items-center gap-2 mt-3 [.app-shell_.journal-card_&]:text-[0.8125rem] [.app-shell_.journal-card_&]:[font-weight:650] [.app-shell_.journal-card_&]:min-h-11 [.app-shell_.journal-card_&]:items-center [.app-shell_.journal-card_&]:mt-2 [.care-spotlights_&]:text-[0.8125rem] [.care-spotlights_&]:[line-height:1.5] [.care-spotlights_&]:min-h-11 [.care-spotlights_&]:m-0 [.care-spotlights_&_svg]:shrink-0'
+              }
+              href={`/community/${post.id}`}
+            >
               Read story
             </Link>
           </ActivityCard>
@@ -121,7 +136,11 @@ export async function DashboardPage() {
         </Empty>
       )}
       <h2>Keep a good thing going</h2>
-      <div className="journal-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+        }
+      >
         <CatalogCard
           href="/community/create"
           title="Share a story"
@@ -146,7 +165,7 @@ export async function ProfilePage() {
         title="Your community profile"
         description="Share what you would like neighbors to know. Privacy settings control whether your profile, area and contributions appear publicly."
         action={
-          <div className="profile-editor-actions">
+          <div className={'profile-editor-actions flex flex-wrap gap-2'}>
             {u.settings.discoverable && (
               <ButtonLink
                 href={'/users/' + encodeURIComponent(u.username)}
@@ -255,7 +274,11 @@ export async function MyAnimalsPage({
           <ButtonLink href="/animals/report">Add an animal report</ButtonLink>
         }
       />
-      <div className="journal-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+        }
+      >
         {rows.items.map((a) => (
           <CatalogCard
             key={a.id}
@@ -394,9 +417,20 @@ export async function MySightingsPage({
           }
         >
           <p>{s.observation}</p>
-          <p className="journal-meta">{s.location.neighborhood}</p>
+          <p
+            className={
+              'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+            }
+          >
+            {s.location.neighborhood}
+          </p>
           {s.media.length > 0 && (
-            <AnimalImage image={s.media[0]} className="activity-photo" />
+            <AnimalImage
+              image={s.media[0]}
+              className={
+                'activity-photo w-full max-h-76 object-cover rounded-xl block mt-3.5'
+              }
+            />
           )}
         </ActivityCard>
       ))}
@@ -431,7 +465,11 @@ export async function SavedPage({
         description="Only you can see this saved list. Withdrawn content disappears from public results."
       />
       <h2 id="saved-animals">Animals</h2>
-      <div className="journal-grid">
+      <div
+        className={
+          'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
+        }
+      >
         {animals.items.map((a) => (
           <CatalogCard
             key={a.id}
@@ -454,7 +492,7 @@ export async function SavedPage({
         label="More saved animals"
       />
       <h2 id="saved-stories">Community stories</h2>
-      <div className="resource-story-feed">
+      <div className={'resource-story-feed grid gap-5 min-w-0'}>
         {stories.items.map((post) => (
           <PostDetail
             key={post.id}
@@ -564,7 +602,11 @@ export async function ApplicationsPage({
           }
           meta={`${a.status.replaceAll('_', ' ')} · ${date(a.createdAt)}`}
         >
-          <p className="private-card-note">
+          <p
+            className={
+              'private-card-note text-[0.8125rem] text-muted-foreground'
+            }
+          >
             Private application · version {a.version}
           </p>
         </ActivityCard>
@@ -648,7 +690,11 @@ export async function ApplicationPage({ id }: { id: string }) {
         description={`${a.status.replaceAll('_', ' ')} · last version ${a.version} · private to you and responsible shelter staff`}
       />
       {a.reviewMessage && (
-        <section className="workflow-panel">
+        <section
+          className={
+            'workflow-panel [padding:1.5rem_0] [border-top:1px_solid_#ede5d8] [margin:1.5rem_0] [&_h2]:mt-0 [&_h3]:mt-0 [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_&]:p-5 [.app-shell_&]:[margin:0_0_1rem] [.management-shell_&]:border-border [.management-shell_&_>_h3]:mt-4 [.management-shell_&_>_h2]:mt-4 max-[48rem]:[.app-shell_&]:p-4'
+          }
+        >
           <h2>A note from the shelter</h2>
           <p>{a.reviewMessage}</p>
         </section>
@@ -673,7 +719,11 @@ export async function ApplicationPage({ id }: { id: string }) {
           }
         />
       ) : (
-        <dl className="workflow-review">
+        <dl
+          className={
+            'workflow-review [margin:1.5rem_0] grid gap-4 [&_div]:[padding:0_0_1rem] [&_div]:[border-bottom:1px_solid_#ede5d8] [&_dt]:font-semibold [&_dt]:text-sm [&_dt]:text-[#6b625b] [&_dd]:[margin:0.5rem_0_0] [&_dd]:whitespace-pre-wrap [&_dd]:[overflow-wrap:anywhere] [.app-shell_&]:bg-card [.app-shell_&]:p-5 [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl'
+          }
+        >
           {applicationFields
             .filter((f) => f.type !== 'checkbox')
             .map((f) => (
@@ -698,7 +748,11 @@ export async function ApplicationPage({ id }: { id: string }) {
           </ActionButton>
         )}
       {!mine && a.status === 'submitted' && (
-        <section className="workflow-panel">
+        <section
+          className={
+            'workflow-panel [padding:1.5rem_0] [border-top:1px_solid_#ede5d8] [margin:1.5rem_0] [&_h2]:mt-0 [&_h3]:mt-0 [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_&]:p-5 [.app-shell_&]:[margin:0_0_1rem] [.management-shell_&]:border-border [.management-shell_&_>_h3]:mt-4 [.management-shell_&_>_h2]:mt-4 max-[48rem]:[.app-shell_&]:p-4'
+          }
+        >
           <h2>Record a considered decision</h2>
           <WorkflowForm
             operation="application_review"
@@ -983,19 +1037,31 @@ export async function ManageCampaignPage({ id }: { id: string }) {
               >
                 <p>{expense.description}</p>
                 {expense.correctsEntryId && (
-                  <p className="journal-meta">
+                  <p
+                    className={
+                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                    }
+                  >
                     Correction to an earlier expense
                   </p>
                 )}
                 {f.expenses.some(
                   (entry) => entry.correctsEntryId === expense.id,
                 ) && (
-                  <p className="journal-meta">
+                  <p
+                    className={
+                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                    }
+                  >
                     Superseded by a later correction
                   </p>
                 )}
                 {receipts.length ? (
-                  <div className="activity-actions">
+                  <div
+                    className={
+                      'activity-actions flex flex-wrap items-center gap-3 pt-4 mt-4 [border-top:1px_solid_var(--social-line)]'
+                    }
+                  >
                     {receipts.map((id, index) => (
                       <ButtonAnchor
                         key={id}
@@ -1010,7 +1076,11 @@ export async function ManageCampaignPage({ id }: { id: string }) {
                     ))}
                   </div>
                 ) : (
-                  <p className="journal-meta">
+                  <p
+                    className={
+                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                    }
+                  >
                     No private receipt is attached.
                   </p>
                 )}
@@ -1077,7 +1147,9 @@ export async function MyMissionsPage({
       />
       <h2 id="my-mission-activity">Your missions</h2>
       <nav
-        className="workspace-tabs mission-state-tabs"
+        className={
+          'workspace-tabs flex flex-wrap gap-5 [padding:1rem_0] [border-bottom:1px_solid_#ede5d8] mb-6 [&_[aria-current]]:text-[#0f766e] [&_[aria-current]]:font-bold [&_[aria-current]]:[text-decoration-thickness:2px] [.management-shell_&_a]:inline-flex [.management-shell_&_a]:items-center [.management-shell_&_a]:min-h-11 [.management-shell_&_a]:[padding:0.625rem_0.875rem] [.management-shell_&_a]:rounded-xl [.management-shell_&_a[aria-current=page]]:bg-[var(--teal)] [.management-shell_&_a[aria-current=page]]:text-card mission-state-tabs flex flex-wrap gap-1.5 mb-4'
+        }
         aria-label="Your mission status"
       >
         {Object.entries(participationNames).map(([key, label]) => (
@@ -1093,7 +1165,12 @@ export async function MyMissionsPage({
       {mine.items.map((p) => {
         const mission = missions.items.find((item) => item.id === p.missionId)
         return (
-          <section className="workflow-panel" key={p.id}>
+          <section
+            className={
+              'workflow-panel [padding:1.5rem_0] [border-top:1px_solid_#ede5d8] [margin:1.5rem_0] [&_h2]:mt-0 [&_h3]:mt-0 [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_&]:p-5 [.app-shell_&]:[margin:0_0_1rem] [.management-shell_&]:border-border [.management-shell_&_>_h3]:mt-4 [.management-shell_&_>_h2]:mt-4 max-[48rem]:[.app-shell_&]:p-4'
+            }
+            key={p.id}
+          >
             <ContributorLine
               api={api}
               id={p.volunteerId}
@@ -1116,7 +1193,11 @@ export async function MyMissionsPage({
                 {mission?.title ?? 'Open mission details'}
               </Link>
             </h3>
-            <p className="mission-deadline">
+            <p
+              className={
+                'mission-deadline text-muted-foreground text-[0.8125rem] [.app-shell_&]:[margin:0_0_0.5rem]'
+              }
+            >
               {mission
                 ? `${Date.parse(mission.deadline) <= (session.demo ? demoClock : systemClock).now().getTime() ? 'Deadline passed' : 'Help by'} · ${date(mission.deadline)}`
                 : 'Open the mission for its latest deadline and instructions.'}
@@ -1128,7 +1209,11 @@ export async function MyMissionsPage({
                   : 'Your evidence is waiting for an organizer’s review.')}
             </p>
             {['accepted', 'rejected'].includes(p.state) && (
-              <details className="mission-evidence-details">
+              <details
+                className={
+                  'mission-evidence-details mt-3 [&_>_summary]:cursor-pointer [&_>_summary]:min-h-11 [&_>_summary]:[align-content:center] [&_>_summary]:text-[color:var(--teal)] [&_>_summary]:[font-weight:650]'
+                }
+              >
                 <summary>
                   {p.state === 'rejected'
                     ? 'Update and resubmit evidence'
@@ -1175,7 +1260,9 @@ export async function MyMissionsPage({
             Evidence for your organization ({review.count})
           </h2>
           <nav
-            className="workspace-tabs"
+            className={
+              'workspace-tabs flex flex-wrap gap-5 [padding:1rem_0] [border-bottom:1px_solid_#ede5d8] mb-6 [&_[aria-current]]:text-[#0f766e] [&_[aria-current]]:font-bold [&_[aria-current]]:[text-decoration-thickness:2px] [.management-shell_&_a]:inline-flex [.management-shell_&_a]:items-center [.management-shell_&_a]:min-h-11 [.management-shell_&_a]:[padding:0.625rem_0.875rem] [.management-shell_&_a]:rounded-xl [.management-shell_&_a[aria-current=page]]:bg-[var(--teal)] [.management-shell_&_a[aria-current=page]]:text-card'
+            }
             aria-label="Mission evidence review state"
           >
             <Link
@@ -1194,7 +1281,12 @@ export async function MyMissionsPage({
           {review.items
             .filter((p) => ['submitted', 'approved'].includes(p.state))
             .map((p) => (
-              <section className="workflow-panel" key={p.id}>
+              <section
+                className={
+                  'workflow-panel [padding:1.5rem_0] [border-top:1px_solid_#ede5d8] [margin:1.5rem_0] [&_h2]:mt-0 [&_h3]:mt-0 [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_&]:p-5 [.app-shell_&]:[margin:0_0_1rem] [.management-shell_&]:border-border [.management-shell_&_>_h3]:mt-4 [.management-shell_&_>_h2]:mt-4 max-[48rem]:[.app-shell_&]:p-4'
+                }
+                key={p.id}
+              >
                 <ContributorLine
                   api={api}
                   id={p.volunteerId}
@@ -1211,7 +1303,11 @@ export async function MyMissionsPage({
                   {p.evidence?.text || 'No evidence description was supplied.'}
                 </p>
                 {p.evidence?.mediaIds.length ? (
-                  <div className="activity-actions">
+                  <div
+                    className={
+                      'activity-actions flex flex-wrap items-center gap-3 pt-4 mt-4 [border-top:1px_solid_var(--social-line)]'
+                    }
+                  >
                     {p.evidence.mediaIds.map((id, index) => (
                       <ButtonAnchor
                         key={id}
@@ -1226,7 +1322,11 @@ export async function MyMissionsPage({
                     ))}
                   </div>
                 ) : (
-                  <p className="journal-meta">
+                  <p
+                    className={
+                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                    }
+                  >
                     No media attachments were supplied.
                   </p>
                 )}
@@ -1418,7 +1518,12 @@ export async function ShelterWorkspacePage() {
         }
       />
       {rows.map((s) => (
-        <section className="workflow-panel" key={s.shelterId}>
+        <section
+          className={
+            'workflow-panel [padding:1.5rem_0] [border-top:1px_solid_#ede5d8] [margin:1.5rem_0] [&_h2]:mt-0 [&_h3]:mt-0 [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_&]:p-5 [.app-shell_&]:[margin:0_0_1rem] [.management-shell_&]:border-border [.management-shell_&_>_h3]:mt-4 [.management-shell_&_>_h2]:mt-4 max-[48rem]:[.app-shell_&]:p-4'
+          }
+          key={s.shelterId}
+        >
           <h2>
             {shelters.items.find((r) => r.id === s.shelterId)?.name ??
               'Your shelter'}
@@ -1427,7 +1532,11 @@ export async function ShelterWorkspacePage() {
             {s.pendingApplications} applications waiting · {s.pendingEvidence}{' '}
             evidence submissions
           </p>
-          <nav className="workspace-tabs">
+          <nav
+            className={
+              'workspace-tabs flex flex-wrap gap-5 [padding:1rem_0] [border-bottom:1px_solid_#ede5d8] mb-6 [&_[aria-current]]:text-[#0f766e] [&_[aria-current]]:font-bold [&_[aria-current]]:[text-decoration-thickness:2px] [.management-shell_&_a]:inline-flex [.management-shell_&_a]:items-center [.management-shell_&_a]:min-h-11 [.management-shell_&_a]:[padding:0.625rem_0.875rem] [.management-shell_&_a]:rounded-xl [.management-shell_&_a[aria-current=page]]:bg-[var(--teal)] [.management-shell_&_a[aria-current=page]]:text-card'
+            }
+          >
             <Link href="/dashboard/animals">
               Managed animals ({s.animalIds.length})
             </Link>

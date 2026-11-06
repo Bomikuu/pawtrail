@@ -76,12 +76,23 @@ export function AnimatedNumber({
     }
   }, [value, formatter, final])
   return (
-    <span className="animated-number">
+    <span
+      className={
+        'animated-number inline-grid [vertical-align:baseline] tabular-nums'
+      }
+    >
       <span className="sr-only">{final}</span>
-      <span className="animated-number-measure" aria-hidden="true">
+      <span
+        className={'animated-number-measure [grid-area:1_/_1] invisible'}
+        aria-hidden="true"
+      >
         {final}
       </span>
-      <span className="animated-number-value" ref={node} aria-hidden="true">
+      <span
+        className={'animated-number-value [grid-area:1_/_1]'}
+        ref={node}
+        aria-hidden="true"
+      >
         {final}
       </span>
     </span>

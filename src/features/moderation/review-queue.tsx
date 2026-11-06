@@ -42,8 +42,13 @@ export function ReviewQueue() {
   ]
   const current = rows.find((i) => i.id === selected)
   return (
-    <div className="moderation-workspace">
-      <div className="community-choice-row" aria-label="Review type">
+    <div className={'moderation-workspace grid gap-6 min-w-0'}>
+      <div
+        className={
+          'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+        }
+        aria-label="Review type"
+      >
         {(['publication', 'verification'] as const).map((value) => (
           <Button
             key={value}
@@ -61,7 +66,12 @@ export function ReviewQueue() {
           </Button>
         ))}
       </div>
-      <div className="community-choice-row" aria-label="Review state">
+      <div
+        className={
+          'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+        }
+        aria-label="Review state"
+      >
         {(['pending', 'published', 'rejected', 'removed'] as const).map(
           (value) => (
             <Button
@@ -109,7 +119,11 @@ export function ReviewQueue() {
             emptyDescription="Choose another review type or state to inspect existing records."
             errorMessage="The queue couldn’t load. Try again to get the latest records."
           >
-            <ul className="review-list">
+            <ul
+              className={
+                'review-list list-none p-0 m-0 [&_>_li]:py-5 [&_>_li]:[border-bottom:1px_solid_var(--border)] [&_>_li]:flex [&_>_li]:items-baseline [&_>_li]:justify-between [&_>_li]:gap-4 [&_>_li]:flex-wrap [&_h2]:text-lg [.app-shell_&_>_li]:min-w-0 [.app-shell_&_>_li]:bg-card [.app-shell_&_>_li]:[border:1px_solid_var(--social-line)] [.app-shell_&_>_li]:rounded-2xl [.app-shell_&_>_li]:[overflow-wrap:anywhere] [.app-shell_&_>_li]:p-5 [.app-shell_&_>_li]:[margin:0_0_1rem] [.app-shell_&_>_li]:items-start [.app-shell_&_>_li]:gap-4 max-[48rem]:[.app-shell_&_>_li]:flex-col'
+              }
+            >
               {rows.map((item) => (
                 <li key={item.id}>
                   <UnavailableIdentity
@@ -126,7 +140,13 @@ export function ReviewQueue() {
                       {item.commentId ? 'Comment' : item.ref.kind} ·{' '}
                       {item.state} · {item.reportCount} reported concerns
                     </p>
-                    <p className="review-excerpt">{item.text}</p>
+                    <p
+                      className={
+                        'review-excerpt max-w-[65ch] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden'
+                      }
+                    >
+                      {item.text}
+                    </p>
                   </div>
                   <Button
                     variant="outline"

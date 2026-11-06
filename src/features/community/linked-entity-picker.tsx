@@ -27,11 +27,21 @@ export function LinkedEntityPicker({
     )
     .slice(0, 8)
   return (
-    <fieldset disabled={disabled} className="linked-picker">
+    <fieldset
+      disabled={disabled}
+      className={
+        'linked-picker [&_legend]:font-bold [&_legend]:mb-3 [border:0] [padding:1.5rem_0_0]'
+      }
+    >
       <legend>Connect this story</legend>
       <p>Choose the animals or care efforts in your update.</p>
       {!!value.length && (
-        <div className="community-choice-row" aria-label="Selected connections">
+        <div
+          className={
+            'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+          }
+          aria-label="Selected connections"
+        >
           {value.map((ref) => {
             const option = options.find(
               (option) =>
@@ -62,7 +72,11 @@ export function LinkedEntityPicker({
         value={search}
         onChange={(event) => setSearch(event.target.value)}
       />
-      <div className="community-choice-row">
+      <div
+        className={
+          'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+        }
+      >
         {shown.map((option) => {
           const selected = value.some(
             (ref) => ref.kind === option.ref.kind && ref.id === option.ref.id,

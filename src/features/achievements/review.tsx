@@ -3,7 +3,10 @@ import { useRef, useState } from 'react'
 import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
-import { Select } from '@/components/ui/select'
+import {
+  NativeSelect as Select,
+  NativeSelectOption as SelectOption,
+} from '@/components/ui/native-select'
 import { Textarea } from '@/components/ui/textarea'
 import { ConfirmDialog } from '@/components/shared/confirm-dialog'
 import { DataState } from '@/components/shared/data-state'
@@ -57,7 +60,11 @@ function ReviewCard({ proof }: { proof: AchievementProof }) {
     }
   }
   return (
-    <article className="achievement-review-card">
+    <article
+      className={
+        'achievement-review-card [&_[data-slot=textarea]]:[resize:none] [&_[data-slot=textarea]]:min-h-32 p-5 [margin:1.25rem_0] [border:1px_solid_var(--social-line)] rounded-xl bg-card [&_>_header]:flex [&_>_header]:items-center [&_>_header]:gap-4 [&_header_img]:[flex:0_0_4rem] [&_header_img]:w-16 [&_header_img]:h-16 [&_header_img]:object-contain [&_h2]:text-lg [&_h2]:[margin:0_0_0.375rem] [&_header_p]:text-muted-foreground [&_header_p]:text-[0.8125rem] [&_header_p]:[margin:0.25rem_0] [&_>_label]:block [&_>_label]:[margin:1rem_0_0.5rem] [&_>_label]:font-semibold [&_>_label]:text-sm'
+      }
+    >
       <header>
         {badge && (
           <img
@@ -94,7 +101,11 @@ function ReviewCard({ proof }: { proof: AchievementProof }) {
               disabled={pending}
               placeholder="Explain what was confirmed or what needs correction…"
             />
-            <div className="workflow-actions">
+            <div
+              className={
+                'workflow-actions flex items-center gap-3 flex-wrap [margin:0.75rem_0] [.discovery-map_&_p]:m-0 [.discovery-map_&_p]:text-sm [.discovery-map_&_p]:text-[#6b625b] max-[48rem]:[&_>_*]:max-w-full [.achievement-review-card_&]:mt-4 [.adoption-story_&]:gap-2.5 [.adoption-story_&_[data-slot=button]]:[flex:1_1_9rem]'
+              }
+            >
               {proof.state === 'pending' ? (
                 <>
                   <Button
@@ -174,7 +185,11 @@ export function AchievementReview({
     ).values(),
   ]
   return (
-    <section className="achievement-review">
+    <section
+      className={
+        'achievement-review [&_>_[data-slot=input]]:max-w-80 [&_>_[data-slot=input]]:[margin:1.5rem_0]'
+      }
+    >
       <header className="catalog-heading">
         <div>
           <h1>Achievement evidence</h1>
@@ -192,9 +207,9 @@ export function AchievementReview({
         value={state}
         onChange={(event) => setState(event.target.value as typeof state)}
       >
-        <option value="pending">Awaiting review</option>
-        <option value="approved">Approved evidence</option>
-        <option value="rejected">Needs revision</option>
+        <SelectOption value="pending">Awaiting review</SelectOption>
+        <SelectOption value="approved">Approved evidence</SelectOption>
+        <SelectOption value="rejected">Needs revision</SelectOption>
       </Select>
       <DataState
         state={

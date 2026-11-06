@@ -11,7 +11,7 @@ export default async function Page({
 }) {
   const { returnTo } = await searchParams
   return (
-    <main className="auth-page">
+    <main className={'auth-page [padding:3rem_1.25rem] max-[40rem]:pt-8'}>
       <NavigationContent>
         <RegisterForm
           returnTo={typeof returnTo === 'string' ? returnTo : null}

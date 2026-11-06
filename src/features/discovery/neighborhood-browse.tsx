@@ -46,7 +46,9 @@ export function NeighborhoodBrowse({
   const matches = unique.filter((feature) => feature.location.areaId === area)
   return (
     <section
-      className="neighborhood-browser"
+      className={
+        'neighborhood-browser bg-card [border:1px_solid_var(--social-line)] rounded-2xl p-4 [margin-block:0.75rem_1rem] [&_>_header]:flex [&_>_header]:gap-4 [&_>_header]:items-center [&_>_header]:mb-4 [&_>_header_img]:w-24 [&_>_header_img]:h-auto [&_>_header_img]:shrink-0 [&_h2]:font-[850] [&_h2]:text-xl [&_h2]:leading-[1.3] [&_h2]:font-heading [&_h2]:[margin:0_0_0.375rem] [&_p]:text-muted-foreground [&_p]:text-sm [&_p]:[line-height:1.55] [&_p]:m-0 max-[48rem]:[&_>_header]:items-start max-[48rem]:[&_>_header]:gap-2.5 max-[48rem]:[&_>_header_img]:w-16'
+      }
       aria-label="Browse approximate neighborhoods"
     >
       <header>
@@ -67,7 +69,9 @@ export function NeighborhoodBrowse({
       {areas.length ? (
         <>
           <div
-            className="neighborhood-choices"
+            className={
+              'neighborhood-choices flex flex-wrap gap-2 mb-3 [&_[data-slot=button]]:text-[0.8125rem] [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [&_[aria-pressed=true]]:border-[color:var(--teal)] max-[48rem]:flex-nowrap max-[48rem]:overflow-x-auto max-[48rem]:pb-1.5 max-[48rem]:[&_[data-slot=button]]:shrink-0'
+            }
             role="group"
             aria-label="Choose a neighborhood"
           >
@@ -86,11 +90,20 @@ export function NeighborhoodBrowse({
               </Button>
             ))}
           </div>
-          <p className="journal-meta" aria-live="polite">
+          <p
+            className={
+              'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+            }
+            aria-live="polite"
+          >
             {matches.length} public results in{' '}
             {areas.find(([id]) => id === area)?.[1]}
           </p>
-          <ul className="neighborhood-results">
+          <ul
+            className={
+              'neighborhood-results grid grid-cols-2 list-none p-0 [margin:0.75rem_0_0] [&_li]:min-w-0 [&_li]:[border-top:1px_solid_var(--social-line)] [&_a]:grid [&_a]:grid-cols-[1fr_auto] [&_a]:items-center [&_a]:p-3 [&_a]:min-h-14 [&_a]:[gap:0.25rem_0.75rem] [&_a]:no-underline [&_a:hover]:bg-[#f0f6f2] [&_span]:text-muted-foreground [&_span]:text-xs [&_span]:[grid-column:1] [&_strong]:text-sm [&_strong]:[grid-column:1] [&_svg]:[grid-column:2] [&_svg]:[grid-row:1_/_3] max-[48rem]:grid-cols-1'
+            }
+          >
             {matches.slice(0, limit).map((feature) => (
               <li key={`${feature.ref.kind}:${feature.ref.id}`}>
                 <Link

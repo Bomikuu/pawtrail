@@ -16,7 +16,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
-import { toast } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 import {
   READY_ROUTES,
   destinationHref,
@@ -57,39 +57,76 @@ export function Header({
     }
   }
   return (
-    <header className="app-header">
-      <div className="header-inner">
+    <header
+      className={'app-header sticky top-0 z-40 border-b bg-card md:ms-[14rem]'}
+    >
+      <div
+        className={
+          'header-inner flex min-h-16 items-center gap-2 px-3 md:gap-3 md:px-6'
+        }
+      >
         <NavigationDrawer readyRoutes={readyRoutes} variant={variant} />
         {variant === 'management' && (
-          <span className="header-workspace-name">Management</span>
+          <span
+            className={
+              'header-workspace-name hidden font-medium text-muted-foreground xl:block'
+            }
+          >
+            Management
+          </span>
         )}
         {readyRoutes.has('/search') && <GlobalSearch />}
-        <div className="header-utilities">
+        <div
+          className={
+            'header-utilities ms-auto flex shrink-0 items-center gap-1 sm:gap-2'
+          }
+        >
           {readyRoutes.has('/search') ? (
             <Link
-              className="utility-link mobile-search-link"
+              className={
+                'mobile-search-link inline-flex size-10 items-center justify-center rounded-md hover:bg-accent md:hidden'
+              }
               href="/search"
               aria-label="Search PawTrail"
             >
               <Search size={20} aria-hidden="true" />
-              <span className="utility-label">Search</span>
+              <span
+                className={
+                  'utility-label max-[48rem]:absolute max-[48rem]:w-[1px] max-[48rem]:h-[1px] max-[48rem]:overflow-hidden max-[48rem]:[clip-path:inset(50%)] max-[48rem]:[.app-shell_.mobile-search-link_&]:hidden'
+                }
+              >
+                Search
+              </span>
             </Link>
           ) : (
             <span
-              className="utility-link nav-unavailable"
+              className={
+                'utility-link inline-flex min-h-10 items-center gap-2 rounded-md px-2 text-sm hover:bg-accent'
+              }
               aria-disabled="true"
               title="Coming soon"
             >
               <Search size={20} aria-hidden="true" />
-              <span className="utility-label">Search</span>
+              <span
+                className={
+                  'utility-label max-[48rem]:absolute max-[48rem]:w-[1px] max-[48rem]:h-[1px] max-[48rem]:overflow-hidden max-[48rem]:[clip-path:inset(50%)] max-[48rem]:[.app-shell_.mobile-search-link_&]:hidden'
+                }
+              >
+                Search
+              </span>
               <span className="sr-only"> unavailable</span>
             </span>
           )}
           {session.actor && (
             <>
-              <div className="header-kibble">
+              <div className={'header-kibble hidden shrink-0 text-xs lg:grid'}>
                 {readyRoutes.has('/dashboard/kibble') ? (
-                  <Link className="utility-link" href="/dashboard/kibble">
+                  <Link
+                    className={
+                      'utility-link inline-flex min-h-10 items-center gap-2 rounded-md px-2 text-sm hover:bg-accent'
+                    }
+                    href="/dashboard/kibble"
+                  >
                     <Cookie aria-hidden="true" size={18} />
                     <span>{validCount(kibbleBalance) ? kibble : 'Kibble'}</span>
                   </Link>
@@ -102,7 +139,9 @@ export function Header({
                 <NotificationMenu unread={unread} />
               ) : (
                 <span
-                  className="utility-link nav-unavailable"
+                  className={
+                    'utility-link inline-flex min-h-10 items-center gap-2 rounded-md px-2 text-sm hover:bg-accent'
+                  }
                   aria-disabled="true"
                 >
                   <Bell size={20} aria-hidden="true" />
@@ -115,12 +154,16 @@ export function Header({
             <ButtonLink
               href="/community"
               variant="ghost"
-              className="management-platform-link"
+              className={'management-platform-link hidden xl:inline-flex'}
             >
               Open community <ArrowUpRight size={16} aria-hidden="true" />
             </ButtonLink>
           )}
-          <div className="header-create">
+          <div
+            className={
+              'header-create shrink-0 [&_button]:h-10 [&_button>span]:hidden sm:[&_button>span]:inline'
+            }
+          >
             <CreateMenu readyRoutes={readyRoutes} />
           </div>
           <ThemeToggle />
@@ -137,7 +180,11 @@ export function Header({
                     userId={session.actor.id}
                     small
                   />
-                  <span className="account-name">
+                  <span
+                    className={
+                      'account-name hidden max-w-40 truncate xl:inline'
+                    }
+                  >
                     {session.actor.displayName}
                   </span>
                   <ChevronDown size={15} aria-hidden="true" />

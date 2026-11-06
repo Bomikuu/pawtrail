@@ -21,14 +21,20 @@ function FilePreview({ item }: { item: MediaPreview }) {
   // Private server URLs and PDF contents never enter an image optimizer or embedded document viewer.
   return url ? (
     <img
-      className="media-preview-image"
+      className={'media-preview-image object-cover rounded-[var(--radius)]'}
       src={url}
       alt={item.alt || `Preview of ${item.filename}`}
       width={160}
       height={120}
     />
   ) : (
-    <p className="media-document">{item.filename}</p>
+    <p
+      className={
+        'media-document grid [place-items:center] p-5 bg-background [border:1px_solid_var(--border)] rounded-[var(--radius)] [overflow-wrap:anywhere]'
+      }
+    >
+      {item.filename}
+    </p>
   )
 }
 export function PreviewList({
@@ -43,11 +49,20 @@ export function PreviewList({
   disabled?: boolean
 }) {
   return (
-    <ul className="media-preview-list">
+    <ul className={'media-preview-list grid gap-5 p-0 list-none my-5'}>
       {items.map((item) => (
-        <li key={item.id} className="media-preview-item">
+        <li
+          key={item.id}
+          className={
+            'media-preview-item flex flex-wrap gap-5 py-5 [border-bottom:1px_solid_var(--border)]'
+          }
+        >
           <FilePreview item={item} />
-          <div className="media-preview-fields">
+          <div
+            className={
+              'media-preview-fields [&_label]:font-semibold grid gap-2 min-w-0 [flex:1_1_15rem] [overflow-wrap:anywhere] [&_[data-slot=button]]:[justify-self:start]'
+            }
+          >
             <label htmlFor={`media-alt-${item.id}`}>
               Description for {item.filename}
             </label>

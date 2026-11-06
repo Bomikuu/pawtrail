@@ -36,7 +36,12 @@ export function PlatformSidebar({
           ))}
         </ul>
       </nav>
-      <nav aria-label="More in your community" className="secondary-nav">
+      <nav
+        aria-label="More in your community"
+        className={
+          'secondary-nav mt-6 pt-6 [border-top:1px_solid_var(--border)] [.app-shell_&]:mt-3.5 [.app-shell_&]:pt-3.5 [.app-shell_&]:border-border'
+        }
+      >
         <ul>
           {extraDestinations.map((item) => (
             <li key={item.href}>
@@ -59,7 +64,7 @@ export function PlatformSidebar({
         </ul>
       </nav>
       <ButtonLink
-        className="sidebar-post"
+        className={'sidebar-post mt-5 w-full rounded-xl'}
         href={
           session.actor ? '/community/create' : loginPath('/community/create')
         }
@@ -67,7 +72,11 @@ export function PlatformSidebar({
         <SquarePen size={19} aria-hidden="true" />
         Create a post
       </ButtonLink>
-      <div className="sidebar-community-note">
+      <div
+        className={
+          'sidebar-community-note [margin:1.5rem_0.75rem_1rem] [&_img]:w-36 [&_img]:h-auto [&_img]:block [&_img]:[mix-blend-mode:multiply] [&_p]:font-[800] [&_p]:text-base [&_p]:leading-[1.35] [&_p]:font-heading [&_p]:[margin:0.75rem_0_0.375rem] [&_a]:inline-flex [&_a]:gap-1.5 [&_a]:items-center [&_a]:text-[0.8125rem] [&_a]:no-underline'
+        }
+      >
         <img
           src="/images/pawtrail/community-friends.webp"
           alt=""
@@ -81,7 +90,9 @@ export function PlatformSidebar({
         </Link>
       </div>
       <Link
-        className="workspace-switch"
+        className={
+          'workspace-switch flex items-center gap-2 text-[0.8125rem] [padding:0.875rem_0.75rem] mt-4 [border-top:1px_solid_var(--social-line)] text-muted-foreground no-underline [&:hover]:text-[color:var(--teal)] [&:hover]:bg-card [&_>_svg]:shrink-0'
+        }
         href={session.actor ? '/dashboard' : loginPath('/dashboard')}
       >
         <LayoutDashboard size={19} aria-hidden="true" />
@@ -91,7 +102,9 @@ export function PlatformSidebar({
       {session.actor && (
         <ProfileLink
           username={session.actor.username}
-          className="sidebar-account"
+          className={
+            'sidebar-account flex items-center gap-2.5 p-3 no-underline text-foreground rounded-[0.625rem] [&:hover]:bg-[#e9ecef] [&_strong]:block [&_strong]:[overflow-wrap:anywhere] [&_strong]:text-[0.8125rem] [&_small]:block [&_small]:[overflow-wrap:anywhere] [&_small]:text-xs [&_small]:text-muted-foreground'
+          }
         >
           <CommunityAvatar
             name={session.actor.displayName}

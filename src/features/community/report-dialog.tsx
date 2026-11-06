@@ -77,7 +77,9 @@ export function ReportDialog({
           </p>
         ) : (
           <form
-            className="discussion-form"
+            className={
+              'discussion-form grid gap-3 [&_>_[data-slot=button]]:[justify-self:start] [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-[0.875rem] [.app-shell_&]:p-4 [.app-shell_&]:bg-card [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none] [.event-community_&]:p-5 [.event-community_&]:[border:1px_solid_var(--border)] [.event-community_&]:rounded-2xl [.event-community_&]:bg-card [.event-community_&_>_[data-slot=button]]:[justify-self:end] [.event-community_&_>_[data-slot=button]]:rounded-[2rem] [.event-community_&_textarea]:min-h-24 [.event-community_&_textarea]:[resize:vertical] max-[40rem]:[.event-community_&]:p-4'
+            }
             onSubmit={async (e) => {
               e.preventDefault()
               if (busy.current) return
@@ -105,7 +107,11 @@ export function ReportDialog({
           >
             <fieldset disabled={pending || changing}>
               <legend>Reason for reporting</legend>
-              <div className="community-choice-row">
+              <div
+                className={
+                  'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+                }
+              >
                 {Object.entries(reportReasons).map(([value, label]) => (
                   <Button
                     key={value}

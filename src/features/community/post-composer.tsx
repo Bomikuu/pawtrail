@@ -2,12 +2,12 @@
 import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { useId, useRef, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
-import { Button } from '@/components/ui/button'
+import { LoadingButton as Button } from '@/components/shared/loading-button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { Textarea } from '@/components/ui/textarea'
 import { CommunityAvatar } from '@/components/shared/community-avatar'
 import { ImagePlus, PawPrint } from 'lucide-react'
-import { toast } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 import { UploadField } from '@/features/media/upload-field'
 import type { MediaAsset } from '@/features/media/types'
 import { useSession } from '@/features/auth/session-provider'
@@ -73,17 +73,25 @@ export function PostComposer({
   if (session.actor && compact && !writing && !completed)
     return (
       <section
-        className="post-composer composer-collapsed"
+        className={
+          'post-composer bg-card [border:1px_solid_var(--border)] p-5 mb-6 rounded-xl [&_h2]:text-lg [&_h2]:mb-4 [&_label]:block [&_label]:mb-2 max-[48rem]:p-4 [.app-shell_&]:border-border [.app-shell_&]:rounded-xl [.app-shell_&]:[padding:1rem_1.125rem] [.app-shell_&]:[margin:0_0_1rem] [.app-shell_&_[data-slot=textarea]]:bg-background [.app-shell_&_[data-slot=textarea]]:border-[transparent] [.app-shell_&_[data-slot=textarea]]:min-h-16 [.app-shell_&_[data-slot=textarea]]:[resize:none] [.app-shell_&_[data-slot=textarea]]:rounded-xl [.app-shell_&_[data-slot=textarea]]:text-[length:0.9375rem] [.app-shell_&_[data-slot=textarea]]:[line-height:1.5] max-[48rem]:[.app-shell_&]:p-3.5 [.pet-community-composer_&]:[border:0] [.pet-community-composer_&]:rounded-[0] [.pet-community-composer_&]:m-0 composer-collapsed [.app-shell_&]:py-3'
+        }
         aria-label="Share an update"
       >
-        <div className="composer-entry">
+        <div
+          className={
+            'composer-entry flex items-start gap-3 [.composer-collapsed_&]:items-center [.composer-collapsed_&]:gap-2 [.composer-collapsed_&_>_[data-slot=button]:last-child:not(.composer-prompt)]:px-2.5 [.composer-collapsed_&_>_[data-slot=button]:last-child:not(.composer-prompt)]:text-[color:var(--teal)]'
+          }
+        >
           <CommunityAvatar
             name={session.actor.displayName}
             image={session.actor.avatar}
             userId={session.actor.id}
           />
           <Button
-            className="composer-prompt"
+            className={
+              'composer-prompt [.composer-entry_&]:[flex:1] [.composer-entry_&]:justify-start [.composer-entry_&]:rounded-full [.composer-entry_&]:bg-background [.composer-entry_&]:text-muted-foreground [.composer-entry_&]:font-normal [.composer-entry_&]:text-[length:0.9375rem] [.composer-entry_&:hover]:bg-[#e9ecef] [.composer-collapsed_&]:whitespace-normal [.composer-collapsed_&]:text-left [.composer-collapsed_&]:px-3 [.dark_.app-shell_&]:bg-[#1c1c1c] [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border'
+            }
             variant="ghost"
             onClick={() => setWriting(true)}
           >
@@ -105,12 +113,18 @@ export function PostComposer({
   if (!session.actor)
     return (
       <section
-        className={`post-composer${compact ? ' composer-collapsed' : ''}`}
+        className={`post-composer bg-card [border:1px_solid_var(--border)] p-5 mb-6 rounded-xl [&_h2]:text-lg [&_h2]:mb-4 [&_label]:block [&_label]:mb-2 max-[48rem]:p-4 [.app-shell_&]:border-border [.app-shell_&]:rounded-xl [.app-shell_&]:[padding:1rem_1.125rem] [.app-shell_&]:[margin:0_0_1rem] [.app-shell_&_[data-slot=textarea]]:bg-background [.app-shell_&_[data-slot=textarea]]:border-[transparent] [.app-shell_&_[data-slot=textarea]]:min-h-16 [.app-shell_&_[data-slot=textarea]]:[resize:none] [.app-shell_&_[data-slot=textarea]]:rounded-xl [.app-shell_&_[data-slot=textarea]]:text-[length:0.9375rem] [.app-shell_&_[data-slot=textarea]]:[line-height:1.5] max-[48rem]:[.app-shell_&]:p-3.5 [.pet-community-composer_&]:[border:0] [.pet-community-composer_&]:rounded-[0] [.pet-community-composer_&]:m-0${compact ? ' composer-collapsed [.app-shell_&]:py-3' : ''}`}
       >
-        <div className="composer-entry">
+        <div
+          className={
+            'composer-entry flex items-start gap-3 [.composer-collapsed_&]:items-center [.composer-collapsed_&]:gap-2 [.composer-collapsed_&_>_[data-slot=button]:last-child:not(.composer-prompt)]:px-2.5 [.composer-collapsed_&_>_[data-slot=button]:last-child:not(.composer-prompt)]:text-[color:var(--teal)]'
+          }
+        >
           <CommunityAvatar name="Your story" />
           <ButtonLink
-            className="composer-prompt"
+            className={
+              'composer-prompt [.composer-entry_&]:[flex:1] [.composer-entry_&]:justify-start [.composer-entry_&]:rounded-full [.composer-entry_&]:bg-background [.composer-entry_&]:text-muted-foreground [.composer-entry_&]:font-normal [.composer-entry_&]:text-[length:0.9375rem] [.composer-entry_&:hover]:bg-[#e9ecef] [.composer-collapsed_&]:whitespace-normal [.composer-collapsed_&]:text-left [.composer-collapsed_&]:px-3 [.dark_.app-shell_&]:bg-[#1c1c1c] [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border'
+            }
             variant="ghost"
             href={loginPath('/community/create')}
           >
@@ -118,7 +132,11 @@ export function PostComposer({
           </ButtonLink>
         </div>
         {!compact && (
-          <div className="composer-toolbar">
+          <div
+            className={
+              'composer-toolbar flex items-center justify-between gap-2 [border-top:1px_solid_var(--social-line)] pt-2.5 [&_>_span]:inline-flex [&_>_span]:items-center [&_>_span]:gap-2 [&_>_span]:text-muted-foreground [&_>_span]:text-[0.8125rem] [&_[data-slot=button]]:text-[0.8125rem] [&_[data-slot=button]]:min-h-10 [&_[data-slot=button]]:[padding:0.5rem_0.75rem] [&_.ui-button-ghost]:text-muted-foreground [&_.ui-button-ghost_svg]:text-[color:var(--teal)] [&_.ui-button-primary]:min-w-28 [&_.ui-button-primary]:rounded-full [.app-shell_&_.ui-button-primary]:rounded-xl'
+            }
+          >
             <span>
               <ImagePlus size={18} aria-hidden="true" />
               Photos & updates
@@ -220,18 +238,24 @@ export function PostComposer({
   return (
     <form
       onSubmit={submit}
-      className="post-composer"
+      className={
+        'post-composer bg-card [border:1px_solid_var(--border)] p-5 mb-6 rounded-xl [&_h2]:text-lg [&_h2]:mb-4 [&_label]:block [&_label]:mb-2 max-[48rem]:p-4 [.app-shell_&]:border-border [.app-shell_&]:rounded-xl [.app-shell_&]:[padding:1rem_1.125rem] [.app-shell_&]:[margin:0_0_1rem] [.app-shell_&_[data-slot=textarea]]:bg-background [.app-shell_&_[data-slot=textarea]]:border-[transparent] [.app-shell_&_[data-slot=textarea]]:min-h-16 [.app-shell_&_[data-slot=textarea]]:[resize:none] [.app-shell_&_[data-slot=textarea]]:rounded-xl [.app-shell_&_[data-slot=textarea]]:text-[length:0.9375rem] [.app-shell_&_[data-slot=textarea]]:[line-height:1.5] max-[48rem]:[.app-shell_&]:p-3.5 [.pet-community-composer_&]:[border:0] [.pet-community-composer_&]:rounded-[0] [.pet-community-composer_&]:m-0'
+      }
       aria-busy={pending}
       noValidate
     >
       {post && <h2>Edit your story</h2>}
-      <div className="composer-entry">
+      <div
+        className={
+          'composer-entry flex items-start gap-3 [.composer-collapsed_&]:items-center [.composer-collapsed_&]:gap-2 [.composer-collapsed_&_>_[data-slot=button]:last-child:not(.composer-prompt)]:px-2.5 [.composer-collapsed_&_>_[data-slot=button]:last-child:not(.composer-prompt)]:text-[color:var(--teal)]'
+        }
+      >
         <CommunityAvatar
           name={session.actor.displayName}
           image={session.actor.avatar}
           userId={session.actor.id}
         />
-        <div className="composer-writing">
+        <div className={'composer-writing [flex:1] min-w-0'}>
           <label htmlFor={id} className="sr-only">
             Your update
           </label>
@@ -249,11 +273,20 @@ export function PostComposer({
           />
         </div>
       </div>
-      <p id={`${id}-help`} className="composer-help">
+      <p
+        id={`${id}-help`}
+        className={
+          'composer-help text-muted-foreground text-sm [margin:0.5rem_0_1rem] [.app-shell_&]:[margin:0.5rem_0_0.625rem_3.5rem] [.app-shell_&]:text-[0.6875rem] [.app-shell_&]:text-muted-foreground max-[48rem]:[.app-shell_&]:text-[0.625rem] max-[48rem]:[.app-shell_&]:ml-0'
+        }
+      >
         {text.length > 0 && <span>{text.length}/2,000 · </span>}Posts are
         reviewed before appearing publicly.
       </p>
-      <div className="composer-toolbar">
+      <div
+        className={
+          'composer-toolbar flex items-center justify-between gap-2 [border-top:1px_solid_var(--social-line)] pt-2.5 [&_>_span]:inline-flex [&_>_span]:items-center [&_>_span]:gap-2 [&_>_span]:text-muted-foreground [&_>_span]:text-[0.8125rem] [&_[data-slot=button]]:text-[0.8125rem] [&_[data-slot=button]]:min-h-10 [&_[data-slot=button]]:[padding:0.5rem_0.75rem] [&_.ui-button-ghost]:text-muted-foreground [&_.ui-button-ghost_svg]:text-[color:var(--teal)] [&_.ui-button-primary]:min-w-28 [&_.ui-button-primary]:rounded-full [.app-shell_&_.ui-button-primary]:rounded-xl'
+        }
+      >
         <Button
           type="button"
           variant="ghost"
@@ -262,7 +295,11 @@ export function PostComposer({
           disabled={pending}
         >
           <ImagePlus size={19} aria-hidden="true" />
-          Photos<span className="composer-details-label"> & details</span>
+          Photos
+          <span className={'composer-details-label max-[23rem]:hidden'}>
+            {' '}
+            & details
+          </span>
           <PawPrint size={17} aria-hidden="true" />
         </Button>
         <Button
@@ -296,11 +333,15 @@ export function PostComposer({
       <fieldset
         hidden={!expanded}
         disabled={pending || changing}
-        className="composer-details"
+        className={
+          'composer-details mt-6 p-3 [border:0] bg-[#fafbfc] rounded-[0.625rem] [&_legend]:font-bold [&_legend]:mb-3'
+        }
       >
         <legend>Story details</legend>
         <div
-          className="community-choice-row"
+          className={
+            'community-choice-row flex flex-wrap gap-2 items-center [&_[aria-pressed=true]]:bg-[var(--teal)] [&_[aria-pressed=true]]:text-card [.linked-picker_&]:mt-3'
+          }
           role="group"
           aria-label="Story type"
         >

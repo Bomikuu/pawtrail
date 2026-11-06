@@ -84,22 +84,29 @@ export function PetHelpDialog({
         </Button>
       </DialogTrigger>
       <DialogContent
-        className="pet-help-dialog"
-        closeLabel={'Close ways to help ' + name}
+        className={
+          'pet-help-dialog max-w-[min(32rem,_calc(100vw_-_2rem))] max-h-[85dvh] overflow-y-auto [&_[data-slot=dialog-title]]:pr-8 [&_[data-slot=dialog-title]]:text-2xl [&_[data-slot=dialog-title]]:[line-height:1.25]'
+        }
       >
-        <span className="pet-help-mark">
+        <span
+          className={
+            'pet-help-mark inline-grid [place-items:center] w-12 h-12 rounded-[0.875rem] text-[#a64712] bg-[#fff0df] mb-3.5'
+          }
+        >
           <HandHeart size={26} aria-hidden="true" />
         </span>
         <DialogTitle>How would you like to help {name}?</DialogTitle>
         <DialogDescription>
           Small acts of care start here. Choose a way to take part.
         </DialogDescription>
-        <div className="pet-help-options">
+        <div className={'pet-help-options grid gap-1 mt-4'}>
           {actions.map(({ title, description, icon: Icon, href }) => (
             <DialogClose asChild key={title}>
               <ButtonLink
                 variant="ghost"
-                className="pet-help-option"
+                className={
+                  'pet-help-option [.dark_&_small]:text-muted-foreground [[data-slot=dialog-content]_&]:grid [[data-slot=dialog-content]_&]:grid-cols-[1.5rem_minmax(0,_1fr)] [[data-slot=dialog-content]_&]:items-start [[data-slot=dialog-content]_&]:gap-3.5 [[data-slot=dialog-content]_&]:justify-start [[data-slot=dialog-content]_&]:text-left [[data-slot=dialog-content]_&]:w-full [[data-slot=dialog-content]_&]:p-3.5 [[data-slot=dialog-content]_&]:min-h-17 [[data-slot=dialog-content]_&]:whitespace-normal [&_>_svg]:text-[color:var(--teal)] [&_>_svg]:mt-0.5 [&_>_span]:grid [&_>_span]:gap-[0.3rem] [&_strong]:font-bold [&_strong]:text-sm [&_small]:text-xs [&_small]:[line-height:1.5] [&_small]:text-muted-foreground [&_small]:font-normal'
+                }
                 href={href}
               >
                 <Icon size={22} aria-hidden="true" />
@@ -113,7 +120,9 @@ export function PetHelpDialog({
           <DialogClose asChild>
             <ButtonAnchor
               variant="ghost"
-              className="pet-help-option"
+              className={
+                'pet-help-option [.dark_&_small]:text-muted-foreground [[data-slot=dialog-content]_&]:grid [[data-slot=dialog-content]_&]:grid-cols-[1.5rem_minmax(0,_1fr)] [[data-slot=dialog-content]_&]:items-start [[data-slot=dialog-content]_&]:gap-3.5 [[data-slot=dialog-content]_&]:justify-start [[data-slot=dialog-content]_&]:text-left [[data-slot=dialog-content]_&]:w-full [[data-slot=dialog-content]_&]:p-3.5 [[data-slot=dialog-content]_&]:min-h-17 [[data-slot=dialog-content]_&]:whitespace-normal [&_>_svg]:text-[color:var(--teal)] [&_>_svg]:mt-0.5 [&_>_span]:grid [&_>_span]:gap-[0.3rem] [&_strong]:font-bold [&_strong]:text-sm [&_small]:text-xs [&_small]:[line-height:1.5] [&_small]:text-muted-foreground [&_small]:font-normal'
+              }
               href="#discussion"
             >
               <MessageCircle size={22} aria-hidden="true" />
@@ -132,7 +141,9 @@ export function PetHelpDialog({
           <DialogClose asChild>
             <Button
               variant="ghost"
-              className="pet-help-option"
+              className={
+                'pet-help-option [.dark_&_small]:text-muted-foreground [[data-slot=dialog-content]_&]:grid [[data-slot=dialog-content]_&]:grid-cols-[1.5rem_minmax(0,_1fr)] [[data-slot=dialog-content]_&]:items-start [[data-slot=dialog-content]_&]:gap-3.5 [[data-slot=dialog-content]_&]:justify-start [[data-slot=dialog-content]_&]:text-left [[data-slot=dialog-content]_&]:w-full [[data-slot=dialog-content]_&]:p-3.5 [[data-slot=dialog-content]_&]:min-h-17 [[data-slot=dialog-content]_&]:whitespace-normal [&_>_svg]:text-[color:var(--teal)] [&_>_svg]:mt-0.5 [&_>_span]:grid [&_>_span]:gap-[0.3rem] [&_strong]:font-bold [&_strong]:text-sm [&_small]:text-xs [&_small]:[line-height:1.5] [&_small]:text-muted-foreground [&_small]:font-normal'
+              }
               onClick={() => void onShare()}
             >
               <Share2 size={22} aria-hidden="true" />

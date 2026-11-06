@@ -3,7 +3,7 @@ import { PawMarker } from './paw-marker'
 export function NeighborhoodMap({ compact = false }: { compact?: boolean }) {
   return (
     <div
-      className={`neighborhood-map ${compact ? 'map-compact' : ''}`}
+      className={`neighborhood-map [.hero-composition_&]:absolute [.hero-composition_&]:[inset:1rem_0_4rem] [.hero-composition_&]:min-h-0 relative min-h-80 overflow-hidden bg-border rounded-[var(--radius)] [border:1px_solid_var(--border)] [&_>_svg:first-child]:absolute [&_>_svg:first-child]:w-full [&_>_svg:first-child]:h-full ${compact ? 'map-compact' : ''}`}
       role="img"
       aria-label="Illustrative neighborhood map with paw markers; not a live map or exact animal locations"
     >
@@ -27,10 +27,28 @@ export function NeighborhoodMap({ compact = false }: { compact?: boolean }) {
           fill="none"
         />
       </svg>
-      <span className="map-place">Neighborhood park</span>
-      <PawMarker className="map-paw map-paw-one" />
-      <PawMarker className="map-paw map-paw-two" />
-      <span className="map-caption">
+      <span
+        className={
+          'map-place absolute top-[15%] left-[28%] text-[0.8125rem] text-foreground'
+        }
+      >
+        Neighborhood park
+      </span>
+      <PawMarker
+        className={
+          'map-paw absolute w-[2.2rem] h-[2.6rem] map-paw-one top-[35%] left-[19%]'
+        }
+      />
+      <PawMarker
+        className={
+          'map-paw absolute w-[2.2rem] h-[2.6rem] map-paw-two top-[57%] right-[21%]'
+        }
+      />
+      <span
+        className={
+          'map-caption absolute bottom-[0.6rem] left-3 right-3 text-xs text-foreground bg-background [padding:0.25rem_0.5rem] rounded-[0.375rem]'
+        }
+      >
         Illustrative map · approximate areas only
       </span>
     </div>

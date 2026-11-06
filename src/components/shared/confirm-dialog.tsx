@@ -62,7 +62,7 @@ export function ConfirmDialog({
         {error && (
           <p role="alert">Couldn’t complete this action. Please try again.</p>
         )}
-        <div className="dialog-actions">
+        <div className={'dialog-actions flex gap-3 justify-end flex-wrap mt-6'}>
           <AlertDialogCancel asChild>
             <Button variant="outline" disabled={pending}>
               Cancel

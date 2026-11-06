@@ -61,7 +61,11 @@ export function CreateMenu({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className={mobile ? 'mobile-create' : undefined}
+          className={
+            mobile
+              ? 'mobile-create mx-auto flex min-h-13 w-full flex-col gap-1 rounded-xl px-1 py-2 text-[0.625rem]'
+              : undefined
+          }
           aria-label="Create something"
         >
           <Plus size={20} aria-hidden="true" />

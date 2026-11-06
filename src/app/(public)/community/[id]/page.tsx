@@ -18,7 +18,11 @@ export default async function CommunityPostPage({
       communityChoices(api),
     ])
     return (
-      <div className="community-detail">
+      <div
+        className={
+          'community-detail max-w-184 [margin:0_auto] [&_>_h1]:[margin:1rem_0_1.5rem] [.management-shell_&]:max-w-none [.management-shell_&]:w-full'
+        }
+      >
         <Link href="/community">Back to the journal</Link>
         <h1>A story from the community</h1>
         <PostDetail

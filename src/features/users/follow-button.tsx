@@ -4,7 +4,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { useSession } from '@/features/auth/session-provider'
 import { loginPath } from '@/features/auth/return-path'
-import { Button } from '@/components/ui/button'
+import { LoadingButton as Button } from '@/components/shared/loading-button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { getBrowserApi } from '@/lib/api/client'
 import { queryKeys } from '@/lib/api/keys'
@@ -51,7 +51,11 @@ export function FollowButton({
         href={loginPath(returnTo)}
         variant={compact ? 'ghost' : 'outline'}
         aria-label={'Sign in to follow ' + name}
-        className={compact ? 'follow-compact' : undefined}
+        className={
+          compact
+            ? 'follow-compact [.app-shell_&]:min-h-9 [.app-shell_&]:[padding:0.375rem_0.5rem] [.app-shell_&]:text-[0.8125rem] [.app-shell_&]:text-[color:var(--teal)]'
+            : undefined
+        }
       >
         {compact ? 'Follow' : 'Sign in to follow ' + name}
       </ButtonLink>
@@ -91,10 +95,18 @@ export function FollowButton({
     }
   }
   return (
-    <span className="follow-control">
+    <span
+      className={
+        'follow-control inline-flex flex-wrap gap-2 items-center max-w-full [&_[role=alert]]:text-sm [.profile-supported-animals_&]:[flex:0_0_auto] [.event-host_&]:flex [.event-host_&]:mt-3'
+      }
+    >
       <Button
         variant={compact ? 'ghost' : 'outline'}
-        className={compact ? 'follow-compact' : undefined}
+        className={
+          compact
+            ? 'follow-compact [.app-shell_&]:min-h-9 [.app-shell_&]:[padding:0.375rem_0.5rem] [.app-shell_&]:text-[0.8125rem] [.app-shell_&]:text-[color:var(--teal)]'
+            : undefined
+        }
         aria-label={(followed ? 'Unfollow ' : 'Follow ') + name}
         aria-pressed={followed}
         loading={saving || follows.isPending}

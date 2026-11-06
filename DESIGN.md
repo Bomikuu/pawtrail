@@ -6,11 +6,11 @@ colors:
   primary-dark: '#EA580C'
   teal: '#0F766E'
   green: '#84CC16'
-  background: '#FFFBF5'
+  background: '#F7F7F5'
   surface: '#FFFFFF'
   foreground: '#3B2416'
   muted: '#78716C'
-  border: '#EDE5D8'
+  border: '#E4DED7'
   action-hover: '#9A3412'
   secondary-text: '#6B625B'
 typography:
@@ -132,7 +132,7 @@ This contract records the approved world and its source implementation. Licensed
 
 ## Colors
 
-The pinned orange, teal, green, cream, white, brown, muted, and border values remain exact. Orange primary actions use brown foreground. Hover changes both foreground and background to white on deep burnt orange (`action-hover`) for AA contrast. The pinned `primary-dark` remains a brand color, not an assumed accessible text pairing.
+Orange, teal, green, cream, white, and brown remain the brand palette. The canonical shadcn tokens in `src/app/globals.css` own control colors and states. Primary buttons use the official shadcn primary/primary-foreground treatment and hover opacity; custom legacy button CSS no longer overrides them. Dark mode uses black and neutral charcoal surfaces.
 
 Teal supports links, focus, current navigation, and successful states. Green is an accent with brown text. `secondary-text` supplies readable descriptions and placeholders on cream or white; `muted` supplies visible form outlines. Beige rules separate content but do not replace required control boundaries. Status always includes words; color never conveys the only meaning. Do not infer verification from teal or create a verification claim in a shared primitive.
 
@@ -146,7 +146,7 @@ Marketing display typography uses 3.25–5.5rem on desktop and 3.25–4.5rem on 
 
 The platform uses all available viewport width. `AppShell` defaults to the `platform` variant: a sticky 68px utility header, a 224px navigation rail, a flexible feed and a contextual discovery column. There is no 80rem outer cap or 48rem content cap. The community page uses compact feed filters, a small composer, photo-led posts and actual reaction/comment counts. Supplemental guidance belongs in the discovery rail, not above every post.
 
-At 76rem and below the discovery rail drops; at intermediate tablet widths platform navigation becomes an icon rail with explicit accessible names. At 48rem and below the sidebar becomes a Radix drawer and the platform uses one feed plus bottom navigation. All primary social actions remain reachable. Page content owns document scrolling; only the desktop sidebar has bounded overflow.
+The optional discovery rail appears when sufficient width is available. At the Tailwind `md` breakpoint and below the sidebar becomes a shadcn Dialog drawer and the platform uses one feed plus bottom navigation. All primary social actions remain reachable. Page content owns document scrolling; only the desktop sidebar has bounded overflow.
 
 `/dashboard/**` explicitly uses the `management` variant: management-only grouped navigation, a breadcrumb, real contribution summaries and full-width task content. It does not render the social sidebar or mobile social bottom bar. Management destinations remain available through its mobile drawer. Forms retain a readable measure inside the wide workspace; tables and lists can use the remaining width. A visible link connects both workspaces.
 
@@ -160,9 +160,9 @@ Marketing and authentication retain their existing route-specific layouts. The r
 | --------------------- | ----------------------------------- | ----------------------- | -------------------------------------------- |
 | Brand action          | `--primary`                         | `#F97316`               | Button, selected feed indicator              |
 | General foreground    | `--foreground`                      | `#3B2416`               | Text, controls, identity                     |
-| Social canvas         | `--social-canvas`                   | `#F5F6F7`               | Both workspace backgrounds, search           |
-| Social separation     | `--social-line`                     | `#E4E7EB`               | Header, posts, management divisions          |
-| Social secondary text | `--social-muted`                    | `#626873`               | Metadata, labels, supporting text            |
+| Social canvas         | `--social-canvas`                   | `#F7F7F5`               | Both workspace backgrounds, search           |
+| Social separation     | `--social-line`                     | `#E4DED7`               | Header, posts, management divisions          |
+| Social secondary text | `--social-muted`                    | `#6B625B`               | Metadata, labels, supporting text            |
 | Surface               | `--surface`                         | `#FFFFFF`               | Header, posts, management forms              |
 | Management/help       | `--teal`                            | `#0F766E`               | Focus, links, selected management navigation |
 | Scrollbar             | `--scroll-thumb` / `--scroll-track` | `#B7B4AE` / transparent | Global scrollable surfaces                   |
@@ -179,11 +179,11 @@ Controls use 0.75rem corners; menu items 0.5rem; status labels 0.375rem. Images 
 
 ## Components
 
-The whole-app social surface pass extends the same card grammar to public discovery and management: contained resource/activity items, compact genuine identities, human attribution, current opted-in badge illustrations and top-ten crowns, and small public participant strips. System and private/unavailable identities use labeled resource marks. Supplied illustration placeholders explain empty or unavailable content without inventing activity. `app/social-surfaces.css` owns these shared treatments inside the existing platform/management shells; `components/shared/social-card.tsx` owns bylines, badges, participant faces and activity cards. See `docs/implementation/social-surface-audit.md` for route coverage and unverified delivery limits.
+The whole-app social surface pass extends the same card grammar to public discovery and management: contained resource/activity items, compact genuine identities, human attribution, current opted-in badge illustrations and top-ten crowns, and small public participant strips. System and private/unavailable identities use labeled resource marks. Supplied illustration placeholders explain empty or unavailable content without inventing activity. Tailwind utilities own these shared treatments inside the existing platform/management shells; `components/shared/social-card.tsx` owns bylines, badges, participant faces and activity cards. See `docs/implementation/social-surface-audit.md` for route coverage and unverified delivery limits.
 
-Community event detail follows the supplied events reference: compact supplied illustrated cover, strong title/date/venue hierarchy, genuine capacity/attendance/RSVP facts, a conversation column and a practical RSVP/attendees/details/host rail. Event directory cards use the same small supplied artwork and genuine schedule/capacity data. Discussion, About and Attendees have URL-backed content; sharing, public-venue Maps links and authorized organizer editing remain actionable. RSVP is join/withdraw, with visible closed/full states. Public identities require discoverability and contribution consent. Event styles are scoped in `features/events/events.css`; narrow screens stack in DOM order. See `docs/implementation/events-ui.md`.
+Community event detail follows the supplied events reference: compact supplied illustrated cover, strong title/date/venue hierarchy, genuine capacity/attendance/RSVP facts, a conversation column and a practical RSVP/attendees/details/host rail. Event directory cards use the same small supplied artwork and genuine schedule/capacity data. Discussion, About and Attendees have URL-backed content; sharing, public-venue Maps links and authorized organizer editing remain actionable. RSVP is join/withdraw, with visible closed/full states. Public identities require discoverability and contribution consent. Event presentation is expressed in component Tailwind utilities; narrow screens stack in DOM order. See `docs/implementation/events-ui.md`.
 
-Pet profiles follow the owner's supplied social-profile reference: a compact supplied cover, overlapping pet photograph, real public activity totals, Activity/About/Photos/Location navigation and a feed/details split. The timeline always names human reporters, helpers and story authors. Practical help and sightings lead by default; tagged-story cards retain the existing community interactions and put the current pet tag first. Pet-side “Community care” markers describe recorded facts; human achievement badges, ranks and Kibble are never assigned to animals. The profile-wide cap is removed, and the route's `features/animals/pet-profile.css` uses the canonical runtime tokens.
+Pet profiles follow the owner's supplied social-profile reference: a compact supplied cover, overlapping pet photograph, real public activity totals, Activity/About/Photos/Location navigation and a feed/details split. The timeline always names human reporters, helpers and story authors. Practical help and sightings lead by default; tagged-story cards retain the existing community interactions and put the current pet tag first. Pet-side “Community care” markers describe recorded facts; human achievement badges, ranks and Kibble are never assigned to animals. The primary profile column is capped at 800px beside the smaller care/details rail; component Tailwind utilities use the canonical runtime tokens.
 
 Public PawPal profiles use the owner's supplied profile reference: a compact illustrated cover, overlapping illustrated avatar, current rank crown, real Kibble level progress, four contribution totals and a two-column overview. The sidebar holds About and Community impact; the main column holds activity navigation, opted-in badges/mastery, animal associations and story previews. Eight owner-supplied cover presets match the avatar/badge illustration style and share the controlled avatar-picker pattern and the existing profile-save transaction. No invented XP, online presence, messaging action or activity totals fill the reference. Profile content remains server-rendered, and mobile folds the columns into one reading flow. See `docs/implementation/profile-covers.md`.
 
@@ -191,9 +191,9 @@ Top-ten recognition uses the shared `RankCrown`: a Lucide crown and real `#1`–
 
 The public leaderboard follows the owner's supplied recognition reference: the owner's full-width cat-and-dog trophy banner, contribution totals, teal period navigation, a gold/silver/bronze top-three podium, illustrated member identities, earned showcase badges and dense readable rows. It occupies the full platform content width. On mobile the podium remains visible and the semantic table scrolls inside a named, keyboard-focusable region. Recognition comes from recorded activity and consent, never follower/like counts. Levels retain the existing 100-lifetime-Kibble policy; mastery is shared only by explicit opt-in. See `docs/implementation/leaderboard.md`.
 
-Achievements use the owner's 45 illustrated badge assets, a compact responsive collection, native shared `Progress`, and separate requirement/reward/state text. `features/achievements/catalog.ts` owns the version-one one-time 10–500 Kibble schedule approved by the owner. Private progress and evidence stay in management; public profiles show at most six chosen unlocked badges and optional aggregate mastery. Do not infer real-world outcomes from clicks, RSVP or adoption approval. See `docs/implementation/achievements.md` for rules, provenance and unverified delivery status.
+Achievements use the owner's 45 illustrated badge assets, a compact responsive collection, official shadcn `Progress`, and separate requirement/reward/state text. `features/achievements/catalog.ts` owns the version-one one-time 10–500 Kibble schedule approved by the owner. Private progress and evidence stay in management; public profiles show at most six chosen unlocked badges and optional aggregate mastery. Do not infer real-world outcomes from clicks, RSVP or adoption approval. See `docs/implementation/achievements.md` for rules, provenance and unverified delivery status.
 
-Canonical Shadcn-style primitives live only in `src/components/ui`: Slot/CVA Button, Input, Radix DropdownMenu/Dialog/AlertDialog, and Sonner. Add other primitives only when a feature needs them. Internal route actions use ButtonLink; external/document actions use ButtonAnchor; ordinary in-app links use the shared NavigationLink adapter over Next Link. Query tabs, GET filter/search forms, and programmatic push/replace routes use the same immediate page loading feedback. Keep the navigation frame responsive and show a single paw loader in the content area during route work. Controls retain browser semantics, visible labels, minimum 2.75rem targets, and 2px teal focus outlines with 3px offset.
+Official shadcn/ui registry components live in `src/components/ui`, installed through CLI 4.23.0 rather than recreated as lookalikes. Button, Input, Textarea, Checkbox, Native Select, Select, Dialog, AlertDialog, DropdownMenu, HoverCard, Progress, Skeleton, Table, Card, Badge, Avatar, Tabs, RadioGroup, and Sonner are available. Ordinary layout, typography, spacing, colors, responsive behavior, and interaction states use Tailwind utilities; CSS is reserved for theme/font setup, browser-specific rules, and animation keyframes. See `docs/implementation/shadcn-tailwind-migration.md` for provenance and compatibility choices. Internal route actions use ButtonLink; external/document actions use ButtonAnchor; ordinary in-app links use the shared NavigationLink adapter over Next Link. Query tabs, GET filter/search forms, and programmatic push/replace routes use the same immediate page loading feedback. Keep the navigation frame responsive and show a single paw loader in the content area during route work. Controls retain browser semantics, visible labels, official shadcn interaction states, and purposeful touch-target sizing at their call sites.
 
 Create uses a portaled keyboard menu with Report Animal, Create Sighting, Start Fundraiser, Create Community Post, and Create Quest. Anonymous users receive a validated login return URL for implemented protected destinations. `src/components/layout/navigation.ts` is the exact-path readiness registry: owning feature tasks add paths only after their real route and behavior ship. All unimplemented destinations remain non-links labeled Coming soon. Tests may inject a ready-route set; production uses the central registry.
 
@@ -219,3 +219,7 @@ The owner approved a live-review follow-up on 6 November 2026: compact expandabl
 ## Sidebar and theme refinement
 
 The brand sits at the top of the full-height left navigation. The separate sticky header contains search, Create, account actions, and the theme toggle. On phones, the branded navigation opens as a full-height drawer. Dark mode uses a black canvas and neutral charcoal surfaces with the existing warm accents; artwork keeps its original colors. A local preference is applied before painting, follows the system when unset, and synchronizes across tabs. This pass was source-reviewed only; no tests, builds, detectors, or browser inspection were run.
+
+## Official shadcn and Tailwind ownership
+
+The 6 November 2026 migration replaces the earlier custom primitive layer with actual official shadcn registry sources. This supersedes older control dimensions, hover recipes, and stylesheet ownership references above. Product-specific loaders, route actions, identity badges, and forms compose those components. `next-themes` supplies the class-based theme. The existing supplied artwork and human attribution remain. This pass was source-reviewed only, as requested; no automated tests, checks, builds, or browser inspection were performed.

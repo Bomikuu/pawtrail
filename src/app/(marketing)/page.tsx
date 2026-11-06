@@ -3,7 +3,6 @@ import { listingMetadata } from '@/lib/seo/listing-metadata'
 import { getServerApi } from '@/lib/api/server'
 import { loadLandingData } from '@/features/marketing/data'
 import { LandingPage } from '@/features/marketing/landing-page'
-import '@/features/marketing/marketing.css'
 export const metadata = listingMetadata({
   title: 'PawTrail — Every Paw Has a Story',
   description:

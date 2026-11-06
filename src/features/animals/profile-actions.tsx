@@ -17,7 +17,7 @@ import { loginPath } from '@/features/auth/return-path'
 import { getBrowserApi } from '@/lib/api/client'
 import { Button } from '@/components/ui/button'
 import { PetHelpDialog } from './help-dialog'
-import { toast } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 export function ProfileActions({
   id,
   slug,
@@ -103,8 +103,17 @@ export function ProfileActions({
     }
   }
   return (
-    <div className="animal-action-bar" aria-label={`Actions for ${name}`}>
-      <div className="profile-link-row">
+    <div
+      className={
+        'animal-action-bar sticky top-0 [z-index:10] bg-background [border-bottom:1px_solid_var(--border)] [padding:0.75rem_0] [.pet-social-actions_&]:[border:0] [.pet-social-actions_&]:p-0 [.pet-social-actions_&]:m-0 [.pet-social-actions_&]:bg-[transparent] [.pet-social-actions_&_>_div:not(.profile-link-row)]:mt-2.5 [.pet-social-actions_&_>_div:not(.profile-link-row)]:text-xs'
+      }
+      aria-label={`Actions for ${name}`}
+    >
+      <div
+        className={
+          'profile-link-row flex flex-wrap items-center gap-3 mt-4 [.animal-action-bar_&]:mt-0 max-[48rem]:[.app-shell_.notification-list_&]:flex-wrap [.pet-social-actions_&]:flex [.pet-social-actions_&]:flex-wrap [.pet-social-actions_&]:gap-2'
+        }
+      >
         <FollowButton
           target={{ kind: 'animal', id }}
           name={name}

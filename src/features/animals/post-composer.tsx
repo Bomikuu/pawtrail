@@ -26,7 +26,11 @@ export function AnimalPostComposer({
       />
     )
   return (
-    <div className="pet-community-composer">
+    <div
+      className={
+        'pet-community-composer [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [border:1px_solid_#e8ddcf] rounded-2xl overflow-hidden bg-card [&_>_p]:m-0 [&_>_p]:[padding:0.75rem_1rem] [&_>_p]:text-xs [&_>_p]:text-muted-foreground [&_>_p]:[border-bottom:1px_solid_#eee5d8]'
+      }
+    >
       <p>
         Posting as <strong>{session.actor.displayName}</strong>. Keep {name}’s
         tag to include your update in this pet’s feed.

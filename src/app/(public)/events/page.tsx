@@ -1,5 +1,4 @@
 import { listingMetadata } from '@/lib/seo/listing-metadata'
-import '@/features/events/events.css'
 export const metadata = listingMetadata({
   title: 'Community gatherings — PawTrail',
   description:

@@ -20,12 +20,16 @@ export function DiscoveryMap({
   const [open, setOpen] = useState(false)
   return (
     <section
-      className="discovery-map"
+      className={'discovery-map [margin:1.5rem_0]'}
       aria-label={
         mapAvailable ? 'Approximate neighborhood map' : 'Neighborhood discovery'
       }
     >
-      <div className="workflow-actions">
+      <div
+        className={
+          'workflow-actions flex items-center gap-3 flex-wrap [margin:0.75rem_0] [.discovery-map_&_p]:m-0 [.discovery-map_&_p]:text-sm [.discovery-map_&_p]:text-[#6b625b] max-[48rem]:[&_>_*]:max-w-full [.achievement-review-card_&]:mt-4 [.adoption-story_&]:gap-2.5 [.adoption-story_&_[data-slot=button]]:[flex:1_1_9rem]'
+        }
+      >
         <Button
           variant="outline"
           onClick={() => setOpen((v) => !v)}

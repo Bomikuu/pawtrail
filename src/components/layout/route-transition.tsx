@@ -12,7 +12,13 @@ export function RouteTransition({
 }) {
   const pathname = usePathname()
   return (
-    <div key={pathname} className="route-transition" hidden={hidden}>
+    <div
+      key={pathname}
+      className={
+        'route-transition [&_>_p]:max-w-[70ch] min-w-0 [animation:page-arrival_200ms_var(--motion-ease)] [&[hidden]]:hidden [&:has(>_.page-loading)]:[animation:none] motion-reduce:[animation:none]'
+      }
+      hidden={hidden}
+    >
       {children}
     </div>
   )

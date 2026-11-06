@@ -23,8 +23,8 @@ export function MarketingDestination({
       <span
         className={
           action
-            ? 'marketing-unavailable marketing-action-unavailable'
-            : 'marketing-unavailable'
+            ? 'marketing-unavailable inline-flex gap-[0.1rem] flex-col text-muted-foreground [&_small]:font-[400] [&_small]:text-[0.6875rem] [&_small]:leading-[1.3] [&_small]:font-sans marketing-action-unavailable [padding:0.6rem_1rem] [border:1px_solid_var(--muted)] rounded-[var(--radius)] font-semibold min-h-11'
+            : 'marketing-unavailable inline-flex gap-[0.1rem] flex-col text-muted-foreground [&_small]:font-[400] [&_small]:text-[0.6875rem] [&_small]:leading-[1.3] [&_small]:font-sans'
         }
         aria-disabled="true"
         aria-label={`${children} — Coming soon`}
@@ -55,7 +55,7 @@ export function PreviewFrame({
 }) {
   if (state === 'ready') return children
   return (
-    <div className="marketing-preview-state">
+    <div className={'marketing-preview-state [grid-column:1/-1] w-full'}>
       <DataState
         state={state}
         emptyTitle={empty}

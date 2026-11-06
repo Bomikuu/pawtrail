@@ -13,10 +13,10 @@ export function NavigationRegion({
   const navigation = usePageNavigation()
   const pending = navigation?.pending && navigation.region === region
   return (
-    <div className="navigation-region">
+    <div className={'navigation-region min-w-0 grid gap-5'}>
       {pending && fallback}
       <div
-        className="navigation-region-content"
+        className={'navigation-region-content contents [&[hidden]]:hidden'}
         hidden={!!pending}
         aria-busy={!!pending}
       >

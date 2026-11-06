@@ -1,7 +1,7 @@
 'use client'
 import { useId, useRef, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
-import { Button } from '@/components/ui/button'
+import { LoadingButton as Button } from '@/components/shared/loading-button'
 import { SignInPrompt } from '@/components/shared/sign-in-prompt'
 import { Textarea } from '@/components/ui/textarea'
 import { useSession } from '@/features/auth/session-provider'
@@ -41,7 +41,9 @@ export function CommentForm({
     )
   return (
     <form
-      className="discussion-form"
+      className={
+        'discussion-form grid gap-3 [&_>_[data-slot=button]]:[justify-self:start] [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-[0.875rem] [.app-shell_&]:p-4 [.app-shell_&]:bg-card [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none] [.event-community_&]:p-5 [.event-community_&]:[border:1px_solid_var(--border)] [.event-community_&]:rounded-2xl [.event-community_&]:bg-card [.event-community_&_>_[data-slot=button]]:[justify-self:end] [.event-community_&_>_[data-slot=button]]:rounded-[2rem] [.event-community_&_textarea]:min-h-24 [.event-community_&_textarea]:[resize:vertical] max-[40rem]:[.event-community_&]:p-4'
+      }
       onSubmit={async (event) => {
         event.preventDefault()
         if (busy.current) return
@@ -91,7 +93,12 @@ export function CommentForm({
         disabled={pending || changing}
         aria-describedby={`${id}-hint`}
       />
-      <p id={`${id}-hint`} className="field-hint">
+      <p
+        id={`${id}-hint`}
+        className={
+          'field-hint text-sm text-muted-foreground [.dark_&]:text-muted-foreground'
+        }
+      >
         Keep observations kind and useful. Comments appear publicly after
         review. {text.length}/1,000
       </p>

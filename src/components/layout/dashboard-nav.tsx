@@ -47,11 +47,21 @@ export function DashboardNav({
     },
   ]
   return (
-    <nav aria-label="Your dashboard" className="dashboard-nav">
+    <nav
+      aria-label="Your dashboard"
+      className={
+        'dashboard-nav [&_ul]:m-0 [&_ul]:p-0 [&_ul]:list-none [.app-sidebar_&]:mt-6 [.app-sidebar_&]:pt-6 [.app-sidebar_&]:[border-top:1px_solid_var(--border)] [.management-shell_.app-sidebar_&]:m-0 [.management-shell_.app-sidebar_&]:p-0 [.management-shell_.app-sidebar_&]:[border:0]'
+      }
+    >
       {groups
         .filter((group) => group.items.length)
         .map((group) => (
-          <section className="management-nav-group" key={group.label}>
+          <section
+            className={
+              'management-nav-group mb-5 [&_h2]:font-[600] [&_h2]:text-xs [&_h2]:leading-[1.4] [&_h2]:font-sans [&_h2]:text-muted-foreground [&_h2]:[margin:0_0.875rem_0.5rem]'
+            }
+            key={group.label}
+          >
             <h2>{group.label}</h2>
             <ul>
               {group.items.map((item) => (

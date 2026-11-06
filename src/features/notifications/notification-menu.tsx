@@ -7,7 +7,7 @@ import { useSession } from '@/features/auth/session-provider'
 import { getBrowserApi } from '@/lib/api/client'
 import { queryKeys } from '@/lib/api/keys'
 import { Button } from '@/components/ui/button'
-import { toast } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 import type { Notification } from './types'
 import {
   DropdownMenu,
@@ -45,9 +45,15 @@ export function NotificationMenu({ unread }: { unread: string }) {
     enabled: open && !!session.actor,
   })
   return (
-    <div className="notification-menu">
+    <div
+      className={
+        'notification-menu flex items-center max-[48rem]:[.app-shell_&_>_[data-slot=button]]:hidden'
+      }
+    >
       <Link
-        className="utility-link notification-link"
+        className={
+          'utility-link flex items-center gap-2 min-h-11 text-foreground no-underline [&:hover]:text-[color:var(--teal)] [&:hover]:underline [.header-kibble_&]:min-h-auto notification-link max-[75rem]:[&_span]:absolute max-[75rem]:[&_span]:w-[1px] max-[75rem]:[&_span]:h-[1px] max-[75rem]:[&_span]:overflow-hidden max-[75rem]:[&_span]:[clip-path:inset(50%)] max-[75rem]:[&_span]:whitespace-nowrap [.app-shell_.header-utilities_&_span]:absolute [.app-shell_.header-utilities_&_span]:w-[1px] [.app-shell_.header-utilities_&_span]:h-[1px] [.app-shell_.header-utilities_&_span]:overflow-hidden [.app-shell_.header-utilities_&_span]:[clip-path:inset(50%)]'
+        }
         aria-label={`Notifications, ${unread}`}
         href="/dashboard/notifications"
       >
@@ -61,7 +67,9 @@ export function NotificationMenu({ unread }: { unread: string }) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="notification-preview"
+          className={
+            'notification-preview w-[min(24rem,_calc(100vw_-_2rem))] max-h-[70vh] overflow-y-auto p-4 [&_h2]:text-[length:1.15rem]'
+          }
           align="end"
           aria-label="Recent activity"
         >
