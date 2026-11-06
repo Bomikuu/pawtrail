@@ -4,7 +4,7 @@ import { ContributorLine, ContributorFaces } from './contributors'
 import { PostDetail } from '@/features/community/post-card'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { ChartPanel } from './chart-panel'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { ButtonAnchor } from '@/components/ui/button-anchor'
 import { ButtonLink } from '@/components/ui/button-link'
 import {

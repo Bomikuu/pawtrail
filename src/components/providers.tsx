@@ -46,15 +46,15 @@ export function Providers({
   dehydratedState?: DehydratedState
 }) {
   return (
-    <SessionProvider
-      key={initialSession.cacheScope}
-      initialSession={initialSession}
-      api={api}
-    >
-      <PageNavigationProvider>
+    <PageNavigationProvider>
+      <SessionProvider
+        key={initialSession.cacheScope}
+        initialSession={initialSession}
+        api={api}
+      >
         <Hydration state={dehydratedState}>{children}</Hydration>
         <Toaster />
-      </PageNavigationProvider>
-    </SessionProvider>
+      </SessionProvider>
+    </PageNavigationProvider>
   )
 }

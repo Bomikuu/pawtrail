@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 export default function ErrorPage({ retry }: { retry: () => void }) {

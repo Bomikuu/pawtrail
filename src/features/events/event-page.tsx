@@ -1,6 +1,6 @@
 import { AnimatedNumber } from '@/components/shared/animated-number'
 import { ProfileLink } from '@/features/users/profile-link'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import {
   ArrowLeft,
   ArrowRight,

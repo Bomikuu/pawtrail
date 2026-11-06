@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { PawMarker } from '@/components/illustrations/paw-marker'
 import { READY_ROUTES } from '@/components/layout/navigation'
 import { Hero } from './hero'

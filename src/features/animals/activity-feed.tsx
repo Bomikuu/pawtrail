@@ -1,5 +1,5 @@
 import { ProfileLink } from '@/features/users/profile-link'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { ArrowUpRight, HandHeart, Heart, MapPin } from 'lucide-react'
 import { CommunityAvatar } from '@/components/shared/community-avatar'
 import { AnimalImage } from '@/components/shared/animal-image'

@@ -1,7 +1,9 @@
 'use client'
 import {
   createContext,
+  useCallback,
   useContext,
+  useMemo,
   useState,
   useTransition,
   type ReactNode,
@@ -25,38 +27,72 @@ export function usePageNavigation() {
   return useContext(Context)
 }
 
+/** Programmatic routes share the same immediate feedback as visible links. */
+export function useAppRouter() {
+  const router = useRouter()
+  const navigation = usePageNavigation()
+  const navigate = navigation?.navigate
+  return useMemo(
+    () => ({
+      ...router,
+      push: (href: string, options?: Parameters<typeof router.push>[1]) => {
+        if (navigate) navigate(href, options)
+        else router.push(href, options)
+      },
+      replace: (
+        href: string,
+        options?: Parameters<typeof router.replace>[1],
+      ) => {
+        if (navigate) navigate(href, { ...options, replace: true })
+        else router.replace(href, options)
+      },
+    }),
+    [router, navigate],
+  )
+}
+
 /** Select the destination and show page feedback before waiting for its route. */
 export function PageNavigationProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
   const [targetPath, setTargetPath] = useState(pathname)
   const [pending, startTransition] = useTransition()
-  function navigate(href: string, options: NavigationOptions = {}) {
-    const target = new URL(href, window.location.href)
-    setTargetPath(options.activePath ?? target.pathname)
-    const navigateRoute = () => {
-      const routeOptions = {
-        scroll: options.scroll,
-        transitionTypes: options.transitionTypes,
+  const navigate = useCallback(
+    (href: string, options: NavigationOptions = {}) => {
+      const target = new URL(href, window.location.href)
+      if (!['http:', 'https:'].includes(target.protocol)) return
+      if (target.origin !== window.location.origin) {
+        if (options.replace) window.location.replace(target.href)
+        else window.location.assign(target.href)
+        return
       }
-      if (options.replace) router.replace(href, routeOptions)
-      else router.push(href, routeOptions)
-    }
-    // Same-page anchors and reselecting the current page need no loading screen.
-    if (
-      target.pathname === window.location.pathname &&
-      target.search === window.location.search
-    ) {
-      navigateRoute()
-      return
-    }
-    startTransition(navigateRoute)
-  }
-  return (
-    <Context.Provider
-      value={{ pathname: pending ? targetPath : pathname, pending, navigate }}
-    >
-      {children}
-    </Context.Provider>
+      setTargetPath(options.activePath ?? target.pathname)
+      const navigateRoute = () => {
+        const routeOptions = {
+          scroll: options.scroll,
+          transitionTypes: options.transitionTypes,
+        }
+        if (options.replace) router.replace(href, routeOptions)
+        else router.push(href, routeOptions)
+      }
+      // A different same-page anchor only scrolls. Identical URLs can refresh
+      // server data in Next, so they still need immediate pending feedback.
+      if (
+        target.pathname === window.location.pathname &&
+        target.search === window.location.search &&
+        target.hash &&
+        target.hash !== window.location.hash
+      ) {
+        navigateRoute()
+        return
+      }
+      startTransition(navigateRoute)
+    },
+    [router],
   )
+  const value = useMemo(
+    () => ({ pathname: pending ? targetPath : pathname, pending, navigate }),
+    [pending, targetPath, pathname, navigate],
+  )
+  return <Context.Provider value={value}>{children}</Context.Provider>
 }

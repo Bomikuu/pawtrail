@@ -1,6 +1,7 @@
+import { NavigationForm } from '@/components/layout/navigation-form'
 import { AnimatedNumber } from '@/components/shared/animated-number'
 import { ProfileLink } from '@/features/users/profile-link'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import {
   CalendarDays,
   ArrowRight,
@@ -346,7 +347,7 @@ export async function CommunityLeaderboard({
             </Link>
           ))}
         </nav>
-        <form
+        <NavigationForm
           key={`${period}:${category}:${q ?? ''}`}
           method="get"
           action="/leaderboard"
@@ -377,7 +378,7 @@ export async function CommunityLeaderboard({
           <Button type="submit" variant="outline">
             Apply
           </Button>
-        </form>
+        </NavigationForm>
       </div>
       <Podium entries={leaders} category={category} />
       <div className="recognition-results-heading">

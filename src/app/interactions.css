@@ -211,6 +211,12 @@
 .route-transition[hidden] {
   display: none;
 }
+.standalone-navigation-content {
+  display: contents;
+}
+.standalone-navigation-content[hidden] {
+  display: none;
+}
 .route-transition:has(> .page-loading) {
   animation: none;
 }

@@ -1,5 +1,6 @@
+import { NavigationForm } from '@/components/layout/navigation-form'
 import type { ReactNode } from 'react'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { ArrowRight, PawPrint } from 'lucide-react'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { Button } from '@/components/ui/button'
@@ -147,7 +148,7 @@ export function FilterForm({
   search?: boolean
 }) {
   return (
-    <form className="catalog-filters" method="get">
+    <NavigationForm className="catalog-filters" method="get">
       {search && (
         <label>
           Search
@@ -175,7 +176,7 @@ export function FilterForm({
       <Button type="submit" variant="outline">
         Apply filters
       </Button>
-    </form>
+    </NavigationForm>
   )
 }
 export function NextPage({

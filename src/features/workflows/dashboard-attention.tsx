@@ -1,5 +1,5 @@
 import 'server-only'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import {
   ArrowRight,
   CalendarDays,

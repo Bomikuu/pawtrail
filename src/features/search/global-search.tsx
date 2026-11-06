@@ -1,7 +1,8 @@
 'use client'
-import Link from 'next/link'
+import { NavigationForm } from '@/components/layout/navigation-form'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { useEffect, useId, useRef, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useAppRouter as useRouter } from '@/components/layout/page-navigation'
 import { Search, X } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -44,7 +45,7 @@ export function GlobalSearch() {
   }, [q, composing])
   return (
     <div className="global-search">
-      <form
+      <NavigationForm
         action="/search"
         method="get"
         onSubmit={(e) => {
@@ -52,10 +53,10 @@ export function GlobalSearch() {
             e.preventDefault()
             return
           }
+          setOpen(false)
           if (index >= 0 && items[index]) {
             e.preventDefault()
             router.push(items[index].path)
-            setOpen(false)
           }
         }}
       >
@@ -125,7 +126,7 @@ export function GlobalSearch() {
             <X size={16} aria-hidden="true" />
           </Button>
         )}
-      </form>
+      </NavigationForm>
       <ul
         className="search-suggestions"
         role="listbox"

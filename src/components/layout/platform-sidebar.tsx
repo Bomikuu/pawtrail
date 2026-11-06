@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { ProfileLink } from '@/features/users/profile-link'
 import {
   ArrowUpRight,

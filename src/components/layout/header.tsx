@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { GlobalSearch } from '@/features/search/global-search'
 import { NotificationMenu } from '@/features/notifications/notification-menu'
 import { Bell, Cookie, Search, ChevronDown, ArrowUpRight } from 'lucide-react'

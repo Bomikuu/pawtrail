@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import type { Sighting } from '@/features/sightings/types'
 import type { Post } from '@/features/community/types'
 import { READY_ROUTES } from '@/components/layout/navigation'

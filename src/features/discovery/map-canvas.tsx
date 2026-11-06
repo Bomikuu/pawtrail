@@ -1,7 +1,10 @@
 'use client'
-import Link from 'next/link'
-import { useEffect, useState, useTransition } from 'react'
-import { useRouter } from 'next/navigation'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
+import { useEffect, useState } from 'react'
+import {
+  useAppRouter as useRouter,
+  usePageNavigation,
+} from '@/components/layout/page-navigation'
 import { APIProvider, Map, InfoWindow, useMap } from '@vis.gl/react-google-maps'
 import { MarkerClusterer } from '@googlemaps/markerclusterer'
 import { Button } from '@/components/ui/button'
@@ -41,7 +44,7 @@ function Markers({
 function Controls() {
   const map = useMap(),
     [error, setError] = useState(''),
-    [pending, startTransition] = useTransition(),
+    navigation = usePageNavigation(),
     router = useRouter()
   function search() {
     if (!map?.getBounds() || !map.getCenter()) return
@@ -63,7 +66,7 @@ function Controls() {
       }),
     )
     q.set('radius', '100000')
-    startTransition(() => router.push(`/explore?${q}`))
+    router.push(`/explore?${q}`)
   }
   function locate() {
     if (!navigator.geolocation) {
@@ -88,10 +91,10 @@ function Controls() {
     <div className="workflow-actions">
       <Button
         variant="outline"
-        disabled={pending}
+        disabled={navigation?.pending}
         onClick={() => void search()}
       >
-        {pending ? 'Searching…' : 'Search this map area'}
+        {navigation?.pending ? 'Searching…' : 'Search this map area'}
       </Button>
       <Button variant="outline" onClick={locate}>
         Use my location

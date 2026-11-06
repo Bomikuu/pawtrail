@@ -1,6 +1,6 @@
 'use client'
 import { useId, useRef, useState, type FormEvent } from 'react'
-import { useRouter } from 'next/navigation'
+import { useAppRouter as useRouter } from '@/components/layout/page-navigation'
 import { useQueryClient } from '@tanstack/react-query'
 import { z } from 'zod'
 import { Button } from '@/components/ui/button'

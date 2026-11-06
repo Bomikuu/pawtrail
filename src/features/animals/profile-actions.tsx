@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Bookmark, Share2, MoreHorizontal, MapPin } from 'lucide-react'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import {
   DropdownMenu,
   DropdownMenuTrigger,

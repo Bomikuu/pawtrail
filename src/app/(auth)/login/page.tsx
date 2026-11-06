@@ -1,3 +1,4 @@
+import { NavigationContent } from '@/components/layout/navigation-content'
 import { LoginForm } from '@/features/auth/login-form'
 export const metadata = {
   title: 'Login | PawTrail',
@@ -11,7 +12,9 @@ export default async function Page({
   const { returnTo } = await searchParams
   return (
     <main className="auth-page">
-      <LoginForm returnTo={typeof returnTo === 'string' ? returnTo : null} />
+      <NavigationContent>
+        <LoginForm returnTo={typeof returnTo === 'string' ? returnTo : null} />
+      </NavigationContent>
     </main>
   )
 }

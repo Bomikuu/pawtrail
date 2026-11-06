@@ -1,6 +1,6 @@
 import { DataState } from '@/components/shared/data-state'
 import { ButtonAnchor } from '@/components/ui/button-anchor'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import type { ReactNode } from 'react'
 import { ButtonLink } from '@/components/ui/button-link'
 import { isRouteReady } from '@/lib/route-readiness'

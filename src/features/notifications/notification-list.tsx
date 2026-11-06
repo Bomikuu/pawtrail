@@ -1,7 +1,7 @@
 'use client'
 import { Bell } from 'lucide-react'
 import { useRef, useState } from 'react'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { useRouter } from 'next/navigation'
 import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query'
 import { useSession } from '@/features/auth/session-provider'

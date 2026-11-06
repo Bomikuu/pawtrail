@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { redirect } from 'next/navigation'
 import { getServerApi } from '@/lib/api/server'
 import { loginPath } from '@/features/auth/return-path'

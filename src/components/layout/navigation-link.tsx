@@ -29,14 +29,9 @@ export function NavigationLink({
             event.preventDefault()
           },
         })
-        if (
-          cancelled ||
-          !navigation ||
-          typeof href !== 'string' ||
-          !href.startsWith('/') ||
-          href.startsWith('//')
-        )
-          return
+        if (cancelled || !navigation || typeof href !== 'string') return
+        const target = new URL(href, window.location.href)
+        if (target.origin !== window.location.origin) return
         event.preventDefault()
         navigation.navigate(href, {
           activePath,

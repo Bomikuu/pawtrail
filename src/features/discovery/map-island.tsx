@@ -1,6 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import type { DiscoveryResult } from './types'

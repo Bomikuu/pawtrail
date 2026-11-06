@@ -1,6 +1,6 @@
 import { AnimatedNumber } from '@/components/shared/animated-number'
 import type { ReactNode } from 'react'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import {
   CalendarDays,
   Camera,

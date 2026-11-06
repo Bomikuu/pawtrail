@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { ArrowRight, PawPrint } from 'lucide-react'
 import { AnimalImage } from './animal-image'
 import { CommunityAvatar } from './community-avatar'

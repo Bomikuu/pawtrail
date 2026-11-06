@@ -1,3 +1,4 @@
+import { NavigationContent } from '@/components/layout/navigation-content'
 import { listingMetadata } from '@/lib/seo/listing-metadata'
 import { getServerApi } from '@/lib/api/server'
 import { loadLandingData } from '@/features/marketing/data'
@@ -11,5 +12,9 @@ export const metadata = listingMetadata({
 })
 export default async function Page() {
   const data = await loadLandingData(await getServerApi())
-  return <LandingPage data={data} />
+  return (
+    <NavigationContent>
+      <LandingPage data={data} />
+    </NavigationContent>
+  )
 }

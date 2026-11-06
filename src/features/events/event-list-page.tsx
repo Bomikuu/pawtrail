@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { ParticipantFaces } from '@/components/shared/social-card'
 import {
   ArrowRight,

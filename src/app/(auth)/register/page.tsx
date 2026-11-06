@@ -1,3 +1,4 @@
+import { NavigationContent } from '@/components/layout/navigation-content'
 import { RegisterForm } from '@/features/auth/register-form'
 export const metadata = {
   title: 'Register | PawTrail',
@@ -11,7 +12,11 @@ export default async function Page({
   const { returnTo } = await searchParams
   return (
     <main className="auth-page">
-      <RegisterForm returnTo={typeof returnTo === 'string' ? returnTo : null} />
+      <NavigationContent>
+        <RegisterForm
+          returnTo={typeof returnTo === 'string' ? returnTo : null}
+        />
+      </NavigationContent>
     </main>
   )
 }

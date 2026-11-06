@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { notFound } from 'next/navigation'
 import { getServerApi } from '@/lib/api/server'
 import { ApiError } from '@/lib/api/errors'

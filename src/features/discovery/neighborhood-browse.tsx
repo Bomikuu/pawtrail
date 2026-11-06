@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import Link from 'next/link'
+import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { ArrowRight, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { DiscoveryResult } from './types'
