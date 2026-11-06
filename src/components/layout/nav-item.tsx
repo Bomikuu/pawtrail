@@ -1,7 +1,7 @@
 'use client'
-import Link from 'next/link'
+import { NavigationLink } from './navigation-link'
 import { usePathname } from 'next/navigation'
-import { LinkPending } from './link-pending'
+import { usePageNavigation } from './page-navigation'
 import { useSession } from '@/features/auth/session-provider'
 import {
   destinationHref,
@@ -20,7 +20,9 @@ export function NavItem({
   compact?: boolean
 }) {
   const { session } = useSession()
-  const pathname = usePathname()
+  const actualPathname = usePathname()
+  const navigation = usePageNavigation()
+  const pathname = navigation?.pathname ?? actualPathname
   const href = destinationHref(destination, session, readyRoutes)
   const Icon = destination.icon
   const content = (
@@ -42,17 +44,17 @@ export function NavItem({
       </span>
     )
   return (
-    <Link
+    <NavigationLink
       href={href}
+      activePath={destination.href}
       className="nav-item"
       aria-label={destination.label}
       aria-current={
         isCurrentDestination(pathname, destination.href) ? 'page' : undefined
       }
-      onClick={onNavigate}
+      onNavigate={onNavigate}
     >
       {content}
-      <LinkPending />
-    </Link>
+    </NavigationLink>
   )
 }

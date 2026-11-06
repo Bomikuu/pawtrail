@@ -196,31 +196,9 @@
   display: flex;
   margin-bottom: 0.75rem;
 }
-.link-pending {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  pointer-events: none;
-  opacity: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  inset-inline-end: -0.5rem;
-  top: -0.25rem;
-}
-.link-pending.is-pending {
-  opacity: 1;
-  transition: opacity 100ms 120ms;
-}
-.ui-button > .link-pending {
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.ui-button:has(> .link-pending.is-pending),
 .ui-button-loading {
   color: transparent !important;
 }
-.ui-button > .link-pending .animal-loader-symbol,
 .button-loading-indicator .animal-loader-symbol {
   color: var(--foreground);
 }
@@ -230,21 +208,11 @@
   display: grid;
   place-items: center;
 }
-.nav-item {
-  position: relative;
+.route-transition[hidden] {
+  display: none;
 }
-.nav-item > .link-pending {
-  inset-inline-start: 0.75rem;
-  inset-inline-end: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--surface);
-}
-.nav-item:has(> .link-pending.is-pending) > svg {
-  opacity: 0;
-}
-.app-shell .nav-item > .link-pending {
-  display: grid;
+.route-transition:has(> .page-loading) {
+  animation: none;
 }
 .profile-preview-trigger {
   position: relative;
@@ -402,22 +370,11 @@
   margin: 0;
   color: var(--secondary-text);
 }
-@media (min-width: 48.001rem) and (max-width: 58rem) {
-  .platform-shell .nav-item > .link-pending {
-    inset-inline-start: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
 @media (max-width: 48rem) {
   .post-heading > .profile-preview-trigger .community-avatar {
     width: 2.25rem;
     height: 2.25rem;
     flex-basis: 2.25rem;
-  }
-  .app-shell .mobile-nav .nav-item > .link-pending {
-    inset-inline-start: 50%;
-    top: 0.375rem;
-    transform: translateX(-50%);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -447,7 +404,6 @@
   .ui-hover-card {
     border-color: CanvasText;
   }
-  .ui-button > .link-pending .animal-loader-symbol,
   .button-loading-indicator .animal-loader-symbol {
     color: CanvasText;
   }

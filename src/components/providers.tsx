@@ -5,6 +5,7 @@ import { HydrationBoundary, type DehydratedState } from '@tanstack/react-query'
 import { SessionProvider, useSession } from '@/features/auth/session-provider'
 import type { Session } from '@/features/auth/types'
 import type { PawTrailApi } from '@/lib/api/contracts'
+import { PageNavigationProvider } from '@/components/layout/page-navigation'
 export function scopedHydrationState(
   state: DehydratedState | undefined,
   scope: string,
@@ -50,8 +51,10 @@ export function Providers({
       initialSession={initialSession}
       api={api}
     >
-      <Hydration state={dehydratedState}>{children}</Hydration>
-      <Toaster />
+      <PageNavigationProvider>
+        <Hydration state={dehydratedState}>{children}</Hydration>
+        <Toaster />
+      </PageNavigationProvider>
     </SessionProvider>
   )
 }

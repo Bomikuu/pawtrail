@@ -1,4 +1,1 @@
-import { DataState } from '@/components/shared/data-state'
-export default function CommunityLoading() {
-  return <DataState state="loading" />
-}
+export { PageLoading as default } from '@/components/layout/page-loading'

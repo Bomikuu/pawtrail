@@ -1,5 +1,6 @@
 'use client'
-import Link from 'next/link'
+import type Link from 'next/link'
+import { NavigationLink } from '@/components/layout/navigation-link'
 import { useId, useState, type ComponentProps } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { MapPin, PawPrint, Crown, ArrowUpRight } from 'lucide-react'
@@ -15,7 +16,6 @@ import { queryKeys } from '@/lib/api/keys'
 import { useSession } from '@/features/auth/session-provider'
 import { ProfileBanner } from './profile-banner'
 import { findBadge } from '@/features/achievements/catalog'
-import { LinkPending } from '@/components/layout/link-pending'
 
 export function ProfileLink({
   username,
@@ -47,17 +47,20 @@ export function ProfileLink({
       closeDelay={140}
     >
       <HoverCardTrigger asChild>
-        <Link
+        <NavigationLink
           {...props}
           prefetch={false}
           title={undefined}
+          onNavigate={(event) => {
+            props.onNavigate?.(event)
+            setOpen(false)
+          }}
           href={`/users/${encodeURIComponent(username)}`}
           className={`profile-preview-trigger ${props.className ?? ''}`}
           aria-describedby={open ? id : props['aria-describedby']}
         >
           {children}
-          <LinkPending />
-        </Link>
+        </NavigationLink>
       </HoverCardTrigger>
       <HoverCardContent
         className="profile-preview"

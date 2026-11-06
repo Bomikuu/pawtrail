@@ -1,8 +1,8 @@
-import { DataState } from '@/components/shared/data-state'
+import { PageLoading } from '@/components/layout/page-loading'
 export default function Loading() {
   return (
-    <main aria-label="Loading PawTrail">
-      <DataState state="loading" />
+    <main>
+      <PageLoading />
     </main>
   )
 }

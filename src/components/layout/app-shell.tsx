@@ -12,6 +12,8 @@ import { DemoBanner } from '@/components/shared/demo-banner'
 import { Header } from './header'
 import { MobileNav } from './mobile-nav'
 import { RouteTransition } from './route-transition'
+import { usePageNavigation } from './page-navigation'
+import { PageLoading } from './page-loading'
 import { DashboardNav } from './dashboard-nav'
 import { PlatformSidebar } from './platform-sidebar'
 import {
@@ -35,7 +37,9 @@ export function AppShell({
   variant?: 'platform' | 'management'
 }) {
   const { session } = useSession()
-  const pathname = usePathname()
+  const actualPathname = usePathname()
+  const navigation = usePageNavigation()
+  const pathname = navigation?.pathname ?? actualPathname
   const management = variant === 'management'
   const current = dashboardDestinations.find((item) =>
     isCurrentDestination(pathname, item.href),
@@ -98,7 +102,10 @@ export function AppShell({
               <span>{current?.label ?? 'Record details'}</span>
             </nav>
           )}
-          <RouteTransition>{children}</RouteTransition>
+          {navigation?.pending && <PageLoading />}
+          <RouteTransition hidden={navigation?.pending}>
+            {children}
+          </RouteTransition>
         </main>
         {rightRail && (
           <aside aria-label="Nearby help and adoption" className="context-rail">
