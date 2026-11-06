@@ -16,7 +16,7 @@ import { useSession } from '@/features/auth/session-provider'
 import { loginPath } from '@/features/auth/return-path'
 import { getBrowserApi } from '@/lib/api/client'
 import { Button } from '@/components/ui/button'
-import { ButtonAnchor } from '@/components/ui/button-anchor'
+import { PetHelpDialog } from './help-dialog'
 import { toast } from '@/components/ui/sonner'
 export function ProfileActions({
   id,
@@ -26,6 +26,7 @@ export function ProfileActions({
   viewerScope,
   url,
   adoptable,
+  fundraiserId,
 }: {
   id: string
   slug: string
@@ -34,6 +35,7 @@ export function ProfileActions({
   viewerScope: string
   url: string
   adoptable: boolean
+  fundraiserId?: string
 }) {
   const { session, pending: changingSession } = useSession()
   const [pending, setPending] = useState(false)
@@ -109,7 +111,14 @@ export function ProfileActions({
           returnTo={'/pets/' + encodeURIComponent(slug)}
           compact
         />
-        <ButtonAnchor href="#help">Help {name}</ButtonAnchor>
+        <PetHelpDialog
+          id={id}
+          slug={slug}
+          name={name}
+          adoptable={adoptable}
+          fundraiserId={fundraiserId}
+          onShare={share}
+        />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" aria-label={'More actions for ' + name}>

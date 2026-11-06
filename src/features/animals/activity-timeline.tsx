@@ -1,3 +1,4 @@
+import { QueryTabLink } from '@/components/layout/query-tab-link'
 import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import type { Sighting } from '@/features/sightings/types'
 import type { Post } from '@/features/community/types'
@@ -67,13 +68,16 @@ export function SightingHistory({
           ['month', 'Past month'],
           ['all', 'All time'],
         ].map(([value, label]) => (
-          <Link
+          <QueryTabLink
+            queryParam="period"
+            value={value}
+            defaultValue="all"
+            selected={period === value}
             key={value}
             href={`${path}?tab=location&period=${value}#sightings`}
-            aria-current={period === value ? 'page' : undefined}
           >
             {label}
-          </Link>
+          </QueryTabLink>
         ))}
       </nav>
       {sightings.length ? (

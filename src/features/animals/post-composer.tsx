@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'
 import { useSession } from '@/features/auth/session-provider'
 import { loginPath } from '@/features/auth/return-path'
-import { ButtonLink } from '@/components/ui/button-link'
+import { SignInPrompt } from '@/components/shared/sign-in-prompt'
 import { PostComposer } from '@/features/community/post-composer'
 export function AnimalPostComposer({
   id,
@@ -18,14 +18,12 @@ export function AnimalPostComposer({
   const path = '/pets/' + encodeURIComponent(slug)
   if (!session.actor)
     return (
-      <div className="pet-composer-signin">
-        <p>
-          Have an update about {name}? Share it as yourself and tag this pet.
-        </p>
-        <ButtonLink variant="outline" href={loginPath(path)}>
-          Sign in to share an update
-        </ButtonLink>
-      </div>
+      <SignInPrompt
+        href={loginPath(path)}
+        label="Sign in to share an update"
+        placeholder={`Share a moment or a care update about ${name}…`}
+        description={`Post as yourself and tag ${name} so the community can follow along.`}
+      />
     )
   return (
     <div className="pet-community-composer">
@@ -34,6 +32,7 @@ export function AnimalPostComposer({
         tag to include your update in this pet’s feed.
       </p>
       <PostComposer
+        compact
         key={session.cacheScope + ':' + id}
         options={[{ ref: { kind: 'animal', id }, title: name, href: path }]}
         initialRefs={[{ kind: 'animal', id }]}

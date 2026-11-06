@@ -1,1 +1,1 @@
-export { PageLoading as default } from '@/components/layout/page-loading'
+export { PetSectionLoading as default } from '@/features/animals/profile-navigation'

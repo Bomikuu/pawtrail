@@ -1,5 +1,8 @@
 import { AnimatedNumber } from '@/components/shared/animated-number'
-import type { ReactNode } from 'react'
+import { Suspense, type ReactNode } from 'react'
+import { PetProfileTabs } from './profile-navigation'
+import { Skeleton } from '@/components/ui/skeleton'
+import { DataState } from '@/components/shared/data-state'
 import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import {
   CalendarDays,
@@ -11,9 +14,6 @@ import {
   Ruler,
   Sparkles,
   HandHeart,
-  Grid2X2,
-  Info,
-  Images,
 } from 'lucide-react'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { StatusBadge } from '@/components/shared/status-badge'
@@ -27,21 +27,13 @@ export function AnimalSocialHeader({
   animal,
   activity,
   actions,
-  tab,
 }: {
   animal: AnimalProfile
   activity: AnimalActivityPage | null
   actions: ReactNode
-  tab: AnimalProfileTab
 }) {
   const path = '/pets/' + encodeURIComponent(animal.slug)
   const summary = activity?.summary
-  const tabs = [
-    { id: 'activity', label: 'Activity', icon: Grid2X2 },
-    { id: 'about', label: 'About', icon: Info },
-    { id: 'photos', label: 'Photos', icon: Images },
-    { id: 'location', label: 'Location', icon: MapPin },
-  ] as const
   return (
     <header className="pet-social-header">
       <div className="pet-cover">
@@ -120,8 +112,8 @@ export function AnimalSocialHeader({
         {[
           ['taggedPosts', 'Tagged stories'],
           ['sightings', 'Sightings'],
-          ['helpers', 'Public helpers'],
-          ['followers', 'Public followers'],
+          ['helpers', 'Helpers'],
+          ['followers', 'Followers'],
         ].map(([key, label]) => (
           <div key={key}>
             <dt>{label}</dt>
@@ -142,18 +134,9 @@ export function AnimalSocialHeader({
           </div>
         ))}
       </dl>
-      <nav className="pet-profile-tabs" aria-label="Pet profile sections">
-        {tabs.map(({ id, label, icon: Icon }) => (
-          <Link
-            key={id}
-            href={`${path}?tab=${id}#pet-activity`}
-            aria-current={tab === id ? 'page' : undefined}
-          >
-            <Icon size={20} aria-hidden="true" />
-            {label}
-          </Link>
-        ))}
-      </nav>
+      <Suspense fallback={<Skeleton className="pet-tabs-skeleton" />}>
+        <PetProfileTabs path={path} />
+      </Suspense>
     </header>
   )
 }
@@ -354,7 +337,16 @@ export function AnimalPhotoCollection({ page }: { page: AnimalActivityPage }) {
           ))}
         </ul>
       ) : (
-        <p>No public photographs yet.</p>
+        <DataState
+          state="empty"
+          emptyTitle="No public photographs yet"
+          emptyDescription="Photos from approved sightings and tagged stories will appear here. Share an update from Activity to add to this pet’s story."
+          emptyAction={
+            <ButtonLink href="?tab=activity#pet-activity" variant="outline">
+              Back to activity
+            </ButtonLink>
+          }
+        />
       )}
     </section>
   )

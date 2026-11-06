@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import type { ComponentProps } from 'react'
 import { usePageNavigation } from './page-navigation'
+import { useNavigationScope } from './navigation-scope'
 
 /** Keep native link behavior while making in-app page selection immediate. */
 export function NavigationLink({
@@ -14,6 +15,7 @@ export function NavigationLink({
   ...props
 }: ComponentProps<typeof Link> & { activePath?: string }) {
   const navigation = usePageNavigation()
+  const scope = useNavigationScope()
   return (
     <Link
       {...props}
@@ -38,6 +40,8 @@ export function NavigationLink({
           replace,
           scroll,
           transitionTypes,
+          region:
+            scope?.pathname === target.pathname ? scope.region : undefined,
         })
       }}
     />

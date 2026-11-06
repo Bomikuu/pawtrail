@@ -27,6 +27,18 @@ Animals gain an allowlisted `bannerId` with the same supplied eight-banner colle
 
 ## Delivery and limits
 
+### Section-loading refinement
+
+The later owner request caps the complete profile at 800px, replacing the earlier unrestricted-width treatment. The cover uses a bounded aspect ratio with `object-fit: cover`; the profile is a single reading column with supporting cards below. Tagged stories, sightings, helpers and followers use compact inline number/label pairs from the same public totals.
+
+The new `[slug]/layout.tsx` keeps the server-rendered cover, identity, actions, discussion, and supporting information mounted across query-tab changes. The page owns only the selected Activity/About/Photos/Location section. `NavigationScope` and `NavigationRegion` limit immediate feedback to the named section; activity type/order/pagination use a nested results region so their controls and composer stay visible. `QueryTabLink` updates selection immediately and retains pending kind/order choices during rapid changes. Other page navigation retains the existing full-page feedback. Named section skeletons use the canonical shared `Skeleton` and reusable `SectionLoading`; reduced-motion users receive static placeholders.
+
+The initial default activity read is shared with React's request-scoped cache using identical primitive arguments. About skips activity/session queries; Location loads its sighting history without an extra session read. No cross-request or cross-user profile cache was introduced. Profile metadata, structured data, privacy projections, and public SSR content remain intact.
+
+Help opens a Radix dialog with icons and descriptions for care requests, sightings, linked fundraising when available, adoption when listed, conversation, and sharing. Protected actions preserve the animal context in the sign-in return path. The shared `SignInPrompt` gives anonymous comments and pet updates a clear action and a preview placeholder; signed-in comments name the pet in their placeholder, and Photos has an illustrated empty state. Comment drafts stay mounted across pet section changes, and sign-in returns to the discussion anchor.
+
+Implemented with source review only. No automated tests/checks, builds, browser inspection, or timing measurements were run, following the user's instructions. The local Graphify graph was unavailable, so relationships were traced directly in source. Jev preferred scoped profile feedback from a synthetic design description; it did not verify the implementation.
+
 Implemented directly in the main session, without agents, new image generation, automated tests/checks, builds, detectors or browser verification. Source was read and formatted only; runtime behavior and rendered layout remain unverified. The existing preview remains running. Local mock/BFF contracts are implemented; live Django conformance is separate work.
 
 The existing Graphify repository map was a truncated locator (164 nodes, 96 reachable, four shown), supplemented by direct source reading; it does not describe the new activity service. Jev's synthetic attribution/priority judgment favored people-led, privacy-projected activity (424 input / 33 output tokens). No private records or secrets were sent; that judgment was guidance rather than verification.

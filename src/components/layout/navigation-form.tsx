@@ -1,6 +1,7 @@
 'use client'
 import type { ComponentProps } from 'react'
 import { usePageNavigation } from './page-navigation'
+import { useNavigationScope } from './navigation-scope'
 
 /** GET searches and filters keep native serialization without a full-page reload. */
 export function NavigationForm({
@@ -11,6 +12,7 @@ export function NavigationForm({
   action?: string
 }) {
   const navigation = usePageNavigation()
+  const scope = useNavigationScope()
   return (
     <form
       {...props}
@@ -40,7 +42,10 @@ export function NavigationForm({
         )
         action.search = params.toString()
         event.preventDefault()
-        navigation.navigate(action.pathname + action.search + action.hash)
+        navigation.navigate(action.pathname + action.search + action.hash, {
+          region:
+            scope?.pathname === action.pathname ? scope.region : undefined,
+        })
       }}
     />
   )

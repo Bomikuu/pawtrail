@@ -20,3 +20,20 @@ export const getPublicAnimal = cache(
     }
   },
 )
+
+/** Reuse the initial public activity read between the persistent layout and page. */
+export const getPetActivity = cache(
+  async (
+    slug: string,
+    kind: 'all' | 'sightings' | 'help' | 'tagged' = 'all',
+    sort: 'priority' | 'newest' = 'priority',
+    cursor?: string,
+  ) => {
+    return (await getServerApi()).animals.activity(slug, {
+      kind,
+      sort,
+      cursor,
+      limit: 12,
+    })
+  },
+)

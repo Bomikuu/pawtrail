@@ -21,12 +21,14 @@ export function Discussion({
   photoContext = [],
   composerFirst = false,
   allowPhotos = true,
+  subject,
 }: {
   target: ResourceRef
   returnTo: string
   photoContext?: LinkedOption[]
   composerFirst?: boolean
   allowPhotos?: boolean
+  subject?: string
 }) {
   const { session, pending } = useSession()
   const [photo, setPhoto] = useState(false)
@@ -49,7 +51,9 @@ export function Discussion({
   ]
   return (
     <div className="discussion">
-      {composerFirst && <CommentForm target={target} returnTo={returnTo} />}
+      {composerFirst && (
+        <CommentForm target={target} returnTo={returnTo} subject={subject} />
+      )}
       <DataState
         state={
           query.isPending
@@ -135,7 +139,9 @@ export function Discussion({
           {query.isFetchingNextPage ? 'Loading…' : 'Load older comments'}
         </Button>
       )}
-      {!composerFirst && <CommentForm target={target} returnTo={returnTo} />}
+      {!composerFirst && (
+        <CommentForm target={target} returnTo={returnTo} subject={subject} />
+      )}
       {allowPhotos && session.actor && (
         <div className="discussion-photo">
           <p>Have a photograph to add to the story?</p>

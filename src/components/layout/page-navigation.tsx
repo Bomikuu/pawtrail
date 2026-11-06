@@ -15,10 +15,13 @@ type NavigationOptions = {
   replace?: boolean
   scroll?: boolean
   transitionTypes?: string[]
+  region?: string
 }
 type PageNavigation = {
   pathname: string
   pending: boolean
+  region: string | null
+  href: string | null
   navigate: (href: string, options?: NavigationOptions) => void
 }
 const Context = createContext<PageNavigation | null>(null)
@@ -56,6 +59,8 @@ export function PageNavigationProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
   const [targetPath, setTargetPath] = useState(pathname)
+  const [targetHref, setTargetHref] = useState<string | null>(null)
+  const [targetRegion, setTargetRegion] = useState<string | null>(null)
   const [pending, startTransition] = useTransition()
   const navigate = useCallback(
     (href: string, options: NavigationOptions = {}) => {
@@ -67,6 +72,12 @@ export function PageNavigationProvider({ children }: { children: ReactNode }) {
         return
       }
       setTargetPath(options.activePath ?? target.pathname)
+      setTargetHref(target.pathname + target.search + target.hash)
+      setTargetRegion(
+        target.pathname === window.location.pathname
+          ? (options.region ?? null)
+          : null,
+      )
       const navigateRoute = () => {
         const routeOptions = {
           scroll: options.scroll,
@@ -91,8 +102,14 @@ export function PageNavigationProvider({ children }: { children: ReactNode }) {
     [router],
   )
   const value = useMemo(
-    () => ({ pathname: pending ? targetPath : pathname, pending, navigate }),
-    [pending, targetPath, pathname, navigate],
+    () => ({
+      pathname: pending ? targetPath : pathname,
+      pending,
+      navigate,
+      region: pending ? targetRegion : null,
+      href: pending ? targetHref : null,
+    }),
+    [pending, targetPath, pathname, navigate, targetRegion, targetHref],
   )
   return <Context.Provider value={value}>{children}</Context.Provider>
 }

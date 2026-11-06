@@ -2,7 +2,7 @@
 import { useId, useRef, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { Button } from '@/components/ui/button'
-import { ButtonLink } from '@/components/ui/button-link'
+import { SignInPrompt } from '@/components/shared/sign-in-prompt'
 import { Textarea } from '@/components/ui/textarea'
 import { useSession } from '@/features/auth/session-provider'
 import { loginPath } from '@/features/auth/return-path'
@@ -13,9 +13,11 @@ import { commentInputSchema } from './schemas'
 export function CommentForm({
   target,
   returnTo,
+  subject,
 }: {
   target: ResourceRef
   returnTo: string
+  subject?: string
 }) {
   const { session, pending: changing } = useSession()
   const client = useQueryClient()
@@ -28,9 +30,14 @@ export function CommentForm({
   const retry = useRef({ text: '', key: '' })
   if (!session.actor)
     return (
-      <ButtonLink variant="outline" href={loginPath(returnTo)}>
-        Sign in to comment
-      </ButtonLink>
+      <SignInPrompt
+        href={loginPath(returnTo)}
+        placeholder={
+          subject
+            ? `Have a question or an update about ${subject}?`
+            : 'Add a thoughtful comment…'
+        }
+      />
     )
   return (
     <form
@@ -75,6 +82,11 @@ export function CommentForm({
         value={text}
         maxLength={1000}
         rows={3}
+        placeholder={
+          subject
+            ? `Share a kind observation or a useful update about ${subject}…`
+            : 'Share a thoughtful observation or a useful update…'
+        }
         onChange={(e) => setText(e.target.value)}
         disabled={pending || changing}
         aria-describedby={`${id}-hint`}

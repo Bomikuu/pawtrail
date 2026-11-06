@@ -40,6 +40,7 @@ export function AppShell({
   const actualPathname = usePathname()
   const navigation = usePageNavigation()
   const pathname = navigation?.pathname ?? actualPathname
+  const pagePending = navigation?.pending && !navigation.region
   const management = variant === 'management'
   const current = dashboardDestinations.find((item) =>
     isCurrentDestination(pathname, item.href),
@@ -102,10 +103,8 @@ export function AppShell({
               <span>{current?.label ?? 'Record details'}</span>
             </nav>
           )}
-          {navigation?.pending && <PageLoading />}
-          <RouteTransition hidden={navigation?.pending}>
-            {children}
-          </RouteTransition>
+          {pagePending && <PageLoading />}
+          <RouteTransition hidden={pagePending}>{children}</RouteTransition>
         </main>
         {rightRail && (
           <aside aria-label="Nearby help and adoption" className="context-rail">
