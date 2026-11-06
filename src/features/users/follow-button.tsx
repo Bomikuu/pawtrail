@@ -97,20 +97,15 @@ export function FollowButton({
         className={compact ? 'follow-compact' : undefined}
         aria-label={(followed ? 'Unfollow ' : 'Follow ') + name}
         aria-pressed={followed}
+        loading={saving || follows.isPending}
         disabled={saving || changing || follows.isPending || follows.isError}
         onClick={toggle}
       >
         {compact
-          ? saving || follows.isPending
-            ? 'Loading…'
-            : followed
-              ? 'Following'
-              : 'Follow'
-          : saving
-            ? 'Updating following…'
-            : follows.isPending
-              ? `Loading follow state for ${name}…`
-              : `${followed ? 'Unfollow' : 'Follow'} ${name}`}
+          ? followed
+            ? 'Following'
+            : 'Follow'
+          : `${followed ? 'Unfollow' : 'Follow'} ${name}`}
       </Button>
       {follows.isError && (
         <>

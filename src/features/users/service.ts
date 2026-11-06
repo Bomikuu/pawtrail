@@ -23,6 +23,7 @@ import {
   profileActivitySchema,
   publicIdentityQuerySchema,
   publicIdentitiesSchema,
+  profilePreviewSchema,
 } from './schemas'
 export function currentUser(draft: DemoDraft) {
   const user = draft.data.users.find((u) => u.id === draft.auth.actorId)
@@ -38,13 +39,25 @@ export function createUserService(
 ): {
   get: PawTrailApi['users']['get']
   identities: PawTrailApi['users']['identities']
+  preview: PawTrailApi['users']['preview']
   follows: PawTrailApi['follows']
 } {
   const read = <T>(query: (draft: DemoDraft) => T) =>
     repository
       ? repository.read(query)
       : Promise.resolve(query(fixtureDraft(data)))
-  return {
+  const service: {
+    get: PawTrailApi['users']['get']
+    identities: PawTrailApi['users']['identities']
+    preview: PawTrailApi['users']['preview']
+    follows: PawTrailApi['follows']
+  } = {
+    async preview(username, options) {
+      return parseResponse(
+        profilePreviewSchema,
+        await service.get(username, options),
+      )
+    },
     async identities(input, options) {
       checkCancelled(options?.signal)
       const { ids } = parseInput(publicIdentityQuerySchema, input)
@@ -380,4 +393,5 @@ export function createUserService(
       },
     },
   }
+  return service
 }

@@ -99,3 +99,19 @@ export const publicProfileSchema = publicUserSchema.extend({
   animalsHelped: z.array(animalSummarySchema),
   stories: z.array(postViewSchema),
 })
+
+/** Only fields already allowed on the public profile; no stories, proof, email or settings. */
+export const profilePreviewSchema = publicProfileSchema.pick({
+  id: true,
+  username: true,
+  displayName: true,
+  bio: true,
+  avatar: true,
+  bannerId: true,
+  location: true,
+  leaderboardRank: true,
+  level: true,
+  badges: true,
+  summary: true,
+  provenance: true,
+})

@@ -41,6 +41,7 @@ import type {
   PrivateUser,
   ProfileInput,
   PublicProfile,
+  ProfilePreview,
   PublicIdentityQuery,
   PublicIdentities,
 } from '@/features/users/types'
@@ -193,6 +194,7 @@ export interface PawTrailApi {
     ): Promise<PublicIdentities>
     me(options?: RequestOptions): Promise<PrivateUser>
     get(username: string, options?: RequestOptions): Promise<PublicProfile>
+    preview(username: string, options?: RequestOptions): Promise<ProfilePreview>
     update(input: ProfileInput, options?: RequestOptions): Promise<PrivateUser>
     settings(options?: RequestOptions): Promise<PrivacySettings>
     updateSettings(

@@ -1,6 +1,7 @@
 'use client'
 import type { ReactNode } from 'react'
 import { Button } from '@/components/ui/button'
+import { AnimalLoader } from './animal-loader'
 export function DataState({
   state,
   retry,
@@ -23,8 +24,8 @@ export function DataState({
   if (state === 'ready') return <>{children}</>
   if (state === 'loading')
     return (
-      <div className="data-state" role="status" aria-busy="true">
-        <span className="sr-only">Loading content…</span>
+      <div className="data-state" aria-busy="true">
+        <AnimalLoader label="Gathering the latest pawprints…" />
         <div className="skeleton skeleton-heading" aria-hidden="true" />
         <div className="skeleton skeleton-story" aria-hidden="true" />
         <div className="skeleton skeleton-line" aria-hidden="true" />

@@ -1,3 +1,4 @@
+import { AnimatedNumber } from '@/components/shared/animated-number'
 import Link from 'next/link'
 import {
   Award,
@@ -136,28 +137,36 @@ export function PublicProfile({
               <PawPrint aria-hidden="true" />
               Stories
             </dt>
-            <dd>{summary.stories.toLocaleString('en-PH')}</dd>
+            <dd>
+              <AnimatedNumber value={summary.stories} />
+            </dd>
           </div>
           <div className="profile-stat-sightings">
             <dt>
               <MapPin aria-hidden="true" />
               Sightings
             </dt>
-            <dd>{summary.sightings.toLocaleString('en-PH')}</dd>
+            <dd>
+              <AnimatedNumber value={summary.sightings} />
+            </dd>
           </div>
           <div className="profile-stat-missions">
             <dt>
               <Check aria-hidden="true" />
               Approved missions
             </dt>
-            <dd>{summary.missions.toLocaleString('en-PH')}</dd>
+            <dd>
+              <AnimatedNumber value={summary.missions} />
+            </dd>
           </div>
           <div className="profile-stat-support">
             <dt>
               <Heart aria-hidden="true" />
               Fundraisers supported
             </dt>
-            <dd>{summary.donations.toLocaleString('en-PH')}</dd>
+            <dd>
+              <AnimatedNumber value={summary.donations} />
+            </dd>
           </div>
         </dl>
       )}
@@ -200,7 +209,7 @@ export function PublicProfile({
                       Net Kibble earned
                     </dt>
                     <dd>
-                      {profile.impact.kibbleEarned.toLocaleString('en-PH')}
+                      <AnimatedNumber value={profile.impact.kibbleEarned} />
                     </dd>
                   </div>
                 )}
@@ -209,7 +218,9 @@ export function PublicProfile({
                     <Heart size={18} aria-hidden="true" />
                     Animals supported
                   </dt>
-                  <dd>{profile.animalsHelped.length}</dd>
+                  <dd>
+                    <AnimatedNumber value={profile.animalsHelped.length} />
+                  </dd>
                 </div>
                 {profile.impact && (
                   <>
@@ -218,14 +229,19 @@ export function PublicProfile({
                         <CalendarDays size={18} aria-hidden="true" />
                         Event RSVPs
                       </dt>
-                      <dd>{profile.impact.eventsJoined}</dd>
+                      <dd>
+                        <AnimatedNumber value={profile.impact.eventsJoined} />
+                      </dd>
                     </div>
                     <div>
                       <dt>
                         <Sprout size={18} aria-hidden="true" />
                         Member for
                       </dt>
-                      <dd>{profile.impact.membershipDays} days</dd>
+                      <dd>
+                        <AnimatedNumber value={profile.impact.membershipDays} />{' '}
+                        days
+                      </dd>
                     </div>
                   </>
                 )}

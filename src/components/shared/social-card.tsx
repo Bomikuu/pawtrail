@@ -5,6 +5,7 @@ import { AnimalImage } from './animal-image'
 import { CommunityAvatar } from './community-avatar'
 import { RankCrown } from '@/features/kibble/rank-crown'
 import { findBadge } from '@/features/achievements/catalog'
+import { ProfileLink } from '@/features/users/profile-link'
 
 export function EarnedBadges({
   badges = [],
@@ -59,9 +60,9 @@ export function ParticipantFaces({
     <div className="participant-line">
       <div className="participant-faces" aria-label={label}>
         {unique.map((person) => (
-          <Link
+          <ProfileLink
             key={person.id}
-            href={`/users/${encodeURIComponent(person.username)}`}
+            username={person.username}
             title={person.displayName}
             aria-label={`View ${person.displayName}’s profile`}
           >
@@ -71,7 +72,7 @@ export function ParticipantFaces({
               userId={person.id}
               small
             />
-          </Link>
+          </ProfileLink>
         ))}
       </div>
       <Link className="participant-caption" href={href}>
@@ -95,8 +96,8 @@ export function PersonByline({
 }) {
   return (
     <div className="social-byline">
-      <Link
-        href={`/users/${encodeURIComponent(person.username)}`}
+      <ProfileLink
+        username={person.username}
         aria-label={`View ${person.displayName}’s profile`}
       >
         <CommunityAvatar
@@ -105,12 +106,12 @@ export function PersonByline({
           userId={person.id}
           small
         />
-      </Link>
+      </ProfileLink>
       <div>
         <span className="recognized-author-name">
-          <Link href={`/users/${encodeURIComponent(person.username)}`}>
+          <ProfileLink username={person.username}>
             {person.displayName}
-          </Link>
+          </ProfileLink>
           <RankCrown rank={person.leaderboardRank ?? null} />
           <EarnedBadges badges={person.badges} username={person.username} />
         </span>

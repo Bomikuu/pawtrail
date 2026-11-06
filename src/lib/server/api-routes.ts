@@ -43,6 +43,15 @@ export interface ApiRoute {
 export const apiRoutes: ApiRoute[] = [
   {
     method: 'GET',
+    path: '/users/:username/preview',
+    invoke: async (api, params, _query, _body, options) =>
+      parseResponse(
+        users.profilePreviewSchema,
+        await api.users.preview(params.username, options),
+      ),
+  },
+  {
+    method: 'GET',
     path: '/users/identities/batch',
     invoke: async (api, _params, query, _body, options) =>
       parseResponse(

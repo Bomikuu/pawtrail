@@ -235,6 +235,7 @@ export function createMockApi(
   const users = createUserService(data, repository)
   api.users.identities = users.identities
   api.users.get = users.get
+  api.users.preview = users.preview
   api.follows = users.follows
   api.notifications = createNotificationService(data, repository)
   api.hordes.list = async (filters, options) =>

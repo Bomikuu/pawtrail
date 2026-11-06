@@ -253,6 +253,15 @@ export function createApiClient(
         ),
     },
     users: {
+      preview: (username, options) =>
+        request(
+          'GET',
+          `/users/${encodeURIComponent(username)}/preview`,
+          users.profilePreviewSchema,
+          undefined,
+          undefined,
+          options,
+        ),
       identities: (query, options) =>
         request(
           'GET',

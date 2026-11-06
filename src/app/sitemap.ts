@@ -15,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'missions',
       'shelters',
       'events',
+      'leaderboard',
     ].map((path) => ({ url: `${siteOrigin}/${path}` }))
   for (const [path, list] of [
     ['pets', api.animals.list],

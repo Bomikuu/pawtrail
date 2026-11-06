@@ -1,0 +1,16 @@
+# Motion, controls, profile previews, and site identity
+
+Implemented directly on 6 November 2026, following the owner's interaction requests and the existing Impeccable community-journal direction.
+
+- Public and management content enters with a single 200 ms arrival transition. The navigation shell stays in place. Query-string changes preserve forms and local state.
+- Dashboard, member, pet, event, and leaderboard totals count up once when entering the viewport. Animation lasts 700 ms. Accurate final totals are server-rendered and separately available to screen readers; subsequent data changes update immediately. Reserved text width prevents counters shifting their neighbors. Reduced-motion preferences and background tabs finish immediately.
+- Shared Shadcn buttons use smaller corners, restrained borders, clear hover/focus/pressed states, and paw indicators during submissions. Like, Comment, Share, and the remaining social actions stay together at their natural widths. Targets remain usable on phones.
+- Existing route fallbacks and shared data loading use a paw icon and quiet orbit. Navigation links show pending feedback through Next's link status. Forms and Follow controls use the same paw indicator. No artificial wait is added.
+- Public member names and portraits on stories, comments, shared bylines, attendee lists, the recognition board, and the platform account link open a small profile summary. Pointer hover opens after 280 ms; keyboard focus opens it, Escape dismisses it, and a click or touch retains ordinary profile navigation. The read-only Radix HoverCard contains no controls hidden from keyboard navigation.
+- Previews request data only when opened, share the existing users query invalidation and viewer cache scope, and respect public profile privacy. Unavailable profiles have an explicit message. Public pages remain server-rendered.
+- Public directories now have their own description, canonical URL, Open Graph and social-card metadata. A generic branded sharing image covers directory links. Existing detail-page previews and structured data remain in place. The sample community, private pages, and search results remain excluded from indexing. The leaderboard joins the production sitemap. Deployment canonical links use `NEXT_PUBLIC_SITE_URL`.
+- An original compact paw SVG supplies the tab icon, with 16/32/48 px ICO fallbacks, a 180 px Apple icon, and 192/512 px manifest icons. These small local assets use the existing orange-and-cream brand.
+
+Source review covered shared component boundaries, public projection reuse, query invalidation, responsive selectors affected by the transition wrapper, reduced motion, metadata file conventions, and link behavior. No automated tests, type/UI/format checks, builds, or browser verification were run, as requested. No live backend conformance is asserted.
+
+Graphify's existing graph predates these UI components; its scoped query did not return the relevant nodes, so relationships were traced in source. Jev preferred restrained accessible feedback over continuous decorative motion using a synthetic design description; that judgment is guidance, not verification.

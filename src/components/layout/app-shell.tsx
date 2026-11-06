@@ -11,6 +11,7 @@ import { useSession } from '@/features/auth/session-provider'
 import { DemoBanner } from '@/components/shared/demo-banner'
 import { Header } from './header'
 import { MobileNav } from './mobile-nav'
+import { RouteTransition } from './route-transition'
 import { DashboardNav } from './dashboard-nav'
 import { PlatformSidebar } from './platform-sidebar'
 import {
@@ -97,7 +98,7 @@ export function AppShell({
               <span>{current?.label ?? 'Record details'}</span>
             </nav>
           )}
-          {children}
+          <RouteTransition>{children}</RouteTransition>
         </main>
         {rightRail && (
           <aside aria-label="Nearby help and adoption" className="context-rail">

@@ -1,3 +1,4 @@
+import { ProfileLink } from '@/features/users/profile-link'
 import Link from 'next/link'
 import { ArrowUpRight, HandHeart, Heart, MapPin } from 'lucide-react'
 import { CommunityAvatar } from '@/components/shared/community-avatar'
@@ -120,14 +121,9 @@ export function AnimalActivityFeed({
                     <div>
                       <div className="pet-activity-author">
                         {entry.author.username ? (
-                          <Link
-                            href={
-                              '/users/' +
-                              encodeURIComponent(entry.author.username)
-                            }
-                          >
+                          <ProfileLink username={entry.author.username}>
                             {entry.author.displayName}
-                          </Link>
+                          </ProfileLink>
                         ) : (
                           <strong>{entry.author.displayName}</strong>
                         )}

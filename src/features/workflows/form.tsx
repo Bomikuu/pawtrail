@@ -387,6 +387,7 @@ export function WorkflowForm({
         ) : (
           <Button
             type="submit"
+            loading={pending}
             disabled={pending || !readyPhotos || !readyEvidence}
           >
             {pending ? 'Saving…' : submitLabel}

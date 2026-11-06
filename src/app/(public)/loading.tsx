@@ -1,8 +1,8 @@
+import { AnimalLoader } from '@/components/shared/animal-loader'
 export default function Loading() {
   return (
-    <div className="journal-empty" role="status">
-      <h1>Finding the next part of the story…</h1>
-      <p>Loading PawTrail.</p>
+    <div className="journal-empty">
+      <AnimalLoader label="Finding the next part of the story…" />
     </div>
   )
 }

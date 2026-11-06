@@ -14,6 +14,7 @@ import type { ResourceRef } from '@/types/common'
 import { CommentForm } from './comment-form'
 import { PostComposer } from './post-composer'
 import type { LinkedOption } from './linked-entity-picker'
+import { ProfileLink } from '@/features/users/profile-link'
 export function Discussion({
   target,
   returnTo,
@@ -68,14 +69,34 @@ export function Discussion({
           {comments.map((comment) => (
             <li key={comment.id}>
               <div className="discussion-byline">
-                <CommunityAvatar
-                  name={comment.author.displayName}
-                  image={comment.author.avatar}
-                  userId={comment.authorId}
-                  small
-                />
+                {comment.author.username ? (
+                  <ProfileLink
+                    username={comment.author.username}
+                    aria-label={`View ${comment.author.displayName}’s profile`}
+                  >
+                    <CommunityAvatar
+                      name={comment.author.displayName}
+                      image={comment.author.avatar}
+                      userId={comment.authorId}
+                      small
+                    />
+                  </ProfileLink>
+                ) : (
+                  <CommunityAvatar
+                    name={comment.author.displayName}
+                    image={comment.author.avatar}
+                    userId={comment.authorId}
+                    small
+                  />
+                )}
                 <strong className="recognized-author-name">
-                  {comment.author.displayName}
+                  {comment.author.username ? (
+                    <ProfileLink username={comment.author.username}>
+                      {comment.author.displayName}
+                    </ProfileLink>
+                  ) : (
+                    comment.author.displayName
+                  )}
                   {comment.author.username && (
                     <RankCrown rank={comment.author.leaderboardRank} />
                   )}

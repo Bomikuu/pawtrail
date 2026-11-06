@@ -548,7 +548,7 @@
 }
 
 /* Discovery and management lead with a clear task, then compact useful records. */
-.app-content > header.workspace-heading {
+.route-transition > header.workspace-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -556,18 +556,18 @@
   padding: 0;
   margin: 0 0 1.25rem;
 }
-.app-content > header.workspace-heading > div {
+.route-transition > header.workspace-heading > div {
   min-width: 0;
 }
-.app-content > header.workspace-heading h1 {
+.route-transition > header.workspace-heading h1 {
   font: 850 1.75rem/1.2 var(--font-heading);
   margin: 0 0 0.5rem;
 }
-.app-content > header.workspace-heading p {
+.route-transition > header.workspace-heading p {
   font-size: 0.9375rem;
   line-height: 1.55;
 }
-.app-content > header.workspace-heading > .ui-button {
+.route-transition > header.workspace-heading > .ui-button {
   flex-shrink: 0;
   width: auto;
   white-space: nowrap;
@@ -1112,15 +1112,15 @@
   }
 }
 @media (max-width: 48rem) {
-  .app-content > header.workspace-heading {
+  .route-transition > header.workspace-heading {
     flex-direction: column;
     align-items: start;
     gap: 0.875rem;
   }
-  .app-content > header.workspace-heading h1 {
+  .route-transition > header.workspace-heading h1 {
     font-size: 1.5rem;
   }
-  .app-content > header.workspace-heading > .ui-button {
+  .route-transition > header.workspace-heading > .ui-button {
     width: auto;
   }
   .app-shell .journal-grid {

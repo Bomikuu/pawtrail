@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { LinkPending } from './link-pending'
 import { useSession } from '@/features/auth/session-provider'
 import {
   destinationHref,
@@ -51,6 +52,7 @@ export function NavItem({
       onClick={onNavigate}
     >
       {content}
+      <LinkPending />
     </Link>
   )
 }

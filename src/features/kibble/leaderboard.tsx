@@ -1,3 +1,5 @@
+import { AnimatedNumber } from '@/components/shared/animated-number'
+import { ProfileLink } from '@/features/users/profile-link'
 import Link from 'next/link'
 import {
   CalendarDays,
@@ -61,7 +63,7 @@ function Kibble({ amount }: { amount: number }) {
   return (
     <span className="recognition-kibble">
       <PawPrint size={18} aria-hidden="true" />
-      {number(amount)} <span>Kibble</span>
+      <AnimatedNumber value={amount} /> <span>Kibble</span>
     </span>
   )
 }
@@ -161,10 +163,7 @@ function Podium({
       <ol className={'recognition-podium podium-count-' + entries.length}>
         {entries.map((entry) => (
           <li key={entry.userId} className={'podium-place place-' + entry.rank}>
-            <Link
-              href={'/users/' + encodeURIComponent(entry.username)}
-              className="podium-person"
-            >
+            <ProfileLink username={entry.username} className="podium-person">
               {entry.rank === 1 && (
                 <Crown className="podium-crown" size={42} aria-hidden="true" />
               )}
@@ -204,7 +203,7 @@ function Podium({
                     : `${number(entry.contributions[category])} ${category === 'missions' ? 'approved missions' : category === 'sightings' ? 'published sightings' : 'campaigns supported'}`}
                 </p>
               </div>
-            </Link>
+            </ProfileLink>
           </li>
         ))}
       </ol>
@@ -282,7 +281,9 @@ export async function CommunityLeaderboard({
                 <PawPrint aria-hidden="true" />
                 <span>PawPals</span>
               </dt>
-              <dd>{number(summary.activeHelpers)}</dd>
+              <dd>
+                <AnimatedNumber value={summary.activeHelpers} />
+              </dd>
               <dd className="recognition-impact-description">
                 Helpers with recorded activity
               </dd>
@@ -292,7 +293,9 @@ export async function CommunityLeaderboard({
                 <PawPrint aria-hidden="true" />
                 <span>Kibble earned</span>
               </dt>
-              <dd>{number(summary.kibbleEarned)}</dd>
+              <dd>
+                <AnimatedNumber value={summary.kibbleEarned} />
+              </dd>
               <dd className="recognition-impact-description">
                 Non-cash community rewards
               </dd>
@@ -302,7 +305,9 @@ export async function CommunityLeaderboard({
                 <Check aria-hidden="true" />
                 <span>Contributions</span>
               </dt>
-              <dd>{number(summary.contributions)}</dd>
+              <dd>
+                <AnimatedNumber value={summary.contributions} />
+              </dd>
               <dd className="recognition-impact-description">
                 Missions, sightings and campaign support
               </dd>
@@ -312,7 +317,9 @@ export async function CommunityLeaderboard({
                 <Heart aria-hidden="true" />
                 <span>Animals supported</span>
               </dt>
-              <dd>{number(summary.animalsHelped)}</dd>
+              <dd>
+                <AnimatedNumber value={summary.animalsHelped} />
+              </dd>
               <dd className="recognition-impact-description">
                 Linked to approved missions
               </dd>
@@ -434,8 +441,8 @@ export async function CommunityLeaderboard({
                       </span>
                     </TableCell>
                     <TableHead scope="row">
-                      <Link
-                        href={'/users/' + encodeURIComponent(entry.username)}
+                      <ProfileLink
+                        username={entry.username}
                         className="recognition-person"
                       >
                         <CommunityAvatar
@@ -452,7 +459,7 @@ export async function CommunityLeaderboard({
                           </strong>
                           <small>@{entry.username}</small>
                         </span>
-                      </Link>
+                      </ProfileLink>
                     </TableHead>
                     <TableCell>
                       <div className="recognition-mastery">
@@ -583,8 +590,8 @@ export async function CommunityLeaderboard({
             {board.spotlights.map((helper) => (
               <li key={helper.id}>
                 <div className="social-byline">
-                  <Link
-                    href={`/users/${encodeURIComponent(helper.username)}`}
+                  <ProfileLink
+                    username={helper.username}
                     aria-label={`View ${helper.displayName}’s profile`}
                   >
                     <CommunityAvatar
@@ -593,13 +600,11 @@ export async function CommunityLeaderboard({
                       userId={helper.userId}
                       small
                     />
-                  </Link>
+                  </ProfileLink>
                   <div>
-                    <Link
-                      href={`/users/${encodeURIComponent(helper.username)}`}
-                    >
+                    <ProfileLink username={helper.username}>
                       <strong>{helper.displayName}</strong>
-                    </Link>
+                    </ProfileLink>
                     <small>{helper.label}</small>
                   </div>
                 </div>

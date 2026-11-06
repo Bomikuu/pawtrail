@@ -521,7 +521,7 @@ h3 {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.app-content > p {
+.route-transition > p {
   max-width: 70ch;
 }
 .context-rail {

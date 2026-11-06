@@ -267,6 +267,7 @@ export function PostComposer({
         </Button>
         <Button
           type="submit"
+          loading={pending}
           disabled={pending || changing || !uploadsReady || !text.trim()}
         >
           {pending ? 'Submitting…' : 'Submit post'}

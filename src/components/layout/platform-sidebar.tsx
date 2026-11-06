@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { ProfileLink } from '@/features/users/profile-link'
 import {
   ArrowUpRight,
   LayoutDashboard,
@@ -88,8 +89,8 @@ export function PlatformSidebar({
         <ArrowUpRight size={15} aria-hidden="true" />
       </Link>
       {session.actor && (
-        <Link
-          href={'/users/' + encodeURIComponent(session.actor.username)}
+        <ProfileLink
+          username={session.actor.username}
           className="sidebar-account"
         >
           <CommunityAvatar
@@ -102,7 +103,7 @@ export function PlatformSidebar({
             <strong>{session.actor.displayName}</strong>
             <small>@{session.actor.username}</small>
           </span>
-        </Link>
+        </ProfileLink>
       )}
     </>
   )

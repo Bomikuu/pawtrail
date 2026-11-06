@@ -1,3 +1,5 @@
+import { AnimatedNumber } from '@/components/shared/animated-number'
+import { ProfileLink } from '@/features/users/profile-link'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -56,9 +58,9 @@ function AttendeePreview({
       {event.attendees.length ? (
         <div className="event-attendee-faces">
           {event.attendees.slice(0, 4).map((person) => (
-            <Link
+            <ProfileLink
               key={person.id}
-              href={`/users/${encodeURIComponent(person.username)}`}
+              username={person.username}
               aria-label={`View ${person.displayName}’s profile`}
               title={person.displayName}
             >
@@ -67,7 +69,7 @@ function AttendeePreview({
                 image={person.avatar}
                 userId={person.id}
               />
-            </Link>
+            </ProfileLink>
           ))}
           {event.publicAttendeeCount > 4 && (
             <Link
@@ -108,7 +110,7 @@ function AttendeeList({ event }: { event: EventDetail }) {
         <ul className="event-attendee-list">
           {event.attendees.map((person) => (
             <li key={person.id}>
-              <Link href={`/users/${encodeURIComponent(person.username)}`}>
+              <ProfileLink username={person.username}>
                 <CommunityAvatar
                   name={person.displayName}
                   image={person.avatar}
@@ -118,7 +120,7 @@ function AttendeeList({ event }: { event: EventDetail }) {
                   <strong>{person.displayName}</strong>
                   <small>@{person.username}</small>
                 </span>
-              </Link>
+              </ProfileLink>
             </li>
           ))}
         </ul>
@@ -234,14 +236,18 @@ export async function EventDetailPage({
                 <Users aria-hidden="true" />
                 Capacity
               </dt>
-              <dd>{event.capacity}</dd>
+              <dd>
+                <AnimatedNumber value={event.capacity} />
+              </dd>
             </div>
             <div>
               <dt>
                 <PawPrint aria-hidden="true" />
                 Attending
               </dt>
-              <dd>{event.attendanceCount}</dd>
+              <dd>
+                <AnimatedNumber value={event.attendanceCount} />
+              </dd>
             </div>
             <div className={event.viewerAttending ? 'event-stat-going' : ''}>
               <dt>

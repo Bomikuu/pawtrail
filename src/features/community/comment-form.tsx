@@ -87,7 +87,11 @@ export function CommentForm({
       {done && (
         <p role="status">Comment submitted for review. It is not public yet.</p>
       )}
-      <Button type="submit" disabled={pending || changing || !text.trim()}>
+      <Button
+        type="submit"
+        loading={pending}
+        disabled={pending || changing || !text.trim()}
+      >
         {pending ? 'Submitting…' : 'Submit comment'}
       </Button>
     </form>

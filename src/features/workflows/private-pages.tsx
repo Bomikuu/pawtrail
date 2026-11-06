@@ -1,3 +1,4 @@
+import { AnimatedNumber } from '@/components/shared/animated-number'
 import { ActivityCard } from '@/components/shared/social-card'
 import { ContributorLine, ContributorFaces } from './contributors'
 import { PostDetail } from '@/features/community/post-card'
@@ -78,7 +79,9 @@ export async function DashboardPage() {
             <dt>
               <Link href={String(path)}>{label}</Link>
             </dt>
-            <dd>{count}</dd>
+            <dd>
+              <AnimatedNumber value={Number(count)} />
+            </dd>
           </div>
         ))}
       </dl>

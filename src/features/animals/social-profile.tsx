@@ -1,3 +1,4 @@
+import { AnimatedNumber } from '@/components/shared/animated-number'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import {
@@ -126,9 +127,14 @@ export function AnimalSocialHeader({
             <dt>{label}</dt>
             <dd>
               {summary ? (
-                summary[
-                  key as 'taggedPosts' | 'sightings' | 'helpers' | 'followers'
-                ].toLocaleString('en-PH')
+                <AnimatedNumber
+                  value={
+                    summary[
+                      key as
+                        'taggedPosts' | 'sightings' | 'helpers' | 'followers'
+                    ]
+                  }
+                />
               ) : (
                 <span aria-label="Unavailable">—</span>
               )}

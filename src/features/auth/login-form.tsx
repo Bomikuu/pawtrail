@@ -140,7 +140,11 @@ export function AuthForm({
             {message}
           </p>
         )}
-        <Button type="submit" disabled={isSubmitting || session.pending}>
+        <Button
+          type="submit"
+          loading={isSubmitting || session.pending}
+          disabled={isSubmitting || session.pending}
+        >
           {isSubmitting
             ? 'Please wait…'
             : registration

@@ -49,7 +49,7 @@ export function ActionButton({
   }
   return (
     <div>
-      <Button disabled={pending} onClick={() => void act()}>
+      <Button loading={pending} disabled={pending} onClick={() => void act()}>
         {pending ? 'Saving…' : children}
       </Button>
       {error && (

@@ -19,6 +19,7 @@ import { PostComposer, postTypes } from './post-composer'
 import type { LinkedOption } from './linked-entity-picker'
 import { usePost } from './queries'
 import type { Post } from './types'
+import { ProfileLink } from '@/features/users/profile-link'
 function PrivatePhoto({
   image,
 }: {
@@ -93,15 +94,32 @@ export function PostCard({
       aria-label={`${postTypes[post.type]} by ${post.author.displayName}`}
     >
       <header className="post-heading">
-        <CommunityAvatar
-          name={post.author.displayName}
-          image={post.author.avatar}
-          userId={post.authorId}
-        />
+        {post.author.username ? (
+          <ProfileLink
+            username={post.author.username}
+            aria-label={`View ${post.author.displayName}’s profile`}
+          >
+            <CommunityAvatar
+              name={post.author.displayName}
+              image={post.author.avatar}
+              userId={post.authorId}
+            />
+          </ProfileLink>
+        ) : (
+          <CommunityAvatar
+            name={post.author.displayName}
+            image={post.author.avatar}
+            userId={post.authorId}
+          />
+        )}
         <div className="post-author">
           <strong className="recognized-author-name">
-            {userHref && isRouteReady(userHref, READY_ROUTES) ? (
-              <Link href={userHref}>{post.author.displayName}</Link>
+            {post.author.username &&
+            userHref &&
+            isRouteReady(userHref, READY_ROUTES) ? (
+              <ProfileLink username={post.author.username}>
+                {post.author.displayName}
+              </ProfileLink>
             ) : (
               post.author.displayName
             )}
