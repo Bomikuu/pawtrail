@@ -1,9 +1,10 @@
 .animal-profile.pet-social-profile {
   width: 100%;
-  max-width: 800px;
+  max-width: 1124px;
+  container-type: inline-size;
   margin-inline: auto;
   min-width: 0;
-  background: #fffcf8;
+  background: transparent;
   border-radius: 1rem;
   padding-bottom: 1.5rem;
 }
@@ -979,5 +980,51 @@
 @media (max-width: 38rem) {
   .pet-details-column {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* The profile column owns the cover; the narrower column holds context. */
+.pet-social-profile .pet-social-columns {
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 18.75rem);
+  padding: 0;
+  gap: 1.5rem;
+}
+.pet-primary-column {
+  min-width: 0;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 1rem;
+  background: #fffcf8;
+}
+.pet-primary-column > .pet-main-column {
+  padding: 1.25rem;
+}
+.pet-social-profile .pet-details-column {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+.pet-details-column > .pet-about {
+  grid-column: auto;
+}
+@container (max-width: 52rem) {
+  .pet-social-profile .pet-social-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pet-primary-column {
+    margin-inline: auto;
+  }
+  .pet-social-profile .pet-details-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 800px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+@container (max-width: 38rem) {
+  .pet-social-profile .pet-details-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pet-primary-column > .pet-main-column {
+    padding: 1rem;
   }
 }

@@ -4,6 +4,7 @@ import { siteOrigin } from '@/lib/seo/origin'
 import './globals.css'
 import './social-surfaces.css'
 import './interactions.css'
+import './shell.css'
 import { Providers } from '@/components/providers'
 import { getServerApi } from '@/lib/api/server'
 export const metadata: Metadata = {
@@ -43,7 +44,15 @@ export default async function RootLayout({
 }) {
   const session = await (await getServerApi()).auth.session()
   return (
-    <html lang="en-PH">
+    <html lang="en-PH" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('pawtrail:theme');document.documentElement.dataset.theme=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){document.documentElement.dataset.theme='light'}",
+          }}
+        />
+      </head>
       <body>
         <Providers initialSession={session}>{children}</Providers>
       </body>

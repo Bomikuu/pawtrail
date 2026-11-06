@@ -60,7 +60,10 @@ export function CreateMenu({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className={mobile ? 'mobile-create' : undefined}>
+        <Button
+          className={mobile ? 'mobile-create' : undefined}
+          aria-label="Create something"
+        >
           <Plus size={20} aria-hidden="true" />
           <span>Create</span>
         </Button>

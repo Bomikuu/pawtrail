@@ -4,7 +4,7 @@ import { GlobalSearch } from '@/features/search/global-search'
 import { NotificationMenu } from '@/features/notifications/notification-menu'
 import { Bell, Cookie, Search, ChevronDown, ArrowUpRight } from 'lucide-react'
 import { CommunityAvatar } from '@/components/shared/community-avatar'
-import { Brand } from './brand'
+import { ThemeToggle } from './theme-toggle'
 import { useState } from 'react'
 import { useSession } from '@/features/auth/session-provider'
 import { Button } from '@/components/ui/button'
@@ -40,8 +40,6 @@ export function Header({
 }) {
   const { session, pending, logout } = useSession()
   const [signingOut, setSigningOut] = useState(false)
-  const home = variant === 'management' ? '/dashboard' : '/community'
-  const brand = <Brand />
   const unread = validCount(unreadCount)
     ? `${unreadCount} unread`
     : 'Unread count unavailable'
@@ -62,15 +60,6 @@ export function Header({
     <header className="app-header">
       <div className="header-inner">
         <NavigationDrawer readyRoutes={readyRoutes} variant={variant} />
-        {readyRoutes.has(home) ? (
-          <Link href={home} className="wordmark" aria-label="PawTrail home">
-            {brand}
-          </Link>
-        ) : (
-          <span className="wordmark" aria-label="PawTrail">
-            {brand}
-          </span>
-        )}
         {variant === 'management' && (
           <span className="header-workspace-name">Management</span>
         )}
@@ -134,6 +123,7 @@ export function Header({
           <div className="header-create">
             <CreateMenu readyRoutes={readyRoutes} />
           </div>
+          <ThemeToggle />
           {session.actor ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

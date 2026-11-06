@@ -42,3 +42,7 @@ Implemented with source review only. No automated tests/checks, builds, browser 
 Implemented directly in the main session, without agents, new image generation, automated tests/checks, builds, detectors or browser verification. Source was read and formatted only; runtime behavior and rendered layout remain unverified. The existing preview remains running. Local mock/BFF contracts are implemented; live Django conformance is separate work.
 
 The existing Graphify repository map was a truncated locator (164 nodes, 96 reachable, four shown), supplemented by direct source reading; it does not describe the new activity service. Jev's synthetic attribution/priority judgment favored people-led, privacy-projected activity (424 input / 33 output tokens). No private records or secrets were sent; that judgment was guidance rather than verification.
+
+### Two-column clarification
+
+The owner clarified that 800px caps the primary column, rather than the entire profile. The cover and selected content now share that primary column; About, Community Care, Recent Sightings and related support cards occupy a narrower right rail. The outer profile is capped at 1124px, with a 24px gap and a right rail up to 300px. Container queries stack the columns when less than 832px is available. Persistent layout and scoped skeleton behavior are retained. The app shell now places its logo in a full-height left sidebar, leaves search/actions in the header, and supplies a persistent black/charcoal dark mode. Source review only, without automated or browser verification.

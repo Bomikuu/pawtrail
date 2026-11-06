@@ -10,6 +10,7 @@ import { ArrowLeft } from 'lucide-react'
 import { useSession } from '@/features/auth/session-provider'
 import { DemoBanner } from '@/components/shared/demo-banner'
 import { Header } from './header'
+import { Brand } from './brand'
 import { MobileNav } from './mobile-nav'
 import { RouteTransition } from './route-transition'
 import { usePageNavigation } from './page-navigation'
@@ -72,6 +73,19 @@ export function AppShell({
           className="app-sidebar"
           aria-label={management ? 'Management workspace' : 'PawTrail platform'}
         >
+          {readyRoutes.has(management ? '/dashboard' : '/community') ? (
+            <Link
+              className="sidebar-brand"
+              href={management ? '/dashboard' : '/community'}
+              aria-label="PawTrail home"
+            >
+              <Brand />
+            </Link>
+          ) : (
+            <span className="sidebar-brand">
+              <Brand />
+            </span>
+          )}
           {management ? (
             <>
               <div className="workspace-heading">

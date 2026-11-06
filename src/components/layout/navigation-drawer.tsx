@@ -15,6 +15,8 @@ import { mainDestinations, extraDestinations } from './navigation'
 import { NavItem } from './nav-item'
 import { DashboardNav } from './dashboard-nav'
 import { ButtonLink } from '@/components/ui/button-link'
+import { NavigationLink } from './navigation-link'
+import { Brand } from './brand'
 export function NavigationDrawer({
   readyRoutes,
   variant = 'platform',
@@ -44,9 +46,14 @@ export function NavigationDrawer({
         closeLabel="Close navigation"
       >
         <DialogTitle>
-          {variant === 'management'
-            ? 'Your management workspace'
-            : 'Explore PawTrail'}
+          <NavigationLink
+            className="sidebar-brand"
+            href={variant === 'management' ? '/dashboard' : '/community'}
+            onNavigate={() => setOpen(false)}
+            aria-label="PawTrail home"
+          >
+            <Brand />
+          </NavigationLink>
         </DialogTitle>
         <DialogDescription>
           Find animals, connect with neighbors, and manage your contributions.
