@@ -520,3 +520,28 @@
   font-size: 0.8125rem;
   color: var(--secondary-text);
 }
+
+.app-shell
+  :is(
+    #saved-animals,
+    #saved-stories,
+    #group-sightings,
+    #group-stories,
+    #campaign-supporters,
+    #my-mission-activity,
+    #mission-review,
+    #private-fundraiser-drafts
+  ) {
+  scroll-margin-top: 8rem;
+}
+.management-shell .workspace-tabs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.75rem;
+}
+.management-shell .workspace-tabs a[aria-current='page'] {
+  background: var(--teal);
+  color: var(--surface);
+}

@@ -4,6 +4,7 @@ import { PostDetail } from '@/features/community/post-card'
 import { AnimalImage } from '@/components/shared/animal-image'
 import { ChartPanel } from './chart-panel'
 import Link from 'next/link'
+import { ButtonAnchor } from '@/components/ui/button-anchor'
 import { ButtonLink } from '@/components/ui/button-link'
 import {
   PageHeading,
@@ -389,11 +390,23 @@ export async function MySightingsPage({
     </>
   )
 }
-export async function SavedPage() {
+export async function SavedPage({
+  searchParams,
+}: { searchParams?: SearchParams } = {}) {
+  const params: Awaited<SearchParams> = await (searchParams ??
+    Promise.resolve({}))
   const api = await privateApi('/dashboard/saved'),
     [animals, stories, session] = await Promise.all([
-      api.animals.list({ saved: true, limit: 50 }),
-      api.community.list({ saved: true, limit: 50 }),
+      api.animals.list({
+        saved: true,
+        limit: 50,
+        cursor: queryValue(params.animals),
+      }),
+      api.community.list({
+        saved: true,
+        limit: 50,
+        cursor: queryValue(params.stories),
+      }),
       api.auth.session(),
     ])
   return (
@@ -402,7 +415,7 @@ export async function SavedPage() {
         title="Stories to come back to"
         description="Only you can see this saved list. Withdrawn content disappears from public results."
       />
-      <h2>Animals</h2>
+      <h2 id="saved-animals">Animals</h2>
       <div className="journal-grid">
         {animals.items.map((a) => (
           <CatalogCard
@@ -418,7 +431,14 @@ export async function SavedPage() {
           No saved animal profiles yet.
         </Empty>
       )}
-      <h2>Community stories</h2>
+      <NextPage
+        cursor={animals.nextCursor}
+        cursorKey="animals"
+        params={{ stories: queryValue(params.stories) }}
+        anchor="saved-animals"
+        label="More saved animals"
+      />
+      <h2 id="saved-stories">Community stories</h2>
       <div className="resource-story-feed">
         {stories.items.map((post) => (
           <PostDetail
@@ -435,20 +455,35 @@ export async function SavedPage() {
           Save a community story to find it here later.
         </Empty>
       )}
+      <NextPage
+        cursor={stories.nextCursor}
+        cursorKey="stories"
+        params={{ animals: queryValue(params.animals) }}
+        anchor="saved-stories"
+        label="More saved stories"
+      />
     </>
   )
 }
 export async function ApplicationsPage({
   shelter = false,
+  searchParams,
 }: {
   shelter?: boolean
+  searchParams?: SearchParams
 }) {
+  const params: Awaited<SearchParams> = await (searchParams ??
+    Promise.resolve({}))
   const api = await privateApi('/adopt/applications'),
     rows = await api.adoption.applications({
       scope: shelter ? 'shelter' : 'mine',
+      cursor: queryValue(params.cursor),
       limit: 50,
     }),
-    animals = await api.animals.list({ limit: 50 })
+    animals = await api.animals.list({
+      ids: [...new Set(rows.items.map((item) => item.animalId))],
+      limit: 50,
+    })
   return (
     <>
       <PageHeading
@@ -481,6 +516,7 @@ export async function ApplicationsPage({
         </ActivityCard>
       ))}
       {!rows.count && <Empty>No applications in this workspace yet.</Empty>}
+      <NextPage cursor={rows.nextCursor} label="More applications" />
     </>
   )
 }
@@ -640,14 +676,22 @@ export async function ApplicationPage({ id }: { id: string }) {
       )}
       <h2>Status history</h2>
       {a.history.length ? (
-        a.history.map((h) => (
-          <article className="journal-row" key={h.version}>
-            <strong>{h.status.replaceAll('_', ' ')}</strong>
+        a.history.map((h, index) => (
+          <ActivityCard
+            key={`${h.version}:${h.status}:${h.createdAt}:${index}`}
+            title={h.status.replaceAll('_', ' ')}
+            identity={
+              <ContributorLine
+                api={api}
+                id={h.actorId}
+                meta={date(h.createdAt)}
+                fallback="Private application update"
+              />
+            }
+          >
             <p>{h.message}</p>
-            <small>
-              {date(h.createdAt)} · version {h.version}
-            </small>
-          </article>
+            <small>Version {h.version}</small>
+          </ActivityCard>
         ))
       ) : (
         <Empty>
@@ -657,11 +701,15 @@ export async function ApplicationPage({ id }: { id: string }) {
     </>
   )
 }
-export async function MyFundraisersPage() {
+export async function MyFundraisersPage({
+  searchParams,
+}: { searchParams?: SearchParams } = {}) {
+  const params: Awaited<SearchParams> = await (searchParams ??
+    Promise.resolve({}))
   const api = await privateApi('/dashboard/fundraisers'),
     [dashboard, drafts] = await Promise.all([
       api.fundraisers.dashboard(),
-      api.fundraisers.drafts({ limit: 50 }),
+      api.fundraisers.drafts({ limit: 50, cursor: queryValue(params.drafts) }),
     ])
   return (
     <>
@@ -674,7 +722,7 @@ export async function MyFundraisersPage() {
       />
       {drafts.items.length > 0 && (
         <section>
-          <h2>Private drafts</h2>
+          <h2 id="private-fundraiser-drafts">Private drafts</h2>
           {drafts.items.map((d) => (
             <CatalogCard
               key={d.id}
@@ -691,6 +739,12 @@ export async function MyFundraisersPage() {
           No private fundraiser drafts yet.
         </Empty>
       )}
+      <NextPage
+        cursor={drafts.nextCursor}
+        cursorKey="drafts"
+        anchor="private-fundraiser-drafts"
+        label="More private drafts"
+      />
       <h2>Your campaigns</h2>
       {dashboard.campaigns.map((f) => (
         <CatalogCard
@@ -839,39 +893,105 @@ export async function ManageCampaignPage({ id }: { id: string }) {
             submitLabel="Submit changes for review"
           />
         )}
+        {['closed', 'completed'].includes(f.state) && (
+          <ActivityCard title="Campaign details are read-only" meta={f.state}>
+            <p>
+              The campaign is no longer accepting contributions. Its published
+              story, updates and financial record remain available.
+            </p>
+            <ButtonLink href={`/fundraisers/${f.slug}`} variant="outline">
+              View public campaign
+            </ButtonLink>
+          </ActivityCard>
+        )}
         <h2>Expense history</h2>
-        {f.expenses.map((e) => (
-          <article className="journal-row" key={e.id}>
-            <strong>{php(e.amountMinor)}</strong>
-            <p>{e.description}</p>
-            <small>
-              {e.correctsEntryId ? 'Correction · ' : ''}
-              {date(e.createdAt)}
-            </small>
-            {dashboard.receipts
-              .find((r) => r.expenseId === e.id)
-              ?.mediaIds.map((id, i) => (
-                <p key={id}>
-                  <a
-                    href={`/api/v1/media/${id}/content`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Private receipt {i + 1}
-                  </a>
-                </p>
-              ))}
-          </article>
-        ))}
+        {f.expenses.length ? (
+          f.expenses.map((expense) => {
+            const receipts =
+              dashboard.receipts.find((entry) => entry.expenseId === expense.id)
+                ?.mediaIds ?? []
+            return (
+              <ActivityCard
+                key={expense.id}
+                title={`${php(expense.amountMinor)} recorded spending`}
+                identity={
+                  <ContributorLine
+                    api={api}
+                    id={expense.authorId}
+                    meta={date(expense.createdAt)}
+                    fallback="Campaign expense record"
+                  />
+                }
+              >
+                <p>{expense.description}</p>
+                {expense.correctsEntryId && (
+                  <p className="journal-meta">
+                    Correction to an earlier expense
+                  </p>
+                )}
+                {f.expenses.some(
+                  (entry) => entry.correctsEntryId === expense.id,
+                ) && (
+                  <p className="journal-meta">
+                    Superseded by a later correction
+                  </p>
+                )}
+                {receipts.length ? (
+                  <div className="activity-actions">
+                    {receipts.map((id, index) => (
+                      <ButtonAnchor
+                        key={id}
+                        variant="outline"
+                        href={`/api/v1/media/${encodeURIComponent(id)}/content`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Private receipt {index + 1}
+                        <span className="sr-only"> (opens a new tab)</span>
+                      </ButtonAnchor>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="journal-meta">
+                    No private receipt is attached.
+                  </p>
+                )}
+              </ActivityCard>
+            )
+          })
+        ) : (
+          <Empty>No expenses have been recorded for this campaign yet.</Empty>
+        )}
       </DetailBody>
     </>
   )
 }
-export async function MyMissionsPage() {
+export async function MyMissionsPage({
+  searchParams,
+}: { searchParams?: SearchParams } = {}) {
+  const params: Awaited<SearchParams> = await (searchParams ??
+    Promise.resolve({}))
+  const reviewState =
+    params.reviewState === 'approved' ? 'approved' : 'submitted'
+  const reviewHref = (state: 'submitted' | 'approved') => {
+    const query = new URLSearchParams({ reviewState: state })
+    const mineCursor = queryValue(params.mine)
+    if (mineCursor) query.set('mine', mineCursor)
+    return `?${query}#mission-review`
+  }
   const api = await privateApi('/dashboard/missions'),
     [mine, review, missions] = await Promise.all([
-      api.missions.participations({ scope: 'mine', limit: 50 }),
-      api.missions.participations({ scope: 'organization', limit: 50 }),
+      api.missions.participations({
+        scope: 'mine',
+        limit: 50,
+        cursor: queryValue(params.mine),
+      }),
+      api.missions.participations({
+        scope: 'organization',
+        state: reviewState,
+        limit: 50,
+        cursor: queryValue(params.review),
+      }),
       api.missions.list({ limit: 50 }),
     ])
   return (
@@ -881,7 +1001,7 @@ export async function MyMissionsPage() {
         description="Submit evidence after completing a mission. A responsible organizer reviews it before any non-cash reward is awarded."
         action={<ButtonLink href="/missions">Find a mission</ButtonLink>}
       />
-      <h2>Your missions</h2>
+      <h2 id="my-mission-activity">Your missions</h2>
       {mine.items.map((p) => (
         <section className="workflow-panel" key={p.id}>
           <ContributorLine
@@ -891,8 +1011,10 @@ export async function MyMissionsPage() {
             fallback="Your mission participation"
           />
           <h3>
-            {missions.items.find((m) => m.id === p.missionId)?.title ??
-              'Mission activity'}
+            <Link href={`/missions/${p.missionId}`}>
+              {missions.items.find((m) => m.id === p.missionId)?.title ??
+                'Open mission details'}
+            </Link>
           </h3>
           <p>
             {p.state} · {p.reviewReason ?? 'No review yet'}
@@ -921,7 +1043,31 @@ export async function MyMissionsPage() {
           Your next act of care starts with a mission.
         </Empty>
       )}
-      <h2>Evidence for your organization</h2>
+      <NextPage
+        cursor={mine.nextCursor}
+        cursorKey="mine"
+        params={{ review: queryValue(params.review), reviewState }}
+        anchor="my-mission-activity"
+        label="More of your missions"
+      />
+      <h2 id="mission-review">Evidence for your organization</h2>
+      <nav
+        className="workspace-tabs"
+        aria-label="Mission evidence review state"
+      >
+        <Link
+          href={reviewHref('submitted')}
+          aria-current={reviewState === 'submitted' ? 'page' : undefined}
+        >
+          Waiting for review
+        </Link>
+        <Link
+          href={reviewHref('approved')}
+          aria-current={reviewState === 'approved' ? 'page' : undefined}
+        >
+          Approved evidence
+        </Link>
+      </nav>
       {review.items
         .filter((p) => ['submitted', 'approved'].includes(p.state))
         .map((p) => (
@@ -933,21 +1079,32 @@ export async function MyMissionsPage() {
               fallback="Mission volunteer"
             />
             <h3>
-              {missions.items.find((m) => m.id === p.missionId)?.title ??
-                'Mission evidence'}
+              <Link href={`/missions/${p.missionId}`}>
+                {missions.items.find((m) => m.id === p.missionId)?.title ??
+                  'Open mission details'}
+              </Link>
             </h3>
-            <p>{p.evidence?.text}</p>
-            {p.evidence?.mediaIds.map((id, i) => (
-              <p key={id}>
-                <a
-                  href={`/api/v1/media/${id}/content`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open private evidence {i + 1}
-                </a>
+            <p>{p.evidence?.text || 'No evidence description was supplied.'}</p>
+            {p.evidence?.mediaIds.length ? (
+              <div className="activity-actions">
+                {p.evidence.mediaIds.map((id, index) => (
+                  <ButtonAnchor
+                    key={id}
+                    variant="outline"
+                    href={`/api/v1/media/${encodeURIComponent(id)}/content`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open private evidence {index + 1}
+                    <span className="sr-only"> (opens a new tab)</span>
+                  </ButtonAnchor>
+                ))}
+              </div>
+            ) : (
+              <p className="journal-meta">
+                No media attachments were supplied.
               </p>
-            ))}
+            )}
             <WorkflowForm
               operation="mission_review"
               extra={{ id: p.id, version: p.version }}
@@ -988,10 +1145,18 @@ export async function MyMissionsPage() {
         ['submitted', 'approved'].includes(p.state),
       ) && (
         <Empty>
-          No mission evidence is ready for your review. New submissions will
-          appear here.
+          {reviewState === 'approved'
+            ? 'No approved mission evidence is available in this queue yet.'
+            : 'No mission evidence is waiting for review. New submissions will appear here.'}
         </Empty>
       )}
+      <NextPage
+        cursor={review.nextCursor}
+        cursorKey="review"
+        params={{ mine: queryValue(params.mine), reviewState }}
+        anchor="mission-review"
+        label="More evidence records"
+      />
     </>
   )
 }

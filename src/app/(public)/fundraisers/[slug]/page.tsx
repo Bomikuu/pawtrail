@@ -1,3 +1,4 @@
+import type { SearchParams } from '@/features/workflows/server'
 import { FundraiserPage } from '@/features/workflows/public-pages'
 import { routeMetadata } from '@/lib/seo/public-entities'
 export async function generateMetadata({
@@ -9,8 +10,12 @@ export async function generateMetadata({
 }
 export default async function Page({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>
+  searchParams: SearchParams
 }) {
-  return <FundraiserPage slug={(await params).slug} />
+  return (
+    <FundraiserPage slug={(await params).slug} searchParams={searchParams} />
+  )
 }

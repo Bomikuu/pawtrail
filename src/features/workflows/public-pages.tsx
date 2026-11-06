@@ -207,7 +207,7 @@ export async function HordePage({
     [animals, sightings, campaigns, missions, stories, session] =
       await Promise.all([
         api.animals.list({ hordeId: h.id, limit: 50 }),
-        api.sightings.list({ hordeId: h.id }),
+        api.sightings.list({ hordeId: h.id, cursor: queryValue(p.sightings) }),
         api.fundraisers.list({ limit: 50 }),
         api.missions.list({ limit: 50 }),
         api.community.list({
@@ -261,7 +261,7 @@ export async function HordePage({
             />
           ))}
         </div>
-        <h2>Shared observations</h2>
+        <h2 id="group-sightings">Shared observations</h2>
         {sightings.items.length ? (
           sightings.items.map((s) => (
             <ActivityCard
@@ -288,6 +288,13 @@ export async function HordePage({
             No animal profiles are connected to this group yet.
           </Empty>
         )}
+        <NextPage
+          cursor={sightings.nextCursor}
+          cursorKey="sightings"
+          params={{ cursor: queryValue(p.cursor) }}
+          anchor="group-sightings"
+          label="More group sightings"
+        />
         <h2>Ways to help</h2>
         {!campaigns.items.some((f) => h.fundraiserIds.includes(f.id)) &&
           !missions.items.some((m) => h.missionIds.includes(m.id)) && (
@@ -348,7 +355,12 @@ export async function HordePage({
             No published stories about this group yet.
           </Empty>
         )}
-        <NextPage cursor={stories.nextCursor} />
+        <NextPage
+          cursor={stories.nextCursor}
+          params={{ sightings: queryValue(p.sightings) }}
+          anchor="group-stories"
+          label="More group stories"
+        />
       </DetailBody>
       <ResourceDiscussion
         target={{ kind: 'horde', id: h.id }}
@@ -531,11 +543,22 @@ export async function FundraisersPage({
     </>
   )
 }
-export async function FundraiserPage({ slug }: { slug: string }) {
+export async function FundraiserPage({
+  slug,
+  searchParams,
+}: {
+  slug: string
+  searchParams?: SearchParams
+}) {
+  const params: Awaited<SearchParams> = await (searchParams ??
+    Promise.resolve({}))
   const api = await getServerApi(),
     f = await publicRecord(() => api.fundraisers.get(slug)),
     [supporters, session] = await Promise.all([
-      api.fundraisers.supporters(f.id, { limit: 50 }),
+      api.fundraisers.supporters(f.id, {
+        limit: 50,
+        cursor: queryValue(params.supporters),
+      }),
       api.auth.session(),
     ])
   return (
@@ -639,9 +662,13 @@ export async function FundraiserPage({ slug }: { slug: string }) {
         <h2>Estimated budget</h2>
         {f.budget.length ? (
           f.budget.map((b, i) => (
-            <p key={i}>
-              {b.description} · {php(b.amountMinor)} estimated
-            </p>
+            <ActivityCard
+              key={`${i}:${b.description}`}
+              title={b.description}
+              meta="Estimated budget"
+            >
+              <strong>{php(b.amountMinor)}</strong>
+            </ActivityCard>
           ))
         ) : (
           <Empty>The organizer has not added an itemized estimate yet.</Empty>
@@ -655,10 +682,31 @@ export async function FundraiserPage({ slug }: { slug: string }) {
         <h2>Campaign updates</h2>
         {f.updates.length ? (
           f.updates.map((u) => (
-            <article className="journal-row" key={u.id}>
+            <ActivityCard
+              key={u.id}
+              title="Campaign update"
+              identity={
+                <ContributorLine
+                  api={api}
+                  id={u.authorId}
+                  meta={date(u.createdAt)}
+                  fallback="Campaign organizer update"
+                />
+              }
+            >
               <p>{u.text}</p>
-              <small>{date(u.createdAt)}</small>
-            </article>
+              {u.media.length ? (
+                <div className="post-photos">
+                  {u.media.map((photo) => (
+                    <AnimalImage
+                      key={photo.id}
+                      image={photo}
+                      className="activity-photo"
+                    />
+                  ))}
+                </div>
+              ) : null}
+            </ActivityCard>
           ))
         ) : (
           <Empty>
@@ -668,22 +716,31 @@ export async function FundraiserPage({ slug }: { slug: string }) {
         <h2>Expense record</h2>
         {f.expenses.length ? (
           f.expenses.map((e) => (
-            <article className="journal-row" key={e.id}>
-              <strong>{php(e.amountMinor)}</strong>
+            <ActivityCard
+              key={e.id}
+              title={`${php(e.amountMinor)} recorded spending`}
+              identity={
+                <ContributorLine
+                  api={api}
+                  id={e.authorId}
+                  meta={date(e.createdAt)}
+                  fallback="Campaign expense entry"
+                />
+              }
+            >
               <p>{e.description}</p>
-              <small>
-                {date(e.createdAt)}
-                {e.correctsEntryId ? ' · correction to an earlier entry' : ''}
-                {f.expenses.some((r) => r.correctsEntryId === e.id)
-                  ? ' · superseded by a later correction'
-                  : ''}
-              </small>
-            </article>
+              {e.correctsEntryId && (
+                <p className="journal-meta">Correction to an earlier entry</p>
+              )}
+              {f.expenses.some((entry) => entry.correctsEntryId === e.id) && (
+                <p className="journal-meta">Superseded by a later correction</p>
+              )}
+            </ActivityCard>
           ))
         ) : (
           <Empty>No expenses have been recorded for this campaign yet.</Empty>
         )}
-        <h2>Supporters</h2>
+        <h2 id="campaign-supporters">Supporters</h2>
         {supporters.items.map((s) => (
           <ActivityCard
             key={s.id}
@@ -709,6 +766,12 @@ export async function FundraiserPage({ slug }: { slug: string }) {
             above.
           </Empty>
         )}
+        <NextPage
+          cursor={supporters.nextCursor}
+          cursorKey="supporters"
+          anchor="campaign-supporters"
+          label="More supporters"
+        />
       </DetailBody>
       <ResourceDiscussion
         target={{ kind: 'fundraiser', id: f.id }}

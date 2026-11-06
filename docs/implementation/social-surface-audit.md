@@ -62,7 +62,29 @@ Public contributor lookup now uses the compact `users.identities` batch contract
 
 These follow-ups were source-reviewed and formatted only, under the same no-testing/build/browser-verification instruction. Structural payload reduction is implemented; no timing or rendering improvement is claimed as measured. The follow-up used the existing Graphify map as a truncated locator (164 nodes, 99 reachable, six shown) and direct source reading. Jev favored the bounded compact identity approach using synthetic policy state (392 input / 31 output tokens); no private records were submitted.
 
-## Evidence and limits
+## Implementation closure
+
+All implementation findings in this audit are addressed in source. This checklist records implementation, not runtime acceptance:
+
+- [x] Shared cards and compact identities across discovery, search, community resources and management lists (`workflows/catalog.tsx`, `shared/social-card.tsx`, `app/social-surfaces.css`).
+- [x] Supplied-art missing-photo and empty-list placeholders, including previously blank supporting sections (`shared/animal-image.tsx`, `shared/data-state.tsx`, workflow pages).
+- [x] Installed-version retry handlers in public, community and person-profile boundaries; management inherits the public boundary.
+- [x] Current opted-in achievement badges and current all-time top-ten crowns in attributed post/comment bylines, using server-derived public projections.
+- [x] Public participant previews on conversations/events and care-circle previews without fabricated or private identities.
+- [x] Reactive saved/Horde story cards, preserving real reactions, saved state, ownership-aware editing and reporting.
+- [x] Correct closed/deadline-passed/already-joined mission presentation and role-scoped event management navigation.
+- [x] Canonical transport mapping for participant/RSVP fields and bounded compact identity batches.
+- [x] Activity-card dates/statuses remain visible alongside an author byline; missing public contributors get a neutral placeholder.
+- [x] Final legacy record conversions: campaign budget entries, campaign updates, public/private expense history and adoption status history now use shared activity cards with appropriate identity, date and correction labels.
+- [x] Explicit empty expense/receipt/evidence states and read-only details for closed campaigns. Private receipt/evidence actions use the canonical document-link component and retain server authorization.
+- [x] Independent cursors and real next-page actions for saved animals/stories, applications, private fundraiser drafts, fundraiser supporters, Horde sightings/stories and personal/organization mission queues. Section links retain the other pane's cursor and scroll below the sticky header. Mission review state navigation keeps submitted evidence and approved records (including reversal actions) separately accessible.
+- [x] Application cards resolve animal metadata for the current application page rather than assuming every linked animal is in the first generic animal listing. Status-history keys remain distinct when source versions repeat.
+
+Only verification remains unperformed: automated checks/tests, builds, browser/visual inspection, measured performance/accessibility and live Django conformance. The owner's existing instruction keeps those checks disabled; they are not represented as passed or as unfinished UI implementation.
+
+The final closure pass used the existing Graphify repository map as a truncated locator (164 nodes, 96 reachable, five shown) and direct source review. Jev favored completing real cards and independent paging with synthetic policy state (391 input / 31 output tokens). No private records or secrets were submitted.
+
+## Verification limits
 
 Source inspection and formatting edits only; runtime behavior and rendered layout are unverified. No production build, tests, type/UI/format check, detector or browser round was run. Existing preview/session data was not reset. No artwork was generated or downloaded; placeholders reuse the supplied small WebP collection.
 

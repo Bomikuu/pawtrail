@@ -160,9 +160,15 @@ export function FilterForm({ fields, q }: { fields?: Field[]; q?: string }) {
 export function NextPage({
   cursor,
   params = {},
+  cursorKey = 'cursor',
+  anchor,
+  label = 'Next page',
 }: {
   cursor: string | null
   params?: Record<string, string | undefined>
+  cursorKey?: string
+  anchor?: string
+  label?: string
 }) {
   if (!cursor) return null
   const q = new URLSearchParams(
@@ -170,11 +176,14 @@ export function NextPage({
       (entry): entry is [string, string] => entry[1] !== undefined,
     ),
   )
-  q.set('cursor', cursor)
+  q.set(cursorKey, cursor)
   return (
-    <nav className="catalog-pagination" aria-label="Results pages">
-      <ButtonLink variant="outline" href={`?${q}`}>
-        Next page
+    <nav className="catalog-pagination" aria-label={label}>
+      <ButtonLink
+        variant="outline"
+        href={`?${q}${anchor ? `#${encodeURIComponent(anchor)}` : ''}`}
+      >
+        {label}
       </ButtonLink>
     </nav>
   )
