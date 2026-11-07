@@ -1,0 +1,25 @@
+/* Route-scoped theme tokens also reach portaled shadcn dialogs. */
+body[data-pawtrail-game] {
+  --background: #fff8ed;
+  --foreground: #38271e;
+  --card: #fffcf5;
+  --card-foreground: #38271e;
+  --popover: #fffcf5;
+  --popover-foreground: #38271e;
+  --primary: #a54922;
+  --primary-foreground: #fffaf2;
+  --secondary: #f1e6d2;
+  --secondary-foreground: #38271e;
+  --muted: #f1eadc;
+  --muted-foreground: #756657;
+  --accent: #f4e9d6;
+  --accent-foreground: #38271e;
+  --border: #dfd3bf;
+  --input: #d1c2aa;
+  --ring: #456746;
+  overflow: hidden;
+}
+.pawtrail-game canvas {
+  image-rendering: pixelated;
+  touch-action: none;
+}
