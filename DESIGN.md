@@ -144,13 +144,15 @@ Marketing display typography uses 3.25–5.5rem on desktop and 3.25–4.5rem on 
 
 ## Layout
 
-The platform uses all available viewport width. `AppShell` defaults to the `platform` variant: a sticky 68px utility header, a 224px navigation rail, a flexible feed and a contextual discovery column. There is no 80rem outer cap or 48rem content cap. The community page uses compact feed filters, a small composer, photo-led posts and actual reaction/comment counts. Supplemental guidance belongs in the discovery rail, not above every post.
+The platform uses all available viewport width. `AppShell` defaults to the `platform` variant: a sticky 68px utility header, a 224px navigation rail, a flexible feed and a contextual discovery column. The community feed now matches the pet profile: an up-to-800px main column, a 300px supporting rail, and a 24px gap inside a centered 1124px container. Other workspace surfaces retain their own width requirements. The community page uses compact feed filters, a small composer, photo-led posts and actual reaction/comment counts. Supplemental guidance belongs in the discovery rail, not above every post.
 
 The optional discovery rail appears when sufficient width is available. At the Tailwind `md` breakpoint and below the sidebar becomes a shadcn Dialog drawer and the platform uses one feed plus bottom navigation. All primary social actions remain reachable. Page content owns document scrolling; only the desktop sidebar has bounded overflow.
 
 `/dashboard/**` explicitly uses the `management` variant: management-only grouped navigation, a breadcrumb, real contribution summaries and full-width task content. It does not render the social sidebar or mobile social bottom bar. Management destinations remain available through its mobile drawer. Forms retain a readable measure inside the wide workspace; tables and lists can use the remaining width. A visible link connects both workspaces.
 
 Marketing and authentication retain their existing route-specific layouts. The redesign does not replace them or change data/permission rules.
+
+The later 6 November login update follows the owner's supplied two-column reference, with restrained Nunito headings, a cream canvas, a white shadcn form card and the supplied cat-and-dog illustration. The subsequent registration update uses a centered card in the same treatment, an avatar picker, responsive paired fields and inline community guidance, without a left illustration. The platform/management shells keep their layouts. See `.impeccable/surfaces/auth.md`, `docs/implementation/login-redesign.md` and `docs/implementation/register-redesign.md` for the route contracts, integration boundaries and source-only review status.
 
 ## Runtime token ownership
 
@@ -171,7 +173,7 @@ Social headings use 26px Nunito; posts use 15px Inter and a readable text measur
 
 ## Elevation & Depth
 
-Surfaces are flat at rest, separated by warm borders. Portaled menus use `0 8px 24px rgb(59 36 22 / 12%)` to communicate temporary elevation. Modal overlays use brown at 40% opacity. No card shadows or decorative halos. Short 150ms color transitions respond to intent; reduced-motion disables transitions, animations, and smooth scrolling. Skeletons are static, and content never depends on an entrance animation.
+Surfaces are flat at rest, separated by warm borders. Portaled menus use `0 8px 24px rgb(59 36 22 / 12%)` to communicate temporary elevation. Modal overlays use brown at 40% opacity. No card shadows or decorative halos. Short 150ms color transitions respond to intent. Navigation content arrives in 180ms without delaying route changes, and skeletons pulse while the paw loader spins. Reduced motion removes spatial movement and retains only a gentle loading-opacity signal. Content remains visible without an entrance animation.
 
 ## Shapes
 
@@ -223,3 +225,13 @@ The brand sits at the top of the full-height left navigation. The separate stick
 ## Official shadcn and Tailwind ownership
 
 The 6 November 2026 migration replaces the earlier custom primitive layer with actual official shadcn registry sources. This supersedes older control dimensions, hover recipes, and stylesheet ownership references above. Product-specific loaders, route actions, identity badges, and forms compose those components. `next-themes` supplies the class-based theme. The existing supplied artwork and human attribution remain. This pass was source-reviewed only, as requested; no automated tests, checks, builds, or browser inspection were performed.
+
+## Community width and loading refinement — 6 November 2026
+
+The owner requested the pet profile width for the community page. `CommunityLayout` now shares that 800px/300px/24px composition between the loaded page and its loading fallback, stacking at a container width below 832px. The story invitation uses the supplied illustration and a direct Share a story action. Looking for a home shows individual official shadcn Cards with circular pet portraits, location, and gentle color/image/arrow hover feedback. Post, pet, and resource skeletons use official Skeleton components; initial navigation, feed selection, and pagination show item-shaped placeholders. Shared loading and transition fixes preserve the surrounding frame, hidden drafts, and scoped pet sections. See `docs/implementation/community-width-loading.md`. Source review only; no automated tests, checks, builds, or browser verification were run.
+
+## UI standards verification — 6 November 2026
+
+The owner's later request to check all dashboard tabs authorizes the rendered review and scoped checks documented in `docs/implementation/ui-standards-audit.md`; earlier source-only limits above describe previous deliveries. This review preserves the existing visual world, supplied illustrations, Nunito/Inter fonts, and separate platform/management shells. It confirms 49 routes and every member, shelter, and moderation dashboard tab using sample roles.
+
+Default buttons, inputs, native selects, icon utilities and dialog close controls now implement the documented 2.75rem target. Small control variants remain available for compact contexts. Page headings, filter forms, workflow fields and cards share consistent Tailwind spacing. Status badges can wrap within their parent. Secondary feature text uses `muted-foreground` so the active theme owns contrast. Theme controls wait for the client snapshot before exposing their pressed state. Registry source adaptations and their provenance are recorded in `docs/implementation/shadcn-tailwind-migration.md`.

@@ -1,6 +1,16 @@
 # PawTrail
 
+![PawTrail logo](public/images/pawtrail/brand-mark.webp)
+
 Every Paw Has a Story. A pet community application connecting stories with nearby care, responsible adoption and practical animal welfare support.
+
+## Frontend requirements
+
+Use actual **shadcn/ui components from the official registry**, installed through its CLI and maintained in `src/components/ui`. Hand-written lookalike primitives do not satisfy this requirement. Product-specific behavior composes the official components.
+
+Use **Tailwind CSS first** for routine layout, spacing, typography, colors, borders, responsive behavior, and interaction states. Reserve `.css` for theme tokens, fonts, browser-specific rules, and genuinely complex animations or effects that are impractical to express clearly with utilities. Do not recreate ordinary page styling in separate stylesheets.
+
+These rules apply across the social platform and management dashboard while preserving their distinct layouts. See [Design guidance](DESIGN.md) and the [official shadcn/Tailwind migration record](docs/implementation/shadcn-tailwind-migration.md).
 
 ## Run locally
 
@@ -44,4 +54,4 @@ Google Maps needs a restricted browser key; lists work without one. Real mode ne
 - [Release checklist and explicitly optional checks](docs/quality/release-checklist.md)
 - [Asset provenance](docs/assets/credits.md)
 
-Existing validation commands remain available only on explicit request. CI has no push, pull-request or schedule trigger; its manual workflow also requires the validation flag. No deployment or remote repository push has been performed.
+Existing validation commands remain available only on explicit request. CI has no push, pull-request or schedule trigger; its manual workflow also requires the validation flag. No deployment has been performed.

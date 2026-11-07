@@ -17,7 +17,7 @@ Installed with shadcn CLI **4.23.0**, using the project's existing `new-york`, R
 npm exec --yes --package=shadcn@4.23.0 -- shadcn add button input textarea dialog alert-dialog dropdown-menu hover-card progress skeleton table select native-select checkbox tabs card badge avatar sonner radio-group --overwrite --yes
 ```
 
-These 19 files come from the official registry. The current registry uses the `cn` package and unified `radix-ui` imports. Their dependencies are pinned in the lockfile. The upstream MIT license is retained in [the license file](../licenses/shadcn-ui.txt). The sources are formatted to the repository's no-semicolon convention. The only functional primitive adjustment forwards `value` to the Radix Progress root so its accessible value matches the indicator.
+These 19 files come from the official registry. The current registry uses the `cn` package and unified `radix-ui` imports. Their dependencies are pinned in the lockfile. The upstream MIT license is retained in [the license file](../licenses/shadcn-ui.txt). The sources are formatted to the repository's no-semicolon convention. The migration forwards `value` to the Radix Progress root so its accessible value matches the indicator. Subsequent reviewed adaptations are documented below.
 
 Official references: [Next.js installation](https://ui.shadcn.com/docs/installation/next), [manual setup](https://ui.shadcn.com/docs/installation/manual), and [Native Select](https://ui.shadcn.com/docs/components/radix/native-select).
 
@@ -40,3 +40,15 @@ The one-time migration moved presentation into 107 source files using 535 class 
 Source review covered registry API compatibility, native form behavior, theme integration, navigation compositions, and preserved profile loading boundaries. The preview process was left running. No automated tests, checks, builds, browser inspection, or subagents were used for this migration; runtime and rendered behavior have not been verified.
 
 Graphify had no extracted graph for this worktree, so relevant component relationships were traced directly. Jev compared synthetic migration choices without source/private records; its judgment was guidance only.
+
+## UI standards review — 6 November 2026
+
+The owner's subsequent request to check all dashboard tabs authorized rendered inspection and scoped automated checks for this review. See [the findings and coverage](ui-standards-audit.md). This supersedes the migration's source-only delivery limit for the reviewed routes.
+
+The official installed sources remain intact as the component foundation. These local adaptations align them with PawTrail's existing 44px control contract:
+
+- Button defaults and icon controls are 44px; large variants are 48px, small variants 36px and extra-small variants 32px.
+- Input and default NativeSelect are 44px. NativeSelect uses 16px mobile text and 14px text from `md`; small selects are 36px.
+- Dialog's close control has a centered 44px target, retaining the registry's focus, disabled, screen-reader label, and Radix behavior.
+
+Product action wrappers pass their class names to Button before `asChild` composition. This allows the canonical `cn` merge to resolve responsive visibility and sizing before Radix Slot combines child props. No alternate primitive or CSS component system was introduced.
