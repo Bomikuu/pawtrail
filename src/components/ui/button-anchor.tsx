@@ -9,8 +9,8 @@ export function ButtonAnchor({
 }: ComponentProps<'a'> &
   Pick<ComponentProps<typeof Button>, 'variant' | 'size'>) {
   return (
-    <Button variant={variant} size={size} asChild>
-      <a {...props} className={className} />
+    <Button variant={variant} size={size} className={className} asChild>
+      <a {...props} />
     </Button>
   )
 }

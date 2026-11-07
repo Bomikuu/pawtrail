@@ -35,7 +35,7 @@ export function NavigationDrawer({
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className={'drawer-trigger size-10 shrink-0 md:hidden'}
+          className={'drawer-trigger size-11 shrink-0 md:hidden'}
           aria-label="Open navigation"
         >
           <Menu size={20} aria-hidden="true" />

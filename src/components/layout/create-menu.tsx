@@ -77,23 +77,31 @@ export function CreateMenu({
         side={mobile ? 'top' : 'bottom'}
         aria-label="Create something"
       >
-        {actions.map((action) => {
-          const href = destinationHref(action, session, readyRoutes)
-          const Icon = action.icon
-          return href ? (
-            <DropdownMenuItem key={action.href} asChild>
-              <Link href={href}>
-                <Icon size={18} aria-hidden="true" />
-                {action.label}
-              </Link>
-            </DropdownMenuItem>
-          ) : (
-            <DropdownMenuItem key={action.href} disabled>
-              <Icon size={18} aria-hidden="true" />
-              {action.label} — Coming soon
-            </DropdownMenuItem>
+        {actions
+          .filter(
+            (action) =>
+              action.href !== '/missions/create' ||
+              session.roles.some(
+                (role) => role === 'shelter_staff' || role === 'moderator',
+              ),
           )
-        })}
+          .map((action) => {
+            const href = destinationHref(action, session, readyRoutes)
+            const Icon = action.icon
+            return href ? (
+              <DropdownMenuItem key={action.href} asChild>
+                <Link href={href}>
+                  <Icon size={18} aria-hidden="true" />
+                  {action.label}
+                </Link>
+              </DropdownMenuItem>
+            ) : (
+              <DropdownMenuItem key={action.href} disabled>
+                <Icon size={18} aria-hidden="true" />
+                {action.label} — Coming soon
+              </DropdownMenuItem>
+            )
+          })}
       </DropdownMenuContent>
     </DropdownMenu>
   )

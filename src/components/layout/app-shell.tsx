@@ -136,7 +136,7 @@ export function AppShell({
           id="main-content"
           tabIndex={-1}
           className={
-            'app-content min-w-0 w-full [&_h1]:mb-4 [&_h1]:mt-0 [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:font-extrabold' +
+            'app-content min-w-0 w-full' +
             (pathname === '/community' ? ' community-content' : '')
           }
         >
@@ -152,7 +152,7 @@ export function AppShell({
               <span>{current?.label ?? 'Record details'}</span>
             </nav>
           )}
-          {pagePending && <PageLoading />}
+          {pagePending && <PageLoading pathname={pathname} />}
           <RouteTransition hidden={pagePending}>{children}</RouteTransition>
         </main>
         {rightRail && (

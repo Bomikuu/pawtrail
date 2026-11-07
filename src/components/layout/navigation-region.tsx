@@ -1,6 +1,7 @@
 'use client'
 import type { ReactNode } from 'react'
 import { usePageNavigation } from './page-navigation'
+import { cn } from '@/lib/utils'
 export function NavigationRegion({
   region,
   fallback,
@@ -16,7 +17,12 @@ export function NavigationRegion({
     <div className={'navigation-region min-w-0 grid gap-5'}>
       {pending && fallback}
       <div
-        className={'navigation-region-content contents [&[hidden]]:hidden'}
+        className={cn(
+          'navigation-region-content grid min-w-0 gap-5 [&[hidden]]:hidden [&:has([data-page-loading])]:animate-none',
+          pending
+            ? 'animate-none'
+            : 'motion-safe:animate-[page-arrival_180ms_var(--motion-ease)]',
+        )}
         hidden={!!pending}
         aria-busy={!!pending}
       >

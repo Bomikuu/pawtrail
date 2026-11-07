@@ -8,14 +8,15 @@ import { ConfirmDialog } from '@/components/shared/confirm-dialog'
 import { Button } from '@/components/ui/button'
 import { ButtonLink } from '@/components/ui/button-link'
 import { ButtonAnchor } from '@/components/ui/button-anchor'
-import { Toaster, toast } from '@/components/ui/sonner'
+import { Toaster } from '@/components/ui/sonner'
+import { toast } from 'sonner'
 it('renders loading, actionable empty and retryable error states without stale content', async () => {
   const user = userEvent.setup()
   const retry = vi.fn()
   const { rerender } = render(
     <DataState state="loading">Old records</DataState>,
   )
-  expect(screen.getByRole('status')).toHaveTextContent('Loading')
+  expect(screen.getByRole('status')).toHaveAccessibleName('Loading items…')
   expect(screen.queryByText('Old records')).not.toBeInTheDocument()
   rerender(
     <DataState

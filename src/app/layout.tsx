@@ -1,3 +1,4 @@
+import { GameReturnLink } from '@/features/neighborhood/game-return-link'
 import './globals.css'
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
@@ -43,7 +44,7 @@ export default async function RootLayout({
   return (
     <html lang="en-PH" suppressHydrationWarning>
       <body>
-        <Providers initialSession={session}>{children}</Providers>
+        <Providers initialSession={session}>{children}<GameReturnLink /></Providers>
       </body>
     </html>
   )

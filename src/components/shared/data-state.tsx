@@ -2,9 +2,11 @@
 import type { ReactNode } from 'react'
 import { Button } from '@/components/ui/button'
 import { AnimalLoader } from './animal-loader'
+import { ResourceCardSkeleton } from './item-skeleton'
 export function DataState({
   state,
   retry,
+  loadingContent,
   emptyAction,
   children,
   emptyTitle = 'Nothing here yet',
@@ -14,6 +16,7 @@ export function DataState({
 }: {
   state: 'loading' | 'empty' | 'error' | 'ready'
   retry?: () => void
+  loadingContent?: ReactNode
   emptyAction?: ReactNode
   children?: ReactNode
   emptyTitle?: string
@@ -24,32 +27,23 @@ export function DataState({
   if (state === 'ready') return <>{children}</>
   if (state === 'loading')
     return (
-      <div
-        className={
-          'data-state [padding:2rem_0] [&_h2]:[margin:0_0_0.5rem] [&_h2]:text-2xl [&_p]:max-w-[65ch] [&_p]:[margin:0_0_1.25rem] [.platform-shell_&]:[padding:2rem_1.25rem] [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:bg-card [.app-shell_&]:rounded-2xl [.app-shell_&]:my-4 [.app-shell_&]:p-6 [.app-shell_&_h2]:text-xl [.marketing-preview-state_&]:[margin:0_0_1rem] [.marketing-preview-state_&_h2]:text-xl'
-        }
-        aria-busy="true"
-      >
-        <AnimalLoader label="Gathering the latest pawprints…" />
+      loadingContent ?? (
         <div
-          className={
-            'skeleton bg-border rounded-lg mb-4 [.dark_&]:bg-[#2c2c2c] skeleton-heading w-[45%] h-7'
-          }
-          aria-hidden="true"
-        />
-        <div
-          className={
-            'skeleton bg-border rounded-lg mb-4 [.dark_&]:bg-[#2c2c2c] skeleton-story w-full h-48'
-          }
-          aria-hidden="true"
-        />
-        <div
-          className={
-            'skeleton bg-border rounded-lg mb-4 [.dark_&]:bg-[#2c2c2c] skeleton-line w-[75%] h-4'
-          }
-          aria-hidden="true"
-        />
-      </div>
+          className="grid gap-4 py-4"
+          aria-busy="true"
+          role="status"
+          aria-label="Loading items…"
+        >
+          <div
+            className="flex items-center gap-2 text-xs text-muted-foreground"
+            aria-hidden="true"
+          >
+            <AnimalLoader compact /> Gathering the latest pawprints…
+          </div>
+          <ResourceCardSkeleton />
+          <ResourceCardSkeleton />
+        </div>
+      )
     )
   if (state === 'error')
     return (

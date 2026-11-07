@@ -776,7 +776,7 @@ export async function FundraiserPage({
               {e.correctsEntryId && (
                 <p
                   className={
-                    'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                    'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
                   }
                 >
                   Correction to an earlier entry
@@ -785,7 +785,7 @@ export async function FundraiserPage({
               {f.expenses.some((entry) => entry.correctsEntryId === e.id) && (
                 <p
                   className={
-                    'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                    'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
                   }
                 >
                   Superseded by a later correction

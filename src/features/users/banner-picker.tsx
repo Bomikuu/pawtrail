@@ -65,7 +65,7 @@ export function BannerPicker({
       </div>
       <p
         className={
-          'field-help text-sm text-[#6b625b] m-0 [.avatar-picker_>_&]:m-0 [.avatar-picker_>_&]:max-w-[65ch] [.avatar-picker_>_&]:text-xs [.achievement-proof-form_&]:text-xs'
+          'field-help text-sm text-muted-foreground m-0 [.avatar-picker_>_&]:m-0 [.avatar-picker_>_&]:max-w-[65ch] [.avatar-picker_>_&]:text-xs [.achievement-proof-form_&]:text-xs'
         }
       >
         {kind === 'animal'

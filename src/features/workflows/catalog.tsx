@@ -24,16 +24,22 @@ export function PageHeading({
   action?: ReactNode
 }) {
   return (
-    <header
-      className={
-        'workspace-heading grid items-start justify-between gap-0.5 [margin:0_0_2rem] [padding:0_0.875rem_1.5rem] [&_h1]:font-heading [&_h1]:text-[length:clamp(1.75rem,_3vw,_2.25rem)] [&_h1]:[line-height:1.18] [&_h1]:[margin:0_0_0.75rem] [&_h1]:[text-wrap:balance] [&_p]:max-w-[65ch] [&_p]:text-muted-foreground [&_p]:m-0 [&_p]:[line-height:1.65] max-[48rem]:block max-[48rem]:[&_>_a]:mt-4 [&_strong]:font-[800] [&_strong]:text-lg [&_strong]:leading-[1.3] [&_strong]:font-heading [&_span]:text-xs [&_span]:text-muted-foreground [.management-shell_&]:mb-6 [.route-transition_>_header&]:flex [.route-transition_>_header&]:items-center [.route-transition_>_header&]:justify-between [.route-transition_>_header&]:gap-6 [.route-transition_>_header&]:p-0 [.route-transition_>_header&]:[margin:0_0_1.25rem] [.route-transition_>_header&_>_div]:min-w-0 [.route-transition_>_header&_h1]:font-[850] [.route-transition_>_header&_h1]:text-[1.75rem] [.route-transition_>_header&_h1]:leading-[1.2] [.route-transition_>_header&_h1]:font-heading [.route-transition_>_header&_h1]:[margin:0_0_0.5rem] [.route-transition_>_header&_p]:text-[length:0.9375rem] [.route-transition_>_header&_p]:[line-height:1.55] [.route-transition_>_header&_>_[data-slot=button]]:shrink-0 [.route-transition_>_header&_>_[data-slot=button]]:w-auto [.route-transition_>_header&_>_[data-slot=button]]:whitespace-nowrap max-[48rem]:[.route-transition_>_header&]:flex-col max-[48rem]:[.route-transition_>_header&]:items-start max-[48rem]:[.route-transition_>_header&]:gap-3.5 max-[48rem]:[.route-transition_>_header&_h1]:text-2xl max-[48rem]:[.route-transition_>_header&_>_[data-slot=button]]:w-auto'
-      }
-    >
-      <div>
-        <h1>{title}</h1>
-        {description && <p>{description}</p>}
+    <header className="workspace-heading mb-6 flex min-w-0 flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+      <div className="min-w-0 flex-1">
+        <h1 className="font-heading text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+          {title}
+        </h1>
+        {description && (
+          <p className="mt-2 max-w-[70ch] text-sm leading-relaxed text-muted-foreground">
+            {description}
+          </p>
+        )}
       </div>
-      {action}
+      {action && (
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
+          {action}
+        </div>
+      )}
     </header>
   )
 }
@@ -61,7 +67,7 @@ export function CatalogCard({
   return (
     <Card
       role="article"
-      className={`journal-card [border:1px_solid_#ede5d8] bg-card rounded-2xl overflow-hidden [margin:0_0_1.25rem] min-w-0 [transition:border-color_150ms] [.journal-grid_&]:m-0 [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:[margin:0.25rem_0_0.75rem] [&_h2_a]:text-[inherit] [&_h2_a]:no-underline [&_p]:[overflow-wrap:anywhere] [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_.journal-grid_&]:m-0 [.app-shell_.journal-grid_&]:h-full [@media(hover:_hover)]:[.app-shell_&:hover]:border-[#d2b89f] [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none]${image === undefined ? ' journal-card-compact [.app-shell_&_h2]:text-lg' : ''}`}
+      className={`journal-card gap-0 py-0 shadow-none [border:1px_solid_#ede5d8] bg-card rounded-2xl overflow-hidden [margin:0_0_1.25rem] min-w-0 [transition:border-color_150ms] [.journal-grid_&]:m-0 [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:[margin:0.25rem_0_0.75rem] [&_h2_a]:text-[inherit] [&_h2_a]:no-underline [&_p]:[overflow-wrap:anywhere] [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_.journal-grid_&]:m-0 [.app-shell_.journal-grid_&]:h-full [@media(hover:_hover)]:[.app-shell_&:hover]:border-[#d2b89f] [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none]${image === undefined ? ' journal-card-compact [.app-shell_&_h2]:text-lg' : ''}`}
     >
       {image !== undefined && (
         <AnimalImage
@@ -97,7 +103,7 @@ export function CatalogCard({
             {meta && (
               <p
                 className={
-                  'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                  'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
                 }
               >
                 {meta}
@@ -215,7 +221,7 @@ export function FilterForm({
   return (
     <NavigationForm
       className={
-        'catalog-filters flex items-end flex-wrap gap-3 [padding:1rem_0] [border-block:1px_solid_#ede5d8] mb-6 [&_label]:grid [&_label]:gap-[0.4rem] [&_label]:[flex:1_1_10rem] [&_label]:text-sm [&_label:first-child]:[flex:2_1_15rem] [.management-shell_&]:bg-card [.management-shell_&]:border-border [.management-shell_&]:rounded-xl [.app-shell_&]:gap-3 [.app-shell_&]:[padding:1rem_0] [.app-shell_&]:mb-4 [.app-shell_&]:[border-top:0] [.app-shell_&]:[border-bottom-color:var(--social-line)] [&_>_[data-slot=button]]:whitespace-nowrap [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none] [.events-directory-toolbar_&]:m-0'
+        'catalog-filters mb-6 flex min-w-0 flex-wrap items-end gap-3 rounded-xl border border-border bg-card p-4 [&_label]:grid [&_label]:min-w-0 [&_label]:flex-[1_1_10rem] [&_label]:gap-2 [&_label]:text-sm [&_label]:font-medium [&_label:first-child]:flex-[2_1_15rem] [&_[data-slot=native-select-wrapper]]:w-full [&_[data-slot=input]]:min-h-11 [&_select]:min-h-11 max-sm:[&_label]:basis-full [&>[data-slot=button]]:shrink-0 [.events-directory-toolbar_&]:m-0'
       }
       method="get"
     >

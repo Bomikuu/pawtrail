@@ -1,5 +1,6 @@
 import {
   Compass,
+  Gamepad2,
   Heart,
   HandCoins,
   HandHeart,
@@ -34,6 +35,7 @@ export type Destination = {
 /** Register an exact pathname or explicit dynamic page pattern only after its route ships. Never enable a whole prefix. */
 export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/photo-credits',
+  '/play',
   '/',
   '/login',
   '/register',
@@ -97,6 +99,7 @@ export const mainDestinations: Destination[] = [
   { label: 'Leaderboard', href: '/leaderboard', icon: Trophy },
 ]
 export const extraDestinations: Destination[] = [
+  { label: 'Play PawTrail', href: '/play', icon: Gamepad2 },
   { label: 'Hordes', href: '/hordes', icon: PawPrint },
   { label: 'Shelters', href: '/shelters', icon: House },
   { label: 'Events', href: '/events', icon: CalendarDays },

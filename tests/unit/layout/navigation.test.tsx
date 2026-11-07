@@ -4,7 +4,10 @@ import { expect, it, vi } from 'vitest'
 import { AppShell } from '@/components/layout/app-shell'
 import { DashboardNav } from '@/components/layout/dashboard-nav'
 import { renderSession, guest, member } from './helpers'
-vi.mock('next/navigation', () => ({ usePathname: () => '/community' }))
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/community',
+  useRouter: () => ({ push: vi.fn(), replace: vi.fn(), refresh: vi.fn() }),
+}))
 const ready = new Set([
   '/community',
   '/explore',
@@ -39,7 +42,7 @@ it('provides desktop destinations, current page, supplied unread and non-cash Ki
     </AppShell>,
   )
   const desktop = within(
-    screen.getByRole('navigation', { name: 'Main navigation' }),
+    screen.getByRole('navigation', { name: 'Platform navigation' }),
   )
   for (const label of [
     'Explore',
@@ -78,12 +81,14 @@ it('keeps the exact mobile order and gates unfinished routes without fabricated 
       .getAllByTestId('mobile-destination')
       .map((item) => item.textContent),
   ).toEqual(['Explore', 'Adopt', 'Create', 'Community', 'Profile'])
-  expect(within(mobile).getAllByRole('link')).toHaveLength(1)
+  expect(within(mobile).getAllByRole('link')).toHaveLength(4)
   expect(
     within(mobile).getByRole('link', { name: 'Community' }),
   ).toHaveAttribute('href', '/community')
   expect(screen.getByText('Unread count unavailable')).toBeVisible()
-  expect(screen.getByText('Kibble balance unavailable')).toBeVisible()
+  expect(
+    screen.getByRole('link', { name: 'Kibble balance unavailable' }),
+  ).toBeVisible()
   expect(screen.queryByText('0 Kibble')).not.toBeInTheDocument()
   expect(screen.getByRole('link', { name: 'PawTrail home' })).toHaveAttribute(
     'href',
@@ -97,7 +102,7 @@ it('opens the mobile drawer by keyboard, reaches extra routes, and restores focu
   trigger.focus()
   await user.keyboard('{Enter}')
   const dialog = await screen.findByRole('dialog', {
-    name: 'More ways to help',
+    name: 'PawTrail home',
   })
   for (const label of [
     'Hordes',
@@ -166,8 +171,8 @@ it('traps keyboard focus in the drawer until it is dismissed', async () => {
   const user = userEvent.setup()
   renderSession(<AppShell readyRoutes={ready}>Stories</AppShell>)
   await user.click(screen.getByRole('button', { name: 'Open navigation' }))
-  const dialog = screen.getByRole('dialog', { name: 'More ways to help' })
-  const close = within(dialog).getByRole('button', { name: 'Close navigation' })
+  const dialog = screen.getByRole('dialog', { name: 'PawTrail home' })
+  const close = within(dialog).getByRole('button', { name: 'Close' })
   close.focus()
   await user.tab()
   expect(dialog).toContainElement(document.activeElement as HTMLElement)
@@ -208,5 +213,7 @@ it('keeps real-mode content free of the sample banner and rejects invalid count 
       name: 'Notifications, Unread count unavailable',
     }),
   ).toBeVisible()
-  expect(screen.getByText('Kibble balance unavailable')).toBeVisible()
+  expect(
+    screen.getByRole('link', { name: 'Kibble balance unavailable' }),
+  ).toBeVisible()
 })

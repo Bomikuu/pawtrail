@@ -1,4 +1,6 @@
 import 'server-only'
+import type { z } from 'zod'
+import type { baseSchema } from '@/lib/api/schemas'
 import { sightingSchema } from '@/features/sightings/schemas'
 import { commentRecordSchema } from '@/features/community/schemas'
 import { demoContributionSchema } from '@/features/fundraising/schemas'
@@ -217,7 +219,10 @@ export const kibbleEntries = [
       }),
     ),
 ]
-export const rsvps = [
+export const rsvps: (z.infer<typeof baseSchema> & {
+  eventId: string
+  userId: string
+})[] = [
   ...ids('rsvp', 5).map((id, i) => ({
     ...base(id),
     eventId: `event-${i + 1}`,

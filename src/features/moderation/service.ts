@@ -473,17 +473,23 @@ export function createModerationService(
   snapshot: FixtureSeed,
   repository?: DemoRepository,
 ) {
-  const anonymous: DemoDraft = {
-    data: structuredClone(snapshot),
-    auth: { actorId: null, cacheScope: 'anonymous' },
-    media: [],
-    community: { follows: [], reactions: [], saved: [], attachments: [] },
-    savedAnimals: [],
-    moderation: freshModeration(),
+  let anonymous: DemoDraft | undefined
+  const read = <T>(fn: (draft: DemoDraft) => T): Promise<T> => {
+    if (repository) return repository.read(fn)
+    // Only anonymous reads need a generated sample world.
+    if (!anonymous) {
+      anonymous = {
+        data: structuredClone(snapshot),
+        auth: { actorId: null, cacheScope: 'anonymous' },
+        media: [],
+        community: { follows: [], reactions: [], saved: [], attachments: [] },
+        savedAnimals: [],
+        moderation: freshModeration(),
+      }
+      applySamplePack(anonymous)
+    }
+    return Promise.resolve(fn(anonymous))
   }
-  applySamplePack(anonymous)
-  const read = <T>(fn: (draft: DemoDraft) => T) =>
-    repository ? repository.read(fn) : Promise.resolve(fn(anonymous))
   async function command<T>(
     name: string,
     input: unknown,

@@ -62,7 +62,12 @@ export function createDjangoApi(
   {
     allowCookieWrites = false,
     forceRefresh = false,
-  }: { allowCookieWrites?: boolean; forceRefresh?: boolean } = {},
+    googleRedirectUri,
+  }: {
+    allowCookieWrites?: boolean
+    forceRefresh?: boolean
+    googleRedirectUri?: string
+  } = {},
 ): PawTrailApi {
   let tokensPromise: Promise<Tokens | null> | undefined
   const tokens = () => (tokensPromise ??= readRealSession())
@@ -147,8 +152,18 @@ export function createDjangoApi(
         )
       }
     }
-    if (path === '/auth/login' || path === '/auth/register')
-      assertRealSessionConfiguration()
+    const signingIn = [
+      '/auth/login',
+      '/auth/register',
+      '/auth/google',
+    ].includes(path)
+    if (signingIn) assertRealSessionConfiguration()
+    if (path === '/auth/google' && (!allowCookieWrites || !googleRedirectUri))
+      throw new ApiError(
+        'CONFIGURATION_ERROR',
+        'Google sign-in requires a same-origin browser request',
+        500,
+      )
     let credentials = await tokens()
     if (forceRefresh && path === '/auth/session' && credentials)
       credentials = await refresh(options?.signal)
@@ -186,7 +201,11 @@ export function createDjangoApi(
         payload = form
       } else {
         headers.set('Content-Type', 'application/json')
-        payload = JSON.stringify(toDjango(body))
+        payload = JSON.stringify(
+          path === '/auth/google'
+            ? { ...(toDjango(body) as object), redirect_uri: googleRedirectUri }
+            : toDjango(body),
+        )
       }
     }
     const send = () => {
@@ -207,7 +226,8 @@ export function createDjangoApi(
     if (
       response.status === 401 &&
       credentials &&
-      !['/auth/login', '/auth/register', '/auth/logout'].includes(path)
+      !signingIn &&
+      path !== '/auth/logout'
     ) {
       try {
         credentials = await refresh(options?.signal)
@@ -232,7 +252,7 @@ export function createDjangoApi(
     })
     let value = fromDjango(raw)
     let pendingCredentials: Tokens | undefined
-    if (path === '/auth/login' || path === '/auth/register') {
+    if (signingIn) {
       const r = raw as Record<string, unknown>,
         t = parseResponse(tokenResponse, r)
       const next = {

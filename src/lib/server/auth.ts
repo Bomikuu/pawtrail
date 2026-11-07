@@ -1,5 +1,8 @@
 import 'server-only'
-import { personAvatar } from '@/features/users/avatar-presets'
+import {
+  avatarPresetImage,
+  personAvatar,
+} from '@/features/users/avatar-presets'
 import { randomUUID } from 'node:crypto'
 import {
   actorSchema,
@@ -74,6 +77,13 @@ export function createDemoAuth(
       },
     })
   return {
+    async loginWithGoogle() {
+      throw new ApiError(
+        'GOOGLE_AUTH_UNAVAILABLE',
+        'Google sign-in is unavailable in demo mode. Use a sample profile or demo email instead.',
+        503,
+      )
+    },
     async session(options) {
       checkCancelled(options?.signal)
       return repository ? repository.read(projectSession) : anonymousSession()
@@ -108,9 +118,10 @@ export function createDemoAuth(
         username: valid.username,
         displayName: valid.displayName,
       }
+      const avatarId = valid.avatarId ?? null
       return writable().transact({
         name: 'auth.register',
-        input: profile,
+        input: { ...profile, avatarId },
         execute(draft, clock) {
           if (
             draft.data.users.some(
@@ -131,7 +142,8 @@ export function createDemoAuth(
             createdAt: clock.now().toISOString(),
             provenance: { kind: 'demo', label: 'Demo community profile' },
             bio: '',
-            avatar: null,
+            bannerId: 'meadow',
+            avatar: avatarId ? avatarPresetImage(avatarId) : null,
             location: null,
             contributionCount: 0,
             roles: ['member'],

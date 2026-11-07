@@ -22,6 +22,7 @@ it('renders identity and stories from the server, returns 404 and activates only
   renderSession(
     await UserPage({
       params: Promise.resolve({ username: 'sample-helper-2' }),
+      searchParams: Promise.resolve({}),
     }),
     guest,
   )
@@ -30,7 +31,10 @@ it('renders identity and stories from the server, returns 404 and activates only
   ).toBeInTheDocument()
   expect(screen.getByText(/Sample adoption story/)).toBeInTheDocument()
   await expect(
-    UserPage({ params: Promise.resolve({ username: 'missing' }) }),
+    UserPage({
+      params: Promise.resolve({ username: 'missing' }),
+      searchParams: Promise.resolve({}),
+    }),
   ).rejects.toThrow('NEXT_NOT_FOUND')
   const metadata = await generateMetadata({
     params: Promise.resolve({ username: 'sample-helper-2' }),

@@ -26,6 +26,8 @@ export async function request<T extends z.ZodType>(
         typeof value === 'object' ? JSON.stringify(value) : String(value),
       )
   const headers = new Headers({ Accept: 'application/json' })
+  if (path === '/auth/google')
+    headers.set('X-Requested-With', 'XMLHttpRequest')
   if (options?.idempotencyKey)
     headers.set('Idempotency-Key', options.idempotencyKey)
   let payload: BodyInit | undefined

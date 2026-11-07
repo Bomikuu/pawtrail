@@ -45,6 +45,15 @@ export function createApiClient(
           input,
           options,
         ),
+      loginWithGoogle: (input, options) =>
+        request(
+          'POST',
+          '/auth/google',
+          auth.sessionSchema,
+          undefined,
+          input,
+          options,
+        ),
       register: (input, options) =>
         request(
           'POST',

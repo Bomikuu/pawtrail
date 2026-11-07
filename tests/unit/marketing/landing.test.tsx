@@ -1,4 +1,4 @@
-import { generateMetadata } from '@/app/(marketing)/page'
+import { metadata } from '@/app/(marketing)/page'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 vi.mock('server-only', () => ({}))
@@ -168,5 +168,5 @@ it('maps animal, campaign, and story previews to their specified routes', async 
 
 it('keeps mock public landing content out of search indexes', () => {
   vi.stubEnv('NEXT_PUBLIC_USE_MOCK_API', 'true')
-  expect(generateMetadata().robots).toEqual({ index: false, follow: false })
+  expect(metadata.robots).toEqual({ index: false, follow: false })
 })

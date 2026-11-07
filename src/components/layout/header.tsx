@@ -62,7 +62,7 @@ export function Header({
     >
       <div
         className={
-          'header-inner flex min-h-16 items-center gap-2 px-3 md:gap-3 md:px-6'
+          'header-inner flex min-h-16 min-w-0 items-center gap-1 px-3 sm:gap-2 md:gap-3 md:px-6'
         }
       >
         <NavigationDrawer readyRoutes={readyRoutes} variant={variant} />
@@ -78,13 +78,13 @@ export function Header({
         {readyRoutes.has('/search') && <GlobalSearch />}
         <div
           className={
-            'header-utilities ms-auto flex shrink-0 items-center gap-1 sm:gap-2'
+            'header-utilities ms-auto flex min-w-0 items-center gap-1 sm:gap-2'
           }
         >
           {readyRoutes.has('/search') ? (
             <Link
               className={
-                'mobile-search-link inline-flex size-10 items-center justify-center rounded-md hover:bg-accent md:hidden'
+                'mobile-search-link inline-flex size-11 shrink-0 items-center justify-center rounded-md hover:bg-accent md:hidden'
               }
               href="/search"
               aria-label="Search PawTrail"
@@ -119,13 +119,14 @@ export function Header({
           )}
           {session.actor && (
             <>
-              <div className={'header-kibble hidden shrink-0 text-xs lg:grid'}>
+              <div className={'header-kibble hidden shrink-0 text-xs xl:grid'}>
                 {readyRoutes.has('/dashboard/kibble') ? (
                   <Link
                     className={
                       'utility-link inline-flex min-h-10 items-center gap-2 rounded-md px-2 text-sm hover:bg-accent'
                     }
                     href="/dashboard/kibble"
+                    aria-label={kibble}
                   >
                     <Cookie aria-hidden="true" size={18} />
                     <span>{validCount(kibbleBalance) ? kibble : 'Kibble'}</span>
@@ -161,7 +162,7 @@ export function Header({
           )}
           <div
             className={
-              'header-create shrink-0 [&_button]:h-10 [&_button>span]:hidden sm:[&_button>span]:inline'
+              'header-create shrink-0 [&_button]:h-11 [&_button>span]:hidden max-sm:[&_button]:size-11 max-sm:[&_button]:p-0 sm:[&_button>span]:inline'
             }
           >
             <CreateMenu readyRoutes={readyRoutes} />
@@ -172,6 +173,7 @@ export function Header({
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
+                  className="h-11 max-md:size-11 max-md:p-0"
                   aria-label={`Account for ${session.actor.displayName}`}
                 >
                   <CommunityAvatar
@@ -187,7 +189,10 @@ export function Header({
                   >
                     {session.actor.displayName}
                   </span>
-                  <ChevronDown size={15} aria-hidden="true" />
+                  <ChevronDown
+                    className="hidden size-4 md:block"
+                    aria-hidden="true"
+                  />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" aria-label="Your account">

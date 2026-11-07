@@ -38,7 +38,7 @@ export function AnimalSocialHeader({
     <header className="pet-social-header">
       <div
         className={
-          'pet-cover h-auto [aspect-ratio:3.7_/_1] min-h-30 max-h-54 relative overflow-hidden rounded-[1rem_1rem_0.625rem_0.625rem] bg-[#dcecc8] max-[48rem]:h-auto'
+          'pet-cover w-full min-w-0 h-auto [aspect-ratio:3.7_/_1] min-h-30 max-h-54 relative overflow-hidden rounded-[1rem_1rem_0.625rem_0.625rem] bg-[#dcecc8] max-[48rem]:h-auto'
         }
       >
         <ProfileBanner id={animal.bannerId} />

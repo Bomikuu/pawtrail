@@ -1,8 +1,12 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { expect, it } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import { CreateMenu } from '@/components/layout/create-menu'
-import { renderSession, guest } from './helpers'
+import { renderSession, guest, member } from './helpers'
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/community',
+  useRouter: () => ({ push: vi.fn(), replace: vi.fn(), refresh: vi.fn() }),
+}))
 const actions = [
   ['Report Animal', '/animals/report'],
   ['Create Sighting', '/sightings/create'],
@@ -13,8 +17,11 @@ const actions = [
 const ready = new Set(actions.map(([, href]) => href))
 it('operates Create with Enter, arrow keys, Escape and focus restoration; all actions map to inventory', async () => {
   const user = userEvent.setup()
-  renderSession(<CreateMenu readyRoutes={ready} />)
-  const trigger = screen.getByRole('button', { name: 'Create' })
+  renderSession(<CreateMenu readyRoutes={ready} />, {
+    ...member,
+    roles: ['shelter_staff'],
+  })
+  const trigger = screen.getByRole('button', { name: 'Create something' })
   trigger.focus()
   await user.keyboard('{Enter}')
   for (const [label, href] of actions)
@@ -37,8 +44,10 @@ it('operates Create with Enter, arrow keys, Escape and focus restoration; all ac
 it('redirects anonymous create actions to sign-in with their intended route', async () => {
   const user = userEvent.setup()
   renderSession(<CreateMenu readyRoutes={ready} />, guest)
-  await user.click(screen.getByRole('button', { name: 'Create' }))
-  for (const [label, href] of actions)
+  await user.click(screen.getByRole('button', { name: 'Create something' }))
+  for (const [label, href] of actions.filter(
+    ([label]) => label !== 'Create Quest',
+  ))
     expect(screen.getByRole('menuitem', { name: label })).toHaveAttribute(
       'href',
       `/login?returnTo=${encodeURIComponent(href)}`,
@@ -46,10 +55,10 @@ it('redirects anonymous create actions to sign-in with their intended route', as
 })
 it('announces unfinished actions and never offers them as links', async () => {
   const user = userEvent.setup()
-  renderSession(<CreateMenu />)
-  await user.click(screen.getByRole('button', { name: 'Create' }))
+  renderSession(<CreateMenu readyRoutes={new Set(['/community/create'])} />)
+  await user.click(screen.getByRole('button', { name: 'Create something' }))
   for (const [label] of actions.filter(
-    ([label]) => label !== 'Create Community Post',
+    ([label]) => label !== 'Create Community Post' && label !== 'Create Quest',
   )) {
     const item = screen.getByRole('menuitem', {
       name: `${label} — Coming soon`,
@@ -62,7 +71,7 @@ it('announces unfinished actions and never offers them as links', async () => {
 it('activates the implemented community composer', async () => {
   const user = userEvent.setup()
   renderSession(<CreateMenu />)
-  await user.click(screen.getByRole('button', { name: 'Create' }))
+  await user.click(screen.getByRole('button', { name: 'Create something' }))
   expect(
     screen.getByRole('menuitem', { name: 'Create Community Post' }),
   ).toHaveAttribute('href', '/community/create')

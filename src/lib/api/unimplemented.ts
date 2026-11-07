@@ -6,6 +6,7 @@ export function createUnimplementedApi(): PawTrailApi {
     auth: {
       session: notImplemented,
       login: notImplemented,
+      loginWithGoogle: notImplemented,
       register: notImplemented,
       logout: notImplemented,
       selectDemoActor: notImplemented,

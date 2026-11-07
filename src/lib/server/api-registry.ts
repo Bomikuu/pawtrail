@@ -112,6 +112,11 @@ export async function dispatchApi(
         403,
       )
     assertSameOrigin(request)
+    if (
+      path === '/auth/google' &&
+      request.headers.get('x-requested-with') !== 'XMLHttpRequest'
+    )
+      throw new ApiError('FORBIDDEN', 'A Google sign-in request is required', 403)
     if (context.mode === 'real' && path === '/auth/refresh') {
       const config = getApiConfig()
       if (config.mode !== 'real')

@@ -9,7 +9,12 @@ import type {
   ResourceRef,
   RequestOptions,
 } from '@/types/common'
-import type { LoginInput, RegisterInput, Session } from '@/features/auth/types'
+import type {
+  GoogleLoginInput,
+  LoginInput,
+  RegisterInput,
+  Session,
+} from '@/features/auth/types'
 import type {
   AchievementOverview,
   AchievementProof,
@@ -126,6 +131,10 @@ export interface PawTrailApi {
   auth: {
     session(options?: RequestOptions): Promise<Session>
     login(input: LoginInput, options?: RequestOptions): Promise<Session>
+    loginWithGoogle(
+      input: GoogleLoginInput,
+      options?: RequestOptions,
+    ): Promise<Session>
     register(input: RegisterInput, options?: RequestOptions): Promise<Session>
     logout(options?: RequestOptions): Promise<void>
     selectDemoActor(actorId: Id, options?: RequestOptions): Promise<Session>

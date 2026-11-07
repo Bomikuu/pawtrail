@@ -11,8 +11,8 @@ export function ButtonLink({
 }: ComponentProps<typeof Link> &
   Pick<ComponentProps<typeof Button>, 'variant' | 'size'>) {
   return (
-    <Button variant={variant} size={size} asChild>
-      <NavigationLink {...props} className={className} />
+    <Button variant={variant} size={size} className={className} asChild>
+      <NavigationLink {...props} />
     </Button>
   )
 }

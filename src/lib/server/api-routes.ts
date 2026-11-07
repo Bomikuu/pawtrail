@@ -188,6 +188,18 @@ export const apiRoutes: ApiRoute[] = [
   },
   {
     method: 'POST',
+    path: '/auth/google',
+    invoke: async (api, _params, _query, body, options) =>
+      parseResponse(
+        auth.sessionSchema,
+        await api.auth.loginWithGoogle(
+          parseInput(auth.googleLoginInputSchema, body),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'POST',
     path: '/auth/register',
     invoke: async (api, params, query, body, options) =>
       parseResponse(

@@ -341,7 +341,7 @@ export function PublicProfile({
             <>
               <nav
                 className={
-                  'profile-tabs flex items-center [border:1px_solid_#e8dac8] rounded-full p-0.5 gap-0.5 overflow-x-auto max-w-full [&_a]:inline-flex [&_a]:items-center [&_a]:justify-center [&_a]:gap-1.5 [&_a]:[padding:0.625rem_0.75rem] [&_a]:rounded-full [&_a]:min-h-11 [&_a]:[flex:1_0_auto] [&_a]:no-underline [&_a]:text-xs [&_a]:[font-weight:650] [&_a]:text-foreground [&_a]:whitespace-nowrap [&_a:hover]:bg-[#f4ecde] [&_a[aria-current=page]]:bg-[var(--teal)] [&_a[aria-current=page]]:text-[white] max-[48rem]:rounded-xl max-[48rem]:[&_a]:text-[0.6875rem] max-[48rem]:[&_a]:px-2.5 [@media(forced-colors:_active)]:[&_a[aria-current=page]]:[outline:2px_solid_Highlight]'
+                  'profile-tabs w-full min-w-0 flex items-center [border:1px_solid_#e8dac8] rounded-full p-0.5 gap-0.5 overflow-x-auto max-w-full [&_a]:inline-flex [&_a]:items-center [&_a]:justify-center [&_a]:gap-1.5 [&_a]:[padding:0.625rem_0.75rem] [&_a]:rounded-full [&_a]:min-h-11 [&_a]:[flex:1_0_auto] [&_a]:no-underline [&_a]:text-xs [&_a]:[font-weight:650] [&_a]:text-foreground [&_a]:whitespace-nowrap [&_a:hover]:bg-[#f4ecde] [&_a[aria-current=page]]:bg-[var(--teal)] [&_a[aria-current=page]]:text-[white] max-[48rem]:rounded-xl max-[48rem]:[&_a]:text-[0.6875rem] max-[48rem]:[&_a]:px-2.5 [@media(forced-colors:_active)]:[&_a[aria-current=page]]:[outline:2px_solid_Highlight]'
                 }
                 aria-label="Profile activity"
               >

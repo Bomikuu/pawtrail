@@ -35,9 +35,11 @@ export async function resolveDemoContext(
   if (config.mode === 'real') {
     const api = createDjangoApi(config.djangoOrigin, {
       allowCookieWrites: true,
+      googleRedirectUri: request.headers.get('origin') ?? undefined,
     })
     const authMutation = [
       '/api/v1/auth/login',
+      '/api/v1/auth/google',
       '/api/v1/auth/register',
       '/api/v1/auth/logout',
     ].includes(new URL(request.url).pathname)

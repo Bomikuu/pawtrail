@@ -61,7 +61,7 @@ export async function DashboardPage() {
       />
       <dl
         className={
-          'dashboard-summary [margin:0_0_2.5rem] [&_div]:flex [&_div]:items-center [&_div]:justify-between [&_div]:gap-4 [&_div]:[padding:1rem_0] [&_div]:[border-bottom:1px_solid_#ede5d8] [&_dd]:font-heading [&_dd]:text-2xl [&_dd]:m-0 [&_dd]:tabular-nums [.management-shell_&]:grid [.management-shell_&]:grid-cols-[repeat(auto-fit,_minmax(9rem,_1fr))] [.management-shell_&]:gap-4 [.management-shell_&]:[margin:1.75rem_0] [.management-shell_&]:[border:1px_solid_var(--social-line)] [.management-shell_&]:rounded-xl [.management-shell_&]:bg-card [.management-shell_&]:overflow-hidden [.management-shell_&_>_div]:p-5 [.management-shell_&_>_div]:[border:1px_solid_var(--social-line)] [.management-shell_&_>_div]:[border-right:1px_solid_var(--social-line)] [.management-shell_&_>_div]:rounded-[0.875rem] [.management-shell_&_>_div]:bg-card [.management-shell_&_>_div:last-child]:[border:0] [.management-shell_&_>_div:last-child]:border-border [.management-shell_&_dt_a]:text-muted-foreground [.management-shell_&_dt_a]:text-[0.8125rem] [.management-shell_&_dt_a]:no-underline [.management-shell_&_dt_a]:inline-flex [.management-shell_&_dt_a]:min-h-11 [.management-shell_&_dt_a]:items-center [.management-shell_&_dt_a:hover]:text-[color:var(--teal)] [.management-shell_&_dt_a:hover]:underline [.management-shell_&_dd]:font-[800] [.management-shell_&_dd]:text-[length:1.875rem] [.management-shell_&_dd]:leading-[1.3] [.management-shell_&_dd]:font-heading [.management-shell_&_dd]:[margin:0.75rem_0_0] max-[48rem]:[.management-shell_&]:grid-cols-2 max-[48rem]:[.management-shell_&_>_div]:[border-bottom:1px_solid_var(--social-line)] [.dark_.app-shell_&_>_div]:bg-card [.dark_.app-shell_&_>_div]:text-foreground [.dark_.app-shell_&_>_div]:border-border [.dark_.app-shell_&_>_div]:[box-shadow:none]'
+          'dashboard-summary my-6 grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-5'
         }
       >
         {[
@@ -79,11 +79,19 @@ export async function DashboardPage() {
           ],
           [summary.kibbleBalance, 'Non-cash Kibble', '/dashboard/kibble'],
         ].map(([count, label, path]) => (
-          <div key={String(path)}>
-            <dt>
-              <Link href={String(path)}>{label}</Link>
+          <div
+            key={String(path)}
+            className="flex min-h-32 min-w-0 flex-col justify-between rounded-xl border border-border bg-card p-4 last:col-span-2 sm:last:col-span-1"
+          >
+            <dt className="text-sm leading-relaxed text-muted-foreground">
+              <Link
+                href={String(path)}
+                className="text-inherit hover:text-[color:var(--teal)] hover:underline"
+              >
+                {label}
+              </Link>
             </dt>
-            <dd>
+            <dd className="mt-3 font-heading text-3xl font-semibold leading-none tabular-nums">
               <AnimatedNumber value={Number(count)} />
             </dd>
           </div>
@@ -419,7 +427,7 @@ export async function MySightingsPage({
           <p>{s.observation}</p>
           <p
             className={
-              'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+              'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
             }
           >
             {s.location.neighborhood}
@@ -626,8 +634,8 @@ export async function ApplicationNewPage({
   searchParams: SearchParams
 }) {
   const p = await searchParams,
-    api = await privateApi('/adopt/applications/new'),
-    id = queryValue(p.animalId) ?? queryValue(p.animal)
+    id = queryValue(p.animalId) ?? queryValue(p.animal),
+    api = await privateApi('/adopt/applications/new' + (id ? `?animalId=${encodeURIComponent(id)}` : ''))
   if (!id)
     return (
       <Empty href="/adopt" label="Meet adoptable animals">
@@ -635,7 +643,7 @@ export async function ApplicationNewPage({
       </Empty>
     )
   const a = await api.animals.get(id)
-  if (!a.adoptable || !a.shelterId)
+  if (!a.adoptable || !a.shelterId || a.status === 'adopted')
     return (
       <Empty href="/adopt">
         This animal is not accepting adoption applications.
@@ -721,7 +729,7 @@ export async function ApplicationPage({ id }: { id: string }) {
       ) : (
         <dl
           className={
-            'workflow-review [margin:1.5rem_0] grid gap-4 [&_div]:[padding:0_0_1rem] [&_div]:[border-bottom:1px_solid_#ede5d8] [&_dt]:font-semibold [&_dt]:text-sm [&_dt]:text-[#6b625b] [&_dd]:[margin:0.5rem_0_0] [&_dd]:whitespace-pre-wrap [&_dd]:[overflow-wrap:anywhere] [.app-shell_&]:bg-card [.app-shell_&]:p-5 [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl'
+            'workflow-review [margin:1.5rem_0] grid gap-4 [&_div]:[padding:0_0_1rem] [&_div]:[border-bottom:1px_solid_#ede5d8] [&_dt]:font-semibold [&_dt]:text-sm [&_dt]:text-muted-foreground [&_dd]:[margin:0.5rem_0_0] [&_dd]:whitespace-pre-wrap [&_dd]:[overflow-wrap:anywhere] [.app-shell_&]:bg-card [.app-shell_&]:p-5 [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl'
           }
         >
           {applicationFields
@@ -1039,7 +1047,7 @@ export async function ManageCampaignPage({ id }: { id: string }) {
                 {expense.correctsEntryId && (
                   <p
                     className={
-                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                      'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
                     }
                   >
                     Correction to an earlier expense
@@ -1050,7 +1058,7 @@ export async function ManageCampaignPage({ id }: { id: string }) {
                 ) && (
                   <p
                     className={
-                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                      'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
                     }
                   >
                     Superseded by a later correction
@@ -1078,7 +1086,7 @@ export async function ManageCampaignPage({ id }: { id: string }) {
                 ) : (
                   <p
                     className={
-                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                      'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
                     }
                   >
                     No private receipt is attached.
@@ -1324,7 +1332,7 @@ export async function MyMissionsPage({
                 ) : (
                   <p
                     className={
-                      'journal-meta text-sm text-[#6b625b] [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
+                      'journal-meta text-sm text-muted-foreground [margin:0_0_0.5rem] [.resource-card-heading_&]:m-0 [.resource-card-heading_&]:text-[0.8125rem]'
                     }
                   >
                     No media attachments were supplied.

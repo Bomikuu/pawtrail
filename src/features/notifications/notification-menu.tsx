@@ -45,24 +45,25 @@ export function NotificationMenu({ unread }: { unread: string }) {
     enabled: open && !!session.actor,
   })
   return (
-    <div
-      className={
-        'notification-menu flex items-center max-[48rem]:[.app-shell_&_>_[data-slot=button]]:hidden'
-      }
-    >
+    <div className={'notification-menu flex shrink-0 items-center'}>
       <Link
         className={
-          'utility-link flex items-center gap-2 min-h-11 text-foreground no-underline [&:hover]:text-[color:var(--teal)] [&:hover]:underline [.header-kibble_&]:min-h-auto notification-link max-[75rem]:[&_span]:absolute max-[75rem]:[&_span]:w-[1px] max-[75rem]:[&_span]:h-[1px] max-[75rem]:[&_span]:overflow-hidden max-[75rem]:[&_span]:[clip-path:inset(50%)] max-[75rem]:[&_span]:whitespace-nowrap [.app-shell_.header-utilities_&_span]:absolute [.app-shell_.header-utilities_&_span]:w-[1px] [.app-shell_.header-utilities_&_span]:h-[1px] [.app-shell_.header-utilities_&_span]:overflow-hidden [.app-shell_.header-utilities_&_span]:[clip-path:inset(50%)]'
+          'notification-link inline-flex size-11 shrink-0 items-center justify-center rounded-md text-foreground no-underline hover:bg-accent hover:text-[color:var(--teal)]'
         }
         aria-label={`Notifications, ${unread}`}
         href="/dashboard/notifications"
       >
         <Bell size={20} aria-hidden="true" />
-        <span>{unread}</span>
+        <span className="sr-only">{unread}</span>
       </Link>
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" aria-label="Open recent notifications">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hidden md:inline-flex"
+            aria-label="Open recent notifications"
+          >
             <ChevronDown size={16} aria-hidden="true" />
           </Button>
         </DropdownMenuTrigger>

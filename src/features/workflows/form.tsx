@@ -175,7 +175,7 @@ export function WorkflowForm({
   return (
     <form
       className={
-        'workflow-form max-w-176 [margin:1.5rem_0] grid gap-6  [&_select]:w-full [&_select]:min-h-11 max-[48rem]:w-full [.management-shell_&]:bg-card [.management-shell_&]:[border:1px_solid_var(--social-line)] [.management-shell_&]:rounded-xl [.management-shell_&]:p-6 max-[48rem]:[.management-shell_&]:p-4 [.app-shell_.workflow-panel_>_&]:[border:0] [.app-shell_.workflow-panel_>_&]:p-0 [.app-shell_.workflow-panel_>_&]:mb-0 [.app-shell_.workflow-panel_>_&]:bg-[transparent] [.app-shell_&]:w-full [.app-shell_&]:p-6 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl max-[48rem]:[.app-shell_&]:p-4 [.mission-evidence-details_&]:mt-3 [.dark_.app-shell_&]:bg-card [.dark_.app-shell_&]:text-foreground [.dark_.app-shell_&]:border-border [.dark_.app-shell_&]:[box-shadow:none]'
+        'workflow-form my-6 grid w-full min-w-0 max-w-3xl gap-6 rounded-2xl border border-border bg-card p-5 sm:p-6 [&_[data-slot=native-select-wrapper]]:w-full [&_select]:min-h-11 [&_textarea]:min-h-32 [.workflow-panel_>_&]:m-0 [.workflow-panel_>_&]:max-w-none [.workflow-panel_>_&]:border-0 [.workflow-panel_>_&]:bg-transparent [.workflow-panel_>_&]:p-0 [.mission-evidence-details_&]:mt-3'
       }
       onSubmit={submit}
       noValidate
@@ -184,7 +184,7 @@ export function WorkflowForm({
       {steps && (
         <ol
           className={
-            'workflow-steps flex gap-4 list-none p-0 m-0 flex-wrap text-[#6b625b] text-sm [&_li]:[border-bottom:2px_solid_#ede5d8] [&_li]:[padding:0.5rem_0] [&_[aria-current=step]]:text-[#0f766e] [&_[aria-current=step]]:border-[#0f766e] [&_[aria-current=step]]:font-bold max-[48rem]:gap-3'
+            'workflow-steps flex gap-4 list-none p-0 m-0 flex-wrap text-muted-foreground text-sm [&_li]:[border-bottom:2px_solid_#ede5d8] [&_li]:[padding:0.5rem_0] [&_[aria-current=step]]:text-[#0f766e] [&_[aria-current=step]]:border-[#0f766e] [&_[aria-current=step]]:font-bold max-[48rem]:gap-3'
           }
           aria-label="Progress"
         >
@@ -223,27 +223,40 @@ export function WorkflowForm({
             <div
               key={f.name}
               className={
-                'workflow-field grid gap-2 [&[hidden]]:hidden [&_label]:font-semibold [&_label]:[line-height:1.5] [&_input[type=checkbox]]:w-5 [&_input[type=checkbox]]:h-5 [&_input[type=checkbox]]:min-h-5 [&_input[type=checkbox]]:inline-block [&_input[type=checkbox]]:[vertical-align:middle] [&_input[type=checkbox]]:[accent-color:#0f766e] [&_input[type=checkbox]]:mr-[0.4rem] [&_textarea]:min-h-32'
+                'workflow-field grid min-w-0 content-start gap-2 [&[hidden]]:hidden [&_textarea]:min-h-32'
               }
               hidden={!!steps && (f.step ?? 0) !== step}
             >
-              <label htmlFor={id}>
+              <label
+                htmlFor={id}
+                className={
+                  f.type === 'checkbox'
+                    ? 'flex min-h-11 cursor-pointer items-start gap-3 py-2 text-sm font-medium leading-relaxed'
+                    : 'text-sm font-medium leading-6'
+                }
+              >
                 {f.type === 'checkbox' ? (
                   <>
                     <Checkbox
                       id={id}
                       name={f.name}
+                      className="mt-0.5 size-5"
+                      required={f.required}
+                      aria-describedby={f.help ? `${id}-help` : undefined}
                       checked={values[f.name] === true}
                       onCheckedChange={(checked) =>
                         setValues((v) => ({ ...v, [f.name]: checked === true }))
                       }
-                    />{' '}
-                    {f.label}
+                    />
+                    <span className="min-w-0">
+                      {f.label}
+                      {f.required ? ' *' : ''}
+                    </span>
                   </>
                 ) : (
                   f.label
                 )}
-                {f.required ? ' *' : ''}
+                {f.required && f.type !== 'checkbox' ? ' *' : ''}
               </label>
               {f.type === 'textarea' ? (
                 <Textarea
@@ -266,6 +279,7 @@ export function WorkflowForm({
                     setValues((v) => ({ ...v, [f.name]: e.target.value }))
                   }
                   required={f.required}
+                  aria-describedby={f.help ? `${id}-help` : undefined}
                 >
                   {f.options?.map((o) => (
                     <SelectOption key={o.value} value={o.value}>
@@ -292,7 +306,7 @@ export function WorkflowForm({
                 <p
                   id={`${id}-help`}
                   className={
-                    'field-help text-sm text-[#6b625b] m-0 [.avatar-picker_>_&]:m-0 [.avatar-picker_>_&]:max-w-[65ch] [.avatar-picker_>_&]:text-xs [.achievement-proof-form_&]:text-xs'
+                    'field-help text-sm text-muted-foreground m-0 [.avatar-picker_>_&]:m-0 [.avatar-picker_>_&]:max-w-[65ch] [.avatar-picker_>_&]:text-xs [.achievement-proof-form_&]:text-xs'
                   }
                 >
                   {f.help}
@@ -305,7 +319,7 @@ export function WorkflowForm({
       {steps && step === steps.length - 1 && (
         <dl
           className={
-            'workflow-review [margin:1.5rem_0] grid gap-4 [&_div]:[padding:0_0_1rem] [&_div]:[border-bottom:1px_solid_#ede5d8] [&_dt]:font-semibold [&_dt]:text-sm [&_dt]:text-[#6b625b] [&_dd]:[margin:0.5rem_0_0] [&_dd]:whitespace-pre-wrap [&_dd]:[overflow-wrap:anywhere] [.app-shell_&]:bg-card [.app-shell_&]:p-5 [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl'
+            'workflow-review [margin:1.5rem_0] grid gap-4 [&_div]:[padding:0_0_1rem] [&_div]:[border-bottom:1px_solid_#ede5d8] [&_dt]:font-semibold [&_dt]:text-sm [&_dt]:text-muted-foreground [&_dd]:[margin:0.5rem_0_0] [&_dd]:whitespace-pre-wrap [&_dd]:[overflow-wrap:anywhere] [.app-shell_&]:bg-card [.app-shell_&]:p-5 [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl'
           }
         >
           {fields
@@ -399,7 +413,7 @@ export function WorkflowForm({
       {message && <p role="status">{message}</p>}
       <div
         className={
-          'workflow-actions flex items-center gap-3 flex-wrap [margin:0.75rem_0] [.discovery-map_&_p]:m-0 [.discovery-map_&_p]:text-sm [.discovery-map_&_p]:text-[#6b625b] max-[48rem]:[&_>_*]:max-w-full [.achievement-review-card_&]:mt-4 [.adoption-story_&]:gap-2.5 [.adoption-story_&_[data-slot=button]]:[flex:1_1_9rem]'
+          'workflow-actions flex items-center gap-3 flex-wrap [margin:0.75rem_0] [.discovery-map_&_p]:m-0 [.discovery-map_&_p]:text-sm [.discovery-map_&_p]:text-muted-foreground max-[48rem]:[&_>_*]:max-w-full [.achievement-review-card_&]:mt-4 [.adoption-story_&]:gap-2.5 [.adoption-story_&_[data-slot=button]]:[flex:1_1_9rem]'
         }
       >
         {!!steps && step > 0 && (
