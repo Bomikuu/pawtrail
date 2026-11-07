@@ -1,5 +1,9 @@
 # PawTrail asset credits
 
+## Login illustration supplied by the owner
+
+`public/images/illustrations/login-companions.webp` uses image #2 attached by the owner on 2026-11-06 (`codex-clipboard-fdc241be-ba19-4d73-b9e4-7326138f0edb.png`). It is proportionally resized to 1100px wide and encoded as WebP at quality 88 with alpha preserved. No new image was generated. The adjacent JSON records its origin. This decorative illustration is not a factual animal record or a replacement global logo. The older asset manifest below predates this addition.
+
 Retrieved and verified on 2026-11-02. No final brand mark or real animal photographs were supplied. Stock subjects illustrate fictional records: their names, locations, care needs, and stories are not claims about the photographed animals. These assets do not document an actual rescue, adoption, payment, or endorsement. The same photo follows the same fictional animal through its profile, campaign, and post. Only Milo and Luna have assigned photographs; remaining records retain the shared honest fallback.
 
 ## Photographs

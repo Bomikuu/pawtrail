@@ -1,0 +1,558 @@
+{
+  "version": 1,
+  "description": "Twelve fictional demo spaces: eight homes and four shelters, grouped into three Davao-area clusters.",
+  "rooms": [
+    {
+      "place": {
+        "id": "demo:maya-nook",
+        "kind": "home",
+        "name": "Maya\u2019s Sunny Nook",
+        "description": "A bright little home with a reading corner and two curious cats.",
+        "area": "Poblacion, Davao City",
+        "coordinates": [
+          125.6108,
+          7.0731
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Maya \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/maya.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:maya-nook"
+        }
+      },
+      "mapArea": "poblacion",
+      "appearance": "braided-rescuer",
+      "floor": "oak-light-a",
+      "wallpaper": "sage",
+      "pets": [
+        {
+          "id": "maya-nook-cat-1",
+          "name": "Mango",
+          "sprite": "orange-tabby",
+          "personality": "friendly"
+        },
+        {
+          "id": "maya-nook-cat-2",
+          "name": "Pepper",
+          "sprite": "black-cat",
+          "personality": "curious"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:jo-loft",
+        "kind": "home",
+        "name": "Jo\u2019s Whisker Loft",
+        "description": "Books, comfy chairs, and a pair of playful feline neighbors.",
+        "area": "Poblacion, Davao City",
+        "coordinates": [
+          125.6132,
+          7.0741
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Jo \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/jo.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:jo-loft"
+        }
+      },
+      "mapArea": "poblacion",
+      "appearance": "rescuer",
+      "floor": "wood-dark-a",
+      "wallpaper": "cream",
+      "pets": [
+        {
+          "id": "jo-loft-cat-1",
+          "name": "Pepper",
+          "sprite": "black-cat",
+          "personality": "curious"
+        },
+        {
+          "id": "jo-loft-cat-2",
+          "name": "Cloud",
+          "sprite": "white-cat",
+          "personality": "playful"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:lina-courtyard",
+        "kind": "home",
+        "name": "Lina\u2019s Quiet Courtyard",
+        "description": "A calm home for gentle visits, quiet company, and virtual care.",
+        "area": "Poblacion, Davao City",
+        "coordinates": [
+          125.6148,
+          7.0719
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Lina \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/lina.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:lina-courtyard"
+        }
+      },
+      "mapArea": "poblacion",
+      "appearance": "glasses-rescuer",
+      "floor": "ceramic-a",
+      "wallpaper": "sage",
+      "pets": [
+        {
+          "id": "lina-courtyard-cat-1",
+          "name": "Cloud",
+          "sprite": "white-cat",
+          "personality": "playful"
+        },
+        {
+          "id": "lina-courtyard-cat-2",
+          "name": "Mochi",
+          "sprite": "gray-tabby",
+          "personality": "shy"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:kai-den",
+        "kind": "home",
+        "name": "Kai\u2019s Explorer Den",
+        "description": "Drop your backpack and meet the cats after a day of exploring.",
+        "area": "Buhangin, Davao City",
+        "coordinates": [
+          125.6213,
+          7.1042
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Kai \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/male-blonde-scout.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:kai-den"
+        }
+      },
+      "mapArea": "buhangin",
+      "appearance": "male-blonde-scout",
+      "floor": "oak-light-a",
+      "wallpaper": "blue",
+      "pets": [
+        {
+          "id": "kai-den-cat-1",
+          "name": "Mochi",
+          "sprite": "gray-tabby",
+          "personality": "shy"
+        },
+        {
+          "id": "kai-den-cat-2",
+          "name": "Patches",
+          "sprite": "calico",
+          "personality": "friendly"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:nica-corner",
+        "kind": "home",
+        "name": "Nica\u2019s Violet Corner",
+        "description": "A cozy hobby corner with soft beds and plenty of cat toys.",
+        "area": "Buhangin, Davao City",
+        "coordinates": [
+          125.624,
+          7.1061
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Nica \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/violet-rescuer.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:nica-corner"
+        }
+      },
+      "mapArea": "buhangin",
+      "appearance": "violet-rescuer",
+      "floor": "carpet-a",
+      "wallpaper": "cream",
+      "pets": [
+        {
+          "id": "nica-corner-cat-1",
+          "name": "Patches",
+          "sprite": "calico",
+          "personality": "friendly"
+        },
+        {
+          "id": "nica-corner-cat-2",
+          "name": "Socks",
+          "sprite": "tuxedo",
+          "personality": "curious"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:sam-garden",
+        "kind": "home",
+        "name": "Sam\u2019s Garden Home",
+        "description": "A plant-filled retreat with sunny cat beds and a quiet bookshelf.",
+        "area": "Matina, Davao City",
+        "coordinates": [
+          125.5874,
+          7.0542
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Sam \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/male-red-gardener.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:sam-garden"
+        }
+      },
+      "mapArea": "matina",
+      "appearance": "male-red-gardener",
+      "floor": "wood-dark-a",
+      "wallpaper": "sage",
+      "pets": [
+        {
+          "id": "sam-garden-cat-1",
+          "name": "Socks",
+          "sprite": "tuxedo",
+          "personality": "curious"
+        },
+        {
+          "id": "sam-garden-cat-2",
+          "name": "Luna",
+          "sprite": "siamese",
+          "personality": "playful"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:ira-hideaway",
+        "kind": "home",
+        "name": "Ira\u2019s Cozy Hideaway",
+        "description": "A warm little hideaway for a chat and a gentle animal encounter.",
+        "area": "Matina, Davao City",
+        "coordinates": [
+          125.59,
+          7.0555
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Ira \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/glasses-rescuer.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:ira-hideaway"
+        }
+      },
+      "mapArea": "matina",
+      "appearance": "glasses-rescuer",
+      "floor": "oak-light-a",
+      "wallpaper": "beige",
+      "pets": [
+        {
+          "id": "ira-hideaway-cat-1",
+          "name": "Luna",
+          "sprite": "siamese",
+          "personality": "playful"
+        },
+        {
+          "id": "ira-hideaway-cat-2",
+          "name": "Coco",
+          "sprite": "brown-tabby",
+          "personality": "shy"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:theo-cottage",
+        "kind": "home",
+        "name": "Theo\u2019s Cat Cottage",
+        "description": "A cheerful cottage where curious cats always find a new toy.",
+        "area": "Poblacion, Davao City",
+        "coordinates": [
+          125.6118,
+          7.0708
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Theo \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/male-violet-volunteer.png"
+        },
+        "residents": 2,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:theo-cottage"
+        }
+      },
+      "mapArea": "poblacion",
+      "appearance": "male-violet-volunteer",
+      "floor": "patterned",
+      "wallpaper": "cream",
+      "pets": [
+        {
+          "id": "theo-cottage-cat-1",
+          "name": "Coco",
+          "sprite": "brown-tabby",
+          "personality": "shy"
+        },
+        {
+          "id": "theo-cottage-cat-2",
+          "name": "Biscuit",
+          "sprite": "cream-cat",
+          "personality": "friendly"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:sampaguita-rescue",
+        "kind": "shelter",
+        "name": "Sampaguita Rescue House",
+        "description": "A fictional rescue room where you can practice petting, feeding, and offering fresh water.",
+        "area": "Poblacion, Davao City",
+        "coordinates": [
+          125.6121,
+          7.0753
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Maya \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/maya.png"
+        },
+        "residents": 3,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:sampaguita-rescue"
+        }
+      },
+      "mapArea": "poblacion",
+      "appearance": "braided-rescuer",
+      "floor": "ceramic-a",
+      "wallpaper": "cream",
+      "pets": [
+        {
+          "id": "sampaguita-rescue-cat-1",
+          "name": "Biscuit",
+          "sprite": "cream-cat",
+          "personality": "friendly"
+        },
+        {
+          "id": "sampaguita-rescue-cat-2",
+          "name": "Misty",
+          "sprite": "gray-white",
+          "personality": "curious"
+        },
+        {
+          "id": "sampaguita-rescue-cat-3",
+          "name": "Sunny",
+          "sprite": "orange-tabby",
+          "personality": "playful"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:kitten-corner",
+        "kind": "shelter",
+        "name": "Poblacion Kitten Corner",
+        "description": "A fictional kitten care space with beds, feeding bowls, and gentle company.",
+        "area": "Poblacion, Davao City",
+        "coordinates": [
+          125.6152,
+          7.0744
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Lina \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/lina.png"
+        },
+        "residents": 3,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:kitten-corner"
+        }
+      },
+      "mapArea": "poblacion",
+      "appearance": "glasses-rescuer",
+      "floor": "ceramic-a",
+      "wallpaper": "sage",
+      "pets": [
+        {
+          "id": "kitten-corner-cat-1",
+          "name": "Misty",
+          "sprite": "gray-white",
+          "personality": "curious"
+        },
+        {
+          "id": "kitten-corner-cat-2",
+          "name": "Sunny",
+          "sprite": "orange-tabby",
+          "personality": "playful"
+        },
+        {
+          "id": "kitten-corner-cat-3",
+          "name": "Bean",
+          "sprite": "black-cat",
+          "personality": "shy"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:matina-haven",
+        "kind": "shelter",
+        "name": "Matina Cat Haven",
+        "description": "A fictional community shelter with room to rest, play, and recover.",
+        "area": "Matina, Davao City",
+        "coordinates": [
+          125.5891,
+          7.0533
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Sam \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/male-red-gardener.png"
+        },
+        "residents": 3,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:matina-haven"
+        }
+      },
+      "mapArea": "matina",
+      "appearance": "male-red-gardener",
+      "floor": "stone",
+      "wallpaper": "beige",
+      "pets": [
+        {
+          "id": "matina-haven-cat-1",
+          "name": "Sunny",
+          "sprite": "orange-tabby",
+          "personality": "playful"
+        },
+        {
+          "id": "matina-haven-cat-2",
+          "name": "Bean",
+          "sprite": "black-cat",
+          "personality": "shy"
+        },
+        {
+          "id": "matina-haven-cat-3",
+          "name": "Mango",
+          "sprite": "white-cat",
+          "personality": "friendly"
+        }
+      ]
+    },
+    {
+      "place": {
+        "id": "demo:buhangin-lodge",
+        "kind": "shelter",
+        "name": "Buhangin Recovery Lodge",
+        "description": "A fictional recovery room for trying virtual care and meeting demo animals.",
+        "area": "Buhangin, Davao City",
+        "coordinates": [
+          125.6227,
+          7.1071
+        ],
+        "locationLabel": "Fictional demo place \u00b7 not a real address",
+        "sample": true,
+        "demo": true,
+        "host": {
+          "name": "Kai \u00b7 sample host",
+          "avatar": "/pawtrail-game/game-assets/dialogue-portraits/male-blonde-scout.png"
+        },
+        "residents": 3,
+        "visibility": "public",
+        "entry": {
+          "kind": "home",
+          "house": "system:map-demo:buhangin-lodge"
+        }
+      },
+      "mapArea": "buhangin",
+      "appearance": "male-blonde-scout",
+      "floor": "ceramic-a",
+      "wallpaper": "blue",
+      "pets": [
+        {
+          "id": "buhangin-lodge-cat-1",
+          "name": "Bean",
+          "sprite": "black-cat",
+          "personality": "shy"
+        },
+        {
+          "id": "buhangin-lodge-cat-2",
+          "name": "Mango",
+          "sprite": "white-cat",
+          "personality": "friendly"
+        },
+        {
+          "id": "buhangin-lodge-cat-3",
+          "name": "Pepper",
+          "sprite": "gray-tabby",
+          "personality": "curious"
+        }
+      ]
+    }
+  ]
+}

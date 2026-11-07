@@ -1,0 +1,1362 @@
+{
+  "variant": "male-red-gardener",
+  "atlas": "complete-v2.png",
+  "frameWidth": 32,
+  "frameHeight": 48,
+  "columns": 4,
+  "rows": 27,
+  "animations": [
+    {
+      "id": "walk_down",
+      "file": "walk_down-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        0,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          15,
+          16,
+          73,
+          138
+        ],
+        [
+          98,
+          16,
+          158,
+          138
+        ],
+        [
+          182,
+          16,
+          241,
+          139
+        ],
+        [
+          265,
+          16,
+          324,
+          138
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "walk_up",
+      "file": "walk_up-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        48,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          15,
+          158,
+          72,
+          284
+        ],
+        [
+          97,
+          159,
+          157,
+          285
+        ],
+        [
+          182,
+          158,
+          241,
+          285
+        ],
+        [
+          266,
+          158,
+          325,
+          285
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "walk_left",
+      "file": "walk_left-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        96,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          9,
+          307,
+          71,
+          428
+        ],
+        [
+          91,
+          307,
+          158,
+          428
+        ],
+        [
+          175,
+          307,
+          238,
+          429
+        ],
+        [
+          257,
+          307,
+          323,
+          427
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "walk_right",
+      "file": "walk_right-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        144,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          14,
+          453,
+          78,
+          574
+        ],
+        [
+          95,
+          453,
+          159,
+          573
+        ],
+        [
+          180,
+          451,
+          242,
+          574
+        ],
+        [
+          262,
+          452,
+          325,
+          574
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_down",
+      "file": "idle_down-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        192,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          14,
+          594,
+          73,
+          717
+        ],
+        [
+          98,
+          594,
+          158,
+          717
+        ],
+        [
+          182,
+          594,
+          240,
+          717
+        ],
+        [
+          265,
+          594,
+          322,
+          717
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_up",
+      "file": "idle_up-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        240,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          14,
+          740,
+          72,
+          857
+        ],
+        [
+          98,
+          740,
+          157,
+          857
+        ],
+        [
+          181,
+          740,
+          240,
+          857
+        ],
+        [
+          265,
+          740,
+          336,
+          857
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_left",
+      "file": "idle_left-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        288,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          8,
+          880,
+          70,
+          999
+        ],
+        [
+          93,
+          880,
+          156,
+          999
+        ],
+        [
+          175,
+          880,
+          238,
+          999
+        ],
+        [
+          257,
+          880,
+          320,
+          998
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_right",
+      "file": "idle_right-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        336,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          14,
+          1021,
+          78,
+          1142
+        ],
+        [
+          96,
+          1021,
+          159,
+          1142
+        ],
+        [
+          179,
+          1021,
+          243,
+          1142
+        ],
+        [
+          262,
+          1021,
+          326,
+          1142
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "wave",
+      "file": "wave-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        384,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          15,
+          1162,
+          72,
+          1279
+        ],
+        [
+          93,
+          1162,
+          158,
+          1279
+        ],
+        [
+          175,
+          1158,
+          241,
+          1279
+        ],
+        [
+          257,
+          1159,
+          325,
+          1279
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "laugh",
+      "file": "laugh-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        432,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          350,
+          16,
+          408,
+          138
+        ],
+        [
+          432,
+          16,
+          492,
+          138
+        ],
+        [
+          514,
+          16,
+          575,
+          138
+        ],
+        [
+          599,
+          16,
+          659,
+          138
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "dance",
+      "file": "dance-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        480,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          350,
+          162,
+          409,
+          284
+        ],
+        [
+          431,
+          162,
+          498,
+          285
+        ],
+        [
+          513,
+          162,
+          575,
+          284
+        ],
+        [
+          596,
+          162,
+          657,
+          285
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "clap",
+      "file": "clap-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        528,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          346,
+          317,
+          407,
+          427
+        ],
+        [
+          429,
+          320,
+          489,
+          427
+        ],
+        [
+          512,
+          321,
+          573,
+          427
+        ],
+        [
+          593,
+          320,
+          656,
+          427
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "cheer",
+      "file": "cheer-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        576,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          347,
+          471,
+          406,
+          574
+        ],
+        [
+          425,
+          471,
+          495,
+          574
+        ],
+        [
+          504,
+          471,
+          587,
+          574
+        ],
+        [
+          599,
+          474,
+          657,
+          574
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "sit",
+      "file": "sit-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        624,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          349,
+          599,
+          408,
+          718
+        ],
+        [
+          431,
+          606,
+          488,
+          715
+        ],
+        [
+          512,
+          612,
+          578,
+          715
+        ],
+        [
+          596,
+          614,
+          665,
+          715
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "sleep",
+      "file": "sleep-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        672,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          798,
+          420,
+          857
+        ],
+        [
+          420,
+          799,
+          504,
+          857
+        ],
+        [
+          506,
+          800,
+          588,
+          857
+        ],
+        [
+          588,
+          799,
+          672,
+          857
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "give_gift",
+      "file": "give_gift-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        720,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          348,
+          894,
+          406,
+          998
+        ],
+        [
+          431,
+          894,
+          489,
+          998
+        ],
+        [
+          514,
+          894,
+          574,
+          998
+        ],
+        [
+          598,
+          895,
+          656,
+          998
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "hold_item",
+      "file": "hold_item-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        768,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          348,
+          1039,
+          407,
+          1142
+        ],
+        [
+          430,
+          1039,
+          490,
+          1142
+        ],
+        [
+          513,
+          1040,
+          574,
+          1142
+        ],
+        [
+          597,
+          1040,
+          657,
+          1142
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "pet",
+      "file": "pet-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        816,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          351,
+          1162,
+          407,
+          1279
+        ],
+        [
+          431,
+          1168,
+          488,
+          1280
+        ],
+        [
+          511,
+          1174,
+          580,
+          1280
+        ],
+        [
+          591,
+          1191,
+          670,
+          1280
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "feed",
+      "file": "feed-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        864,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          685,
+          18,
+          742,
+          138
+        ],
+        [
+          760,
+          23,
+          840,
+          138
+        ],
+        [
+          840,
+          38,
+          924,
+          138
+        ],
+        [
+          924,
+          49,
+          1001,
+          139
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "play",
+      "file": "play-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        912,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          682,
+          170,
+          744,
+          284
+        ],
+        [
+          759,
+          177,
+          840,
+          285
+        ],
+        [
+          840,
+          187,
+          924,
+          284
+        ],
+        [
+          924,
+          195,
+          1003,
+          285
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "refill_water",
+      "file": "refill_water-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        960,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          678,
+          310,
+          737,
+          428
+        ],
+        [
+          757,
+          320,
+          840,
+          428
+        ],
+        [
+          840,
+          333,
+          924,
+          429
+        ],
+        [
+          924,
+          339,
+          1003,
+          428
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "clean",
+      "file": "clean-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1008,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          681,
+          458,
+          738,
+          574
+        ],
+        [
+          762,
+          471,
+          829,
+          574
+        ],
+        [
+          841,
+          484,
+          913,
+          574
+        ],
+        [
+          929,
+          488,
+          1003,
+          574
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "carry_supplies",
+      "file": "carry_supplies-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1056,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          682,
+          597,
+          744,
+          717
+        ],
+        [
+          763,
+          600,
+          829,
+          718
+        ],
+        [
+          848,
+          602,
+          912,
+          718
+        ],
+        [
+          930,
+          605,
+          998,
+          718
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "pick_up_furniture",
+      "file": "pick_up_furniture-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1104,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          679,
+          748,
+          750,
+          857
+        ],
+        [
+          762,
+          762,
+          831,
+          857
+        ],
+        [
+          846,
+          766,
+          913,
+          857
+        ],
+        [
+          931,
+          756,
+          996,
+          857
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "move_object",
+      "file": "move_object-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1152,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          681,
+          888,
+          738,
+          999
+        ],
+        [
+          765,
+          892,
+          829,
+          999
+        ],
+        [
+          849,
+          892,
+          912,
+          997
+        ],
+        [
+          934,
+          894,
+          999,
+          999
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "place_object",
+      "file": "place_object-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1200,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          682,
+          1035,
+          739,
+          1142
+        ],
+        [
+          761,
+          1045,
+          830,
+          1142
+        ],
+        [
+          840,
+          1059,
+          924,
+          1142
+        ],
+        [
+          924,
+          1062,
+          1001,
+          1142
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "inspect_furniture",
+      "file": "inspect_furniture-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1248,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          683,
+          1183,
+          743,
+          1280
+        ],
+        [
+          763,
+          1189,
+          827,
+          1280
+        ],
+        [
+          848,
+          1198,
+          913,
+          1280
+        ],
+        [
+          929,
+          1200,
+          999,
+          1280
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    }
+  ],
+  "generationMode": "built-in image_gen",
+  "source": "assets/male-characters-v1/male-red-gardener-source.png",
+  "prompt": "assets/male-characters-v1/generation-prompts.json",
+  "palette": [
+    "#fae8ce",
+    "#321b1f",
+    "#442628",
+    "#6a9039",
+    "#8e5641",
+    "#297f80",
+    "#4f9694",
+    "#df9850",
+    "#c2c04b",
+    "#bda193",
+    "#7d6764",
+    "#d79770",
+    "#ebb272",
+    "#605053",
+    "#47363b",
+    "#5b383a",
+    "#5e565a",
+    "#dca68a",
+    "#f0c38b",
+    "#c48358",
+    "#d38553",
+    "#c28864",
+    "#e68667",
+    "#c86856",
+    "#e2725a",
+    "#ad9085",
+    "#b79a8a",
+    "#512e2e",
+    "#5b402f",
+    "#81605a",
+    "#b76954",
+    "#87998c",
+    "#8fa99e",
+    "#73953a",
+    "#7e9f39",
+    "#442c2e",
+    "#3d3d2b",
+    "#2b8081",
+    "#5b8580",
+    "#ddbb9d",
+    "#eaceb3",
+    "#838c5d",
+    "#8cab42",
+    "#578448",
+    "#6d9340",
+    "#bb6246",
+    "#d06644",
+    "#416d3d",
+    "#55643e",
+    "#fae0b0",
+    "#fae3c0",
+    "#a65a3d",
+    "#a95e4c",
+    "#b1a89a",
+    "#b2b6ad",
+    "#86706c",
+    "#8b7775",
+    "#4c6b6c",
+    "#655f61",
+    "#7b4134",
+    "#7e4641",
+    "#51474c",
+    "#575556",
+    "#f6bc83",
+    "#e99257",
+    "#c46139",
+    "#923d2c",
+    "#5b2927",
+    "#8ba779",
+    "#52764f",
+    "#304c37",
+    "#344b68"
+  ],
+  "description": "A young man with warm tan skin, short side-swept copper-red hair, a terracotta T-shirt under forest-green overalls with visible straps, cream work shoes, and a small navy backpack. No glasses, no ponytail.",
+  "notes": [
+    "Original male rescuers with distinct hair, outfits and matching portraits; incumbent 27-action layout.",
+    "Nearest-neighbor native export with binary alpha. No automated checks or playback review.",
+    "Generated edits can have small pose/pixel differences; fine animation polish is not certified."
+  ]
+}

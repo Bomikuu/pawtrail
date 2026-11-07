@@ -1,0 +1,1357 @@
+{
+  "variant": "blonde-rescuer",
+  "atlas": "complete-v2.png",
+  "frameWidth": 32,
+  "frameHeight": 48,
+  "columns": 4,
+  "rows": 27,
+  "animations": [
+    {
+      "id": "walk_down",
+      "file": "walk_down-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        0,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          10,
+          16,
+          73,
+          137
+        ],
+        [
+          92,
+          17,
+          154,
+          137
+        ],
+        [
+          174,
+          17,
+          235,
+          137
+        ],
+        [
+          257,
+          17,
+          320,
+          137
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "walk_up",
+      "file": "walk_up-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        48,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          12,
+          154,
+          71,
+          277
+        ],
+        [
+          93,
+          154,
+          152,
+          277
+        ],
+        [
+          175,
+          154,
+          235,
+          277
+        ],
+        [
+          258,
+          154,
+          318,
+          277
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "walk_left",
+      "file": "walk_left-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        96,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          8,
+          296,
+          75,
+          421
+        ],
+        [
+          89,
+          299,
+          157,
+          421
+        ],
+        [
+          170,
+          296,
+          236,
+          421
+        ],
+        [
+          253,
+          299,
+          336,
+          421
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "walk_right",
+      "file": "walk_right-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        144,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          8,
+          437,
+          75,
+          561
+        ],
+        [
+          89,
+          442,
+          155,
+          561
+        ],
+        [
+          170,
+          437,
+          238,
+          561
+        ],
+        [
+          252,
+          437,
+          336,
+          561
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_down",
+      "file": "idle_down-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        192,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          11,
+          580,
+          75,
+          701
+        ],
+        [
+          93,
+          580,
+          156,
+          701
+        ],
+        [
+          175,
+          580,
+          237,
+          701
+        ],
+        [
+          257,
+          580,
+          336,
+          701
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_up",
+      "file": "idle_up-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        240,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          12,
+          720,
+          71,
+          844
+        ],
+        [
+          93,
+          720,
+          153,
+          844
+        ],
+        [
+          176,
+          720,
+          235,
+          844
+        ],
+        [
+          258,
+          720,
+          336,
+          844
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_left",
+      "file": "idle_left-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        288,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          8,
+          863,
+          75,
+          987
+        ],
+        [
+          89,
+          863,
+          156,
+          987
+        ],
+        [
+          170,
+          863,
+          237,
+          987
+        ],
+        [
+          252,
+          863,
+          336,
+          987
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "idle_right",
+      "file": "idle_right-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        336,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          8,
+          1005,
+          75,
+          1129
+        ],
+        [
+          91,
+          1005,
+          157,
+          1129
+        ],
+        [
+          168,
+          1005,
+          238,
+          1129
+        ],
+        [
+          253,
+          1005,
+          336,
+          1129
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "wave",
+      "file": "wave-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        384,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          7,
+          1148,
+          76,
+          1272
+        ],
+        [
+          87,
+          1149,
+          168,
+          1272
+        ],
+        [
+          168,
+          1149,
+          252,
+          1272
+        ],
+        [
+          252,
+          1149,
+          326,
+          1272
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "laugh",
+      "file": "laugh-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        432,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          14,
+          420,
+          137
+        ],
+        [
+          420,
+          14,
+          504,
+          137
+        ],
+        [
+          504,
+          15,
+          588,
+          137
+        ],
+        [
+          588,
+          16,
+          672,
+          137
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "dance",
+      "file": "dance-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        480,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          337,
+          157,
+          420,
+          277
+        ],
+        [
+          420,
+          157,
+          504,
+          277
+        ],
+        [
+          504,
+          157,
+          588,
+          277
+        ],
+        [
+          588,
+          157,
+          672,
+          278
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "clap",
+      "file": "clap-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        528,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          308,
+          420,
+          421
+        ],
+        [
+          420,
+          311,
+          504,
+          421
+        ],
+        [
+          504,
+          311,
+          588,
+          421
+        ],
+        [
+          588,
+          311,
+          672,
+          421
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "cheer",
+      "file": "cheer-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        576,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          456,
+          420,
+          561
+        ],
+        [
+          420,
+          456,
+          504,
+          561
+        ],
+        [
+          504,
+          457,
+          588,
+          561
+        ],
+        [
+          588,
+          458,
+          672,
+          561
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "sit",
+      "file": "sit-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        624,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          584,
+          420,
+          703
+        ],
+        [
+          420,
+          591,
+          504,
+          702
+        ],
+        [
+          504,
+          593,
+          588,
+          702
+        ],
+        [
+          588,
+          593,
+          672,
+          701
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "sleep",
+      "file": "sleep-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        672,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          791,
+          420,
+          843
+        ],
+        [
+          420,
+          791,
+          504,
+          843
+        ],
+        [
+          504,
+          791,
+          588,
+          843
+        ],
+        [
+          588,
+          739,
+          672,
+          843
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "give_gift",
+      "file": "give_gift-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        720,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          885,
+          420,
+          989
+        ],
+        [
+          420,
+          884,
+          504,
+          989
+        ],
+        [
+          504,
+          885,
+          588,
+          989
+        ],
+        [
+          588,
+          884,
+          672,
+          989
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "hold_item",
+      "file": "hold_item-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        768,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          336,
+          1031,
+          420,
+          1129
+        ],
+        [
+          420,
+          1032,
+          504,
+          1129
+        ],
+        [
+          504,
+          1031,
+          588,
+          1129
+        ],
+        [
+          588,
+          1034,
+          672,
+          1129
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "pet",
+      "file": "pet-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        816,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          337,
+          1149,
+          420,
+          1272
+        ],
+        [
+          420,
+          1158,
+          504,
+          1272
+        ],
+        [
+          504,
+          1170,
+          588,
+          1272
+        ],
+        [
+          588,
+          1178,
+          672,
+          1272
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "feed",
+      "file": "feed-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        864,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          17,
+          756,
+          137
+        ],
+        [
+          756,
+          27,
+          840,
+          136
+        ],
+        [
+          840,
+          39,
+          924,
+          136
+        ],
+        [
+          924,
+          51,
+          990,
+          136
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "play",
+      "file": "play-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        912,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          168,
+          756,
+          278
+        ],
+        [
+          756,
+          172,
+          840,
+          278
+        ],
+        [
+          840,
+          182,
+          924,
+          278
+        ],
+        [
+          924,
+          193,
+          985,
+          276
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "refill_water",
+      "file": "refill_water-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        960,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          299,
+          756,
+          421
+        ],
+        [
+          756,
+          306,
+          840,
+          421
+        ],
+        [
+          840,
+          322,
+          924,
+          421
+        ],
+        [
+          924,
+          334,
+          991,
+          421
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "clean",
+      "file": "clean-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1008,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          446,
+          756,
+          561
+        ],
+        [
+          756,
+          459,
+          840,
+          561
+        ],
+        [
+          840,
+          474,
+          924,
+          561
+        ],
+        [
+          924,
+          478,
+          990,
+          561
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "carry_supplies",
+      "file": "carry_supplies-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1056,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          581,
+          756,
+          703
+        ],
+        [
+          756,
+          584,
+          840,
+          703
+        ],
+        [
+          840,
+          586,
+          924,
+          703
+        ],
+        [
+          924,
+          589,
+          989,
+          703
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "pick_up_furniture",
+      "file": "pick_up_furniture-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1104,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          731,
+          756,
+          844
+        ],
+        [
+          756,
+          743,
+          840,
+          844
+        ],
+        [
+          840,
+          744,
+          924,
+          844
+        ],
+        [
+          924,
+          736,
+          982,
+          844
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "move_object",
+      "file": "move_object-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1152,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          874,
+          756,
+          989
+        ],
+        [
+          756,
+          876,
+          840,
+          989
+        ],
+        [
+          840,
+          875,
+          924,
+          989
+        ],
+        [
+          924,
+          874,
+          985,
+          987
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "place_object",
+      "file": "place_object-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1200,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          1025,
+          756,
+          1129
+        ],
+        [
+          756,
+          1034,
+          840,
+          1129
+        ],
+        [
+          840,
+          1045,
+          924,
+          1129
+        ],
+        [
+          924,
+          1048,
+          991,
+          1129
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    },
+    {
+      "id": "inspect_furniture",
+      "file": "inspect_furniture-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 7,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "atlasRect": [
+        0,
+        1248,
+        128,
+        48
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          672,
+          1178,
+          756,
+          1272
+        ],
+        [
+          756,
+          1180,
+          840,
+          1272
+        ],
+        [
+          840,
+          1188,
+          924,
+          1272
+        ],
+        [
+          924,
+          1191,
+          984,
+          1272
+        ]
+      ],
+      "loopReview": "not playback-certified",
+      "productionReady": false
+    }
+  ],
+  "generationMode": "built-in image_gen",
+  "source": "assets/character-colors-v1/blonde-rescuer-source.png",
+  "prompt": "assets/character-colors-v1/generation-prompts.json",
+  "palette": [
+    "#fae8ce",
+    "#321b1f",
+    "#442628",
+    "#6a9039",
+    "#8e5641",
+    "#297f80",
+    "#4f9694",
+    "#df9850",
+    "#c2c04b",
+    "#bda193",
+    "#7d6764",
+    "#d79770",
+    "#ebb272",
+    "#605053",
+    "#47363b",
+    "#5b383a",
+    "#5e565a",
+    "#dca68a",
+    "#f0c38b",
+    "#c48358",
+    "#d38553",
+    "#c28864",
+    "#e68667",
+    "#c86856",
+    "#e2725a",
+    "#ad9085",
+    "#b79a8a",
+    "#512e2e",
+    "#5b402f",
+    "#81605a",
+    "#b76954",
+    "#87998c",
+    "#8fa99e",
+    "#73953a",
+    "#7e9f39",
+    "#442c2e",
+    "#3d3d2b",
+    "#2b8081",
+    "#5b8580",
+    "#ddbb9d",
+    "#eaceb3",
+    "#838c5d",
+    "#8cab42",
+    "#578448",
+    "#6d9340",
+    "#bb6246",
+    "#d06644",
+    "#416d3d",
+    "#55643e",
+    "#fae0b0",
+    "#fae3c0",
+    "#a65a3d",
+    "#a95e4c",
+    "#b1a89a",
+    "#b2b6ad",
+    "#86706c",
+    "#8b7775",
+    "#4c6b6c",
+    "#655f61",
+    "#7b4134",
+    "#7e4641",
+    "#51474c",
+    "#575556",
+    "#fff1bf",
+    "#f2d17c",
+    "#d9ab52",
+    "#ab7936",
+    "#6d492b"
+  ],
+  "notes": [
+    "Hair-color variant of the glasses rescuer; same action layout.",
+    "Nearest-neighbor native export with binary alpha. No automated checks or playback review.",
+    "Generated edits can have small pose/pixel differences; fine animation polish is not certified."
+  ]
+}

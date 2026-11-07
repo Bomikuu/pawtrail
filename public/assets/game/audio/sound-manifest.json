@@ -1,0 +1,425 @@
+{
+  "status": "audio files pending; no audio-generation tool available",
+  "assets": [
+    {
+      "id": "indoor-room",
+      "category": "ambience",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/ambience/indoor-room.ogg",
+      "loop": true,
+      "suggestedDurationSeconds": [
+        10,
+        30
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "outdoor-neighborhood",
+      "category": "ambience",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/ambience/outdoor-neighborhood.ogg",
+      "loop": true,
+      "suggestedDurationSeconds": [
+        10,
+        30
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "birds",
+      "category": "ambience",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/ambience/birds.ogg",
+      "loop": true,
+      "suggestedDurationSeconds": [
+        10,
+        30
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "wind",
+      "category": "ambience",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/ambience/wind.ogg",
+      "loop": true,
+      "suggestedDurationSeconds": [
+        10,
+        30
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "rain",
+      "category": "ambience",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/ambience/rain.ogg",
+      "loop": true,
+      "suggestedDurationSeconds": [
+        10,
+        30
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "night-crickets",
+      "category": "ambience",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/ambience/night-crickets.ogg",
+      "loop": true,
+      "suggestedDurationSeconds": [
+        10,
+        30
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "footsteps-wood",
+      "category": "interactions",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/interactions/footsteps-wood.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "footsteps-grass",
+      "category": "interactions",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/interactions/footsteps-grass.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "door-open",
+      "category": "interactions",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/interactions/door-open.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "door-close",
+      "category": "interactions",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/interactions/door-close.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "item-pickup",
+      "category": "interactions",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/interactions/item-pickup.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "furniture-place",
+      "category": "interactions",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/interactions/furniture-place.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "furniture-rotate",
+      "category": "interactions",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/interactions/furniture-rotate.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "cat-meow",
+      "category": "animals",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/animals/cat-meow.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "cat-purr",
+      "category": "animals",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/animals/cat-purr.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "cat-eating",
+      "category": "animals",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/animals/cat-eating.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "cat-drinking",
+      "category": "animals",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/animals/cat-drinking.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "dog-bark",
+      "category": "animals",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/animals/dog-bark.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "dog-pant",
+      "category": "animals",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/animals/dog-pant.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "animal-happy",
+      "category": "animals",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/animals/animal-happy.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "friend-join",
+      "category": "social",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/social/friend-join.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "friend-leave",
+      "category": "social",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/social/friend-leave.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "chat-notification",
+      "category": "social",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/social/chat-notification.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "invitation",
+      "category": "social",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/social/invitation.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "emote-activate",
+      "category": "social",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/social/emote-activate.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "gift-received",
+      "category": "social",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/social/gift-received.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "kibble-earned",
+      "category": "rewards",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/rewards/kibble-earned.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "quest-complete",
+      "category": "rewards",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/rewards/quest-complete.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "achievement-unlocked",
+      "category": "rewards",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/rewards/achievement-unlocked.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    },
+    {
+      "id": "furniture-purchased",
+      "category": "rewards",
+      "status": "pending-audio-generation",
+      "file": null,
+      "plannedFile": "/assets/game/audio/rewards/furniture-purchased.ogg",
+      "loop": false,
+      "suggestedDurationSeconds": [
+        0.1,
+        2
+      ],
+      "license": null,
+      "requirements": "Original or properly licensed; pleasant repeated playback, no clipping, matched loudness"
+    }
+  ]
+}
