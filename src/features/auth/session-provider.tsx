@@ -10,8 +10,15 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { getBrowserApi } from '@/lib/api/client'
 import { ApiError } from '@/lib/api/errors'
 import type { PawTrailApi } from '@/lib/api/contracts'
-import type { Actor, LoginInput, RegisterInput, Session } from './types'
+import type {
+  Actor,
+  GoogleLoginInput,
+  LoginInput,
+  RegisterInput,
+  Session,
+} from './types'
 import { sessionSchema } from './schemas'
+import { AnimalLoader } from '@/components/shared/animal-loader'
 export async function clearSessionCache(client: QueryClient) {
   await client.cancelQueries()
   client.clear()
@@ -31,6 +38,7 @@ interface SessionContext {
   session: Session
   pending: boolean
   login(input: LoginInput): Promise<Session>
+  loginWithGoogle(input: GoogleLoginInput): Promise<Session>
   register(input: RegisterInput): Promise<Session>
   selectDemoActor(id: string): Promise<Session>
   logout(): Promise<void>
@@ -94,6 +102,8 @@ export function SessionProvider({
           )
         },
         login: (input) => change(() => api.auth.login(input)),
+        loginWithGoogle: (input) =>
+          change(() => api.auth.loginWithGoogle(input)),
         register: (input) => change(() => api.auth.register(input)),
         selectDemoActor: (id) => {
           if (!session.demo)
@@ -121,7 +131,14 @@ export function SessionProvider({
       }}
     >
       <QueryClientProvider key={session.cacheScope} client={client}>
-        {pending && <p role="status">Updating your session…</p>}
+        {pending && (
+          <div
+            className="grid min-h-svh place-items-center bg-background p-6"
+            aria-busy="true"
+          >
+            <AnimalLoader label="Updating your session…" />
+          </div>
+        )}
         <div hidden={pending}>{children}</div>
       </QueryClientProvider>
     </Context.Provider>
