@@ -1,1 +1,1 @@
-export { PageLoading as default } from '@/components/layout/page-loading'
+export { CommunityPageSkeleton as default } from '@/features/community/feed-loading'

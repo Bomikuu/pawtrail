@@ -255,17 +255,23 @@ export function createCommunityService(
   PawTrailApi['community'],
   'list' | 'get' | 'create' | 'update' | 'remove' | 'setReaction' | 'setSaved'
 > {
-  const anonymous: DemoDraft = {
-    moderation: freshModeration(),
-    data: structuredClone(snapshot),
-    auth: { actorId: null, cacheScope: 'anonymous' },
-    media: [],
-    savedAnimals: [],
-    community: { follows: [], reactions: [], saved: [], attachments: [] },
+  let anonymous: DemoDraft | undefined
+  const read = <T>(query: (draft: DemoDraft) => T): Promise<T> => {
+    if (repository) return repository.read(query)
+    // Repository-backed sessions never consume this anonymous sample world.
+    if (!anonymous) {
+      anonymous = {
+        moderation: freshModeration(),
+        data: structuredClone(snapshot),
+        auth: { actorId: null, cacheScope: 'anonymous' },
+        media: [],
+        savedAnimals: [],
+        community: { follows: [], reactions: [], saved: [], attachments: [] },
+      }
+      applySamplePack(anonymous)
+    }
+    return Promise.resolve(query(anonymous))
   }
-  applySamplePack(anonymous)
-  const read = <T>(query: (draft: DemoDraft) => T) =>
-    repository ? repository.read(query) : Promise.resolve(query(anonymous))
   function writable() {
     if (getApiConfig().mode !== 'mock')
       throw new ApiError('DEMO_ONLY', 'Demo mode is required', 403)
