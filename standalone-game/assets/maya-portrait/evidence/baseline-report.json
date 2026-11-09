@@ -1,0 +1,244 @@
+{
+  "candidate": "procedural baseline — NOT approved Maya",
+  "calibration": {
+    "height": 27.5,
+    "target": [
+      0,
+      30.7,
+      0
+    ],
+    "position": [
+      0,
+      31.9375,
+      100
+    ],
+    "near": 0.1,
+    "far": 250,
+    "yaw": -0.42,
+    "headTilt": 0
+  },
+  "metrics": {
+    "iou": 0.8429647653362032,
+    "meanColorError": 70.83855068394865,
+    "landmarks": [
+      {
+        "id": "eyeLeft",
+        "label": "Left image eye",
+        "pixel": [
+          36.2,
+          38.5
+        ],
+        "node": "LM_Eye_ImageLeft",
+        "confidence": "clear",
+        "target": [
+          72.4,
+          77
+        ],
+        "actual": [
+          67.13592386948883,
+          81.20471241552733
+        ],
+        "error": 6.737217823783576
+      },
+      {
+        "id": "eyeRight",
+        "label": "Right image eye",
+        "pixel": [
+          52.7,
+          35.7
+        ],
+        "node": "LM_Eye_ImageRight",
+        "confidence": "clear",
+        "target": [
+          105.4,
+          71.4
+        ],
+        "actual": [
+          101.10673895166529,
+          81.39193127894121
+        ],
+        "error": 10.875237060047555
+      },
+      {
+        "id": "browLeft",
+        "label": "Left image brow",
+        "pixel": [
+          33.5,
+          32.8
+        ],
+        "node": "LM_Brow_ImageLeft",
+        "confidence": "partly occluded",
+        "target": [
+          67,
+          65.6
+        ],
+        "actual": [
+          66.86583878331743,
+          66.69143370590109
+        ],
+        "error": 1.0996484740310188
+      },
+      {
+        "id": "browRight",
+        "label": "Right image brow",
+        "pixel": [
+          54,
+          27.4
+        ],
+        "node": "LM_Brow_ImageRight",
+        "confidence": "clear",
+        "target": [
+          108,
+          54.8
+        ],
+        "actual": [
+          101.63141771460627,
+          66.88291685465276
+        ],
+        "error": 13.658540187087443
+      },
+      {
+        "id": "nose",
+        "label": "Painted nose",
+        "pixel": [
+          42.4,
+          43
+        ],
+        "node": "LM_Nose",
+        "confidence": "clear",
+        "target": [
+          84.8,
+          86
+        ],
+        "error": null
+      },
+      {
+        "id": "mouth",
+        "label": "Mouth center",
+        "pixel": [
+          46.5,
+          47.5
+        ],
+        "node": "LM_Mouth",
+        "confidence": "clear",
+        "target": [
+          93,
+          95
+        ],
+        "actual": [
+          83.60480619666991,
+          103.45667709062647
+        ],
+        "error": 12.640611299191928
+      },
+      {
+        "id": "chin",
+        "label": "Chin",
+        "pixel": [
+          46.5,
+          55.7
+        ],
+        "node": "LM_Chin",
+        "confidence": "clear",
+        "target": [
+          93,
+          111.4
+        ],
+        "actual": [
+          91.31439393947196,
+          126.14974473337924
+        ],
+        "error": 14.845748128374577
+      },
+      {
+        "id": "shoulderLeft",
+        "label": "Left image shoulder",
+        "pixel": [
+          25.5,
+          68
+        ],
+        "node": "LM_Shoulder_ImageLeft",
+        "confidence": "clear",
+        "target": [
+          51,
+          136
+        ],
+        "actual": [
+          47.00467454117475,
+          146.47607323294267
+        ],
+        "error": 11.21207990980777
+      },
+      {
+        "id": "shoulderRight",
+        "label": "Right image shoulder",
+        "pixel": [
+          72,
+          69.3
+        ],
+        "node": "LM_Shoulder_ImageRight",
+        "confidence": "clear",
+        "target": [
+          144,
+          138.6
+        ],
+        "actual": [
+          144.42737320085757,
+          147.01280246502876
+        ],
+        "error": 8.423650821847096
+      },
+      {
+        "id": "crown",
+        "label": "Hair crown",
+        "pixel": [
+          48,
+          4
+        ],
+        "node": "LM_HairCrown",
+        "confidence": "clear",
+        "target": [
+          96,
+          8
+        ],
+        "actual": [
+          99.7145049567379,
+          17.261095385254045
+        ],
+        "error": 9.978248083125823
+      },
+      {
+        "id": "bobLeft",
+        "label": "Left bob tip",
+        "pixel": [
+          21,
+          62
+        ],
+        "node": "LM_Bob_ImageLeft",
+        "confidence": "clear",
+        "target": [
+          42,
+          124
+        ],
+        "error": null
+      },
+      {
+        "id": "bobRight",
+        "label": "Right bob tip",
+        "pixel": [
+          75,
+          59
+        ],
+        "node": "LM_Bob_ImageRight",
+        "confidence": "clear",
+        "target": [
+          150,
+          118
+        ],
+        "error": null
+      }
+    ],
+    "meanLandmarkError": 11.04641666415822
+  },
+  "note": "Landmarks are projected actual UV/mesh anchors, not image-feature detections. Missing features are unavailable. No authored Maya asset is installed."
+}

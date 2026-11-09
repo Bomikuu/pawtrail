@@ -1,0 +1,52 @@
+{
+  "id": "amber-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "amber",
+  "characterName": "Amber",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "nativeMargin": [
+    4,
+    6
+  ],
+  "poses": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "budgetBytes": 300000,
+  "source": "output/imagegen/amber-refined-cel-v1",
+  "nativeSource": "output/imagegen/amber-refined-cel-v1/native",
+  "performanceFile": "output/imagegen/amber-refined-cel-v1/performance.json",
+  "postersOnly": true,
+  "holdClosedEyeBlinks": true,
+  "palette": [
+    "#2b2027",
+    "#503239",
+    "#76513f",
+    "#a17350",
+    "#cda47b",
+    "#a42532",
+    "#df3c37",
+    "#fa6b4b",
+    "#67283c",
+    "#f5e7cf",
+    "#fff9e8",
+    "#cbb69b",
+    "#91683d",
+    "#c69c50",
+    "#f4cf76",
+    "#c28367",
+    "#e9b391",
+    "#ffd3ab",
+    "#fff0d1",
+    "#d88b83",
+    "#a9572f",
+    "#ec973c",
+    "#ffce6d",
+    "#6c5261"
+  ]
+}

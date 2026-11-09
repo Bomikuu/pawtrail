@@ -1,0 +1,801 @@
+{
+  "version": 1,
+  "id": "studio-couch",
+  "revision": "3c956f8d9e83",
+  "reference": "/assets/game/housing/furniture/sofa-housing-v1.png",
+  "source": "src/game/furniture/couch.ts",
+  "definition": {
+    "id": "studio-couch",
+    "label": "Trail couch",
+    "model": "couch",
+    "reference": "/assets/game/housing/furniture/sofa-housing-v1.png",
+    "description": "Rounded sage sofa with two scalloped back cushions, paired floral pillows, rolled arms and timber feet.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "styles": [
+      {
+        "id": "sage",
+        "label": "Sage",
+        "fabric": "#898a4a",
+        "light": "#b1b771",
+        "shade": "#656238",
+        "pillow": "#f2e3c5",
+        "wood": "#ce9148"
+      },
+      {
+        "id": "terracotta",
+        "label": "Terracotta",
+        "fabric": "#bf7852",
+        "light": "#dfab78",
+        "shade": "#8f4b3a",
+        "pillow": "#f4e2bb",
+        "wood": "#805237"
+      },
+      {
+        "id": "oat",
+        "label": "Oat",
+        "fabric": "#d7c6a4",
+        "light": "#eee0bd",
+        "shade": "#a39170",
+        "pillow": "#a7ba7d",
+        "wood": "#805237"
+      }
+    ],
+    "price": 79,
+    "construction": {
+      "seconds": 60,
+      "materials": [
+        {
+          "id": "timber",
+          "label": "Timber",
+          "amount": 6,
+          "price": 3
+        },
+        {
+          "id": "fabric",
+          "label": "Fabric",
+          "amount": 4,
+          "price": 4
+        },
+        {
+          "id": "stuffing",
+          "label": "Cushion stuffing",
+          "amount": 2,
+          "price": 2
+        }
+      ]
+    },
+    "referenceFrame": {
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        51
+      ]
+    }
+  },
+  "item": {
+    "id": "studio-couch",
+    "label": "Trail couch",
+    "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-0.png",
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ],
+    "indicatorHeight": 45,
+    "footprint": [
+      20,
+      87,
+      56,
+      19
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          20,
+          87,
+          56,
+          19
+        ]
+      ],
+      "placement": [
+        [
+          20,
+          87,
+          56,
+          19
+        ]
+      ],
+      "approaches": [
+        [
+          48,
+          112
+        ]
+      ],
+      "seats": [
+        {
+          "id": "seat-1",
+          "point": [
+            39,
+            99
+          ],
+          "facing": "down",
+          "elevation": 3,
+          "exit": [
+            48,
+            112
+          ]
+        },
+        {
+          "id": "seat-2",
+          "point": [
+            57,
+            99
+          ],
+          "facing": "down",
+          "elevation": 3,
+          "exit": [
+            48,
+            112
+          ]
+        }
+      ],
+      "surfaces": [],
+      "occlusion": "base",
+      "actions": [
+        "sit",
+        "inspect"
+      ]
+    },
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "sit",
+    "price": 79,
+    "zones": [
+      "interior"
+    ],
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "defaultStyle": "sage",
+    "renderedViews": {
+      "0": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 45,
+        "footprint": [
+          20,
+          87,
+          56,
+          19
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              20,
+              87,
+              56,
+              19
+            ]
+          ],
+          "placement": [
+            [
+              20,
+              87,
+              56,
+              19
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              112
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                39,
+                99
+              ],
+              "facing": "down",
+              "elevation": 3,
+              "exit": [
+                48,
+                112
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                57,
+                99
+              ],
+              "facing": "down",
+              "elevation": 3,
+              "exit": [
+                48,
+                112
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "90": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 47,
+        "footprint": [
+          21,
+          86,
+          52,
+          20
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              21,
+              86,
+              52,
+              20
+            ]
+          ],
+          "placement": [
+            [
+              21,
+              86,
+              52,
+              20
+            ]
+          ],
+          "approaches": [
+            [
+              3,
+              96
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                40,
+                93
+              ],
+              "facing": "down",
+              "elevation": 3,
+              "exit": [
+                3,
+                96
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                40,
+                99
+              ],
+              "facing": "down",
+              "elevation": 2,
+              "exit": [
+                3,
+                96
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "180": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 46,
+        "footprint": [
+          20,
+          86,
+          56,
+          19
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              20,
+              86,
+              56,
+              19
+            ]
+          ],
+          "placement": [
+            [
+              20,
+              86,
+              56,
+              19
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              80
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                57,
+                93
+              ],
+              "facing": "down",
+              "elevation": 2,
+              "exit": [
+                48,
+                80
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                39,
+                93
+              ],
+              "facing": "down",
+              "elevation": 2,
+              "exit": [
+                48,
+                80
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "270": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 47,
+        "footprint": [
+          23,
+          86,
+          52,
+          20
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              23,
+              86,
+              52,
+              20
+            ]
+          ],
+          "placement": [
+            [
+              23,
+              86,
+              52,
+              20
+            ]
+          ],
+          "approaches": [
+            [
+              93,
+              96
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                56,
+                99
+              ],
+              "facing": "down",
+              "elevation": 2,
+              "exit": [
+                93,
+                96
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                56,
+                93
+              ],
+              "facing": "down",
+              "elevation": 3,
+              "exit": [
+                93,
+                96
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      }
+    },
+    "styles": [
+      {
+        "id": "sage",
+        "label": "Sage",
+        "color": "#898a4a",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/sage-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "terracotta",
+        "label": "Terracotta",
+        "color": "#bf7852",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/terracotta-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "oat",
+        "label": "Oat",
+        "color": "#d7c6a4",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/studio-couch/3c956f8d9e83/oat-270-front.png",
+            "motion": []
+          }
+        }
+      }
+    ],
+    "construction": {
+      "seconds": 60,
+      "materials": [
+        {
+          "id": "timber",
+          "label": "Timber",
+          "amount": 6,
+          "price": 3
+        },
+        {
+          "id": "fabric",
+          "label": "Fabric",
+          "amount": 4,
+          "price": 4
+        },
+        {
+          "id": "stuffing",
+          "label": "Cushion stuffing",
+          "amount": 2,
+          "price": 2
+        }
+      ]
+    }
+  },
+  "frame": {
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ]
+  },
+  "filter": "nearest",
+  "referenceStudy": {
+    "source": "/assets/game/housing/furniture/sofa-housing-v1.png",
+    "sha256": "f729133fb6df0563c4678ee43a58b8b30dd9284bf92708faa3b3feb6b7ebd43d",
+    "render": {
+      "projection": "orthographic",
+      "nativeFrame": [
+        96,
+        112
+      ],
+      "nativeAnchor": [
+        48,
+        96
+      ],
+      "cameraPosition": [
+        0,
+        34.5,
+        90
+      ],
+      "cameraTarget": [
+        0,
+        0,
+        0
+      ],
+      "frustum": [
+        -48,
+        48,
+        96,
+        -16,
+        0.1,
+        300
+      ],
+      "origin": "center floor pivot at source (32,51)",
+      "outputColorSpace": "srgb",
+      "toneMapping": "none",
+      "filter": "nearest",
+      "antialias": false,
+      "referenceFacing": 0,
+      "referencePhase": 0
+    },
+    "landmarks": {
+      "opaqueBounds": [
+        3,
+        13,
+        58,
+        47
+      ],
+      "back": [
+        8,
+        13,
+        48,
+        26
+      ],
+      "seat": [
+        13,
+        38,
+        38,
+        13
+      ],
+      "arms": [
+        [
+          3,
+          27,
+          10,
+          28
+        ],
+        [
+          51,
+          27,
+          10,
+          28
+        ]
+      ],
+      "pillows": {
+        "pillowLeft": [
+          [
+            11,
+            29
+          ],
+          [
+            15,
+            27
+          ],
+          [
+            20,
+            28
+          ],
+          [
+            22,
+            27
+          ],
+          [
+            25,
+            29
+          ],
+          [
+            26,
+            32
+          ],
+          [
+            26,
+            36
+          ],
+          [
+            24,
+            39
+          ],
+          [
+            22,
+            41
+          ],
+          [
+            15,
+            42
+          ],
+          [
+            12,
+            39
+          ],
+          [
+            11,
+            35
+          ],
+          [
+            9,
+            32
+          ]
+        ],
+        "pillowRight": [
+          [
+            39,
+            27
+          ],
+          [
+            43,
+            28
+          ],
+          [
+            48,
+            29
+          ],
+          [
+            51,
+            29
+          ],
+          [
+            53,
+            31
+          ],
+          [
+            52,
+            34
+          ],
+          [
+            51,
+            37
+          ],
+          [
+            51,
+            41
+          ],
+          [
+            48,
+            42
+          ],
+          [
+            42,
+            40
+          ],
+          [
+            39,
+            39
+          ],
+          [
+            37,
+            36
+          ],
+          [
+            37,
+            32
+          ]
+        ]
+      },
+      "skirt": [
+        12,
+        51,
+        40,
+        4
+      ],
+      "feet": [
+        [
+          8,
+          55,
+          5,
+          5
+        ],
+        [
+          51,
+          55,
+          5,
+          5
+        ]
+      ]
+    },
+    "normalizedLandmarks": {
+      "backTop": 0.203125,
+      "seatTop": 0.59375,
+      "seatFront": 0.75,
+      "skirtTop": 0.796875,
+      "floor": 0.9375
+    },
+    "approach": "Separate closed curved source-painted cushions, angled pillows, rolled arms, seat, skirt and feet. Hidden upholstery is an authored continuation of visible fabric."
+  },
+  "note": "Reference-guided authored geometry; explicit projected contacts and native foreground layers."
+}

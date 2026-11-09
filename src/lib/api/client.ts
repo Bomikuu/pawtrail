@@ -1,3 +1,4 @@
+import { createMedicalApi } from '@/features/medical/api'
 import { animalActivityPageSchema } from '@/features/animals/activity-schemas'
 import { z } from 'zod'
 import { pageSchema } from '@/lib/api/schemas'
@@ -102,6 +103,7 @@ export function createApiClient(
           options,
         ),
     },
+    medical: createMedicalApi(request),
     animals: {
       activity: (slug, query, options) =>
         request(
@@ -483,6 +485,7 @@ export function createApiClient(
         ),
     },
     discovery: {
+      communityStats: (options) => request('GET', '/discovery/community-stats', discovery.communityStatisticsSchema, undefined, undefined, options),
       searchAreas: (q, options) =>
         request(
           'GET',
@@ -732,6 +735,15 @@ export function createApiClient(
           fundraising.campaignDetailSchema,
           undefined,
           undefined,
+          options,
+        ),
+      pledge: (id, input, options) =>
+        request(
+          'POST',
+          `/fundraisers/${encodeURIComponent(id)}/pledges`,
+          fundraising.supportPledgeSchema,
+          undefined,
+          input,
           options,
         ),
       simulateDonation: (id, input, options) =>

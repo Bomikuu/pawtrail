@@ -1,0 +1,20 @@
+{
+  "mode": "built-in image_gen",
+  "purpose": "House design references; not runtime room maps or extracted sprite sheets",
+  "prompts": [
+    "assets/room-v1/layout-variants-prompts.json",
+    "assets/room-v1/layout-variants-stair-edit-prompt.json"
+  ],
+  "layouts": [
+    {
+      "name": "Connected cottage",
+      "file": "docs/images/pawtrail-home-room-reference-v2-connected-cottage.png",
+      "description": "Three connected rooms, central living hall, kitchen/pet-care wing, bedroom and attic staircase."
+    },
+    {
+      "name": "Two-storey companion home",
+      "file": "docs/images/pawtrail-home-room-reference-v3-two-storey.png",
+      "description": "Ground floor at left and upper floor at right, connected rooms, bedrooms, study, pet-care room and aligned rear stairwells."
+    }
+  ]
+}

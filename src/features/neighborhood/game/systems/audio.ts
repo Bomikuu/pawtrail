@@ -1,3 +1,5 @@
+import { ActionSoundVoice, type ActionSound } from './action-sounds'
+
 export type AudioPreferences = {
   master: number
   music: number
@@ -57,18 +59,28 @@ class AudioManager {
   private voices = 0
   private rain: { source: AudioBufferSourceNode; gain: GainNode } | null = null
   private loadingRain = false
-  async playSample(url: string, volume = .4, ambient = false, distance = 0) {
-    if (!this.context || this.context.state !== 'running' || this.voices >= 2) return
+  private actionVoices = new Set<ActionSoundVoice>()
+  createActionVoice(sound: ActionSound, cat = false) {
+    if (!this.context || this.context.state !== 'running' || !this.channels.effects || this.actionVoices.size >= 8) return
+    let voice: ActionSoundVoice
+    voice = new ActionSoundVoice(this.context, this.channels.effects, sound, cat, () => this.actionVoices.delete(voice))
+    this.actionVoices.add(voice)
+    return voice
+  }
+  async playSample(url: string, volume = .4, ambient = false, distance = 0, signal?: AbortSignal) {
+    if (signal?.aborted || !this.context || this.context.state !== 'running' || this.voices >= 2) return
     const ctx = this.context
     this.voices++
     try {
       if (!this.clips.has(url)) this.clips.set(url, fetch(url).then((r) => { if (!r.ok) throw new Error('Audio unavailable'); return r.arrayBuffer() }).then((data) => ctx.decodeAudioData(data)))
       const buffer = await this.clips.get(url)!
-      if (this.context !== ctx || ctx.state !== 'running') { this.voices=Math.max(0,this.voices-1);return }
+      if (signal?.aborted || this.context !== ctx || ctx.state !== 'running') { this.voices=Math.max(0,this.voices-1);return }
       const source = ctx.createBufferSource(), gain = ctx.createGain()
       source.buffer = buffer; gain.gain.value = volume * Math.max(0, 1-distance/300)
       source.connect(gain);gain.connect(this.channels[ambient ? 'ambient' : 'effects']!)
-      source.onended = () => { source.disconnect();gain.disconnect();this.voices=Math.max(0,this.voices-1) }
+      const cancel = () => { gain.gain.setTargetAtTime(0,ctx.currentTime,.02);try{source.stop(ctx.currentTime+.09)}catch{} }
+      source.onended = () => { signal?.removeEventListener('abort',cancel);source.disconnect();gain.disconnect();this.voices=Math.max(0,this.voices-1) }
+      signal?.addEventListener('abort',cancel,{once:true})
       source.start();return true
     } catch { this.clips.delete(url) }
     this.voices=Math.max(0,this.voices-1)
@@ -200,7 +212,12 @@ class AudioManager {
   }
   private schedule() {
     const ctx = this.context
-    if (!ctx || ctx.state !== 'running' || document.hidden) return
+    if (!ctx || ctx.state !== 'running') return
+    if (document.hidden) {
+      for (const voice of this.actionVoices) voice.stop(true)
+      return
+    }
+    for (const voice of this.actionVoices) voice.tick(ctx.currentTime)
     const night = this.phase === 'night',
       shelter = this.location === 'shelter',
       park = this.location === 'park' || this.location === 'garden'
@@ -333,6 +350,8 @@ class AudioManager {
     )
   }
   dispose() {
+    for (const voice of this.actionVoices) voice.stop(true)
+    this.actionVoices.clear()
     this.rain?.source.stop();this.rain=null;this.loadingRain=false;this.clips.clear();this.voices=0
     if (this.timer) clearInterval(this.timer)
     this.timer = null

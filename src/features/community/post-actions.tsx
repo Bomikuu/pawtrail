@@ -139,7 +139,7 @@ export function PostActions({
             {post.reactionCount}
           </ButtonLink>
         )}
-        {!post.id.startsWith('pending:') && (
+        {!post.id.startsWith('pending:') && post.moderation === 'published' && (
           <ButtonLink
             variant="ghost"
             href={'/community/' + encodeURIComponent(post.id) + '#discussion'}
@@ -171,7 +171,7 @@ export function PostActions({
             aria-label={post.viewerSaved ? 'Unsave post' : 'Save post'}
             title={post.viewerSaved ? 'Unsave post' : 'Save post'}
             aria-pressed={post.viewerSaved}
-            disabled={working}
+            disabled={working || post.moderation !== 'published'}
             onClick={() => void toggle('saved')}
           >
             <Bookmark

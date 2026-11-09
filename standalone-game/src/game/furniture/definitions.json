@@ -1,0 +1,220 @@
+{
+  "items": [
+    {
+      "id": "studio-couch",
+      "label": "Trail couch",
+      "model": "couch",
+      "reference": "/assets/game/housing/furniture/sofa-housing-v1.png",
+      "description": "Rounded sage sofa with two scalloped back cushions, paired floral pillows, rolled arms and timber feet.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "styles": [
+        {
+          "id": "sage",
+          "label": "Sage",
+          "fabric": "#898a4a",
+          "light": "#b1b771",
+          "shade": "#656238",
+          "pillow": "#f2e3c5",
+          "wood": "#ce9148"
+        },
+        {
+          "id": "terracotta",
+          "label": "Terracotta",
+          "fabric": "#bf7852",
+          "light": "#dfab78",
+          "shade": "#8f4b3a",
+          "pillow": "#f4e2bb",
+          "wood": "#805237"
+        },
+        {
+          "id": "oat",
+          "label": "Oat",
+          "fabric": "#d7c6a4",
+          "light": "#eee0bd",
+          "shade": "#a39170",
+          "pillow": "#a7ba7d",
+          "wood": "#805237"
+        }
+      ],
+      "price": 79,
+      "construction": {
+        "seconds": 60,
+        "materials": [
+          {
+            "id": "timber",
+            "label": "Timber",
+            "amount": 6,
+            "price": 3
+          },
+          {
+            "id": "fabric",
+            "label": "Fabric",
+            "amount": 4,
+            "price": 4
+          },
+          {
+            "id": "stuffing",
+            "label": "Cushion stuffing",
+            "amount": 2,
+            "price": 2
+          }
+        ]
+      },
+      "referenceFrame": {
+        "width": 64,
+        "height": 64,
+        "anchor": [
+          32,
+          55
+        ]
+      }
+    },
+    {
+      "id": "curtain-passage",
+      "label": "Curtained opening",
+      "model": "curtain",
+      "reference": "/assets/game/housing/tilesets/curtained-window-housing-v1.png",
+      "description": "Authored 3D curtain with four facings and native animated detail.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 32,
+        "height": 32,
+        "anchor": [
+          16,
+          32
+        ]
+      },
+      "styles": [
+        {
+          "id": "sage",
+          "label": "Cream linen",
+          "fabric": "#f2e3c5",
+          "light": "#fff0d1",
+          "shade": "#cfbf9c",
+          "pillow": "#f6e7bc",
+          "wood": "#985037"
+        },
+        {
+          "id": "terracotta",
+          "label": "Terracotta",
+          "fabric": "#b97353",
+          "light": "#f3d5a1",
+          "shade": "#98653d",
+          "pillow": "#f4e2bb",
+          "wood": "#8c572d"
+        },
+        {
+          "id": "oat",
+          "label": "Oat",
+          "fabric": "#d6c5a2",
+          "light": "#f3d5a1",
+          "shade": "#98653d",
+          "pillow": "#a7ba7d",
+          "wood": "#8c572d"
+        }
+      ],
+      "price": 55,
+      "construction": {
+        "seconds": 60,
+        "materials": [
+          {
+            "id": "timber",
+            "label": "Timber",
+            "amount": 6,
+            "price": 3
+          },
+          {
+            "id": "fabric",
+            "label": "Fabric",
+            "amount": 4,
+            "price": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "aquarium",
+      "label": "Little reef aquarium",
+      "model": "aquarium",
+      "reference": "/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+      "description": "Wide oak aquarium with reviewed side/rear panels, a planted teal tank and two animated fish.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 96,
+        "height": 64,
+        "anchor": [
+          48,
+          60
+        ]
+      },
+      "styles": [
+        {
+          "id": "sage",
+          "label": "Honey oak",
+          "fabric": "#ad591e",
+          "light": "#de8a2e",
+          "shade": "#713810",
+          "pillow": "#f6e7bc",
+          "wood": "#a34e18"
+        },
+        {
+          "id": "terracotta",
+          "label": "Walnut",
+          "fabric": "#965137",
+          "light": "#e2b258",
+          "shade": "#784324",
+          "pillow": "#f4e2bb",
+          "wood": "#92552b"
+        },
+        {
+          "id": "oat",
+          "label": "Pale oak",
+          "fabric": "#c2a474",
+          "light": "#e2b258",
+          "shade": "#784324",
+          "pillow": "#a7ba7d",
+          "wood": "#92552b"
+        }
+      ],
+      "price": 160,
+      "construction": {
+        "seconds": 90,
+        "materials": [
+          {
+            "id": "timber",
+            "label": "Timber",
+            "amount": 6,
+            "price": 3
+          },
+          {
+            "id": "glass",
+            "label": "Glass",
+            "amount": 4,
+            "price": 5
+          }
+        ]
+      }
+    }
+  ]
+}

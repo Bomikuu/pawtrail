@@ -1,0 +1,15 @@
+{
+  "purpose": "Illustrations for unavailable photos, never identity evidence",
+  "source": [
+    "cat-placeholder-v1.webp",
+    "dog-placeholder-v1.webp"
+  ],
+  "variants": [
+    "black",
+    "white",
+    "gray",
+    "brown",
+    "cream"
+  ],
+  "method": "Authorized color-region recoloring; facial features and alpha retained"
+}

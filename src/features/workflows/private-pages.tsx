@@ -18,7 +18,7 @@ import {
   NextPage,
   FilterForm,
 } from './catalog'
-import { privateApi, publicArea, queryValue, type SearchParams } from './server'
+import { privateApi, publicArea, queryValue, shelterOptions, type SearchParams } from './server'
 import { WorkflowForm, type Field } from './form'
 import { ActionButton } from './action-button'
 import { applicationFields, campaignFields, animalFields } from './fields'
@@ -192,7 +192,7 @@ export async function ProfilePage() {
         key={u.id}
         operation="profile"
         extra={{
-          location,
+          location: location ?? undefined,
           avatarId: u.avatar?.id ?? null,
           bannerId: u.bannerId,
         }}
@@ -256,6 +256,12 @@ export async function SettingsPage() {
             label: 'Show my attributed contributions and earned achievements',
             type: 'checkbox',
             value: s.showContributions,
+          },
+          {
+            name: 'publicAttendance',
+            label: 'Show my profile on future event RSVPs',
+            type: 'checkbox',
+            value: s.publicAttendance,
           },
         ]}
         submitLabel="Save privacy choices"
@@ -331,7 +337,7 @@ export async function AnimalEditPage({ slug }: { slug: string }) {
       label: 'Age in months',
       type: 'number',
       min: 0,
-      value: String(a.ageMonths),
+      value: a.ageMonths === null ? '' : String(a.ageMonths),
     },
     {
       name: 'size',
@@ -365,7 +371,7 @@ export async function AnimalEditPage({ slug }: { slug: string }) {
       type: 'select',
       options: [
         { value: '', label: 'Retain existing shelter' },
-        ...u.shelterIds.map((id) => ({ value: id, label: id })),
+        ...(await shelterOptions(api, u.shelterIds)),
       ],
       value: a.shelterId ?? '',
     },
@@ -374,6 +380,7 @@ export async function AnimalEditPage({ slug }: { slug: string }) {
     <>
       <PageHeading
         title={`Care for ${a.name}’s story`}
+        action={<ButtonLink href={`/dashboard/animals/${encodeURIComponent(a.slug)}/medical`} variant="outline">Medical records</ButtonLink>}
         description="Edits are private until reviewed. Existing attachments are retained unless you submit replacements."
       />
       <WorkflowForm
@@ -635,7 +642,10 @@ export async function ApplicationNewPage({
 }) {
   const p = await searchParams,
     id = queryValue(p.animalId) ?? queryValue(p.animal),
-    api = await privateApi('/adopt/applications/new' + (id ? `?animalId=${encodeURIComponent(id)}` : ''))
+    api = await privateApi(
+      '/adopt/applications/new' +
+        (id ? `?animalId=${encodeURIComponent(id)}` : ''),
+    )
   if (!id)
     return (
       <Empty href="/adopt" label="Meet adoptable animals">
@@ -835,7 +845,7 @@ export async function MyFundraisersPage({
     <>
       <PageHeading
         title="Your fundraising workspace"
-        description={`${php(dashboard.totalRaisedMinor)} in simulated support across ${dashboard.contributionCount} contributions. No money has moved.`}
+        description={`${php(dashboard.totalRaisedMinor)} in recorded funds across ${dashboard.contributionCount} support pledges. Pledges do not count as collected funds.`}
         action={
           <ButtonLink href="/fundraisers/create">Start a fundraiser</ButtonLink>
         }
@@ -900,6 +910,11 @@ export async function ManageCampaignPage({ id }: { id: string }) {
     ])
   if (!dashboard.campaigns.some((r) => r.id === f.id))
     return <Empty>This campaign is outside your workspace.</Empty>
+  const [animals, hordes, assignedShelters] = await Promise.all([
+    api.animals.list({ limit: 50 }),
+    api.hordes.list({ limit: 50 }),
+    shelterOptions(api, (await api.auth.session()).actor!.shelterIds),
+  ])
   const fields = campaignFields.map((fld) => ({
     ...fld,
     step: 0,
@@ -914,16 +929,20 @@ export async function ManageCampaignPage({ id }: { id: string }) {
   }))
   const preserved: Field[] = [
     ...fields,
-    { name: 'hordeId', label: 'Horde beneficiary ID', value: f.hordeId ?? '' },
+    { name: 'hordeId', label: 'Horde beneficiary', type: 'select', options: [{ value: '', label: 'No group beneficiary' }, ...hordes.items.map(h => ({ value: h.id, label: h.name }))], value: f.hordeId ?? '' },
     {
       name: 'animalId',
-      label: 'Animal beneficiary ID',
+      label: 'Animal beneficiary',
+      type: 'select',
+      options: [{ value: '', label: 'General animal welfare' }, ...animals.items.map(a => ({ value: a.id, label: a.name }))],
       value: f.animalId ?? '',
       help: 'Beneficiary and goal cannot change after publication or support.',
     },
     {
       name: 'shelterId',
-      label: 'Responsible shelter ID',
+      label: 'Responsible shelter',
+      type: 'select',
+      options: [{ value: '', label: 'Individual organizer' }, ...assignedShelters],
       value: f.shelterId ?? '',
     },
   ]
@@ -995,7 +1014,7 @@ export async function ManageCampaignPage({ id }: { id: string }) {
             />
             <h2>Close contributions</h2>
             <p>
-              Closing stops new simulated support and keeps the public financial
+              Closing stops new support pledges and keeps the public financial
               record.
             </p>
             <ActionButton action="close" id={f.id}>
@@ -1230,6 +1249,7 @@ export async function MyMissionsPage({
                 <WorkflowForm
                   operation="mission_evidence"
                   extra={{ id: p.id, version: p.version }}
+                  initialEvidence={p.evidence?.mediaIds ?? []}
                   fields={[
                     {
                       name: 'text',

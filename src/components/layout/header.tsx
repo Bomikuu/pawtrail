@@ -2,7 +2,14 @@
 import { NavigationLink as Link } from '@/components/layout/navigation-link'
 import { GlobalSearch } from '@/features/search/global-search'
 import { NotificationMenu } from '@/features/notifications/notification-menu'
-import { Bell, Cookie, Search, ChevronDown, ArrowUpRight } from 'lucide-react'
+import {
+  Bell,
+  Cookie,
+  Search,
+  ChevronDown,
+  ArrowUpRight,
+  Camera,
+} from 'lucide-react'
 import { CommunityAvatar } from '@/components/shared/community-avatar'
 import { ThemeToggle } from './theme-toggle'
 import { useState } from 'react'
@@ -84,7 +91,7 @@ export function Header({
           {readyRoutes.has('/search') ? (
             <Link
               className={
-                'mobile-search-link inline-flex size-11 shrink-0 items-center justify-center rounded-md hover:bg-accent md:hidden'
+                'mobile-search-link hidden size-11 sm:inline-flex shrink-0 items-center justify-center rounded-md hover:bg-accent md:hidden'
               }
               href="/search"
               aria-label="Search PawTrail"
@@ -160,6 +167,15 @@ export function Header({
               Open community <ArrowUpRight size={16} aria-hidden="true" />
             </ButtonLink>
           )}
+          <ButtonLink
+            href="/spot"
+            variant="outline"
+            className="h-11 max-sm:size-11 max-sm:p-0"
+            aria-label="Spot an animal with your camera"
+          >
+            <Camera size={18} aria-hidden="true" />
+            <span className="hidden lg:inline">Spot an animal</span>
+          </ButtonLink>
           <div
             className={
               'header-create shrink-0 [&_button]:h-11 [&_button>span]:hidden max-sm:[&_button]:size-11 max-sm:[&_button]:p-0 sm:[&_button>span]:inline'
@@ -167,7 +183,9 @@ export function Header({
           >
             <CreateMenu readyRoutes={readyRoutes} />
           </div>
-          <ThemeToggle />
+          <div className="hidden sm:block">
+            <ThemeToggle />
+          </div>
           {session.actor ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

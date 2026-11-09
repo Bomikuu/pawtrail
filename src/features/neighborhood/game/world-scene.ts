@@ -1,3 +1,24 @@
+import {enterAbilities,activateLocalAbility,cancelLocalAbility,movementProfile,activeAbility,isAbility} from './abilities/state';
+import {gameAppearance,headingVector} from './abilities/appearance';
+import {allowsMovingAction} from './actor-rig/action-layers';
+import { worldZoom, setWorldZoom } from "./runtime/camera";
+import { installMemeAnchors } from "./runtime/meme-anchor";
+import { CompanionRuntime } from "./companions/runtime";
+import { setVisibleLocalAnimals, companionPositions } from "./companions/store";
+import { InteractionController } from "./housing/interactions";
+import { patch as patchInteraction } from "./housing/client";
+import {
+  preloadActors,
+  registerActors,
+  playerTexture,
+  configurePlayer,
+  configureAnimal,
+  moveActor,
+  playPlayer,
+  playAnimal,
+  faceActor,
+} from "./runtime/actors";
+import { reactionEffect, reactionAnimation, reactionDuration, richReaction } from "./reactions";
 import Phaser from "phaser";
 import {
   applyCare,
@@ -20,6 +41,7 @@ import {
   cleanStation,
   stationWater,
   rest,
+  saveScenePhoto,
 } from "./store";
 import {
   ANIMALS,
@@ -29,7 +51,11 @@ import {
   type SceneId,
   type WorldObject,
 } from "./types";
-import { findPath } from "./pathfinding";
+import {
+  findPath,
+  registerWorldGeometry,
+  worldNavigation,
+} from "./pathfinding";
 import { memory, interactionAllowed } from "./systems/care";
 import { chooseBehavior, movementVector } from "./systems/behavior";
 import { dayPhase, lighting } from "./systems/time";
@@ -39,9 +65,9 @@ import { questState } from "./systems/quests";
 import { eligibleEncounter, encounterId } from "./platform";
 import { CHARACTER_OPTIONS, characterId, characterSheet } from "./characters";
 import characterCatalog from "./housing/catalog.json";
-import { PACK_ITEMS, FIND_SPOTS, worldConditions } from './immersion-data';
-import { Atmosphere, preloadAtmosphere } from './atmosphere';
-import { preloadCatFaces, catReaction } from './soundboard';
+import { PACK_ITEMS, FIND_SPOTS, worldConditions } from "./immersion-data";
+import { Atmosphere, preloadAtmosphere } from "./atmosphere";
+import { preloadCatFaces, catReaction } from "./soundboard";
 type Actor = Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
 type Animal = {
   object: WorldObject;
@@ -65,7 +91,7 @@ type WorldManifest = { sprites: Record<string, SpriteFrame> };
 type AnimationManifest = {
   sheets: Record<
     string,
-    { file: string; frameWidth: number; frameHeight: number }
+    { file: string; frameWidth: number; frameHeight: number; columns: number }
   >;
   animations: Record<
     string,
@@ -78,6 +104,8 @@ type AnimationManifest = {
   >;
 };
 export class WorldScene extends Phaser.Scene {
+  private companionRuntime?: CompanionRuntime;
+  private worldInteractions?: InteractionController;
   private player!: Actor;
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private keys!: Record<string, Phaser.Input.Keyboard.Key>;
@@ -90,6 +118,12 @@ export class WorldScene extends Phaser.Scene {
   }[] = [];
   private solids!: Phaser.Physics.Arcade.StaticGroup;
   private blocked = new Set<string>();
+  private geometryRects: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  }[] = [];
   private mapWidth = 64;
   private mapHeight = 44;
   private location: SceneId = "neighborhood";
@@ -97,7 +131,15 @@ export class WorldScene extends Phaser.Scene {
   private route: { x: number; y: number }[] = [];
   private facing: Direction = "down";
   private get playerAppearance() {
-    return characterId(gameStore.getSnapshot().progress.appearance);
+    return playerTexture(
+      characterId(gameStore.getSnapshot().progress.appearance),
+    );
+  }
+  private playerAction(action: string, repeat?: number) {
+    playPlayer(this, this.player, characterId(gameStore.getSnapshot().progress.appearance), action, repeat);
+  }
+  private animalAction(animal: Animal, action: string) {
+    playAnimal(this, animal.sprite, animal.object.sprite!, action);
   }
   private busyUntil = 0;
   private paused = false;
@@ -127,17 +169,49 @@ export class WorldScene extends Phaser.Scene {
     phase: string;
   }[] = [];
   private zoom = 2;
+  private reactionSprite?: Phaser.GameObjects.Sprite;
+  private reactionUntil = 0;
+  private lastReaction = -Infinity;
+  private takingScenePhoto = false;
   private reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
     .matches;
   constructor() {
     super("World");
   }
   preload() {
+    preloadActors(this);
+    for (const [id, effect] of Object.entries(characterCatalog.effects))
+      this.load.spritesheet("reaction:" + id, effect.file, {
+        frameWidth: 32,
+        frameHeight: 32,
+      });
     preloadAtmosphere(this);
     preloadCatFaces(this);
-    for (const id of ['normal','available','new','nearby']) this.load.image('mission-board-'+id, '/assets/game/missions/board/board-'+id+'.png');
-    for (const item of PACK_ITEMS) this.load.image('find:'+item.id, '/assets/game/inventory/items/'+item.id+'.png');
-    for (const id of ['bench','bush','bush-rustle','tree','mailbox','mailbox-open','bin','bin-open','covered-rest']) this.load.image('env:'+id, '/assets/game/environment/interactive/'+id+'.png');
+    for (const id of ["normal", "available", "new", "nearby"])
+      this.load.image(
+        "mission-board-" + id,
+        "/assets/game/missions/board/board-" + id + ".png",
+      );
+    for (const item of PACK_ITEMS)
+      this.load.image(
+        "find:" + item.id,
+        "/assets/game/inventory/items/" + item.id + ".png",
+      );
+    for (const id of [
+      "bench",
+      "bush",
+      "bush-rustle",
+      "tree",
+      "mailbox",
+      "mailbox-open",
+      "bin",
+      "bin-open",
+      "covered-rest",
+    ])
+      this.load.image(
+        "env:" + id,
+        "/assets/game/environment/interactive/" + id + ".png",
+      );
     publish({ phase: "loading", load: 0, error: "" });
     this.load.on("progress", (load: number) => publish({ load }));
     this.load.on("loaderror", (file: Phaser.Loader.File) =>
@@ -164,13 +238,6 @@ export class WorldScene extends Phaser.Scene {
         frameWidth: 32,
         frameHeight: id === "rescuer" ? 48 : 32,
       });
-    for (const { id } of CHARACTER_OPTIONS) {
-      if (id === "rescuer") continue;
-      this.load.spritesheet(id, characterSheet(id), {
-        frameWidth: 32,
-        frameHeight: 48,
-      });
-    }
     this.load.tilemapTiledJSON(
       "neighborhood",
       "/pawtrail-game/maps/neighborhood.json",
@@ -183,9 +250,17 @@ export class WorldScene extends Phaser.Scene {
     );
   }
   create(data: { location?: SceneId; entrance?: boolean } = {}) {
+    this.reactionSprite = undefined;
+    this.reactionUntil = 0;
+    this.lastReaction = -Infinity;
+    this.takingScenePhoto = false;
+    installMemeAnchors(this, id => id === 'me' ? this.player : undefined);
     try {
-      if (!data.location && new URLSearchParams(window.location.search).get('scene') === 'shelter')
-        data = { location: 'shelter', entrance: true };
+      if (
+        !data.location &&
+        new URLSearchParams(window.location.search).get("scene") === "shelter"
+      )
+        data = { location: "shelter", entrance: true };
       this.buildWorld(data);
     } catch (error) {
       publish({
@@ -210,6 +285,7 @@ export class WorldScene extends Phaser.Scene {
     this.lastArea = "";
     this.objects = [];
     this.blocked = new Set();
+    this.geometryRects = [];
     this.route = [];
     this.virtual = { x: 0, y: 0 };
     this.busyUntil = 0;
@@ -225,8 +301,22 @@ export class WorldScene extends Phaser.Scene {
     collision.setVisible(false).setCollisionByExclusion([-1]);
     this.mapWidth = map.width;
     this.mapHeight = map.height;
+    registerWorldGeometry(
+      this.blocked,
+      map.width * 32,
+      map.height * 32,
+      this.geometryRects,
+    );
     collision.forEachTile((t) => {
-      if (t.index >= 0) this.blocked.add(t.x + "," + t.y);
+      if (t.index >= 0) {
+        this.blocked.add(t.x + "," + t.y);
+        this.geometryRects.push({
+          x: t.x * 32,
+          y: t.y * 32,
+          width: 32,
+          height: 32,
+        });
+      }
     });
     const objectLayer = map.getObjectLayer("Objects")!;
     for (const raw of objectLayer.objects) {
@@ -247,18 +337,73 @@ export class WorldScene extends Phaser.Scene {
       this.objects.push(object);
       this.placeObject(object);
     }
-    const extra: WorldObject[]=[];
-    if(['neighborhood','shelter'].includes(this.location))extra.push({id:'immersion:board',kind:'station',x:(this.location==='shelter'?12:27)*32,y:(this.location==='shelter'?5:22)*32,label:'Community Board · E',asset:'mission-board-new'});
-    for(const find of FIND_SPOTS)if(find.scene===this.location)extra.push({id:'immersion-find:'+find.id,findId:find.item,kind:'pickup',x:find.x*32,y:find.y*32,label:'Pick up '+(PACK_ITEMS.find((i)=>i.id===find.item)?.name??'item'),asset:'find:'+find.item});
-    if(this.location==='neighborhood')for(const [name,x,y] of [['bush',24,26],['bench',30,28],['mailbox',32,24],['bin',35,24],['tree',23,27],['covered-rest',25,28]] as const)extra.push({id:'immersion-env:'+name,kind:'station',x:x*32,y:y*32,label:name==='bench'?'Sit on the bench':name==='mailbox'?'Community mailbox':'Inspect '+name,asset:'env:'+name});
-    for(const object of extra){
-      const cx=object.x/32,cy=object.y/32;
-      for(let radius=0;radius<5;radius++){
-        let found=false;
-        for(let dy=-radius;dy<=radius&&!found;dy++)for(let dx=-radius;dx<=radius&&!found;dx++)if(!this.blocked.has((cx+dx)+','+(cy+dy))&&!this.objects.some((o)=>Math.hypot(o.x-(cx+dx)*32,o.y-(cy+dy)*32)<28)){object.x=(cx+dx)*32;object.y=(cy+dy)*32;found=true;}
-        if(found)break;
+    const extra: WorldObject[] = [];
+    if (["neighborhood", "shelter"].includes(this.location))
+      extra.push({
+        id: "immersion:board",
+        kind: "station",
+        x: (this.location === "shelter" ? 12 : 27) * 32,
+        y: (this.location === "shelter" ? 5 : 22) * 32,
+        label: "Community Board · E",
+        asset: "mission-board-new",
+      });
+    for (const find of FIND_SPOTS)
+      if (find.scene === this.location)
+        extra.push({
+          id: "immersion-find:" + find.id,
+          findId: find.item,
+          kind: "pickup",
+          x: find.x * 32,
+          y: find.y * 32,
+          label:
+            "Pick up " +
+            (PACK_ITEMS.find((i) => i.id === find.item)?.name ?? "item"),
+          asset: "find:" + find.item,
+        });
+    if (this.location === "neighborhood")
+      for (const [name, x, y] of [
+        ["bush", 24, 26],
+        ["bench", 30, 28],
+        ["mailbox", 32, 24],
+        ["bin", 35, 24],
+        ["tree", 23, 27],
+        ["covered-rest", 25, 28],
+      ] as const)
+        extra.push({
+          id: "immersion-env:" + name,
+          kind: "station",
+          x: x * 32,
+          y: y * 32,
+          label:
+            name === "bench"
+              ? "Sit on the bench"
+              : name === "mailbox"
+                ? "Community mailbox"
+                : "Inspect " + name,
+          asset: "env:" + name,
+        });
+    for (const object of extra) {
+      const cx = object.x / 32,
+        cy = object.y / 32;
+      for (let radius = 0; radius < 5; radius++) {
+        let found = false;
+        for (let dy = -radius; dy <= radius && !found; dy++)
+          for (let dx = -radius; dx <= radius && !found; dx++)
+            if (
+              !this.blocked.has(cx + dx + "," + (cy + dy)) &&
+              !this.objects.some(
+                (o) =>
+                  Math.hypot(o.x - (cx + dx) * 32, o.y - (cy + dy) * 32) < 28,
+              )
+            ) {
+              object.x = (cx + dx) * 32;
+              object.y = (cy + dy) * 32;
+              found = true;
+            }
+        if (found) break;
       }
-      this.objects.push(object);this.placeObject(object);
+      this.objects.push(object);
+      this.placeObject(object);
     }
     const progress = gameStore.getSnapshot().progress;
     this.syncPlatformAnimals();
@@ -314,7 +459,12 @@ export class WorldScene extends Phaser.Scene {
       .sprite(spawn.x, spawn.y, this.playerAppearance, 0)
       .setOrigin(0.5, 1)
       .setDepth(spawn.y) as Actor;
-    this.player.body.setSize(12, 8).setOffset(10, 36);
+    configurePlayer(
+      this.player,
+      characterId(gameStore.getSnapshot().progress.appearance),
+    );
+    this.player.setData('actorLocalAudio', true);
+    this.data.set('actorAudioListener', this.player);
     this.player.setCollideWorldBounds(true);
     this.physics.world.setBounds(
       32,
@@ -341,6 +491,8 @@ export class WorldScene extends Phaser.Scene {
     this.input.on("pointerdown", (pointer: Phaser.Input.Pointer) => {
       if (this.paused || this.time.now < this.busyUntil) return;
       const world = this.cameras.main.getWorldPoint(pointer.x, pointer.y);
+      if (this.companionRuntime?.click(world)) return;
+      this.worldInteractions?.cancel();
       this.route = findPath(
         this.player,
         world,
@@ -361,7 +513,73 @@ export class WorldScene extends Phaser.Scene {
         savePosition(this.player.x, this.player.y, this.location);
     };
     window.addEventListener("blur", onBlur);
+    this.worldInteractions = new InteractionController({
+      now: () => this.time.now,
+      status: (interaction) => patchInteraction({ interaction }),
+      send: () => {},
+      path: (path) => {
+        this.route = path;
+      },
+      face: (point) => {
+        faceActor(this.player, point);
+        this.facing = this.direction(
+          point.x - this.player.x,
+          point.y - this.player.y,
+        );
+      },
+      pose: (name) => {
+        this.busyUntil = Infinity;
+        playPlayer(
+          this,
+          this.player,
+          characterId(gameStore.getSnapshot().progress.appearance),
+          name,
+        );
+      },
+      recover: () => {
+        this.busyUntil = 0;
+      },
+      message: (notice) => publish({ notice }),
+    });
+    setVisibleLocalAnimals(this.animals.map((a) => a.object.id));
+    this.companionRuntime = new CompanionRuntime(
+      this,
+      () => this.player,
+      () => worldNavigation(this.blocked),
+      () =>
+        new Map(this.animals.map((a) => ["local:" + a.object.id, a.sprite])),
+    );
+    this.companionRuntime.setRoom("story:" + this.location);
+    const locate = (event: Event) =>
+        this.companionRuntime?.locate((event as CustomEvent<string>).detail),
+      care = (event: Event) => {
+        const d = (
+          event as CustomEvent<{ id: string; action: "feed" | "water" | "pet" }>
+        ).detail;
+        if (this.worldInteractions)
+          this.companionRuntime?.care(d.id, d.action, this.worldInteractions);
+      };
+    const come = () => {
+      const q = worldNavigation(this.blocked)?.nearest({
+        x: this.player.x + 28,
+        y: this.player.y + 28,
+      });
+      if (q) this.companionRuntime?.click(q);
+    };
+    window.addEventListener("pawtrail:animal-come", come);
+    window.addEventListener("pawtrail:locate-animal", locate);
+    window.addEventListener("pawtrail:animal-care", care);
+    const leaveAbilities=enterAbilities('local');
+    const abilityEnded=(event:Event)=>{const id=(event as CustomEvent).detail?.id;if(this.player.getData('modelEmoteAction')===id){this.player.setData('modelEmoteUntil',0).setData('modelEmoteAction','');if(this.player.getData('modelAction')===id)this.player.setData('modelAction','idle_'+this.facing)}};
+    window.addEventListener('pawtrail:ability-ended',abilityEnded);
     const cleanup = () => {
+      leaveAbilities();window.removeEventListener('pawtrail:ability-ended',abilityEnded);
+      savePosition(this.player.x, this.player.y, this.location);
+      this.worldInteractions?.cancel();
+      this.companionRuntime?.destroy();
+      window.removeEventListener("pawtrail:animal-come", come);
+      window.removeEventListener("pawtrail:locate-animal", locate);
+      window.removeEventListener("pawtrail:animal-care", care);
       unsubscribe();
       window.removeEventListener("blur", onBlur);
       this.input.off("pointerdown");
@@ -378,9 +596,21 @@ export class WorldScene extends Phaser.Scene {
       this.physics.add.collider(npc.sprite, collision);
       this.physics.add.collider(npc.sprite, this.solids);
     }
-    this.atmosphere = new Atmosphere(this, map.widthInPixels, map.heightInPixels, [...this.objects.filter((o)=>o.sprite==='street_lamp').map((o)=>({x:o.x,y:o.y,kind:'lamp' as const})),...this.objects.filter((o)=>o.kind==='building').map((o)=>({x:o.x,y:o.y,kind:'window' as const}))]);
+    this.atmosphere = new Atmosphere(
+      this,
+      map.widthInPixels,
+      map.heightInPixels,
+      [
+        ...this.objects
+          .filter((o) => o.sprite === "street_lamp")
+          .map((o) => ({ x: o.x, y: o.y, kind: "lamp" as const })),
+        ...this.objects
+          .filter((o) => o.kind === "building")
+          .map((o) => ({ x: o.x, y: o.y, kind: "window" as const })),
+      ],
+    );
     this.refreshWorld();
-    this.zoom = this.scale.width < 720 ? 1 : 2;
+    this.zoom = worldZoom(this.scale.width);
     this.cameras.main
       .setBounds(0, 0, map.widthInPixels, map.heightInPixels)
       .setZoom(this.zoom)
@@ -397,7 +627,8 @@ export class WorldScene extends Phaser.Scene {
     if (!gameStore.getSnapshot().progress.started) {
       persistStarted();
       this.time.delayedCall(700, () => {
-        if (!gameStore.getSnapshot().platformAnimalRequest) talkNpc(this.location === 'shelter' ? 'lina' : 'maya');
+        if (!gameStore.getSnapshot().platformAnimalRequest)
+          talkNpc(this.location === "shelter" ? "lina" : "maya");
       });
     }
     publish({
@@ -413,22 +644,19 @@ export class WorldScene extends Phaser.Scene {
     this.cameras.main.setRoundPixels(true);
   }
   private registerFrames() {
-    for (const [id, definition] of Object.entries(characterCatalog.players)) {
-      if (id === "rescuer" || !this.textures.exists(id)) continue;
-      const rows: Record<string, number> = {
-        ...definition.rows,
-        pick_up: definition.rows.pick_up_furniture,
-      };
-      for (const [name, row] of Object.entries(rows)) {
-        const key = id + "/" + name;
-        if (this.anims.exists(key)) continue;
+    registerActors(this);
+    for (const [id, effect] of Object.entries(characterCatalog.effects)) {
+      const key = "reaction:" + id;
+      if (!this.anims.exists(key))
         this.anims.create({
           key,
-          frames: this.anims.generateFrameNumbers(id, { start: row * 4, end: row * 4 + 3 }),
-          frameRate: name.startsWith("idle") ? 4 : 7,
-          repeat: -1,
+          frames: this.anims.generateFrameNumbers(key, {
+            start: 0,
+            end: effect.frames - 1,
+          }),
+          frameRate: 7,
+          repeat: 1,
         });
-      }
     }
     const world = this.cache.json.get("worldManifest") as WorldManifest;
     for (const [path, frame] of Object.entries(world.sprites)) {
@@ -444,12 +672,13 @@ export class WorldScene extends Phaser.Scene {
     for (const [key, animation] of Object.entries(manifest.animations)) {
       if (!this.textures.exists(animation.sheet) || this.anims.exists(key))
         continue;
-      const h = manifest.sheets[animation.sheet].frameHeight;
+      const sheet = manifest.sheets[animation.sheet],
+        h = sheet.frameHeight;
       this.anims.create({
         key,
         frames: animation.frames.map((f) => ({
           key: animation.sheet,
-          frame: (f.y / h) * 6 + f.x / 32,
+          frame: (f.y / h) * sheet.columns + f.x / sheet.frameWidth,
         })),
         frameRate: animation.fps,
         repeat: -1,
@@ -457,26 +686,36 @@ export class WorldScene extends Phaser.Scene {
     }
   }
   private block(x: number, y: number, width: number, height: number) {
+    this.geometryRects.push({
+      x: x - width / 2,
+      y: y - height / 2,
+      width,
+      height,
+    });
     const zone = this.add.zone(x, y, width, height);
     this.physics.add.existing(zone, true);
     this.solids.add(zone);
     for (
       let ty = Math.floor((y - height / 2) / 32);
-      ty <= Math.floor((y + height / 2) / 32);
+      ty < Math.ceil((y + height / 2) / 32);
       ty++
     )
       for (
         let tx = Math.floor((x - width / 2) / 32);
-        tx <= Math.floor((x + width / 2) / 32);
+        tx < Math.ceil((x + width / 2) / 32);
         tx++
       )
         this.blocked.add(tx + "," + ty);
   }
   private placeObject(o: WorldObject) {
     if (o.asset) {
-      const image=this.add.image(o.x,o.y,o.asset).setOrigin(.5,1).setDepth(o.y);
-      this.objectImages.set(o.id,image);
-      if(o.kind!=='pickup') this.block(o.x,o.y-6,o.id==='immersion:board'?44:24,12);
+      const image = this.add
+        .image(o.x, o.y, o.asset)
+        .setOrigin(0.5, 1)
+        .setDepth(o.y);
+      this.objectImages.set(o.id, image);
+      if (o.kind !== "pickup")
+        this.block(o.x, o.y - 6, o.id === "immersion:board" ? 44 : 24, 12);
       return;
     }
     if (o.kind === "animal") {
@@ -489,7 +728,7 @@ export class WorldScene extends Phaser.Scene {
         .sprite(o.x, o.y, "rescuer")
         .setOrigin(0.5, 1)
         .setDepth(o.y) as Actor;
-      sprite.body.setSize(12, 8).setOffset(10, 36);
+      configurePlayer(sprite, o.id === "maya" || o.id === "jo" ? o.id : "lina");
       sprite.setImmovable(true);
       sprite.play("rescuer/idle_down");
       if (o.id !== "maya") sprite.setTint(0xe5efda);
@@ -507,7 +746,7 @@ export class WorldScene extends Phaser.Scene {
     if (o.kind === "exit") {
       this.add
         .text(o.x, o.y, "↓ Outside", {
-          fontFamily: "Nunito",
+          fontFamily: "Saira Condensed",
           fontSize: "12px",
           color: "#fae8ce",
           backgroundColor: "#442628",
@@ -557,7 +796,7 @@ export class WorldScene extends Phaser.Scene {
   private nameLabel(x: number, y: number, text: string) {
     return this.add
       .text(x, y, text, {
-        fontFamily: "Nunito",
+        fontFamily: "Saira Condensed",
         fontSize: "10px",
         fontStyle: "bold",
         color: "#fae8ce",
@@ -572,7 +811,7 @@ export class WorldScene extends Phaser.Scene {
       .sprite(object.x, object.y, object.sprite!)
       .setOrigin(0.5, 1)
       .setDepth(object.y) as Actor;
-    sprite.body.setSize(12, 8).setOffset(10, 21);
+    configureAnimal(sprite, object.sprite!);
     sprite.setCollideWorldBounds(true);
     sprite.play(object.sprite + "/idle");
     const label = this.nameLabel(object.x, object.y + 5, object.label);
@@ -601,8 +840,8 @@ export class WorldScene extends Phaser.Scene {
       .getSnapshot()
       .platformAnimals.filter(eligibleEncounter)
       .filter((animal) => {
-        const id = new URLSearchParams(window.location.search).get('shelterId');
-        return this.location !== 'shelter' || !id || animal.shelterId === id;
+        const id = new URLSearchParams(window.location.search).get("shelterId");
+        return this.location !== "shelter" || !id || animal.shelterId === id;
       })
       .slice(0, 12);
     for (const [index, animal] of animals.entries()) {
@@ -642,8 +881,9 @@ export class WorldScene extends Phaser.Scene {
         .sprite(point.x, point.y, animal.sprite)
         .setOrigin(0.5, 1)
         .setDepth(point.y) as Actor;
-      sprite.body.setSize(12, 8).setOffset(10, 21);
+      sprite.body.setSize(10, 6).setOffset(11, 26);
       sprite.setImmovable(true).play(animal.sprite + "/idle");
+      configureAnimal(sprite, animal.sprite);
       const label = this.nameLabel(
         point.x,
         point.y + 4,
@@ -661,16 +901,104 @@ export class WorldScene extends Phaser.Scene {
     publish({ nearby: null });
   }
   private command(command: GameCommand) {
-    if(command.type==='cat-sound') {
-      if(this.time.now<this.soundUntil)return;
-      this.soundUntil=this.time.now+3000;catReaction(this,this.player,command.emote);return;
+    if (command.type === "photo-scene") {
+      if (this.takingScenePhoto || !this.player?.scene) return;
+      this.takingScenePhoto = true;
+      this.game.renderer.snapshot((image) => {
+        this.takingScenePhoto = false;
+        if (!("src" in image)) {
+          publish({
+            notice: "This photo could not be taken. Please try again.",
+          });
+          return;
+        }
+        const canvas = document.createElement("canvas"),
+          divisor = Math.max(
+            1,
+            Math.ceil(image.width / 800),
+            Math.ceil(image.height / 600),
+          );
+        canvas.width = Math.max(1, Math.floor(image.width / divisor));
+        canvas.height = Math.max(1, Math.floor(image.height / divisor));
+        const context = canvas.getContext("2d");
+        if (!context) {
+          publish({ notice: "Photo export is unavailable in this browser." });
+          return;
+        }
+        context.imageSmoothingEnabled = false;
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        try {
+          saveScenePhoto(canvas.toDataURL("image/png"), this.location);
+          audio.effect("photo");
+        } catch {
+          publish({
+            notice: "This photo could not be saved. Please try again.",
+          });
+        }
+      });
+      return;
     }
-    if(command.type==='guide') {
-      if(!command.target){this.guideMarker?.destroy();this.guideMarker=undefined;return;}
-      const target=this.objects.find((o)=>o.id===command.target);
+    if (command.type === "emote") {
+      if (this.time.now - this.lastReaction < 2000 && !isAbility(command.emote)) return;
+      this.lastReaction = this.time.now;
+      const id = command.emote;
+      if(isAbility(id)){
+        if(this.worldInteractions?.locksMovement){publish({notice:'Finish the current interaction before using an ability.'});return}
+        if(!activateLocalAbility(id,gameAppearance(gameStore.getSnapshot().progress.appearance)))return;
+      }else cancelLocalAbility();
+      const effect =
+          reactionEffect(id) in characterCatalog.effects
+            ? reactionEffect(id)
+            : "happy";
+      if (!(effect in characterCatalog.effects)) return;
+      if (!richReaction(id)) {
+        if (!this.reactionSprite?.scene)
+          this.reactionSprite = this.add
+            .sprite(this.player.x, this.player.y - 52, "reaction:" + effect)
+            .setDepth(20000);
+        this.reactionSprite.setTexture("reaction:" + effect).setVisible(true);
+        if (this.reduced) this.reactionSprite.anims.stop();
+        else this.reactionSprite.play("reaction:" + effect, true);
+        this.reactionUntil = this.time.now + 1800;
+      } else {
+        this.reactionSprite?.setVisible(false);
+        this.reactionUntil = 0;
+      }
+      const name = reactionAnimation(id);
+      const mobile=allowsMovingAction(name);
+      this.player.setData('modelEmoteAction',name).setData('modelEmoteUntil',mobile?this.time.now+reactionDuration(id):0);
+      this.busyUntil = mobile ? 0 : this.time.now + reactionDuration(id);
+      if(!mobile)this.player.setVelocity(0, 0);
+      this.playerAction(name);
+      audio.effect("ui");
+      return;
+    }
+
+    if (command.type === "cat-sound") {
+      if (this.time.now < this.soundUntil) return;
+      this.soundUntil = this.time.now + 3000;
+      catReaction(this, this.player, command.emote);
+      return;
+    }
+    if (command.type === "guide") {
+      if (!command.target) {
+        this.guideMarker?.destroy();
+        this.guideMarker = undefined;
+        return;
+      }
+      const target = this.objects.find((o) => o.id === command.target);
       this.guideMarker?.destroy();
-      if(target)this.guideMarker=this.add.image(target.x,target.y-65,'items','paw_indicator_0').setDepth(20000).setData('noTint',true);
-      publish({notice:target?'A marker shows the location your volunteer shared.':'Visit the appropriate area and ask your volunteer for directions.'});return;
+      if (target)
+        this.guideMarker = this.add
+          .image(target.x, target.y - 65, "items", "paw_indicator_0")
+          .setDepth(20000)
+          .setData("noTint", true);
+      publish({
+        notice: target
+          ? "A marker shows the location your volunteer shared."
+          : "Visit the appropriate area and ask your volunteer for directions.",
+      });
+      return;
     }
     if (command.type === "platform-sync") {
       this.syncPlatformAnimals();
@@ -694,7 +1022,7 @@ export class WorldScene extends Phaser.Scene {
       return;
     }
     if (command.type === "zoom") {
-      this.zoom = Phaser.Math.Clamp(this.zoom + command.amount, 1, 3);
+      this.zoom = setWorldZoom(this.zoom + command.amount);
       this.cameras.main.setZoom(this.zoom);
       return;
     }
@@ -710,9 +1038,14 @@ export class WorldScene extends Phaser.Scene {
       return;
     }
     if (command.type === "appearance") {
+      cancelLocalAbility();
       this.player.anims.stop();
       this.player.setTexture(this.playerAppearance);
-      this.player.play(this.playerAppearance + "/idle_" + this.facing);
+      configurePlayer(
+        this.player,
+        characterId(gameStore.getSnapshot().progress.appearance),
+      );
+      this.playerAction("idle_" + this.facing);
       return;
     }
     if (command.type === "focus") {
@@ -727,29 +1060,76 @@ export class WorldScene extends Phaser.Scene {
     }
     if (this.paused || this.time.now < this.busyUntil) return;
     if (command.type === "care") {
-      this.care(command.action, command.id);
+      if (
+        ["feed", "water", "pet"].includes(command.action) &&
+        this.worldInteractions
+      )
+        this.companionRuntime?.care(
+          "local:" + command.id,
+          command.action as "feed" | "water" | "pet",
+          this.worldInteractions,
+        );
+      else this.care(command.action, command.id);
       return;
     }
     if (command.type === "interact") this.interact();
   }
   private interact() {
     const o = this.nearest;
-    if(o?.id==='immersion:board') {
-      this.route=[];this.player.setVelocity(0,0);emit({type:'interact',target:o.id});publish({panelRequest:'board'});void audio.playSample('/assets/game/audio/missions/board.wav');return;
+    if (o?.id === "immersion:board") {
+      this.route = [];
+      this.player.setVelocity(0, 0);
+      emit({ type: "interact", target: o.id });
+      publish({ panelRequest: "board" });
+      void audio.playSample("/assets/game/audio/missions/board.wav");
+      return;
     }
-    if(o?.id.startsWith('immersion-env:')) {
-      this.route=[];this.player.setVelocity(0,0);
-      const name=o.id.split(':')[1];
-      if(name==='bench'){this.player.play({key:this.playerAppearance+'/sit',repeat:0});this.busyUntil=this.time.now+2000;publish({notice:'A quiet moment on the neighborhood bench.'});}
-      else {
-        const item=name==='bush'?'fish-treats':name==='bin'?'recyclables':name==='mailbox'?'letter':name==='tree'?'rare-decoration':null;
-        if(item&&!collectFind(o.id,item))publish({notice:'You have already found the keepsake here. Enjoy a little quiet exploration.'});
-        if(!item)publish({notice:'A shaded, dry resting place for the neighborhood animals.'});
-        const image=this.objectImages.get(o.id);
-        if(image&&['bush','bin','mailbox'].includes(name))image.setTexture('env:'+name+(name==='bush'?'-rustle':'-open'));
-        if(image&&!this.reduced)this.tweens.add({targets:image,angle:3,yoyo:true,repeat:2,duration:80,onComplete:()=>image.setAngle(0)});
+    if (o?.id.startsWith("immersion-env:")) {
+      this.route = [];
+      this.player.setVelocity(0, 0);
+      const name = o.id.split(":")[1];
+      if (name === "bench") {
+        this.playerAction("sit", 0);
+        this.busyUntil = this.time.now + 2000;
+        publish({ notice: "A quiet moment on the neighborhood bench." });
+      } else {
+        const item =
+          name === "bush"
+            ? "fish-treats"
+            : name === "bin"
+              ? "recyclables"
+              : name === "mailbox"
+                ? "letter"
+                : name === "tree"
+                  ? "rare-decoration"
+                  : null;
+        if (item && !collectFind(o.id, item))
+          publish({
+            notice:
+              "You have already found the keepsake here. Enjoy a little quiet exploration.",
+          });
+        if (!item)
+          publish({
+            notice: "A shaded, dry resting place for the neighborhood animals.",
+          });
+        const image = this.objectImages.get(o.id);
+        if (image && ["bush", "bin", "mailbox"].includes(name))
+          image.setTexture(
+            "env:" + name + (name === "bush" ? "-rustle" : "-open"),
+          );
+        if (image && !this.reduced)
+          this.tweens.add({
+            targets: image,
+            angle: 3,
+            yoyo: true,
+            repeat: 2,
+            duration: 80,
+            onComplete: () => image.setAngle(0),
+          });
       }
-      emit({type:'interact',target:o.id});void audio.playSample('/assets/game/audio/inventory/rustle.wav');return;
+      emit({ type: "interact", target: o.id });
+      void audio.playSample("/assets/game/audio/inventory/rustle.wav");
+      return;
     }
     if (!o) {
       publish({
@@ -776,7 +1156,7 @@ export class WorldScene extends Phaser.Scene {
     }
     if (o.kind === "supplies") {
       collectSupplies(o.id);
-      this.player.play({ key: this.playerAppearance + "/pick_up", repeat: 0 });
+      this.playerAction("pick_up", 0);
       this.busyUntil = this.time.now + 750;
       return;
     }
@@ -811,7 +1191,24 @@ export class WorldScene extends Phaser.Scene {
       return;
     }
     if (o.kind === "pickup") {
-      if(o.findId){collectFind(o.id,o.findId);const sparkle=this.add.image(o.x,o.y-15,'pickup-sparkle').setDepth(20000);this.tweens.add({targets:sparkle,y:sparkle.y-18,alpha:0,duration:500,onComplete:()=>sparkle.destroy()});this.player.play({key:this.playerAppearance+'/pick_up',repeat:0});this.busyUntil=this.time.now+650;void audio.playSample('/assets/game/audio/inventory/pickup.wav');this.refreshWorld();return;}
+      if (o.findId) {
+        collectFind(o.id, o.findId);
+        const sparkle = this.add
+          .image(o.x, o.y - 15, "pickup-sparkle")
+          .setDepth(20000);
+        this.tweens.add({
+          targets: sparkle,
+          y: sparkle.y - 18,
+          alpha: 0,
+          duration: 500,
+          onComplete: () => sparkle.destroy(),
+        });
+        this.playerAction("pick_up", 0);
+        this.busyUntil = this.time.now + 650;
+        void audio.playSample("/assets/game/audio/inventory/pickup.wav");
+        this.refreshWorld();
+        return;
+      }
       collectItem(o.id, o.item!, o.amount ?? 1);
       audio.effect("pickup");
       this.refreshWorld();
@@ -939,27 +1336,11 @@ export class WorldScene extends Phaser.Scene {
     animal.until = this.time.now + 2000;
     publish({ busy: true, notice: "Helping " + animal.object.label + "…" });
     this.busyUntil = this.time.now + 1100;
-    this.player.play({
-      key:
-        this.playerAppearance + "/" +
-        (action === "pet" || action === "play"
-          ? "pet"
-          : action === "rescue"
-            ? "pick_up"
-            : action === "observe" || action === "check"
-              ? "idle_down"
-              : "feed"),
-      repeat: 0,
-    });
-    animal.sprite.play(
-      animal.object.sprite +
-        "/" +
-        (action === "feed" || action === "water"
-          ? "eat"
-          : action === "pet"
-            ? "petted"
-            : "happy"),
-    );
+    faceActor(this.player, animal.sprite);
+    this.playerAction(action === "rescue" ? "pick_up" :
+      action === "observe" || action === "check" ? "inspect" : action, 0);
+    this.animalAction(animal, action === "feed" ? "eat" :
+      action === "water" ? "drink" : action === "pet" ? "pet" : "happy");
     this.time.delayedCall(1050, () => {
       publish({ busy: false });
       if (!applyCare(action, id)) return;
@@ -999,7 +1380,7 @@ export class WorldScene extends Phaser.Scene {
             duration: 250,
             onComplete: effect,
           });
-      } else animal.sprite.play(animal.object.sprite + "/happy");
+      } else this.animalAction(animal, "happy");
       this.rewardEffect(rewardPosition.x, rewardPosition.y);
     });
   }
@@ -1051,9 +1432,18 @@ export class WorldScene extends Phaser.Scene {
       gameStore.getSnapshot().phase !== "ready"
     )
       return;
+    if (document.querySelector("[role=dialog],[role=menu]")) {
+      this.player.setVelocity(0, 0);
+      return;
+    }
     this.cameras.main.setLerp(
       this.reduced ? 1 : 1 - Math.exp(-Math.min(delta, 100) / 140),
     );
+    this.companionRuntime?.step(time, delta);
+    this.worldInteractions?.step(time, this.player, this.route.length === 0);
+    const active=activeAbility();
+    const timed=String(this.player.getData('modelEmoteAction')??'');
+    if(isAbility(timed)&&active?.id!==timed){this.player.setData('modelEmoteUntil',0).setData('modelEmoteAction','');if(this.player.getData('modelAction')===timed)this.player.setData('modelAction','idle_'+this.facing)}
     const busy = time < this.busyUntil;
     this.clockAccumulator += Math.min(delta, 100);
     if (this.clockAccumulator >= 500) {
@@ -1069,21 +1459,40 @@ export class WorldScene extends Phaser.Scene {
       (this.cursors.down.isDown || this.keys.S.isDown ? 1 : 0) -
       (this.cursors.up.isDown || this.keys.W.isDown ? 1 : 0) +
       this.virtual.y;
-    if (busy) this.player.setVelocity(0, 0);
+    if (x || y) this.worldInteractions?.cancel();
+    if (busy && !this.worldInteractions?.active) this.player.setVelocity(0, 0);
+    else if (this.worldInteractions?.locksMovement)
+      this.player.setVelocity(0, 0);
     else {
-      if (x || y) {
-        this.route = [];
-        const length = Math.hypot(x, y);
-        const velocity = movementVector(x, y, this.keys.SHIFT.isDown);
-        this.player.setVelocity(velocity.x, velocity.y);
-      } else this.move(this.player, this.route, 105);
+      const motion=movementProfile(gameAppearance(gameStore.getSnapshot().progress.appearance),this.keys.SHIFT.isDown);
+      const input=motion.dash&&!x&&!y&&!this.route.length?headingVector(this.facing):{x,y};
+      moveActor(
+        this.player,
+        input,
+        this.route,
+        delta,
+        worldNavigation(this.blocked)??undefined,
+        this.keys.SHIFT.isDown,
+        motion.speed,
+      );
       const velocity = this.player.body.velocity;
       if (velocity.length() > 1) {
         this.facing = this.direction(velocity.x, velocity.y);
-        this.player.play(this.playerAppearance + "/walk_" + this.facing, true);
-      } else this.player.play(this.playerAppearance + "/idle_" + this.facing, true);
-      this.player.anims.timeScale = this.keys.SHIFT.isDown ? 1.4 : 1;
-      if(this.atmosphere?.raining&&time>this.nextSplash&&velocity.length()>1&&this.atmosphere.puddleLocations.some((p)=>Math.hypot(p.x-this.player.x,p.y-this.player.y)<28)){this.atmosphere.splash(this.player.x,this.player.y);this.nextSplash=time+300;}
+        this.playerAction((motion.running?"run_":"walk_") + this.facing);
+      } else
+        this.playerAction("idle_" + this.facing);
+      this.player.anims.timeScale = 1;
+      if (
+        this.atmosphere?.raining &&
+        time > this.nextSplash &&
+        velocity.length() > 1 &&
+        this.atmosphere.puddleLocations.some(
+          (p) => Math.hypot(p.x - this.player.x, p.y - this.player.y) < 28,
+        )
+      ) {
+        this.atmosphere.splash(this.player.x, this.player.y);
+        this.nextSplash = time + 300;
+      }
       if (
         Phaser.Input.Keyboard.JustDown(this.keys.E) ||
         (Phaser.Input.Keyboard.JustDown(this.keys.SPACE) &&
@@ -1101,7 +1510,21 @@ export class WorldScene extends Phaser.Scene {
             this.care(action, this.nearest.id);
     }
     this.player.setDepth(this.player.y);
-    for (const animal of this.animals) this.updateAnimal(animal, time);
+    if (this.reactionSprite?.scene)
+      this.reactionSprite
+        .setPosition(this.player.x, this.player.y - 52)
+        .setVisible(time < this.reactionUntil);
+    for (const animal of this.animals) {
+      companionPositions.set("local:" + animal.object.id, {
+        x: animal.sprite.x,
+        y: animal.sprite.y,
+      });
+      if (
+        animal.sprite.visible &&
+        !this.companionRuntime?.controls("local:" + animal.object.id)
+      )
+        this.updateAnimal(animal, time);
+    }
     if (time >= this.nextProximity) {
       this.nextProximity = time + 120;
       this.proximity();
@@ -1134,17 +1557,19 @@ export class WorldScene extends Phaser.Scene {
     if (a.state === "care" && time < a.until) return;
     if (a.state === "rest" && time < a.until) {
       a.sprite.setVelocity(0, 0);
-      a.sprite.play(a.object.sprite + "/sit", true);
+      this.animalAction(a, "sit");
       return;
     }
     if (
       profile.personality === "shy" &&
+      !movementProfile(gameAppearance(gameStore.getSnapshot().progress.appearance)).gentle &&
       trust < 20 &&
       distance < 70 &&
       this.player.body.velocity.length() > 120 &&
       a.state !== "avoid"
     )
       a.until = 0;
+    if(a.state==='avoid'&&movementProfile(gameAppearance(gameStore.getSnapshot().progress.appearance)).gentle&&distance>22)a.until=0;
     if (time >= a.until) {
       a.until = time + Phaser.Math.Between(2500, 5000);
       a.state = chooseBehavior(
@@ -1154,6 +1579,8 @@ export class WorldScene extends Phaser.Scene {
         distance,
         this.player.body.velocity.length() > 120,
         p.animals[a.object.id]?.lastCare.feed === p.day,
+        Math.random(),
+        movementProfile(gameAppearance(gameStore.getSnapshot().progress.appearance)).gentle,
       );
       let goal: { x: number; y: number } | null = null;
       if (["approach", "follow", "avoid"].includes(a.state)) {
@@ -1177,7 +1604,10 @@ export class WorldScene extends Phaser.Scene {
             y: a.home.y + Phaser.Math.Between(-30, 30),
           };
       }
-      if(this.atmosphere?.raining&&this.location==='neighborhood') { goal={x:17*32,y:23*32};a.state='wander'; }
+      if (this.atmosphere?.raining && this.location === "neighborhood") {
+        goal = { x: 17 * 32, y: 23 * 32 };
+        a.state = "wander";
+      }
       a.route = goal
         ? findPath(a.sprite, goal, this.mapWidth, this.mapHeight, this.blocked)
         : [];
@@ -1190,13 +1620,10 @@ export class WorldScene extends Phaser.Scene {
         a.sprite.body.velocity.x,
         a.sprite.body.velocity.y,
       );
-      a.sprite.play(a.object.sprite + "/walk_" + a.facing, true);
+      this.animalAction(a, "walk_" + a.facing);
     } else {
       a.sprite.setVelocity(0, 0);
-      a.sprite.play(
-        a.object.sprite + "/" + (a.state === "sleep" ? "sleep" : "idle"),
-        true,
-      );
+      this.animalAction(a, a.state === "sleep" ? "sleep" : "idle");
     }
     a.sprite.setDepth(a.sprite.y);
     a.label
@@ -1240,7 +1667,7 @@ export class WorldScene extends Phaser.Scene {
         image.setVisible(!p.completed.includes("pickup:" + o.id));
       if (o.kind === "portal") {
         const open = !o.requires || p.unlocks.includes(o.requires);
-        image.setData('baseTint',open?0xffffff:0x9b978b);
+        image.setData("baseTint", open ? 0xffffff : 0x9b978b);
         if (open) image.clearTint();
         else image.setTint(0x9b978b);
         if (o.sprite === "fence_gate")
@@ -1284,11 +1711,34 @@ export class WorldScene extends Phaser.Scene {
   private updateWorld(time: number, delta: number) {
     const p = gameStore.getSnapshot().progress,
       phase = dayPhase(p.minute),
-      condition = worldConditions(p.day*1440+p.minute);
-    this.atmosphere?.step(time,delta,condition,this.location==='shelter');
-    const board=this.objectImages.get('immersion:board');
-    if(board)board.setTexture('mission-board-'+(this.nearest?.id==='immersion:board'?'nearby':p.completed.includes('event:interact:immersion:board')?(QUESTS.some((q)=>['available','active','completed'].includes(questState(p,q)))?'available':'normal'):'new'));
-    for(const object of this.objects){const image=this.objectImages.get(object.id);if(image&&object.kind==='pickup'&&object.findId&&image.visible)image.y=object.y+(this.reduced?0:Math.sin(time/550+object.x)*1.5);if(image&&object.asset==='env:tree'&&!this.reduced)image.setAngle(condition.weather.includes('rain')?Math.sin(time/1800):0);}
+      condition = worldConditions(p.day * 1440 + p.minute);
+    this.atmosphere?.step(time, delta, condition, this.location === "shelter");
+    const board = this.objectImages.get("immersion:board");
+    if (board)
+      board.setTexture(
+        "mission-board-" +
+          (this.nearest?.id === "immersion:board"
+            ? "nearby"
+            : p.completed.includes("event:interact:immersion:board")
+              ? QUESTS.some((q) =>
+                  ["available", "active", "completed"].includes(
+                    questState(p, q),
+                  ),
+                )
+                ? "available"
+                : "normal"
+              : "new"),
+      );
+    for (const object of this.objects) {
+      const image = this.objectImages.get(object.id);
+      if (image && object.kind === "pickup" && object.findId && image.visible)
+        image.y =
+          object.y + (this.reduced ? 0 : Math.sin(time / 550 + object.x) * 1.5);
+      if (image && object.asset === "env:tree" && !this.reduced)
+        image.setAngle(
+          condition.weather.includes("rain") ? Math.sin(time / 1800) : 0,
+        );
+    }
     this.lamps.forEach((l) =>
       l.setAlpha(
         phase === "night" || phase === "evening"
@@ -1320,8 +1770,9 @@ export class WorldScene extends Phaser.Scene {
       this.location === "riverside" || area === "park" || area === "pavilion",
     );
     if (this.player.body.velocity.length() > 5 && time > this.nextStep) {
-      this.nextStep = time + (this.keys.SHIFT.isDown ? 210 : 320);
-      audio.effect(area === "park" ? "step-grass" : "step-path");
+      const motion=movementProfile(gameAppearance(gameStore.getSnapshot().progress.appearance),this.keys.SHIFT.isDown);
+      this.nextStep=time+Math.max(90,Math.round(320*105/motion.speed));
+      if(!motion.gentle)audio.effect(area === "park" ? "step-grass" : "step-path");
     }
     if (time > this.nextVoice) {
       this.nextVoice = time + 12000 + Math.random() * 15000;
@@ -1342,7 +1793,7 @@ export class WorldScene extends Phaser.Scene {
         );
     }
     for (const npc of this.npcs) {
-      const routinePhase=phase+(this.atmosphere?.raining?':rain':'');
+      const routinePhase = phase + (this.atmosphere?.raining ? ":rain" : "");
       if (npc.phase !== routinePhase) {
         npc.phase = routinePhase;
         const offset =
@@ -1391,7 +1842,7 @@ export class WorldScene extends Phaser.Scene {
           animal.sprite.y,
         ) < 120,
       );
-    for (const a of this.animals)
+    for (const a of this.animals.filter((a) => a.sprite.visible))
       if (
         Phaser.Math.Distance.Between(
           this.player.x,
@@ -1404,12 +1855,14 @@ export class WorldScene extends Phaser.Scene {
         discover(a.object.id);
     const candidates = [
       ...this.objects.filter((o) => o.kind !== "prop" && o.kind !== "animal"),
-      ...this.animals.map((a) => ({
-        ...a.object,
-        x: a.sprite.x,
-        y: a.sprite.y,
-        state: a.state,
-      })),
+      ...this.animals
+        .filter((a) => a.sprite.visible)
+        .map((a) => ({
+          ...a.object,
+          x: a.sprite.x,
+          y: a.sprite.y,
+          state: a.state,
+        })),
       ...this.platformActors.map((a) => a.object),
     ];
     const closest =

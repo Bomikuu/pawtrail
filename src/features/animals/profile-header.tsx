@@ -20,8 +20,11 @@ export function PublicAnimalStory({
         <div>
           <h1>{animal.name}</h1>
           <p>
-            {animal.species} · {animal.ageMonths} months · {animal.gender} ·{' '}
-            {animal.size}
+            {animal.species} ·{' '}
+            {animal.ageMonths === null
+              ? 'Age not recorded'
+              : animal.ageMonths + ' months'}{' '}
+            · {animal.gender} · {animal.size}
           </p>
           <p>{animal.location.neighborhood} · approximate area</p>
         </div>

@@ -1,0 +1,8 @@
+{
+  "variant": "braided-rescuer",
+  "group": "social",
+  "rows": 9,
+  "cols": 4,
+  "prompt": "Use case: identity-preserve. Image1 EDITTARGET originalrescuer animation sheet; image2 exactNEWAPPEARANCE reference. Change ONLY person appearance ineverycell to young womanrescuer lightwarmtanskin longchestnutbraid creambuckethat ochrelongsleeveshirt forestgreenpants brownboots sagebackpack. Keep everyactionpose/prop/order4columns9rows exactlyfromimage1. DoNOT changebodyproportionsorhairstyle/clothesbetweenframes. Allclothes longpantsandhat ineverypose. Fixedbaseline. Fullbody includingfeet mustfit, generous40px transparentpadding atbottomandtopcanextendcanvasifneeded. Pixelartlogical32x48 cozy16bit crispclusters warmoutlinesupperleftlight. TRUEtransparent no glow, no text/grid/floor/newcharacters/background/isometric/blurring.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-f505dc52-8758-45b0-b859-a8a789806899.png"
+}

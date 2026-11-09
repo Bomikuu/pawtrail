@@ -73,7 +73,7 @@ export function AppShell({
         unreadCount={unreadCount ?? (unread.isError ? undefined : unread.data)}
         kibbleBalance={kibbleBalance ?? wallet.data?.balance}
       />
-      {session.demo && <DemoBanner />}
+      {session.demo && (pathname.startsWith('/spot') ? <div role="note" className="border-b bg-accent px-4 py-2 text-center text-xs md:ps-[15rem]">Real sightings workspace. The surrounding community uses sample data; its account and game rewards are separate.</div> : <DemoBanner />)}
       <div
         className={
           'app-columns min-w-0 p-3 pb-20 md:ms-[14rem] md:p-6' +

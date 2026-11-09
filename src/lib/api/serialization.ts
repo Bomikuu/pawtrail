@@ -1,5 +1,8 @@
 // Transform declared transport keys, keeping user-authored text and dictionary values intact.
 const fields = [
+  'eventDate', 'followUpDate', 'vaccineProduct', 'doseLabel', 'batchReference',
+  'providerName', 'clinicName', 'publicSummary', 'privateDetails', 'sourceLabel',
+  'changeReason', 'recordsCount', 'performedCount', 'plannedCount', 'nextFollowUp',
   'createdAt',
   'nextCursor',
   'displayName',

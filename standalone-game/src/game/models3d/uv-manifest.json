@@ -1,0 +1,317 @@
+{
+  "version": 2,
+  "width": 256,
+  "height": 128,
+  "tile": 16,
+  "parts": {
+    "head": 0,
+    "blink": 6,
+    "halfBlink": 12,
+    "torso": 18,
+    "arm": 24,
+    "leg": 30,
+    "hair": 36,
+    "foot": 42,
+    "tail": 48,
+    "ear": 54,
+    "bag": 60,
+    "hat": 66
+  },
+  "faces": ["right", "left", "top", "bottom", "front", "back"],
+  "aliases": {
+    "orange_tabby": "orange-tabby",
+    "black_cat": "black-cat",
+    "white_cat": "white-cat",
+    "gray-cat": "gray-tabby"
+  },
+  "roles": {
+    "hair": 1,
+    "outfit": 2,
+    "coat": 3
+  },
+  "entries": {
+    "rescuer": {
+      "file": "rescuer.png",
+      "mask": "rescuer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#654032",
+        "skin": "#e3a66c",
+        "outfit": "#8e5641",
+        "shirt": "#4f7475",
+        "pants": "#d79750",
+        "shoes": "#654032",
+        "style": "shorts"
+      },
+      "reference": "/pawtrail-game/game-assets/rescuer.png"
+    },
+    "jacket-rescuer": {
+      "file": "jacket-rescuer.png",
+      "mask": "jacket-rescuer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#362b26",
+        "skin": "#b77c54",
+        "outfit": "#3c5553",
+        "shirt": "#e4d7bc",
+        "pants": "#514439",
+        "shoes": "#4b332b",
+        "style": "jacket"
+      },
+      "reference": "/assets/game/characters/animations/jacket-rescuer/complete-v2.png"
+    },
+    "braided-rescuer": {
+      "file": "braided-rescuer.png",
+      "mask": "braided-rescuer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#674731",
+        "skin": "#dda46b",
+        "outfit": "#c18a47",
+        "shirt": "#dfb86c",
+        "pants": "#646343",
+        "shoes": "#6b4935",
+        "hat": "#eadabe",
+        "style": "hat"
+      },
+      "reference": "/assets/game/characters/animations/braided-rescuer/complete-v2.png"
+    },
+    "glasses-rescuer": {
+      "file": "glasses-rescuer.png",
+      "mask": "glasses-rescuer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#624035",
+        "skin": "#dfaa7f",
+        "outfit": "#73804c",
+        "shirt": "#eddfc4",
+        "pants": "#a36a47",
+        "shoes": "#674134",
+        "style": "glasses"
+      },
+      "reference": "/assets/game/characters/animations/glasses-rescuer/complete-v2.png"
+    },
+    "blonde-rescuer": {
+      "file": "blonde-rescuer.png",
+      "mask": "blonde-rescuer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#d6b16c",
+        "skin": "#e5b083",
+        "outfit": "#73804c",
+        "shirt": "#eddfc4",
+        "pants": "#a36a47",
+        "shoes": "#674134",
+        "style": "glasses"
+      },
+      "reference": "/assets/game/characters/animations/blonde-rescuer/complete-v2.png"
+    },
+    "violet-rescuer": {
+      "file": "violet-rescuer.png",
+      "mask": "violet-rescuer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#9469af",
+        "skin": "#dfaa7f",
+        "outfit": "#73804c",
+        "shirt": "#eddfc4",
+        "pants": "#a36a47",
+        "shoes": "#674134",
+        "style": "glasses"
+      },
+      "reference": "/assets/game/characters/animations/violet-rescuer/complete-v2.png"
+    },
+    "red-rescuer": {
+      "file": "red-rescuer.png",
+      "mask": "red-rescuer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#ad5c3b",
+        "skin": "#dfaa7f",
+        "outfit": "#73804c",
+        "shirt": "#eddfc4",
+        "pants": "#a36a47",
+        "shoes": "#674134",
+        "style": "glasses"
+      },
+      "reference": "/assets/game/characters/animations/red-rescuer/complete-v2.png"
+    },
+    "male-blonde-scout": {
+      "file": "male-blonde-scout.png",
+      "mask": "male-blonde-scout-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#d7af68",
+        "skin": "#dfad81",
+        "outfit": "#638c9b",
+        "shirt": "#eddfc4",
+        "pants": "#ac8b63",
+        "shoes": "#624535",
+        "style": "jacket"
+      },
+      "reference": "/assets/game/characters/animations/male-blonde-scout/complete-v2.png"
+    },
+    "male-violet-volunteer": {
+      "file": "male-violet-volunteer.png",
+      "mask": "male-violet-volunteer-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#67467f",
+        "skin": "#b57958",
+        "outfit": "#cb9b4c",
+        "shirt": "#d6aa61",
+        "pants": "#38465a",
+        "shoes": "#e1d2b5",
+        "style": "hoodie"
+      },
+      "reference": "/assets/game/characters/animations/male-violet-volunteer/complete-v2.png"
+    },
+    "male-red-gardener": {
+      "file": "male-red-gardener.png",
+      "mask": "male-red-gardener-roles.png",
+      "kind": "player",
+      "palette": {
+        "hair": "#a45136",
+        "skin": "#de9e75",
+        "outfit": "#617044",
+        "shirt": "#a96346",
+        "pants": "#617044",
+        "shoes": "#dbb788",
+        "style": "overalls"
+      },
+      "reference": "/assets/game/characters/animations/male-red-gardener/complete-v2.png"
+    },
+    "orange-tabby": {
+      "file": "orange-tabby.png",
+      "mask": "orange-tabby-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#dc9345",
+        "mark": "#9d5c30",
+        "cream": "#f5dfbb",
+        "eye": "#63452f",
+        "pattern": "tabby"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/orange-tabby/orange-tabby-housing-v2.png"
+    },
+    "black-cat": {
+      "file": "black-cat.png",
+      "mask": "black-cat-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#3b3332",
+        "mark": "#211d21",
+        "cream": "#52423b",
+        "eye": "#b39b55",
+        "pattern": "solid"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/black-cat/black-cat-housing-v2.png"
+    },
+    "white-cat": {
+      "file": "white-cat.png",
+      "mask": "white-cat-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#f2e6cf",
+        "mark": "#d1bfa7",
+        "cream": "#fff1da",
+        "eye": "#756f65",
+        "pattern": "solid"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/white-cat/white-cat-housing-v2.png"
+    },
+    "gray-tabby": {
+      "file": "gray-tabby.png",
+      "mask": "gray-tabby-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#88817c",
+        "mark": "#555254",
+        "cream": "#e4d5bd",
+        "eye": "#6d6251",
+        "pattern": "tabby"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/gray-tabby/gray-tabby-housing-v2.png"
+    },
+    "calico": {
+      "file": "calico.png",
+      "mask": "calico-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#eee0c6",
+        "mark": "#4b3830",
+        "cream": "#fff0d5",
+        "eye": "#62523b",
+        "patch": "#cd843f",
+        "pattern": "calico"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/calico/calico-housing-v2.png"
+    },
+    "tuxedo": {
+      "file": "tuxedo.png",
+      "mask": "tuxedo-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#383438",
+        "mark": "#26232b",
+        "cream": "#f2e4cc",
+        "eye": "#ad9c69",
+        "pattern": "tuxedo"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/tuxedo/tuxedo-housing-v2.png"
+    },
+    "siamese": {
+      "file": "siamese.png",
+      "mask": "siamese-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#d9c7a4",
+        "mark": "#6a5346",
+        "cream": "#eee0c2",
+        "eye": "#748b97",
+        "pattern": "points"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/siamese/siamese-housing-v2.png"
+    },
+    "brown-tabby": {
+      "file": "brown-tabby.png",
+      "mask": "brown-tabby-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#a67546",
+        "mark": "#68462f",
+        "cream": "#ecd6b5",
+        "eye": "#75613e",
+        "pattern": "tabby"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/brown-tabby/brown-tabby-housing-v2.png"
+    },
+    "cream-cat": {
+      "file": "cream-cat.png",
+      "mask": "cream-cat-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#e8c89c",
+        "mark": "#bd946a",
+        "cream": "#f6e5c8",
+        "eye": "#8e7052",
+        "pattern": "tabby"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/cream-cat/cream-cat-housing-v2.png"
+    },
+    "gray-white": {
+      "file": "gray-white.png",
+      "mask": "gray-white-roles.png",
+      "kind": "cat",
+      "palette": {
+        "coat": "#8f8782",
+        "mark": "#665d5a",
+        "cream": "#f6e6cd",
+        "eye": "#6b7773",
+        "pattern": "bicolor"
+      },
+      "reference": "/assets/game/animals/cats/housing-v2/gray-white/gray-white-housing-v2.png"
+    }
+  },
+  "authoring": "Dedicated painted UV surfaces; no sprite-frame crops. Original PawTrail native character/coat designs are the references."
+}

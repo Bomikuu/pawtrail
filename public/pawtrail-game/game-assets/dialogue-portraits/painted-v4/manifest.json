@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "style_reference": "../maya.png",
+  "method": "built-in image_gen; nearest-neighbor native export with 48-color palettes",
+  "maps": [
+    {
+      "kind": "skin",
+      "prompt": "Create a FLAT opaque 2:1 rectangular UV SKIN PAINT TEXTURE for a stylized PawTrail human head. The supplied Maya image is ONLY the reference for warm illustrated 16-bit pixel shading and color, NOT a portrait to copy into the map. The image must be entirely the skin material edge to edge, no background or silhouette. The middle half of the texture (u=.25 to .75) represents the front of a head, with center u=.5. The sides of the sheet represent side/back head skin. Use a warm golden peach base around #e8b17a, painted terracotta occlusion toward outer edges and under the chin along the bottom, soft amber highlights on the upper-left forehead, small delicate coral cheek flush patches near u=.43 and .57, v=.66. Rich deliberately placed colored pixel clusters, many subtle warm tonal steps like Maya's cheek and brow shading, absolutely not three vertical flat color stripes. NO eyes, mouth, eyebrows, nose, ears, hair, clothing, facial features, outlines, text, labels or UV grid. These features will be animated separately. This is a usable head surface texture, NOT a face illustration or 3D render. Clear intentional small pixel clusters, coherent limited warm palette, NO blurry edges or smooth airbrush gradients. Completely opaque. Fill the entire 2:1 image."
+    },
+    {
+      "kind": "hair",
+      "prompt": "Create ONE original flat, fully opaque, tileable 1:2 rectangular hand-painted brown HAIR texture for the 3D hair locks of a cozy PawTrail RPG portrait. Match the supplied Maya portrait's beautifully shaded brown hair: deep cocoa creases, layered auburn midtones, chestnut lit surfaces and restrained golden caramel streaks. This is ONLY a close-up material texture, fill the whole image edge-to-edge with hair, NOT a hairstyle silhouette, head, face, portrait, 3D object, or screenshot. Six to eight irregular flowing locks run from root at top to tips at bottom, with curving tapered highlight shapes, deep painted separations, short fine interior strands and small secondary pixel glints. Avoid repeated straight vertical bars and avoid thick stripes; make the varied overlapping strand groups feel carefully hand illustrated, like Maya's existing hand-placed pixel hair. Crisp 16-bit-inspired pixel clusters, textured painted volume, no glossy plastic or realistic photograph, no blurry antialiasing, no smooth gradients, no transparency, no labels, no text, no borders. Low contrast between side edges for horizontal wrapping."
+    }
+  ]
+}

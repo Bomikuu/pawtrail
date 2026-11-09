@@ -1,0 +1,109 @@
+{
+  "sharp-cel": {
+    "name": "Sharp cel",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "paletteLimitIncludingTransparency": 24,
+    "description": "Match the first style reference's sharp cel game pixels: bold irregular 1\u20132 native-pixel outer contour; angular flat shadow masses, 1-1 and 2-1 edge staircases, narrow dark purple eyelids, small restrained rectangular hair highlights, 2\u20133 skin planes. Pink hair needs separated angular clumps and flat pale rose highlights, not painted strands.",
+    "referenceFile": "output/imagegen/pink-shrine-portraits-v1/style-1-poses.png",
+    "referenceSha256": "e2fe9cd643b399d1c57b58ae68308f9617bb31335086963971c67bac6e401da6",
+    "originalStyleReference": "output/imagegen/photo-character-poses-v2-detail/style-1-poses.png",
+    "reject": [
+      "Changing style to make animation easier",
+      "Matching resolution or palette while changing the drawing language",
+      "Using a rejected replacement as the new style authority"
+    ],
+    "summary": "Bold stepped outlines, angular shadow blocks and restrained rectangular highlights."
+  },
+  "compact-fantasy": {
+    "name": "Compact fantasy",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "paletteLimitIncludingTransparency": 24,
+    "description": "Match the second style reference's compact fantasy-RPG portrait: slightly rounder and compact facial proportions built from choppy angular little pixel steps, simple squared violet irises, strong readable lashes, short flat clusters of hair and broad dark contours. Cute but not chibi: keep the adult elegant shrine maiden silhouette. Flat 2\u20133-tone skin, no glossy doll eyes.",
+    "referenceFile": "output/imagegen/pink-shrine-portraits-v1/style-2-poses.png",
+    "referenceSha256": "8c72de27794ccd674b192d4ad34abc47c8f5d8cf9375f7162d9a51e6995e3b98",
+    "originalStyleReference": "output/imagegen/photo-character-poses-v2-detail/style-2-poses.png",
+    "reject": [
+      "Changing style to make animation easier",
+      "Matching resolution or palette while changing the drawing language",
+      "Using a rejected replacement as the new style authority"
+    ],
+    "summary": "Compact proportions, squared eyes, choppy hair clusters and broad contours."
+  },
+  "sparse-anime": {
+    "name": "Sparse anime",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "paletteLimitIncludingTransparency": 20,
+    "description": "Match the third style reference's sparse old game anime portrait: long simple planes, economical thin but deliberately stair-stepped outlines, minimal face marks, understated eyes and tiny lips. Few large calm pink hair masses, selective fringe breaks. Noticeably simpler and quieter than the other variants; do not add dense detail.",
+    "referenceFile": "output/imagegen/pink-shrine-portraits-v1/style-3-poses.png",
+    "referenceSha256": "6ec64b22a12cb5238f812b9f19ef762eb225f9d116ad585888d11ccafc1ffb8e",
+    "originalStyleReference": "output/imagegen/photo-character-poses-v2-detail/style-3-poses.png",
+    "reject": [
+      "Changing style to make animation easier",
+      "Matching resolution or palette while changing the drawing language",
+      "Using a rejected replacement as the new style authority"
+    ],
+    "summary": "Economical outlines, long flat shapes and very few facial details."
+  },
+  "console-icon": {
+    "name": "Console icon",
+    "nativeCell": [
+      72,
+      72
+    ],
+    "paletteLimitIncludingTransparency": 20,
+    "description": "Match the fourth style reference's visibly COARSE CONSOLE portrait: chunky squared pixels, bold readable silhouette, rough outline corners, very few face planes, blunt small violet eye clusters. Compact upper-chest portrait fills the square cell. The artwork must still be a visibly low-resolution 72x72 game icon, not a refined 96px portrait. Ornaments are 3\u20136px clusters; keep the identity readable at this scale.",
+    "referenceFile": "output/imagegen/pink-shrine-portraits-v1/style-4-poses.png",
+    "referenceSha256": "4a043fcc0c27deb91d668de5536c5f8c9e865c5935fe92220f5b1fb0b3da1c5f",
+    "originalStyleReference": "output/imagegen/photo-character-poses-v2-detail/style-4-poses.png",
+    "reject": [
+      "Changing style to make animation easier",
+      "Matching resolution or palette while changing the drawing language",
+      "Using a rejected replacement as the new style authority"
+    ],
+    "summary": "Chunky square pixels, simplified features and a strong readable silhouette."
+  },
+  "rough-manga": {
+    "name": "Rough manga",
+    "nativeCell": [
+      120,
+      120
+    ],
+    "paletteLimitIncludingTransparency": 32,
+    "description": "Match the fifth style reference's rough manga game pixels: interrupted dark purple contours, controlled scratch/hatch clusters, broad violet and rose shadow shapes, sharper lashes, selective pixel flecks and choppy hair highlights. Richest of these styles but still obviously low-resolution jagged pixel art, not polished painted anime. Retain the flat color planes and raw edge texture.",
+    "referenceFile": "output/imagegen/pink-shrine-portraits-v1/style-5-poses.png",
+    "referenceSha256": "ac5a7210ca4baff139c5a82d32dfdade74396a2227802ba2f84c14d347123fe0",
+    "originalStyleReference": "output/imagegen/photo-character-poses-v2-detail/style-5-poses.png",
+    "reject": [
+      "Changing style to make animation easier",
+      "Matching resolution or palette while changing the drawing language",
+      "Using a rejected replacement as the new style authority"
+    ],
+    "summary": "Broken ink contours, controlled hatching and choppy pixel highlights."
+  },
+  "refined-cel": {
+    "name": "Refined cel",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "paletteLimitIncludingTransparency": 16,
+    "description": "A more refined pixel portrait: rounder facial features, fuller hair and ornament shapes, gentler shading and more elaborate highlights. Keep separate from the angular original Sharp cel design.",
+    "referenceFile": "output/imagegen/yae-sharp-cel-complete-v3/pose-0-complete-generated.png",
+    "referenceSha256": "ba1331ee46f84fda04f41f7c7fc0779ef2503457d0e7c492e2f67e1f7b788eab",
+    "originalStyleReference": "output/imagegen/yae-sharp-cel-complete-v3/native/front-pout-neutral-rest.png",
+    "reject": [
+      "Labeling this artwork Sharp cel",
+      "Using this output as a replacement reference for another style"
+    ],
+    "summary": "Rounder features, fuller hair and ornaments, gentler shading and richer highlights."
+  }
+}

@@ -120,7 +120,7 @@ export const applicationFields: Field[] = [
   {
     name: 'agreement',
     label:
-      'I understand this is an application for human review, and the demo does not arrange a real adoption.',
+      'I understand the shelter will review this application and contact me about next steps. Submitting does not guarantee an adoption.',
     type: 'checkbox',
     step: 2,
     required: true,
@@ -155,7 +155,7 @@ export const campaignFields: Field[] = [
     label: 'Goal in Philippine pesos',
     step: 2,
     required: true,
-    help: 'For example 1500.50. All contributions in this app are simulated.',
+    help: 'For example 1500.50. Support pledges do not count as collected funds.',
   },
   {
     name: 'budget',

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "status": "candidate-needs-visual-review",
+  "modelUrl": "/pawtrail-game/game-assets/maya-reference-v5/maya.glb",
+  "requiredNodes": [
+    "MayaPortraitRoot",
+    "MayaHead",
+    "MayaHair",
+    "MayaTorso"
+  ],
+  "expressionAtlas": {
+    "url": "/pawtrail-game/game-assets/maya-reference-v5/expressions.png",
+    "faceMaterial": "MayaFacePaint",
+    "regions": []
+  },
+  "semanticMasks": [],
+  "modules": [],
+  "viewCorrectives": [],
+  "note": "Fill region rectangles and semantic mask bindings using the authored asset's actual UV layout before reviewing the candidate. Do not copy guessed rectangles.",
+  "referenceConfigUrl": "/pawtrail-game/game-assets/maya-reference-v5/reference.json"
+}

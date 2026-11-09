@@ -1,0 +1,310 @@
+[
+  {
+    "id": "style-1",
+    "name": "Sharp cel",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      2,
+      89,
+      116
+    ],
+    "runtimeBytes": 75417,
+    "referenceBytes": 68541,
+    "completeBytes": 143958,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v2/style-1",
+    "revision": "9a1876566333"
+  },
+  {
+    "id": "style-2",
+    "name": "Compact fantasy",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      5,
+      2,
+      86,
+      116
+    ],
+    "runtimeBytes": 89586,
+    "referenceBytes": 80481,
+    "completeBytes": 170067,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v2/style-2",
+    "revision": "87a8ff96581d"
+  },
+  {
+    "id": "style-3",
+    "name": "Sparse anime",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      4,
+      2,
+      88,
+      116
+    ],
+    "runtimeBytes": 76334,
+    "referenceBytes": 69279,
+    "completeBytes": 145613,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v2/style-3",
+    "revision": "5f082b30fa05"
+  },
+  {
+    "id": "style-4",
+    "name": "Console icon",
+    "nativeCell": [
+      72,
+      72
+    ],
+    "contentBounds": [
+      7,
+      2,
+      57,
+      68
+    ],
+    "runtimeBytes": 49929,
+    "referenceBytes": 48268,
+    "completeBytes": 98197,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v2/style-4",
+    "revision": "7132d37538f2"
+  },
+  {
+    "id": "style-5",
+    "name": "Rough manga",
+    "nativeCell": [
+      120,
+      120
+    ],
+    "contentBounds": [
+      9,
+      2,
+      101,
+      116
+    ],
+    "runtimeBytes": 106420,
+    "referenceBytes": 93651,
+    "completeBytes": 200071,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v2/style-5",
+    "revision": "d1e5fdd70baf"
+  },
+  {
+    "id": "yae-miko-style-1",
+    "name": "Sharp cel",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      1,
+      5,
+      94,
+      114
+    ],
+    "runtimeBytes": 218061,
+    "referenceBytes": 14144,
+    "completeBytes": 232205,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "uniqueFullFrames": 136,
+    "sourceImagesUsed": 112,
+    "encoding": "lossless-indexed-brotli",
+    "styleKey": "sharp-cel",
+    "characterId": "yae-miko",
+    "characterName": "Yae Miko",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/yae-sharp-cel-rebuild-v1/yae-miko-style-1",
+    "revision": "5a33482f6fa7"
+  },
+  {
+    "id": "yae-miko-style-2",
+    "name": "Compact fantasy",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      1,
+      5,
+      94,
+      114
+    ],
+    "runtimeBytes": 217739,
+    "referenceBytes": 14027,
+    "completeBytes": 231766,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "uniqueFullFrames": 138,
+    "sourceImagesUsed": 114,
+    "encoding": "lossless-indexed-brotli",
+    "styleKey": "compact-fantasy",
+    "characterId": "yae-miko",
+    "characterName": "Yae Miko",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/yae-compact-fantasy-rebuild-v1/yae-miko-style-2",
+    "revision": "1145c1caee98"
+  },
+  {
+    "id": "yae-miko-style-3",
+    "name": "Sparse anime",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      1,
+      90,
+      118
+    ],
+    "runtimeBytes": 75690,
+    "referenceBytes": 79117,
+    "completeBytes": 154807,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "characterId": "yae-miko",
+    "characterName": "Yae Miko",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/pink-shrine-emotions-v1/yae-miko-style-3",
+    "revision": "aa9a905895f6"
+  },
+  {
+    "id": "yae-miko-style-4",
+    "name": "Console icon",
+    "playback": "complete-frames",
+    "nativeCell": [
+      72,
+      72
+    ],
+    "contentBounds": [
+      1,
+      2,
+      70,
+      70
+    ],
+    "runtimeBytes": 80069,
+    "referenceBytes": 6654,
+    "completeBytes": 86723,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 102,
+    "sourceImagesUsed": 84,
+    "encoding": "lossless-indexed-brotli",
+    "styleKey": "console-icon",
+    "characterId": "yae-miko",
+    "characterName": "Yae Miko",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/yae-console-icon-rebuild-v1/yae-miko-style-4",
+    "revision": "d412910bef18",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "budgetBytes": 300000
+  },
+  {
+    "id": "yae-miko-style-5",
+    "name": "Rough manga",
+    "playback": "complete-frames",
+    "nativeCell": [
+      120,
+      120
+    ],
+    "contentBounds": [
+      1,
+      5,
+      118,
+      114
+    ],
+    "runtimeBytes": 222236,
+    "referenceBytes": 12194,
+    "completeBytes": 234430,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "uniqueFullFrames": 136,
+    "sourceImagesUsed": 112,
+    "encoding": "lossless-indexed-brotli",
+    "styleKey": "rough-manga",
+    "characterId": "yae-miko",
+    "characterName": "Yae Miko",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/yae-rough-manga-rebuild-v1/yae-miko-style-5",
+    "revision": "08c0ceadb54a"
+  },
+  {
+    "id": "yae-miko-refined-cel",
+    "name": "Refined cel",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      1,
+      5,
+      94,
+      114
+    ],
+    "runtimeBytes": 232759,
+    "referenceBytes": 13769,
+    "completeBytes": 246528,
+    "poseCount": 4,
+    "expressionCount": 6,
+    "uniqueFullFrames": 144,
+    "sourceImagesUsed": 120,
+    "encoding": "lossless-indexed-brotli",
+    "styleKey": "refined-cel",
+    "characterId": "yae-miko",
+    "characterName": "Yae Miko",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/yae-refined-cel-v1/yae-miko-refined-cel",
+    "revision": "aeff164e67ec"
+  },
+  {
+    "id": "amber-refined-cel",
+    "name": "Refined cel",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      1,
+      3,
+      94,
+      116
+    ],
+    "runtimeBytes": 167953,
+    "referenceBytes": 10495,
+    "completeBytes": 178448,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 102,
+    "sourceImagesUsed": 84,
+    "encoding": "lossless-indexed-brotli",
+    "styleKey": "refined-cel",
+    "characterId": "amber",
+    "characterName": "Amber",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-v1/amber-refined-cel",
+    "revision": "c82763e7818b",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "budgetBytes": 300000
+  }
+]

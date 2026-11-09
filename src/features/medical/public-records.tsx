@@ -1,0 +1,19 @@
+import { ClipboardList, LockKeyhole, Stethoscope, Syringe } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { ButtonLink } from '@/components/ui/button-link'
+import { medicalDate } from './date'
+import { medicalKindLabels, type MedicalPage } from './schemas'
+export function PublicMedicalRecords({ animal, page, nextHref }: { animal: { name: string; slug: string; viewerCanManage: boolean }; page: MedicalPage; nextHref: string | null }) {
+  return <section aria-labelledby="medical-title" className="space-y-6 px-1 pb-4">
+    <header className="flex flex-wrap items-start justify-between gap-4">
+      <div className="max-w-xl space-y-2"><h2 id="medical-title" className="font-heading text-2xl font-bold text-foreground">Medical & vaccination records</h2><p className="text-sm leading-relaxed text-muted-foreground">Care history shared by {animal.name}’s care team. Clinical notes and documents stay private.</p></div>
+      {page.viewerCanManage && <ButtonLink href={`/dashboard/animals/${encodeURIComponent(animal.slug)}/medical`} variant="outline" className="rounded-md text-foreground"><ClipboardList aria-hidden="true" className="size-4" />Manage records</ButtonLink>}
+    </header>
+    {page.summary.recordsCount ? <p className="border-y py-3 text-sm text-muted-foreground"><span className="font-semibold text-foreground">{page.summary.performedCount}</span> performed · <span className="font-semibold text-foreground">{page.summary.plannedCount}</span> planned{page.summary.nextFollowUp && <> · Next recorded follow-up <span className="font-medium text-foreground">{medicalDate(page.summary.nextFollowUp)}</span></>}</p> : null}
+    {page.items.length ? <ol className="divide-y border-y">{page.items.map((record) => {
+      const Icon = record.kind === 'vaccination' ? Syringe : Stethoscope
+      return <li key={record.id} className="flex items-start gap-4 py-5"><span className="grid size-10 shrink-0 place-items-center rounded-md bg-secondary text-foreground"><Icon aria-hidden="true" className="size-5" /></span><article className="min-w-0 flex-1 space-y-3"><div className="flex flex-wrap items-center justify-between gap-2"><h3 className="font-heading text-xl font-semibold">{medicalKindLabels[record.kind]}</h3><Badge variant="secondary" className="rounded-md text-foreground">{record.status === 'performed' ? 'Performed · reported' : 'Planned'}</Badge></div><p className="whitespace-pre-wrap text-sm leading-relaxed text-foreground">{record.publicSummary}</p><dl className="flex flex-wrap gap-x-8 gap-y-3 text-xs"><div><dt className="text-muted-foreground">{record.status === 'performed' ? 'Date performed' : 'Scheduled date'}</dt><dd className="mt-1 font-medium">{medicalDate(record.eventDate)}</dd></div>{record.followUpDate && <div><dt className="text-muted-foreground">Recorded follow-up</dt><dd className="mt-1 font-medium">{medicalDate(record.followUpDate)}</dd></div>}</dl><p className="text-xs text-muted-foreground">{record.sourceLabel}. Veterinary verification is not recorded by this feature.</p></article></li>
+    })}</ol> : <div className="flex flex-col items-start gap-4 rounded-lg bg-secondary/50 p-5 sm:flex-row sm:p-6"><Stethoscope aria-hidden="true" className="mt-1 size-7 shrink-0 text-primary" /><div className="max-w-lg space-y-2"><h3 className="font-heading text-xl font-bold">Medical history hasn’t been shared yet</h3><p className="text-sm leading-relaxed text-muted-foreground">This does not mean {animal.name} is unvaccinated or has not received care. Only summaries explicitly shared by the care team appear here.</p><p className="flex items-center gap-2 pt-1 text-xs text-muted-foreground"><LockKeyhole aria-hidden="true" className="size-3.5" />Private records and documents are never listed publicly.</p></div></div>}
+    {nextHref && <ButtonLink href={nextHref} variant="outline" className="rounded-md text-foreground">More shared records</ButtonLink>}
+  </section>
+}

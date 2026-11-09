@@ -31,7 +31,11 @@ export function NavItem({
   const content = (
     <>
       <Icon className="size-5 shrink-0" aria-hidden="true" />
-      <span>{destination.label}</span>
+      <span>
+        {compact
+          ? (destination.shortLabel ?? destination.label)
+          : destination.label}
+      </span>
     </>
   )
   if (!href)
@@ -50,7 +54,7 @@ export function NavItem({
       variant="ghost"
       asChild
       className={cn(
-        'nav-item h-auto min-h-11 w-full justify-start gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground',
+        'nav-item h-auto min-h-11 w-full justify-start gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground',
         active && 'bg-accent font-semibold text-accent-foreground',
         compact &&
           'min-h-13 flex-col justify-center gap-1 px-1 text-[0.625rem]',

@@ -1,0 +1,3168 @@
+{
+  "previous": [
+    {
+      "id": "studio",
+      "name": "Cozy studio",
+      "description": "A compact open room: aquarium and bed at the back, a central sitting area, and little animal corners.",
+      "thumbnail": "/assets/game/housing/presets/studio-thumb.webp",
+      "preview": "/assets/game/housing/presets/studio-preview.webp",
+      "floor": "wood-dark-a",
+      "wallpaper": "cream",
+      "revision": 2,
+      "floors": {
+        "interior": {
+          "label": "Ground floor",
+          "width": 20,
+          "height": 16,
+          "spawn": [
+            10,
+            14
+          ],
+          "door": [
+            10,
+            15
+          ],
+          "walls": [],
+          "protected": [
+            [
+              9,
+              14,
+              2,
+              1
+            ]
+          ],
+          "stairs": [],
+          "rooms": [
+            "Living room",
+            "Sleeping nook",
+            "Pet corner"
+          ],
+          "items": [
+            {
+              "id": "plan-0",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-1",
+              "item": "aquarium",
+              "x": 9,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-2",
+              "item": "bookshelf",
+              "x": 13,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-3",
+              "item": "sage-bed",
+              "x": 16,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-4",
+              "item": "bedside-table",
+              "x": 18,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "plan-5",
+              "item": "basket-cat-stand",
+              "x": 3,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-6",
+              "item": "sofa-sage",
+              "x": 6,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-7",
+              "item": "sofa-sage",
+              "x": 12,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-8",
+              "item": "coffee-table",
+              "x": 9,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "plan-9",
+              "item": "decorative-rug",
+              "x": 9,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "plan-10",
+              "item": "cozy-cat-perch",
+              "x": 14,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "plan-11",
+              "item": "cat-tree",
+              "x": 17,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "plan-12",
+              "item": "round-fluffy-cat-bed",
+              "x": 7,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "plan-13",
+              "item": "small-cat-bed",
+              "x": 12,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "plan-14",
+              "item": "food-bowl-full",
+              "x": 9,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "plan-15",
+              "item": "water-bowl-full",
+              "x": 10,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "plan-16",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-17",
+              "item": "sofa-sage",
+              "x": 6,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-18",
+              "item": "small-indoor-plant",
+              "x": 8,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-19",
+              "item": "bookshelf",
+              "x": 16,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-20",
+              "item": "side-table",
+              "x": 2,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "plan-21",
+              "item": "floor-lamp",
+              "x": 3,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "plan-22",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "plan-23",
+              "item": "large-indoor-plant",
+              "x": 18,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "plan-24",
+              "item": "flower-pot",
+              "x": 8,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-25",
+              "item": "flower-pot",
+              "x": 12,
+              "y": 14,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "painting",
+              "x": 5,
+              "y": 1
+            },
+            {
+              "item": "picture-frame",
+              "x": 6,
+              "y": 1
+            },
+            {
+              "item": "decorative-lights",
+              "x": 11,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 16,
+              "y": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cottage",
+      "name": "Connected cottage",
+      "description": "Three connected wings, with the kitchen and pet corner on the left, a living and dining hall in the middle, a bedroom on the right, and stairs beside the hall.",
+      "thumbnail": "/assets/game/housing/presets/cottage-thumb.webp",
+      "preview": "/assets/game/housing/presets/cottage-preview.webp",
+      "floor": "wood-dark-a",
+      "wallpaper": "cream",
+      "revision": 2,
+      "floors": {
+        "interior": {
+          "label": "Ground floor",
+          "width": 26,
+          "height": 18,
+          "spawn": [
+            13,
+            16
+          ],
+          "door": [
+            13,
+            17
+          ],
+          "walls": [
+            {
+              "rect": [
+                8,
+                1,
+                1,
+                16
+              ],
+              "gaps": [
+                [
+                  8,
+                  8,
+                  1,
+                  3
+                ]
+              ]
+            },
+            {
+              "rect": [
+                18,
+                1,
+                1,
+                16
+              ],
+              "gaps": [
+                [
+                  18,
+                  8,
+                  1,
+                  3
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              12,
+              16,
+              2,
+              1
+            ],
+            [
+              7,
+              8,
+              3,
+              3
+            ],
+            [
+              17,
+              8,
+              3,
+              3
+            ],
+            [
+              9,
+              6,
+              3,
+              1
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                9,
+                2,
+                2,
+                4
+              ],
+              "landing": [
+                10,
+                6
+              ],
+              "to": "upstairs"
+            }
+          ],
+          "rooms": [
+            "Kitchen & pet care",
+            "Living & dining hall",
+            "Bedroom"
+          ],
+          "items": [
+            {
+              "id": "plan-0",
+              "item": "stove",
+              "x": 2,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-1",
+              "item": "sink-counter",
+              "x": 5,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-2",
+              "item": "refrigerator",
+              "x": 7,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-3",
+              "item": "dining-table",
+              "x": 4,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-4",
+              "item": "dining-chair",
+              "x": 2,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-5",
+              "item": "dining-chair",
+              "x": 6,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-6",
+              "item": "basket-cat-stand",
+              "x": 2,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "plan-7",
+              "item": "cozy-cat-perch",
+              "x": 5,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "plan-8",
+              "item": "bookshelf",
+              "x": 6,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-9",
+              "item": "round-fluffy-cat-bed",
+              "x": 2,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "id": "plan-10",
+              "item": "small-cat-bed",
+              "x": 4,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "id": "plan-11",
+              "item": "food-bowl-full",
+              "x": 6,
+              "y": 16,
+              "rotation": 0
+            },
+            {
+              "id": "plan-12",
+              "item": "water-bowl-full",
+              "x": 7,
+              "y": 16,
+              "rotation": 0
+            },
+            {
+              "id": "plan-13",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "plan-14",
+              "item": "aquarium",
+              "x": 14,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-15",
+              "item": "bookshelf",
+              "x": 16,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-16",
+              "item": "sofa-sage",
+              "x": 11,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "plan-17",
+              "item": "armchair",
+              "x": 16,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "plan-18",
+              "item": "coffee-table",
+              "x": 14,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "plan-19",
+              "item": "decorative-rug",
+              "x": 14,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "plan-20",
+              "item": "dining-table",
+              "x": 13,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-21",
+              "item": "dining-chair",
+              "x": 11,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-22",
+              "item": "dining-chair",
+              "x": 15,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-23",
+              "item": "floor-lamp",
+              "x": 17,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-24",
+              "item": "large-indoor-plant",
+              "x": 10,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-25",
+              "item": "flower-pot",
+              "x": 11,
+              "y": 16,
+              "rotation": 0
+            },
+            {
+              "id": "plan-26",
+              "item": "flower-pot",
+              "x": 15,
+              "y": 16,
+              "rotation": 0
+            },
+            {
+              "id": "plan-27",
+              "item": "sage-bed",
+              "x": 22,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-28",
+              "item": "bedside-table",
+              "x": 24,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-29",
+              "item": "wardrobe",
+              "x": 23,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "plan-30",
+              "item": "sofa-sage",
+              "x": 22,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-31",
+              "item": "cat-basket",
+              "x": 24,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-32",
+              "item": "large-indoor-plant",
+              "x": 24,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "plan-33",
+              "item": "decorative-rug",
+              "x": 22,
+              "y": 6,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "window",
+              "x": 4,
+              "y": 1
+            },
+            {
+              "item": "kitchen-shelves",
+              "x": 2,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 14,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 22,
+              "y": 1
+            },
+            {
+              "item": "picture-frame",
+              "x": 24,
+              "y": 1
+            }
+          ]
+        },
+        "upstairs": {
+          "label": "Attic",
+          "width": 26,
+          "height": 18,
+          "spawn": [
+            10,
+            6
+          ],
+          "door": null,
+          "walls": [
+            {
+              "rect": [
+                18,
+                1,
+                1,
+                16
+              ],
+              "gaps": [
+                [
+                  18,
+                  8,
+                  1,
+                  3
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              9,
+              6,
+              3,
+              1
+            ],
+            [
+              17,
+              8,
+              3,
+              3
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                9,
+                2,
+                2,
+                4
+              ],
+              "landing": [
+                10,
+                6
+              ],
+              "to": "interior"
+            }
+          ],
+          "rooms": [
+            "Sleeping & reading loft",
+            "Animal nook"
+          ],
+          "items": [
+            {
+              "id": "plan-0",
+              "item": "sage-bed",
+              "x": 4,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-1",
+              "item": "wardrobe",
+              "x": 7,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "plan-2",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "plan-3",
+              "item": "desk",
+              "x": 5,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-4",
+              "item": "chair",
+              "x": 5,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "id": "plan-5",
+              "item": "sofa-sage",
+              "x": 14,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "plan-6",
+              "item": "coffee-table",
+              "x": 14,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-7",
+              "item": "decorative-rug",
+              "x": 14,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "plan-8",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "plan-9",
+              "item": "floor-lamp",
+              "x": 8,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-10",
+              "item": "basket-cat-stand",
+              "x": 21,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "plan-11",
+              "item": "cozy-cat-perch",
+              "x": 23,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "plan-12",
+              "item": "small-cat-bed",
+              "x": 21,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-13",
+              "item": "food-bowl-full",
+              "x": 23,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "id": "plan-14",
+              "item": "water-bowl-full",
+              "x": 24,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "id": "plan-15",
+              "item": "bookshelf",
+              "x": 22,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-16",
+              "item": "large-indoor-plant",
+              "x": 24,
+              "y": 8,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "window",
+              "x": 4,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 14,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 22,
+              "y": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "two-storey",
+      "name": "Companion house",
+      "description": "A living room and stair hall above a central entrance corridor, with kitchen and pet-care rooms on either side. Upstairs connects the lounge, bedrooms and study.",
+      "thumbnail": "/assets/game/housing/presets/two-storey-thumb.webp",
+      "preview": "/assets/game/housing/presets/two-storey-preview.webp",
+      "floor": "wood-dark-a",
+      "wallpaper": "cream",
+      "revision": 2,
+      "floors": {
+        "interior": {
+          "label": "Ground floor",
+          "width": 26,
+          "height": 22,
+          "spawn": [
+            13,
+            20
+          ],
+          "door": [
+            13,
+            21
+          ],
+          "walls": [
+            {
+              "rect": [
+                17,
+                1,
+                1,
+                9
+              ],
+              "gaps": [
+                [
+                  17,
+                  8,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                1,
+                10,
+                24,
+                1
+              ],
+              "gaps": [
+                [
+                  10,
+                  10,
+                  6,
+                  1
+                ]
+              ]
+            },
+            {
+              "rect": [
+                9,
+                11,
+                1,
+                10
+              ],
+              "gaps": [
+                [
+                  9,
+                  14,
+                  1,
+                  3
+                ]
+              ]
+            },
+            {
+              "rect": [
+                16,
+                11,
+                1,
+                10
+              ],
+              "gaps": [
+                [
+                  16,
+                  14,
+                  1,
+                  3
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              12,
+              20,
+              2,
+              1
+            ],
+            [
+              16,
+              8,
+              3,
+              2
+            ],
+            [
+              10,
+              9,
+              6,
+              3
+            ],
+            [
+              8,
+              14,
+              3,
+              3
+            ],
+            [
+              15,
+              14,
+              3,
+              3
+            ],
+            [
+              21,
+              7,
+              3,
+              1
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                21,
+                2,
+                3,
+                5
+              ],
+              "landing": [
+                22,
+                7
+              ],
+              "to": "upstairs"
+            }
+          ],
+          "rooms": [
+            "Living room",
+            "Stair hall",
+            "Kitchen & dining",
+            "Pet-care room"
+          ],
+          "items": [
+            {
+              "id": "plan-0",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-1",
+              "item": "aquarium",
+              "x": 12,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-2",
+              "item": "sofa-sage",
+              "x": 7,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-3",
+              "item": "armchair",
+              "x": 4,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-4",
+              "item": "armchair",
+              "x": 10,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-5",
+              "item": "coffee-table",
+              "x": 7,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-6",
+              "item": "decorative-rug",
+              "x": 7,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-7",
+              "item": "large-indoor-plant",
+              "x": 2,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "plan-8",
+              "item": "round-fluffy-cat-bed",
+              "x": 2,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "plan-9",
+              "item": "bedside-table",
+              "x": 4,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-10",
+              "item": "side-table",
+              "x": 19,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "plan-11",
+              "item": "large-indoor-plant",
+              "x": 19,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "plan-12",
+              "item": "stove",
+              "x": 2,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-13",
+              "item": "sink-counter",
+              "x": 5,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-14",
+              "item": "refrigerator",
+              "x": 8,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-15",
+              "item": "dining-table",
+              "x": 5,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-16",
+              "item": "dining-chair",
+              "x": 3,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-17",
+              "item": "dining-chair",
+              "x": 7,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-18",
+              "item": "large-indoor-plant",
+              "x": 2,
+              "y": 19,
+              "rotation": 0
+            },
+            {
+              "id": "plan-19",
+              "item": "basket-cat-stand",
+              "x": 19,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-20",
+              "item": "cozy-cat-perch",
+              "x": 23,
+              "y": 14,
+              "rotation": 0
+            },
+            {
+              "id": "plan-21",
+              "item": "bookshelf",
+              "x": 22,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "plan-22",
+              "item": "round-fluffy-cat-bed",
+              "x": 19,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-23",
+              "item": "small-cat-bed",
+              "x": 22,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-24",
+              "item": "food-bowl-full",
+              "x": 20,
+              "y": 20,
+              "rotation": 0
+            },
+            {
+              "id": "plan-25",
+              "item": "water-bowl-full",
+              "x": 22,
+              "y": 20,
+              "rotation": 0
+            },
+            {
+              "id": "plan-26",
+              "item": "large-indoor-plant",
+              "x": 24,
+              "y": 17,
+              "rotation": 0
+            },
+            {
+              "id": "plan-27",
+              "item": "pet-food-storage-container",
+              "x": 24,
+              "y": 19,
+              "rotation": 0
+            },
+            {
+              "id": "plan-28",
+              "item": "coffee-table",
+              "x": 13,
+              "y": 16,
+              "rotation": 0
+            },
+            {
+              "id": "plan-29",
+              "item": "decorative-rug",
+              "x": 13,
+              "y": 16,
+              "rotation": 0
+            },
+            {
+              "id": "plan-30",
+              "item": "floor-lamp",
+              "x": 15,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "plan-31",
+              "item": "flower-pot",
+              "x": 11,
+              "y": 20,
+              "rotation": 0
+            },
+            {
+              "id": "plan-32",
+              "item": "flower-pot",
+              "x": 15,
+              "y": 20,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "painting",
+              "x": 6,
+              "y": 1
+            },
+            {
+              "item": "picture-frame",
+              "x": 8,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 12,
+              "y": 1
+            },
+            {
+              "item": "decorative-lights",
+              "x": 15,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 19,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 5,
+              "y": 11
+            },
+            {
+              "item": "kitchen-shelves",
+              "x": 2,
+              "y": 11
+            },
+            {
+              "item": "picture-frame",
+              "x": 20,
+              "y": 11
+            }
+          ]
+        },
+        "upstairs": {
+          "label": "Upper floor",
+          "width": 26,
+          "height": 22,
+          "spawn": [
+            22,
+            7
+          ],
+          "door": null,
+          "walls": [
+            {
+              "rect": [
+                17,
+                1,
+                1,
+                9
+              ],
+              "gaps": [
+                [
+                  17,
+                  8,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                1,
+                10,
+                24,
+                1
+              ],
+              "gaps": [
+                [
+                  10,
+                  10,
+                  6,
+                  1
+                ]
+              ]
+            },
+            {
+              "rect": [
+                9,
+                11,
+                1,
+                10
+              ],
+              "gaps": [
+                [
+                  9,
+                  14,
+                  1,
+                  3
+                ]
+              ]
+            },
+            {
+              "rect": [
+                16,
+                11,
+                1,
+                10
+              ],
+              "gaps": [
+                [
+                  16,
+                  14,
+                  1,
+                  3
+                ]
+              ]
+            },
+            {
+              "rect": [
+                11,
+                1,
+                1,
+                9
+              ],
+              "gaps": [
+                [
+                  11,
+                  8,
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              16,
+              8,
+              3,
+              2
+            ],
+            [
+              10,
+              9,
+              6,
+              3
+            ],
+            [
+              8,
+              14,
+              3,
+              3
+            ],
+            [
+              15,
+              14,
+              3,
+              3
+            ],
+            [
+              21,
+              7,
+              3,
+              1
+            ],
+            [
+              10,
+              8,
+              3,
+              2
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                21,
+                2,
+                3,
+                5
+              ],
+              "landing": [
+                22,
+                7
+              ],
+              "to": "interior"
+            }
+          ],
+          "rooms": [
+            "Landing lounge",
+            "Main bedroom",
+            "Study",
+            "Second bedroom"
+          ],
+          "items": [
+            {
+              "id": "plan-0",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "plan-1",
+              "item": "sofa-sage",
+              "x": 7,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "plan-2",
+              "item": "large-indoor-plant",
+              "x": 2,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-3",
+              "item": "coffee-table",
+              "x": 7,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "plan-4",
+              "item": "decorative-rug",
+              "x": 7,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-5",
+              "item": "sage-bed",
+              "x": 14,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-6",
+              "item": "bedside-table",
+              "x": 16,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "plan-7",
+              "item": "wardrobe",
+              "x": 14,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "plan-8",
+              "item": "small-cat-bed",
+              "x": 19,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "plan-9",
+              "item": "large-indoor-plant",
+              "x": 19,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "plan-10",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-11",
+              "item": "bookshelf",
+              "x": 6,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-12",
+              "item": "desk",
+              "x": 5,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-13",
+              "item": "chair",
+              "x": 5,
+              "y": 20,
+              "rotation": 0
+            },
+            {
+              "id": "plan-14",
+              "item": "floor-lamp",
+              "x": 8,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-15",
+              "item": "large-indoor-plant",
+              "x": 2,
+              "y": 18,
+              "rotation": 0
+            },
+            {
+              "id": "plan-16",
+              "item": "sage-bed",
+              "x": 21,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "id": "plan-17",
+              "item": "bedside-table",
+              "x": 18,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "id": "plan-18",
+              "item": "wardrobe",
+              "x": 22,
+              "y": 19,
+              "rotation": 0
+            },
+            {
+              "id": "plan-19",
+              "item": "pet-blanket-sage",
+              "x": 21,
+              "y": 17,
+              "rotation": 0
+            },
+            {
+              "id": "plan-20",
+              "item": "small-cat-bed",
+              "x": 18,
+              "y": 19,
+              "rotation": 0
+            },
+            {
+              "id": "plan-21",
+              "item": "large-indoor-plant",
+              "x": 24,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-22",
+              "item": "coffee-table",
+              "x": 13,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "plan-23",
+              "item": "decorative-rug",
+              "x": 13,
+              "y": 13,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "window",
+              "x": 7,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 14,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 5,
+              "y": 11
+            },
+            {
+              "item": "painting",
+              "x": 21,
+              "y": 11
+            },
+            {
+              "item": "decorative-lights",
+              "x": 19,
+              "y": 11
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "reference": [
+    {
+      "id": "studio",
+      "name": "Cozy studio",
+      "description": "A compact open room: aquarium and bed at the back, a central sitting area, and little animal corners.",
+      "thumbnail": "/assets/game/housing/presets/studio-thumb.webp",
+      "preview": "/assets/game/housing/presets/studio-preview.webp",
+      "floor": "wood-dark-a",
+      "wallpaper": "cream",
+      "revision": 3,
+      "furniturePack": "studio:reference-v3",
+      "floors": {
+        "interior": {
+          "label": "Ground floor",
+          "width": 20,
+          "height": 14,
+          "spawn": [
+            10,
+            12
+          ],
+          "door": [
+            10,
+            13
+          ],
+          "walls": [],
+          "protected": [
+            [
+              9,
+              12,
+              2,
+              1
+            ]
+          ],
+          "stairs": [],
+          "rooms": [
+            "Living room",
+            "Sleeping nook",
+            "Pet corner"
+          ],
+          "items": [
+            {
+              "id": "ref-0",
+              "item": "wicker-display-cabinet",
+              "x": 2,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-1",
+              "item": "aquarium",
+              "x": 10,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-2",
+              "item": "bookshelf",
+              "x": 13,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-3",
+              "item": "sage-bed",
+              "x": 16,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-4",
+              "item": "lantern-cabinet",
+              "x": 18,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-5",
+              "item": "basket-cat-stand",
+              "x": 5,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-6",
+              "item": "sage-loveseat-east",
+              "x": 6,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "ref-7",
+              "item": "sage-loveseat-west",
+              "x": 12,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "ref-8",
+              "item": "round-flower-table",
+              "x": 9,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-9",
+              "item": "woven-area-rug",
+              "x": 9,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-10",
+              "item": "cozy-cat-perch",
+              "x": 14,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-11",
+              "item": "cat-tree",
+              "x": 17,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-12",
+              "item": "round-fluffy-cat-bed",
+              "x": 7,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-13",
+              "item": "small-cat-bed",
+              "x": 12,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-14",
+              "item": "food-bowl-full",
+              "x": 9,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-15",
+              "item": "water-bowl-full",
+              "x": 10,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-16",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-17",
+              "item": "sage-chaise",
+              "x": 6,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-18",
+              "item": "small-indoor-plant",
+              "x": 8,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-19",
+              "item": "bookshelf",
+              "x": 16,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-20",
+              "item": "lantern-cabinet",
+              "x": 2,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-21",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 7,
+              "rotation": 0
+            },
+            {
+              "id": "ref-22",
+              "item": "large-indoor-plant",
+              "x": 18,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-23",
+              "item": "flower-pot",
+              "x": 8,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-24",
+              "item": "flower-pot",
+              "x": 12,
+              "y": 12,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "painting",
+              "x": 6,
+              "y": 1
+            },
+            {
+              "item": "picture-frame",
+              "x": 7,
+              "y": 1
+            },
+            {
+              "item": "decorative-lights",
+              "x": 11,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 16,
+              "y": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cottage",
+      "name": "Connected cottage",
+      "description": "Three connected wings, with the kitchen and pet corner on the left, a living and dining hall in the middle, a bedroom on the right, and stairs beside the hall.",
+      "thumbnail": "/assets/game/housing/presets/cottage-thumb.webp",
+      "preview": "/assets/game/housing/presets/cottage-preview.webp",
+      "floor": "wood-dark-a",
+      "wallpaper": "cream",
+      "revision": 3,
+      "furniturePack": "cottage:reference-v3",
+      "floors": {
+        "interior": {
+          "label": "Ground floor",
+          "width": 24,
+          "height": 15,
+          "spawn": [
+            13,
+            13
+          ],
+          "door": [
+            13,
+            14
+          ],
+          "walls": [
+            {
+              "rect": [
+                8,
+                1,
+                1,
+                13
+              ],
+              "gaps": [
+                [
+                  8,
+                  7,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                18,
+                1,
+                1,
+                13
+              ],
+              "gaps": [
+                [
+                  18,
+                  7,
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              12,
+              13,
+              2,
+              1
+            ],
+            [
+              7,
+              7,
+              3,
+              2
+            ],
+            [
+              17,
+              7,
+              3,
+              2
+            ],
+            [
+              9,
+              5,
+              3,
+              1
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                9,
+                2,
+                2,
+                3
+              ],
+              "landing": [
+                10,
+                5
+              ],
+              "to": "upstairs"
+            }
+          ],
+          "rooms": [
+            "Kitchen & pet care",
+            "Living & dining hall",
+            "Bedroom"
+          ],
+          "items": [
+            {
+              "id": "ref-0",
+              "item": "stove",
+              "x": 2,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-1",
+              "item": "sink-counter",
+              "x": 5,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-2",
+              "item": "refrigerator",
+              "x": 7,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-3",
+              "item": "dining-table",
+              "x": 3,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-4",
+              "item": "dining-chair",
+              "x": 1,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-5",
+              "item": "dining-chair",
+              "x": 5,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-6",
+              "item": "basket-cat-stand",
+              "x": 2,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-7",
+              "item": "cozy-cat-perch",
+              "x": 6,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-8",
+              "item": "wicker-display-cabinet",
+              "x": 6,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-9",
+              "item": "round-fluffy-cat-bed",
+              "x": 2,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-10",
+              "item": "small-cat-bed",
+              "x": 4,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-11",
+              "item": "food-bowl-full",
+              "x": 2,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-12",
+              "item": "water-bowl-full",
+              "x": 3,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-13",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-14",
+              "item": "aquarium",
+              "x": 14,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-15",
+              "item": "bookshelf",
+              "x": 16,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-16",
+              "item": "sage-loveseat-east",
+              "x": 11,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-17",
+              "item": "sage-loveseat-west",
+              "x": 16,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-18",
+              "item": "round-flower-table",
+              "x": 14,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-19",
+              "item": "woven-area-rug",
+              "x": 14,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-20",
+              "item": "dining-table",
+              "x": 13,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-21",
+              "item": "dining-chair",
+              "x": 11,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-22",
+              "item": "dining-chair",
+              "x": 15,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-23",
+              "item": "lantern-cabinet",
+              "x": 17,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-24",
+              "item": "large-indoor-plant",
+              "x": 10,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-25",
+              "item": "flower-pot",
+              "x": 11,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-26",
+              "item": "flower-pot",
+              "x": 15,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-27",
+              "item": "sage-bed",
+              "x": 20,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-28",
+              "item": "lantern-cabinet",
+              "x": 22,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-29",
+              "item": "wardrobe",
+              "x": 21,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-30",
+              "item": "sage-chaise",
+              "x": 21,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-31",
+              "item": "cat-basket",
+              "x": 19,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-32",
+              "item": "large-indoor-plant",
+              "x": 22,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-33",
+              "item": "woven-area-rug",
+              "x": 20,
+              "y": 6,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "window",
+              "x": 4,
+              "y": 1
+            },
+            {
+              "item": "kitchen-shelves",
+              "x": 2,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 14,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 20,
+              "y": 1
+            },
+            {
+              "item": "picture-frame",
+              "x": 22,
+              "y": 1
+            }
+          ]
+        },
+        "upstairs": {
+          "label": "Attic",
+          "width": 24,
+          "height": 15,
+          "spawn": [
+            10,
+            5
+          ],
+          "door": null,
+          "walls": [
+            {
+              "rect": [
+                18,
+                1,
+                1,
+                13
+              ],
+              "gaps": [
+                [
+                  18,
+                  7,
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              9,
+              5,
+              3,
+              1
+            ],
+            [
+              17,
+              7,
+              3,
+              2
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                9,
+                2,
+                2,
+                3
+              ],
+              "landing": [
+                10,
+                5
+              ],
+              "to": "interior"
+            }
+          ],
+          "rooms": [
+            "Sleeping & reading loft",
+            "Animal nook"
+          ],
+          "items": [
+            {
+              "id": "ref-0",
+              "item": "sage-bed",
+              "x": 4,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-1",
+              "item": "wardrobe",
+              "x": 7,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "ref-2",
+              "item": "bookshelf",
+              "x": 3,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-3",
+              "item": "desk",
+              "x": 6,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-4",
+              "item": "chair",
+              "x": 6,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-5",
+              "item": "three-seat-sofa",
+              "x": 14,
+              "y": 8,
+              "rotation": 0
+            },
+            {
+              "id": "ref-6",
+              "item": "round-flower-table",
+              "x": 14,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-7",
+              "item": "woven-area-rug",
+              "x": 14,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-8",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-9",
+              "item": "floor-lamp",
+              "x": 9,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-10",
+              "item": "basket-cat-stand",
+              "x": 20,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-11",
+              "item": "cozy-cat-perch",
+              "x": 21,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-12",
+              "item": "small-cat-bed",
+              "x": 20,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-13",
+              "item": "food-bowl-full",
+              "x": 20,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-14",
+              "item": "water-bowl-full",
+              "x": 22,
+              "y": 13,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "window",
+              "x": 4,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 14,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 20,
+              "y": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "two-storey",
+      "name": "Companion house",
+      "description": "A living room and stair hall above a central entrance corridor, with kitchen and pet-care rooms on either side. Upstairs connects the lounge, bedrooms and study.",
+      "thumbnail": "/assets/game/housing/presets/two-storey-thumb.webp",
+      "preview": "/assets/game/housing/presets/two-storey-preview.webp",
+      "floor": "wood-dark-a",
+      "wallpaper": "cream",
+      "revision": 3,
+      "furniturePack": "two-storey:reference-v3",
+      "floors": {
+        "interior": {
+          "label": "Ground floor",
+          "width": 24,
+          "height": 15,
+          "spawn": [
+            13,
+            13
+          ],
+          "door": [
+            13,
+            14
+          ],
+          "walls": [
+            {
+              "rect": [
+                15,
+                1,
+                1,
+                6
+              ],
+              "gaps": [
+                [
+                  15,
+                  4,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                1,
+                7,
+                22,
+                1
+              ],
+              "gaps": [
+                [
+                  8,
+                  7,
+                  7,
+                  1
+                ]
+              ]
+            },
+            {
+              "rect": [
+                7,
+                8,
+                1,
+                6
+              ],
+              "gaps": [
+                [
+                  7,
+                  10,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                15,
+                8,
+                1,
+                6
+              ],
+              "gaps": [
+                [
+                  15,
+                  10,
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              12,
+              13,
+              2,
+              1
+            ],
+            [
+              14,
+              4,
+              3,
+              2
+            ],
+            [
+              8,
+              7,
+              7,
+              2
+            ],
+            [
+              6,
+              10,
+              3,
+              2
+            ],
+            [
+              14,
+              10,
+              3,
+              2
+            ],
+            [
+              19,
+              5,
+              3,
+              1
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                19,
+                2,
+                3,
+                3
+              ],
+              "landing": [
+                20,
+                5
+              ],
+              "to": "upstairs"
+            }
+          ],
+          "rooms": [
+            "Living room",
+            "Stair hall",
+            "Kitchen & dining",
+            "Pet-care room"
+          ],
+          "items": [
+            {
+              "id": "ref-0",
+              "item": "bookshelf",
+              "x": 2,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-1",
+              "item": "aquarium",
+              "x": 11,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-2",
+              "item": "three-seat-sofa",
+              "x": 6,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "ref-3",
+              "item": "armchair",
+              "x": 3,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-4",
+              "item": "armchair",
+              "x": 9,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-5",
+              "item": "round-flower-table",
+              "x": 6,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-6",
+              "item": "woven-area-rug",
+              "x": 6,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-7",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "id": "ref-8",
+              "item": "round-fluffy-cat-bed",
+              "x": 2,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-9",
+              "item": "lantern-cabinet",
+              "x": 4,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "ref-10",
+              "item": "lantern-cabinet",
+              "x": 17,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-11",
+              "item": "large-indoor-plant",
+              "x": 17,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-12",
+              "item": "stove",
+              "x": 1,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-13",
+              "item": "sink-counter",
+              "x": 3,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-14",
+              "item": "refrigerator",
+              "x": 6,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-15",
+              "item": "dining-table",
+              "x": 3,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-16",
+              "item": "dining-chair",
+              "x": 1,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-17",
+              "item": "dining-chair",
+              "x": 5,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-18",
+              "item": "large-indoor-plant",
+              "x": 6,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-19",
+              "item": "basket-cat-stand",
+              "x": 18,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-20",
+              "item": "cozy-cat-perch",
+              "x": 21,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-21",
+              "item": "wicker-display-cabinet",
+              "x": 19,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-22",
+              "item": "round-fluffy-cat-bed",
+              "x": 17,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-23",
+              "item": "small-cat-bed",
+              "x": 21,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-24",
+              "item": "food-bowl-full",
+              "x": 19,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-25",
+              "item": "water-bowl-full",
+              "x": 20,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-26",
+              "item": "large-indoor-plant",
+              "x": 22,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-27",
+              "item": "round-flower-table",
+              "x": 12,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-28",
+              "item": "woven-runner",
+              "x": 12,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-29",
+              "item": "floor-lamp",
+              "x": 14,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-30",
+              "item": "flower-pot",
+              "x": 11,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-31",
+              "item": "flower-pot",
+              "x": 14,
+              "y": 13,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "painting",
+              "x": 6,
+              "y": 1
+            },
+            {
+              "item": "picture-frame",
+              "x": 8,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 11,
+              "y": 1
+            },
+            {
+              "item": "decorative-lights",
+              "x": 13,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 17,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 4,
+              "y": 8
+            },
+            {
+              "item": "kitchen-shelves",
+              "x": 2,
+              "y": 8
+            },
+            {
+              "item": "picture-frame",
+              "x": 20,
+              "y": 8
+            }
+          ]
+        },
+        "upstairs": {
+          "label": "Upper floor",
+          "width": 24,
+          "height": 15,
+          "spawn": [
+            20,
+            5
+          ],
+          "door": null,
+          "walls": [
+            {
+              "rect": [
+                15,
+                1,
+                1,
+                6
+              ],
+              "gaps": [
+                [
+                  15,
+                  4,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                1,
+                7,
+                22,
+                1
+              ],
+              "gaps": [
+                [
+                  8,
+                  7,
+                  7,
+                  1
+                ]
+              ]
+            },
+            {
+              "rect": [
+                7,
+                8,
+                1,
+                6
+              ],
+              "gaps": [
+                [
+                  7,
+                  10,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                15,
+                8,
+                1,
+                6
+              ],
+              "gaps": [
+                [
+                  15,
+                  10,
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "rect": [
+                9,
+                1,
+                1,
+                6
+              ],
+              "gaps": [
+                [
+                  9,
+                  5,
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "protected": [
+            [
+              14,
+              4,
+              3,
+              2
+            ],
+            [
+              8,
+              7,
+              7,
+              2
+            ],
+            [
+              6,
+              10,
+              3,
+              2
+            ],
+            [
+              14,
+              10,
+              3,
+              2
+            ],
+            [
+              19,
+              5,
+              3,
+              1
+            ],
+            [
+              8,
+              5,
+              3,
+              2
+            ]
+          ],
+          "stairs": [
+            {
+              "rect": [
+                19,
+                2,
+                3,
+                3
+              ],
+              "landing": [
+                20,
+                5
+              ],
+              "to": "interior"
+            }
+          ],
+          "rooms": [
+            "Landing lounge",
+            "Main bedroom",
+            "Study",
+            "Second bedroom"
+          ],
+          "items": [
+            {
+              "id": "ref-0",
+              "item": "bookshelf",
+              "x": 2,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-1",
+              "item": "sage-chaise",
+              "x": 6,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "ref-2",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-3",
+              "item": "round-flower-table",
+              "x": 6,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-4",
+              "item": "woven-area-rug",
+              "x": 6,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-5",
+              "item": "sage-bed",
+              "x": 12,
+              "y": 4,
+              "rotation": 0
+            },
+            {
+              "id": "ref-6",
+              "item": "lantern-cabinet",
+              "x": 14,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-7",
+              "item": "wardrobe",
+              "x": 12,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-8",
+              "item": "small-cat-bed",
+              "x": 17,
+              "y": 6,
+              "rotation": 0
+            },
+            {
+              "id": "ref-9",
+              "item": "large-indoor-plant",
+              "x": 17,
+              "y": 3,
+              "rotation": 0
+            },
+            {
+              "id": "ref-10",
+              "item": "bookshelf",
+              "x": 2,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-11",
+              "item": "bookshelf",
+              "x": 5,
+              "y": 9,
+              "rotation": 0
+            },
+            {
+              "id": "ref-12",
+              "item": "desk",
+              "x": 3,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-13",
+              "item": "chair",
+              "x": 3,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-14",
+              "item": "floor-lamp",
+              "x": 6,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-15",
+              "item": "large-indoor-plant",
+              "x": 1,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-16",
+              "item": "sage-bed",
+              "x": 19,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-17",
+              "item": "lantern-cabinet",
+              "x": 17,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-18",
+              "item": "wardrobe",
+              "x": 20,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-19",
+              "item": "pet-blanket-sage",
+              "x": 19,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-20",
+              "item": "small-cat-bed",
+              "x": 17,
+              "y": 13,
+              "rotation": 0
+            },
+            {
+              "id": "ref-21",
+              "item": "large-indoor-plant",
+              "x": 22,
+              "y": 11,
+              "rotation": 0
+            },
+            {
+              "id": "ref-22",
+              "item": "round-flower-table",
+              "x": 12,
+              "y": 10,
+              "rotation": 0
+            },
+            {
+              "id": "ref-23",
+              "item": "woven-runner",
+              "x": 12,
+              "y": 12,
+              "rotation": 0
+            },
+            {
+              "id": "ref-24",
+              "item": "woven-area-rug",
+              "x": 19,
+              "y": 11,
+              "rotation": 0
+            }
+          ],
+          "fixtures": [
+            {
+              "item": "window",
+              "x": 6,
+              "y": 1
+            },
+            {
+              "item": "painting",
+              "x": 12,
+              "y": 1
+            },
+            {
+              "item": "window",
+              "x": 4,
+              "y": 8
+            },
+            {
+              "item": "painting",
+              "x": 19,
+              "y": 8
+            },
+            {
+              "item": "decorative-lights",
+              "x": 17,
+              "y": 8
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

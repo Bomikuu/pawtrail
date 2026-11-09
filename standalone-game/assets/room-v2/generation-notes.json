@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    "docs/images/pawtrail-home-room-reference-v1.png",
+    "public/assets/game/housing/furniture/cozy-room-v1/sage-bed-v1.png"
+  ],
+  "sheets": {
+    "seating": "Opposing sage loveseats, round coffee table and woven area rug, 2x2 native-export sprite sheet.",
+    "details": "Chaise, lantern bedside, display cabinet, bamboo window, woven runner and double feeding tray, 2x3 sprite sheet."
+  }
+}

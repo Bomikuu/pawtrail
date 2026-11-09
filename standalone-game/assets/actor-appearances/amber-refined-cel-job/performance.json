@@ -1,0 +1,872 @@
+{
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    1,
+    3,
+    94,
+    116
+  ],
+  "poses": {
+    "front-pout": {
+      "expressions": {
+        "neutral": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4800,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "smile": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "happy": {
+          "eyesClosedAtRest": true,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 3600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "sad": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3400,
+              4700
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 5600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "angry": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 3800,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "surprised": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4200,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        }
+      }
+    },
+    "three-quarter-left": {
+      "expressions": {
+        "neutral": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4800,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "smile": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "happy": {
+          "eyesClosedAtRest": true,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 3600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "sad": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3400,
+              4700
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 5600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "angry": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 3800,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "surprised": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4200,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        }
+      }
+    },
+    "head-tilt-smile-right": {
+      "expressions": {
+        "neutral": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4800,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "smile": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "happy": {
+          "eyesClosedAtRest": true,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 3600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "sad": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3400,
+              4700
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 5600,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "angry": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 3800,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        },
+        "surprised": {
+          "eyesClosedAtRest": false,
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              2800,
+              4100
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              150,
+              150,
+              150,
+              130,
+              200,
+              150,
+              150,
+              180
+            ]
+          },
+          "breathing": {
+            "periodMs": 4200,
+            "risePixels": 1,
+            "torsoStartY": 108,
+            "anchorRows": 4
+          }
+        }
+      }
+    }
+  }
+}

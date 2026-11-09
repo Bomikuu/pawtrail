@@ -1,0 +1,79 @@
+{
+  "cssSource": "https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600;700;800&family=Instrument+Sans:wght@400..700&display=swap",
+  "families": {
+    "Saira Condensed": "Primary headings, names and world labels",
+    "Instrument Sans": "Secondary body text, controls and dialogue"
+  },
+  "files": [
+    {
+      "file": "instrument-sans-400-700-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0She1YmV.woff2",
+      "bytes": 11144
+    },
+    {
+      "file": "instrument-sans-400-700-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0SZe1Q.woff2",
+      "bytes": 30092
+    },
+    {
+      "file": "saira-condensed-400-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJROQgErUN8XuHNEtX81i9TmEkrvretFyIw.woff2",
+      "bytes": 7000
+    },
+    {
+      "file": "saira-condensed-400-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJROQgErUN8XuHNEtX81i9TmEkrvrOtFyIw.woff2",
+      "bytes": 14692
+    },
+    {
+      "file": "saira-condensed-400-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJROQgErUN8XuHNEtX81i9TmEkrvoutF.woff2",
+      "bytes": 18160
+    },
+    {
+      "file": "saira-condensed-600-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnfc9Q-K2fli0.woff2",
+      "bytes": 6996
+    },
+    {
+      "file": "saira-condensed-600-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnfc9Q-a2fli0.woff2",
+      "bytes": 14736
+    },
+    {
+      "file": "saira-condensed-600-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnfc9Q962f.woff2",
+      "bytes": 17980
+    },
+    {
+      "file": "saira-condensed-700-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnGc5Q-K2fli0.woff2",
+      "bytes": 6892
+    },
+    {
+      "file": "saira-condensed-700-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnGc5Q-a2fli0.woff2",
+      "bytes": 14716
+    },
+    {
+      "file": "saira-condensed-700-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnGc5Q962f.woff2",
+      "bytes": 17808
+    },
+    {
+      "file": "saira-condensed-800-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnBc1Q-K2fli0.woff2",
+      "bytes": 7060
+    },
+    {
+      "file": "saira-condensed-800-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnBc1Q-a2fli0.woff2",
+      "bytes": 14868
+    },
+    {
+      "file": "saira-condensed-800-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnBc1Q962f.woff2",
+      "bytes": 17984
+    }
+  ]
+}

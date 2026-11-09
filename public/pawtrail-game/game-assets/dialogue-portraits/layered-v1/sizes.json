@@ -1,0 +1,142 @@
+{
+  "budgetBytes": 500000,
+  "scope": "base + expression atlas + optional color mask + individual manifest; shared JS excluded",
+  "portraits": [
+    {
+      "id": "maya",
+      "bytes": 9533,
+      "baseBytes": 6051,
+      "atlasBytes": 947,
+      "maskBytes": 1698,
+      "manifestBytes": 837
+    },
+    {
+      "id": "lina",
+      "bytes": 10121,
+      "baseBytes": 6554,
+      "atlasBytes": 857,
+      "maskBytes": 1873,
+      "manifestBytes": 837
+    },
+    {
+      "id": "jo",
+      "bytes": 10386,
+      "baseBytes": 6994,
+      "atlasBytes": 854,
+      "maskBytes": 1710,
+      "manifestBytes": 828
+    },
+    {
+      "id": "glasses-rescuer",
+      "bytes": 11042,
+      "baseBytes": 7228,
+      "atlasBytes": 1111,
+      "maskBytes": 1822,
+      "manifestBytes": 881
+    },
+    {
+      "id": "blonde-rescuer",
+      "bytes": 14034,
+      "baseBytes": 9897,
+      "atlasBytes": 1217,
+      "maskBytes": 2043,
+      "manifestBytes": 877
+    },
+    {
+      "id": "red-rescuer",
+      "bytes": 12985,
+      "baseBytes": 9080,
+      "atlasBytes": 1229,
+      "maskBytes": 1811,
+      "manifestBytes": 865
+    },
+    {
+      "id": "violet-rescuer",
+      "bytes": 12345,
+      "baseBytes": 8487,
+      "atlasBytes": 1180,
+      "maskBytes": 1801,
+      "manifestBytes": 877
+    },
+    {
+      "id": "male-red-gardener",
+      "bytes": 9832,
+      "baseBytes": 6096,
+      "atlasBytes": 991,
+      "maskBytes": 1856,
+      "manifestBytes": 889
+    },
+    {
+      "id": "male-blonde-scout",
+      "bytes": 12391,
+      "baseBytes": 8628,
+      "atlasBytes": 996,
+      "maskBytes": 1884,
+      "manifestBytes": 883
+    },
+    {
+      "id": "male-violet-volunteer",
+      "bytes": 10606,
+      "baseBytes": 6933,
+      "atlasBytes": 954,
+      "maskBytes": 1822,
+      "manifestBytes": 897
+    },
+    {
+      "id": "trail-rescuer",
+      "bytes": 31407,
+      "baseBytes": 25372,
+      "atlasBytes": 1914,
+      "maskBytes": 3231,
+      "manifestBytes": 890
+    },
+    {
+      "id": "cat-orange",
+      "bytes": 12812,
+      "baseBytes": 8866,
+      "atlasBytes": 1977,
+      "maskBytes": 1093,
+      "manifestBytes": 876
+    },
+    {
+      "id": "cat-black",
+      "bytes": 12134,
+      "baseBytes": 7881,
+      "atlasBytes": 1953,
+      "maskBytes": 1428,
+      "manifestBytes": 872
+    },
+    {
+      "id": "cat-white",
+      "bytes": 11694,
+      "baseBytes": 7822,
+      "atlasBytes": 1877,
+      "maskBytes": 1123,
+      "manifestBytes": 872
+    },
+    {
+      "id": "cat-gray",
+      "bytes": 11859,
+      "baseBytes": 7944,
+      "atlasBytes": 1924,
+      "maskBytes": 1123,
+      "manifestBytes": 868
+    },
+    {
+      "id": "cat-cream",
+      "bytes": 10689,
+      "baseBytes": 7097,
+      "atlasBytes": 1757,
+      "maskBytes": 963,
+      "manifestBytes": 872
+    },
+    {
+      "id": "cat-brown",
+      "bytes": 11694,
+      "baseBytes": 7892,
+      "atlasBytes": 1940,
+      "maskBytes": 990,
+      "manifestBytes": 872
+    }
+  ]
+}

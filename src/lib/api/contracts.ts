@@ -1,3 +1,6 @@
+import type { z } from 'zod'
+import type { communityStatisticsSchema } from '@/features/discovery/schemas'
+import type { MedicalFilters, MedicalInput, MedicalUpdate, MedicalRecord, MedicalPage } from '@/features/medical/schemas'
 import type {
   AnimalActivityPage,
   AnimalActivityFilters,
@@ -82,6 +85,7 @@ import type {
   ApplicationReviewInput,
 } from '@/features/adoption/types'
 import type {
+  SupportPledge,
   CampaignDetail,
   CampaignDraft,
   CampaignDraftSummary,
@@ -142,6 +146,11 @@ export interface PawTrailApi {
   media: {
     upload(input: MediaUpload, options?: RequestOptions): Promise<MediaAsset>
     remove(id: Id, options?: RequestOptions): Promise<void>
+  }
+  medical: {
+    list(animal: string, filters: MedicalFilters, options?: RequestOptions): Promise<MedicalPage>
+    create(animal: string, input: MedicalInput, options?: RequestOptions): Promise<MedicalRecord>
+    update(animal: string, id: string, input: MedicalUpdate, options?: RequestOptions): Promise<MedicalRecord>
   }
   animals: {
     list(
@@ -263,6 +272,7 @@ export interface PawTrailApi {
     create(input: SightingInput, options?: RequestOptions): Promise<Sighting>
   }
   discovery: {
+    communityStats(options?: RequestOptions): Promise<z.infer<typeof communityStatisticsSchema>>
     searchAreas(q: string, options?: RequestOptions): Promise<GeoArea[]>
     nearby(
       input: DiscoveryQuery,
@@ -358,6 +368,11 @@ export interface PawTrailApi {
       options?: RequestOptions,
     ): Promise<ExpenseEntry>
     close(id: Id, options?: RequestOptions): Promise<CampaignDetail>
+    pledge(
+      id: Id,
+      input: DemoDonationInput,
+      options?: RequestOptions,
+    ): Promise<SupportPledge>
     simulateDonation(
       id: Id,
       input: DemoDonationInput,

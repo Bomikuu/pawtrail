@@ -22,7 +22,7 @@ import { ProfileBanner } from '@/features/users/profile-banner'
 import { profileDate } from './activity-timeline'
 import type { AnimalProfile } from './types'
 import type { AnimalActivityPage } from './activity-schemas'
-export type AnimalProfileTab = 'activity' | 'about' | 'photos' | 'location'
+export type AnimalProfileTab = 'activity' | 'about' | 'photos' | 'location' | 'medical'
 export function AnimalSocialHeader({
   animal,
   activity,
@@ -71,6 +71,8 @@ export function AnimalSocialHeader({
         >
           <AnimalImage
             image={animal.photo}
+            species={animal.species}
+            appearance={animal.appearance}
             className={
               'pet-profile-photo w-full h-full object-cover rounded-full'
             }
@@ -120,7 +122,9 @@ export function AnimalSocialHeader({
               ? 'Gender not recorded'
               : animal.gender[0].toUpperCase() + animal.gender.slice(1)}
             <span aria-hidden="true"> · </span>
-            {animal.ageMonths} months
+            {animal.ageMonths === null
+              ? 'Age not recorded'
+              : animal.ageMonths + ' months'}
           </p>
           <p
             className={
@@ -198,7 +202,14 @@ export function AnimalAbout({
   extended?: boolean
 }) {
   const facts = [
-    { label: 'Age', value: animal.ageMonths + ' months', icon: CalendarDays },
+    {
+      label: 'Age',
+      value:
+        animal.ageMonths === null
+          ? 'Not recorded'
+          : animal.ageMonths + ' months',
+      icon: CalendarDays,
+    },
     {
       label: 'Gender',
       value: animal.gender === 'unknown' ? 'Not recorded' : animal.gender,

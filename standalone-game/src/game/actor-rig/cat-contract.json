@@ -1,0 +1,66 @@
+{
+  "breed": [
+    "domestic",
+    "persian",
+    "siamese",
+    "maine-coon",
+    "bobtail"
+  ],
+  "pattern": [
+    "mackerel",
+    "classic-tabby",
+    "spotted",
+    "solid",
+    "bicolor",
+    "calico",
+    "colorpoint"
+  ],
+  "fur": [
+    "short",
+    "plush",
+    "long"
+  ],
+  "tail": [
+    "long",
+    "plume",
+    "bobtail",
+    "stub"
+  ],
+  "tailMotion": [
+    "sway",
+    "upright",
+    "swish"
+  ],
+  "hat": [
+    "none",
+    "cap",
+    "witch",
+    "flower"
+  ],
+  "shoes": [
+    "none",
+    "boots"
+  ],
+  "wings": [
+    "none",
+    "feathered",
+    "bat"
+  ],
+  "collar": [
+    "none",
+    "bell",
+    "bandana"
+  ],
+  "bodySize": [
+    "kitten",
+    "standard",
+    "large"
+  ],
+  "faceMarking": [
+    "none",
+    "mustache",
+    "split-mustache",
+    "tuxedo",
+    "freckles"
+  ]
+}

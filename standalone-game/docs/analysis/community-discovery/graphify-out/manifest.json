@@ -1,0 +1,458 @@
+{
+  "App.tsx": {
+    "mtime": 1794056346.1742616,
+    "seen": 1794063287.8007948,
+    "ast_hash": "977ab0010129c50ce669bf9c29b4068e",
+    "semantic_hash": "977ab0010129c50ce669bf9c29b4068e"
+  },
+  "components/game/character-picker.tsx": {
+    "mtime": 1794026025.9608614,
+    "seen": 1794063287.8008022,
+    "ast_hash": "d7ac50cc9735694604cb7552023899c7",
+    "semantic_hash": "d7ac50cc9735694604cb7552023899c7"
+  },
+  "components/game/community/app.tsx": {
+    "mtime": 1794056346.1744173,
+    "seen": 1794063287.8008063,
+    "ast_hash": "583775fac8fe70e72317db58ad2660de",
+    "semantic_hash": "583775fac8fe70e72317db58ad2660de"
+  },
+  "components/game/community/map-canvas.tsx": {
+    "mtime": 1794059140.5482883,
+    "seen": 1794063287.8008096,
+    "ast_hash": "ff7d3a550355a9d470899606ef5f16df",
+    "semantic_hash": "ff7d3a550355a9d470899606ef5f16df"
+  },
+  "components/game/community/place-preview.tsx": {
+    "mtime": 1794034493.896101,
+    "seen": 1794063287.8008132,
+    "ast_hash": "d4e5b1fe762eac1713c3039eaa2a05d6",
+    "semantic_hash": "d4e5b1fe762eac1713c3039eaa2a05d6"
+  },
+  "components/game/community/simple-map.tsx": {
+    "mtime": 1794057402.676653,
+    "seen": 1794063287.8008163,
+    "ast_hash": "1fe74e96c3b3b720caa2dd793029767a",
+    "semantic_hash": "1fe74e96c3b3b720caa2dd793029767a"
+  },
+  "components/game/context-actions.tsx": {
+    "mtime": 1794037128.6133027,
+    "seen": 1794063287.8008199,
+    "ast_hash": "c9a765d9ecca1aaf5a13ebcc1f6f9487",
+    "semantic_hash": "c9a765d9ecca1aaf5a13ebcc1f6f9487"
+  },
+  "components/game/dialogue-portrait.tsx": {
+    "mtime": 1794026025.9608614,
+    "seen": 1794063287.8008232,
+    "ast_hash": "9ec49188f3afe81201e20cc7ee1e62f0",
+    "semantic_hash": "9ec49188f3afe81201e20cc7ee1e62f0"
+  },
+  "components/game/game-canvas.tsx": {
+    "mtime": 1793996130.6200511,
+    "seen": 1794063287.8008263,
+    "ast_hash": "aa666625a319bdce4b40611506d400a4",
+    "semantic_hash": "aa666625a319bdce4b40611506d400a4"
+  },
+  "components/game/housing/app.tsx": {
+    "mtime": 1794058910.9282668,
+    "seen": 1794063287.8008296,
+    "ast_hash": "c2aae31f87fcb1550eeee36926c59575",
+    "semantic_hash": "c2aae31f87fcb1550eeee36926c59575"
+  },
+  "components/game/housing/decoration.tsx": {
+    "mtime": 1794058531.2862167,
+    "seen": 1794063287.8008332,
+    "ast_hash": "4cb9821df30a9ccbe286c2a82caed493",
+    "semantic_hash": "4cb9821df30a9ccbe286c2a82caed493"
+  },
+  "components/game/housing/layout-picker.tsx": {
+    "mtime": 1794061909.5760841,
+    "seen": 1794063287.8008368,
+    "ast_hash": "f79d35ea9816f3ea33f3a6dfa98c89a3",
+    "semantic_hash": "f79d35ea9816f3ea33f3a6dfa98c89a3"
+  },
+  "components/game/housing/market.tsx": {
+    "mtime": 1794057375.287018,
+    "seen": 1794063287.80084,
+    "ast_hash": "481136762eb5c41fb3dfb13ae648835a",
+    "semantic_hash": "481136762eb5c41fb3dfb13ae648835a"
+  },
+  "components/game/housing/panels.tsx": {
+    "mtime": 1794058669.1771772,
+    "seen": 1794063287.8008432,
+    "ast_hash": "81033bac01e4bff1c07411e95dab21e2",
+    "semantic_hash": "81033bac01e4bff1c07411e95dab21e2"
+  },
+  "components/game/housing/pets.tsx": {
+    "mtime": 1794034548.1111605,
+    "seen": 1794063287.8008468,
+    "ast_hash": "b8c57cc89e8e38d35377eda9b7756130",
+    "semantic_hash": "b8c57cc89e8e38d35377eda9b7756130"
+  },
+  "components/game/housing/room-preview.tsx": {
+    "mtime": 1794060686.259063,
+    "seen": 1794063287.80085,
+    "ast_hash": "6e39db74280c201d6d0c03659ddc64dc",
+    "semantic_hash": "6e39db74280c201d6d0c03659ddc64dc"
+  },
+  "components/game/housing/social.tsx": {
+    "mtime": 1794003413.6149569,
+    "seen": 1794063287.8008533,
+    "ast_hash": "54983b47c68296c941f8d94ff6380211",
+    "semantic_hash": "54983b47c68296c941f8d94ff6380211"
+  },
+  "components/game/immersion/inventory.tsx": {
+    "mtime": 1794037176.4052918,
+    "seen": 1794063287.8008568,
+    "ast_hash": "6d856f51c941fbf8d6f64d5109050cd1",
+    "semantic_hash": "6d856f51c941fbf8d6f64d5109050cd1"
+  },
+  "components/game/immersion/missions.tsx": {
+    "mtime": 1794037237.3826385,
+    "seen": 1794063287.80086,
+    "ast_hash": "cbb4aae27ee21c98607d69be737aaa7f",
+    "semantic_hash": "cbb4aae27ee21c98607d69be737aaa7f"
+  },
+  "components/game/immersion/soundboard.tsx": {
+    "mtime": 1794036248.8714156,
+    "seen": 1794063287.8008633,
+    "ast_hash": "c954ecfc90652f8d6515739f960415cc",
+    "semantic_hash": "c954ecfc90652f8d6515739f960415cc"
+  },
+  "components/game/map-panel.tsx": {
+    "mtime": 1793996999.7810771,
+    "seen": 1794063287.8008666,
+    "ast_hash": "fc96f1270683fb688f6fa404146c3474",
+    "semantic_hash": "fc96f1270683fb688f6fa404146c3474"
+  },
+  "components/game/panels.tsx": {
+    "mtime": 1794036746.3772213,
+    "seen": 1794063287.80087,
+    "ast_hash": "1cc177c8f7f6fd928c64363289897efe",
+    "semantic_hash": "1cc177c8f7f6fd928c64363289897efe"
+  },
+  "components/game/platform-animals.tsx": {
+    "mtime": 1794056346.174751,
+    "seen": 1794063287.8008735,
+    "ast_hash": "3bffa1488e8aaa270cf74d4b26f9cec4",
+    "semantic_hash": "3bffa1488e8aaa270cf74d4b26f9cec4"
+  },
+  "components/game/touch-controls.tsx": {
+    "mtime": 1794002348.064619,
+    "seen": 1794063287.800877,
+    "ast_hash": "6b5affc6efb423c85676275b796118dd",
+    "semantic_hash": "6b5affc6efb423c85676275b796118dd"
+  },
+  "components/ui/badge.tsx": {
+    "mtime": 1793996130.6161966,
+    "seen": 1794063287.8008802,
+    "ast_hash": "fbd2250fc47e29afde2ee33af68a6047",
+    "semantic_hash": "fbd2250fc47e29afde2ee33af68a6047"
+  },
+  "components/ui/button.tsx": {
+    "mtime": 1793996130.6188426,
+    "seen": 1794063287.8008835,
+    "ast_hash": "bc148357edb6916e752a39d22a73e32b",
+    "semantic_hash": "bc148357edb6916e752a39d22a73e32b"
+  },
+  "components/ui/card.tsx": {
+    "mtime": 1793996130.6171043,
+    "seen": 1794063287.8008869,
+    "ast_hash": "5218d8c952eaa690a1fcf2fb057a4efe",
+    "semantic_hash": "5218d8c952eaa690a1fcf2fb057a4efe"
+  },
+  "components/ui/dialog.tsx": {
+    "mtime": 1793996130.618362,
+    "seen": 1794063287.8008904,
+    "ast_hash": "52a9deac2179a7b6038c068899d54667",
+    "semantic_hash": "52a9deac2179a7b6038c068899d54667"
+  },
+  "components/ui/input.tsx": {
+    "mtime": 1793996999.970077,
+    "seen": 1794063287.8008938,
+    "ast_hash": "9cc85b70b2f704f2f915d81e24296005",
+    "semantic_hash": "9cc85b70b2f704f2f915d81e24296005"
+  },
+  "components/ui/progress.tsx": {
+    "mtime": 1793996130.619387,
+    "seen": 1794063287.800897,
+    "ast_hash": "1887d71e1736cd4a2406156704cdba50",
+    "semantic_hash": "1887d71e1736cd4a2406156704cdba50"
+  },
+  "components/ui/scroll-area.tsx": {
+    "mtime": 1793996130.6152325,
+    "seen": 1794063287.8009,
+    "ast_hash": "f2f983c7568406ea2b1149d4af969a98",
+    "semantic_hash": "f2f983c7568406ea2b1149d4af969a98"
+  },
+  "components/ui/separator.tsx": {
+    "mtime": 1793996130.6166687,
+    "seen": 1794063287.8009038,
+    "ast_hash": "057592e7529a1ef391e0cb8f4327d629",
+    "semantic_hash": "057592e7529a1ef391e0cb8f4327d629"
+  },
+  "components/ui/slider.tsx": {
+    "mtime": 1793996999.994077,
+    "seen": 1794063287.800907,
+    "ast_hash": "3d8ddfa4691ff3ea408dbe4bc724a5c3",
+    "semantic_hash": "3d8ddfa4691ff3ea408dbe4bc724a5c3"
+  },
+  "components/ui/switch.tsx": {
+    "mtime": 1793996999.9990768,
+    "seen": 1794063287.8009102,
+    "ast_hash": "c421ba52b75539267d521b6b8956d3e8",
+    "semantic_hash": "c421ba52b75539267d521b6b8956d3e8"
+  },
+  "components/ui/tabs.tsx": {
+    "mtime": 1793996130.617514,
+    "seen": 1794063287.8009136,
+    "ast_hash": "1a8d6b45dae889052c2dedad90104bbd",
+    "semantic_hash": "1a8d6b45dae889052c2dedad90104bbd"
+  },
+  "components/ui/tooltip.tsx": {
+    "mtime": 1793996130.6157374,
+    "seen": 1794063287.8009167,
+    "ast_hash": "473cef2730b41c0fae3602218ccb6ada",
+    "semantic_hash": "473cef2730b41c0fae3602218ccb6ada"
+  },
+  "game/atmosphere.ts": {
+    "mtime": 1794056181.5088103,
+    "seen": 1794063287.80092,
+    "ast_hash": "1d7c53120f7a1750f62c17006972a265",
+    "semantic_hash": "1d7c53120f7a1750f62c17006972a265"
+  },
+  "game/characters.ts": {
+    "mtime": 1794025999.8038652,
+    "seen": 1794063287.8009233,
+    "ast_hash": "45fb71105a841bdc827922563ee3bec6",
+    "semantic_hash": "45fb71105a841bdc827922563ee3bec6"
+  },
+  "game/community.ts": {
+    "mtime": 1794034493.8971012,
+    "seen": 1794063287.8009267,
+    "ast_hash": "57d1c2eeb339b7ad374b1e1d7c226294",
+    "semantic_hash": "57d1c2eeb339b7ad374b1e1d7c226294"
+  },
+  "game/create-game.ts": {
+    "mtime": 1793996130.612115,
+    "seen": 1794063287.8009298,
+    "ast_hash": "ac9ecf7c72a9722e49f55e18d74373fe",
+    "semantic_hash": "ac9ecf7c72a9722e49f55e18d74373fe"
+  },
+  "game/data.ts": {
+    "mtime": 1794036608.2900374,
+    "seen": 1794063287.8009331,
+    "ast_hash": "e349a13466344ff57efbcb222155b86e",
+    "semantic_hash": "e349a13466344ff57efbcb222155b86e"
+  },
+  "game/django.ts": {
+    "mtime": 1793996130.612731,
+    "seen": 1794063287.8009365,
+    "ast_hash": "43d3a1a0ee7bca5a9dcc0305a56b7d1f",
+    "semantic_hash": "43d3a1a0ee7bca5a9dcc0305a56b7d1f"
+  },
+  "game/housing/catalog.json": {
+    "mtime": 1794061749.0223541,
+    "seen": 1794063287.8009396,
+    "ast_hash": "63c877ed00c9ad5a4cfc697fca4a9e8b",
+    "semantic_hash": "63c877ed00c9ad5a4cfc697fca4a9e8b"
+  },
+  "game/housing/client.ts": {
+    "mtime": 1794058587.255709,
+    "seen": 1794063287.8009436,
+    "ast_hash": "bc2b35d497ae9b06cc2a32059b01bec7",
+    "semantic_hash": "bc2b35d497ae9b06cc2a32059b01bec7"
+  },
+  "game/housing/community-art.json": {
+    "mtime": 1794052774.8062537,
+    "seen": 1794063287.800947,
+    "ast_hash": "718fdf62705fd67dea52815b4a155a7c",
+    "semantic_hash": "718fdf62705fd67dea52815b4a155a7c"
+  },
+  "game/housing/community-layout.json": {
+    "mtime": 1794053233.7831326,
+    "seen": 1794063287.8009505,
+    "ast_hash": "f2d38515bf29ff8b1fa14b2e7fcf6a32",
+    "semantic_hash": "f2d38515bf29ff8b1fa14b2e7fcf6a32"
+  },
+  "game/housing/community.ts": {
+    "mtime": 1794058531.2853432,
+    "seen": 1794063287.8009539,
+    "ast_hash": "5d58c97ec352b3670bcc404ec9c23770",
+    "semantic_hash": "5d58c97ec352b3670bcc404ec9c23770"
+  },
+  "game/housing/encounter-animations.json": {
+    "mtime": 1794053089.6710682,
+    "seen": 1794063287.8009572,
+    "ast_hash": "4694f90d067fcae4591c2c8f24bd3060",
+    "semantic_hash": "4694f90d067fcae4591c2c8f24bd3060"
+  },
+  "game/housing/encounters.ts": {
+    "mtime": 1794056181.4891706,
+    "seen": 1794063287.8009605,
+    "ast_hash": "8536d9ea11d56febae3b02717333d896",
+    "semantic_hash": "8536d9ea11d56febae3b02717333d896"
+  },
+  "game/housing/geometry.ts": {
+    "mtime": 1794058531.2856076,
+    "seen": 1794063287.8009636,
+    "ast_hash": "aeb25ab6533526c5f3be3e53b7de1bf3",
+    "semantic_hash": "aeb25ab6533526c5f3be3e53b7de1bf3"
+  },
+  "game/housing/house-presets-legacy.json": {
+    "mtime": 1794061862.2262669,
+    "seen": 1794063287.800967,
+    "ast_hash": "6495f1c966fbb1b71cd3c7f2a1134b62",
+    "semantic_hash": "6495f1c966fbb1b71cd3c7f2a1134b62"
+  },
+  "game/housing/house-presets.json": {
+    "mtime": 1794061862.2278304,
+    "seen": 1794063287.8009703,
+    "ast_hash": "be4a45608cc5e7ea91b8046d891ac74f",
+    "semantic_hash": "be4a45608cc5e7ea91b8046d891ac74f"
+  },
+  "game/housing/interior.ts": {
+    "mtime": 1794060514.0920808,
+    "seen": 1794063287.8009737,
+    "ast_hash": "3547aa0b3e2e863402936eb50a17e600",
+    "semantic_hash": "3547aa0b3e2e863402936eb50a17e600"
+  },
+  "game/housing/outdoors.ts": {
+    "mtime": 1794057209.085012,
+    "seen": 1794063287.800977,
+    "ast_hash": "e232d2848590478ee3335b7d9b8bf58f",
+    "semantic_hash": "e232d2848590478ee3335b7d9b8bf58f"
+  },
+  "game/housing/presets.ts": {
+    "mtime": 1794061909.5740843,
+    "seen": 1794063287.8009799,
+    "ast_hash": "4db595e59d08aa53a5ec3769714dfecf",
+    "semantic_hash": "4db595e59d08aa53a5ec3769714dfecf"
+  },
+  "game/housing/room-art.ts": {
+    "mtime": 1794062084.0740967,
+    "seen": 1794063287.8009832,
+    "ast_hash": "a8f9891f8359c221eb5a89e0ce235b8d",
+    "semantic_hash": "a8f9891f8359c221eb5a89e0ce235b8d"
+  },
+  "game/housing/room-shell.ts": {
+    "mtime": 1794062084.0740967,
+    "seen": 1794063287.8009865,
+    "ast_hash": "06dd57f132a0a394665306ddc490b04a",
+    "semantic_hash": "06dd57f132a0a394665306ddc490b04a"
+  },
+  "game/housing/scene.ts": {
+    "mtime": 1794062152.3184924,
+    "seen": 1794063287.8009899,
+    "ast_hash": "ba43816ea71097709280693f31df31da",
+    "semantic_hash": "ba43816ea71097709280693f31df31da"
+  },
+  "game/housing/speech-bubble.ts": {
+    "mtime": 1794057499.967032,
+    "seen": 1794063287.8009932,
+    "ast_hash": "eca0320db1e07ed46632223ad6b011c2",
+    "semantic_hash": "eca0320db1e07ed46632223ad6b011c2"
+  },
+  "game/housing/types.ts": {
+    "mtime": 1794058531.2857306,
+    "seen": 1794063287.8009965,
+    "ast_hash": "9649b801531009cea78facaf25e53127",
+    "semantic_hash": "9649b801531009cea78facaf25e53127"
+  },
+  "game/immersion-data.ts": {
+    "mtime": 1794052827.529315,
+    "seen": 1794063287.8009999,
+    "ast_hash": "bd3e09b103477c8b33a5492a3dc0f46c",
+    "semantic_hash": "bd3e09b103477c8b33a5492a3dc0f46c"
+  },
+  "game/immersion-preferences.ts": {
+    "mtime": 1794036608.2291763,
+    "seen": 1794063287.8010032,
+    "ast_hash": "e680752dea002e98747fb4bd44dfa39d",
+    "semantic_hash": "e680752dea002e98747fb4bd44dfa39d"
+  },
+  "game/pathfinding.ts": {
+    "mtime": 1793996130.6095057,
+    "seen": 1794063287.8010068,
+    "ast_hash": "75669645a3a403eff38ec6f7de2f5cb2",
+    "semantic_hash": "75669645a3a403eff38ec6f7de2f5cb2"
+  },
+  "game/platform.ts": {
+    "mtime": 1794028304.5722144,
+    "seen": 1794063287.8010101,
+    "ast_hash": "b4524d94b95ef3d509a31fc17704ec59",
+    "semantic_hash": "b4524d94b95ef3d509a31fc17704ec59"
+  },
+  "game/soundboard.ts": {
+    "mtime": 1794037072.6893153,
+    "seen": 1794063287.8010132,
+    "ast_hash": "f2b4bb288d2e483158d1c5b8be072634",
+    "semantic_hash": "f2b4bb288d2e483158d1c5b8be072634"
+  },
+  "game/store.ts": {
+    "mtime": 1794037072.6873155,
+    "seen": 1794063287.8010166,
+    "ast_hash": "f786affd4b96564d5157c1b39adbd433",
+    "semantic_hash": "f786affd4b96564d5157c1b39adbd433"
+  },
+  "game/systems/audio.ts": {
+    "mtime": 1794036248.8720589,
+    "seen": 1794063287.80102,
+    "ast_hash": "351d84f4e2a5bbf5b8cf466e219fedbe",
+    "semantic_hash": "351d84f4e2a5bbf5b8cf466e219fedbe"
+  },
+  "game/systems/behavior.ts": {
+    "mtime": 1793997000.2410767,
+    "seen": 1794063287.8010232,
+    "ast_hash": "c1d7573ff20ce5d5e89010194ddefa60",
+    "semantic_hash": "c1d7573ff20ce5d5e89010194ddefa60"
+  },
+  "game/systems/care.ts": {
+    "mtime": 1793997000.2640767,
+    "seen": 1794063287.8010266,
+    "ast_hash": "85e1e2649ee1f03f28c14808f3686345",
+    "semantic_hash": "85e1e2649ee1f03f28c14808f3686345"
+  },
+  "game/systems/quests.ts": {
+    "mtime": 1794036645.6351883,
+    "seen": 1794063287.8010302,
+    "ast_hash": "bd0734e1e531ae28785bacf1ba06e2b7",
+    "semantic_hash": "bd0734e1e531ae28785bacf1ba06e2b7"
+  },
+  "game/systems/save.ts": {
+    "mtime": 1794036037.2729897,
+    "seen": 1794063287.8010335,
+    "ast_hash": "d94589facecd0b104da2962ce1a97e11",
+    "semantic_hash": "d94589facecd0b104da2962ce1a97e11"
+  },
+  "game/systems/time.ts": {
+    "mtime": 1793997000.3530767,
+    "seen": 1794063287.8010368,
+    "ast_hash": "f346c7bd6058aa8df432b28283a3fa70",
+    "semantic_hash": "f346c7bd6058aa8df432b28283a3fa70"
+  },
+  "game/types.ts": {
+    "mtime": 1794036005.9969795,
+    "seen": 1794063287.8010402,
+    "ast_hash": "870551a8f06b8a2eca721697967dc512",
+    "semantic_hash": "870551a8f06b8a2eca721697967dc512"
+  },
+  "game/world-scene.ts": {
+    "mtime": 1794037072.6893153,
+    "seen": 1794063287.8010435,
+    "ast_hash": "7e962f75e0035205d002bc7a0272d357",
+    "semantic_hash": "7e962f75e0035205d002bc7a0272d357"
+  },
+  "lib/utils.ts": {
+    "mtime": 1793996130.6132529,
+    "seen": 1794063287.8010468,
+    "ast_hash": "b4eb858667089886dc1c62a5c89e9160",
+    "semantic_hash": "b4eb858667089886dc1c62a5c89e9160"
+  },
+  "main.tsx": {
+    "mtime": 1793996130.6090512,
+    "seen": 1794063287.80105,
+    "ast_hash": "e2506370600403ef024a1d79c27a30be",
+    "semantic_hash": "e2506370600403ef024a1d79c27a30be"
+  }
+}

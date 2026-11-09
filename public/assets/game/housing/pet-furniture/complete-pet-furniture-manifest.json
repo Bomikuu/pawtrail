@@ -1,0 +1,2170 @@
+{
+  "generationMode": "built-in image_gen",
+  "palette": [
+    "33251c",
+    "4a3324",
+    "63452e",
+    "805a36",
+    "9b6a3b",
+    "b47c40",
+    "ce9148",
+    "e8aa57",
+    "f4c778",
+    "f7dda3",
+    "fff0c8",
+    "fff8e5",
+    "504d2a",
+    "656238",
+    "77763e",
+    "898a4a",
+    "9da05c",
+    "b1b771",
+    "c6cd8a",
+    "d8dda5",
+    "985037",
+    "b56a47",
+    "ce8659",
+    "e3a776",
+    "b9aa86",
+    "cfbf9c",
+    "e5d5b2",
+    "f2e3c5",
+    "b15431",
+    "cf6d3b",
+    "e28c4b",
+    "f6b868",
+    "395866",
+    "557986",
+    "79a5b4",
+    "a2cbd5",
+    "c7e3e5",
+    "f0fafa"
+  ],
+  "postprocessing": "Observed source-grid crops, threshold alpha128 to remove glow, native nearest-neighbor fitting, disconnected boundary fragment removal, palette remap without dithering, explicit fixed canvas; state/animation rows have actual exported frame positions.",
+  "newAssets": [
+    {
+      "id": "small-cat-bed",
+      "file": "/assets/game/housing/pet-furniture/small-cat-bed-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        11,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 18,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "round-fluffy-cat-bed",
+      "file": "/assets/game/housing/pet-furniture/round-fluffy-cat-bed-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet1-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        6,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 15,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "wooden-cat-house",
+      "file": "/assets/game/housing/pet-furniture/wooden-cat-house-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet1-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        4,
+        2,
+        60,
+        62
+      ],
+      "collisionFootprintPixels": [
+        5,
+        46,
+        54,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 18,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cat-tree",
+      "file": "/assets/game/housing/pet-furniture/cat-tree-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet1-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 96,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        94
+      ],
+      "occupiedBounds": [
+        2,
+        26,
+        62,
+        94
+      ],
+      "collisionFootprintPixels": [
+        3,
+        78,
+        58,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 31,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "tall-cat-climbing-tower",
+      "file": "/assets/game/housing/pet-furniture/tall-cat-climbing-tower-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet1-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 128,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        126
+      ],
+      "occupiedBounds": [
+        2,
+        30,
+        62,
+        126
+      ],
+      "collisionFootprintPixels": [
+        3,
+        110,
+        58,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 31,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cat-tunnel",
+      "file": "/assets/game/housing/pet-furniture/cat-tunnel-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet1-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        60,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        55,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 19,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "window-perch",
+      "file": "/assets/game/housing/pet-furniture/window-perch-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet2-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        7,
+        2,
+        56,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "hanging-cat-hammock",
+      "file": "/assets/game/housing/pet-furniture/hanging-cat-hammock-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet2-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        2,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 31,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cat-basket",
+      "file": "/assets/game/housing/pet-furniture/cat-basket-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet2-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        5,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cardboard-box",
+      "file": "/assets/game/housing/pet-furniture/cardboard-box-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet2-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        10,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 16,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cat-carrier",
+      "file": "/assets/game/housing/pet-furniture/cat-carrier-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet2-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        14,
+        2,
+        50,
+        30
+      ],
+      "collisionFootprintPixels": [
+        15,
+        14,
+        34,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 23,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "automatic-feeder",
+      "file": "/assets/game/housing/pet-furniture/automatic-feeder-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet2-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        9,
+        30,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 23,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "pet-food-storage-container",
+      "file": "/assets/game/housing/pet-furniture/pet-food-storage-container-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet3-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        29,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        24,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 24,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "pet-food-bag",
+      "file": "/assets/game/housing/pet-furniture/pet-food-bag-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet3-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        29,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        24,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "treat-container",
+      "file": "/assets/game/housing/pet-furniture/treat-container-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet3-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        4,
+        2,
+        28,
+        30
+      ],
+      "collisionFootprintPixels": [
+        5,
+        14,
+        22,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "water-fountain",
+      "file": "/assets/game/housing/pet-furniture/water-fountain-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet3-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        32,
+        30,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 26,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "yarn-ball",
+      "file": "/assets/game/housing/pet-furniture/yarn-ball-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet3-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        28,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        23,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 10,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "feather-wand",
+      "file": "/assets/game/housing/pet-furniture/feather-wand-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet3-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        16,
+        2,
+        48,
+        30
+      ],
+      "collisionFootprintPixels": [
+        17,
+        14,
+        30,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 26,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "toy-mouse",
+      "file": "/assets/game/housing/pet-furniture/toy-mouse-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet4-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        3,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 20,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "rubber-ball",
+      "file": "/assets/game/housing/pet-furniture/rubber-ball-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet4-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        2,
+        29,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        25,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 12,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "fish-plush-toy",
+      "file": "/assets/game/housing/pet-furniture/fish-plush-toy-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet4-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        9,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "interactive-track-toy",
+      "file": "/assets/game/housing/pet-furniture/interactive-track-toy-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet4-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        2,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "toy-basket",
+      "file": "/assets/game/housing/pet-furniture/toy-basket-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet4-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        12,
+        24,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        20,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 26,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "litter-box",
+      "file": "/assets/game/housing/pet-furniture/litter-box-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet4-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        9,
+        2,
+        55,
+        30
+      ],
+      "collisionFootprintPixels": [
+        10,
+        14,
+        44,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 17,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "grooming-brush",
+      "file": "/assets/game/housing/pet-furniture/grooming-brush-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet5-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        6,
+        2,
+        25,
+        30
+      ],
+      "collisionFootprintPixels": [
+        7,
+        14,
+        17,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 21,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "small-towel",
+      "file": "/assets/game/housing/pet-furniture/small-towel-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet5-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 16,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "pet-blanket",
+      "file": "/assets/game/housing/pet-furniture/pet-blanket-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet5-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        9,
+        2,
+        54,
+        30
+      ],
+      "collisionFootprintPixels": [
+        10,
+        14,
+        43,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 15,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cleaning-supplies",
+      "file": "/assets/game/housing/pet-furniture/cleaning-supplies-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet5-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        4,
+        2,
+        28,
+        30
+      ],
+      "collisionFootprintPixels": [
+        5,
+        14,
+        22,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 23,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "first-aid-kit",
+      "file": "/assets/game/housing/pet-furniture/first-aid-kit-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet5-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        2,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "first-aid-pouch",
+      "file": "/assets/game/housing/pet-furniture/first-aid-pouch-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-pet5-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        12,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 21,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "food-bowl-empty",
+      "file": "/assets/game/housing/pet-furniture/food-bowl-empty-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-states-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 16,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "food-bowl-half",
+      "file": "/assets/game/housing/pet-furniture/food-bowl-half-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-states-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 21,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "food-bowl-full",
+      "file": "/assets/game/housing/pet-furniture/food-bowl-full-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-states-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 19,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "water-bowl-empty",
+      "file": "/assets/game/housing/pet-furniture/water-bowl-empty-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-states-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 19,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "water-bowl-full",
+      "file": "/assets/game/housing/pet-furniture/water-bowl-full-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-states-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "water-bowl-half",
+      "file": "/assets/game/housing/pet-furniture/water-bowl-half-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-states-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 24,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "pet-blanket-sage",
+      "file": "/assets/game/housing/pet-furniture/pet-blanket-sage-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-colors-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        7,
+        2,
+        57,
+        30
+      ],
+      "collisionFootprintPixels": [
+        8,
+        14,
+        48,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 15,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "pet-blanket-terracotta",
+      "file": "/assets/game/housing/pet-furniture/pet-blanket-terracotta-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-colors-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        7,
+        2,
+        57,
+        30
+      ],
+      "collisionFootprintPixels": [
+        8,
+        14,
+        48,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 13,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "pet-blanket-cream",
+      "file": "/assets/game/housing/pet-furniture/pet-blanket-cream-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/complete-colors-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        7,
+        2,
+        57,
+        30
+      ],
+      "collisionFootprintPixels": [
+        8,
+        14,
+        48,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 18,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cat-tree-swing",
+      "file": "/assets/game/housing/pet-furniture/cat-tree-swing-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/cat-tree-swing-source.png",
+      "frameWidth": 64,
+      "frameHeight": 96,
+      "frames": 4,
+      "animations": {
+        "interaction": {
+          "file": "/assets/game/housing/pet-furniture/cat-tree-swing-interaction-complete-v1.png",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 64,
+              "height": 96
+            },
+            {
+              "x": 64,
+              "y": 0,
+              "width": 64,
+              "height": 96
+            },
+            {
+              "x": 128,
+              "y": 0,
+              "width": 64,
+              "height": 96
+            },
+            {
+              "x": 192,
+              "y": 0,
+              "width": 64,
+              "height": 96
+            }
+          ],
+          "frameRate": 8,
+          "loop": true,
+          "review": "Four distinct generated poses inspected; precise loop pacing requires playback review."
+        }
+      },
+      "productionReady": false,
+      "reviewStatus": "generated pose changes and framing inspected; continuity/engine playback not certified",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "toy-mouse-states",
+      "file": "/assets/game/housing/pet-furniture/toy-mouse-states-complete-v1.png",
+      "source": "/assets/game/housing/pet-furniture/sources-complete/toy-mouse-states-source.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 12,
+      "animations": {
+        "idle": {
+          "file": "/assets/game/housing/pet-furniture/toy-mouse-states-idle-complete-v1.png",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 32,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 64,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 96,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            }
+          ],
+          "frameRate": 5,
+          "loop": true,
+          "review": "Four distinct generated poses inspected; precise loop pacing requires playback review."
+        },
+        "moved": {
+          "file": "/assets/game/housing/pet-furniture/toy-mouse-states-moved-complete-v1.png",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 32,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 64,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 96,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            }
+          ],
+          "frameRate": 8,
+          "loop": true,
+          "review": "Four distinct generated poses inspected; precise loop pacing requires playback review."
+        },
+        "played": {
+          "file": "/assets/game/housing/pet-furniture/toy-mouse-states-played-complete-v1.png",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 32,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 64,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            },
+            {
+              "x": 96,
+              "y": 0,
+              "width": 32,
+              "height": 32
+            }
+          ],
+          "frameRate": 8,
+          "loop": true,
+          "review": "Four distinct generated poses inspected; precise loop pacing requires playback review."
+        }
+      },
+      "productionReady": false,
+      "reviewStatus": "generated pose changes and framing inspected; continuity/engine playback not certified",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    }
+  ],
+  "existingAssets": [
+    {
+      "id": "cat-bed_housing_v1",
+      "category": "pet-furniture",
+      "file": "/assets/game/housing/pet-furniture/cat-bed-housing-v1.png",
+      "sourceFile": "/assets/game/housing/pet-furniture/cat-bed-housing-v1-source.png",
+      "reviewFile": "/assets/game/housing/pet-furniture/cat-bed-housing-v1-review.png",
+      "width": 32,
+      "height": 32,
+      "anchorPixels": {
+        "x": 16,
+        "y": 30
+      },
+      "suggestedCollisionFootprint": {
+        "x": 3,
+        "y": 17,
+        "width": 26,
+        "height": 13
+      },
+      "frames": 1,
+      "animation": null,
+      "prompt": "Use case: stylized-concept. Asset type: single movable pet furniture sprite for PawTrail. Input image is STYLE REFERENCE ONLY: match its terracotta cream cat bed, pixel density and upper-left lighting. Generate exactly ONE EMPTY round fluffy cat bed, terracotta-brown raised rim, cream padded interior, small cream paw decoration on front. Strict orthographic top-down 3/4 RPG perspective, not isometric. Readable 32x32 logical pixel sprite enlarged by nearest-neighbor, deliberate chunky square pixel clusters and dark warm brown outline, warm cozy 16-bit aesthetic. Center complete object on genuinely transparent background, leave transparent padding around every edge. No cat, no extra object, no room, no floor, no ground cast shadow, no text, no gradients, no blur, no antialiased edges. Intended native object canvas32x32.",
+      "checks": {
+        "dimensions": "pass",
+        "binaryTransparency": "pass",
+        "pixelEdges": "pass after native export",
+        "itemSeparation": "pass single object",
+        "visualStyle": "consistent warm palette and upper-left light; awaits owner style review",
+        "collision": "suggested only; not gameplay-tested"
+      },
+      "limitations": [
+        "Static first-batch asset; no animation or occupied variant requested at this stage.",
+        "Native downsampling loses the fine paw-pad details from the high-resolution source.",
+        "Not marked production-ready until first-batch style review."
+      ],
+      "metadataSource": "/assets/game/housing/pet-furniture/pet-furniture-first-batch.json"
+    },
+    {
+      "id": "scratching-post_housing_v1",
+      "category": "pet-furniture",
+      "file": "/assets/game/housing/pet-furniture/scratching-post-housing-v1.png",
+      "sourceFile": "/assets/game/housing/pet-furniture/scratching-post-housing-v1-source.png",
+      "reviewFile": "/assets/game/housing/pet-furniture/scratching-post-housing-v1-review.png",
+      "width": 32,
+      "height": 64,
+      "anchorPixels": {
+        "x": 16,
+        "y": 62
+      },
+      "suggestedCollisionFootprint": {
+        "x": 3,
+        "y": 51,
+        "width": 26,
+        "height": 11
+      },
+      "frames": 1,
+      "animation": null,
+      "prompt": "Use case: stylized-concept. Asset type: single movable pet furniture sprite for PawTrail. Input image STYLE REFERENCE ONLY. Generate exactly ONE scratching post: square honey-oak wooden base, vertical cream sisal rope-wrapped column, small sage-green upholstered top pad. Strict orthographic top-down 3/4 RPG perspective, not isometric. True low-resolution32x64 logical pixel design enlarged with square nearest-neighbor blocks, deliberate pixelclusters and warm darkbrownoutline, warm cozy16bit aesthetic, upperleftlighting. Center wholeobject with generouspadding on genuinely transparent background. No cat, no secondpost, no scenery, no floor, no text, no glow, no castshadow, no gradients, no blurry edges. Match honeyoak/sage/cream/terracotta limited palette inreference.",
+      "checks": {
+        "dimensions": "pass",
+        "binaryTransparency": "pass",
+        "pixelEdges": "pass after native export",
+        "itemSeparation": "pass single object",
+        "visualStyle": "consistent warm palette and upper-left light; awaits owner style review",
+        "collision": "suggested only; not gameplay-tested"
+      },
+      "limitations": [
+        "Static first-batch asset; no animation or occupied variant requested at this stage.",
+        "Native downsampling loses the fine paw-pad details from the high-resolution source.",
+        "Not marked production-ready until first-batch style review."
+      ],
+      "metadataSource": "/assets/game/housing/pet-furniture/pet-furniture-first-batch.json"
+    },
+    {
+      "id": "feeding-bowl-full_housing_v1",
+      "category": "pet-furniture",
+      "file": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1.png",
+      "sourceFile": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1-source.png",
+      "reviewFile": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1-review.png",
+      "width": 32,
+      "height": 32,
+      "anchorPixels": {
+        "x": 16,
+        "y": 30
+      },
+      "suggestedCollisionFootprint": {
+        "x": 6,
+        "y": 20,
+        "width": 20,
+        "height": 10
+      },
+      "frames": 1,
+      "animation": null,
+      "prompt": "Use case: stylized-concept. Asset type: single movable pet accessory sprite for PawTrail. Input image STYLE REFERENCE ONLY. Exactly ONE low round terracotta feeding bowl full of chunky brown kibble; small cream paw decoration on front. Strict orthographic top-down three-quarter RPG perspective, not isometric. True32x32 logical pixel design enlarged with crisp nearest-neighbor square pixel clusters. Cozy16bit originalart, warm brown dark outline, upperleftlighting, honeyoak/cream/terracotta/sage limitedpalette. Whole objectcentered on genuinely transparent background with generousclear padding. No floor, no shadow, no glow, no cat, no otheritems, no text, no blurring, no smoothgradient, no antialiasing.",
+      "checks": {
+        "dimensions": "pass",
+        "binaryTransparency": "pass",
+        "pixelEdges": "pass after native export",
+        "itemSeparation": "pass single object",
+        "visualStyle": "consistent warm palette and upper-left light; awaits owner style review",
+        "collision": "suggested only; not gameplay-tested"
+      },
+      "limitations": [
+        "Static first-batch asset; no animation or occupied variant requested at this stage.",
+        "Native downsampling loses the fine paw-pad details from the high-resolution source.",
+        "Not marked production-ready until first-batch style review."
+      ],
+      "metadataSource": "/assets/game/housing/pet-furniture/pet-furniture-first-batch.json"
+    }
+  ],
+  "prompts": {
+    "pet1": "Use case stylized-concept. PawTrail CATFURNITURE atlas. EXACT6isolatedempty petobjects 3columns2rows transparent1536x1024, widepaddingequalcells. Image1 STYLEreferenceonly. Row1 smallrectangularsagecatbed; roundfluffycreamcatbed; wooden honeyoakcat house withpaw-shapedvent. Row2 cat tree twolevels sagepads anddanglingball; TALL cat climbing tower withthree platforms sagepads andhidebox; short sagecat tunnel. NO ANIMALS, beds/house/tree/towerEMPTY. Nativecellssmallbeds32x32, cathouse64x64,tree64x96,tower64x128,tunnel64x32; coherent32worldscale. Strict topdown3/4ORTHOGRAPHIC 16bitpixelart NOTisometric, upperleftlight warmbrownoutline honeyoakcream sage terracotta. Clean squareclusters nativepixel feel noantialias or gradients/glows. Generousactualtransparentgaps no scenery/labels/text/numbers/gridlines/UI. Eachcompleteobject entirelywithinitscell.",
+    "pet2": "Use case stylized-concept. PawTrail PETFURNITURE spriteatlas exactly6isolatedobjects in3columns2rows transparent1536x1024, roomy512cellsgenerouspadding. Image1 STYLEreference. Row1 wooden windowperch withsagecushion (standaloneperch NO windowbackground); hangingcathammock sagecloth woodenframe; wovencreamcatbasket. Row2 openplaincardboardbox; creamandsageportablecatcarrier handleanddoor; automaticpetfoodfeeder withcreamhopper sagebase. ALLempty noanimals. Nativeperch64x32,hammock64x64,basket32x32,box32x32,carrier64x32,feeder32x64. Cozy16bitpixelart topdown3/4ORTHOGRAPHIC notisometric, warmbrownoutlines upperleftlight honeyoak cream sage terracotta colors. Sharp squarepixelclusters noantialias smoothgradient or glow. Completeitemsnonoverlap nofloor/scene/labels/text/UI/gridlines. Realtransparentbackground betweenobjects.",
+    "pet3": "Use case stylized-concept. PawTrail feedingandtoys spriteatlas EXACT6objects3columns2rows actualtransparentbackground1536x1024, each512cellfullyseparated wideemptygaps. Image1 STYLEreference. Row1 sealedpetfoodstoragecontainer creamlid; petfoodbag sageandsalmon withpawsymbol NO text; smalltreatjar creamlid. Row2 petwaterfountain creamandsage withwaterwell andsmallspout; terracottayarnball; featherwand woodensticklongstring sagefeathers. Nativecontainer/bag/treats32x32 fountain32x64 yarn32x32 wand64x32. Originalcozy16bitpixelart topdown3/4orthographic NOTisometric upperleftlighting darkwarmbrownoutlines honeyoak cream sage terracotta palette. Crisp squarepixelclusters. Noanimals/scenery/floor/labels/text/numerals/UI/gridlines/gradients/glow/antialias. Eachcompleteisolatedobject.",
+    "pet4": "Use case stylized-concept. PawTrail petTOYSandLITTER spriteatlas EXACT6isolateditems3columns2rows actualtransparentcanvas1536x1024. Image1STYLEreference. Each512x512cell haswidepadding fullseparateobject. Row1 tinycreamtoy mouse withterracottaears andstringtail; smalldustyterracotta rubberball; creamfish-shapedplush toy withsagefins. Row2 interactivewoodentrackball toy roundwithvisibleball; woven toybasket withafewsmalltoys; emptysagelittertray withcreamcleanlitter. Nativefirst5items32x32, litterbox64x32. Samecozy16bitpixelart topdown3/4ORTHOGRAPHIC notisometric upperleftlight honeyoak cream sage terracotta warmbrownoutlines. Sharp squarepixels noantialias gradientglows. Noanimals/scenery/floor/text/labels/UI/gridlines/mergedscene.",
+    "pet5": "Use case stylized-concept. PawTrail petCARE spriteatlas EXACTSIX isolatedobjects 3columns2rows ontrue transparent1536x1024, generouspadding between completeitems. Image1STYLEreference. Row1 smallgroomingbrush honeyoakhandle creambristles; foldedsmallcreamtowel; foldedsoftsagepetblanket. Row2 groupedcleaningsupplies spraybottle sponge; closedcreamfirstaidkit withterracottacross; secondsmallcreamfirstaidpouch (variant). Native brush/towel/cleaning/kit/pouch32x32, blanket64x32. Cozy16bitpixelart strict topdown3/4orthographic NOTisometric, upperleftlight darkwarmbrownoutline limited honeyoak cream sage terracotta palette. Sharp squareclusters noantialias no gradientglows. No animals/background/floor/scene/labels/text/numbers/UI/gridlines.",
+    "states": "Use case stylized-concept. PawTrail pet BOWL STATE spriteatlas EXACTSIXobjects3columns2rows ontransparent1536x1024, equalcells clearwidepadding. Image1STYLEreference. Row1 SAME terracottafeedingbowl EMPTY, SAME bowl HALF-filledwithbrownkibble, SAME bowl FULLofbrownkibble. Row2 SAME sagewaterbowl EMPTY, SAME waterbowl FULLwithpalebluewater, SAME waterbowlHALF-filled. Keep bowlgeometry/rim/base/shape/size IDENTICAL betweenstateframes, changeONLY contents. Allbowlsnative32x32logical, topdown3/4orthographic classic16bitRPG upperleftlight darkwarmbrownoutlines creamhightlights sage terracotta. Sixcompleteisolatedbowls noreferencescenes NOanimals nofoodoutsidebowls. TransparentBG noantialias/glow/gradients/labels/text/gridlines. Crisp smallpixelclusters.",
+    "treeAnimation": "Use case stylized-concept. PawTrail CAT TREE INTERACTION animation SPRITESHEET. Image1STYLEreference. Exactly FOUR equallyspacedframes inONEhorizontalrow, realtransparentbackground. Identicalcomplete honeyoak cat tree two sageplatforms, ropescratchingcolumns, widebase, danglingterracotta yarnball. Frame1 toyhangscenter; frame2 toyswingsleft withtautcord; frame3 toyhangscenter; frame4 toyswingsright withtautcord. Treegeometry/platforms/base/lighting remainPIXELIDENTICAL eachframe, ONLY danglingballandstring move. Noanimal orhuman baked intoasset. Nativecell64x96, framefeetbaseline92, centeredidentically ineachframe. Fourdifferentfullframesnotblendednoroverlapping. Topdown3/4ORTHOGRAPHIC16bitRPG NOTisometric, warmbrownoutline, upperleftlight honeyoak/cream/sage/terracotta, crispsquarepixelclusters noantialias/gradient/glow. No labels/numbers/text/UI/scenery/floor. Leave cleartransparentpadding.",
+    "toyAnimation": "Use case stylized-concept. PawTrail TOY MOUSE animation spriteatlas, exactly4columns3rows ofsamecreamtoy mouse withterracottaears/stringtail on transparentcanvas. Eachcell equal, nooverlap. Row1 IDLE fourposes withonlystringtailgentlywiggling. Row2 BEINGMOVED fourposes rotating/rolling mouse left/center/right/center. Row3 PLAY fourposes softmouse squashesandbounces thenreturnsstart, differentposition/poseineachframe. SAMEmouseappearanceears/body/face/color everyframe, noanimalsorhumansbakedin. Nativecell32x32, centerconsistent andsafeallmargins. Image1 STYLEreferenceonly. Cozy16bitRPGtopdown3/4ORTHOGRAPHIC NOTisometric, upperleftlight warmbrownoutline creamhoneyoak sage terracotta palette. Squarepixelclusters noantialias gradientglows. No labels/text/numerals/UI/scenery/floor/gridlines. Cleartransparentseparation no trails/noanimatedpreview.",
+    "colors": "Use case stylized-concept. PawTrail COLOR VARIANTS spriteatlas. Image1 STYLE REFERENCE ONLY existingtwoseatsofa. Exactly6isolatedsprites3columns2rows ontransparent1536x1024canvas, widepadding nooverlap. Row1 SAMEtwo-seat honeyoakframedsofa threeclothcolorvariants leftSAGEGREEN centerTERRACOTTA rightCREAM. Keepidenticaltwo-seatgeometry outlinearmsbacklegs,andpawpillowsthroughout; changeonlyclothcolor. Row2 SAMEfoldedpetblanket threecolorvariants leftSAGEGREEN centerTERRACOTTA rightCREAM. Sameblanketshape/fold/pawpattern. Native sofa64x64 andblanket64x32, upperleftlight darkwarmbrownoutline, crisp16bitpixelclusters strict topdown3/4ORTHOGRAPHIC notisometric, noantialias gradients/glow. Truebackgroundtransparency no scenes,floors,text,numbers,labels,UI/gridlines. Fullisolatedobjects."
+  },
+  "limitations": [
+    "Placement anchors and collision footprints are proposals until engine verification.",
+    "Generated source renders have antialiased glow; native exports remove it.",
+    "Animation loop pacing/continuity requires playback review; no production-ready claim."
+  ],
+  "requirementCoverage": {
+    "cat furniture": {
+      "small cat bed": "small-cat-bed",
+      "round fluffy cat bed": "round-fluffy-cat-bed",
+      "wooden cat house": "wooden-cat-house",
+      "cat tree": "cat-tree",
+      "tall cat climbing tower": "tall-cat-climbing-tower",
+      "scratching post": "scratching-post_housing_v1",
+      "cat tunnel": "cat-tunnel",
+      "window perch": "window-perch",
+      "hanging cat hammock": "hanging-cat-hammock",
+      "cat basket": "cat-basket",
+      "cardboard box": "cardboard-box",
+      "cat carrier": "cat-carrier"
+    },
+    "feeding": {
+      "food bowl": "food-bowl-full",
+      "water bowl": "water-bowl-full",
+      "automatic feeder": "automatic-feeder",
+      "food storage container": "pet-food-storage-container",
+      "pet food bag": "pet-food-bag",
+      "treat container": "treat-container",
+      "water fountain": "water-fountain"
+    },
+    " toys": {
+      "yarn ball": "yarn-ball",
+      "feather wand": "feather-wand",
+      "toy mouse": "toy-mouse",
+      "small rubber ball": "rubber-ball",
+      "fish shaped plush toy": "fish-plush-toy",
+      "interactive toy": "interactive-track-toy",
+      "toy basket": "toy-basket"
+    },
+    "pet care": {
+      "litter box": "litter-box",
+      "grooming brush": "grooming-brush",
+      "small towel": "small-towel",
+      "pet blanket": "pet-blanket",
+      "cleaning supplies": "cleaning-supplies",
+      "first aid kit": "first-aid-kit"
+    }
+  },
+  "colorVariations": [
+    "sage",
+    "terracotta",
+    "cream"
+  ],
+  "sourceReview": "All generated category sources and native contact sheets visually inspected; misplaced neighbor fragments removed from source cell boundaries."
+}

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "status": "awaiting-authored-asset",
+  "modelUrl": null,
+  "requiredNodes": [
+    "MayaPortraitRoot",
+    "MayaHead",
+    "MayaHair",
+    "MayaTorso"
+  ],
+  "referenceUrl": "/pawtrail-game/game-assets/maya-reference-v5/reference.png",
+  "referenceConfigUrl": "/pawtrail-game/game-assets/maya-reference-v5/reference.json",
+  "expressionAtlas": null,
+  "semanticMasks": [],
+  "note": "The procedural bust is a diagnostic baseline, not an approved Maya likeness. Replace modelUrl only after supplying the authored asset and reviewing the fixed-camera comparison."
+}

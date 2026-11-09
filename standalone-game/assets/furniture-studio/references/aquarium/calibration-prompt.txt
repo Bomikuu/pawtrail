@@ -1,0 +1,13 @@
+Use case: precise-object-edit / technical pixel-art furniture turnaround calibration.
+Input image 1 is the six-view draft to correct. Input image 2 is the authoritative original front. Keep the exact aquarium identity, two front cabinet doors, plain rear cabinet, two fish, oak/teal/green colors, frame details, six-cell arrangement, and pixel-art style. Change only the view proportions/projection to describe one physical object, and remove the surrounding colored glow.
+
+The draft front and rear are too tall, and the profiles too wide. Use ONE real box with physical width90, height56, depth25 units, viewed orthographically at 21 degrees downward in all six cells. Its projected bounding ratios should be approximately:
+front90 wide x62 high;
+back90 wide x52 high;
+left and right profiles25 wide x84 high (the far/near corners of a wide object make a profile naturally taller at this camera pitch);
+front and rear three-quarter views81 wide x80 high.
+Do NOT make all images the same pixel height. Match physical scale by keeping the broad front and back widths around390 pixels. Front should then be about270px high, back225px high, profiles about110px wide x365px high, three-quarter views about350px square. Leave unused transparent space around shorter views. Use a clean 3-column by 2-row grid with each view centered in its own cell, large blank gutters and no clipping. Top row front, left profile, back; bottom row right profile, front three-quarter, rear three-quarter. No labels.
+
+Preserve the original front's wide, low shape: thin hood; teal planted tank; low two-door oak cabinet; four short feet. Fish remain two total, yellow/orange and red/orange. Side/rear faces must belong to the same tank and cabinet. No handles on rear/side panels. Re-render the views coherently, without smearing pixel clusters.
+
+Background: actual transparent alpha, with every empty pixel alpha0. Remove ALL brown glow/haze and cast shadows. No background color, painted checkerboard, floor or backdrop. No new objects or text.

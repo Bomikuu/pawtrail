@@ -1,0 +1,68 @@
+[
+  {
+    "id": "nav",
+    "prompt": "Use case: stylized-concept. Asset type: PawTrail NAVIGATION PIXEL ICON SPRITESHEET. Input1 style reference only. Exactly8 separate icons on transparent background in4columns2rows equalcells, centered, generousspacing. Row1 home(cozy cottage),friends(twopeople busts),chat(speechbubble),inventory(backpack). Row2 decoration(paintbrush besidechair),quests(scroll with pawseal),settings(gear),map(foldedmap with pawpin). Original16bit crispnative32pixel icon silhouettes enlargednearestneighbor, warmbrownoutlines upperleftlight honeyoak cream sage terracotta palette. Same visualfamily asreference but small simpleiconreadability. No text/letters, no backdrop, no frames, no gridlines, no glows or shadows outsideicon, no smooth vector orantialias, no gradients. Everyitemfullyseparated and containedwithinowncell.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/ui/icons/nav-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-30b3ca38-9d55-4ca8-8728-9a1613c6f203.png"
+  },
+  {
+    "id": "animal-icons",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail pixel-art UI ICON ATLAS, input1 STYLE REFERENCE only. Exactly8 icons, 4columns2rows: row1 pet(hand gently over cathead),feed(bowl with kibble),play(ball with feather),help(firstaidkit withpaw); row2 givewater(waterbowl withdroplet),viewprofile(pawprofilecard),followpet(pawwithheart),takephoto(camera). Equalspacedgridofisolatedtransparenticons, nocellborders orlabels. Eachiconintendedfornative32x32pixels withsimpleboldreadablesilhouette. Crisp16bitpixelclusters, upperleftlight, darkwarmbrownoutlines, limitedwarmcream honeyoak sage terracotta colors. NO text, no extraicons, no scene, no glow, no softshadows, no antialiasing, no gradient, not vector, not3D. Match existingreferencefamily.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-89dc9c94-0102-44d1-9dbe-3341ab3d2fc6.png"
+  },
+  {
+    "id": "social-icons",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail pixel-art UI ICON ATLAS, input1 STYLE REFERENCE only. Exactly7 icons, 4columns2rows with lastcellblank: row1 visit(housedoorwitharrow),invite(envelopewithplus),addfriend(personbustwithplus),sendmessage(speechbubblewitharrow); row2 wave(wavinghand),gift(wrappedgiftbox),guestbook(openbookwithpaw),lastcellempty. Equalspacedgridofisolatedtransparenticons, nocellborders orlabels. Eachiconintendedfornative32x32pixels withsimpleboldreadablesilhouette. Crisp16bitpixelclusters, upperleftlight, darkwarmbrownoutlines, limitedwarmcream honeyoak sage terracotta colors. NO text, no extraicons, no scene, no glow, no softshadows, no antialiasing, no gradient, not vector, not3D. Match existingreferencefamily.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-643fb86e-3852-4910-a4a2-944114d15dc7.png"
+  },
+  {
+    "id": "decoration-icons",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail pixel-art UI ICON ATLAS, input1 STYLE REFERENCE only. Exactly7 icons, 4columns2rows lastcellempty: row1 move(fourarrows),rotate(curvedclockwisearrow),place(chairwithcheckmark),store(storagebox); row2 delete(trashbin),undo(leftcurvedarrow),redo(rightcurvedarrow),lastcellempty. Equalspacedgridofisolatedtransparenticons, nocellborders orlabels. Eachiconintendedfornative32x32pixels withsimpleboldreadablesilhouette. Crisp16bitpixelclusters, upperleftlight, darkwarmbrownoutlines, limitedwarmcream honeyoak sage terracotta colors. NO text, no extraicons, no scene, no glow, no softshadows, no antialiasing, no gradient, not vector, not3D. Match existingreferencefamily.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-b12bd4e3-17c3-4969-af6e-0d9467949e24.png"
+  },
+  {
+    "id": "starter-house",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail individual HOUSE EXTERIOR SPRITE. small starter house, cream plaster honeyoaktrim terracottaroof, one frontdoor and two smallwindows, native96x96. Input1styleonly. Cozy16bitpixelart topdown3/4orthographic notisometric, frontfacingwithroofvisible, upperleftlight darkwarmbrownoutlines honeyoak sage terracotta creampalette. Sameworldscale32tile and human32x48. Wholehousefullycontained centered on actualtransparentbackground. Simplepixelclustersnativepixel density intendedfor dimensions specified. Doorclearandaccessiblecenterbottom, roofwallproportionsconsistent. No yardbase, no terrain, no floorplatform, no scenery, no people, no pets, no text/signletters, no glow or castshadowoutsidehouse, no gradients, no3D, no antialiasing. Reusable gamebuildingasset only.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/housing/exteriors/starter-house-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-3c876ca6-c033-48b2-acd6-58d3a9a9160c.png"
+  },
+  {
+    "id": "wooden-cottage",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail individual HOUSE EXTERIOR SPRITE. cozy wooden cottage honeyoakplankwalls terracottaroof chimney, one frontdoor two windows, native128x128. Input1styleonly. Cozy16bitpixelart topdown3/4orthographic notisometric, frontfacingwithroofvisible, upperleftlight darkwarmbrownoutlines honeyoak sage terracotta creampalette. Sameworldscale32tile and human32x48. Wholehousefullycontained centered on actualtransparentbackground. Simplepixelclustersnativepixel density intendedfor dimensions specified. Doorclearandaccessiblecenterbottom, roofwallproportionsconsistent. No yardbase, no terrain, no floorplatform, no scenery, no people, no pets, no text/signletters, no glow or castshadowoutsidehouse, no gradients, no3D, no antialiasing. Reusable gamebuildingasset only.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/housing/exteriors/wooden-cottage-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-39518459-5150-4010-af29-1b15cd1f6d60.png"
+  },
+  {
+    "id": "pastel-house",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail individual HOUSE EXTERIOR SPRITE. pastel sagegreen house creamtrim terracottaroof, one frontdoor two windows, native128x128. Input1styleonly. Cozy16bitpixelart topdown3/4orthographic notisometric, frontfacingwithroofvisible, upperleftlight darkwarmbrownoutlines honeyoak sage terracotta creampalette. Sameworldscale32tile and human32x48. Wholehousefullycontained centered on actualtransparentbackground. Simplepixelclustersnativepixel density intendedfor dimensions specified. Doorclearandaccessiblecenterbottom, roofwallproportionsconsistent. No yardbase, no terrain, no floorplatform, no scenery, no people, no pets, no text/signletters, no glow or castshadowoutsidehouse, no gradients, no3D, no antialiasing. Reusable gamebuildingasset only.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/housing/exteriors/pastel-house-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-1bfa03a9-bed8-4b3e-84ec-1f396944abc3.png"
+  },
+  {
+    "id": "garden-house",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail individual HOUSE EXTERIOR SPRITE. garden house creamplaster honeyoaktrim withsmallattachedgreenhouse/glassgardenroom, sage vines andflowerboxes containedwithinbuildingfootprint, onevisiblefrontdoor, native128x128. Input1styleonly. Cozy16bitpixelart topdown3/4orthographic notisometric, frontfacingwithroofvisible, upperleftlight darkwarmbrownoutlines honeyoak sage terracotta creampalette. Sameworldscale32tile and human32x48. Wholehousefullycontained centered on actualtransparentbackground. Simplepixelclustersnativepixel density intendedfor dimensions specified. Doorclearandaccessiblecenterbottom, roofwallproportionsconsistent. No yardbase, no terrain, no floorplatform, no scenery, no people, no pets, no text/signletters, no glow or castshadowoutsidehouse, no gradients, no3D, no antialiasing. Reusable gamebuildingasset only.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/housing/exteriors/garden-house-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-4d9b7000-1ea2-496f-b33b-4407c3e26092.png"
+  },
+  {
+    "id": "upgraded-house",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail individual HOUSE EXTERIOR SPRITE. larger upgraded two-story home creamplaster honeyoaktrim terracottaroofs, symmetricalreadablefront, twofloors windows and onevisiblefrontdoor native192x160. Input1styleonly. Cozy16bitpixelart topdown3/4orthographic notisometric, frontfacingwithroofvisible, upperleftlight darkwarmbrownoutlines honeyoak sage terracotta creampalette. Sameworldscale32tile and human32x48. Wholehousefullycontained centered on actualtransparentbackground. Simplepixelclustersnativepixel density intendedfor dimensions specified. Doorclearandaccessiblecenterbottom, roofwallproportionsconsistent. No yardbase, no terrain, no floorplatform, no scenery, no people, no pets, no text/signletters, no glow or castshadowoutsidehouse, no gradients, no3D, no antialiasing. Reusable gamebuildingasset only.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/housing/exteriors/upgraded-house-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-3efde839-7a1b-46d3-a26c-e43e01669d80.png"
+  },
+  {
+    "id": "exterior-modules",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail exterior object atlas. Exactly12 modular building pieces,4columns3rows: row1 terracotta roofleftslope,roofcenterrepeat,roofrightslope,roofridgecap; row2 eaveleft,eavecenterrepeat,eaveright,creambrickchimney; row3 closed honeyoakfrontdoor,open honeyoakdoorframe,creamtrimwindow,sage shutterwindow. Eachpieceindividuallyisolated, native32x32exceptdoors32x64. Noassembledhouse. Input1styleonly. Exactlyspecifiedequalcellgrid, generous actualtransparentemptyspace aroundeachpiece. Cozy16bitpixelart strict topdown3/4orthographic notisometric, upperleftlight, darkwarmbrownoutline, honeyoak sagecream terracotta limitedpalette, readablecrispnativepixelclusters. Modularcomponents shouldconnecton32pixelgrid, groundpath tilesfloorflatnotraised. No text, no labels, no borders, no backdrop, no vignette, no roomscene, no people/pets, no glow, no antialiasing orblur. Sourcewillbeextractedintonativeindividualsprites.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-4ead6e09-76a7-4038-83fa-b447752dd9c4.png"
+  },
+  {
+    "id": "garden-props",
+    "prompt": "Use case: stylized-concept. Asset type:PawTrail exterior object atlas. Exactly12 isolatedsmalloutdoorobjects,4columns3rows: row1 honeyoakmailbox,emptywoodhousesign(noletters),terracottaflowerpot,straightwoodgardenfence; row2 fencecorner,fenceend,opengardengate,outdoorwoodbench; row3 stonepathstraighttile,stonepathcornertile,gardenlamp,outdoorpetfeedingstationwithawning. Nativeobjects32x32 or64x64, lamp32x64. No assembledscene. Input1styleonly. Exactlyspecifiedequalcellgrid, generous actualtransparentemptyspace aroundeachpiece. Cozy16bitpixelart strict topdown3/4orthographic notisometric, upperleftlight, darkwarmbrownoutline, honeyoak sagecream terracotta limitedpalette, readablecrispnativepixelclusters. Modularcomponents shouldconnecton32pixelgrid, groundpath tilesfloorflatnotraised. No text, no labels, no borders, no backdrop, no vignette, no roomscene, no people/pets, no glow, no antialiasing orblur. Sourcewillbeextractedintonativeindividualsprites.",
+    "source": "/home/micxsz/Documents/ChatGPT/pawtrail/public/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+    "originalGenerationPath": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-f0145b41-556a-4557-a83c-2d0ce5594ed6.png"
+  }
+]

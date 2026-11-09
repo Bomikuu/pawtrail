@@ -7,6 +7,7 @@ import {
   HandCoins,
   MessagesSquare,
   HandHeart,
+  Camera,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
@@ -19,16 +20,9 @@ import { useSession } from '@/features/auth/session-provider'
 import { READY_ROUTES, destinationHref, type Destination } from './navigation'
 const actions: Destination[] = [
   {
-    label: 'Report Animal',
-    href: '/animals/report',
-    icon: PawPrint,
-    protected: true,
-  },
-  {
-    label: 'Create Sighting',
-    href: '/sightings/create',
-    icon: MapPin,
-    protected: true,
+    label: 'Spot an animal',
+    href: '/spot',
+    icon: Camera,
   },
   {
     label: 'Start Fundraiser',

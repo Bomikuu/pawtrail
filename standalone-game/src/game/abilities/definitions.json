@@ -1,0 +1,9 @@
+{
+  "walkSpeed":105,
+  "runSpeed":155,
+  "abilities":{
+    "power_up":{"name":"Super speed","durationMs":8000,"cooldownMs":12000,"speed":231},
+    "rescue_dash":{"name":"Rescue Dash","durationMs":650,"cooldownMs":6500,"speed":340},
+    "gentle_approach":{"name":"Gentle Approach","durationMs":10000,"cooldownMs":12000,"speed":58}
+  }
+}

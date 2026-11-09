@@ -1,0 +1,1286 @@
+{
+  "sheets": {
+    "orange_tabby": {
+      "file": "native/orange_tabby.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.20491803278688525
+    },
+    "black_cat": {
+      "file": "native/black_cat.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.1937984496124031
+    },
+    "white_cat": {
+      "file": "native/white_cat.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.20833333333333334
+    },
+    "calico": {
+      "file": "native/calico.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.211864406779661
+    },
+    "siamese": {
+      "file": "native/siamese.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.1953125
+    },
+    "brown_aspin": {
+      "file": "native/brown_aspin.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.19230769230769232
+    },
+    "white_puppy": {
+      "file": "native/white_puppy.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.21367521367521367
+    },
+    "spotted_dog": {
+      "file": "native/spotted_dog.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.1897810218978102
+    }
+  },
+  "animations": {
+    "orange_tabby/idle": {
+      "sheet": "orange_tabby",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/03.png"
+        }
+      ]
+    },
+    "orange_tabby/sit": {
+      "sheet": "orange_tabby",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/03.png"
+        }
+      ]
+    },
+    "orange_tabby/sleep": {
+      "sheet": "orange_tabby",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/03.png"
+        }
+      ]
+    },
+    "orange_tabby/happy": {
+      "sheet": "orange_tabby",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/03.png"
+        }
+      ]
+    },
+    "black_cat/idle": {
+      "sheet": "black_cat",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/03.png"
+        }
+      ]
+    },
+    "black_cat/sit": {
+      "sheet": "black_cat",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/03.png"
+        }
+      ]
+    },
+    "black_cat/sleep": {
+      "sheet": "black_cat",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/03.png"
+        }
+      ]
+    },
+    "black_cat/happy": {
+      "sheet": "black_cat",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/03.png"
+        }
+      ]
+    },
+    "white_cat/idle": {
+      "sheet": "white_cat",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/03.png"
+        }
+      ]
+    },
+    "white_cat/sit": {
+      "sheet": "white_cat",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/03.png"
+        }
+      ]
+    },
+    "white_cat/sleep": {
+      "sheet": "white_cat",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/03.png"
+        }
+      ]
+    },
+    "white_cat/happy": {
+      "sheet": "white_cat",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/03.png"
+        }
+      ]
+    },
+    "calico/idle": {
+      "sheet": "calico",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/03.png"
+        }
+      ]
+    },
+    "calico/sit": {
+      "sheet": "calico",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/03.png"
+        }
+      ]
+    },
+    "calico/sleep": {
+      "sheet": "calico",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/03.png"
+        }
+      ]
+    },
+    "calico/happy": {
+      "sheet": "calico",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/03.png"
+        }
+      ]
+    },
+    "siamese/idle": {
+      "sheet": "siamese",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/03.png"
+        }
+      ]
+    },
+    "siamese/sit": {
+      "sheet": "siamese",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/03.png"
+        }
+      ]
+    },
+    "siamese/sleep": {
+      "sheet": "siamese",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/03.png"
+        }
+      ]
+    },
+    "siamese/happy": {
+      "sheet": "siamese",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/03.png"
+        }
+      ]
+    },
+    "brown_aspin/idle": {
+      "sheet": "brown_aspin",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/03.png"
+        }
+      ]
+    },
+    "brown_aspin/sit": {
+      "sheet": "brown_aspin",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/03.png"
+        }
+      ]
+    },
+    "brown_aspin/sleep": {
+      "sheet": "brown_aspin",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/03.png"
+        }
+      ]
+    },
+    "brown_aspin/happy": {
+      "sheet": "brown_aspin",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/03.png"
+        }
+      ]
+    },
+    "white_puppy/idle": {
+      "sheet": "white_puppy",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/03.png"
+        }
+      ]
+    },
+    "white_puppy/sit": {
+      "sheet": "white_puppy",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/03.png"
+        }
+      ]
+    },
+    "white_puppy/sleep": {
+      "sheet": "white_puppy",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/03.png"
+        }
+      ]
+    },
+    "white_puppy/happy": {
+      "sheet": "white_puppy",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/03.png"
+        }
+      ]
+    },
+    "spotted_dog/idle": {
+      "sheet": "spotted_dog",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/03.png"
+        }
+      ]
+    },
+    "spotted_dog/sit": {
+      "sheet": "spotted_dog",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/03.png"
+        }
+      ]
+    },
+    "spotted_dog/sleep": {
+      "sheet": "spotted_dog",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/03.png"
+        }
+      ]
+    },
+    "spotted_dog/happy": {
+      "sheet": "spotted_dog",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/03.png"
+        }
+      ]
+    }
+  }
+}

@@ -16,6 +16,7 @@ export const notificationSchema = baseSchema.extend({
     'mission',
     'fundraiser',
     'event',
+    'achievement',
   ]),
   message: z.string(),
   ref: resourceRefSchema.nullable(),

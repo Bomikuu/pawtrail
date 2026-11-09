@@ -313,7 +313,7 @@ export async function performOperation(
       }
     }
     case 'donation': {
-      await api.fundraisers.simulateDonation(
+      await api.fundraisers.pledge(
         extra.id!,
         {
           amountMinor: parsePHPAmount(text('amount')),
@@ -323,8 +323,7 @@ export async function performOperation(
         options,
       )
       return {
-        message:
-          'Demonstration contribution recorded. No money was charged or transferred.',
+        message: 'Your support pledge is saved. No payment was taken.',
       }
     }
     case 'expense':
@@ -389,6 +388,7 @@ export async function performOperation(
         options,
       )
       return {
+        href: '/dashboard/missions?state=submitted#my-mission-activity',
         message:
           'Private evidence submitted. Kibble is awarded only after independent approval.',
       }
@@ -461,6 +461,7 @@ export async function performOperation(
           showLocation: v.showLocation === true,
           showContributions: v.showContributions === true,
           discoverable: v.discoverable === true,
+          publicAttendance: v.publicAttendance === true,
         },
         options,
       )

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "limit": 24,
+  "parts": {
+    "hair": [
+      "swept",
+      "cropped",
+      "spiky",
+      "long",
+      "hero-spikes"
+    ],
+    "outfit": [
+      "vest",
+      "tunic",
+      "coat",
+      "gown",
+      "gi",
+      "spacesuit",
+      "outrider"
+    ],
+    "legs": [
+      "shorts",
+      "trousers"
+    ],
+    "headwear": [
+      "none",
+      "wide-brim",
+      "hood",
+      "halo",
+      "space-helmet",
+      "outrider-bow"
+    ],
+    "wings": [
+      "none",
+      "feathered"
+    ],
+    "held": [
+      "none",
+      "sword"
+    ],
+    "face": [
+      "default",
+      "soft"
+    ]
+  },
+  "defaults": {
+    "hair": "swept",
+    "outfit": "vest",
+    "legs": "shorts",
+    "headwear": "none",
+    "wings": "none",
+    "held": "none",
+    "face": "default",
+    "backpack": true
+  },
+  "accessories": {
+    "facialHair": [
+      "none",
+      "mustache",
+      "goatee"
+    ],
+    "faceMarking": [
+      "none",
+      "freckles",
+      "beauty-mark"
+    ]
+  }
+}

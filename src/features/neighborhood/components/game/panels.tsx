@@ -1,4 +1,10 @@
-import { useEffect, useState } from 'react'
+import {
+  claimGameCare,
+  pinGameMission,
+  pinnedCareMission,
+} from "@/features/neighborhood/game/companions/missions";
+import { GameReactions } from "./shared/reactions";
+import { useState } from "react";
 import {
   Backpack,
   BookOpen,
@@ -10,22 +16,22 @@ import {
   Music,
   RotateCcw,
   Volume2,
-} from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { parseSave } from '@/features/neighborhood/game/systems/save'
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { parseSave } from "@/features/neighborhood/game/systems/save";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Progress as ProgressBar } from '@/components/ui/progress'
-import { Slider } from '@/components/ui/slider'
-import { Switch } from '@/components/ui/switch'
-import { ANIMALS, QUESTS, ITEMS, PROJECTS, NPCS } from '@/features/neighborhood/game/data'
+} from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Progress as ProgressBar } from "@/components/ui/progress";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
+import { ANIMALS, QUESTS, ITEMS, PROJECTS } from "@/features/neighborhood/game/data";
 import {
   accept,
   buyFood,
@@ -39,117 +45,98 @@ import {
   rest,
   stationWater,
   track,
-} from '@/features/neighborhood/game/store'
-import { memory } from '@/features/neighborhood/game/systems/care'
-import { questKey, questState } from '@/features/neighborhood/game/systems/quests'
-import { audio, type AudioPreferences } from '@/features/neighborhood/game/systems/audio'
-import type { GameSnapshot } from '@/features/neighborhood/game/types'
-import { WorldMap } from './map-panel'
-import { CharacterPicker } from './character-picker'
-import { DialoguePortrait } from './dialogue-portrait'
-import { InventoryPanel } from './immersion/inventory'
-import { CatSoundboard } from './immersion/soundboard'
-import { MissionBoard, localMissions } from './immersion/missions'
-import { useFoundItem, send } from '@/features/neighborhood/game/store'
+} from "@/features/neighborhood/game/store";
+import { memory } from "@/features/neighborhood/game/systems/care";
+import { questKey, questState } from "@/features/neighborhood/game/systems/quests";
+import { audio, type AudioPreferences } from "@/features/neighborhood/game/systems/audio";
+import type { GameSnapshot } from "@/features/neighborhood/game/types";
+import { WorldMap } from "./map-panel";
+import { CharacterPicker } from "./character-picker";
+import { GameDialogue } from "./dialogue";
+import { InventoryPanel } from "./immersion/inventory";
+import { CatSoundboard } from "./immersion/soundboard";
+import { MissionBoard, localMissions } from "./immersion/missions";
+import { useFoundItem, send } from "@/features/neighborhood/game/store";
 export type Panel =
-  | 'journal'
-  | 'bag'
-  | 'help'
-  | 'pause'
-  | 'pause-confirm'
-  | 'map'
-  | 'photos'
-  | 'board'
-  | 'soundboard'
-  | null
+  | "journal"
+  | "bag"
+  | "help"
+  | "pause"
+  | "pause-confirm"
+  | "map"
+  | "photos"
+  | "board"
+  | "reactions"
+  | "soundboard"
+  | null;
 const art = (id: string) =>
-  '/pawtrail-game/game-assets/portraits/' + id + '.png'
+  "/pawtrail-game/game-assets/portraits/" + id + ".png";
 export function GamePanels({
   panel,
   setPanel,
   state,
   closeDialogue,
 }: {
-  panel: Panel
-  setPanel: (p: Panel) => void
-  state: GameSnapshot
-  closeDialogue: () => void
+  panel: Panel;
+  setPanel: (p: Panel) => void;
+  state: GameSnapshot;
+  closeDialogue: () => void;
 }) {
   const [pendingSave, setPendingSave] = useState<unknown>(null),
-    [importMessage, setImportMessage] = useState('')
+    [importMessage, setImportMessage] = useState("");
   const p = state.progress,
     [prefs, setPrefs] = useState<AudioPreferences>(audio.settings),
-    [category, setCategory] = useState('main'),
-    [page, setPage] = useState(0),
-    [letters, setLetters] = useState(0)
-  const paragraphs = state.dialogue?.text.split('\n\n') ?? [],
-    paragraph = paragraphs[page] ?? ''
-  useEffect(() => {
-    setPage(0)
-    setLetters(0)
-  }, [state.dialogue])
-  useEffect(() => {
-    if (!state.dialogue) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setLetters(paragraph.length)
-      return
-    }
-    setLetters(0)
-    const timer = setInterval(
-      () =>
-        setLetters((n) => {
-          const next = Math.min(paragraph.length, n + 2)
-          if (next === paragraph.length) clearInterval(timer)
-          return next
-        }),
-      28,
-    )
-    return () => clearInterval(timer)
-  }, [paragraph, state.dialogue])
+    [category, setCategory] = useState("main");
   const exportSave = () => {
     const url = URL.createObjectURL(
-      new Blob([JSON.stringify(p, null, 2)], { type: 'application/json' }),
-    )
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'pawtrail-progress.json'
-    a.click()
-    setTimeout(() => URL.revokeObjectURL(url), 1000)
-  }
+      new Blob([JSON.stringify(p, null, 2)], { type: "application/json" }),
+    );
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "pawtrail-progress.json";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
   const updateAudio = (patch: Partial<AudioPreferences>) => {
-    void audio.unlock()
-    setPrefs(audio.update(patch))
-  }
+    void audio.unlock();
+    setPrefs(audio.update(patch));
+  };
   const title =
-    panel === 'board' ? 'Community mission board' : panel === 'soundboard' ? 'Cat Soundboard' : panel === 'bag'
-      ? 'Your care backpack'
-      : panel === 'journal'
-        ? 'The care journal'
-        : panel === 'map'
-          ? 'Around the neighborhood'
-          : panel === 'photos'
-            ? 'Moments worth keeping'
-            : panel === 'help'
-              ? 'A little field guide'
-              : panel === 'pause-confirm'
-                ? 'Start a fresh story?'
-                : 'Take a breather'
+    panel === "reactions"
+      ? "Share a little joy"
+      : panel === "board"
+        ? "Community mission board"
+        : panel === "soundboard"
+          ? "Cat Soundboard"
+          : panel === "bag"
+            ? "Your care backpack"
+            : panel === "journal"
+              ? "The care journal"
+              : panel === "map"
+                ? "Around the neighborhood"
+                : panel === "photos"
+                  ? "Moments worth keeping"
+                  : panel === "help"
+                    ? "A little field guide"
+                    : panel === "pause-confirm"
+                      ? "Start a fresh story?"
+                      : "Take a breather";
   return (
     <>
       <Dialog
         open={!!panel}
         onOpenChange={(open) => {
-          if (!open) setPanel(null)
+          if (!open) setPanel(null);
         }}
       >
         <DialogContent className="max-h-[90dvh] overflow-y-auto bg-card sm:max-w-2xl">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 font-heading text-2xl font-extrabold">
-              {panel === 'bag' ? (
+              {panel === "bag" ? (
                 <Backpack />
-              ) : panel === 'map' ? (
+              ) : panel === "map" ? (
                 <Map />
-              ) : panel === 'journal' ? (
+              ) : panel === "journal" ? (
                 <BookOpen />
               ) : (
                 <Heart />
@@ -157,14 +144,48 @@ export function GamePanels({
               {title}
             </DialogTitle>
             <DialogDescription>
-              Day {p.day} · {p.kibble} Kibble · Level{' '}
+              Day {p.day} · {p.kibble} Kibble · Level{" "}
               {1 + Math.floor(p.xp / 100)} PawPal
             </DialogDescription>
           </DialogHeader>
-          {panel === 'bag' && <InventoryPanel stock={{...p.satchel,photo:p.photos.length,badge:p.badges.length}} legacy={p.inventory} onUse={useFoundItem} />}
-          {panel === 'board' && <MissionBoard missions={localMissions(p)} onAccept={accept} onClaim={claim} pinned={p.trackedQuest} onPin={track} onGuide={(target)=>{send({type:'guide',target});setPanel(null)}} />}
-          {panel === 'soundboard' && <CatSoundboard emit={(emote)=>send({type:'cat-sound',emote})} />}
-          {panel === 'journal' && (
+          {panel === "bag" && (
+            <InventoryPanel
+              stock={{
+                ...p.satchel,
+                photo: p.photos.length,
+                badge: p.badges.length,
+              }}
+              legacy={p.inventory}
+              onUse={useFoundItem}
+            />
+          )}
+          {panel === "board" && (
+            <MissionBoard
+              missions={localMissions(p)}
+              onAccept={accept}
+              onClaim={(id) => claimGameCare(id, claim)}
+              pinned={pinnedCareMission() ?? p.trackedQuest}
+              onPin={(id) => pinGameMission(id, track)}
+              onGuide={(target) => {
+                send({ type: "guide", target });
+                setPanel(null);
+              }}
+            />
+          )}
+          {panel === "reactions" && (
+            <GameReactions
+              onReact={(emote) => {
+                setPanel(null);
+                send({ type: "emote", emote });
+              }}
+            />
+          )}
+          {panel === "soundboard" && (
+            <CatSoundboard
+              emit={(emote) => send({ type: "cat-sound", emote })}
+            />
+          )}
+          {panel === "journal" && (
             <Tabs defaultValue="quests">
               <TabsList className="w-full">
                 <TabsTrigger value="quests" className="flex-1">
@@ -172,7 +193,7 @@ export function GamePanels({
                 </TabsTrigger>
                 <TabsTrigger
                   value="animals"
-                  disabled={!p.unlocks.includes('journal')}
+                  disabled={!p.unlocks.includes("journal")}
                   className="flex-1"
                 >
                   Animals
@@ -184,17 +205,17 @@ export function GamePanels({
               <TabsContent value="quests" className="space-y-4 pt-3">
                 <div className="flex flex-wrap gap-1">
                   {[
-                    'main',
-                    'daily',
-                    'side',
-                    'exploration',
-                    'community',
-                    'event',
-                    'completed',
+                    "main",
+                    "daily",
+                    "side",
+                    "exploration",
+                    "community",
+                    "event",
+                    "completed",
                   ].map((cat) => (
                     <Button
                       key={cat}
-                      variant={category === cat ? 'secondary' : 'ghost'}
+                      variant={category === cat ? "secondary" : "ghost"}
                       size="sm"
                       className="capitalize"
                       onClick={() => setCategory(cat)}
@@ -204,15 +225,15 @@ export function GamePanels({
                   ))}
                 </div>
                 {QUESTS.filter((q) =>
-                  category === 'completed'
-                    ? ['completed', 'claimed'].includes(questState(p, q))
+                  category === "completed"
+                    ? ["completed", "claimed"].includes(questState(p, q))
                     : q.category === category,
                 ).map((q) => {
                   const status = questState(p, q),
                     qp = p.quests[questKey(q, p)],
                     done = q.objectives.filter(
                       (o, i) => (qp?.counts[i] ?? 0) >= (o.count ?? 1),
-                    ).length
+                    ).length;
                   return (
                     <section key={q.id} className="space-y-3 border-b pb-5">
                       <div className="flex items-start justify-between gap-3">
@@ -255,37 +276,37 @@ export function GamePanels({
                         <strong className="mr-auto text-xs text-primary">
                           {q.reward} Kibble · {q.xp} XP
                         </strong>
-                        {status === 'available' && (
+                        {status === "available" && (
                           <Button size="sm" onClick={() => accept(q.id)}>
                             Accept quest
                           </Button>
                         )}
-                        {status === 'completed' && (
+                        {status === "completed" && (
                           <Button size="sm" onClick={() => claim(q.id)}>
                             Claim reward
                           </Button>
                         )}
-                        {status === 'active' && (
+                        {status === "active" && (
                           <Button
                             size="sm"
                             variant="outline"
                             onClick={() => track(q.id)}
                           >
-                            {p.trackedQuest === q.id ? 'Tracking' : 'Track'}
+                            {p.trackedQuest === q.id ? "Tracking" : "Track"}
                           </Button>
                         )}
-                        {status === 'locked' && (
+                        {status === "locked" && (
                           <small className="text-muted-foreground">
-                            {q.category === 'event'
-                              ? 'Available on every seventh game day'
+                            {q.category === "event"
+                              ? "Available on every seventh game day"
                               : q.relationship
                                 ? `${q.relationship.npc} friendship: ${p.relationships[q.relationship.npc] ?? 0}/${q.relationship.minimum}`
-                                : 'Complete the previous story chapter'}
+                                : "Complete the previous story chapter"}
                           </small>
                         )}
                       </div>
                     </section>
-                  )
+                  );
                 })}
                 <p className="text-xs text-muted-foreground">
                   Dailies reset on the game calendar. Missing a day carries no
@@ -295,25 +316,25 @@ export function GamePanels({
               <TabsContent value="animals" className="space-y-4 pt-4">
                 {ANIMALS.map((a) => {
                   const met = p.discovered.includes(a.id),
-                    m = memory(p, a.id)
+                    m = memory(p, a.id);
                   return (
                     <section key={a.id} className="flex gap-4 border-b pb-4">
                       <img
                         src={art(a.sprite)}
                         className={
-                          'size-16 shrink-0 [image-rendering:pixelated] ' +
-                          (!met ? 'brightness-0 opacity-25' : '')
+                          "size-16 shrink-0 [image-rendering:pixelated] " +
+                          (!met ? "brightness-0 opacity-25" : "")
                         }
                         alt=""
                       />
                       <div className="min-w-0 flex-1">
                         <h3 className="font-heading text-lg font-extrabold">
-                          {met ? a.name : 'An undiscovered neighbor'}
+                          {met ? a.name : "An undiscovered neighbor"}
                         </h3>
                         {met ? (
                           <>
                             <p className="text-xs capitalize text-muted-foreground">
-                              {a.species} · {a.personality} · favorite:{' '}
+                              {a.species} · {a.personality} · favorite:{" "}
                               {a.favoriteFood}
                             </p>
                             <p className="my-2 text-sm">{a.story}</p>
@@ -325,8 +346,8 @@ export function GamePanels({
                             <p className="mt-2 text-xs text-muted-foreground">
                               Met on day {m.metDay} · {m.location}
                               {p.rescued.includes(a.id)
-                                ? ' · Safe at the shelter'
-                                : ''}
+                                ? " · Safe at the shelter"
+                                : ""}
                             </p>
                             <p className="mt-2 text-xs italic text-muted-foreground">
                               {a.fact}
@@ -350,7 +371,7 @@ export function GamePanels({
                         )}
                       </div>
                     </section>
-                  )
+                  );
                 })}
               </TabsContent>
               <TabsContent value="community" className="space-y-5 pt-4">
@@ -358,7 +379,7 @@ export function GamePanels({
                   Kindness leaves a mark
                 </h3>
                 <p className="text-sm">
-                  {p.discovered.length} animals discovered · {p.rescued.length}{' '}
+                  {p.discovered.length} animals discovered · {p.rescued.length}{" "}
                   sheltered · {p.totalEarned} lifetime Kibble
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -381,7 +402,7 @@ export function GamePanels({
                 {PROJECTS.map((project) => (
                   <div key={project.id} className="border-t pt-4">
                     <h4 className="font-bold">
-                      {p.upgrades.includes(project.id) ? '✓ ' : ''}
+                      {p.upgrades.includes(project.id) ? "✓ " : ""}
                       {project.name}
                     </h4>
                     <p className="mt-1 text-sm text-muted-foreground">
@@ -389,7 +410,7 @@ export function GamePanels({
                     </p>
                     <p className="mt-2 text-xs">
                       {p.upgrades.includes(project.id)
-                        ? 'Completed — visible in the world'
+                        ? "Completed — visible in the world"
                         : `${project.kibble} Kibble + ${project.materials} repair supplies. Visit the station or shelter to help.`}
                     </p>
                   </div>
@@ -405,13 +426,13 @@ export function GamePanels({
               </TabsContent>
             </Tabs>
           )}
-          {panel === 'map' && <WorldMap progress={p} />}
-          {panel === 'photos' && (
+          {panel === "map" && <WorldMap progress={p} />}
+          {panel === "photos" && (
             <div className="grid grid-cols-2 gap-3">
               {!p.photos.length ? (
                 <p className="col-span-2 py-8 text-center text-sm text-muted-foreground">
-                  Finish Welcome to PawTrail to unlock the camera, then
-                  photograph a neighbor.
+                  Use Photo in the footer to keep a view of your neighborhood.
+                  Animal photographs also appear here.
                 </p>
               ) : (
                 p.photos.map((photo) => (
@@ -420,20 +441,21 @@ export function GamePanels({
                       src={photo.image}
                       alt={
                         (ANIMALS.find((a) => a.id === photo.animalId)?.name ??
-                          'Animal') +
-                        ' in ' +
+                          "Neighborhood moment") +
+                        " in " +
                         photo.location
                       }
                       className="aspect-square w-full rounded-lg [image-rendering:pixelated]"
                     />
                     <figcaption className="mt-2 text-xs">
-                      {ANIMALS.find((a) => a.id === photo.animalId)?.name} · day{' '}
-                      {photo.day} · {photo.pose}
+                      {ANIMALS.find((a) => a.id === photo.animalId)?.name ??
+                        "Neighborhood moment"}{" "}
+                      · day {photo.day} · {photo.pose}
                     </figcaption>
                     <Button asChild variant="link" size="sm" className="px-0">
                       <a
                         href={photo.image}
-                        download={'pawtrail-' + photo.animalId + '.png'}
+                        download={"pawtrail-" + photo.animalId + ".png"}
                       >
                         Save photograph
                       </a>
@@ -443,7 +465,7 @@ export function GamePanels({
               )}
             </div>
           )}
-          {panel === 'help' && (
+          {panel === "help" && (
             <div className="space-y-4 text-sm leading-relaxed">
               <p>
                 <strong>Walk:</strong> WASD / arrows. Hold Shift to run. Click
@@ -480,15 +502,21 @@ export function GamePanels({
               </p>
             </div>
           )}
-          {panel === 'pause' && (
+          {panel === "pause" && (
             <div className="space-y-5">
               <Button className="w-full" onClick={() => setPanel(null)}>
                 Back to the neighborhood
               </Button>
               <section className="space-y-3">
                 <h3 className="font-heading font-extrabold">Your character</h3>
-                <p className="text-sm text-muted-foreground">Choose who you explore as. Your choice stays in this game save.</p>
-                <CharacterPicker value={p.appearance} onSelect={chooseCharacter} />
+                <p className="text-sm text-muted-foreground">
+                  Choose who you explore as. Your choice stays in this game
+                  save.
+                </p>
+                <CharacterPicker
+                  value={p.appearance}
+                  onSelect={chooseCharacter}
+                />
               </section>
               <section className="space-y-4 rounded-xl border p-4">
                 <h3 className="flex items-center gap-2 font-heading font-extrabold">
@@ -505,15 +533,15 @@ export function GamePanels({
                     onCheckedChange={(muted) => updateAudio({ muted })}
                   />
                 </div>
-                {(['master', 'music', 'effects', 'ambient'] as const).map(
+                {(["master", "music", "effects", "ambient"] as const).map(
                   (channel) => (
                     <div key={channel} className="space-y-2">
                       <div className="flex justify-between text-xs capitalize">
-                        <label id={'volume-' + channel}>{channel}</label>
+                        <label id={"volume-" + channel}>{channel}</label>
                         <span>{Math.round(prefs[channel] * 100)}%</span>
                       </div>
                       <Slider
-                        aria-labelledby={'volume-' + channel}
+                        aria-labelledby={"volume-" + channel}
                         min={0}
                         max={1}
                         step={0.05}
@@ -536,14 +564,14 @@ export function GamePanels({
                   <Download className="size-4" />
                   Export save
                 </Button>
-                <Button variant="outline" onClick={() => setPanel('help')}>
+                <Button variant="outline" onClick={() => setPanel("help")}>
                   Field guide
                 </Button>
-                <Button variant="outline" onClick={() => setPanel('photos')}>
+                <Button variant="outline" onClick={() => setPanel("photos")}>
                   Photo album
                 </Button>
-                <Button variant="outline" onClick={() => setPanel('map')}>
-                  World map
+                <Button variant="outline" onClick={() => setPanel("map")}>
+                  Story map
                 </Button>
               </div>
               <section className="space-y-2 rounded-xl border p-3">
@@ -555,28 +583,28 @@ export function GamePanels({
                   type="file"
                   accept="application/json,.json"
                   onChange={async (event) => {
-                    const file = event.target.files?.[0]
-                    setPendingSave(null)
-                    if (!file) return
+                    const file = event.target.files?.[0];
+                    setPendingSave(null);
+                    if (!file) return;
                     if (file.size > 3_000_000) {
-                      setImportMessage('This save is too large.')
-                      return
+                      setImportMessage("This save is too large.");
+                      return;
                     }
                     try {
                       const value = JSON.parse(await file.text()),
-                        valid = parseSave(value)
+                        valid = parseSave(value);
                       if (!valid) {
                         setImportMessage(
-                          'This file is not a valid PawTrail save.',
-                        )
-                        return
+                          "This file is not a valid PawTrail save.",
+                        );
+                        return;
                       }
-                      setPendingSave(valid)
+                      setPendingSave(valid);
                       setImportMessage(
                         `Day ${valid.day} · ${valid.kibble} Kibble. Loading replaces your current local progress.`,
-                      )
+                      );
                     } catch {
-                      setImportMessage('This file could not be read.')
+                      setImportMessage("This file could not be read.");
                     }
                   }}
                 />
@@ -588,8 +616,8 @@ export function GamePanels({
                     size="sm"
                     onClick={() => {
                       if (restoreSave(pendingSave)) {
-                        setPendingSave(null)
-                        setPanel(null)
+                        setPendingSave(null);
+                        setPanel(null);
                       }
                     }}
                   >
@@ -597,7 +625,7 @@ export function GamePanels({
                   </Button>
                 )}
               </section>
-              <Button variant="ghost" onClick={() => setPanel('pause-confirm')}>
+              <Button variant="ghost" onClick={() => setPanel("pause-confirm")}>
                 <RotateCcw className="size-4" />
                 Start a fresh save
               </Button>
@@ -606,7 +634,7 @@ export function GamePanels({
               </p>
             </div>
           )}
-          {panel === 'pause-confirm' && (
+          {panel === "pause-confirm" && (
             <div className="space-y-4">
               <p className="text-sm">
                 Reset this device’s story, quests, Kibble, trust and
@@ -616,13 +644,13 @@ export function GamePanels({
                 <Button
                   variant="destructive"
                   onClick={() => {
-                    resetProgress()
-                    setPanel(null)
+                    resetProgress();
+                    setPanel(null);
                   }}
                 >
                   Start again
                 </Button>
-                <Button variant="outline" onClick={() => setPanel('pause')}>
+                <Button variant="outline" onClick={() => setPanel("pause")}>
                   Keep my story
                 </Button>
               </div>
@@ -630,78 +658,25 @@ export function GamePanels({
           )}
         </DialogContent>
       </Dialog>
-      <Dialog
-        open={!!state.dialogue}
-        onOpenChange={(open) => {
-          if (!open) closeDialogue()
-        }}
-      >
-        <DialogContent className="top-auto bottom-3 max-h-[85dvh] translate-y-0 gap-4 overflow-y-auto bg-card sm:bottom-5 sm:max-w-3xl">
-          <div className="flex items-start gap-4 sm:gap-5">
-            {state.dialogue && <DialoguePortrait dialogue={state.dialogue} />}
-            <div className="min-w-0 flex-1 space-y-3 pr-4">
-              <DialogHeader className="text-left">
-                <DialogTitle className="font-heading text-xl font-extrabold">
-                  {state.dialogue?.name}
-                </DialogTitle>
-                <DialogDescription>
-                  {state.dialogue?.npcId
-                    ? NPCS[state.dialogue.npcId]?.personality ?? 'Your neighborhood care circle'
-                    : 'Around the neighborhood'}
-                </DialogDescription>
-              </DialogHeader>
-              <p className="min-h-20 text-sm leading-relaxed" aria-hidden="true">
-                {paragraph.slice(0, letters)}
-                {letters < paragraph.length && (
-                  <span className="ml-1 motion-safe:animate-pulse">▏</span>
-                )}
-              </p>
-              <p className="sr-only" aria-live="polite">{paragraph}</p>
-            </div>
-          </div>
-          {page === paragraphs.length - 1 && letters >= paragraph.length && (
-            <div className="flex flex-wrap gap-2">
-              {state.dialogue?.choices?.map((choice, i) => (
-                <Button
-                  key={i}
-                  size="sm"
-                  variant="outline"
-                  onClick={() => {
-                    if (choice.action === 'accept')
-                      accept(choice.target, state.dialogue?.npcId)
-                    else if (choice.action === 'claim') claim(choice.target)
-                    else if (choice.action === 'buy') buyFood()
-                    else if (choice.action === 'upgrade') improve(choice.target)
-                    else if (choice.action === 'clean')
-                      cleanStation(choice.target)
-                    else if (choice.action === 'water')
-                      stationWater(choice.target)
-                    else if (choice.action === 'rest')
-                      rest(choice.target === 'morning')
-                    closeDialogue()
-                  }}
-                >
-                  {choice.label}
-                </Button>
-              ))}
-            </div>
-          )}
-          <Button
-            className="justify-self-end"
-            onClick={() => {
-              if (letters < paragraph.length) setLetters(paragraph.length)
-              else if (page < paragraphs.length - 1) setPage((n) => n + 1)
-              else closeDialogue()
-            }}
-          >
-            {letters < paragraph.length
-              ? 'Show text'
-              : page < paragraphs.length - 1
-                ? 'Continue'
-                : 'Thanks, neighbor'}
-          </Button>
-        </DialogContent>
-      </Dialog>
+      {state.dialogue && (
+        <GameDialogue
+          key={JSON.stringify(state.dialogue)}
+          dialogue={state.dialogue}
+          onClose={closeDialogue}
+          onChoice={(choice) => {
+            if (choice.action === "accept")
+              accept(choice.target, state.dialogue?.npcId);
+            else if (choice.action === "claim") claim(choice.target);
+            else if (choice.action === "buy") buyFood();
+            else if (choice.action === "upgrade") improve(choice.target);
+            else if (choice.action === "clean") cleanStation(choice.target);
+            else if (choice.action === "water") stationWater(choice.target);
+            else if (choice.action === "rest")
+              rest(choice.target === "morning");
+            closeDialogue();
+          }}
+        />
+      )}
     </>
-  )
+  );
 }

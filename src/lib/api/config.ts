@@ -8,14 +8,22 @@ export function getApiConfig(
   },
 ): ApiConfig {
   if (env.NEXT_PUBLIC_USE_MOCK_API === 'true') return { mode: 'mock' }
-  if (env.NEXT_PUBLIC_USE_MOCK_API !== 'false')
+  if (
+    env.NEXT_PUBLIC_USE_MOCK_API !== undefined &&
+    env.NEXT_PUBLIC_USE_MOCK_API !== 'false'
+  )
     throw new ApiError(
       'CONFIGURATION_ERROR',
       'Explicit API mode is required',
       500,
     )
   try {
-    const url = new URL(env.DJANGO_API_BASE_URL ?? '')
+    const url = new URL(
+      env.DJANGO_API_BASE_URL ??
+        (process.env.NODE_ENV !== 'production'
+          ? 'http://127.0.0.1:8002/api/v1'
+          : ''),
+    )
     if (
       !['http:', 'https:'].includes(url.protocol) ||
       url.username ||

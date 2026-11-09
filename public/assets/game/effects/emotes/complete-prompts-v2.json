@@ -1,0 +1,7 @@
+{
+  "group": "emotes",
+  "rows": 6,
+  "cols": 8,
+  "prompt": "Use case: stylized-concept. Asset type: PawTrail EMOTE ANIMATION atlas with exactly48 isolated icons. IMAGE1 style reference ONLY, match warmcream/honeygold/sage/terracotta pastelpalette darkwarmbrownoutlines crisp16bit32x32logicalpixels. True transparentbg no glows. Exact EIGHT columns SIX rows equal square cells. TWO animations per horizontal row: eachanimation four adjacent cells showing pop/blink/wiggle/pause motion, not fourdifferenticons. Row1 left4 HAPPY FACE, right4 LAUGHING FACE; row2 left4 HEART pulse, right4 WAVING HAND; row3 SAD FACE with tearblink, SURPRISED FACE; row4 CONFUSED FACE, ANGRY FACE; row5 SLEEPY FACE, THUMBS UP; row6 CELEBRATION confetti, PAW PRINT bounce. Eachiconcentered withgeneroustransparentmargins separatecells. Onlythese12emotes, fourdistinctreadable animationposes each. No textletterslabelsgridframesUIScenerycharacters smoothgradientsantialiasorblur. OrthographicflatpixelUIicons recognizable above a tiny gamecharacter. No bakedcheckerboard.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-dd2d9527-beca-4834-a695-60974ba89c71.png"
+}

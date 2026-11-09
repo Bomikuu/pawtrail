@@ -1,0 +1,3742 @@
+{
+  "version": 1,
+  "baseTile": 32,
+  "perspective": "top-down three-quarter",
+  "lighting": "upper-left",
+  "palette": [
+    "#fae8ce",
+    "#321b1f",
+    "#442628",
+    "#6a9039",
+    "#8e5641",
+    "#297f80",
+    "#4f9694",
+    "#df9850",
+    "#c2c04b",
+    "#bda193",
+    "#7d6764",
+    "#d79770",
+    "#ebb272",
+    "#605053",
+    "#47363b",
+    "#5b383a",
+    "#5e565a",
+    "#dca68a",
+    "#f0c38b",
+    "#c48358",
+    "#d38553",
+    "#c28864",
+    "#e68667",
+    "#c86856",
+    "#e2725a",
+    "#ad9085",
+    "#b79a8a",
+    "#512e2e",
+    "#5b402f",
+    "#81605a",
+    "#b76954",
+    "#87998c",
+    "#8fa99e",
+    "#73953a",
+    "#7e9f39",
+    "#442c2e",
+    "#3d3d2b",
+    "#2b8081",
+    "#5b8580",
+    "#ddbb9d",
+    "#eaceb3",
+    "#838c5d",
+    "#8cab42",
+    "#578448",
+    "#6d9340",
+    "#bb6246",
+    "#d06644",
+    "#416d3d",
+    "#55643e",
+    "#fae0b0",
+    "#fae3c0",
+    "#a65a3d",
+    "#a95e4c",
+    "#b1a89a",
+    "#b2b6ad",
+    "#86706c",
+    "#8b7775",
+    "#4c6b6c",
+    "#655f61",
+    "#7b4134",
+    "#7e4641",
+    "#51474c",
+    "#575556"
+  ],
+  "sheets": {
+    "rescuer": {
+      "file": "native/rescuer.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "width": 192,
+      "height": 576,
+      "columns": 6,
+      "rows": 12,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        44
+      ],
+      "scaleFromMaster": 0.3053435114503817
+    },
+    "orange_tabby": {
+      "file": "native/orange_tabby.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.20491803278688525
+    },
+    "black_cat": {
+      "file": "native/black_cat.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.1937984496124031
+    },
+    "white_cat": {
+      "file": "native/white_cat.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.20833333333333334
+    },
+    "calico": {
+      "file": "native/calico.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.211864406779661
+    },
+    "siamese": {
+      "file": "native/siamese.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.1953125
+    },
+    "brown_aspin": {
+      "file": "native/brown_aspin.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.19230769230769232
+    },
+    "white_puppy": {
+      "file": "native/white_puppy.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.21367521367521367
+    },
+    "spotted_dog": {
+      "file": "native/spotted_dog.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "width": 192,
+      "height": 320,
+      "columns": 6,
+      "rows": 10,
+      "spacing": 0,
+      "margin": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "scaleFromMaster": 0.1897810218978102
+    }
+  },
+  "animations": {
+    "rescuer/walk_down": {
+      "sheet": "rescuer",
+      "row": 0,
+      "fps": 9,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_down/03.png"
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_down/04.png"
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_down/05.png"
+        }
+      ]
+    },
+    "rescuer/walk_up": {
+      "sheet": "rescuer",
+      "row": 1,
+      "fps": 9,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_up/03.png"
+        },
+        {
+          "x": 128,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_up/04.png"
+        },
+        {
+          "x": 160,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_up/05.png"
+        }
+      ]
+    },
+    "rescuer/walk_left": {
+      "sheet": "rescuer",
+      "row": 2,
+      "fps": 9,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_left/03.png"
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_left/04.png"
+        },
+        {
+          "x": 160,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_left/05.png"
+        }
+      ]
+    },
+    "rescuer/walk_right": {
+      "sheet": "rescuer",
+      "row": 3,
+      "fps": 9,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_right/03.png"
+        },
+        {
+          "x": 128,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_right/04.png"
+        },
+        {
+          "x": 160,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/walk_right/05.png"
+        }
+      ]
+    },
+    "rescuer/idle_down": {
+      "sheet": "rescuer",
+      "row": 4,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_down/03.png"
+        }
+      ]
+    },
+    "rescuer/idle_up": {
+      "sheet": "rescuer",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 240,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 240,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 240,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 240,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_up/03.png"
+        }
+      ]
+    },
+    "rescuer/idle_left": {
+      "sheet": "rescuer",
+      "row": 6,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_left/03.png"
+        }
+      ]
+    },
+    "rescuer/idle_right": {
+      "sheet": "rescuer",
+      "row": 7,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 336,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 336,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 336,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 336,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/idle_right/03.png"
+        }
+      ]
+    },
+    "rescuer/feed": {
+      "sheet": "rescuer",
+      "row": 8,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/feed/00.png"
+        },
+        {
+          "x": 32,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/feed/01.png"
+        },
+        {
+          "x": 64,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/feed/02.png"
+        },
+        {
+          "x": 96,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/feed/03.png"
+        },
+        {
+          "x": 128,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/feed/04.png"
+        },
+        {
+          "x": 160,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/feed/05.png"
+        }
+      ]
+    },
+    "rescuer/pet": {
+      "sheet": "rescuer",
+      "row": 9,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 432,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pet/00.png"
+        },
+        {
+          "x": 32,
+          "y": 432,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pet/01.png"
+        },
+        {
+          "x": 64,
+          "y": 432,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pet/02.png"
+        },
+        {
+          "x": 96,
+          "y": 432,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pet/03.png"
+        },
+        {
+          "x": 128,
+          "y": 432,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pet/04.png"
+        },
+        {
+          "x": 160,
+          "y": 432,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pet/05.png"
+        }
+      ]
+    },
+    "rescuer/pick_up": {
+      "sheet": "rescuer",
+      "row": 10,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 480,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pick_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 480,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pick_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 480,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pick_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 480,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pick_up/03.png"
+        },
+        {
+          "x": 128,
+          "y": 480,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pick_up/04.png"
+        },
+        {
+          "x": 160,
+          "y": 480,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/pick_up/05.png"
+        }
+      ]
+    },
+    "rescuer/sit": {
+      "sheet": "rescuer",
+      "row": 11,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 528,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 528,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 528,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 528,
+          "width": 32,
+          "height": 48,
+          "file": "frames/rescuer/sit/03.png"
+        }
+      ]
+    },
+    "orange_tabby/idle": {
+      "sheet": "orange_tabby",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/idle/03.png"
+        }
+      ]
+    },
+    "orange_tabby/walk_down": {
+      "sheet": "orange_tabby",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_down/03.png"
+        }
+      ]
+    },
+    "orange_tabby/walk_up": {
+      "sheet": "orange_tabby",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_up/03.png"
+        }
+      ]
+    },
+    "orange_tabby/walk_left": {
+      "sheet": "orange_tabby",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_left/03.png"
+        }
+      ]
+    },
+    "orange_tabby/walk_right": {
+      "sheet": "orange_tabby",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/walk_right/03.png"
+        }
+      ]
+    },
+    "orange_tabby/sit": {
+      "sheet": "orange_tabby",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sit/03.png"
+        }
+      ]
+    },
+    "orange_tabby/sleep": {
+      "sheet": "orange_tabby",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/sleep/03.png"
+        }
+      ]
+    },
+    "orange_tabby/eat": {
+      "sheet": "orange_tabby",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/eat/05.png"
+        }
+      ]
+    },
+    "orange_tabby/happy": {
+      "sheet": "orange_tabby",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/happy/03.png"
+        }
+      ]
+    },
+    "orange_tabby/petted": {
+      "sheet": "orange_tabby",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/orange_tabby/petted/03.png"
+        }
+      ]
+    },
+    "black_cat/idle": {
+      "sheet": "black_cat",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/idle/03.png"
+        }
+      ]
+    },
+    "black_cat/walk_down": {
+      "sheet": "black_cat",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_down/03.png"
+        }
+      ]
+    },
+    "black_cat/walk_up": {
+      "sheet": "black_cat",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_up/03.png"
+        }
+      ]
+    },
+    "black_cat/walk_left": {
+      "sheet": "black_cat",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_left/03.png"
+        }
+      ]
+    },
+    "black_cat/walk_right": {
+      "sheet": "black_cat",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/walk_right/03.png"
+        }
+      ]
+    },
+    "black_cat/sit": {
+      "sheet": "black_cat",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sit/03.png"
+        }
+      ]
+    },
+    "black_cat/sleep": {
+      "sheet": "black_cat",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/sleep/03.png"
+        }
+      ]
+    },
+    "black_cat/eat": {
+      "sheet": "black_cat",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/eat/05.png"
+        }
+      ]
+    },
+    "black_cat/happy": {
+      "sheet": "black_cat",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/happy/03.png"
+        }
+      ]
+    },
+    "black_cat/petted": {
+      "sheet": "black_cat",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/black_cat/petted/03.png"
+        }
+      ]
+    },
+    "white_cat/idle": {
+      "sheet": "white_cat",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/idle/03.png"
+        }
+      ]
+    },
+    "white_cat/walk_down": {
+      "sheet": "white_cat",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_down/03.png"
+        }
+      ]
+    },
+    "white_cat/walk_up": {
+      "sheet": "white_cat",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_up/03.png"
+        }
+      ]
+    },
+    "white_cat/walk_left": {
+      "sheet": "white_cat",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_left/03.png"
+        }
+      ]
+    },
+    "white_cat/walk_right": {
+      "sheet": "white_cat",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/walk_right/03.png"
+        }
+      ]
+    },
+    "white_cat/sit": {
+      "sheet": "white_cat",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sit/03.png"
+        }
+      ]
+    },
+    "white_cat/sleep": {
+      "sheet": "white_cat",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/sleep/03.png"
+        }
+      ]
+    },
+    "white_cat/eat": {
+      "sheet": "white_cat",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/eat/05.png"
+        }
+      ]
+    },
+    "white_cat/happy": {
+      "sheet": "white_cat",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/happy/03.png"
+        }
+      ]
+    },
+    "white_cat/petted": {
+      "sheet": "white_cat",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_cat/petted/03.png"
+        }
+      ]
+    },
+    "calico/idle": {
+      "sheet": "calico",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/idle/03.png"
+        }
+      ]
+    },
+    "calico/walk_down": {
+      "sheet": "calico",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_down/03.png"
+        }
+      ]
+    },
+    "calico/walk_up": {
+      "sheet": "calico",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_up/03.png"
+        }
+      ]
+    },
+    "calico/walk_left": {
+      "sheet": "calico",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_left/03.png"
+        }
+      ]
+    },
+    "calico/walk_right": {
+      "sheet": "calico",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/walk_right/03.png"
+        }
+      ]
+    },
+    "calico/sit": {
+      "sheet": "calico",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sit/03.png"
+        }
+      ]
+    },
+    "calico/sleep": {
+      "sheet": "calico",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/sleep/03.png"
+        }
+      ]
+    },
+    "calico/eat": {
+      "sheet": "calico",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/eat/05.png"
+        }
+      ]
+    },
+    "calico/happy": {
+      "sheet": "calico",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/happy/03.png"
+        }
+      ]
+    },
+    "calico/petted": {
+      "sheet": "calico",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/calico/petted/03.png"
+        }
+      ]
+    },
+    "siamese/idle": {
+      "sheet": "siamese",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/idle/03.png"
+        }
+      ]
+    },
+    "siamese/walk_down": {
+      "sheet": "siamese",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_down/03.png"
+        }
+      ]
+    },
+    "siamese/walk_up": {
+      "sheet": "siamese",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_up/03.png"
+        }
+      ]
+    },
+    "siamese/walk_left": {
+      "sheet": "siamese",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_left/03.png"
+        }
+      ]
+    },
+    "siamese/walk_right": {
+      "sheet": "siamese",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/walk_right/03.png"
+        }
+      ]
+    },
+    "siamese/sit": {
+      "sheet": "siamese",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sit/03.png"
+        }
+      ]
+    },
+    "siamese/sleep": {
+      "sheet": "siamese",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/sleep/03.png"
+        }
+      ]
+    },
+    "siamese/eat": {
+      "sheet": "siamese",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/eat/05.png"
+        }
+      ]
+    },
+    "siamese/happy": {
+      "sheet": "siamese",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/happy/03.png"
+        }
+      ]
+    },
+    "siamese/petted": {
+      "sheet": "siamese",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/siamese/petted/03.png"
+        }
+      ]
+    },
+    "brown_aspin/idle": {
+      "sheet": "brown_aspin",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/idle/03.png"
+        }
+      ]
+    },
+    "brown_aspin/walk_down": {
+      "sheet": "brown_aspin",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_down/03.png"
+        }
+      ]
+    },
+    "brown_aspin/walk_up": {
+      "sheet": "brown_aspin",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_up/03.png"
+        }
+      ]
+    },
+    "brown_aspin/walk_left": {
+      "sheet": "brown_aspin",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_left/03.png"
+        }
+      ]
+    },
+    "brown_aspin/walk_right": {
+      "sheet": "brown_aspin",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/walk_right/03.png"
+        }
+      ]
+    },
+    "brown_aspin/sit": {
+      "sheet": "brown_aspin",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sit/03.png"
+        }
+      ]
+    },
+    "brown_aspin/sleep": {
+      "sheet": "brown_aspin",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/sleep/03.png"
+        }
+      ]
+    },
+    "brown_aspin/eat": {
+      "sheet": "brown_aspin",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/eat/05.png"
+        }
+      ]
+    },
+    "brown_aspin/happy": {
+      "sheet": "brown_aspin",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/happy/03.png"
+        }
+      ]
+    },
+    "brown_aspin/petted": {
+      "sheet": "brown_aspin",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/brown_aspin/petted/03.png"
+        }
+      ]
+    },
+    "white_puppy/idle": {
+      "sheet": "white_puppy",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/idle/03.png"
+        }
+      ]
+    },
+    "white_puppy/walk_down": {
+      "sheet": "white_puppy",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_down/03.png"
+        }
+      ]
+    },
+    "white_puppy/walk_up": {
+      "sheet": "white_puppy",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_up/03.png"
+        }
+      ]
+    },
+    "white_puppy/walk_left": {
+      "sheet": "white_puppy",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_left/03.png"
+        }
+      ]
+    },
+    "white_puppy/walk_right": {
+      "sheet": "white_puppy",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/walk_right/03.png"
+        }
+      ]
+    },
+    "white_puppy/sit": {
+      "sheet": "white_puppy",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sit/03.png"
+        }
+      ]
+    },
+    "white_puppy/sleep": {
+      "sheet": "white_puppy",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/sleep/03.png"
+        }
+      ]
+    },
+    "white_puppy/eat": {
+      "sheet": "white_puppy",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/eat/05.png"
+        }
+      ]
+    },
+    "white_puppy/happy": {
+      "sheet": "white_puppy",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/happy/03.png"
+        }
+      ]
+    },
+    "white_puppy/petted": {
+      "sheet": "white_puppy",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/white_puppy/petted/03.png"
+        }
+      ]
+    },
+    "spotted_dog/idle": {
+      "sheet": "spotted_dog",
+      "row": 0,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/00.png"
+        },
+        {
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/01.png"
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/02.png"
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/idle/03.png"
+        }
+      ]
+    },
+    "spotted_dog/walk_down": {
+      "sheet": "spotted_dog",
+      "row": 1,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_down/00.png"
+        },
+        {
+          "x": 32,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_down/01.png"
+        },
+        {
+          "x": 64,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_down/02.png"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_down/03.png"
+        }
+      ]
+    },
+    "spotted_dog/walk_up": {
+      "sheet": "spotted_dog",
+      "row": 2,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_up/00.png"
+        },
+        {
+          "x": 32,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_up/01.png"
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_up/02.png"
+        },
+        {
+          "x": 96,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_up/03.png"
+        }
+      ]
+    },
+    "spotted_dog/walk_left": {
+      "sheet": "spotted_dog",
+      "row": 3,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_left/00.png"
+        },
+        {
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_left/01.png"
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_left/02.png"
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_left/03.png"
+        }
+      ]
+    },
+    "spotted_dog/walk_right": {
+      "sheet": "spotted_dog",
+      "row": 4,
+      "fps": 7,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_right/00.png"
+        },
+        {
+          "x": 32,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_right/01.png"
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_right/02.png"
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/walk_right/03.png"
+        }
+      ]
+    },
+    "spotted_dog/sit": {
+      "sheet": "spotted_dog",
+      "row": 5,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/00.png"
+        },
+        {
+          "x": 32,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/01.png"
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/02.png"
+        },
+        {
+          "x": 96,
+          "y": 160,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sit/03.png"
+        }
+      ]
+    },
+    "spotted_dog/sleep": {
+      "sheet": "spotted_dog",
+      "row": 6,
+      "fps": 2,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/00.png"
+        },
+        {
+          "x": 32,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/01.png"
+        },
+        {
+          "x": 64,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/02.png"
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/sleep/03.png"
+        }
+      ]
+    },
+    "spotted_dog/eat": {
+      "sheet": "spotted_dog",
+      "row": 7,
+      "fps": 5,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/eat/00.png"
+        },
+        {
+          "x": 32,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/eat/01.png"
+        },
+        {
+          "x": 64,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/eat/02.png"
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/eat/03.png"
+        },
+        {
+          "x": 128,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/eat/04.png"
+        },
+        {
+          "x": 160,
+          "y": 224,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/eat/05.png"
+        }
+      ]
+    },
+    "spotted_dog/happy": {
+      "sheet": "spotted_dog",
+      "row": 8,
+      "fps": 6,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/00.png"
+        },
+        {
+          "x": 32,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/01.png"
+        },
+        {
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/02.png"
+        },
+        {
+          "x": 96,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/happy/03.png"
+        }
+      ]
+    },
+    "spotted_dog/petted": {
+      "sheet": "spotted_dog",
+      "row": 9,
+      "fps": 4,
+      "loop": true,
+      "frames": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/petted/00.png"
+        },
+        {
+          "x": 32,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/petted/01.png"
+        },
+        {
+          "x": 64,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/petted/02.png"
+        },
+        {
+          "x": 96,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "file": "frames/spotted_dog/petted/03.png"
+        }
+      ]
+    }
+  },
+  "frameCount": 398
+}

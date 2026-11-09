@@ -20,6 +20,6 @@ AUDIT CLOSURE: Independent saved/application/draft/mission queue paging is URL-b
 
 ## UI standards confirmation — 6 November 2026
 
-Preserve the Operate layout and its separate management navigation. Use 44px default controls, a fully reachable mobile utility header, wrapping status labels, consistent page-heading/action spacing, readable filter fields and naturally flowing forms. Overview summaries use independent label/value tiles without nested outlines. Heading defaults establish Nunito hierarchy without overriding explicit feature typography. Secondary feature text uses the semantic muted token in both themes.
+Preserve the Operate layout and its separate management navigation. Use 44px default controls, a fully reachable mobile utility header, wrapping status labels, consistent page-heading/action spacing, readable filter fields and naturally flowing forms. Overview summaries use independent label/value tiles without nested outlines. Heading defaults establish Saira Condensed hierarchy without overriding explicit feature typography. Secondary feature text uses the semantic muted token in both themes.
 
 Mobile action visibility must be merged at Button before Slot composition; never append conflicting visibility classes directly to its child. Theme state must use the server snapshot until mounted. Member Create menus omit organizer-only quests; server permission checks remain authoritative. Session changes show a centered status loader while identity-dependent content remains hidden.

@@ -1,5 +1,6 @@
+import {customCharacterId} from './actor-rig/appearance'
 export const CHARACTER_OPTIONS = [
-  { id: 'rescuer', name: 'Trail rescuer', description: 'The original neighborhood helper.' },
+  { id: 'rescuer', name: 'Trail rescuer', description: 'Brown hair, a teal shirt and a little backpack. Ready to explore, care and rest.' },
   { id: 'jacket-rescuer', name: 'Jacket rescuer', description: 'Ready for a day outdoors.' },
   { id: 'braided-rescuer', name: 'Braided rescuer', description: 'A sunhat and a curious spirit.' },
   { id: 'glasses-rescuer', name: 'Glasses rescuer', description: 'A girl with round glasses and a little backpack.' },
@@ -11,9 +12,9 @@ export const CHARACTER_OPTIONS = [
   { id: 'male-red-gardener', name: 'Copper gardener', description: 'A man with copper-red hair, a terracotta tee, and green overalls.' },
 ] as const
 
-export type CharacterId = (typeof CHARACTER_OPTIONS)[number]['id']
+export type CharacterId = (typeof CHARACTER_OPTIONS)[number]['id'] | `custom_${string}`
 export function isCharacterId(value: unknown): value is CharacterId {
-  return CHARACTER_OPTIONS.some((character) => character.id === value)
+  return customCharacterId(value) || CHARACTER_OPTIONS.some((character) => character.id === value)
 }
 export function characterId(value: unknown): CharacterId {
   return isCharacterId(value) ? value : 'rescuer'

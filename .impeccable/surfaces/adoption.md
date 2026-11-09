@@ -8,7 +8,7 @@ Find a suitable companion, express interest responsibly, and submit or manage a 
 
 THESIS: A companion’s story supports responsible interest; generic compatibility scores cannot replace a readable animal profile or honest application status.
 
-OWN-WORLD: Cream ground, white surfaces, brown text, orange actions, teal help/status accents, rounded Shadcn controls, and beige rules; Nunito headings and Inter body. Animal imagery owns content space.
+OWN-WORLD: Cream ground, white surfaces, brown text, orange actions, teal help/status accents, rounded Shadcn controls, and beige rules; Saira Condensed headings and Instrument Sans body. Animal imagery owns content space.
 
 STORY: Recognize a companion, understand needs and optional rule-based matching, express interest, then complete a private application.
 
@@ -22,6 +22,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Delivery and verification
 
-Use Nunito headings, Inter body, the pinned palette, warm rules, canonical Shadcn controls, and visible sample labels. All shipping raster provenance and self-hosted font licensing are F7-owned. Motion responds briefly to intent and disappears under reduced-motion. Loading skeleton, informative empty, permission, validation, unavailable, error/retry, pending, rollback, and completion states belong to the feature that owns the action.
+Use Saira Condensed headings, Instrument Sans body, the pinned palette, warm rules, canonical Shadcn controls, and visible sample labels. All shipping raster provenance and self-hosted font licensing are F7-owned. Motion responds briefly to intent and disappears under reduced-motion. Loading skeleton, informative empty, permission, validation, unavailable, error/retry, pending, rollback, and completion states belong to the feature that owns the action.
 
 Only implemented destinations become working links through the central readiness registry. This brief is the approved contract for future feature work; it does not claim that those routes already exist. Automated source and behavior checks only. Rendered quality remains unverified; the parent coordinates final source-scope finish review.

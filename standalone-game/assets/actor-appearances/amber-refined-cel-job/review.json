@@ -1,0 +1,303 @@
+{
+  "character": "Amber",
+  "appearanceId": "amber-outrider",
+  "style": "Refined cel",
+  "revision": "c82763e7818b",
+  "verdict": "pass",
+  "browser": "Firefox",
+  "desktop": [
+    1440,
+    1250
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "nativeCell": [
+    96,
+    120
+  ],
+  "poses": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "completeBytes": 178448,
+  "budgetBytes": 300000,
+  "originalSources": [
+    "output/imagegen/amber-refined-cel-v1/pose-0-complete-generated.png",
+    "output/imagegen/amber-refined-cel-v1/pose-1-complete-generated.png",
+    "output/imagegen/amber-refined-cel-v1/pose-2-complete-generated.png"
+  ],
+  "styleReference": "output/imagegen/amber-refined-cel-v1/references/style-0.png",
+  "styleGate": "output/imagegen/amber-refined-cel-v1/front-style-gate.png",
+  "matrix": [
+    {
+      "pose": "front-pout",
+      "emotion": "neutral",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "front-pout",
+      "emotion": "smile",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "front-pout",
+      "emotion": "happy",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Happy intentionally holds closed smiling eyes during automatic blinking."
+    },
+    {
+      "pose": "front-pout",
+      "emotion": "sad",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "front-pout",
+      "emotion": "angry",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "front-pout",
+      "emotion": "surprised",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "three-quarter-left",
+      "emotion": "neutral",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "three-quarter-left",
+      "emotion": "smile",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "three-quarter-left",
+      "emotion": "happy",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Happy intentionally holds closed smiling eyes during automatic blinking."
+    },
+    {
+      "pose": "three-quarter-left",
+      "emotion": "sad",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "three-quarter-left",
+      "emotion": "angry",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "three-quarter-left",
+      "emotion": "surprised",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "emotion": "neutral",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "emotion": "smile",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "emotion": "happy",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Happy intentionally holds closed smiling eyes during automatic blinking."
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "emotion": "sad",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "emotion": "angry",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "emotion": "surprised",
+      "rest": "pass",
+      "halfAndClosedBlink": "pass",
+      "smallAndOpenSpeech": "pass",
+      "breathing": "pass",
+      "combinedPlayback": "pass",
+      "transitionsAndSpeechRestoration": "pass",
+      "note": "Whole authored drawings retain this expression; no facial patch assembly."
+    }
+  ],
+  "evidence": {
+    "nativeBoards": [
+      "output/imagegen/amber-refined-cel-v1/front-pout-native-review.png",
+      "output/imagegen/amber-refined-cel-v1/three-quarter-left-native-review.png",
+      "output/imagegen/amber-refined-cel-v1/head-tilt-smile-right-native-review.png"
+    ],
+    "livePhases": [
+      "output/playwright/amber-refined-cel/front-live-phases.png",
+      "output/playwright/amber-refined-cel/three-quarter-live-phases.png",
+      "output/playwright/amber-refined-cel/head-tilt-live-phases.png"
+    ],
+    "breathing": "output/playwright/amber-refined-cel/breathing-pairs.png",
+    "restoredExpressions": "output/playwright/amber-refined-cel/restored-emotions.png",
+    "closedBlinkTransitions": "output/playwright/amber-refined-cel/closed-blink-transitions.png",
+    "publishedStudio": "output/playwright/amber-refined-cel/published-final.png",
+    "mobile": "output/playwright/amber-refined-cel/mobile-final.png"
+  },
+  "mobileFit": {
+    "width": 390,
+    "contentWidth": 390
+  },
+  "referenceControls": {
+    "eyesDisabled": true,
+    "mouthDisabled": true
+  },
+  "pageErrors": [],
+  "bodyReview": {
+    "verdict": "pass",
+    "actions": [
+      "Idle",
+      "Walk",
+      "Feed / eat",
+      "Pet",
+      "Sit",
+      "Sleep \u00b7 Zzz"
+    ],
+    "directions": [
+      "Front",
+      "Front left",
+      "Left",
+      "Back left",
+      "Back",
+      "Back right",
+      "Right",
+      "Front right"
+    ],
+    "nativePostures": "output/imagegen/amber-refined-cel-v1/body-review.png",
+    "livePhases": "output/playwright/amber-refined-cel/body-live-phases.png",
+    "liveDirections": "output/playwright/amber-refined-cel/body-directions.png",
+    "creator": "output/playwright/amber-refined-cel/character-creator.png",
+    "dialogue": "output/playwright/amber-refined-cel/character-dialogue.png",
+    "boundPortraitNative": [
+      96,
+      120
+    ],
+    "pageErrors": [],
+    "notes": [
+      "Reference-specific silhouette/gear is present in front, diagonal, side and back views.",
+      "Idle and walking preserve the world/feet scale; articulated long hair moves with the shared rig.",
+      "Care, sitting and sleep keep the costume/long hair attached; resting bow follows the head.",
+      "Shared ground shadow and sound paths are retained; no new sound/action lifecycle was introduced."
+    ]
+  },
+  "limitations": [
+    "Body retains the established simplified no-nose gameplay face.",
+    "The matching Refined cel portrait follows exact saved copies; appearance edits need separately authored portrait artwork for an exact new match.",
+    "This is a preview template, not an automatically equipped or spawned game actor."
+  ],
+  "automation": "No test suite, type check or build. Production art export and scoped Firefox visual capture only."
+}

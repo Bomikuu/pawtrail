@@ -95,5 +95,5 @@ export class Atmosphere {
       }
     }
   }
-  destroy() { [...this.rain,...this.clouds,...this.shadows,...this.splashes,...this.puddles,...this.lights,this.moon,this.stars].forEach((o)=>o.destroy());void audio.setRain(0,false) }
+  destroy() { [...this.rain,...this.clouds,...this.shadows,...this.splashes,...this.puddles,...this.lights,this.moon,this.stars].forEach((o)=>{if(o.scene)o.destroy()});void audio.setRain(0,false) }
 }

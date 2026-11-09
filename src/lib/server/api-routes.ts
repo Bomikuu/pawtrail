@@ -1,3 +1,5 @@
+import { communityStatisticsSchema } from '@/features/discovery/schemas'
+import { medicalRoutes } from '@/features/medical/api-routes'
 import 'server-only'
 import { z } from 'zod'
 import {
@@ -41,6 +43,8 @@ export interface ApiRoute {
   ): Promise<unknown>
 }
 export const apiRoutes: ApiRoute[] = [
+  ...medicalRoutes,
+  { method: 'GET', path: '/discovery/community-stats', invoke: async (api, _p, _q, _body, options) => parseResponse(communityStatisticsSchema, await api.discovery.communityStats(options)) },
   {
     method: 'GET',
     path: '/users/:username/preview',
@@ -923,6 +927,19 @@ export const apiRoutes: ApiRoute[] = [
         fundraising.campaignDetailSchema,
         await api.fundraisers.close(
           parseInput(idSchema, params['id']),
+          options,
+        ),
+      ),
+  },
+  {
+    method: 'POST',
+    path: '/fundraisers/:id/pledges',
+    invoke: async (api, params, query, body, options) =>
+      parseResponse(
+        fundraising.supportPledgeSchema,
+        await api.fundraisers.pledge(
+          parseInput(idSchema, params['id']),
+          parseInput(fundraising.demoDonationInputSchema, body),
           options,
         ),
       ),

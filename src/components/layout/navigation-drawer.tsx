@@ -17,6 +17,7 @@ import { DashboardNav } from './dashboard-nav'
 import { ButtonLink } from '@/components/ui/button-link'
 import { NavigationLink } from './navigation-link'
 import { Brand } from './brand'
+import { ThemeToggle } from './theme-toggle'
 export function NavigationDrawer({
   readyRoutes,
   variant = 'platform',
@@ -59,6 +60,18 @@ export function NavigationDrawer({
         <DialogDescription>
           Find animals, connect with neighbors, and manage your contributions.
         </DialogDescription>
+        <div className="flex items-center justify-between gap-2 border-y py-3 sm:hidden">
+          {readyRoutes.has('/search') && (
+            <ButtonLink
+              href="/search"
+              variant="outline"
+              onClick={() => setOpen(false)}
+            >
+              Search PawTrail
+            </ButtonLink>
+          )}
+          <ThemeToggle />
+        </div>
         {variant === 'platform' && (
           <nav aria-label="All destinations">
             <ul>

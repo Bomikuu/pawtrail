@@ -25,6 +25,7 @@ const messages: Record<NotificationInput['kind'], string> = {
   mission: 'Your mission activity has an update.',
   fundraiser: 'A fundraiser you support has an update.',
   event: 'An event you follow has an update.',
+  achievement: 'Your achievements have an update.',
 }
 /** Append on the caller's draft. Never opens a transaction or accepts confidential message text. */
 export function notify({

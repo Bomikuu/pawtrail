@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "date": "2026-11-09",
+  "humanBases": "Existing original 96px dialogue portraits and 144px illustrated-v2 Trail rescuer; original files unchanged. See their original manifests.",
+  "catBases": "Existing public/pawtrail-game/discovery/cat-placeholder-v1.webp and cat-{coat}-placeholder-v2.webp. Native 96px nearest-neighbor derivatives; decorative game illustrations only.",
+  "expressions": "Offline native pixel plates and drawn eyelid/mouth patches from scripts/pawtrail-portrait-layers.py; no generated 3D likeness.",
+  "runtime": "No AI requests or per-dialogue asset generation. Review GIFs are not shipped in portrait bundles."
+}

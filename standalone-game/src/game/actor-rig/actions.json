@@ -1,0 +1,323 @@
+{
+  "rescuer": {
+    "idle": {
+      "fps": 4,
+      "repeat": -1
+    },
+    "walk": {
+      "fps": 15,
+      "repeat": -1,
+      "frames": 12
+    },
+    "feed": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "pet": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "sit": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "sleep": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "pick_up": {
+      "fps": 8,
+      "repeat": 0
+    },
+    "water": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "play": {
+      "fps": 8,
+      "repeat": -1
+    },
+    "clean": {
+      "fps": 8,
+      "repeat": -1
+    },
+    "wave": {
+      "fps": 8,
+      "repeat": 0
+    },
+    "laugh": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "dance": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "clap": {
+      "fps": 8,
+      "repeat": -1
+    },
+    "cheer": {
+      "fps": 8,
+      "repeat": 0
+    },
+    "hold_item": {
+      "fps": 4,
+      "repeat": -1
+    },
+    "give_gift": {
+      "fps": 8,
+      "repeat": 0
+    },
+    "inspect": {
+      "fps": 4,
+      "repeat": -1
+    },
+    "sad": {
+      "fps": 8,
+      "repeat": -1,
+      "frames": 12
+    },
+    "happy": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "angry": {
+      "fps": 10,
+      "repeat": -1,
+      "frames": 12
+    },
+    "float": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "tired": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "surprised": {
+      "fps": 10,
+      "repeat": -1,
+      "frames": 12
+    },
+    "sick": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "ride": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "power_up": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 24
+    },
+    "jetpack": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 16
+    },
+    "jetpack_takeoff": {
+      "fps": 20,
+      "repeat": 0,
+      "frames": 10
+    },
+    "jetpack_land": {
+      "fps": 20,
+      "repeat": 0,
+      "frames": 12
+    },
+    "run": {
+      "fps": 18,
+      "repeat": -1,
+      "frames": 12
+    },
+    "power_run": {
+      "fps": 18,
+      "repeat": -1,
+      "frames": 12
+    },
+    "rescue_dash": {
+      "fps": 18,
+      "repeat": -1,
+      "frames": 12
+    },
+    "gentle_approach": {
+      "fps": 8,
+      "repeat": -1,
+      "frames": 12
+    }
+  },
+  "orange-tabby": {
+    "idle": {
+      "fps": 4,
+      "repeat": -1
+    },
+    "walk": {
+      "fps": 10,
+      "repeat": -1
+    },
+    "eat": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "drink": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "pet": {
+      "fps": 9,
+      "repeat": -1,
+      "frames": 12
+    },
+    "sit": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "sleep": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "happy": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "play": {
+      "fps": 8,
+      "repeat": -1
+    },
+    "groom": {
+      "fps": 6,
+      "repeat": -1
+    },
+    "stretch": {
+      "fps": 6,
+      "repeat": -1
+    },
+    "scratch": {
+      "fps": 8,
+      "repeat": -1
+    },
+    "climb": {
+      "fps": 8,
+      "repeat": -1
+    },
+    "lie_down": {
+      "fps": 4,
+      "repeat": -1
+    },
+    "sad": {
+      "fps": 8,
+      "repeat": -1,
+      "frames": 12
+    },
+    "angry": {
+      "fps": 10,
+      "repeat": -1,
+      "frames": 12
+    },
+    "dance": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "float": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "tired": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "surprised": {
+      "fps": 10,
+      "repeat": -1,
+      "frames": 12
+    },
+    "laugh": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "sick": {
+      "fps": 6,
+      "repeat": -1,
+      "frames": 12
+    },
+    "ride": {
+      "fps": 12,
+      "repeat": -1,
+      "frames": 12
+    },
+    "run": {
+      "frames": 12,
+      "fps": 16,
+      "repeat": -1
+    },
+    "roll_yarn": {
+      "frames": 16,
+      "fps": 12,
+      "repeat": -1
+    },
+    "jump": {
+      "frames": 16,
+      "fps": 16,
+      "repeat": 0
+    },
+    "pounce": {
+      "frames": 16,
+      "fps": 16,
+      "repeat": 0
+    },
+    "knead": {
+      "frames": 12,
+      "fps": 10,
+      "repeat": -1
+    },
+    "chase_tail": {
+      "frames": 16,
+      "fps": 12,
+      "repeat": -1
+    },
+    "tail_wag": {
+      "frames": 12,
+      "fps": 10,
+      "repeat": -1
+    },
+    "sniff": {
+      "frames": 12,
+      "fps": 8,
+      "repeat": -1
+    },
+    "shake": {
+      "frames": 12,
+      "fps": 14,
+      "repeat": -1
+    },
+    "fly": {
+      "frames": 16,
+      "fps": 10,
+      "repeat": -1
+    }
+  }
+}

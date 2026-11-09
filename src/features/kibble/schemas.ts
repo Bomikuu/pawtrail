@@ -22,6 +22,8 @@ export const kibbleEntrySchema = baseSchema.extend({
     'sample_naming',
     'achievement_awarded',
     'achievement_reversed',
+    'sighting_approved',
+    'sighting_reversed',
   ]),
   contributionId: idSchema,
   description: z.string(),

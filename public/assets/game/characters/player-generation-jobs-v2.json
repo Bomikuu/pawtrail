@@ -1,0 +1,116 @@
+{
+  "players": [
+    {
+      "variant": "rescuer",
+      "group": "movement",
+      "rows": 8,
+      "cols": 4,
+      "prompt": "Use case: stylized-concept. Asset type: original PawTrail player animation spritesheet. Image1 is style reference, image2 is the exact rescuer design reference; keep young mediumbrown skin, short tousled darkbrown hair, sagegreen short sleeved shirt, rust shorts, brown shoes, tan backpack. Topdown3/4 orthographic RPG pixelart, warmbrown outlines upperleftlight, crisp logical32x48 pixel character with identical proportions across EVERY frame. TRANSPARENT background no glow. EXACTLY4columns and8rows,32 separate sprites, equalcells. Each horizontal row4 animation frames, with big transparent separation between rows. Rows top to bottom: walk down (alternating left/right steps); walk up with backpack visible; walk left; walk right; idle down blinking and breathing; idle up breathing; idle left breathing; idle right breathing. All fullbody character centered, feet baseline fixed. First and last pose allow loop. Face orientation must follow requested directions. No text, labels, borders, floor, scenery, shadows extending cell, extra characters, gradients, blur, isometric. This is an aligned animation sheet, NOT a game screenshot.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-678c485c-7c92-45f6-be1a-d7b718ce3a14.png"
+    },
+    {
+      "variant": "rescuer",
+      "group": "social",
+      "rows": 9,
+      "cols": 4,
+      "prompt": "Use case: stylized-concept. Asset type: PawTrail rescuer SOCIAL animation sheet. Image1 exact character reference: mediumbrown skin shortdarkhair sageshirt rustshorts brownshoes tanbackpack. Keepidentical everyframe. Cozy16bit crisp pixelart topdown3/4 upperleftlight darkwarmbrownoutline, native32x48frames. Genuine transparent background NO glow. EXACT4columns9rows, each row4 equallyspaced animationposes,36 characters total. Rows: wave hello hand moving; laugh shoulders bouncing; dance alternating steps; clap hands together then apart; cheer both arms lifting; sit down knees bent; sleep lying down; give wrapped gift forward; hold small box in arms. Meaningfulmotionwithinrow; body/head/hair/clothes neverchange. Fixedcellcenter and standingfootbaseline. Portraitsheet, no text/grid/scenery/no floor, no gradients/blur/isometric. Wholebody in EVERYcell, separate generous transparent gutters. Frames1to4 tell action in logicalorder.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-1ffe69c2-9db1-46c4-aef0-6c2e4ba7ae82.png"
+    },
+    {
+      "variant": "rescuer",
+      "group": "care-decoration",
+      "rows": 10,
+      "cols": 4,
+      "prompt": "Use case: stylized-concept. PawTrail rescuer CARE AND DECORATION animation spritesheet. Referenceimage exactpersonmediumbrownskin shortdarkbrownhairstyle sageshirt rustshorts brownshoes tanbackpack. IDENTICAL throughout. Native32x48 logicalsprite cozy16bit crispclusters darkwarmbrown outlines topdown3/4. Transparentbackground no glow. EXACT4columns10rows, eachrow4sequentialposes ofaction,40separate fullbody sprites. VERY SMALL characters with generous clear transparent margins: topandbottom marginsatleast40px and allfeetvisible, no character can touch canvas edges. Rows pet animal gently crouching hand low; feed animal offering food low; play waving feather wand; refill water pouring bottle; clean floor wiping with cloth; carry small supply crate; pick up furniture bending and lifting; move furniture carrying a small stool; place object carefully lowering stool; inspect furniture holding magnifying glass. Every row preservebodyproportions and meaningful actionmovement. Fixedfootbaselinepercells. Props mayincludebottleclothcrateandstool but NO animals or rooms or actualfurniturebackground. No textlabelsgridlinesisometricgradientsblur.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-17d2eda4-b6e3-459c-a162-5ed83797d920.png"
+    },
+    {
+      "variant": "jacket-rescuer",
+      "group": "movement",
+      "rows": 8,
+      "cols": 4,
+      "prompt": "Use case: stylized-concept. PawTrail second player appearance MOVEMENT spritesheet, referenceimage STYLE and PROPORTIONS only. New consistent player design: friendly young rescuer with deep brown skin, short black curly hair, muted teal jacket over cream shirt, charcoal long pants, brown comfortable shoes, small rust backpack. Identical clothing/hair/colors/proportions allframes. Cozy16bit crisp logical32x48pixel topdown3/4 orthographic darkwarmbrownoutline upperleftlight. Genuine transparentbg no glow. EXACT4columns8rows32sprites. Rows topdown: walk down; walk up; walk left; walk right; idle down; idle up; idle left; idle right. Fourframes per row. Walk alternatelegleft/rightarm natural; idles subtlebreatheblink. Wholebody visible with generous transparentmargins including above/below canvas. Fixedbaselineineachcell, headandbody sizesunchanged. No textlabelsgridbackgroundfloorothercharactersgradientsblurisometric.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-50f3c1ae-167a-4bf6-932a-b02b03480045.png"
+    },
+    {
+      "variant": "jacket-rescuer",
+      "group": "social",
+      "rows": 9,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Image1 edit target animation sheet; Image2 newappearance reference. Replace ONLY the rescuer appearance in EVERY frame of Image1 with the rescuer from Image2: deepbrownskin, shortblackcurlyhair, tealjacket creamundershirt charcoallongpants brownshoes rustbackpack. Keep EVERY action and pose/order/props/cellspacing from Image1 exactly. 9rows4columns FOUR DISTINCT sequentialframes perrow, consistentidentityeveryframe. Fullbodyincludingfeet MUSTFIT insideallcells; add transparentpaddingaroundentiresheet ifneeded, especiallybottomrow. Crisp cozy16bit pixelart topdown3/4 unchanged. Actualtransparentbg no glow, no textlabelsgridfloorborders, no newcharacters. Animation sheet only.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-09c0a396-603c-42bb-a2a3-3c6190c305ea.png"
+    },
+    {
+      "variant": "jacket-rescuer",
+      "group": "care-decoration",
+      "rows": 10,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Image1 edit target animation sheet; Image2 newappearance reference. Replace ONLY the rescuer appearance in EVERY frame of Image1 with the rescuer from Image2: deepbrownskin, shortblackcurlyhair, tealjacket creamundershirt charcoallongpants brownshoes rustbackpack. Keep EVERY action and pose/order/props/cellspacing from Image1 exactly. 10rows4columns FOUR DISTINCT sequentialframes perrow, consistentidentityeveryframe. Fullbodyincludingfeet MUSTFIT insideallcells; add transparentpaddingaroundentiresheet ifneeded, especiallybottomrow. Crisp cozy16bit pixelart topdown3/4 unchanged. Actualtransparentbg no glow, no textlabelsgridfloorborders, no newcharacters. Animation sheet only.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-dee7c43a-ec89-49d3-aeb3-b26352b1c2e4.png",
+      "previousSource": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-156c2bb7-c5e3-4fd6-857e-361f8b0ffc16.png",
+      "repairPrompt": "Use case: precise-object-edit. Edit target image1: ONLY repair the trousers on ALL40 player sprites. Currently several wear charcoal shorts with barecalves and white socks. Every sprite MUST instead have FULL-LENGTH CHARCOAL TROUSERS continuously from hips down to brown-shoe tops, NO WHITE SOCKS and NO BARE LOWER LEGS. Keep EXACT same40poses,4columns10rows, heads/hair/faces/jacket/arms/props/backpack/shoes and backgroundtransparency. Change ONLY legclothing coverage/color. Especially uprightcells firstcolumn and carrysupplies/move-stool walkingrows. Use image2 actualfull-length trouser design asstrictreference. Preserve pixelartclusters and transparent cell separation. No new props, no text. Trousers even on crouchingposes coverkneesandlowerlegs. Warmcozypixelart unchanged."
+    },
+    {
+      "variant": "braided-rescuer",
+      "group": "movement",
+      "rows": 8,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Image1 edit target original PawTrail movement sheet; KEEP all32poses and their row order4columns8rows. ChangeONLY entire player appearance to a new consistent friendly young woman rescuer: light warmtan skin, long chestnut braid, cream bucket hat, ochre longsleeve shirt, forestgreen pants, brownboots, small sage backpack. Identicalappearance EVERYframe and samehead/bodyproportions as original. Topdown3/4 orthographic cozy16bit cripslogical32x48pixelart, warmbrownoutlines upperleftlight. ActualtransparentbackgroundNOglow. Rows walkdown/up/left/right,idledown/up/left/right remainexact. Allfeet visible fixedbaseline withtransparentpaddingaboveandbelow. NO labels text gridfloornewcharacters blurgradientsisometric. Preserve action distinction and regular4column8row arrangement.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-3d0e3b21-3e84-4af0-9e8f-242511e3257f.png"
+    },
+    {
+      "variant": "braided-rescuer",
+      "group": "social",
+      "rows": 9,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Image1 EDITTARGET originalrescuer animation sheet; image2 exactNEWAPPEARANCE reference. Change ONLY person appearance ineverycell to young womanrescuer lightwarmtanskin longchestnutbraid creambuckethat ochrelongsleeveshirt forestgreenpants brownboots sagebackpack. Keep everyactionpose/prop/order4columns9rows exactlyfromimage1. DoNOT changebodyproportionsorhairstyle/clothesbetweenframes. Allclothes longpantsandhat ineverypose. Fixedbaseline. Fullbody includingfeet mustfit, generous40px transparentpadding atbottomandtopcanextendcanvasifneeded. Pixelartlogical32x48 cozy16bit crispclusters warmoutlinesupperleftlight. TRUEtransparent no glow, no text/grid/floor/newcharacters/background/isometric/blurring.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-f505dc52-8758-45b0-b859-a8a789806899.png"
+    },
+    {
+      "variant": "braided-rescuer",
+      "group": "care-decoration",
+      "rows": 10,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Image1 EDITTARGET originalrescuer animation sheet; image2 exactNEWAPPEARANCE reference. Change ONLY person appearance ineverycell to young womanrescuer lightwarmtanskin longchestnutbraid creambuckethat ochrelongsleeveshirt forestgreenpants brownboots sagebackpack. Keep everyactionpose/prop/order4columns10rows exactlyfromimage1. DoNOT changebodyproportionsorhairstyle/clothesbetweenframes. Allclothes longpantsandhat ineverypose. Fixedbaseline. Fullbody includingfeet mustfit, generous40px transparentpadding atbottomandtopcanextendcanvasifneeded. Pixelartlogical32x48 cozy16bit crispclusters warmoutlinesupperleftlight. TRUEtransparent no glow, no text/grid/floor/newcharacters/background/isometric/blurring.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-67c9d6f3-f373-4ff7-bc06-13bc55531783.png"
+    },
+    {
+      "variant": "rescuer",
+      "group": "holding-item-repair",
+      "rows": 1,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Assettype PawTrail HOLDING ITEM animationstrip replacing a croppedsource row. Exactpersonreferenceimage1, preserve hair/hat/clothing/skin/backpack/shoesidentically. Create ONLY FOUR fullbody sprites inONEhorizontalrow, fourequalcells, meaningful4framegentlebreathe/armsadjustloop whileholdingone smallplainwoodbox againstwaist. ALLfeetfullyvisible withlarge transparentmarginsaroundEVERYsprite especiallybottom. Native32x48logicalcharacter, topdown3/4 crisp16bitpixelart warmoutlinesupperleftlight. True transparentbackground no glow, no floor/scenery/labels/gridlines/newprops/newcharacters. Appearancefromreference mandatory inclpantslength andhat ifpresent.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-b28a7ca4-de4e-4492-a812-8fa3c53f60c3.png"
+    },
+    {
+      "variant": "jacket-rescuer",
+      "group": "holding-item-repair",
+      "rows": 1,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Assettype PawTrail HOLDING ITEM animationstrip replacing a croppedsource row. Exactpersonreferenceimage1, preserve hair/hat/clothing/skin/backpack/shoesidentically. Create ONLY FOUR fullbody sprites inONEhorizontalrow, fourequalcells, meaningful4framegentlebreathe/armsadjustloop whileholdingone smallplainwoodbox againstwaist. ALLfeetfullyvisible withlarge transparentmarginsaroundEVERYsprite especiallybottom. Native32x48logicalcharacter, topdown3/4 crisp16bitpixelart warmoutlinesupperleftlight. True transparentbackground no glow, no floor/scenery/labels/gridlines/newprops/newcharacters. Appearancefromreference mandatory inclpantslength andhat ifpresent.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-03f2b2e2-8522-4690-8d67-3b8543d7716d.png"
+    },
+    {
+      "variant": "braided-rescuer",
+      "group": "holding-item-repair",
+      "rows": 1,
+      "cols": 4,
+      "prompt": "Use case: identity-preserve. Assettype PawTrail HOLDING ITEM animationstrip replacing a croppedsource row. Exactpersonreferenceimage1, preserve hair/hat/clothing/skin/backpack/shoesidentically. Create ONLY FOUR fullbody sprites inONEhorizontalrow, fourequalcells, meaningful4framegentlebreathe/armsadjustloop whileholdingone smallplainwoodbox againstwaist. ALLfeetfullyvisible withlarge transparentmarginsaroundEVERYsprite especiallybottom. Native32x48logicalcharacter, topdown3/4 crisp16bitpixelart warmoutlinesupperleftlight. True transparentbackground no glow, no floor/scenery/labels/gridlines/newprops/newcharacters. Appearancefromreference mandatory inclpantslength andhat ifpresent.",
+      "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-5e4488b6-dce6-4af0-9d73-1a3742123776.png"
+    }
+  ],
+  "emotes": {
+    "group": "emotes",
+    "rows": 6,
+    "cols": 8,
+    "prompt": "Use case: stylized-concept. Asset type: PawTrail EMOTE ANIMATION atlas with exactly48 isolated icons. IMAGE1 style reference ONLY, match warmcream/honeygold/sage/terracotta pastelpalette darkwarmbrownoutlines crisp16bit32x32logicalpixels. True transparentbg no glows. Exact EIGHT columns SIX rows equal square cells. TWO animations per horizontal row: eachanimation four adjacent cells showing pop/blink/wiggle/pause motion, not fourdifferenticons. Row1 left4 HAPPY FACE, right4 LAUGHING FACE; row2 left4 HEART pulse, right4 WAVING HAND; row3 SAD FACE with tearblink, SURPRISED FACE; row4 CONFUSED FACE, ANGRY FACE; row5 SLEEPY FACE, THUMBS UP; row6 CELEBRATION confetti, PAW PRINT bounce. Eachiconcentered withgeneroustransparentmargins separatecells. Onlythese12emotes, fourdistinctreadable animationposes each. No textletterslabelsgridframesUIScenerycharacters smoothgradientsantialiasorblur. OrthographicflatpixelUIicons recognizable above a tiny gamecharacter. No bakedcheckerboard.",
+    "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-dd2d9527-beca-4834-a695-60974ba89c71.png"
+  },
+  "particles": {
+    "group": "particles",
+    "rows": 5,
+    "cols": 8,
+    "prompt": "Use case: stylized-concept. Asset type PawTrail SPECIAL EFFECT animation atlas. Image1 style reference ONLY warmcream honeygold sage terracotta, darkwarmbrown pixeloutline upperleftlight. Actualtransparentbackground NOglows NOtext. Exact EIGHT columns FIVE rows equal square cells. Eachanimation4adjacentframes, TWOanimationsperrow exceptlastrowright4empty. Row1 left4 FLOATING HEARTS rising and shrinking; right4 SPARKLES twinkling. Row2 left4 QUESTION MARK bounce; right4 EXCLAMATION MARK bounce. Row3 left4 SMALL STARS orbit; right4 FRIENDSHIP EFFECT two linked hearts pulse. Row4 left4 PET AFFECTION EFFECT pawinsideheart bounce; right4 KIBBLE REWARD EFFECT gold pawcoin spin. Row5 left4 QUEST COMPLETION EFFECT checkmark on parchment popping with starburst; right4 EMPTYtransparentcells. Exactlynine4-frameanimations36icons plus4emptycells. Eachcellnative32x32pixel logical withcentered shapes, generousclearseparation. Crisp16bitpixelclusters, no smoothgradients/bloom/blur/scenery/UIframe/labels/numbers. DoNOTdrawcharactersorwholegame.",
+    "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-667373fd-dc48-44b0-944f-5810eff21645.png"
+  }
+}

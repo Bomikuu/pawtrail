@@ -118,7 +118,11 @@ export function createDjangoApi(
         'Demonstration operations are unavailable in real mode',
         403,
       )
-    const url = endpoint(origin, path)
+    const upstreamPath =
+      path.startsWith('/animals') || (path === '/sightings' && method === 'GET')
+        ? '/social' + path
+        : path
+    const url = endpoint(origin, upstreamPath)
     const params = toDjango(query ?? {}) as Record<string, unknown>
     for (const [k, v] of Object.entries(params))
       if (v !== undefined && k !== 'cursor')
@@ -226,6 +230,7 @@ export function createDjangoApi(
     if (
       response.status === 401 &&
       credentials &&
+      allowCookieWrites &&
       !signingIn &&
       path !== '/auth/logout'
     ) {
@@ -275,6 +280,7 @@ export function createDjangoApi(
         results: unknown
         count: number
         next: string | null
+        previous?: string | null
       }
       let nextCursor: string | null = null
       if (p.next) {
@@ -300,7 +306,34 @@ export function createDjangoApi(
           JSON.stringify({ scope: fingerprint(url), paging }),
         ).toString('base64url')
       }
-      value = { items: p.results, count: p.count, nextCursor }
+      let previousCursor: string | null = null
+      if (p.previous) {
+        const previous = new URL(p.previous, url)
+        if (
+          previous.origin !== url.origin ||
+          previous.pathname !== url.pathname
+        )
+          throw new ApiError(
+            'INVALID_PAGINATION',
+            'Unsafe previous-page URL',
+            502,
+          )
+        const paging = Object.fromEntries(
+          [...previous.searchParams].filter(([k]) =>
+            ['page', 'cursor', 'offset'].includes(k),
+          ),
+        )
+        previousCursor = Buffer.from(
+          JSON.stringify({ scope: fingerprint(url), paging }),
+        ).toString('base64url')
+      }
+      value = {
+        ...value,
+        items: p.results,
+        count: p.count,
+        nextCursor,
+        previousCursor,
+      }
     }
     if (path.startsWith('/auth/') && value && typeof value === 'object')
       value = {

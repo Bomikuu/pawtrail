@@ -1,0 +1,101 @@
+{
+  "budgetPerEntryBytes": 250000,
+  "entries": [
+    {
+      "id": "yae-miko-style-1",
+      "name": "Sharp cel",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "contentBounds": [
+        1,
+        5,
+        94,
+        114
+      ],
+      "runtimeBytes": 80989,
+      "referenceBytes": 85220,
+      "completeBytes": 166209,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "yae-miko-style-2",
+      "name": "Compact fantasy",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "contentBounds": [
+        2,
+        1,
+        91,
+        118
+      ],
+      "runtimeBytes": 81559,
+      "referenceBytes": 85976,
+      "completeBytes": 167535,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "yae-miko-style-3",
+      "name": "Sparse anime",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "contentBounds": [
+        3,
+        1,
+        90,
+        118
+      ],
+      "runtimeBytes": 75690,
+      "referenceBytes": 79117,
+      "completeBytes": 154807,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "yae-miko-style-4",
+      "name": "Console icon",
+      "nativeCell": [
+        72,
+        72
+      ],
+      "contentBounds": [
+        5,
+        1,
+        62,
+        70
+      ],
+      "runtimeBytes": 46099,
+      "referenceBytes": 50218,
+      "completeBytes": 96317,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "yae-miko-style-5",
+      "name": "Rough manga",
+      "nativeCell": [
+        120,
+        120
+      ],
+      "contentBounds": [
+        7,
+        1,
+        106,
+        118
+      ],
+      "runtimeBytes": 105006,
+      "referenceBytes": 105655,
+      "completeBytes": 210661,
+      "poseCount": 4,
+      "expressionCount": 6
+    }
+  ],
+  "allEntriesBytes": 795529
+}

@@ -1,5 +1,11 @@
 # Django integration
 
+## Real camera backend — 7 November 2026
+
+The repository now includes a real capture/animal-identity backend in [`backend/`](../backend/README.md), plus a dedicated typed `/api/capture` BFF. It implements real account authentication, private photo evidence, asynchronous local detection/visual retrieval, provisional animal registration, versioned review and reference enrollment. The follow-up adds a canonical real Kibble ledger with transactional awards/reversals and a reviewer calibration/setup workflow at `/spot/setup`. Its scope and configuration are documented in the [capture contract](contracts/capture-identification.md).
+
+Keep the surrounding community in mock mode while trying `/spot`. Its sample records are not real capture identities. In mock community mode capture uses a separate sealed real session; in full real mode it reuses the platform session. Existing general social-domain contracts below remain integration work; globally pointing the community adapter at this slice does not implement adoption, payments, social feeds or rewards. Older statements below about the missing server refer to that general backend scope, not the newly implemented capture service.
+
 Set `NEXT_PUBLIC_USE_MOCK_API=false`, `DJANGO_API_BASE_URL` to the backend API prefix (for example `http://127.0.0.1:8000/api/v1`), and a private random `SESSION_SECRET` containing at least 32 characters. Never prefix credentials or the backend signing secret with `NEXT_PUBLIC_`.
 
 The proposed endpoint map is in `contracts/django-api.md`. The adapter reuses the complete typed client factory with a server transport, explicit known-key snake/camel conversion, Zod response validation, timeout/abort propagation and idempotency headers. Django must implement these endpoints and the documented object permissions; this repository does not include a Django server.

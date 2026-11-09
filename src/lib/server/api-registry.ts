@@ -195,7 +195,9 @@ export async function dispatchApi(
       }
     } else if (request.body) {
       try {
-        body = await request.json()
+        // Firefox/Next can expose an empty stream for a bodyless DELETE.
+        const raw = await request.text()
+        if (raw.length) body = JSON.parse(raw)
       } catch {
         throw new ApiError(
           'VALIDATION_ERROR',

@@ -1,0 +1,71 @@
+{
+  "id": "amber-outrider",
+  "name": "Amber",
+  "kind": "rescuer",
+  "status": "preview",
+  "description": "Reference-guided outrider: long chestnut hair, bronze forehead goggles, sculpted red rabbit ribbon, cropped scarlet jacket, ivory and gold bodice, burgundy shorts, tall boots and hip pouch. Refined cel dialogue portrait.",
+  "reference": {
+    "file": "/pawtrail-game/actor-studio/references/amber-outrider.webp",
+    "role": "appearance",
+    "source": "Owner-provided Amber illustration, 2026-11-10",
+    "brief": "Preserve visible hair, red rabbit-ear bow, goggles, amber eyes, red/gold jacket, white bodice, shorts, gloves and hip satchel. Feet are cropped; boot soles follow the existing rig. No weapon or combat action inferred."
+  },
+  "parts": {
+    "hair": "long",
+    "headwear": "outrider-bow",
+    "outfit": "outrider",
+    "legs": "shorts",
+    "backpack": false,
+    "held": "none",
+    "wings": "none",
+    "face": "soft"
+  },
+  "colors": {
+    "ink": "#2b2027",
+    "hair": "#62463d",
+    "hairLight": "#8e6751",
+    "hairShade": "#362b30",
+    "hairSheen": "#bd9170",
+    "skin": "#f2c4a1",
+    "skinShadow": "#cf947e",
+    "skinLight": "#ffe4c3",
+    "shirt": "#f5e7cf",
+    "shirtLight": "#fff9e8",
+    "shirtDark": "#cbb69b",
+    "jacket": "#bf2e35",
+    "jacketLight": "#ed5949",
+    "jacketDark": "#872435",
+    "shorts": "#692b3d",
+    "shortsLight": "#9a3b4d",
+    "shortsDark": "#342735",
+    "shoe": "#41363d",
+    "cream": "#fff0d9",
+    "creamShadow": "#cfb787",
+    "gold": "#d1aa62",
+    "ribbon": "#d83235",
+    "hat": "#c9a16b",
+    "hatBand": "#6f4a33",
+    "metal": "#ad8246",
+    "metalShade": "#6c462c",
+    "leather": "#6e4936",
+    "mouth": "#70413c",
+    "blush": "#d88b83"
+  },
+  "face": {
+    "leftEye": "#d98d34",
+    "rightEye": "#d98d34",
+    "nose": "#cf947e",
+    "marking": "#362b30"
+  },
+  "accessories": {
+    "glasses": false,
+    "facialHair": "none",
+    "faceMarking": "none"
+  },
+  "frame": {
+    "width": 64,
+    "height": 80
+  },
+  "headHeight": 55,
+  "portraitCollection": "amber-refined-cel"
+}

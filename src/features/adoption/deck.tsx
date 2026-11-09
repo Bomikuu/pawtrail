@@ -144,6 +144,8 @@ export function AdoptionDeck({
             >
               <AnimalImage
                 image={a.photo}
+                species={a.species}
+                appearance={a.appearance}
                 className={
                   'detail-cover block w-full max-h-136 [aspect-ratio:4/3] object-cover rounded-2xl bg-[#f4eee4] [.adoption-story_&]:rounded-[0] [.adoption-story_&]:max-h-116 [.app-shell_.adoption-deck_&]:w-full [.app-shell_.adoption-deck_&]:h-full [.app-shell_.adoption-deck_&]:min-h-88 [.app-shell_.adoption-deck_&]:max-h-128 [.app-shell_.adoption-deck_&]:object-cover max-[48rem]:[.app-shell_.adoption-deck_&]:min-h-0 max-[48rem]:[.app-shell_.adoption-deck_&]:h-auto max-[48rem]:[.app-shell_.adoption-deck_&]:max-h-68 max-[48rem]:[.app-shell_.adoption-deck_&]:[aspect-ratio:4_/_3]'
                 }
@@ -158,8 +160,11 @@ export function AdoptionDeck({
                 <Link href={`/pets/${a.slug}`}>{a.name}</Link>
               </h2>
               <p>
-                {a.species} · {a.ageMonths} months · {a.size} ·{' '}
-                {a.location.neighborhood}
+                {a.species} ·{' '}
+                {a.ageMonths === null
+                  ? 'Age not recorded'
+                  : a.ageMonths + ' months'}{' '}
+                · {a.size} · {a.location.neighborhood}
               </p>
               <p>{a.description}</p>
               <p>{a.personality.join(' · ')}</p>

@@ -77,6 +77,7 @@ export const campaignDetailSchema = campaignSummarySchema.extend({
   updates: z.array(campaignStoryUpdateSchema),
   expenses: z.array(expenseEntrySchema),
   balanceMinor: moneySchema,
+  pledgedMinor: moneySchema.default(0),
   supporterCount: z.number().int().nonnegative(),
   payoutStatus: z.enum(['demo_no_payout', 'not_requested', 'pending', 'paid']),
   version: versionSchema,
@@ -179,4 +180,15 @@ export const fundraisingDashboardSchema = z.object({
   campaigns: z.array(campaignSummarySchema),
   contributionCount: z.number().int().nonnegative(),
   totalRaisedMinor: moneySchema,
+})
+
+export const supportPledgeSchema = baseSchema.extend({
+  campaignId: idSchema,
+  supporterId: idSchema,
+  amountMinor: moneySchema.min(100),
+  currency: z.literal('PHP'),
+  message: z.string(),
+  anonymous: z.boolean(),
+  status: z.enum(['pledged', 'withdrawn', 'fulfilled']),
+  paymentTaken: z.literal(false),
 })

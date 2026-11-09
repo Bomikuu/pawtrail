@@ -20,6 +20,7 @@ import {
   ShieldCheck,
   Building2,
   ClipboardList,
+  Camera,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import type { Session } from '@/features/auth/types'
@@ -27,6 +28,7 @@ import { loginPath } from '@/features/auth/return-path'
 import { isRouteReady } from '@/lib/route-readiness'
 export type Destination = {
   label: string
+  shortLabel?: string
   href: string
   icon: LucideIcon
   protected?: boolean
@@ -35,6 +37,12 @@ export type Destination = {
 /** Register an exact pathname or explicit dynamic page pattern only after its route ships. Never enable a whole prefix. */
 export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/photo-credits',
+  '/spot',
+  '/spot/history',
+  '/spot/kibble',
+  '/spot/setup',
+  '/spot/review',
+  '/spot/animals/[id]',
   '/play',
   '/',
   '/login',
@@ -83,6 +91,8 @@ export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/dashboard/achievements/review',
   '/dashboard/events',
   '/dashboard/shelter',
+  '/dashboard/pages',
+  '/dashboard/pages/[id]',
   '/dashboard/animals/[slug]/edit',
   '/dashboard/fundraisers/[id]',
   '/dashboard/events/create',
@@ -91,11 +101,17 @@ export const READY_ROUTES: ReadonlySet<string> = new Set([
   '/dashboard/shelter/applications/[id]',
 ])
 export const mainDestinations: Destination[] = [
-  { label: 'Explore', href: '/explore', icon: Compass },
+  { label: 'Spot an animal', shortLabel: 'Spot', href: '/spot', icon: Camera },
+  {
+    label: 'Animal directory',
+    shortLabel: 'Animals',
+    href: '/explore',
+    icon: Compass,
+  },
   { label: 'Adopt', href: '/adopt', icon: Heart },
   { label: 'Fundraisers', href: '/fundraisers', icon: HandCoins },
   { label: 'Missions', href: '/missions', icon: HandHeart },
-  { label: 'Community', href: '/community', icon: MessagesSquare },
+  { label: 'Community feed', href: '/community', icon: MessagesSquare },
   { label: 'Leaderboard', href: '/leaderboard', icon: Trophy },
 ]
 export const extraDestinations: Destination[] = [
@@ -124,6 +140,7 @@ export const dashboardDestinations: Destination[] = [
   { label: 'Kibble', href: '/dashboard/kibble', icon: Cookie },
   { label: 'Achievements', href: '/dashboard/achievements', icon: Award },
   { label: 'Settings', href: '/dashboard/settings', icon: Settings },
+  { label: 'Organization websites', href: '/dashboard/pages', icon: Building2, role: 'shelter_staff' },
   {
     label: 'Shelter management',
     href: '/dashboard/shelter',

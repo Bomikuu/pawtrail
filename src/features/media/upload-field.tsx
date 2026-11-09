@@ -16,6 +16,7 @@ export function UploadField({
   purpose = 'public_image',
   shelterId,
   verificationShelterId,
+  privateHelp,
   api,
   disabled = false,
   maxAttachments = MAX_ATTACHMENTS,
@@ -26,6 +27,7 @@ export function UploadField({
   purpose?: MediaUpload['purpose']
   shelterId?: string
   verificationShelterId?: string
+  privateHelp?: string
   api?: PawTrailApi['media']
   disabled?: boolean
   maxAttachments?: number
@@ -180,7 +182,7 @@ export function UploadField({
       <legend>Attachments</legend>
       <p id={`${id}-help`}>
         {purpose === 'private_evidence'
-          ? 'Evidence stays private to you and authorized organization staff. PDFs download as documents.'
+          ? (privateHelp ?? 'Evidence stays private to you and authorized organization staff. PDFs download as documents.')
           : 'Photos stay private until reviewed for publication.'}{' '}
         Choose up to six files, 10 MiB each.
       </p>

@@ -1,0 +1,11 @@
+{
+  "rescuer": "masters/rescuer.png",
+  "orange_tabby": "masters/orange_tabby.png",
+  "black_cat": "masters/black_cat.png",
+  "white_cat": "masters/white_cat.png",
+  "calico": "masters/calico.png",
+  "siamese": "masters/siamese.png",
+  "brown_aspin": "masters/brown_aspin.png",
+  "white_puppy": "masters/white_puppy.png",
+  "spotted_dog": "masters/spotted_dog.png"
+}

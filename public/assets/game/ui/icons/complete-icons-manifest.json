@@ -1,0 +1,738 @@
+{
+  "generationMode": "built-in image_gen",
+  "palette": [
+    "33251c",
+    "4a3324",
+    "63452e",
+    "805a36",
+    "9b6a3b",
+    "b47c40",
+    "ce9148",
+    "e8aa57",
+    "f4c778",
+    "f7dda3",
+    "fff0c8",
+    "fff8e5",
+    "504d2a",
+    "656238",
+    "77763e",
+    "898a4a",
+    "9da05c",
+    "b1b771",
+    "c6cd8a",
+    "d8dda5",
+    "985037",
+    "b56a47",
+    "ce8659",
+    "e3a776",
+    "b9aa86",
+    "cfbf9c",
+    "e5d5b2",
+    "f2e3c5",
+    "b15431",
+    "cf6d3b",
+    "e28c4b",
+    "f6b868",
+    "456b74",
+    "69989e",
+    "a3c4be",
+    "dbebd4",
+    "44423e",
+    "74736a",
+    "aaa799",
+    "ded6c0"
+  ],
+  "assets": [
+    {
+      "id": "home",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/home-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "friends",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/friends-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        0,
+        887,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "chat",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/chat-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        0,
+        1330,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "inventory",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/inventory-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        1330,
+        0,
+        1774,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "decoration",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/decoration-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        443,
+        443,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "quests",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/quests-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        443,
+        887,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "settings",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/settings-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        443,
+        1330,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "map",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/map-catalog-v1.png",
+      "source": "/assets/game/ui/icons/nav-catalog-v1-source.png",
+      "sourceRect": [
+        1330,
+        443,
+        1774,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "pet",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/pet-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "feed",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/feed-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        0,
+        887,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "play",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/play-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        0,
+        1330,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "help",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/help-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        1330,
+        0,
+        1774,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "give-water",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/give-water-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        443,
+        443,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "view-profile",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/view-profile-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        443,
+        887,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "follow-pet",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/follow-pet-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        443,
+        1330,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "take-photo",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/take-photo-catalog-v1.png",
+      "source": "/assets/game/ui/icons/animal-icons-catalog-v1-source.png",
+      "sourceRect": [
+        1330,
+        443,
+        1774,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "visit",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/visit-catalog-v1.png",
+      "source": "/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "invite",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/invite-catalog-v1.png",
+      "source": "/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        0,
+        887,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "add-friend",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/add-friend-catalog-v1.png",
+      "source": "/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        0,
+        1330,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "send-message",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/send-message-catalog-v1.png",
+      "source": "/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+      "sourceRect": [
+        1330,
+        0,
+        1774,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "wave",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/wave-catalog-v1.png",
+      "source": "/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        443,
+        443,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "gift",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/gift-catalog-v1.png",
+      "source": "/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        443,
+        887,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "guestbook",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/guestbook-catalog-v1.png",
+      "source": "/assets/game/ui/icons/social-icons-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        443,
+        1330,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "move",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/move-catalog-v1.png",
+      "source": "/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "rotate",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/rotate-catalog-v1.png",
+      "source": "/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        0,
+        887,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "place",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/place-catalog-v1.png",
+      "source": "/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        0,
+        1330,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "store",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/store-catalog-v1.png",
+      "source": "/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+      "sourceRect": [
+        1330,
+        0,
+        1774,
+        443
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "delete",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/delete-catalog-v1.png",
+      "source": "/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        443,
+        443,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "undo",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/undo-catalog-v1.png",
+      "source": "/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+      "sourceRect": [
+        443,
+        443,
+        887,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "redo",
+      "category": "ui-icon",
+      "file": "/assets/game/ui/icons/redo-catalog-v1.png",
+      "source": "/assets/game/ui/icons/decoration-icons-catalog-v1-source.png",
+      "sourceRect": [
+        887,
+        443,
+        1330,
+        887
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "collisionStatus": "not applicable",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    }
+  ],
+  "sourcePromptManifest": "/assets/game/housing/references/remaining-root-sources.json"
+}

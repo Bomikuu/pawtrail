@@ -52,8 +52,12 @@ export function CatalogCard({
   children,
   people,
   status,
+  species,
+  appearance,
   actionLabel = 'View details',
 }: {
+  species?: string
+  appearance?: string
   href: string
   title: string
   description?: string
@@ -72,6 +76,8 @@ export function CatalogCard({
       {image !== undefined && (
         <AnimalImage
           image={image}
+          species={species}
+          appearance={appearance}
           className={
             'journal-photo w-full h-auto [aspect-ratio:4/3] object-cover block [.app-shell_&]:[aspect-ratio:16_/_9] [.app-shell_&]:object-cover [.app-shell_&]:max-h-52 max-[48rem]:[.app-shell_&]:[aspect-ratio:16_/_9] max-[48rem]:[.app-shell_&]:max-h-48'
           }

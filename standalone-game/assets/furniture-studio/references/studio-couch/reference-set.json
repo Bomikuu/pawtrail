@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "item": "studio-couch",
+  "toolMode": "built-in image_gen",
+  "originalFront": "/assets/game/housing/furniture/sofa-housing-v1.png",
+  "originalFrontAuthority": "Existing original remains canonical; the generated front is a consistency guide only.",
+  "sheet": "turnaround-v2.png",
+  "sheetSha256": "8e55f2f11f41d3f4ee52f9807c2d124b83c6478bf2dc50f90378262672a9d4b7",
+  "prompt": "turnaround-prompt.txt",
+  "cleanupPrompt": "transparency-prompt.txt",
+  "views": {
+    "front-generated": {
+      "cell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "opaqueBounds": [
+        44,
+        91,
+        476,
+        414
+      ],
+      "generated": true
+    },
+    "left": {
+      "cell": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "opaqueBounds": [
+        101,
+        82,
+        361,
+        414
+      ],
+      "generated": true
+    },
+    "back": {
+      "cell": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "opaqueBounds": [
+        10,
+        93,
+        453,
+        414
+      ],
+      "generated": true
+    },
+    "right": {
+      "cell": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "opaqueBounds": [
+        123,
+        72,
+        512,
+        416
+      ],
+      "generated": true
+    },
+    "front-three-quarter": {
+      "cell": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "opaqueBounds": [
+        0,
+        65,
+        444,
+        441
+      ],
+      "generated": true
+    },
+    "rear-three-quarter": {
+      "cell": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "opaqueBounds": [
+        24,
+        76,
+        461,
+        446
+      ],
+      "generated": true
+    }
+  },
+  "review": {
+    "status": "accepted-for-modeling",
+    "findings": [
+      "Two backs, two seats, two floral pillows and four feet agree across views.",
+      "Left/right profiles are mirrored, solid padded sides; rear is a continuous upholstered panel.",
+      "Depth is compact, roughly 60 percent of width.",
+      "Generated pixel scale/projection is approximate; preserve the original palette and fixed game camera when building.",
+      "Semi-transparent surrounding glow is excluded at native import alpha cutoff 224. Raw generation is preserved.",
+      "Profiles assigned to game yaw by observed backrest position; generated labels alone were reversed."
+    ]
+  },
+  "nativeImport": "public/pawtrail-game/furniture-references/studio-couch/598568c5daed",
+  "implementation": {
+    "revision": "76bf5663ae50",
+    "previousRevision": "e83ceff633c0",
+    "geometry": "Shorter/deeper rounded back pads, lower rear shell, arms with independent XYZ corner radii and a padded upper lobe over a tapered lower frame, slimmer depth and outward floral pillows",
+    "sourceModel": "assets/furniture-studio/exports/studio-couch/source-model.glb",
+    "dimensions": {
+      "min": [
+        -28.32271385192871,
+        0,
+        -21.299999237060547
+      ],
+      "max": [
+        28.32271385192871,
+        37.318817138671875,
+        13
+      ],
+      "size": [
+        56.64542770385742,
+        37.318817138671875,
+        34.29999923706055
+      ]
+    },
+    "projection": {
+      "sidePitchDegrees": 12,
+      "blend": "sin(yaw)^4",
+      "nativeActorCamera": [
+        0,
+        34.5,
+        90
+      ],
+      "note": "Couch side projection follows the flatter generated profiles. Front/rear retain the source camera; actors retain their shared camera with pelvis docking."
+    },
+    "reviewBoards": [
+      "output/playwright/couch-side-rear-refinement.png",
+      "output/playwright/couch-turnaround-review.png",
+      "output/playwright/couch-three-quarter-review.png",
+      "output/playwright/couch-refined-browser-empty.png",
+      "output/playwright/couch-refined-browser-seating.png",
+      "output/playwright/couch-refined-browser-controls.png"
+    ],
+    "reviewScope": "Firefox creator: four empty and occupied facings, each seat, both seats, standing, Oat/custom color; comparison at 90 degrees with collision/seat overlay; creator/comparison/field navigation after resize fix with zero console errors in a fresh Firefox session. Export art review includes front/rear three-quarter views. No authenticated seat-lease/construction transactions.",
+    "limitation": "Generated views are illustrative and retain some projection/proportion differences; no exact all-angle reconstruction claim."
+  }
+}

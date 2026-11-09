@@ -1,4 +1,5 @@
 import { GameReturnLink } from '@/features/neighborhood/game-return-link'
+import '../styles/pawtrail-fonts.css'
 import './globals.css'
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
@@ -43,6 +44,22 @@ export default async function RootLayout({
   const session = await (await getServerApi()).auth.session()
   return (
     <html lang="en-PH" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/pawtrail/saira-condensed-700-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/pawtrail/instrument-sans-400-700-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <Providers initialSession={session}>{children}<GameReturnLink /></Providers>
       </body>

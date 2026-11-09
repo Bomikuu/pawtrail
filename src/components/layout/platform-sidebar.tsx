@@ -64,7 +64,7 @@ export function PlatformSidebar({
         </ul>
       </nav>
       <ButtonLink
-        className={'sidebar-post mt-5 w-full rounded-xl'}
+        className={'sidebar-post mt-5 w-full rounded-md'}
         href={
           session.actor ? '/community/create' : loginPath('/community/create')
         }

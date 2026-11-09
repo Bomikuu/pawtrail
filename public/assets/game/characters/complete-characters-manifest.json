@@ -1,0 +1,93 @@
+{
+  "generationMode": "built-in image_gen",
+  "frameWidth": 32,
+  "frameHeight": 48,
+  "appearanceCount": 10,
+  "variants": [
+    {
+      "id": "rescuer",
+      "file": "/assets/game/characters/animations/rescuer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/rescuer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "jacket-rescuer",
+      "file": "/assets/game/characters/animations/jacket-rescuer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/jacket-rescuer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "braided-rescuer",
+      "file": "/assets/game/characters/animations/braided-rescuer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/braided-rescuer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "glasses-rescuer",
+      "file": "/assets/game/characters/animations/glasses-rescuer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/glasses-rescuer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "blonde-rescuer",
+      "file": "/assets/game/characters/animations/blonde-rescuer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/blonde-rescuer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "violet-rescuer",
+      "file": "/assets/game/characters/animations/violet-rescuer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/violet-rescuer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "red-rescuer",
+      "file": "/assets/game/characters/animations/red-rescuer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/red-rescuer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "male-blonde-scout",
+      "file": "/assets/game/characters/animations/male-blonde-scout/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/male-blonde-scout/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "male-violet-volunteer",
+      "file": "/assets/game/characters/animations/male-violet-volunteer/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/male-violet-volunteer/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    },
+    {
+      "id": "male-red-gardener",
+      "file": "/assets/game/characters/animations/male-red-gardener/complete-v2.png",
+      "manifest": "/assets/game/characters/animations/male-red-gardener/manifest-v2.json",
+      "animationCount": 27,
+      "frameCount": 108
+    }
+  ],
+  "productionReady": false,
+  "notes": [
+    "Source rows were detected from alpha bands before slicing; actual rectangles are recorded.",
+    "Loop interpolation and human approval remain unverified.",
+    "Wide prop/crouch actions use a shared fit scale within each row; these action rows may need rigging refinement for perfect head-size continuity.",
+    "Holding-item source bottom clipping repaired at native shoe pixels using a separately generated four-frame strip.",
+    "Glasses rescuer: 27 new rows; exported at native scale without automated testing or playback certification."
+  ],
+  "animationCount": 270,
+  "frameCount": 1080,
+  "priorDeliveryChecks": {
+    "binaryAlpha": true,
+    "nativeFrameDimensions": true,
+    "nonemptyFrames": true
+  }
+}

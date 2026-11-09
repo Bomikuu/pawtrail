@@ -1,0 +1,15 @@
+{
+  "tool": "jev 0.7.0",
+  "model": "jev-1.14.0",
+  "stateSubmitted": "Only feature/architecture summaries; no credentials, private records or user identities",
+  "architectureChoice": {"choice":"server","confidence":1.0,"meaning":"Django authoritative durable state and Channels rooms, signed account bridge and per-action checks"},
+  "deliveryChoice": {"choice":"first_playable","confidence":1.0,"meaning":"Local first-playable milestone with explicit remaining scope and verification limits"},
+  "limits": "These are structured model judgments, not test results or security certification.",
+  "verification": {
+    "isolatedTwoIdentityServiceFlow": "passed: assertion exchange and me-home bootstrap, friend/invite access, purchase replay, stale revision and unauthorized layout/fact rejection, valid starter layout, live join/chat/move/emote/leave, block revocation",
+    "standaloneTypeScript": "passed",
+    "integratedScopedTypeScriptIncludingSessionRoute": "passed",
+    "productionBuild": "not run",
+    "browserAndActualAccountWalkthrough": "not run"
+  }
+}

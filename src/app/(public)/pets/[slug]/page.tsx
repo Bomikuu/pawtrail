@@ -1,3 +1,4 @@
+import { PublicMedicalRecords } from '@/features/medical/public-records'
 import { getPublicAnimal, getPetActivity } from '@/features/animals/server'
 import { getServerApi } from '@/lib/api/server'
 import { animalMetadata } from '@/lib/seo/metadata'
@@ -29,7 +30,8 @@ export default async function AnimalPage({ params, searchParams }: Props) {
   const tab: AnimalProfileTab =
     search.tab === 'about' ||
     search.tab === 'photos' ||
-    search.tab === 'location'
+    search.tab === 'location' ||
+    search.tab === 'medical'
       ? search.tab
       : search.period || search.sightingCursor
         ? 'location'
@@ -55,7 +57,7 @@ export default async function AnimalPage({ params, searchParams }: Props) {
             (period === 'week' ? 7 : 30) * 86400000,
         ).toISOString()
   const api =
-    tab === 'activity' || tab === 'location' ? await getServerApi() : null
+    tab === 'activity' || tab === 'location' || tab === 'medical' ? await getServerApi() : null
   const session = tab === 'activity' ? await api!.auth.session() : null
   const filters = {
     kind,
@@ -63,7 +65,7 @@ export default async function AnimalPage({ params, searchParams }: Props) {
     cursor: tab === 'activity' ? queryValue(search.cursor) : undefined,
     limit: 12,
   } as const
-  const [activity, history] = await Promise.allSettled([
+  const [activity, history, medical] = await Promise.allSettled([
     tab === 'activity' || tab === 'photos'
       ? getPetActivity(
           animal.slug,
@@ -80,6 +82,9 @@ export default async function AnimalPage({ params, searchParams }: Props) {
             queryValue(search.sightingCursor) ?? queryValue(search.cursor),
           limit: 20,
         })
+      : Promise.resolve(null),
+    tab === 'medical'
+      ? api!.medical.list(animal.slug, { scope: 'public', cursor: queryValue(search.medicalCursor), limit: 12 })
       : Promise.resolve(null),
   ])
   const page = activity.status === 'fulfilled' ? activity.value : null
@@ -133,6 +138,12 @@ export default async function AnimalPage({ params, searchParams }: Props) {
               Reload photographs
             </ButtonLink>
           </>
+        )
+      ) : tab === 'medical' ? (
+        medical.status === 'fulfilled' && medical.value ? (
+          <PublicMedicalRecords animal={animal} page={medical.value} nextHref={medical.value.nextCursor ? `${path}?tab=medical&medicalCursor=${encodeURIComponent(medical.value.nextCursor)}#pet-activity` : null} />
+        ) : (
+          <><DataState state="error" errorMessage="Medical records couldn’t load. Please try again." /><ButtonLink href={path + '?tab=medical'} variant="outline">Reload medical records</ButtonLink></>
         )
       ) : history.status === 'fulfilled' && history.value ? (
         <>

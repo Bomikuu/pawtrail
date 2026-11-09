@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "sourceSize": 96,
+  "renderSize": 192,
+  "referenceUrl": "/pawtrail-game/game-assets/maya-reference-v5/reference.png",
+  "camera": {
+    "height": 27.5,
+    "target": [
+      0,
+      30.7,
+      0
+    ],
+    "position": [
+      0,
+      31.9375,
+      100
+    ],
+    "near": 0.1,
+    "far": 250
+  },
+  "pose": {
+    "yaw": -0.42,
+    "headTilt": 0
+  },
+  "landmarks": [
+    {
+      "id": "eyeLeft",
+      "label": "Left image eye",
+      "pixel": [
+        36.2,
+        38.5
+      ],
+      "node": "LM_Eye_ImageLeft",
+      "confidence": "clear"
+    },
+    {
+      "id": "eyeRight",
+      "label": "Right image eye",
+      "pixel": [
+        52.7,
+        35.7
+      ],
+      "node": "LM_Eye_ImageRight",
+      "confidence": "clear"
+    },
+    {
+      "id": "browLeft",
+      "label": "Left image brow",
+      "pixel": [
+        33.5,
+        32.8
+      ],
+      "node": "LM_Brow_ImageLeft",
+      "confidence": "partly occluded"
+    },
+    {
+      "id": "browRight",
+      "label": "Right image brow",
+      "pixel": [
+        54,
+        27.4
+      ],
+      "node": "LM_Brow_ImageRight",
+      "confidence": "clear"
+    },
+    {
+      "id": "nose",
+      "label": "Painted nose",
+      "pixel": [
+        42.4,
+        43
+      ],
+      "node": "LM_Nose",
+      "confidence": "clear"
+    },
+    {
+      "id": "mouth",
+      "label": "Mouth center",
+      "pixel": [
+        46.5,
+        47.5
+      ],
+      "node": "LM_Mouth",
+      "confidence": "clear"
+    },
+    {
+      "id": "chin",
+      "label": "Chin",
+      "pixel": [
+        46.5,
+        55.7
+      ],
+      "node": "LM_Chin",
+      "confidence": "clear"
+    },
+    {
+      "id": "shoulderLeft",
+      "label": "Left image shoulder",
+      "pixel": [
+        25.5,
+        68
+      ],
+      "node": "LM_Shoulder_ImageLeft",
+      "confidence": "clear"
+    },
+    {
+      "id": "shoulderRight",
+      "label": "Right image shoulder",
+      "pixel": [
+        72,
+        69.3
+      ],
+      "node": "LM_Shoulder_ImageRight",
+      "confidence": "clear"
+    },
+    {
+      "id": "crown",
+      "label": "Hair crown",
+      "pixel": [
+        48,
+        4
+      ],
+      "node": "LM_HairCrown",
+      "confidence": "clear"
+    },
+    {
+      "id": "bobLeft",
+      "label": "Left bob tip",
+      "pixel": [
+        21,
+        62
+      ],
+      "node": "LM_Bob_ImageLeft",
+      "confidence": "clear"
+    },
+    {
+      "id": "bobRight",
+      "label": "Right bob tip",
+      "pixel": [
+        75,
+        59
+      ],
+      "node": "LM_Bob_ImageRight",
+      "confidence": "clear"
+    }
+  ]
+}

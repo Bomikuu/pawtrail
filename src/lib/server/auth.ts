@@ -152,6 +152,7 @@ export function createDemoAuth(
               discoverable: false,
               showLocation: false,
               showContributions: false,
+              publicAttendance: false,
             },
           })
           draft.auth.actorId = id

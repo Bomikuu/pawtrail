@@ -7,6 +7,8 @@ export type Item =
   "food" | "water" | "firstAid" | "foodBowl" | "wood" | "toy" | "token";
 export type SceneId = "neighborhood" | "shelter" | "garden" | "riverside";
 export type GameCommand =
+  | { type: "photo-scene" }
+  | { type: "emote"; emote: string }
   | { type: "care"; action: CareAction; id: string }
   | { type: "interact" }
   | { type: "pause"; paused: boolean }
@@ -122,6 +124,10 @@ export type Photo = {
   image: string;
 };
 export type Progress = {
+  gameAnimals?: Record<
+    string,
+    import("./systems/animal-needs").LocalAnimalState
+  >;
   version: 2;
   appearance?: CharacterId;
   satchel?: Record<string, number>;
@@ -167,6 +173,8 @@ export type Dialogue = {
   text: string;
   npcId?: string;
   portrait?: string;
+  appearanceId?: string;
+  portraitSubject?: import('./actor-rig/portrait-source').PortraitSubject;
   choices?: DialogueChoice[];
 };
 export type GameSnapshot = {

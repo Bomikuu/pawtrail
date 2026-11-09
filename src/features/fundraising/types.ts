@@ -25,3 +25,5 @@ export type PublicSupporter = z.infer<typeof schemas.publicSupporterSchema>
 export type FundraisingDashboard = z.infer<
   typeof schemas.fundraisingDashboardSchema
 >
+
+export type SupportPledge = z.infer<typeof schemas.supportPledgeSchema>

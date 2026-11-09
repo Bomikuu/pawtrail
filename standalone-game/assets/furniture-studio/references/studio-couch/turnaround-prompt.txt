@@ -1,0 +1,21 @@
+Use case: stylized-concept.
+Asset type: coherent six-view 2D furniture turnaround sheet used to build a genuinely volumetric game asset.
+Input image 1 is the AUTHORITATIVE FRONT DESIGN of the PawTrail couch. Preserve this couch's identity and pixel-art language. The existing front PNG will remain the canonical front asset; invent only the missing physical views of this same object.
+
+Make ONE coordinated turnaround sheet with exactly six isolated views, in a clean 3-column by 2-row grid with large empty transparent gutters:
+top-left FRONT (yaw 0);
+top-middle LEFT PROFILE (yaw 90);
+top-right BACK (yaw 180);
+bottom-left RIGHT PROFILE (yaw 270);
+bottom-middle FRONT THREE-QUARTER (yaw 45);
+bottom-right REAR THREE-QUARTER (yaw 135).
+No text, labels, grid lines, dimensions or extra objects. Keep every couch fully inside its cell. Use a truly transparent background, no painted/checkerboard backdrop, no floor plane or cast shadow.
+
+All six views must describe ONE constructible couch, using the same dimensions, upholstery and construction, in orthographic projection at approximately 21 degrees of downward camera pitch. Matching physical scale across cells; profile views are naturally narrower than the front. The front width-to-occupied-height ratio is about 58:47. Use a compact two-seat depth, about 60 percent of total width, not a very long armchair.
+
+Identity invariants: warm sage/olive fabric; TWO separate generously rounded/scalloped back cushions with a small central notch and subtle button tufting; TWO separate soft seat cushions; plump gently rolled arms with continuous SOLID upholstered side panels; a low upholstered base; short honey-brown wooden feet; exactly TWO cream throw pillows with orange flower embroidery, angled outward at the inner ends of the arms. Keep the original front's compact proportions, palette, stepped dark-brown outline, clustered shading and restrained light upper edges. The original is small native pixel art: use deliberate crisp pixel clusters, no blur or smoothing, no glossy photorealistic/PBR treatment.
+
+Profiles must show actual arm thickness, a rounded continuous padded side, backrest thickness, recessed seat and the relevant pillow side. No hollow rectangular rail frame, no flat cutout edge, no duplicated horizontal arm bars.
+The rear must show a finished continuous plain sage upholstered lower back/frame and the subtle rounded upper cushion silhouettes, with sensible seams and rear feet. Flower pillow fronts must not appear on the back of the couch. Do not paste front-facing tuft/pillow decorations onto rear surfaces.
+Three-quarter views should demonstrate coherent seat depth, cushions, arm rolls, pillow volume and rear structure, consistent with the four main views.
+Keep the front design faithful to the input rather than redesigning the couch. All views should stay in the source's charming, slightly irregular pixel-art style. No actors, people, animals, extra cushions, logos or watermark.

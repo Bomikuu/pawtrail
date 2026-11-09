@@ -12,6 +12,7 @@ export function createUnimplementedApi(): PawTrailApi {
       selectDemoActor: notImplemented,
     },
     media: { upload: notImplemented, remove: notImplemented },
+    medical: { list: notImplemented, create: notImplemented, update: notImplemented },
     animals: {
       activity: notImplemented,
       list: notImplemented,
@@ -62,7 +63,7 @@ export function createUnimplementedApi(): PawTrailApi {
       review: notImplemented,
     },
     sightings: { list: notImplemented, create: notImplemented },
-    discovery: { searchAreas: notImplemented, nearby: notImplemented },
+    discovery: { communityStats: notImplemented, searchAreas: notImplemented, nearby: notImplemented },
     hordes: { list: notImplemented, get: notImplemented },
     search: { query: notImplemented },
     adoption: {
@@ -90,6 +91,7 @@ export function createUnimplementedApi(): PawTrailApi {
       addUpdate: notImplemented,
       addExpense: notImplemented,
       close: notImplemented,
+      pledge: notImplemented,
       simulateDonation: notImplemented,
       supporters: notImplemented,
       dashboard: notImplemented,

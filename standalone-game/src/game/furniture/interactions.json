@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "profiles": {
+    "garden-bush": {
+      "contact": "bush",
+      "sensor": [
+        3,
+        18,
+        26,
+        14
+      ]
+    },
+    "bamboo-window": {
+      "contact": "curtain",
+      "sensor": [
+        12,
+        48,
+        40,
+        22
+      ],
+      "cloth": [
+        11,
+        14,
+        42,
+        42
+      ]
+    }
+  },
+  "contracts": {
+    "solid": "Foot-body clearance and swept navigation; running impacts recoil without crossing the solid.",
+    "soft": "An explicit sensor, separate from solid geometry, drives damped contact motion. Frame posts remain solid.",
+    "wet": "Rain exposure carries a short wet status indoors; spaced footprints fade and are pooled.",
+    "terrain": "An owned equipped tool may change eligible owner-yard grass to durable soil. Shovel uses an explicit nearby action; mower uses accepted movement.",
+    "ambient": "Fish stay inside water bounds, move without actor contact and freeze under reduced motion."
+  }
+}

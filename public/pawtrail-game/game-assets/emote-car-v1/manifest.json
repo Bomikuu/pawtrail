@@ -1,0 +1,49 @@
+{
+  "frameWidth": 80,
+  "frameHeight": 64,
+  "columns": 12,
+  "rows": 8,
+  "spacing": 0,
+  "margin": 0,
+  "filter": "nearest",
+  "frameRate": 12,
+  "groundPixel": {
+    "x": 40,
+    "y": 40
+  },
+  "attachmentOffsetY": 12,
+  "animations": {
+    "down": {
+      "start": 0,
+      "end": 11
+    },
+    "down_left": {
+      "start": 12,
+      "end": 23
+    },
+    "left": {
+      "start": 24,
+      "end": 35
+    },
+    "up_left": {
+      "start": 36,
+      "end": 47
+    },
+    "up": {
+      "start": 48,
+      "end": 59
+    },
+    "up_right": {
+      "start": 60,
+      "end": 71
+    },
+    "right": {
+      "start": 72,
+      "end": 83
+    },
+    "down_right": {
+      "start": 84,
+      "end": 95
+    }
+  }
+}

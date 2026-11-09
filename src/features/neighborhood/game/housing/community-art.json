@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "tile": 32,
+  "lighting": "upper-left",
+  "perspective": "top-down-three-quarter",
+  "generationMode": "built-in image_gen",
+  "review": "Native exports; rendered game placement has not been exercised.",
+  "sprites": {
+    "jeepney": {
+      "file": "/assets/game/community/jeepney.png",
+      "width": 128,
+      "height": 96,
+      "anchor": [
+        64,
+        96
+      ],
+      "footprint": [
+        0,
+        64,
+        128,
+        32
+      ],
+      "source": "assets/community-v1/transport-and-plaza-source-v1.png",
+      "frames": 1
+    },
+    "stop": {
+      "file": "/assets/game/community/stop.png",
+      "width": 96,
+      "height": 96,
+      "anchor": [
+        48,
+        96
+      ],
+      "footprint": [
+        0,
+        64,
+        96,
+        32
+      ],
+      "source": "assets/community-v1/transport-and-plaza-source-v1.png",
+      "frames": 1
+    },
+    "fountain": {
+      "file": "/assets/game/community/fountain.png",
+      "width": 96,
+      "height": 64,
+      "anchor": [
+        48,
+        64
+      ],
+      "footprint": [
+        16,
+        16,
+        64,
+        48
+      ],
+      "source": "assets/community-v1/transport-and-plaza-source-v1.png",
+      "frames": 1
+    },
+    "banana": {
+      "file": "/assets/game/community/banana.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": [
+        20,
+        48,
+        24,
+        16
+      ],
+      "source": "assets/community-v1/transport-and-plaza-source-v1.png",
+      "frames": 1
+    },
+    "shelter": {
+      "file": "/assets/game/community/shelter.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        128
+      ],
+      "footprint": null,
+      "source": "public/game-assets/world-manifest.json#buildings/rescue_shelter",
+      "frames": 1
+    },
+    "vet": {
+      "file": "/assets/game/community/vet.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        128
+      ],
+      "footprint": null,
+      "source": "public/game-assets/world-manifest.json#buildings/veterinary_clinic",
+      "frames": 1
+    },
+    "shop": {
+      "file": "/assets/game/community/shop.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        128
+      ],
+      "footprint": null,
+      "source": "public/game-assets/world-manifest.json#buildings/pet_supply_shop",
+      "frames": 1
+    },
+    "store": {
+      "file": "/assets/game/community/store.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        128
+      ],
+      "footprint": null,
+      "source": "public/game-assets/world-manifest.json#buildings/sari_sari_store",
+      "frames": 1
+    },
+    "workshop": {
+      "file": "/assets/game/community/workshop.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        128
+      ],
+      "footprint": null,
+      "source": "public/game-assets/world-manifest.json#buildings/bamboo_house",
+      "frames": 1
+    },
+    "tree": {
+      "file": "/assets/game/community/tree.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": null,
+      "source": "public/game-assets/world-manifest.json#environment/large_tree",
+      "frames": 1
+    },
+    "bush": {
+      "file": "/assets/game/community/bush.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": null,
+      "source": "public/game-assets/world-manifest.json#environment/round_bush",
+      "frames": 1
+    },
+    "bench": {
+      "file": "/assets/game/community/bench.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "fence": {
+      "file": "/assets/game/community/fence.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "gate": {
+      "file": "/assets/game/community/gate.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "feeding": {
+      "file": "/assets/game/community/feeding.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "pot": {
+      "file": "/assets/game/community/pot.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "lamp": {
+      "file": "/assets/game/community/lamp.png",
+      "width": 32,
+      "height": 64,
+      "anchor": [
+        16,
+        64
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "starter-house": {
+      "file": "/assets/game/community/starter-house.png",
+      "width": 96,
+      "height": 96,
+      "anchor": [
+        48,
+        96
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "garden-house": {
+      "file": "/assets/game/community/garden-house.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        128
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    },
+    "pastel-house": {
+      "file": "/assets/game/community/pastel-house.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        128
+      ],
+      "footprint": null,
+      "source": "existing",
+      "frames": 1
+    }
+  }
+}

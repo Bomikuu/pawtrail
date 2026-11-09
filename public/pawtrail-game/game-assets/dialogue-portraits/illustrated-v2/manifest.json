@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "style": "illustrated-bust-v2",
+  "file": "trail-rescuer.png",
+  "width": 144,
+  "height": 144,
+  "framing": "head-shoulders-mid-torso",
+  "method": "built-in image_gen; approved native export/alpha cleanup",
+  "reference": "../maya.png",
+  "source": "assets/actor-appearances/portrait-sources/trail-rescuer-v2.png",
+  "prompt": "Original torso-up 2D pixel illustration of the brown-haired Trail rescuer in a brown vest and teal shirt, inspired by the existing Maya portrait; expressive eyes, no visible nose, warm hand-placed clusters, transparent background, no legs or 3D rendering."
+}

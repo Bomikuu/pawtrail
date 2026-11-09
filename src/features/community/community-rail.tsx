@@ -82,6 +82,8 @@ export function CommunityRail({
                 <span className="size-16 shrink-0 overflow-hidden rounded-full border bg-muted [&_>_*]:size-full [&_>_*]:rounded-full">
                   <AnimalImage
                     image={animal.photo}
+                    species={animal.species}
+                    appearance={animal.appearance}
                     compact
                     className="size-full rounded-full object-cover transition-transform duration-200 motion-safe:group-hover/pet:scale-105"
                   />
@@ -91,7 +93,10 @@ export function CommunityRail({
                     {animal.name}
                   </strong>
                   <span className="text-xs text-muted-foreground capitalize">
-                    {animal.species} · {animal.ageMonths} months
+                    {animal.species} ·{' '}
+                    {animal.ageMonths === null
+                      ? 'Age not recorded'
+                      : animal.ageMonths + ' months'}
                   </span>
                   <span className="flex min-w-0 items-center gap-1 text-[0.6875rem] text-muted-foreground">
                     <MapPin className="size-3 shrink-0" aria-hidden="true" />

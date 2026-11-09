@@ -46,6 +46,7 @@ it('redacts contribution identity and voluntary profile fields', async () => {
       discoverable: true,
       showLocation: false,
       showContributions: false,
+      publicAttendance: false,
     },
   }
   expect(toPublicUser(user)).toMatchObject({

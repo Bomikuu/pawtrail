@@ -1,3 +1,4 @@
+import communityLayout from './housing/community-layout.json'
 export type PackItem = { id: string; name: string; category: string; description: string; resource?: 'food' | 'water' | 'firstAid' | 'toy' | 'wood'; action?: 'feed' | 'water' | 'help' | 'play'; protected?: boolean }
 export const PACK_ITEMS: PackItem[] = [
   { id: 'cat-food', name: 'Cat food', category: 'Food', description: 'A meal for a feline neighbor.', resource: 'food', action: 'feed' },
@@ -36,7 +37,7 @@ export const SHARED_FINDS = [
   { id: 'water-crate', item: 'water-bottle', name: 'Fresh water supplies', x: 560, y: 480, amount: 2 },
   { id: 'first-aid-cache', item: 'first-aid', name: 'A first-aid pouch', x: 144, y: 352, amount: 1 },
   { id: 'material-cache', item: 'wood', name: 'A little building material', x: 400, y: 448, amount: 2 },
-]
+].map((find,index)=>({...find,x:communityLayout.finds[index][0],y:communityLayout.finds[index][1]}))
 export type WorldConditions = { total: number; minute: number; day: number; weather: string; epoch: number }
 export const WEATHER_SEQUENCE = ['clear', 'cloudy', 'light-rain', 'heavy-rain', 'cloudy', 'clear', 'clear', 'light-rain']
 export function worldConditions(total: number, epoch = Date.now() / 1000): WorldConditions {

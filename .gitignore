@@ -15,3 +15,27 @@ next-env.d.ts
 
 # Local screenshots and UI review evidence
 .impeccable/review/
+
+# Real platform service: private evidence, credentials, virtualenv and runtime state.
+backend/.data/
+backend/.venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/.env
+
+# Local browser output and runtime state are not source assets.
+.playwright-cli/
+/output/
+**/.venv/
+**/__pycache__/
+*.pyc
+*.sqlite3
+*.sqlite
+*.db
+*.log
+
+# Standalone game authoring regenerates these intermediates.
+standalone-game/output/
+standalone-game/dist/
+standalone-game/assets/**/exports/
+standalone-game/assets/source-backgrounds-v1/

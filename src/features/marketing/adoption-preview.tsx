@@ -56,7 +56,11 @@ export function AdoptionPreview({
                 'adoption-portrait [&_img]:w-full [&_img]:h-auto [&_img]:[aspect-ratio:4/5] [&_img]:object-cover [&_img]:rounded-xl [&_img]:mb-4 [&_p]:text-[0.8125rem] [&_p]:[margin:0_0_0.4rem]'
               }
             >
-              <AnimalImage image={animal.photo} />
+              <AnimalImage
+                image={animal.photo}
+                species={animal.species}
+                appearance={animal.appearance}
+              />
               <h3>
                 <MarketingDestination
                   href={`/animals/${animal.slug}`}
@@ -66,7 +70,10 @@ export function AdoptionPreview({
                 </MarketingDestination>
               </h3>
               <p>
-                {animal.ageMonths} months · {animal.species} · {animal.size}
+                {animal.ageMonths === null
+                  ? 'Age not recorded'
+                  : animal.ageMonths + ' months'}{' '}
+                · {animal.species} · {animal.size}
               </p>
               <small>
                 {animal.provenance.kind === 'sample'

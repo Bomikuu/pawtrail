@@ -48,9 +48,7 @@ export function AchievementActivity({
             await navigator.clipboard.writeText(url)
           } catch {
             setManual(url)
-            setMessage(
-              'Copy the link below. Progress is recorded only when the share or copy action succeeds.',
-            )
+            setMessage('Copy the story link below.')
             return
           }
         }
@@ -66,7 +64,7 @@ export function AchievementActivity({
         setMessage(
           session.actor
             ? 'Story link shared. Each page counts once toward Advocate.'
-            : 'Story link shared. Sign in to track achievements.',
+            : 'Story link shared.',
         )
     } catch (reason) {
       setError(

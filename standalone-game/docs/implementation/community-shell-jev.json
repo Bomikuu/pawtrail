@@ -1,0 +1,7 @@
+{
+  "purpose":"Layout judgment for the owner-requested community refinement; not verification",
+  "state":"Full-width pixel-art canvas, default community at /play, easy house and published animal profile access, bounded floating drawers and compact following speech balloons.",
+  "options":{"floating_world":"Persistent canvas with floating closable drawers and preserved explicit exploration routes","fixed_rails":"Two full-height rails consuming canvas width"},
+  "result":{"model":"jev-1.14.0","choice":"floating_world","confidence":1.0},
+  "validation":"Model judgment only. No tests, builds or browser verification requested or performed."
+}

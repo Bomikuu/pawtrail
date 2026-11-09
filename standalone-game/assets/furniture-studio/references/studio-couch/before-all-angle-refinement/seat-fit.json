@@ -1,0 +1,42 @@
+{
+  "units": "native world units",
+  "appearance": "exported shared rescuer",
+  "samples": [
+    {
+      "phase": 0,
+      "outerArmClearance": 2.499999594688415,
+      "betweenActors": 3.3999999523162856,
+      "pillowClearance": 1.6079836216977863,
+      "actorWidth": 15.200000047683716,
+      "seatSupportFrontClearance": 2.456371107595645,
+      "floorClearance": 4.720045190762617
+    },
+    {
+      "phase": 0.25,
+      "outerArmClearance": 2.499999594688415,
+      "betweenActors": 3.3999999523162856,
+      "pillowClearance": 1.7436972616569801,
+      "actorWidth": 15.200000047683716,
+      "seatSupportFrontClearance": 2.446194771957334,
+      "floorClearance": 4.720045190762617
+    },
+    {
+      "phase": 0.5,
+      "outerArmClearance": 2.499999594688415,
+      "betweenActors": 3.3999999523162856,
+      "pillowClearance": 1.6079836216977863,
+      "actorWidth": 15.200000047683716,
+      "seatSupportFrontClearance": 2.456371107595645,
+      "floorClearance": 4.720045190762617
+    },
+    {
+      "phase": 0.75,
+      "outerArmClearance": 2.499999594688415,
+      "betweenActors": 3.3999999523162856,
+      "pillowClearance": 1.427288572991323,
+      "actorWidth": 15.200000047683716,
+      "seatSupportFrontClearance": 2.468199625237874,
+      "floorClearance": 4.720045190762617
+    }
+  ]
+}

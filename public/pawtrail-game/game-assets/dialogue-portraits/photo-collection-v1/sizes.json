@@ -1,0 +1,62 @@
+{
+  "budgetPerEntryBytes": 250000,
+  "includes": "Native atlas, JSON and all four static pose posters. Shared application JavaScript is separate.",
+  "entries": [
+    {
+      "id": "style-1",
+      "name": "Sharp cel",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "runtimeBytes": 31570,
+      "completeBytes": 41692,
+      "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v1/style-1"
+    },
+    {
+      "id": "style-2",
+      "name": "Compact fantasy",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "runtimeBytes": 34676,
+      "completeBytes": 47197,
+      "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v1/style-2"
+    },
+    {
+      "id": "style-3",
+      "name": "Sparse anime",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "runtimeBytes": 32619,
+      "completeBytes": 43833,
+      "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v1/style-3"
+    },
+    {
+      "id": "style-4",
+      "name": "Console icon",
+      "nativeCell": [
+        72,
+        72
+      ],
+      "runtimeBytes": 22676,
+      "completeBytes": 30017,
+      "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v1/style-4"
+    },
+    {
+      "id": "style-5",
+      "name": "Rough manga",
+      "nativeCell": [
+        120,
+        120
+      ],
+      "runtimeBytes": 42371,
+      "completeBytes": 56479,
+      "folder": "/pawtrail-game/game-assets/dialogue-portraits/photo-collection-v1/style-5"
+    }
+  ],
+  "totalBytes": 219218
+}

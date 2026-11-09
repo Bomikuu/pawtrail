@@ -1,0 +1,103 @@
+{
+  "source": "assets/dialogue-ui-v1/source.png",
+  "generation": "image_gen",
+  "export": "alpha threshold 128; nearest-neighbor 1/2 native export",
+  "assets": [
+    {
+      "id": "parchment",
+      "file": "parchment.png",
+      "width": 207,
+      "height": 202,
+      "cell": [
+        0,
+        0
+      ],
+      "crop": [
+        49,
+        59,
+        463,
+        462
+      ]
+    },
+    {
+      "id": "nameplate",
+      "file": "nameplate.png",
+      "width": 230,
+      "height": 90,
+      "cell": [
+        1,
+        0
+      ],
+      "crop": [
+        26,
+        159,
+        487,
+        339
+      ]
+    },
+    {
+      "id": "speech",
+      "file": "speech.png",
+      "width": 228,
+      "height": 121,
+      "cell": [
+        2,
+        0
+      ],
+      "crop": [
+        22,
+        142,
+        478,
+        384
+      ]
+    },
+    {
+      "id": "action",
+      "file": "action.png",
+      "width": 220,
+      "height": 71,
+      "cell": [
+        0,
+        1
+      ],
+      "crop": [
+        37,
+        184,
+        476,
+        326
+      ]
+    },
+    {
+      "id": "garden",
+      "file": "garden.png",
+      "width": 240,
+      "height": 82,
+      "cell": [
+        1,
+        1
+      ],
+      "crop": [
+        16,
+        175,
+        495,
+        340
+      ]
+    },
+    {
+      "id": "portrait-frame",
+      "file": "portrait-frame.png",
+      "width": 177,
+      "height": 176,
+      "cell": [
+        2,
+        1
+      ],
+      "crop": [
+        79,
+        68,
+        433,
+        420
+      ]
+    }
+  ]
+}

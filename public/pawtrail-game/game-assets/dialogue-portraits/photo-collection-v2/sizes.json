@@ -1,0 +1,101 @@
+{
+  "budgetPerEntryBytes": 250000,
+  "entries": [
+    {
+      "id": "style-1",
+      "name": "Sharp cel",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "contentBounds": [
+        3,
+        2,
+        89,
+        116
+      ],
+      "runtimeBytes": 75417,
+      "referenceBytes": 68541,
+      "completeBytes": 143958,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "style-2",
+      "name": "Compact fantasy",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "contentBounds": [
+        5,
+        2,
+        86,
+        116
+      ],
+      "runtimeBytes": 89586,
+      "referenceBytes": 80481,
+      "completeBytes": 170067,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "style-3",
+      "name": "Sparse anime",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "contentBounds": [
+        4,
+        2,
+        88,
+        116
+      ],
+      "runtimeBytes": 76334,
+      "referenceBytes": 69279,
+      "completeBytes": 145613,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "style-4",
+      "name": "Console icon",
+      "nativeCell": [
+        72,
+        72
+      ],
+      "contentBounds": [
+        7,
+        2,
+        57,
+        68
+      ],
+      "runtimeBytes": 49929,
+      "referenceBytes": 48268,
+      "completeBytes": 98197,
+      "poseCount": 4,
+      "expressionCount": 6
+    },
+    {
+      "id": "style-5",
+      "name": "Rough manga",
+      "nativeCell": [
+        120,
+        120
+      ],
+      "contentBounds": [
+        9,
+        2,
+        101,
+        116
+      ],
+      "runtimeBytes": 106420,
+      "referenceBytes": 93651,
+      "completeBytes": 200071,
+      "poseCount": 4,
+      "expressionCount": 6
+    }
+  ],
+  "allEntriesBytes": 757906
+}

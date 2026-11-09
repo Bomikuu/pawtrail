@@ -26,6 +26,7 @@ import {
   publicRecord,
   publicArea,
   queryValue,
+  shelterOptions,
   type SearchParams,
 } from './server'
 import {
@@ -61,8 +62,8 @@ export async function ExplorePage({
     species: species || undefined,
     adoptable: p.adoptable === 'true' ? true : undefined,
   }
-  const latitude = p.latitude ? Number(queryValue(p.latitude)) : area.latitude,
-    longitude = p.longitude ? Number(queryValue(p.longitude)) : area.longitude
+  const latitude = p.latitude ? Number(queryValue(p.latitude)) : area?.latitude,
+    longitude = p.longitude ? Number(queryValue(p.longitude)) : area?.longitude
   let bounds:
     { north: number; south: number; east: number; west: number } | undefined
   if (typeof p.bounds === 'string') {
@@ -72,24 +73,27 @@ export async function ExplorePage({
       bounds = undefined
     }
   }
-  const map = await api.discovery.nearby({
-    latitude,
-    longitude,
-    radiusMeters: Number(queryValue(p.radius) ?? 10000),
-    bounds,
-    filters,
-  })
+  const map =
+    latitude !== undefined && longitude !== undefined
+      ? await api.discovery.nearby({
+          latitude,
+          longitude,
+          radiusMeters: Number(queryValue(p.radius) ?? 10000),
+          bounds,
+          filters,
+        })
+      : null
   const animals = await api.animals.list({
     ...filters,
     cursor,
-    ids: map.features
+    ids: map?.features
       .filter((f) => f.ref.kind === 'animal')
       .map((f) => f.ref.id),
   })
   return (
     <>
       <PageHeading
-        title="Find a familiar face nearby"
+        title="Animal directory"
         description="Meet the animals and people who share your neighborhood. Public locations show general areas, never a sensitive exact position."
         action={
           <ButtonLink href="/animals/report">Report an animal</ButtonLink>
@@ -117,11 +121,23 @@ export async function ExplorePage({
           },
         ]}
       />
-      <DiscoveryMap features={map.features} center={{ latitude, longitude }} />
+      {map && latitude !== undefined && longitude !== undefined && (
+        <DiscoveryMap
+          features={map.features}
+          center={{ latitude, longitude }}
+        />
+      )}
       <p>
-        {animals.count} animals around {area.neighborhood} · approximate
-        locations
+        {animals.count} published animals
+        {area ? ` around ${area.neighborhood} · approximate locations` : ''}
       </p>
+      {!area && (
+        <p className="text-sm text-muted-foreground">
+          Browse published records below, or use the{' '}
+          <Link href="/play?map=community">places map</Link> to explore by
+          location.
+        </p>
+      )}
       <div
         className={
           'journal-grid grid grid-cols-2 gap-6 [margin:1.5rem_0_2rem] max-[48rem]:grid-cols-1 max-[48rem]:gap-4 [.app-shell_&]:grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] [.app-shell_&]:gap-4 [.app-shell_&]:items-stretch min-[105rem]:[.app-shell_&]:grid-cols-3 min-[105rem]:[.app-shell_.detail-body_&]:grid-cols-2 max-[48rem]:[.app-shell_&]:grid-cols-1 max-[48rem]:[.app-shell_.detail-body_&]:grid-cols-1'
@@ -133,16 +149,24 @@ export async function ExplorePage({
             title={a.name}
             href={`/pets/${a.slug}`}
             image={a.photo}
-            description={`${a.ageMonths} months · ${a.size} · ${a.gender}`}
+            species={a.species}
+            appearance={a.appearance}
+            description={`${a.ageMonths === null ? 'Age not recorded' : a.ageMonths + ' months'} · ${a.size === 'unknown' ? 'Size not recorded' : a.size} · ${a.gender}`}
             meta={`${a.species} · ${a.adoptable ? 'Looking for a home' : a.status}`}
           />
         ))}
       </div>
-      {!animals.count && (
-        <Empty href="/explore" label="Clear filters">
-          No animals match these filters. Try a wider search.
-        </Empty>
-      )}
+      {!animals.count &&
+        (q || species || p.adoptable === 'true' ? (
+          <Empty href="/explore" label="Clear filters">
+            No animals match these filters. Try a wider search.
+          </Empty>
+        ) : (
+          <Empty href="/spot" label="Record an encounter">
+            No published animal records yet. An approved encounter can start the
+            first record.
+          </Empty>
+        ))}
       <NextPage
         cursor={animals.nextCursor}
         params={{
@@ -273,6 +297,8 @@ export async function HordePage({
               href={`/pets/${a.slug}`}
               title={a.name}
               image={a.photo}
+              species={a.species}
+              appearance={a.appearance}
               meta={a.species}
             />
           ))}
@@ -632,25 +658,29 @@ export async function FundraiserPage({
           {f.supporterCount} supporters · {f.state}
         </p>
         <p>
-          Available: {php(f.balanceMinor)} · Recorded spending:{' '}
-          {php(f.raisedMinor - f.balanceMinor)}. No payout is made in this
-          demonstration.
+          Recorded funds available: {php(f.balanceMinor)} · Recorded spending:{' '}
+          {php(f.raisedMinor - f.balanceMinor)}. No online payout is made by
+          this service.
+        </p>
+        <p className="text-sm text-muted-foreground">
+          Pledged support: {php(f.pledgedMinor)}. Pledges count as collected
+          funds only after independent payment-evidence review.
         </p>
         {f.animalId && (
           <Link href={`/adopt?animalId=${f.animalId}`}>
             Explore animals available for adoption
           </Link>
         )}
-        {session.demo && session.actor && f.state === 'active' ? (
+        {session.actor && f.state === 'active' ? (
           <section
             className={
               'workflow-panel [padding:1.5rem_0] [border-top:1px_solid_#ede5d8] [margin:1.5rem_0] [&_h2]:mt-0 [&_h3]:mt-0 [.app-shell_&]:min-w-0 [.app-shell_&]:bg-card [.app-shell_&]:[border:1px_solid_var(--social-line)] [.app-shell_&]:rounded-2xl [.app-shell_&]:[overflow-wrap:anywhere] [.app-shell_&]:p-5 [.app-shell_&]:[margin:0_0_1rem] [.management-shell_&]:border-border [.management-shell_&_>_h3]:mt-4 [.management-shell_&_>_h2]:mt-4 max-[48rem]:[.app-shell_&]:p-4'
             }
           >
-            <h2>Try a simulated contribution</h2>
+            <h2>Pledge your support</h2>
             <p>
-              No card details, charges or transfers. Your entry updates this
-              local demonstration.
+              Save a pledge and a message for the care team. No payment is
+              taken; the organizer will coordinate next steps with you.
             </p>
             <WorkflowForm
               operation="donation"
@@ -668,25 +698,20 @@ export async function FundraiserPage({
                   type: 'checkbox',
                 },
               ]}
-              submitLabel="Record simulated contribution"
+              submitLabel="Save support pledge"
             />
           </section>
-        ) : !session.demo ? (
-          <p>
-            Live payments are not enabled. You can follow the organizer’s
-            published updates.
-          </p>
         ) : f.state === 'active' ? (
           <ButtonLink
             href={`/login?returnTo=${encodeURIComponent(`/fundraisers/${slug}`)}`}
           >
-            Sign in to try a demo contribution
+            Sign in to pledge support
           </ButtonLink>
         ) : (
           <p>This campaign is not accepting new contributions.</p>
         )}
         <ChartPanel
-          title="View simulated funding chart"
+          title="View recorded funding chart"
           unit="PHP"
           data={[
             { name: 'Raised', value: f.raisedMinor / 100 },
@@ -1163,6 +1188,8 @@ export async function ShelterPage({ slug }: { slug: string }) {
               href={`/pets/${a.slug}`}
               title={a.name}
               image={a.photo}
+              species={a.species}
+              appearance={a.appearance}
               meta={a.species}
             />
           ))}
@@ -1298,10 +1325,25 @@ export async function AdoptPage({
     </>
   )
 }
+function CommunityAreaState() {
+  return (
+    <>
+      <PageHeading
+        title="No community areas available yet"
+        description="An administrator needs to add a community area before location-based submissions can open. Published records are still available to browse."
+      />
+      <ButtonLink href="/explore" variant="outline">
+        Browse the animal directory
+      </ButtonLink>
+    </>
+  )
+}
+
 export async function PreferencesPage() {
   const api = await privateApi('/adopt/preferences'),
     p = await api.adoption.preferences(),
     location = await publicArea()
+  if (!location) return <CommunityAreaState />
   const fields = preferenceFields.map((f) => ({
     ...f,
     value:
@@ -1336,6 +1378,7 @@ export async function PreferencesPage() {
 export async function AnimalReportPage({ animalId }: { animalId?: string }) {
   const api = await privateApi('/animals/report'),
     location = await publicArea()
+  if (!location) return <CommunityAreaState />
   const a = animalId ? await api.animals.get(animalId) : null
   return (
     <>
@@ -1369,6 +1412,7 @@ export async function SightingPage({
     api = await privateApi('/sightings/create'),
     location = await publicArea(),
     animals = await api.animals.list({ limit: 50 })
+  if (!location) return <CommunityAreaState />
   const fields: Field[] = [
     {
       name: 'animalId',
@@ -1433,6 +1477,7 @@ export async function CampaignCreatePage({
     draft = queryValue(p.draft)
       ? await api.fundraisers.draft(queryValue(p.draft)!)
       : null
+  if (!location) return <CommunityAreaState />
   const hordes = await api.hordes.list({ limit: 50 })
   const fields: Field[] = [
     ...campaignFields,
@@ -1464,7 +1509,7 @@ export async function CampaignCreatePage({
       type: 'select',
       options: [
         { value: '', label: 'Individual organizer' },
-        ...session.actor!.shelterIds.map((id) => ({ value: id, label: id })),
+        ...(await shelterOptions(api, session.actor!.shelterIds)),
       ],
       step: 1,
     },
@@ -1518,6 +1563,7 @@ export async function MissionCreatePage({
   const api = await privateApi('/missions/create'),
     session = await api.auth.session(),
     location = await publicArea()
+  if (!location) return <CommunityAreaState />
   if (!session.roles.some((r) => ['shelter_staff', 'moderator'].includes(r)))
     return (
       <>
@@ -1570,10 +1616,7 @@ export async function MissionCreatePage({
             type: 'select',
             options: [
               { value: '', label: 'Independent organizer' },
-              ...session.actor!.shelterIds.map((id) => ({
-                value: id,
-                label: id,
-              })),
+              ...(await shelterOptions(api, session.actor!.shelterIds)),
             ],
           },
         ]}
@@ -1601,7 +1644,7 @@ export async function EventCreatePage({ id }: { id?: string }) {
       type: 'select',
       options: [
         { value: '', label: 'Independent organizer' },
-        ...session.actor!.shelterIds.map((id) => ({ value: id, label: id })),
+        ...(await shelterOptions(api, session.actor!.shelterIds)),
       ],
     },
   ]

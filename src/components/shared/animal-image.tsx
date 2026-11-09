@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { animalPlaceholder } from '@/features/neighborhood/game/animal-placeholder'
 import { Button } from '@/components/ui/button'
 import { PawPrint } from 'lucide-react'
 interface AnimalPhoto {
@@ -14,11 +15,15 @@ export function AnimalImage({
   sensitive = image?.sensitive ?? false,
   className,
   compact = false,
+  species,
+  appearance,
 }: {
   image?: AnimalPhoto | null
   sensitive?: boolean
   className?: string
   compact?: boolean
+  species?: string
+  appearance?: string
 }) {
   const [failedUrl, setFailedUrl] = useState<string | null>(null)
   const [revealedUrl, setRevealedUrl] = useState<string | null>(null)
@@ -28,6 +33,16 @@ export function AnimalImage({
     image.mimeType !== 'application/pdf' &&
     !image.url.includes('/content') &&
     /^(https:\/\/|\/(?!\/))/.test(image.url)
+  const placeholder = species ? animalPlaceholder(species, appearance) : null
+  if ((!safe || failedUrl === image.url) && placeholder)
+    return (
+      <img
+        src={placeholder}
+        alt={`${species} illustration · photo unavailable`}
+        className={className}
+        loading="lazy"
+      />
+    )
   if (!safe || failedUrl === image.url)
     return (
       <div

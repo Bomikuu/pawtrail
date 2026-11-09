@@ -78,7 +78,7 @@ export function ProofForm({
     >
       <DialogContent
         className={
-          'achievement-proof-dialog w-[min(44rem,_calc(100vw_-_2rem))]'
+          'achievement-proof-dialog max-h-[calc(100dvh-2rem)] w-[min(44rem,_calc(100vw_-_2rem))] overflow-y-auto overscroll-contain'
         }
         onEscapeKeyDown={(event) => {
           if (pending) event.preventDefault()

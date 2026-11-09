@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env.local
+*.tsbuildinfo
+playwright-report/
+
+# Original artwork before authorized alpha cleanup (not runtime assets).
+assets/source-backgrounds-v1/

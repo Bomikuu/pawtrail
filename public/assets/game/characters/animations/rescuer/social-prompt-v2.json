@@ -1,0 +1,8 @@
+{
+  "variant": "rescuer",
+  "group": "social",
+  "rows": 9,
+  "cols": 4,
+  "prompt": "Use case: stylized-concept. Asset type: PawTrail rescuer SOCIAL animation sheet. Image1 exact character reference: mediumbrown skin shortdarkhair sageshirt rustshorts brownshoes tanbackpack. Keepidentical everyframe. Cozy16bit crisp pixelart topdown3/4 upperleftlight darkwarmbrownoutline, native32x48frames. Genuine transparent background NO glow. EXACT4columns9rows, each row4 equallyspaced animationposes,36 characters total. Rows: wave hello hand moving; laugh shoulders bouncing; dance alternating steps; clap hands together then apart; cheer both arms lifting; sit down knees bent; sleep lying down; give wrapped gift forward; hold small box in arms. Meaningfulmotionwithinrow; body/head/hair/clothes neverchange. Fixedcellcenter and standingfootbaseline. Portraitsheet, no text/grid/scenery/no floor, no gradients/blur/isometric. Wholebody in EVERYcell, separate generous transparent gutters. Frames1to4 tell action in logicalorder.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-1ffe69c2-9db1-46c4-aef0-6c2e4ba7ae82.png"
+}

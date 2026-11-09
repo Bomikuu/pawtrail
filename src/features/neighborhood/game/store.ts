@@ -1,3 +1,4 @@
+import {getSavedCharacter} from './creator/library';
 import type {
   Activity,
   DialogueChoice,
@@ -32,7 +33,7 @@ import {
 } from "./systems/save";
 import { advanceTime, dayPhase } from "./systems/time";
 import { isCharacterId, type CharacterId } from "./characters";
-import { packItem } from './immersion-data';
+import { packItem } from "./immersion-data";
 export { freshProgress, validProgress };
 const listeners = new Set<() => void>(),
   commands = new Set<(command: GameCommand) => void>();
@@ -88,23 +89,48 @@ export function send(command: GameCommand) {
   commands.forEach((fn) => fn(command));
 }
 export function chooseCharacter(appearance: CharacterId) {
+  try {
+    if(getSavedCharacter(appearance)?.scope!=="device")localStorage.setItem("pawtrail:appearance:pending", appearance);
+    else localStorage.removeItem("pawtrail:appearance:pending");
+  } catch {}
   if (!isCharacterId(appearance)) return;
   persist({ ...snapshot.progress, appearance });
   send({ type: "appearance" });
 }
 export function collectFind(id: string, item: string, amount = 1) {
-  if (!packItem(item) || snapshot.progress.completed.includes('pickup:' + id)) return false;
+  if (!packItem(item) || snapshot.progress.completed.includes("pickup:" + id))
+    return false;
   const p = snapshot.progress;
-  const next = advanceQuests({ ...p, completed: [...new Set([...p.completed, 'pickup:' + id, 'found-item:' + item])], satchel: { ...p.satchel, [item]: Math.min(10000, (p.satchel?.[item] ?? 0) + amount) } }, { type: 'collect', target: item });
+  const next = advanceQuests(
+    {
+      ...p,
+      completed: [
+        ...new Set([...p.completed, "pickup:" + id, "found-item:" + item]),
+      ],
+      satchel: {
+        ...p.satchel,
+        [item]: Math.min(10000, (p.satchel?.[item] ?? 0) + amount),
+      },
+    },
+    { type: "collect", target: item },
+  );
   persist(next);
-  publish({ notice: 'Item found! ' + packItem(item)!.name + ' ×' + amount });
+  publish({ notice: "Item found! " + packItem(item)!.name + " ×" + amount });
   return true;
 }
 export function useFoundItem(id: string) {
-  const item = packItem(id), p = snapshot.progress;
-  if (!item?.resource || !(p.satchel?.[id])) return;
-  persist({ ...p, satchel: { ...p.satchel, [id]: p.satchel[id] - 1 }, inventory: { ...p.inventory, [item.resource]: p.inventory[item.resource] + 1 } });
-  publish({ notice: item.name + ' added to your care supplies.' });
+  const item = packItem(id),
+    p = snapshot.progress;
+  if (!item?.resource || !p.satchel?.[id]) return;
+  persist({
+    ...p,
+    satchel: { ...p.satchel, [id]: p.satchel[id] - 1 },
+    inventory: {
+      ...p.inventory,
+      [item.resource]: p.inventory[item.resource] + 1,
+    },
+  });
+  publish({ notice: item.name + " added to your care supplies." });
 }
 export function onCommand(fn: (command: GameCommand) => void) {
   commands.add(fn);
@@ -220,7 +246,7 @@ export function claim(id: string) {
 }
 export function track(id: string) {
   persist({ ...snapshot.progress, trackedQuest: id });
-  if (!id) send({ type:'guide', target:'' });
+  if (!id) send({ type: "guide", target: "" });
 }
 export function careReason(
   action: CareAction,
@@ -584,4 +610,41 @@ export function restoreSave(value: unknown) {
   publish({ dialogue: null, notice: "Your saved story has been restored." });
   send({ type: "reload" });
   return true;
+}
+
+/** Scene photographs are local keepsakes; they grant no care evidence, quests or currency. */
+export function saveScenePhoto(image: string, location: SceneId) {
+  if (!image.startsWith("data:image/png;base64,") || image.length >= 300000) {
+    publish({
+      notice: "This photo is too large to keep. Try a smaller game window.",
+    });
+    return;
+  }
+  const p = snapshot.progress;
+  persist({
+    ...p,
+    photos: [
+      {
+        id: crypto.randomUUID(),
+        animalId: "scene:" + location,
+        day: p.day,
+        pose: "landscape",
+        location,
+        image,
+      },
+      ...p.photos,
+    ].slice(0, 12),
+  });
+  publish({
+    notice:
+      snapshot.save === "unavailable"
+        ? "The photo is in your album, but device storage is full. Download it before leaving."
+        : "A moment saved to your album on this device.",
+  });
+}
+
+export function syncCharacterAppearance(appearance: CharacterId) {
+  if (snapshot.progress.appearance === appearance) return;
+  persist({ ...snapshot.progress, appearance });
+  send({ type: "appearance" });
 }

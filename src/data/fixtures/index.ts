@@ -1,13 +1,13 @@
 import 'server-only'
-import { animals } from './animals'
-import { hordes } from './hordes'
-import { users } from './users'
-import { posts } from './posts'
-import { fundraisers } from './fundraisers'
-import { missions } from './missions'
-import { shelters } from './shelters'
-import { events } from './events'
-import {
+import type { animals } from './animals'
+import type { hordes } from './hordes'
+import type { users } from './users'
+import type { posts } from './posts'
+import type { fundraisers } from './fundraisers'
+import type { missions } from './missions'
+import type { shelters } from './shelters'
+import type { events } from './events'
+import type {
   sightings,
   comments,
   contributions,
@@ -16,34 +16,26 @@ import {
   namingAwards,
   rsvps,
 } from './activity'
-import { geoAreaSchema } from '@/features/discovery/schemas'
-import { sampleAreas } from './scenarios'
+import type { z } from 'zod'
+import type { geoAreaSchema } from '@/features/discovery/schemas'
 import { ApiError } from '@/lib/api/errors'
-export const areas = sampleAreas.map((area) =>
-  geoAreaSchema.parse({
-    id: area.areaId,
-    name: area.name,
-    latitude: area.latitude,
-    longitude: area.longitude,
-    approximateRadiusMeters: area.approximateRadiusMeters,
-  }),
-)
+export const areas: z.infer<typeof geoAreaSchema>[] = []
 export const seed = {
-  animals,
-  hordes,
-  users,
-  posts,
-  fundraisers,
-  missions,
-  shelters,
-  events,
-  sightings,
-  comments,
-  contributions,
-  participations,
-  kibbleEntries,
-  namingAwards,
-  rsvps,
+  animals: [] as typeof animals,
+  hordes: [] as typeof hordes,
+  users: [] as typeof users,
+  posts: [] as typeof posts,
+  fundraisers: [] as typeof fundraisers,
+  missions: [] as typeof missions,
+  shelters: [] as typeof shelters,
+  events: [] as typeof events,
+  sightings: [] as typeof sightings,
+  comments: [] as typeof comments,
+  contributions: [] as typeof contributions,
+  participations: [] as typeof participations,
+  kibbleEntries: [] as typeof kibbleEntries,
+  namingAwards: [] as typeof namingAwards,
+  rsvps: [] as typeof rsvps,
   areas,
 }
 export type FixtureSeed = typeof seed

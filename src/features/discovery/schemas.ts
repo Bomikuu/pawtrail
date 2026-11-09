@@ -44,3 +44,16 @@ export const discoveryResultSchema = z.object({
   ),
   count: z.number().int().nonnegative(),
 })
+
+const communityAreaStatisticsSchema = z.object({
+    id: idSchema, provinceId: idSchema, name: z.string(), province: z.string(),
+    center: z.tuple([z.number(), z.number()]), bounds: z.tuple([z.number(), z.number(), z.number(), z.number()]),
+    animals: z.number().int().nonnegative(), events: z.number().int().nonnegative(),
+    shelters: z.number().int().nonnegative(), hordes: z.number().int().nonnegative(), help: z.number().int().nonnegative(),
+    images: z.object({ animals: z.string().nullable(), shelters: z.string().nullable() }),
+})
+export const communityStatisticsSchema = z.object({
+  generatedAt: z.iso.datetime({ offset: true }),
+  cities: z.array(communityAreaStatisticsSchema),
+  provinces: z.array(communityAreaStatisticsSchema),
+})

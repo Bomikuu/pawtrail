@@ -2,6 +2,26 @@ import 'server-only'
 import { redirect, notFound } from 'next/navigation'
 import { getServerApi } from '@/lib/api/server'
 import { ApiError } from '@/lib/api/errors'
+import type { PawTrailApi } from '@/lib/api/contracts'
+
+export async function shelterOptions(api: PawTrailApi, ids: string[]) {
+  const names = new Map<string, string>()
+  const keys = [...new Set(ids)]
+  if (!keys.length) return []
+  let cursor: string | undefined
+  do {
+    const page = await api.shelters.list({
+      limit: 50,
+      ...(cursor ? { cursor } : {}),
+    })
+    for (const shelter of page.items) names.set(shelter.id, shelter.name)
+    cursor = page.nextCursor ?? undefined
+  } while (cursor && keys.some((id) => !names.has(id)))
+  return keys.map((id, index) => ({
+    value: id,
+    label: names.get(id) ?? `Assigned shelter ${index + 1}`,
+  }))
+}
 export async function privateApi(path: string) {
   const api = await getServerApi()
   if (!(await api.auth.session()).actor)
@@ -26,7 +46,7 @@ export async function publicArea() {
   const api = await getServerApi(),
     areas = await api.discovery.searchAreas('')
   const a = areas[0]
-  if (!a) throw new Error('No public neighborhood is configured')
+  if (!a) return null
   return {
     areaId: a.id,
     neighborhood: a.name,

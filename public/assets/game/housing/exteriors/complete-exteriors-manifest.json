@@ -1,0 +1,860 @@
+{
+  "generationMode": "built-in image_gen",
+  "palette": [
+    "33251c",
+    "4a3324",
+    "63452e",
+    "805a36",
+    "9b6a3b",
+    "b47c40",
+    "ce9148",
+    "e8aa57",
+    "f4c778",
+    "f7dda3",
+    "fff0c8",
+    "fff8e5",
+    "504d2a",
+    "656238",
+    "77763e",
+    "898a4a",
+    "9da05c",
+    "b1b771",
+    "c6cd8a",
+    "d8dda5",
+    "985037",
+    "b56a47",
+    "ce8659",
+    "e3a776",
+    "b9aa86",
+    "cfbf9c",
+    "e5d5b2",
+    "f2e3c5",
+    "b15431",
+    "cf6d3b",
+    "e28c4b",
+    "f6b868",
+    "456b74",
+    "69989e",
+    "a3c4be",
+    "dbebd4",
+    "44423e",
+    "74736a",
+    "aaa799",
+    "ded6c0"
+  ],
+  "assets": [
+    {
+      "id": "starter-house",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/starter-house-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/starter-house-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "width": 96,
+      "height": 96,
+      "frames": 1,
+      "anchorPixels": [
+        48,
+        94
+      ],
+      "collisionFootprintPixels": [
+        2,
+        82,
+        92,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "wooden-cottage",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/wooden-cottage-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/wooden-cottage-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        1330,
+        1182
+      ],
+      "width": 128,
+      "height": 128,
+      "frames": 1,
+      "anchorPixels": [
+        64,
+        126
+      ],
+      "collisionFootprintPixels": [
+        2,
+        114,
+        124,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "pastel-house",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/pastel-house-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/pastel-house-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "width": 128,
+      "height": 128,
+      "frames": 1,
+      "anchorPixels": [
+        64,
+        126
+      ],
+      "collisionFootprintPixels": [
+        2,
+        114,
+        124,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "garden-house",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/garden-house-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-house-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "width": 128,
+      "height": 128,
+      "frames": 1,
+      "anchorPixels": [
+        64,
+        126
+      ],
+      "collisionFootprintPixels": [
+        2,
+        114,
+        124,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "upgraded-house",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/upgraded-house-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/upgraded-house-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        1374,
+        1145
+      ],
+      "width": 192,
+      "height": 160,
+      "frames": 1,
+      "anchorPixels": [
+        96,
+        158
+      ],
+      "collisionFootprintPixels": [
+        7,
+        146,
+        177,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "roof-left",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/roof-left-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        80,
+        362,
+        350
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "roof-repeat",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/roof-repeat-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        362,
+        80,
+        724,
+        350
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "roof-right",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/roof-right-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        724,
+        80,
+        1086,
+        350
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "roof-ridge",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/roof-ridge-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        1086,
+        140,
+        1448,
+        270
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        23,
+        28,
+        7
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "eave-left",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/eave-left-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        440,
+        362,
+        590
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        19,
+        28,
+        11
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "eave-repeat",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/eave-repeat-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        362,
+        440,
+        724,
+        590
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        20,
+        28,
+        10
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "eave-right",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/eave-right-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        724,
+        440,
+        1086,
+        590
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        19,
+        28,
+        11
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "chimney",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/chimney-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        1086,
+        370,
+        1448,
+        640
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        6,
+        18,
+        20,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "front-door-closed",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/front-door-closed-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        640,
+        362,
+        1030
+      ],
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "collisionFootprintPixels": [
+        2,
+        50,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "front-door-open",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/front-door-open-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        362,
+        640,
+        724,
+        1030
+      ],
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "collisionFootprintPixels": [
+        2,
+        50,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "window-cream",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/window-cream-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        724,
+        700,
+        1086,
+        975
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        18,
+        25,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "window-shutter",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/window-shutter-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/exterior-modules-catalog-v1-source.png",
+      "sourceRect": [
+        1086,
+        700,
+        1448,
+        975
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "mailbox",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/mailbox-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        6,
+        18,
+        19,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "house-sign",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/house-sign-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        362,
+        0,
+        724,
+        362
+      ],
+      "width": 128,
+      "height": 128,
+      "frames": 1,
+      "anchorPixels": [
+        64,
+        126
+      ],
+      "collisionFootprintPixels": [
+        2,
+        114,
+        124,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "flowerpot",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/flowerpot-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        724,
+        0,
+        1086,
+        362
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        18,
+        26,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "garden-fence-straight",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/garden-fence-straight-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        1086,
+        0,
+        1448,
+        362
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "garden-fence-corner",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/garden-fence-corner-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        362,
+        362,
+        724
+      ],
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "collisionFootprintPixels": [
+        2,
+        50,
+        60,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "garden-fence-end",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/garden-fence-end-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        362,
+        362,
+        724,
+        724
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        5,
+        18,
+        22,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "garden-gate-open",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/garden-gate-open-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        724,
+        362,
+        1086,
+        724
+      ],
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "collisionFootprintPixels": [
+        2,
+        50,
+        60,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "outdoor-bench",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/outdoor-bench-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        1086,
+        362,
+        1448,
+        724
+      ],
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "collisionFootprintPixels": [
+        2,
+        50,
+        60,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "path-straight",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/path-straight-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        0,
+        724,
+        362,
+        1086
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "path-corner",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/path-corner-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        362,
+        724,
+        724,
+        1086
+      ],
+      "width": 32,
+      "height": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "collisionFootprintPixels": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "garden-lamp",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/garden-lamp-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        724,
+        724,
+        1086,
+        1086
+      ],
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "collisionFootprintPixels": [
+        2,
+        50,
+        28,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    },
+    {
+      "id": "outdoor-feeding-station",
+      "category": "exterior",
+      "file": "/assets/game/housing/exteriors/outdoor-feeding-station-catalog-v1.png",
+      "source": "/assets/game/housing/exteriors/garden-props-catalog-v1-source.png",
+      "sourceRect": [
+        1086,
+        724,
+        1448,
+        1086
+      ],
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "collisionFootprintPixels": [
+        2,
+        50,
+        60,
+        12
+      ],
+      "collisionStatus": "proposed; not engine verified",
+      "productionReady": false,
+      "reviewStatus": "native style/alpha/dimension review; assembly and placement pending"
+    }
+  ],
+  "sourcePromptManifest": "/assets/game/housing/references/remaining-root-sources.json"
+}

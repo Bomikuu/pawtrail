@@ -1,0 +1,541 @@
+{
+  "version": 1,
+  "appearances": [
+    {
+      "id": "rescuer",
+      "name": "Trail rescuer",
+      "kind": "rescuer",
+      "status": "live",
+      "description": "The approved brown-haired trail rescuer.",
+      "colors": {},
+      "accessories": {}
+    },
+    {
+      "id": "orange_tabby",
+      "name": "Orange tabby",
+      "kind": "orange-tabby",
+      "status": "live",
+      "description": "Detailed orange mackerel tabby with forehead M, cheek lines, dorsal stripes, ringed tail and shared feline actions.",
+      "colors": {},
+      "accessories": {},
+      "cat": {
+        "breed": "domestic",
+        "pattern": "mackerel",
+        "tail": "long"
+      },
+      "frame": {
+        "width": 64,
+        "height": 64
+      }
+    },
+    {
+      "id": "rowan-rescuer",
+      "name": "Rowan",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "Copper-red hair, dark glasses and a moss-green jacket, with a small backpack and slate shorts.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-provided RPG sprite-sheet image",
+        "brief": "The owner selected red hair, glasses and a green jacket. The reference guides pixel density, readable silhouettes and outlines."
+      },
+      "colors": {
+        "hair": "#b85d3f",
+        "hairLight": "#e79554",
+        "hairShade": "#6f352e",
+        "hairSheen": "#ffc584",
+        "shirt": "#e9d9b1",
+        "shirtDark": "#355b48",
+        "shirtLight": "#a0b885",
+        "jacket": "#4f7350",
+        "jacketLight": "#86a16d",
+        "shorts": "#465763",
+        "shortsLight": "#657685",
+        "shortsDark": "#2f3b4b",
+        "jacketDark": "#35513b",
+        "mouth": "#56372c"
+      },
+      "accessories": {
+        "glasses": true
+      }
+    },
+    {
+      "id": "rowan-spiky",
+      "name": "Spiky Rowan",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "Tall, angular golden hair with individual pointed clumps. The original green vest and backpack keep the silhouette comparison clear.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-provided RPG sprite-sheet image",
+        "brief": "The owner requested actual silhouette changes: spiky hair, hats, a hood and held gear. The existing image guides pixel-art style; this is an original modular appearance."
+      },
+      "colors": {
+        "hair": "#d6a742",
+        "hairLight": "#f0cc69",
+        "hairShade": "#9a6b32",
+        "hairSheen": "#ffe49a",
+        "shirt": "#e9d9b1",
+        "shirtDark": "#355b48",
+        "shirtLight": "#a0b885",
+        "jacket": "#4f7350",
+        "jacketLight": "#86a16d",
+        "shorts": "#465763",
+        "shortsLight": "#657685",
+        "shortsDark": "#2f3b4b",
+        "jacketDark": "#35513b",
+        "mouth": "#56372c"
+      },
+      "accessories": {
+        "glasses": true
+      },
+      "parts": {
+        "hair": "spiky",
+        "headwear": "none",
+        "outfit": "vest",
+        "legs": "shorts",
+        "backpack": true,
+        "held": "none"
+      },
+      "frame": {
+        "width": 48,
+        "height": 64
+      },
+      "headHeight": 49
+    },
+    {
+      "id": "rowan-ranger",
+      "name": "Ranger Rowan",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "A broad explorer hat, a layered green tunic, full trousers and a silver sword held in the right hand. The sword is sheathed for care gestures.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-provided RPG sprite-sheet image",
+        "brief": "The owner requested actual silhouette changes: spiky hair, hats, a hood and held gear. The existing image guides pixel-art style; this is an original modular appearance."
+      },
+      "colors": {
+        "hair": "#b85d3f",
+        "hairLight": "#e79554",
+        "hairShade": "#6f352e",
+        "hairSheen": "#ffc584",
+        "shirt": "#e9d9b1",
+        "shirtDark": "#355b48",
+        "shirtLight": "#a0b885",
+        "jacket": "#4f7350",
+        "jacketLight": "#86a16d",
+        "shorts": "#465763",
+        "shortsLight": "#657685",
+        "shortsDark": "#2f3b4b",
+        "jacketDark": "#35513b",
+        "mouth": "#56372c"
+      },
+      "accessories": {
+        "glasses": true
+      },
+      "parts": {
+        "hair": "cropped",
+        "headwear": "wide-brim",
+        "outfit": "tunic",
+        "legs": "trousers",
+        "backpack": false,
+        "held": "sword"
+      },
+      "frame": {
+        "width": 48,
+        "height": 64
+      },
+      "headHeight": 44
+    },
+    {
+      "id": "rowan-hood",
+      "name": "Hooded Rowan",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "An open, folded hood around the face and a long split coat. Separate coat panels follow the legs, with full trousers underneath.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-provided RPG sprite-sheet image",
+        "brief": "The owner requested actual silhouette changes: spiky hair, hats, a hood and held gear. The existing image guides pixel-art style; this is an original modular appearance."
+      },
+      "colors": {
+        "hair": "#b85d3f",
+        "hairLight": "#e79554",
+        "hairShade": "#6f352e",
+        "hairSheen": "#ffc584",
+        "shirt": "#e9d9b1",
+        "shirtDark": "#355b48",
+        "shirtLight": "#a0b885",
+        "jacket": "#4f7350",
+        "jacketLight": "#86a16d",
+        "shorts": "#465763",
+        "shortsLight": "#657685",
+        "shortsDark": "#2f3b4b",
+        "jacketDark": "#35513b",
+        "mouth": "#56372c"
+      },
+      "accessories": {
+        "glasses": true
+      },
+      "parts": {
+        "hair": "cropped",
+        "headwear": "hood",
+        "outfit": "coat",
+        "legs": "trousers",
+        "backpack": false,
+        "held": "none"
+      },
+      "frame": {
+        "width": 48,
+        "height": 64
+      },
+      "headHeight": 41
+    },
+    {
+      "id": "aurora-angel",
+      "name": "Aurora Angel",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "A feminine angel with waist-length honey-blonde hair, a flowing ivory-and-lilac gown, layered white feathered wings and a floating gold halo.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-provided RPG style image and angel brief",
+        "brief": "The owner requested a clearly feminine character with long hair, a gown and elaborate angel wings. The existing image guides the pixel-art style; colors and halo are original design choices."
+      },
+      "colors": {
+        "hair": "#b87a48",
+        "hairLight": "#e4b36c",
+        "hairShade": "#76482d",
+        "hairSheen": "#ffe0a6",
+        "skin": "#efbd96",
+        "skinShadow": "#c78f76",
+        "skinLight": "#f6d1a7",
+        "shirt": "#f1e8ee",
+        "shirtLight": "#fff5f7",
+        "shirtDark": "#aca2c5",
+        "jacket": "#e9e1f4",
+        "jacketLight": "#fff5f7",
+        "jacketDark": "#aca2c5",
+        "shorts": "#e9e1f4",
+        "shortsLight": "#fff5f7",
+        "shortsDark": "#aca2c5",
+        "shoe": "#b280ba",
+        "mouth": "#754536",
+        "cream": "#fff3e0"
+      },
+      "accessories": {
+        "glasses": false
+      },
+      "parts": {
+        "hair": "long",
+        "headwear": "halo",
+        "outfit": "gown",
+        "legs": "shorts",
+        "backpack": false,
+        "held": "none",
+        "wings": "feathered",
+        "face": "soft"
+      },
+      "frame": {
+        "width": 64,
+        "height": 72
+      },
+      "headHeight": 47
+    },
+    {
+      "id": "goku",
+      "name": "Goku",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "Classic black swept spikes, an orange martial-arts gi, blue undershirt, sash, wristbands and boots. Shared actions include a braced power-up pose.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-provided classic RPG sprite reference; named character and astronaut requested in chat",
+        "brief": "Owner explicitly requested Goku and powering up. Classic black-haired orange-and-blue gi interpretation; no new appearance photo was supplied. Preserve the established pixel density, warm outlines and upper-left shading."
+      },
+      "parts": {
+        "hair": "hero-spikes",
+        "headwear": "none",
+        "outfit": "gi",
+        "legs": "trousers",
+        "backpack": false,
+        "held": "none",
+        "wings": "none",
+        "face": "default"
+      },
+      "frame": {
+        "width": 64,
+        "height": 80
+      },
+      "headHeight": 50,
+      "colors": {
+        "hair": "#24232b",
+        "hairShade": "#14141c",
+        "hairLight": "#414151",
+        "hairSheen": "#656579",
+        "skin": "#edb080",
+        "skinShadow": "#be7b59",
+        "skinLight": "#ffd0a0",
+        "shirt": "#31558f",
+        "shirtDark": "#203c70",
+        "shirtLight": "#5b80b3",
+        "jacket": "#ee8c36",
+        "jacketDark": "#bc531e",
+        "jacketLight": "#ffbc61",
+        "shorts": "#ee8c36",
+        "shortsDark": "#bc531e",
+        "shortsLight": "#ffb354",
+        "shoe": "#25487e",
+        "mouth": "#613c32"
+      },
+      "accessories": {
+        "glasses": false
+      }
+    },
+    {
+      "id": "astronaut",
+      "name": "Astronaut",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "White padded spacesuit, a rounded sealed helmet with a reflective gold visor, articulated gloves, thick boots and an oxygen pack with tanks and vents.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-provided classic RPG sprite reference; named character and astronaut requested in chat",
+        "brief": "Owner requested an astronaut. Assumed a white EVA-style suit, warm gold visor, slate hardware and orange mission accents, interpreted in the approved cozy RPG proportions rather than photorealistic anatomy."
+      },
+      "parts": {
+        "hair": "cropped",
+        "headwear": "space-helmet",
+        "outfit": "spacesuit",
+        "legs": "trousers",
+        "backpack": true,
+        "held": "none",
+        "wings": "none",
+        "face": "default"
+      },
+      "frame": {
+        "width": 64,
+        "height": 80
+      },
+      "headHeight": 43,
+      "colors": {
+        "jacket": "#e2e5df",
+        "jacketLight": "#fff4df",
+        "jacketDark": "#a0afb6",
+        "shorts": "#dce1df",
+        "shortsLight": "#f8f3df",
+        "shortsDark": "#9aaab1",
+        "shirt": "#355969",
+        "shirtDark": "#273c4f",
+        "shirtLight": "#7bafbd",
+        "shoe": "#263b4b",
+        "hat": "#d3a24c",
+        "hatBand": "#936134",
+        "gold": "#f9d47c",
+        "metal": "#b8c7cb",
+        "metalShade": "#617987",
+        "backpack": "#c8d0cd",
+        "backpackLight": "#eef0df",
+        "backpackDark": "#879ca5",
+        "orange": "#e48248",
+        "cream": "#fff2d9",
+        "creamShadow": "#d5c4a3"
+      },
+      "accessories": {
+        "glasses": false
+      }
+    },
+    {
+      "kind": "orange-tabby",
+      "status": "preview",
+      "frame": {
+        "width": 64,
+        "height": 64
+      },
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-approved PawTrail pixel actor style",
+        "brief": "Original modular cat designs in the established cozy native pixel style; breed traits are artistic presets, not identity evidence."
+      },
+      "colors": {},
+      "accessories": {},
+      "id": "tabby-scout",
+      "name": "Tabby scout",
+      "description": "Bold mackerel stripes, ringed long tail, cap, little boots and bell collar.",
+      "cat": {
+        "breed": "domestic",
+        "pattern": "mackerel",
+        "tail": "long",
+        "tailMotion": "upright",
+        "hat": "cap",
+        "shoes": "boots",
+        "collar": "bell"
+      }
+    },
+    {
+      "kind": "orange-tabby",
+      "status": "preview",
+      "frame": {
+        "width": 64,
+        "height": 64
+      },
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-approved PawTrail pixel actor style",
+        "brief": "Original modular cat designs in the established cozy native pixel style; breed traits are artistic presets, not identity evidence."
+      },
+      "colors": {},
+      "accessories": {},
+      "id": "persian-cloud",
+      "name": "Persian cloud",
+      "description": "Rounded flat face, cheek fluff, thick chest ruff and plume tail, with a flower crown.",
+      "cat": {
+        "breed": "persian",
+        "pattern": "solid",
+        "fur": "long",
+        "tail": "plume",
+        "hat": "flower"
+      }
+    },
+    {
+      "kind": "orange-tabby",
+      "status": "preview",
+      "frame": {
+        "width": 64,
+        "height": 64
+      },
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-approved PawTrail pixel actor style",
+        "brief": "Original modular cat designs in the established cozy native pixel style; breed traits are artistic presets, not identity evidence."
+      },
+      "colors": {},
+      "accessories": {},
+      "id": "siamese-sky",
+      "name": "Siamese sky",
+      "description": "Slender seal-point Siamese with blue eyes, dark ears and paws, feathered wings and a bell collar.",
+      "cat": {
+        "breed": "siamese",
+        "pattern": "colorpoint",
+        "fur": "short",
+        "tail": "long",
+        "wings": "feathered",
+        "collar": "bell"
+      }
+    },
+    {
+      "kind": "orange-tabby",
+      "status": "preview",
+      "frame": {
+        "width": 64,
+        "height": 64
+      },
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/classic-rpg-style.webp",
+        "role": "style",
+        "source": "Owner-approved PawTrail pixel actor style",
+        "brief": "Original modular cat designs in the established cozy native pixel style; breed traits are artistic presets, not identity evidence."
+      },
+      "colors": {
+        "orange": "#929a9b",
+        "furLight": "#c9cdca",
+        "stripe": "#414b50",
+        "cream": "#eee5d3"
+      },
+      "accessories": {},
+      "id": "bobtail-witch",
+      "name": "Bobtail witch",
+      "description": "Spotted bobtail with a short expressive tail, witch hat, tiny boots and bat wings.",
+      "cat": {
+        "breed": "bobtail",
+        "pattern": "spotted",
+        "tail": "bobtail",
+        "tailMotion": "swish",
+        "hat": "witch",
+        "shoes": "boots",
+        "wings": "bat"
+      }
+    },
+    {
+      "id": "amber-outrider",
+      "name": "Amber",
+      "kind": "rescuer",
+      "status": "preview",
+      "description": "Reference-guided outrider: long chestnut hair, bronze forehead goggles, sculpted red rabbit ribbon, cropped scarlet jacket, ivory and gold bodice, burgundy shorts, tall boots and hip pouch. Refined cel dialogue portrait.",
+      "reference": {
+        "file": "/pawtrail-game/actor-studio/references/amber-outrider.webp",
+        "role": "appearance",
+        "source": "Owner-provided Amber illustration, 2026-11-10",
+        "brief": "Preserve visible hair, red rabbit-ear bow, goggles, amber eyes, red/gold jacket, white bodice, shorts, gloves and hip satchel. Feet are cropped; boot soles follow the existing rig. No weapon or combat action inferred."
+      },
+      "parts": {
+        "hair": "long",
+        "headwear": "outrider-bow",
+        "outfit": "outrider",
+        "legs": "shorts",
+        "backpack": false,
+        "held": "none",
+        "wings": "none",
+        "face": "soft"
+      },
+      "colors": {
+        "ink": "#2b2027",
+        "hair": "#62463d",
+        "hairLight": "#8e6751",
+        "hairShade": "#362b30",
+        "hairSheen": "#bd9170",
+        "skin": "#f2c4a1",
+        "skinShadow": "#cf947e",
+        "skinLight": "#ffe4c3",
+        "shirt": "#f5e7cf",
+        "shirtLight": "#fff9e8",
+        "shirtDark": "#cbb69b",
+        "jacket": "#bf2e35",
+        "jacketLight": "#ed5949",
+        "jacketDark": "#872435",
+        "shorts": "#692b3d",
+        "shortsLight": "#9a3b4d",
+        "shortsDark": "#342735",
+        "shoe": "#41363d",
+        "cream": "#fff0d9",
+        "creamShadow": "#cfb787",
+        "gold": "#d1aa62",
+        "ribbon": "#d83235",
+        "hat": "#c9a16b",
+        "hatBand": "#6f4a33",
+        "metal": "#ad8246",
+        "metalShade": "#6c462c",
+        "leather": "#6e4936",
+        "mouth": "#70413c",
+        "blush": "#d88b83"
+      },
+      "face": {
+        "leftEye": "#d98d34",
+        "rightEye": "#d98d34",
+        "nose": "#cf947e",
+        "marking": "#362b30"
+      },
+      "accessories": {
+        "glasses": false,
+        "facialHair": "none",
+        "faceMarking": "none"
+      },
+      "frame": {
+        "width": 64,
+        "height": 80
+      },
+      "headHeight": 55,
+      "portraitCollection": "amber-refined-cel"
+    }
+  ]
+}

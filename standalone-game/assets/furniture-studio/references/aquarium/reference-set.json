@@ -1,0 +1,116 @@
+{
+  "item": "aquarium",
+  "toolMode": "built-in image_gen",
+  "canonicalFront": "public/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+  "originalPrompt": "turnaround-prompt.txt",
+  "calibrationPrompt": "calibration-prompt.txt",
+  "selectedSheet": "turnaround-v2.png",
+  "sha256": "26cd529db0ebca3acac75686d7466e081b0733e56b99ab85437a255ebf63df38",
+  "cellOrder": [
+    "front",
+    "left-profile",
+    "back",
+    "right-profile",
+    "front-three-quarter",
+    "rear-three-quarter"
+  ],
+  "review": {
+    "state": "explicit_yes",
+    "responseWindowSeconds": 60,
+    "shownAt": "2026-11-09T13:17:55.407267+00:00",
+    "default": "Proceed with selected 2D design after no response; not affirmative approval",
+    "response": "Good enough \u2014 proceed to 3D",
+    "recordedAt": "2026-11-09T13:20:15.066758+00:00"
+  },
+  "nativeImport": "public/pawtrail-game/furniture-references/aquarium/27563ecfd37c",
+  "technicalReview": {
+    "alpha": "Raw tool output retains a halo; native import removes it with alpha224 and component isolation.",
+    "scale": 0.21634615384615385,
+    "findings": [
+      "Two source fish, plain cabinet rear and four corner feet retained. Canonical source has four front compartments, which override generated two-door fronts.",
+      "Profiles and three-quarter cameras are approximate and recorded explicitly.",
+      "Source front and source fish remain the canonical identity artwork."
+    ]
+  },
+  "implementation": {
+    "revision": "31b060873773",
+    "source": "src/game/furniture/aquarium.ts",
+    "manifest": "assets/furniture-studio/exports/aquarium/manifest.json",
+    "sourceGlb": "assets/furniture-studio/exports/aquarium/source-model.glb",
+    "nativeFacings": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "authoringReviewFacings": [
+      45,
+      135
+    ],
+    "motionPhasesPerFacing": 9,
+    "styleIds": [
+      "sage",
+      "terracotta",
+      "oat"
+    ],
+    "sourceAnchor": [
+      48,
+      60
+    ],
+    "pivot": "center of floor footprint; depth/2 shift applied once",
+    "profileCamera": {
+      "pitchDegrees": 8,
+      "blend": "sin(yaw)^2",
+      "actorCamera": "native"
+    },
+    "actorContact": "solid cabinet/hood footprint with approach; no seating socket",
+    "preserved": [
+      "original source PNG",
+      "four original front compartments",
+      "two source-painted fish",
+      "item/style IDs, price and construction recipe"
+    ],
+    "representation": "closed structural hood/cabinet/feet with illustrated layered planting and independently animated crossed fish profiles",
+    "installedTo": [
+      "standalone game generated registry and frontend catalog",
+      "local housing service catalog",
+      "main app scoped furniture code and matching aquarium assets/catalog record"
+    ],
+    "review": {
+      "date": "2026-11-09T13:50:51.608160+00:00",
+      "browser": "Firefox",
+      "inspected": [
+        "four native facings and matching source/generated references",
+        "45/135 authoring renders",
+        "fish motion frames and creator playback/pause",
+        "Honey oak, Walnut, Pale oak and custom #7f8f81",
+        "shared creator actor standing nearby",
+        "above-item rotate control",
+        "creator to comparison navigation",
+        "comparison collision overlay"
+      ],
+      "fixed": "Main-app mirror ASI boundary joined patch return with following parenthesized material assignment; changed to direct typed mesh material assignments and kept renderer diagnostics.",
+      "evidence": [
+        "output/playwright/aquarium-turnaround-review.png",
+        "output/playwright/aquarium-three-quarter-review.png",
+        "output/playwright/aquarium-motion-review.png",
+        "output/playwright/aquarium-creator-front.png",
+        "output/playwright/aquarium-creator-profile.png",
+        "output/playwright/aquarium-creator-rear.png",
+        "output/playwright/aquarium-creator-pale-profile.png",
+        "output/playwright/aquarium-creator-actor.png",
+        "output/playwright/aquarium-creator-swimming.png",
+        "output/playwright/aquarium-creator-custom.png",
+        "output/playwright/aquarium-creator-walnut.png",
+        "output/playwright/aquarium-comparison-collision.png"
+      ],
+      "limitations": [
+        "Profiles remain interpretations: the side hood is boxier than the generated drawing.",
+        "Fish/foliage are illustrated layers, not fully sculpted contents.",
+        "No exact pixel match claimed for the centered multi-angle model.",
+        "Authenticated placement, care rewards and construction transactions were not exercised.",
+        "No automated tests, checks or builds were run."
+      ]
+    }
+  }
+}

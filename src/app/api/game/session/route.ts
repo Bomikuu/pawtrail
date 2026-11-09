@@ -60,24 +60,55 @@ export async function POST(request: Request) {
   }
   try {
     if (new URL(request.url).searchParams.get('demo') === '1') {
-      if (process.env.NODE_ENV === 'production' || getApiConfig().mode !== 'mock')
-        return Response.json({ detail: 'The guest sample neighborhood is available only in local demo mode.' }, { status: 403 })
+      if (
+        process.env.NODE_ENV === 'production' ||
+        getApiConfig().mode !== 'mock'
+      )
+        return Response.json(
+          {
+            detail:
+              'The guest sample neighborhood is available only in local demo mode.',
+          },
+          { status: 403 },
+        )
       const jar = await cookies()
       let visitor = jar.get('pawtrail-map-guest')?.value
       if (!visitor || !/^[0-9a-f-]{36}$/.test(visitor)) {
         visitor = randomUUID()
-        jar.set('pawtrail-map-guest', visitor, { httpOnly: true, sameSite: 'strict', path: '/', maxAge: 86400 })
+        jar.set('pawtrail-map-guest', visitor, {
+          httpOnly: true,
+          sameSite: 'strict',
+          path: '/',
+          maxAge: 86400,
+        })
       }
-      const payload = { aud: 'pawtrail-housing', id: 'demo:map-guest:' + visitor,
-        username: 'demo-visitor-' + visitor.slice(0, 8), name: 'Demo Visitor',
-        avatar: '/pawtrail-game/game-assets/dialogue-portraits/male-blonde-scout.png',
-        sample: true, demoVisitor: true, pets: [], exp: Math.floor(Date.now() / 1000) + 120 }
+      const payload = {
+        aud: 'pawtrail-housing',
+        id: 'demo:map-guest:' + visitor,
+        username: 'demo-visitor-' + visitor.slice(0, 8),
+        name: 'Demo Visitor',
+        avatar:
+          '/pawtrail-game/game-assets/dialogue-portraits/male-blonde-scout.png',
+        sample: true,
+        demoVisitor: true,
+        pets: [],
+        exp: Math.floor(Date.now() / 1000) + 120,
+      }
       const encoded = Buffer.from(JSON.stringify(payload)).toString('base64url')
-      const signature = createHmac('sha256', await secret()).update(encoded).digest('base64url')
-      return Response.json({ ticket: encoded + '.' + signature, expires: payload.exp,
-        backend: process.env.NEXT_PUBLIC_HOUSING_URL || 'http://127.0.0.1:8001',
-        petImportNote: 'Demo visit: fictional hosts and animals. Your platform account is unchanged.' },
-        { headers: { 'Cache-Control': 'no-store' } })
+      const signature = createHmac('sha256', await secret())
+        .update(encoded)
+        .digest('base64url')
+      return Response.json(
+        {
+          ticket: encoded + '.' + signature,
+          expires: payload.exp,
+          backend:
+            process.env.NEXT_PUBLIC_HOUSING_URL || 'http://127.0.0.1:8001',
+          petImportNote:
+            'Demo visit: fictional hosts and animals. Your platform account is unchanged.',
+        },
+        { headers: { 'Cache-Control': 'no-store' } },
+      )
     }
     const api = await getServerApi(),
       session = await api.auth.session(),
@@ -112,10 +143,40 @@ export async function POST(request: Request) {
     const canResolveOwner =
       config.mode === 'mock'
         ? !!ownedIds
-        : !actor.roles.includes('shelter_staff')
+        : !actor.roles.includes('shelter_staff') // Social metadata records actual caretakers; identity contribution alone does not.
     const pets = []
+    const mapPets = []
     if (canResolveOwner) {
       const page = await api.animals.list({ scope: 'mine', limit: 50 })
+      const visible = page.items.length
+        ? await api.animals
+            .list({
+              scope: 'public',
+              ids: page.items.map((a) => a.id),
+              limit: 50,
+            })
+            .catch(() => ({ items: [] }))
+        : { items: [] }
+      const publicIds = new Set(visible.items.map((a) => a.id))
+      for (const a of page.items.filter(
+        (a) =>
+          a.status === 'owned' &&
+          (!ownedIds || ownedIds.has(a.id)) &&
+          publicIds.has(a.id) &&
+          (a.species === 'cat' || a.species === 'dog'),
+      )) {
+        mapPets.push({
+          id: a.id,
+          slug: a.slug,
+          name: a.name.slice(0, 100),
+          species: a.species,
+          photo:
+            a.photo && !a.photo.sensitive
+              ? { url: a.photo.url, alt: a.photo.alt }
+              : null,
+          mapVisible: true,
+        })
+      }
       for (const a of page.items
         .filter(
           (a) =>
@@ -142,10 +203,12 @@ export async function POST(request: Request) {
               : null,
           sprite: catSprite(p.appearance),
           sample: p.provenance.kind !== 'real',
+          mapVisible: publicIds.has(p.id),
         })
       }
     }
     const payload = {
+      mapReviewer: actor.roles.includes('moderator'),
       aud: 'pawtrail-housing',
       id: (session.mode === 'mock' ? 'demo:' : 'real:') + actor.id,
       username: actor.username,
@@ -153,6 +216,7 @@ export async function POST(request: Request) {
       avatar: actor.avatar?.url || '',
       sample: session.mode === 'mock',
       pets,
+      mapPets,
       exp: Math.floor(Date.now() / 1000) + 120,
     }
     const encoded = Buffer.from(JSON.stringify(payload)).toString('base64url')

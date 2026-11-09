@@ -1,0 +1,54 @@
+{
+  "mode": "built-in image_gen",
+  "reference": "assets/character-colors-v1/reference-contact.png",
+  "layout": {
+    "width": 1152,
+    "height": 1584,
+    "spriteColumns": 12,
+    "spriteRows": 9,
+    "portraitNativeRect": [
+      144,
+      432,
+      240,
+      528
+    ]
+  },
+  "variants": [
+    {
+      "id": "blonde-rescuer",
+      "hair": "warm golden BLONDE hair: honey-gold midtones, pale butter highlights, caramel shadows. Clearly blonde, never brown.",
+      "colors": [
+        "#fff1bf",
+        "#f2d17c",
+        "#d9ab52",
+        "#ab7936",
+        "#6d492b"
+      ],
+      "prompt": "Use case: precise-object-edit.\nAsset type: PawTrail selectable character color variant, complete animation atlas plus matching portrait.\nInput image 1 is the EDIT TARGET, not a composition suggestion. Change ONLY the character's hair color to warm golden BLONDE hair: honey-gold midtones, pale butter highlights, caramel shadows. Clearly blonde, never brown.\nApply the same hair ramp consistently to ALL 108 small sprite poses in the top grid AND the single large bust portrait at the bottom. Hair includes fringe, crown, side locks, back of head and ponytail.\nPreserve EVERY pose, silhouette, face, round dark glasses, skin color, sage overshirt, cream top, rust shorts, ochre backpack, brown shoes and props exactly. Do not recolor eyebrows, clothing, glasses, skin, furniture or food. Keep hair outlines dark but tint hair shading toward the requested color. Do not change head size or anatomy.\nKeep the image geometry EXACTLY: 1152x1584 canvas. Top region y0..1296 contains 12 columns x9 rows of small sprites, every sprite in its original cell. Bottom region contains the existing single portrait in its original position. Preserve transparent empty space. Do not rearrange, remove, duplicate, add or crop any sprite. Do not move sprites within cells.\nStyle: same crisp square pixels with no antialiasing or new details; pixel art color edit, not a redraw. Upper-left lighting unchanged. Genuine transparent background with alpha. NO background, grid, text, labels, frame, border, ground shadow or watermark.\nRequested hair palette: #fff1bf, #f2d17c, #d9ab52, #ab7936, #6d492b."
+    },
+    {
+      "id": "violet-rescuer",
+      "hair": "soft vivid VIOLET hair: lavender highlights, purple midtones, plum shadows. Clearly purple on every pose, never brown.",
+      "colors": [
+        "#d8b8f2",
+        "#b38ade",
+        "#8a5bb8",
+        "#603c89",
+        "#3c285b"
+      ],
+      "prompt": "Use case: precise-object-edit.\nAsset type: PawTrail selectable character color variant, complete animation atlas plus matching portrait.\nInput image 1 is the EDIT TARGET, not a composition suggestion. Change ONLY the character's hair color to soft vivid VIOLET hair: lavender highlights, purple midtones, plum shadows. Clearly purple on every pose, never brown.\nApply the same hair ramp consistently to ALL 108 small sprite poses in the top grid AND the single large bust portrait at the bottom. Hair includes fringe, crown, side locks, back of head and ponytail.\nPreserve EVERY pose, silhouette, face, round dark glasses, skin color, sage overshirt, cream top, rust shorts, ochre backpack, brown shoes and props exactly. Do not recolor eyebrows, clothing, glasses, skin, furniture or food. Keep hair outlines dark but tint hair shading toward the requested color. Do not change head size or anatomy.\nKeep the image geometry EXACTLY: 1152x1584 canvas. Top region y0..1296 contains 12 columns x9 rows of small sprites, every sprite in its original cell. Bottom region contains the existing single portrait in its original position. Preserve transparent empty space. Do not rearrange, remove, duplicate, add or crop any sprite. Do not move sprites within cells.\nStyle: same crisp square pixels with no antialiasing or new details; pixel art color edit, not a redraw. Upper-left lighting unchanged. Genuine transparent background with alpha. NO background, grid, text, labels, frame, border, ground shadow or watermark.\nRequested hair palette: #d8b8f2, #b38ade, #8a5bb8, #603c89, #3c285b."
+    },
+    {
+      "id": "red-rescuer",
+      "hair": "rich copper RED hair: ginger highlights, auburn midtones, deep reddish shadows. Clearly red/copper, never brown.",
+      "colors": [
+        "#f6bc83",
+        "#e99257",
+        "#c46139",
+        "#923d2c",
+        "#5b2927"
+      ],
+      "prompt": "Use case: precise-object-edit.\nAsset type: PawTrail selectable character color variant, complete animation atlas plus matching portrait.\nInput image 1 is the EDIT TARGET, not a composition suggestion. Change ONLY the character's hair color to rich copper RED hair: ginger highlights, auburn midtones, deep reddish shadows. Clearly red/copper, never brown.\nApply the same hair ramp consistently to ALL 108 small sprite poses in the top grid AND the single large bust portrait at the bottom. Hair includes fringe, crown, side locks, back of head and ponytail.\nPreserve EVERY pose, silhouette, face, round dark glasses, skin color, sage overshirt, cream top, rust shorts, ochre backpack, brown shoes and props exactly. Do not recolor eyebrows, clothing, glasses, skin, furniture or food. Keep hair outlines dark but tint hair shading toward the requested color. Do not change head size or anatomy.\nKeep the image geometry EXACTLY: 1152x1584 canvas. Top region y0..1296 contains 12 columns x9 rows of small sprites, every sprite in its original cell. Bottom region contains the existing single portrait in its original position. Preserve transparent empty space. Do not rearrange, remove, duplicate, add or crop any sprite. Do not move sprites within cells.\nStyle: same crisp square pixels with no antialiasing or new details; pixel art color edit, not a redraw. Upper-left lighting unchanged. Genuine transparent background with alpha. NO background, grid, text, labels, frame, border, ground shadow or watermark.\nRequested hair palette: #f6bc83, #e99257, #c46139, #923d2c, #5b2927."
+    }
+  ]
+}

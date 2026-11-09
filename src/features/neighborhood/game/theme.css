@@ -17,6 +17,9 @@ body[data-pawtrail-game] {
   --border: #dfd3bf;
   --input: #d1c2aa;
   --ring: #456746;
+  --teal: var(--foreground);
+  --radius: 0.5rem;
+  color: var(--foreground);
   overflow: hidden;
 }
 .pawtrail-game canvas {

@@ -223,7 +223,7 @@ export function PostCard({
       {!!post.linkedEntities.length && (
         <ul
           className={
-            'post-identities list-none p-0 flex flex-wrap gap-3 mb-4 text-sm [&_a]:text-[color:var(--teal)] [&_a]:font-semibold [&_a]:[text-underline-offset:4px] [&_small]:text-muted-foreground [.app-shell_&]:gap-1.5 [.app-shell_&]:[margin:0.75rem_0] [.app-shell_&]:items-center [.app-shell_&]:my-1.5 [.app-shell_&_a]:inline-flex [.app-shell_&_a]:items-center [.app-shell_&_a]:gap-1 [.app-shell_&_a]:rounded-[0.375rem] [.app-shell_&_a]:[padding:0.1875rem_0.5rem] [.app-shell_&_a]:bg-[#f0f5f2] [.app-shell_&_a]:no-underline [.app-shell_&_a]:text-xs [.app-shell_&_a]:min-h-11 [.app-shell_&_a:hover]:bg-[#dfede6]'
+            'post-identities list-none p-0 flex flex-wrap gap-3 mb-4 text-sm [&_a]:text-[color:var(--teal)] [&_a]:font-semibold [&_a]:[text-underline-offset:4px] [&_small]:text-muted-foreground [.app-shell_&]:gap-1.5 [.app-shell_&]:[margin:0.75rem_0] [.app-shell_&]:items-center [.app-shell_&]:my-1.5 [.app-shell_&_a]:inline-flex [.app-shell_&_a]:items-center [.app-shell_&_a]:gap-1 [.app-shell_&_a]:rounded-[0.375rem] [.app-shell_&_a]:[padding:0.1875rem_0.5rem] [.app-shell_&_a]:bg-muted [.app-shell_&_a]:no-underline [.app-shell_&_a]:text-xs [.app-shell_&_a]:min-h-11 [.app-shell_&_a:hover]:bg-accent'
           }
           aria-label="Connected stories"
         >
@@ -298,11 +298,13 @@ export function PostCard({
           if (detail) router.push('/community')
         }}
       />
-      <ParticipantFaces
-        people={post.participants ?? []}
-        count={post.participantCount}
-        href={`/community/${encodeURIComponent(post.id)}#discussion`}
-      />
+      {post.moderation === 'published' && (
+        <ParticipantFaces
+          people={post.participants ?? []}
+          count={post.participantCount}
+          href={`/community/${encodeURIComponent(post.id)}#discussion`}
+        />
+      )}
       <footer
         className={
           'post-footer text-muted-foreground flex justify-between flex-wrap gap-3 text-[0.8125rem] mt-3 [.app-shell_&]:mt-1 [.app-shell_&]:text-[0.6875rem] [.app-shell_&]:text-muted-foreground [.app-shell_&_a]:text-muted-foreground [.app-shell_&_a]:no-underline [.app-shell_&_a:hover]:text-[color:var(--teal)] [.app-shell_&_a:hover]:underline'

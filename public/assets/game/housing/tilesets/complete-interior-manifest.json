@@ -1,0 +1,2172 @@
+{
+  "assets": [
+    {
+      "id": "cream-north",
+      "file": "/assets/game/housing/tilesets/cream-north-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-west",
+      "file": "/assets/game/housing/tilesets/cream-west-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        32,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-east",
+      "file": "/assets/game/housing/tilesets/cream-east-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        64,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-south",
+      "file": "/assets/game/housing/tilesets/cream-south-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        96,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-fill",
+      "file": "/assets/game/housing/tilesets/cream-fill-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        128,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-nw",
+      "file": "/assets/game/housing/tilesets/cream-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        160,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-ne",
+      "file": "/assets/game/housing/tilesets/cream-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        192,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-sw",
+      "file": "/assets/game/housing/tilesets/cream-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        224,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-se",
+      "file": "/assets/game/housing/tilesets/cream-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        256,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-inner-nw",
+      "file": "/assets/game/housing/tilesets/cream-inner-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        288,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-inner-ne",
+      "file": "/assets/game/housing/tilesets/cream-inner-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        320,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-inner-sw",
+      "file": "/assets/game/housing/tilesets/cream-inner-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        352,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-inner-se",
+      "file": "/assets/game/housing/tilesets/cream-inner-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        384,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "cream-doorway",
+      "file": "/assets/game/housing/tilesets/cream-doorway-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        416,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-north",
+      "file": "/assets/game/housing/tilesets/sage-north-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        0,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-west",
+      "file": "/assets/game/housing/tilesets/sage-west-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        32,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-east",
+      "file": "/assets/game/housing/tilesets/sage-east-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        64,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-south",
+      "file": "/assets/game/housing/tilesets/sage-south-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        96,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-fill",
+      "file": "/assets/game/housing/tilesets/sage-fill-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        128,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-nw",
+      "file": "/assets/game/housing/tilesets/sage-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        160,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-ne",
+      "file": "/assets/game/housing/tilesets/sage-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        192,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-sw",
+      "file": "/assets/game/housing/tilesets/sage-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        224,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-se",
+      "file": "/assets/game/housing/tilesets/sage-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        256,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-inner-nw",
+      "file": "/assets/game/housing/tilesets/sage-inner-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        288,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-inner-ne",
+      "file": "/assets/game/housing/tilesets/sage-inner-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        320,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-inner-sw",
+      "file": "/assets/game/housing/tilesets/sage-inner-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        352,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-inner-se",
+      "file": "/assets/game/housing/tilesets/sage-inner-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        384,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "sage-doorway",
+      "file": "/assets/game/housing/tilesets/sage-doorway-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        416,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-north",
+      "file": "/assets/game/housing/tilesets/beige-north-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        0,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-west",
+      "file": "/assets/game/housing/tilesets/beige-west-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        32,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-east",
+      "file": "/assets/game/housing/tilesets/beige-east-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        64,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-south",
+      "file": "/assets/game/housing/tilesets/beige-south-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        96,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-fill",
+      "file": "/assets/game/housing/tilesets/beige-fill-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        128,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-nw",
+      "file": "/assets/game/housing/tilesets/beige-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        160,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-ne",
+      "file": "/assets/game/housing/tilesets/beige-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        192,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-sw",
+      "file": "/assets/game/housing/tilesets/beige-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        224,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-se",
+      "file": "/assets/game/housing/tilesets/beige-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        256,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-inner-nw",
+      "file": "/assets/game/housing/tilesets/beige-inner-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        288,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-inner-ne",
+      "file": "/assets/game/housing/tilesets/beige-inner-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        320,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-inner-sw",
+      "file": "/assets/game/housing/tilesets/beige-inner-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        352,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-inner-se",
+      "file": "/assets/game/housing/tilesets/beige-inner-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        384,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "beige-doorway",
+      "file": "/assets/game/housing/tilesets/beige-doorway-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        416,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-north",
+      "file": "/assets/game/housing/tilesets/blue-north-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        0,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-west",
+      "file": "/assets/game/housing/tilesets/blue-west-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        32,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-east",
+      "file": "/assets/game/housing/tilesets/blue-east-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        64,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-south",
+      "file": "/assets/game/housing/tilesets/blue-south-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        96,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-fill",
+      "file": "/assets/game/housing/tilesets/blue-fill-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        128,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-nw",
+      "file": "/assets/game/housing/tilesets/blue-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        160,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-ne",
+      "file": "/assets/game/housing/tilesets/blue-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        192,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-sw",
+      "file": "/assets/game/housing/tilesets/blue-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        224,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-se",
+      "file": "/assets/game/housing/tilesets/blue-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        256,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-inner-nw",
+      "file": "/assets/game/housing/tilesets/blue-inner-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        288,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-inner-ne",
+      "file": "/assets/game/housing/tilesets/blue-inner-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        320,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-inner-sw",
+      "file": "/assets/game/housing/tilesets/blue-inner-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        352,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-inner-se",
+      "file": "/assets/game/housing/tilesets/blue-inner-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        384,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "blue-doorway",
+      "file": "/assets/game/housing/tilesets/blue-doorway-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        416,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-north",
+      "file": "/assets/game/housing/tilesets/wood-north-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        0,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-west",
+      "file": "/assets/game/housing/tilesets/wood-west-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        32,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-east",
+      "file": "/assets/game/housing/tilesets/wood-east-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        64,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-south",
+      "file": "/assets/game/housing/tilesets/wood-south-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        96,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-fill",
+      "file": "/assets/game/housing/tilesets/wood-fill-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        128,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-nw",
+      "file": "/assets/game/housing/tilesets/wood-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        160,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-ne",
+      "file": "/assets/game/housing/tilesets/wood-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        192,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-sw",
+      "file": "/assets/game/housing/tilesets/wood-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        224,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-se",
+      "file": "/assets/game/housing/tilesets/wood-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        256,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-inner-nw",
+      "file": "/assets/game/housing/tilesets/wood-inner-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        288,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-inner-ne",
+      "file": "/assets/game/housing/tilesets/wood-inner-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        320,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-inner-sw",
+      "file": "/assets/game/housing/tilesets/wood-inner-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        352,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-inner-se",
+      "file": "/assets/game/housing/tilesets/wood-inner-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        384,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wood-doorway",
+      "file": "/assets/game/housing/tilesets/wood-doorway-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        416,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-north",
+      "file": "/assets/game/housing/tilesets/wallpaper-north-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        0,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-west",
+      "file": "/assets/game/housing/tilesets/wallpaper-west-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        32,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-east",
+      "file": "/assets/game/housing/tilesets/wallpaper-east-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        64,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-south",
+      "file": "/assets/game/housing/tilesets/wallpaper-south-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        96,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-fill",
+      "file": "/assets/game/housing/tilesets/wallpaper-fill-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        128,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-nw",
+      "file": "/assets/game/housing/tilesets/wallpaper-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        160,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-ne",
+      "file": "/assets/game/housing/tilesets/wallpaper-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        192,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-sw",
+      "file": "/assets/game/housing/tilesets/wallpaper-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        224,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-se",
+      "file": "/assets/game/housing/tilesets/wallpaper-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        256,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-inner-nw",
+      "file": "/assets/game/housing/tilesets/wallpaper-inner-nw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        288,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-inner-ne",
+      "file": "/assets/game/housing/tilesets/wallpaper-inner-ne-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        320,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-inner-sw",
+      "file": "/assets/game/housing/tilesets/wallpaper-inner-sw-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        352,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-inner-se",
+      "file": "/assets/game/housing/tilesets/wallpaper-inner-se-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        384,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "wallpaper-doorway",
+      "file": "/assets/game/housing/tilesets/wallpaper-doorway-modular-v2.png",
+      "width": 32,
+      "height": 32,
+      "source": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "type": "wall",
+      "anchorPixels": [
+        0,
+        0
+      ],
+      "productionReady": false,
+      "reviewStatus": "generated-art composition; native alpha/dimensions checked; visual map assembly review remains",
+      "atlasRect": [
+        416,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-north",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-north-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        0,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-south",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-south-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        32,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-east",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-east-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        64,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-west",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-west-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        96,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-nw",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-nw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        128,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-ne",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-ne-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        160,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-sw",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-sw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        192,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-carpet-a-se",
+      "file": "/assets/game/housing/tilesets/oak-carpet-a-se-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        224,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-north",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-north-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        256,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-south",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-south-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        288,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-east",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-east-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        320,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-west",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-west-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        352,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-nw",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-nw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        384,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-ne",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-ne-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        416,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-sw",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-sw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        0,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-ceramic-a-se",
+      "file": "/assets/game/housing/tilesets/oak-ceramic-a-se-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        32,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-north",
+      "file": "/assets/game/housing/tilesets/oak-stone-north-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        64,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-south",
+      "file": "/assets/game/housing/tilesets/oak-stone-south-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        96,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-east",
+      "file": "/assets/game/housing/tilesets/oak-stone-east-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        128,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-west",
+      "file": "/assets/game/housing/tilesets/oak-stone-west-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        160,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-nw",
+      "file": "/assets/game/housing/tilesets/oak-stone-nw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        192,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-ne",
+      "file": "/assets/game/housing/tilesets/oak-stone-ne-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        224,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-sw",
+      "file": "/assets/game/housing/tilesets/oak-stone-sw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        256,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-stone-se",
+      "file": "/assets/game/housing/tilesets/oak-stone-se-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        288,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-north",
+      "file": "/assets/game/housing/tilesets/oak-patterned-north-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        320,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-south",
+      "file": "/assets/game/housing/tilesets/oak-patterned-south-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        352,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-east",
+      "file": "/assets/game/housing/tilesets/oak-patterned-east-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        384,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-west",
+      "file": "/assets/game/housing/tilesets/oak-patterned-west-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        416,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-nw",
+      "file": "/assets/game/housing/tilesets/oak-patterned-nw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        0,
+        256,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-ne",
+      "file": "/assets/game/housing/tilesets/oak-patterned-ne-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        32,
+        256,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-sw",
+      "file": "/assets/game/housing/tilesets/oak-patterned-sw-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        64,
+        256,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "oak-patterned-se",
+      "file": "/assets/game/housing/tilesets/oak-patterned-se-transition-v2.png",
+      "width": 32,
+      "height": 32,
+      "type": "floor-transition",
+      "productionReady": false,
+      "reviewStatus": "native material blend; exact canonical floor edges retained; no automatic art approval",
+      "atlasRect": [
+        96,
+        256,
+        32,
+        32
+      ]
+    }
+  ],
+  "atlas": "/assets/game/housing/tilesets/modular-interiors-v2.png",
+  "existingAtlasManifest": "/assets/game/housing/tilesets/tilesets-first-batch.json",
+  "joinPolicy": "North pieces repeat horizontally; west/east pieces repeat vertically; corner edge pixels explicitly meet selected side strips. First-batch decorative architecture stays available separately.",
+  "limitations": [
+    "Derived native composition of generated artwork, not newly generated each wall corner.",
+    "Furniture wall occlusion/collision remains unverified in game.",
+    "Mixed material transitions intentionally show a material boundary; they are not a claim all arbitrary floor variants cross-tile seamlessly."
+  ]
+}

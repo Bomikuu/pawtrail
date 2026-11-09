@@ -15,57 +15,57 @@ colors:
   secondary-text: '#6B625B'
 typography:
   heading:
-    fontFamily: 'Nunito, sans-serif'
+    fontFamily: 'Saira Condensed, sans-serif'
     fontSize: '2rem'
     fontWeight: 700
     lineHeight: 1.2
   subheading:
-    fontFamily: 'Nunito, sans-serif'
+    fontFamily: 'Saira Condensed, sans-serif'
     fontSize: '1.5rem'
     fontWeight: 700
     lineHeight: 1.25
   body:
-    fontFamily: 'Inter, sans-serif'
+    fontFamily: 'Instrument Sans, sans-serif'
     fontSize: '1rem'
     fontWeight: 400
     lineHeight: 1.6
   navigation:
-    fontFamily: 'Inter, sans-serif'
+    fontFamily: 'Instrument Sans, sans-serif'
     fontSize: '0.9375rem'
     fontWeight: 400
     lineHeight: 1.4
   mobile-heading:
-    fontFamily: 'Nunito, sans-serif'
+    fontFamily: 'Saira Condensed, sans-serif'
     fontSize: '1.75rem'
     fontWeight: 700
     lineHeight: 1.2
   form-subheading:
-    fontFamily: 'Nunito, sans-serif'
+    fontFamily: 'Saira Condensed, sans-serif'
     fontSize: '1.25rem'
     fontWeight: 700
     lineHeight: 1.2
   section-title:
-    fontFamily: 'Nunito, sans-serif'
+    fontFamily: 'Saira Condensed, sans-serif'
     fontSize: '1.125rem'
     fontWeight: 700
     lineHeight: 1.3
   caption:
-    fontFamily: 'Inter, sans-serif'
+    fontFamily: 'Instrument Sans, sans-serif'
     fontSize: '0.875rem'
     fontWeight: 400
     lineHeight: 1.4
   status:
-    fontFamily: 'Inter, sans-serif'
+    fontFamily: 'Instrument Sans, sans-serif'
     fontSize: '0.8125rem'
     fontWeight: 600
     lineHeight: 1.6
   availability:
-    fontFamily: 'Inter, sans-serif'
+    fontFamily: 'Instrument Sans, sans-serif'
     fontSize: '0.75rem'
     fontWeight: 400
     lineHeight: 1.4
   mobile-navigation:
-    fontFamily: 'Inter, sans-serif'
+    fontFamily: 'Instrument Sans, sans-serif'
     fontSize: '0.6875rem'
     fontWeight: 400
     lineHeight: 1.4
@@ -120,7 +120,7 @@ components:
 
 The platform is a familiar, full-width social network for pets and their people. A light neutral canvas, white posts, orange actions, recognizable identities and generous photographs make the feed easy to scan. Pet stories remain connected to practical help. The management dashboard uses a distinct task-oriented shell, restrained teal navigation and a wide workspace.
 
-The user explicitly replaced the journal composition with a social layout comparable to X/Facebook, requested full viewport width and a separate management dashboard, and supplied a PawTrail illustration sheet. This supersedes the earlier journal layout. The code-first preference, Nunito/Inter type, orange identity, existing functionality and privacy boundaries remain. Tests and browser verification remain disabled by user instruction.
+The user explicitly replaced the journal composition with a social layout comparable to X/Facebook, requested full viewport width and a separate management dashboard, and supplied a PawTrail illustration sheet. This supersedes the earlier journal layout. The code-first preference, Saira Condensed/Instrument Sans type, orange identity, existing functionality and privacy boundaries remain. Tests and browser verification remain disabled by user instruction.
 
 **Key Characteristics:**
 
@@ -138,9 +138,9 @@ Teal supports links, focus, current navigation, and successful states. Green is 
 
 ## Typography
 
-Nunito headings and wordmark; Inter body, labels, controls, and data, with self-hosted Latin and Latin Extended variable fonts and sans-serif fallbacks. Body is 1rem/1.6. App headings are 2rem desktop and 1.75rem mobile; dialog/empty-state headings are 1.5rem. Navigation uses 0.9375rem/1.4. Mobile bottom labels use 0.6875rem while retaining 3.5rem targets. Long prose stays near 65–75ch. PHP amounts use tabular numerals and integer centavos.
+Saira Condensed headings and wordmark; Instrument Sans body, labels, controls, and data, with self-hosted Latin and Latin Extended fonts and sans-serif fallbacks. Body is 1rem/1.6. App headings are 2rem desktop and 1.75rem mobile; dialog/empty-state headings are 1.5rem. Navigation uses 0.9375rem/1.4. Mobile bottom labels use 0.6875rem while retaining 3.5rem targets. Long prose stays near 65–75ch. PHP amounts use tabular numerals and integer centavos.
 
-Marketing display typography uses 3.25–5.5rem on desktop and 3.25–4.5rem on mobile; marketing section headings use 1.85–2.6rem. Application workspaces use the same Nunito/Inter roles, compact data rows, story surfaces, native semantics, and responsive control spacing. Maps and charts are lazy islands, and adoption transitions honor reduced motion.
+Marketing display typography uses 3.25–5.5rem on desktop and 3.25–4.5rem on mobile; marketing section headings use 1.85–2.6rem. Application workspaces use the same Saira Condensed/Instrument Sans roles, compact data rows, story surfaces, native semantics, and responsive control spacing. Maps and charts are lazy islands, and adoption transitions honor reduced motion.
 
 ## Layout
 
@@ -152,7 +152,7 @@ The optional discovery rail appears when sufficient width is available. At the T
 
 Marketing and authentication retain their existing route-specific layouts. The redesign does not replace them or change data/permission rules.
 
-The later 6 November login update follows the owner's supplied two-column reference, with restrained Nunito headings, a cream canvas, a white shadcn form card and the supplied cat-and-dog illustration. The subsequent registration update uses a centered card in the same treatment, an avatar picker, responsive paired fields and inline community guidance, without a left illustration. The platform/management shells keep their layouts. See `.impeccable/surfaces/auth.md`, `docs/implementation/login-redesign.md` and `docs/implementation/register-redesign.md` for the route contracts, integration boundaries and source-only review status.
+The later 6 November login update follows the owner's supplied two-column reference, with restrained Saira Condensed headings, a cream canvas, a white shadcn form card and the supplied cat-and-dog illustration. The subsequent registration update uses a centered card in the same treatment, an avatar picker, responsive paired fields and inline community guidance, without a left illustration. The platform/management shells keep their layouts. See `.impeccable/surfaces/auth.md`, `docs/implementation/login-redesign.md` and `docs/implementation/register-redesign.md` for the route contracts, integration boundaries and source-only review status.
 
 ## Runtime token ownership
 
@@ -169,7 +169,7 @@ The later 6 November login update follows the owner's supplied two-column refere
 | Management/help       | `--teal`                            | `#0F766E`               | Focus, links, selected management navigation |
 | Scrollbar             | `--scroll-thumb` / `--scroll-track` | `#B7B4AE` / transparent | Global scrollable surfaces                   |
 
-Social headings use 26px Nunito; posts use 15px Inter and a readable text measure within the flexible feed. People use the owner's 30 illustrated portraits, selected in the profile form and rendered through `CommunityAvatar`. Stable record-based illustrations supply defaults for identifiable people; initials remain the anonymous/unavailable fallback. The controlled picker uses shared Buttons, visible selection, descriptive accessible names and a constrained scrolling grid. All 30 WebP files total approximately 151 KB; see `docs/assets/people-avatars.md`. Hover, focus, selected, disabled, loading, empty and error treatments reuse maintained components.
+Social headings use 26px Saira Condensed; posts use 15px Instrument Sans and a readable text measure within the flexible feed. People use the owner's 30 illustrated portraits, selected in the profile form and rendered through `CommunityAvatar`. Stable record-based illustrations supply defaults for identifiable people; initials remain the anonymous/unavailable fallback. The controlled picker uses shared Buttons, visible selection, descriptive accessible names and a constrained scrolling grid. All 30 WebP files total approximately 151 KB; see `docs/assets/people-avatars.md`. Hover, focus, selected, disabled, loading, empty and error treatments reuse maintained components.
 
 ## Elevation & Depth
 
@@ -232,6 +232,48 @@ The owner requested the pet profile width for the community page. `CommunityLayo
 
 ## UI standards verification — 6 November 2026
 
-The owner's later request to check all dashboard tabs authorizes the rendered review and scoped checks documented in `docs/implementation/ui-standards-audit.md`; earlier source-only limits above describe previous deliveries. This review preserves the existing visual world, supplied illustrations, Nunito/Inter fonts, and separate platform/management shells. It confirms 49 routes and every member, shelter, and moderation dashboard tab using sample roles.
+The owner's later request to check all dashboard tabs authorizes the rendered review and scoped checks documented in `docs/implementation/ui-standards-audit.md`; earlier source-only limits above describe previous deliveries. This review preserves the existing visual world, supplied illustrations, Saira Condensed/Instrument Sans fonts, and separate platform/management shells. It confirms 49 routes and every member, shelter, and moderation dashboard tab using sample roles.
 
 Default buttons, inputs, native selects, icon utilities and dialog close controls now implement the documented 2.75rem target. Small control variants remain available for compact contexts. Page headings, filter forms, workflow fields and cards share consistent Tailwind spacing. Status badges can wrap within their parent. Secondary feature text uses `muted-foreground` so the active theme owns contrast. Theme controls wait for the client snapshot before exposing their pressed state. Registry source adaptations and their provenance are recorded in `docs/implementation/shadcn-tailwind-migration.md`.
+
+
+## Floating discovery map and quests — 8 November 2026
+
+The owner’s latest map direction replaces the reserved sidebar column with an initially expanded floating results panel over a full-viewport canvas. The visible Places map title is removed. Category filters float at the top center; a compact upper-right quest tracker pairs public animal imagery with saved participation milestones. On phones the category group scrolls, the list can be collapsed, and quests open through a compact control. Details and directions take priority over quests. Both map renderers reserve camera space for floating panels; route identity, approximate-location meaning and absolute route-fitting padding remain authoritative.
+
+The map-only bridge reads open public missions and the current viewer’s saved participation state. Progress means joined, proof submitted and approved; it does not claim welfare recovery or a Kibble award. Missing imagery keeps the existing labelled fallback, guests receive sign-in guidance, and unavailable/empty/error/loading states remain explicit. Existing official shadcn components and font/color roles are reused without registry source changes.
+
+Finish verdict: source-reviewed implementation delivered in the standalone game and social worktree. No automated tests, checks, builds or browser verification were run for this update under the current standing instruction; rendered quality remains unverified. No raster assets, database records, payments or rewards changed. The operative discovery contract and technical handoff are `.impeccable/surfaces/discovery.md` and `docs/implementation/floating-map-quests-2026-11-08.md`.
+
+
+Map-control follow-up: the left results body folds vertically through official shadcn Collapsible, retaining brand, description and search. Category buttons own individual floating surfaces with transparent parent navigation. A single compact bottom dock matches location/search actions to zoom/fit controls in both renderers. Quests include real animal attention alerts independently of the nearby prompt, alongside saved mission progress. Source review only; see the floating-map implementation guide for component provenance, responsive behavior and verification limits.
+
+
+Quest-panel reference refinement: official Collapsible/Tabs compose an expandable care summary, four counted filters, animal/status rows, real participation progress and a compact collapsed header. Public adoption flags and current-user participation states own the data; no reference sample counts, five-quest reward promise or online animal dots were added. The work is source-reviewed only under the standing no-verification instruction. Technical boundaries and the separately proposed geographic community areas are documented in the quest-reference implementation guide.
+
+
+Local community areas: the owner's local-area/custom-split preference is implemented with stored source-dated Davao barangay polygons, dashed custom subdivisions, a keyboard-accessible selector and the shared animated right drawer. Each published leaf area links to a distinct shared game room on the existing backend; no separate infrastructure server or social-feed partition is implied. Polygon selection is subordinate to active animal routing/origin picking. Font roles, small-radius actions, source attribution and real-data/reward boundaries remain. Migration/import completed; source review only, with no runtime/browser tests. The geographic-community implementation guide owns source editions, initial coverage and operational limits.
+
+
+## Zoom-aware city discovery — 9 November 2026
+
+City navigation now has three scales: province/metro database-count circles below zoom 8; thin colored city boundaries and the entrance cue from 8 to below 13; no city geometry, entrance hover cue or city-area click at street zoom 13 and above. The keyboard selector remains available. City drawers show six circular image/icon counts from the real services. Animal totals are unique published profiles; open help and scheduled public events have time/state eligibility. Home counts respect the current viewer’s existing visibility/blocking/realm rules and stay unknown before authentication. Preserve the incumbent theme, official shadcn components, filtering/route priorities and whole-city-only entrances. Firefox desktop/mobile and scoped home counts were reviewed; UI boundary check passed. See `docs/implementation/map-zoom-summaries-2026-11-09.md` for source provenance, evidence and limits.
+
+
+## Transparent map artwork and zoomed-out hover — 9 November 2026
+
+This update supersedes the lower city-outline cutoff above. Thin city lines and the entrance hover card remain available from zoom 3 to below 13, alongside province count circles below zoom 8. Street zoom still hides lines, hover cues and city-area click entry. Hover cards now share six compact circular database counts with the city drawer. Public photos take priority; missing/broken images use the new transparent, logo-referenced animals/events/home/shelters/groups/help/city illustrations. Reuse the category asset map and shared official-shadcn Avatar composition across markers, summaries and empty banners. Generated art is decorative, never identity evidence or real location imagery. Alpha was inspected on all seven optimized assets; this follow-up is source-reviewed only under the standing no-application-check/no-browser instruction. See `docs/implementation/map-hover-artwork-2026-11-09.md` and `public/pawtrail-game/discovery/map-placeholders-v1.json` for final prompts, provenance and scope.
+
+
+## Larger category thumbnails and restored animal portraits — 9 November 2026
+
+Render the new transparent category artwork at 125% without extra avatar padding; keep real photos at their existing cover treatment. Individual animal identities again use the former species/coat illustrations. Category artwork belongs to map summaries, place/sidebar rows, map missions, non-animal popup headers and empty banners/help prompts. Use the shared EntityFace to preserve the individual/category distinction, with existing photo priority, count badges and quest state. This supersedes the previous generic category fallback for individual animals. No new assets or backend records were created. Source review only; see `docs/implementation/map-thumbnail-refinement-2026-11-09.md`.
+
+
+## Selected map marker and closer focus — 9 November 2026
+
+A selected marker uses a steady high-contrast outer ring and 125% scale. Apply the same state to the actual selected shared animal and raise its parent marker group above neighbors. Preserve attention/status cues and route-destination priority. Selecting an item focuses at zoom 16 in both renderers without zooming out from a closer view; follow-up focus shares the floor and respects panel padding/reduced motion. Keep the reverted typography/status-border update reverted. Source review only; see `docs/implementation/map-selected-marker-2026-11-09.md`.
+
+## Current portrait direction: lightweight original 2D artwork
+
+The owner approved true 2D portraits on 9 November 2026, superseding the rotatable bust/GLB requirements above. Preserve Maya's original illustration and native detail. Use small native eye/mouth atlases for independent blinking, smile, happy and text-reveal talking. No rotation controls. Dialogue, player HUD and creators share `LivingPortrait` with lazy Canvas 2D loading, pause, reduced motion, visibility suspension and neutral snapshots. `/play?preview=portraits` now opens the 2D studio. Cap each complete portrait artwork bundle below 500,000 bytes; current human bundles are about 9.5–31.5 KB. Existing custom silhouettes/accessories need authored 2D portraits rather than being advertised as exact automatic conversions. See `docs/implementation/layered-2d-portraits.md`. Gameplay rigs remain independent.

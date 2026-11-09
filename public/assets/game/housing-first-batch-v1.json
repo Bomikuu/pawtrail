@@ -1,0 +1,124 @@
+{
+  "version": "housing-first-batch-v1",
+  "generationTool": "built-in image_gen",
+  "scope": "Only first eight asset groups; assets only, no gameplay or interface changes",
+  "referenceSheet": "/assets/game/housing/references/housing-first-batch-v1-review.png",
+  "assets": [
+    {
+      "group": 1,
+      "file": "/assets/game/housing/tilesets/interior-floors-housing-v1.png",
+      "width": 128,
+      "height": 128,
+      "alphaValues": [
+        255
+      ],
+      "colorCount": 47,
+      "status": "style-review",
+      "productionReady": false
+    },
+    {
+      "group": 2,
+      "file": "/assets/game/housing/furniture/sofa-housing-v1.png",
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "colorCount": 23,
+      "status": "style-review",
+      "productionReady": false
+    },
+    {
+      "group": 3,
+      "file": "/assets/game/housing/furniture/table-housing-v1.png",
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "colorCount": 17,
+      "status": "style-review",
+      "productionReady": false
+    },
+    {
+      "group": 4,
+      "file": "/assets/game/housing/pet-furniture/cat-bed-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "colorCount": 14,
+      "status": "style-review",
+      "productionReady": false
+    },
+    {
+      "group": 5,
+      "file": "/assets/game/housing/pet-furniture/scratching-post-housing-v1.png",
+      "width": 32,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "colorCount": 15,
+      "status": "style-review",
+      "productionReady": false
+    },
+    {
+      "group": 6,
+      "file": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "colorCount": 16,
+      "status": "style-review",
+      "productionReady": false
+    },
+    {
+      "group": 7,
+      "file": "/assets/game/animals/cats/orange-tabby-idle-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "colorCount": 12,
+      "status": "style-review",
+      "productionReady": false
+    },
+    {
+      "group": 8,
+      "file": "/assets/game/characters/base/rescuer-idle-housing-v1.png",
+      "width": 32,
+      "height": 48,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "colorCount": 22,
+      "status": "style-review",
+      "productionReady": false
+    }
+  ],
+  "tilesetManifest": "/assets/game/housing/tilesets/tilesets-first-batch.json",
+  "promptFiles": [
+    "/assets/game/housing/references/first-batch-prompts.json",
+    "/assets/game/housing/furniture/furniture-first-batch-prompts.json",
+    "/assets/game/housing/pet-furniture/pet-furniture-first-batch.json",
+    "/assets/game/animals/cats/housing-idle-first-batch.json",
+    "/assets/game/characters/base/housing-idle-first-batch.json"
+  ],
+  "limitations": [
+    "Walls/corners require assembly refinement; not production approved.",
+    "Single idle poses only; no animation frames are implied.",
+    "Collision footprints are proposals, not engine-verified."
+  ]
+}

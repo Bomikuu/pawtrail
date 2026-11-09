@@ -1,7 +1,7 @@
 import 'server-only'
 import { ApiError } from '@/lib/api/errors'
 
-function requestOrigin(request: Request): string | null {
+export function requestOrigin(request: Request): string | null {
   const url = new URL(request.url)
   const host = request.headers.get('host')
   if (!host) return url.origin

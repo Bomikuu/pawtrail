@@ -15,6 +15,7 @@ export const privacySettingsSchema = z.object({
   showLocation: z.boolean(),
   showContributions: z.boolean(),
   discoverable: z.boolean(),
+  publicAttendance: z.boolean().default(false),
 })
 export const publicIdentityQuerySchema = z
   .object({

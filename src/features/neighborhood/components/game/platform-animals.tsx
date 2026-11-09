@@ -34,6 +34,7 @@ import {
 } from "@/features/neighborhood/game/platform";
 
 const DIRECTORY = "@directory";
+export function openAnimalDirectory() {open(DIRECTORY)}
 function open(id: string) {
   publish({ platformAnimalRequest: id, dialogue: null });
 }
@@ -403,7 +404,7 @@ export function PlatformAnimals({
                       />
                       <span className="font-extrabold">{animal.name}</span>
                       <span className="text-xs text-muted-foreground">
-                        {animal.species} · {animal.ageMonths} months
+                        {animal.species} · {animal.ageMonths === null ? 'Age not recorded' : animal.ageMonths + ' months'}
                       </span>
                       <Badge variant="secondary" className="text-[10px]">
                         {animal.provenance.kind === "real"
@@ -475,7 +476,7 @@ export function PlatformAnimals({
                         </Badge>
                         <p className="text-sm capitalize">
                           {detail.species} · {detail.gender} ·{" "}
-                          {detail.ageMonths} months · {detail.size}
+                          {detail.ageMonths === null ? 'Age not recorded' : detail.ageMonths + ' months'} · {detail.size}
                         </p>
                         <p className="flex items-center gap-1.5 text-sm">
                           <Home className="size-4 shrink-0" />

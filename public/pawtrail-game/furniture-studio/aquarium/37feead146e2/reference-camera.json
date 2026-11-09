@@ -1,0 +1,105 @@
+{
+  "source": "/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+  "sha256": "f3c1636e866730e475fe17c6aed3ccc6094267532cc3fe24598c4a98651d1bcf",
+  "render": {
+    "projection": "orthographic",
+    "nativeFrame": [
+      96,
+      112
+    ],
+    "nativeAnchor": [
+      48,
+      96
+    ],
+    "cameraPosition": [
+      0,
+      34.5,
+      90
+    ],
+    "cameraTarget": [
+      0,
+      0,
+      0
+    ],
+    "frustum": [
+      -48,
+      48,
+      96,
+      -16,
+      0.1,
+      300
+    ],
+    "origin": "front floor edge at source (48,64)",
+    "toneMapping": "none",
+    "outputColorSpace": "srgb",
+    "filter": "nearest",
+    "antialias": false,
+    "referenceFacing": 0,
+    "referencePhase": 0
+  },
+  "landmarks": {
+    "opaqueBounds": [
+      3,
+      2,
+      90,
+      62
+    ],
+    "hoodTop": [
+      4,
+      2,
+      88,
+      8
+    ],
+    "hoodFront": [
+      4,
+      10,
+      88,
+      4
+    ],
+    "water": [
+      7,
+      14,
+      82,
+      29
+    ],
+    "tankBase": [
+      3,
+      43,
+      90,
+      5
+    ],
+    "cabinet": [
+      4,
+      48,
+      88,
+      14
+    ],
+    "feet": [
+      5,
+      62,
+      86,
+      2
+    ],
+    "fish": [
+      [
+        29,
+        21,
+        12,
+        6
+      ],
+      [
+        49,
+        25,
+        11,
+        6
+      ]
+    ]
+  },
+  "normalizedLandmarks": {
+    "hoodBottom": 0.21875,
+    "waterBottom": 0.671875,
+    "cabinetTop": 0.75,
+    "cabinetBottom": 0.96875
+  },
+  "approach": "Source-painted volumetric cabinet/hood/tank with layered plants and two independent animated fish profiles. Unseen sides/rear are authored interpretations."
+}

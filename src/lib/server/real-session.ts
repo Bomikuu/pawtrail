@@ -15,8 +15,7 @@ const tokensSchema = z.object({
   scope: z.string().min(1),
 })
 export type Tokens = z.infer<typeof tokensSchema>
-function key() {
-  const secret = process.env.SESSION_SECRET
+function key(secret = process.env.SESSION_SECRET) {
   if (!secret || secret.length < 32)
     throw new ApiError(
       'CONFIGURATION_ERROR',
@@ -25,15 +24,17 @@ function key() {
     )
   return createHash('sha256').update(secret).digest()
 }
-export async function readRealSession(): Promise<Tokens | null> {
-  const value = (await cookies()).get(name)?.value
+export function decodeRealSession(
+  value?: string,
+  secret?: string,
+): Tokens | null {
   if (!value) return null
   try {
     const [iv, tag, body] = value.split('.')
     if (!iv || !tag || !body) return null
     const decipher = createDecipheriv(
       'aes-256-gcm',
-      key(),
+      key(secret),
       Buffer.from(iv, 'base64url'),
     )
     decipher.setAuthTag(Buffer.from(tag, 'base64url'))
@@ -49,10 +50,36 @@ export async function readRealSession(): Promise<Tokens | null> {
     return null
   }
 }
-export async function writeRealSession(tokens: Tokens | null) {
+export async function readRealSession(
+  cookieName = name,
+  secret?: string,
+): Promise<Tokens | null> {
+  return decodeRealSession((await cookies()).get(cookieName)?.value, secret)
+}
+/** Only an expiry hint from the authenticated cookie; Django still verifies the JWT. */
+export function realSessionNeedsRenewal(
+  value?: string,
+  now = Date.now(),
+): boolean {
+  const tokens = decodeRealSession(value)
+  if (!tokens) return false
+  try {
+    const payload = JSON.parse(
+      Buffer.from(tokens.access.split('.')[1], 'base64url').toString('utf8'),
+    )
+    return typeof payload.exp !== 'number' || payload.exp * 1000 <= now + 60_000
+  } catch {
+    return true
+  }
+}
+export async function writeRealSession(
+  tokens: Tokens | null,
+  cookieName = name,
+  secret?: string,
+) {
   const jar = await cookies()
   if (!tokens) {
-    jar.set(name, '', {
+    jar.set(cookieName, '', {
       httpOnly: true,
       sameSite: 'lax',
       secure: process.env.NODE_ENV === 'production',
@@ -62,13 +89,13 @@ export async function writeRealSession(tokens: Tokens | null) {
     return
   }
   const iv = randomBytes(12),
-    cipher = createCipheriv('aes-256-gcm', key(), iv),
+    cipher = createCipheriv('aes-256-gcm', key(secret), iv),
     data = Buffer.concat([
       cipher.update(JSON.stringify(tokens)),
       cipher.final(),
     ])
   jar.set(
-    name,
+    cookieName,
     [iv, cipher.getAuthTag(), data]
       .map((b) => b.toString('base64url'))
       .join('.'),

@@ -29,7 +29,10 @@ export const achievementProofInputSchema = z.object({
   ref: resourceRefSchema,
   occurredAt: timestampSchema,
   details: z.string().trim().min(20).max(2000),
-  mediaIds: z.array(idSchema).max(6),
+  mediaIds: z
+    .array(idSchema)
+    .min(1, 'Attach at least one private evidence photo or document.')
+    .max(6),
 })
 export const achievementProofSchema = z.object({
   submitterName: z.string().optional(),

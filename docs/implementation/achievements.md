@@ -12,16 +12,16 @@ Mastery tiers are New PawPal (0), Kind Neighbor (5), Dedicated Helper (15), Comm
 
 - Published sightings/posts/photos, approved missions, current event RSVPs, recorded contributions, applications and membership dates come from server records.
 - **Mark discovered** records distinct published animal profiles. **Share** records a successful share-sheet/copy action for distinct animal/mission/fundraiser pages. These are digital activity counters, not proof of physical visits or audience reach.
-- Daily check-in records one server-side Manila calendar date. Demo time remains frozen at 2026-11-02; future dates and duplicate check-ins cannot be submitted to manufacture a streak.
+- Real daily check-in records one server-side Manila calendar date; future dates and duplicate check-ins cannot manufacture a streak.
 - Care, rescue, feeding, water, TNR, confirmed adoptions, fostering, long-term support, supplies, education, awareness, referrals, physical visits and event attendance require independent moderator review. Uploaded proof stays private. An application approval does not establish an adoption; an RSVP does not establish attendance.
 - Evidence uses unique activity/reference keys. Care visits count once per animal per day. A joined friend can be credited to one inviter only. Review is versioned, self-review is forbidden, rejected proof can be revised, and prior approvals can be reversed with a reason.
 - Source changes reconcile achievement rewards in the same serialized repository transaction. Invalidated achievements receive negative correction entries, never history deletion. Requalifying after a correction can restore the original reward, with one net reward per active badge. Rank and wallet-balance badges intentionally record historical milestones; ordinary later rank/balance changes do not erase them.
 
-The local demo still simulates donations and all real-world claims. The adapter declares matching real-backend endpoints but no live Django conformance is established. Choice lists load an initial bounded set of public records; an explicit record-ID field supports records outside that initial list.
+The real database implementation now supplies the matching Django endpoints. Support badges require independently confirmed receipts; unpaid pledges and simulated contributions do not count. See [real database achievements](real-achievements.md) for persistence, corrections and delivery limits. Choice lists load an initial bounded set of public records; an explicit record-ID field supports records outside that initial list.
 
 ## Source boundaries
 
-`features/achievements/catalog.ts` owns the fixed version-one rules and rewards. `engine.ts` derives progress and reconciles ledger corrections; `service.ts` checks ownership, independent review, deduplication and atomic claims. The existing typed client/BFF exposes overview, claim, showcase, activity, private proof submission/listing and moderator review. Optional workflow storage preserves version-7 demo sessions. Public profiles expose only consented showcased badge IDs/labels and, if opted in, an aggregate mastery summary.
+`backend/social/achievement_catalog.json` owns the shared fixed version-one rules/rewards; `features/achievements/catalog.ts` exposes them to the UI. `engine.ts` derives progress and reconciles ledger corrections; `service.ts` checks ownership, independent review, deduplication and atomic claims. The existing typed client/BFF exposes overview, claim, showcase, activity, private proof submission/listing and moderator review. Optional workflow storage preserves version-7 demo sessions. Public profiles expose only consented showcased badge IDs/labels and, if opted in, an aggregate mastery summary.
 
 All 45 owner-supplied badge crops are 192 × 192 WebP images at quality 80, approximately 227 KB combined; original sheets and their baked-in text are not shipped. Images load lazily and reserve dimensions. The source attachments are `codex-clipboard-12e0da33-4fd3-42f2-a0bf-12f00f1028fd.png`, `codex-clipboard-07e0aca1-62c7-4356-b79f-bb65420ff3c0.png` and `codex-clipboard-9a4ed124-3390-45ac-a207-4f5ba1da42f4.png`. No external license or exclusive ownership is asserted.
 
@@ -78,3 +78,7 @@ Implemented directly in the main session. No agents, automated tests, type/UI/de
 | Awareness Champion    |              40 | Publish a welfare-awareness post, then submit it for independent review. Examples include adoption, spay/neuter or TNR awareness.                                                       |
 | Kibble Saver          |             100 | Reach a 500-Kibble non-cash wallet balance before claiming this badge. It records a balance milestone, not savings of real money.                                                       |
 | PawTrail Supporter    |              50 | Remain a PawTrail member for 30 days, measured from the account creation date using the server clock.                                                                                   |
+
+## Real backend follow-up — 8 November 2026
+
+The Django implementation is now present and schema migrations have been applied, with no seeded achievements or demo accounts. Current real behavior and the source-only verification boundary are documented in [real database achievements](real-achievements.md). The legacy demonstration engine is not the real adapter’s data source.

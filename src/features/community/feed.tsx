@@ -64,7 +64,7 @@ export function Feed({
         }
       >
         <div>
-          <h1>Community</h1>
+          <h1>Community feed</h1>
           <p>Your daily dose of paws & people.</p>
         </div>
         <Link
@@ -74,7 +74,7 @@ export function Feed({
           }
         >
           <MapPin size={16} aria-hidden="true" />
-          Explore nearby
+          Find animals
         </Link>
       </header>
       <nav

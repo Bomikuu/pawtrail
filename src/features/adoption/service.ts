@@ -69,8 +69,10 @@ export function installAdoption(
             (!q.shelterId || a.shelterId === q.shelterId) &&
             (!p.species || p.species === a.species) &&
             (!p.size || p.size === a.size) &&
-            (p.minAgeMonths === undefined || a.ageMonths >= p.minAgeMonths) &&
-            (p.maxAgeMonths === undefined || a.ageMonths <= p.maxAgeMonths) &&
+            (p.minAgeMonths === undefined ||
+              (a.ageMonths !== null && a.ageMonths >= p.minAgeMonths)) &&
+            (p.maxAgeMonths === undefined ||
+              (a.ageMonths !== null && a.ageMonths <= p.maxAgeMonths)) &&
             (!p.personality?.length ||
               p.personality.every((t) => a.personality.includes(t))),
         )

@@ -1,0 +1,71 @@
+{
+  "mode": "built-in image_gen",
+  "description": "Original male rescuers with distinct hair, outfits and matching portraits; incumbent 27-action layout.",
+  "portraitManifest": "male-characters-manifest.json",
+  "reference": "assets/character-colors-v1/reference-contact.png",
+  "layout": {
+    "width": 1152,
+    "height": 1584,
+    "spriteColumns": 12,
+    "spriteRows": 9,
+    "portraitNativeRect": [
+      144,
+      432,
+      240,
+      528
+    ]
+  },
+  "variants": [
+    {
+      "id": "male-blonde-scout",
+      "name": "Blonde scout",
+      "description": "A young man with tousled blonde hair, a denim jacket, cream T-shirt, charcoal shorts, brown hiking shoes, and a sage backpack. No glasses, no ponytail.",
+      "colors": [
+        "#fff1bf",
+        "#f2d17c",
+        "#d9ab52",
+        "#ab7936",
+        "#6d492b",
+        "#81acbe",
+        "#537e9c",
+        "#34566d",
+        "#273945"
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: PawTrail complete selectable MALE player animation atlas and matching dialogue portrait.\nInput image 1 is the EDIT TARGET for exact animation layout and pixel-art style. Replace the existing female character in ALL 108 small poses AND the single portrait with ONE consistent original young adult MALE animal rescuer: A young man with tousled blonde hair, a denim jacket, cream T-shirt, charcoal shorts, brown hiking shoes, and a sage backpack. No glasses, no ponytail.\nDesign a friendly unmistakably male face, short hair and clean silhouette, keeping the game's same compact RPG proportions. Do not leave the woman's ponytail or face on any sprite. The portrait must show the exact same man, hair, skin, glasses if specified, and outfit as his sprites.\nPreserve each pose/action, all four movement directions, props and animation order. Do not repeat one pose for every cell. Outfit and hair must stay identical across every frame, including up/back views, walking, sitting, sleeping, feeding, petting and carrying/placing props. Trousers stay trousers, shorts stay shorts. Backpack color stays consistent.\nKeep image geometry and complete asset count: 1152x1584 canvas. Top y0..1296 is 12 columns by9 rows (108 sprites), each original sprite remains in its own original cell. No new or missing cells, no overlap, no cropping feet. Bottom area contains one chest-up portrait centered in the same position. Preserve generous transparent spacing around sprites.\nMaintain cozy 16-bit top-down 3/4 pixel art, dark warm outlines, upper-left lighting, same native32x48 character scale and pixel density as reference. Real sharp square pixels, no smoothing, no blur, no gradients. A small cohesive palette; hair/outfit ramps include #fff1bf, #f2d17c, #d9ab52, #ab7936, #6d492b, #81acbe, #537e9c, #34566d, #273945.\nGenuine transparent background with alpha. No scenery, labels, text, cell lines, decorative borders, UI, ground shadows or watermarks."
+    },
+    {
+      "id": "male-violet-volunteer",
+      "name": "Violet volunteer",
+      "description": "A young man with deep warm-brown skin, short curly violet hair, round dark glasses, a mustard hoodie with hood down, navy trousers, cream canvas shoes, and a rust-orange backpack. No ponytail.",
+      "colors": [
+        "#d8b8f2",
+        "#b38ade",
+        "#8a5bb8",
+        "#603c89",
+        "#3c285b",
+        "#edc76a",
+        "#bd9137",
+        "#8d622c",
+        "#333b55"
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: PawTrail complete selectable MALE player animation atlas and matching dialogue portrait.\nInput image 1 is the EDIT TARGET for exact animation layout and pixel-art style. Replace the existing female character in ALL 108 small poses AND the single portrait with ONE consistent original young adult MALE animal rescuer: A young man with deep warm-brown skin, short curly violet hair, round dark glasses, a mustard hoodie with hood down, navy trousers, cream canvas shoes, and a rust-orange backpack. No ponytail.\nDesign a friendly unmistakably male face, short hair and clean silhouette, keeping the game's same compact RPG proportions. Do not leave the woman's ponytail or face on any sprite. The portrait must show the exact same man, hair, skin, glasses if specified, and outfit as his sprites.\nPreserve each pose/action, all four movement directions, props and animation order. Do not repeat one pose for every cell. Outfit and hair must stay identical across every frame, including up/back views, walking, sitting, sleeping, feeding, petting and carrying/placing props. Trousers stay trousers, shorts stay shorts. Backpack color stays consistent.\nKeep image geometry and complete asset count: 1152x1584 canvas. Top y0..1296 is 12 columns by9 rows (108 sprites), each original sprite remains in its own original cell. No new or missing cells, no overlap, no cropping feet. Bottom area contains one chest-up portrait centered in the same position. Preserve generous transparent spacing around sprites.\nMaintain cozy 16-bit top-down 3/4 pixel art, dark warm outlines, upper-left lighting, same native32x48 character scale and pixel density as reference. Real sharp square pixels, no smoothing, no blur, no gradients. A small cohesive palette; hair/outfit ramps include #d8b8f2, #b38ade, #8a5bb8, #603c89, #3c285b, #edc76a, #bd9137, #8d622c, #333b55.\nGenuine transparent background with alpha. No scenery, labels, text, cell lines, decorative borders, UI, ground shadows or watermarks."
+    },
+    {
+      "id": "male-red-gardener",
+      "name": "Copper gardener",
+      "description": "A young man with warm tan skin, short side-swept copper-red hair, a terracotta T-shirt under forest-green overalls with visible straps, cream work shoes, and a small navy backpack. No glasses, no ponytail.",
+      "colors": [
+        "#f6bc83",
+        "#e99257",
+        "#c46139",
+        "#923d2c",
+        "#5b2927",
+        "#8ba779",
+        "#52764f",
+        "#304c37",
+        "#344b68"
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: PawTrail complete selectable MALE player animation atlas and matching dialogue portrait.\nInput image 1 is the EDIT TARGET for exact animation layout and pixel-art style. Replace the existing female character in ALL 108 small poses AND the single portrait with ONE consistent original young adult MALE animal rescuer: A young man with warm tan skin, short side-swept copper-red hair, a terracotta T-shirt under forest-green overalls with visible straps, cream work shoes, and a small navy backpack. No glasses, no ponytail.\nDesign a friendly unmistakably male face, short hair and clean silhouette, keeping the game's same compact RPG proportions. Do not leave the woman's ponytail or face on any sprite. The portrait must show the exact same man, hair, skin, glasses if specified, and outfit as his sprites.\nPreserve each pose/action, all four movement directions, props and animation order. Do not repeat one pose for every cell. Outfit and hair must stay identical across every frame, including up/back views, walking, sitting, sleeping, feeding, petting and carrying/placing props. Trousers stay trousers, shorts stay shorts. Backpack color stays consistent.\nKeep image geometry and complete asset count: 1152x1584 canvas. Top y0..1296 is 12 columns by9 rows (108 sprites), each original sprite remains in its own original cell. No new or missing cells, no overlap, no cropping feet. Bottom area contains one chest-up portrait centered in the same position. Preserve generous transparent spacing around sprites.\nMaintain cozy 16-bit top-down 3/4 pixel art, dark warm outlines, upper-left lighting, same native32x48 character scale and pixel density as reference. Real sharp square pixels, no smoothing, no blur, no gradients. A small cohesive palette; hair/outfit ramps include #f6bc83, #e99257, #c46139, #923d2c, #5b2927, #8ba779, #52764f, #304c37, #344b68.\nGenuine transparent background with alpha. No scenery, labels, text, cell lines, decorative borders, UI, ground shadows or watermarks."
+    }
+  ]
+}

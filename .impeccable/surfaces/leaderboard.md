@@ -2,7 +2,7 @@
 
 Mode: Operate. Build path: code. Primary target: `src/features/kibble/leaderboard.tsx`; related route: `src/app/(public)/leaderboard/page.tsx`.
 
-The owner's supplied screenshot is the composition authority: full-width owner-supplied cat-and-dog trophy banner, good-deeds heading, four impact totals, period/category controls, raised first-place podium and detailed helper rows. Preserve PawTrail's full-width platform shell, Nunito/Inter, warm orange and teal. Reuse compact owner-supplied art; all interface copy is semantic HTML. No invented levels, contributions, badges, popularity scores or rescue claims.
+The owner's supplied screenshot is the composition authority: full-width owner-supplied cat-and-dog trophy banner, good-deeds heading, four impact totals, period/category controls, raised first-place podium and detailed helper rows. Preserve PawTrail's full-width platform shell, Saira Condensed/Instrument Sans, warm orange and teal. Reuse compact owner-supplied art; all interface copy is semantic HTML. No invented levels, contributions, badges, popularity scores or rescue claims.
 
 Recognition celebrates practical participation. Default ranking is non-cash Kibble; mission, sighting and campaign-support categories let different kinds of contribution surface. Details explain counts, Manila windows, corrections and privacy. Aggregate mastery is opt-in and badges are earned, explicitly showcased choices. The podium stays category-wide when searching for a name.
 

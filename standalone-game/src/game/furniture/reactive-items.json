@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "id": "garden-bush",
+      "label": "Soft garden bush",
+      "file": "/assets/game/community/bush.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        3,
+        18,
+        26,
+        14
+      ],
+      "blocking": false,
+      "rotatable": false,
+      "category": "Garden",
+      "interaction": "inspect",
+      "price": 25,
+      "zones": [
+        "yard"
+      ],
+      "supportedRotations": [
+        0
+      ],
+      "geometry": {
+        "version": 2,
+        "ground": [],
+        "placement": [
+          [
+            3,
+            18,
+            26,
+            14
+          ]
+        ],
+        "approaches": [
+          [
+            16,
+            42
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "inspect"
+        ]
+      }
+    }
+  ]
+}

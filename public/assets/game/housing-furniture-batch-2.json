@@ -1,0 +1,231 @@
+{
+  "version": "housing-furniture-batch-2",
+  "generationMode": "built-in image_gen",
+  "scope": "Nine static furniture sprites; assets only",
+  "palette": [
+    "33251c",
+    "4a3324",
+    "63452e",
+    "805a36",
+    "9b6a3b",
+    "b47c40",
+    "ce9148",
+    "e8aa57",
+    "f4c778",
+    "f7dda3",
+    "fff0c8",
+    "fff8e5",
+    "504d2a",
+    "656238",
+    "77763e",
+    "898a4a",
+    "9da05c",
+    "b1b771",
+    "c6cd8a",
+    "d8dda5",
+    "985037",
+    "b56a47",
+    "ce8659",
+    "e3a776",
+    "b9aa86",
+    "cfbf9c",
+    "e5d5b2",
+    "f2e3c5",
+    "b15431",
+    "cf6d3b",
+    "e28c4b",
+    "f6b868"
+  ],
+  "assets": [
+    {
+      "id": "armchair",
+      "file": "/assets/game/housing/furniture/armchair-housing-v1.png",
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 17,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "bookshelf",
+      "file": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 26,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "floor-lamp",
+      "file": "/assets/game/housing/furniture/floor-lamp-housing-v1.png",
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 25,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "single-bed",
+      "file": "/assets/game/housing/furniture/single-bed-housing-v1.png",
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 27,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "wardrobe",
+      "file": "/assets/game/housing/furniture/wardrobe-housing-v1.png",
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 16,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "desk",
+      "file": "/assets/game/housing/furniture/desk-housing-v1.png",
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 13,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "refrigerator",
+      "file": "/assets/game/housing/furniture/refrigerator-housing-v1.png",
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 20,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "stove",
+      "file": "/assets/game/housing/furniture/stove-housing-v1.png",
+      "width": 32,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 20,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    },
+    {
+      "id": "sink-counter",
+      "file": "/assets/game/housing/furniture/sink-counter-housing-v1.png",
+      "width": 64,
+      "height": 64,
+      "frames": 1,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleColors": 27,
+      "checks": {
+        "dimensions": true,
+        "binaryAlpha": true,
+        "sharedPalette": true,
+        "hasTransparentMargin": true
+      },
+      "productionReady": false,
+      "status": "native export; style and placement review"
+    }
+  ],
+  "categoryManifests": [
+    "/assets/game/housing/furniture/living-room-batch-2.json",
+    "/assets/game/housing/furniture/bedroom-batch-2.json",
+    "/assets/game/housing/furniture/kitchen-batch-2.json"
+  ],
+  "reviewSheet": "/assets/game/housing/references/housing-furniture-batch-2-review.png",
+  "limitations": [
+    "Collision footprints are proposed in the category manifests, not verified in a game engine.",
+    "Static sprites only: no animation states or gameplay functionality are implied."
+  ]
+}

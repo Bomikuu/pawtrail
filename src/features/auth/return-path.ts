@@ -12,7 +12,7 @@ export function validateReturnPath(input: string | null): string {
     const url = new URL(input, 'https://pawtrail.invalid')
     if (
       url.origin !== 'https://pawtrail.invalid' ||
-      /^\/(?:api|login|register)(?:\/|$)/.test(url.pathname)
+      /^\/(?:api|auth|login|register)(?:\/|$)/.test(url.pathname)
     )
       return '/community'
     return `${url.pathname}${url.search}${url.hash}`
