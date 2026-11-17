@@ -1,0 +1,19 @@
+{
+  "source": "exec-ecd6f6f5-2e31-414a-a2bb-219bcca78d99.png",
+  "crop": [
+    84,
+    82,
+    1172,
+    1176
+  ],
+  "nativeSize": [
+    96,
+    96
+  ],
+  "slice": 16,
+  "borderWidth": 12,
+  "center": "transparent; CSS surface provides readable cream fill",
+  "paletteColors": 32,
+  "bytes": 1930,
+  "processing": "Native nearest-neighbor crop/resize and 32-color palette, no dithering."
+}

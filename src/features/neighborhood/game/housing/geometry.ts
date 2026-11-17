@@ -42,6 +42,10 @@ export function furnitureAt(p: Placement) {
   const style = base.styles?.find(style => style.id === (p.style ?? base.defaultStyle)) ?? base.styles?.[0]
   return { ...base, ...view, ...style?.views[String(p.rotation)] }
 }
+/** Opening changes only explicitly authored passage collision, never arbitrary solids. */
+export function groundForState(def: Pick<Furniture, 'geometry' | 'stateViews'>, state?: {open?:boolean}) {
+  return state?.open && def.stateViews?.open ? def.stateViews.open.ground : def.geometry.ground
+}
 export function occupied(p: Placement) {
   const d = furnitureAt(p),
     result: string[] = [];

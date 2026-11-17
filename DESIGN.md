@@ -277,3 +277,138 @@ A selected marker uses a steady high-contrast outer ring and 125% scale. Apply t
 ## Current portrait direction: lightweight original 2D artwork
 
 The owner approved true 2D portraits on 9 November 2026, superseding the rotatable bust/GLB requirements above. Preserve Maya's original illustration and native detail. Use small native eye/mouth atlases for independent blinking, smile, happy and text-reveal talking. No rotation controls. Dialogue, player HUD and creators share `LivingPortrait` with lazy Canvas 2D loading, pause, reduced motion, visibility suspension and neutral snapshots. `/play?preview=portraits` now opens the 2D studio. Cap each complete portrait artwork bundle below 500,000 bytes; current human bundles are about 9.5–31.5 KB. Existing custom silhouettes/accessories need authored 2D portraits rather than being advertised as exact automatic conversions. See `docs/implementation/layered-2d-portraits.md`. Gameplay rigs remain independent.
+
+
+## Character studio vertex editing
+
+The existing Geometry workspace owns Objects and Vertices modes. Keep the large
+model viewport and bounded tool inspector; use official shadcn controls and the
+existing model undo stack. Green points, an orange selected point and the shared
+translation gizmo identify editable geometry. Preserve UVs, joint attachments,
+blink-state geometry consistency and procedural animation by applying sparse
+offsets to local clones after posing. Editing is local and reversible; file saves
+include the edits. Do not silently turn this into a new rig or a gameplay skin
+installation. See docs/implementation/skin-texture-studio.md.
+
+## Item & Ability Studio
+
+`/play?preview=items` expands the existing studio world in Operate mode. Keep the
+bounded parts/library outliner, central actor or training canvas, property
+inspector and bottom timeline. Use the official shared shadcn controls and
+Tailwind utilities, Saira Condensed headings and Instrument Sans controls. On
+mobile switch panel visibility rather than compressing all inspectors. Item
+appearance, actor motion, ground queries and presentation remain independent.
+Preserve local-save wording, cancellable effects/audio, silent timeline scrubbing
+and existing E furniture interactions. See docs/implementation/item-ability-studio.md.
+
+## Segmented weapon moveset pilot
+
+Moonvine is a local reference-inspired chain-weapon pilot in Item Studio and
+Stage play mode. Preserve J combo buffering, R running sweep, L extension and K
+circular special; E remains furniture interaction. Named strike windows,
+projected hand sockets, collision-clipped segmented trajectories, target recoil
+and bounded impact pauses share the same runtime across both editors. Use the
+existing shadcn inspectors and timeline lanes; preserve custom saved items and
+legacy Primary/Special files. No live-world or animal combat installation is
+implied. See docs/implementation/item-ability-studio.md.
+
+## Body spiral and training camera
+
+Orbit chains use two rising body coils and separate front/rear segment passes
+around the actor, preserving Stage depth and ground collision. Effects/Area/Try
+share integer 1×–6× zoom with floating small-radius shadcn controls, wheel and
++/−/0 keyboard actions. Zoom changes the camera, not model or tile dimensions.
+Preserve projected-hand anchoring, cast state during zoom and custom saves.
+
+## Chain default-state clarification
+
+The chain's default equipped appearance continuously hovers around the body,
+including while walking. Use the shared native 3D hover helper in both actor and
+item previews, with slow rotation/bobbing, proper body occlusion and no idle hit
+logic or sound. Equip exposes a saved toggle; legacy chain files default on.
+Attack deployment gathers the idle coils and recovery restores them. Preserve
+normal item geometry editing and avoid duplicate resting weights by default.
+
+## Weapon preset selection
+
+The Item Studio header has an official shadcn Sword/Chain Select next to the
+character Select. Switching presets retains each preset's current-session draft
+and preserves workspace/character selection; saving remains explicit. Custom
+imports are labeled Custom item. Keep artwork provenance clear: current presets
+use code-created geometry/material colors, native 3D hover links and procedural
+2D deployed effects, not generated texture skins.
+
+## Generated texture hammer preset
+
+Ruby hammer uses generated red/gold 2D texture art wrapped onto 3D geometry, with
+portable box-2x2 UVs and native indexed PNG exports. Preserve real skin artwork,
+large back-carried silhouette, shared body/hand attachment logic and editable
+carry transforms. Keep character scale and foot collisions unchanged. The
+Sword/Chain presets retain their original material provenance; do not label
+those textures as generated. See the item studio guide and asset manifest.
+
+## Human locomotion rebuild
+
+The owner rejected the old stiff movement; the shared human gait now uses
+coordinated pelvis/torso counterrotation, heel/toe foot contact, a stronger run,
+relaxed bent arms and delayed forearm/wrist motion. Use actor-rig/human-gait.ts
+across all human factories and native preview/runtime sampling. Reference-specific
+shoulder/hip widths must preserve gait offsets instead of erasing motion.
+The previous retain-old-steps brief is superseded. Keep existing character
+geometry, skins, joint identities, collision scale and tile sizes. New configured
+base speeds are 128/208 px/s; online authority must use the shared rules. See
+docs/implementation/human-locomotion-rebuild.md for scope and pending visual review.
+
+Human idle now follows a continuous 2.5-second relaxed breathing cycle through
+actor-rig/human-idle.ts. Keep its fixed foot targets, gentle bent knees, staggered
+toe-out stance, small hip counterbalance and relaxed arms. Character factories
+provide sole heights and preserve the shared motion when adapting proportions.
+Do not replace planted-leg balance with a whole-character vertical bob. Live
+saved appearances inherit this pose; baked reference sheets remain separate.
+
+## Spectral weapon production
+
+New usable weapons follow `.agents/skills/pawtrail-weapons/SKILL.md`: base actor,
+fast front/side concept, actual geometry with generated 2D texture skin, three
+regular abilities plus one ultimate, and four matching compact pixel icons.
+Reuse the Item Studio and its actual shadcn controls, existing ability runtime,
+sound mixer, local saves and stage movement/collision. Spectral companions keep
+independent visual rigs, shadows and enlarged render bounds without changing
+the player's collider. Preserve spectral alpha and bound pixel-frame caches.
+Show generated icons in the action list/hotbar with real cooldown/active states.
+See docs/implementation/spectral-swordsman-and-weapon-skill.md for scope and
+pending visual acceptance of the first Spectral swordsman preset.
+
+Ability tooltips use the existing dialogue-v2 wood/parchment panel texture through
+shared/dialogue-frame.ts and GameTooltipContent, keeping compact sizing, an 8 px
+frame and warm brown text. Reuse that helper for future game ability hovers.
+
+Weapons may define their own upper-body idle/carry stance when their grip or
+silhouette needs it. Preserve shared breathing and planted feet; blend carries
+with walking/running and recover to the correct stance after actions. Paired
+equipment reuses the edited geometry/skin with separate hand transforms and
+fits the full visual bounds without increasing player collisions. Ivory twin
+scythes are the first data-driven carry example; see their implementation guide.
+
+Actual accepted ultimate casts briefly show the selected character's matching
+animated illustration on the left through the shared UltimateCutIn. Reuse
+existing illustration frames/cache; keep the overlay click-through and about
+one second, respect reduced motion and clear it on lifecycle changes. Failed
+input and silent scrubbing never trigger it. Chain skills have their own
+generated compact icons and authored mechanics-based descriptions.
+
+Every new weapon needs its own compact equipment-selection icon, separate from
+its four ability icons. Use the shared WeaponIcon in selectors, equipped
+headers and saved inventory. Preserve the validated weaponIcon field in local
+packages; reuse existing icons for focused mechanics revisions.
+
+## Amber depth trial
+
+`?compare=amber-volume` compares the approved Amber with an isolated fuller
+variant: rounded torso/hip/sleeve cross-sections, native side/rear cloth maps,
+and deeper layered hair. Preserve her approved face, front-view identity, feet,
+rig/action paths, pixel resolution and game collision scale. The cape keeps its
+existing motion with additional rear clearance. This remains a review-only
+variant, not a roster replacement. The owner accepted its visual direction as
+the actor skill's baseline; broader action acceptance remains pending. See
+docs/implementation/amber-volume-study.md before any wider promotion.

@@ -159,7 +159,7 @@ export function furnitureArt(p: Placement): RoomImage | undefined {
   return {
     kind: "image",
     texture: base?.renderedViews ? `f:${p.item}:${p.style ?? base.defaultStyle}:${p.rotation}` : "f:" + (variant ?? p.item),
-    ...(def.frontFile ? { foreground: { texture: `f:${p.item}:${p.style ?? base.defaultStyle}:${p.rotation}:front`, file: def.frontFile } } : {}),
+    ...(def.frontFile ? { foreground: { texture: base?.renderedViews ? `f:${p.item}:${p.style ?? base.defaultStyle}:${p.rotation}:front` : `f:${p.item}:front`, file: def.frontFile } } : {}),
     file: def.file,
     x: p.x * 32 + 16,
     y: p.y * 32 + 32,

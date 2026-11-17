@@ -1,0 +1,1372 @@
+{
+  "version": 4,
+  "requested": "Ask for 3D + 2D renders or 2D sprites when unspecified; interaction and sitting do not require a furniture mesh. The sofa pilot uses unchanged original 2D art.",
+  "existingModels": [
+    "aquarium",
+    "curtain-passage",
+    "studio-couch"
+  ],
+  "remainingAtStart": 107,
+  "batches": [
+    {
+      "id": "2026-11-10-01",
+      "items": [
+        "table",
+        "side-table",
+        "bookshelf"
+      ],
+      "state": "installed",
+      "reviewShownAt": "2026-11-10T14:17:31.076592+00:00",
+      "reviewState": "explicit_yes",
+      "reviewResolvedAt": "2026-11-10T14:18:49.831522+00:00",
+      "reviewRespondedAt": "2026-11-10T14:21:14.520876+00:00",
+      "completedAt": "2026-11-10T14:39:52.475423+00:00",
+      "exports": {
+        "table": "4e917d0781de",
+        "side-table": "290c80d6dd7f",
+        "bookshelf": "78c316434804"
+      },
+      "outlineUpdatedAt": "2026-11-10T14:57:16.491973+00:00"
+    },
+    {
+      "id": "interaction-01",
+      "title": "Seat fit pilot",
+      "items": [
+        "chair",
+        "armchair",
+        "dining-chair"
+      ],
+      "state": "installed",
+      "contract": "seat",
+      "targetRepresentations": {
+        "chair": "volumetric_3d",
+        "armchair": "volumetric_3d",
+        "dining-chair": "volumetric_3d"
+      },
+      "gates": [
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "reviewShownAt": "2026-11-10T16:00:33.188214+00:00",
+      "reviewState": "explicit_yes",
+      "reviewResolvedAt": "2026-11-10T16:01:47.943729+00:00",
+      "reviewRespondedAt": "2026-11-10T16:03:24.653301+00:00",
+      "completedAt": "2026-11-10T16:12:16.041908+00:00",
+      "exports": {
+        "chair": "05ea6280e31e",
+        "armchair": "fb75522f53bc",
+        "dining-chair": "88c0b6360bee"
+      },
+      "reviewScope": "Native art, actual unscaled actor previews and exported fit reports; no live game verification."
+    },
+    {
+      "id": "interaction-03",
+      "title": "Door passage",
+      "items": [
+        "wooden-door"
+      ],
+      "state": "installed",
+      "contract": "door",
+      "gates": [
+        "Owner chose 2D sprites for this batch.",
+        "Canonical native closed/open state art and actor clearance visually reviewed.",
+        "Client/server collision, persistence, permissions, occupancy, cancellation and idempotency tested.",
+        "Focused Firefox review covers trial, stage editor and shared couch regression; live multiplayer remains unverified."
+      ],
+      "previousRecommendedRepresentations": {
+        "wooden-door": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "wooden-door": "sprite"
+      },
+      "representation": "sprite",
+      "representationChoice": "Owner explicitly requested the next batch using 2D sprites.",
+      "reviewState": "existing_art_reused_no_new_generation",
+      "completedAt": "2026-11-10T17:50:46.814852+00:00",
+      "spriteExports": {
+        "wooden-door": "0d01fc443211"
+      },
+      "manifest": "assets/furniture-studio/sprites/wooden-door/manifest.json",
+      "preview": "/play?compare=furniture&asset=wooden-door&representation=sprite",
+      "review": {
+        "completedAt": "2026-11-10T17:50:46.814852+00:00",
+        "art": "Existing canonical door pixels, exact 2x native export. Outer wall pixels extracted; identical frame in both states, transparent open aperture. No generated art or model.",
+        "tests": {
+          "client": {
+            "command": "node --import tsx --test tests/door-passage.test.ts",
+            "passed": 3
+          },
+          "backend": {
+            "command": "backend/.venv/bin/python backend/manage.py test housing.test_door --noinput --verbosity 1",
+            "passed": 8,
+            "data": "Generated records in isolated SQLite test database, destroyed afterward."
+          }
+        },
+        "firefox": [
+          "Closed passage blocks the actor.",
+          "Open passage permits crossing while both jambs remain solid.",
+          "Occupied doorway rejects closing; clearing it permits closing.",
+          "Cancel leaves state unchanged.",
+          "Actor fits without scaling.",
+          "Couch regression: both seats, all four directions, standing.",
+          "320px mobile width has no horizontal overflow; open action works.",
+          "Furniture editor interaction-preview round trip.",
+          "Actual stage editor: imported isolated local stage, opened door, inspected native canvas."
+        ],
+        "typecheck": {
+          "result": "Project-wide typecheck reports diagnostics outside changed files. Changed files have no diagnostics.",
+          "log": "output/playwright/door-typecheck.log"
+        },
+        "evidence": [
+          "output/playwright/door-final.png",
+          "output/playwright/door-passage-fit.png",
+          "output/playwright/door-frame-contact.png",
+          "output/playwright/door-occupied.png",
+          "output/playwright/door-mobile.png",
+          "output/playwright/door-stage-editor.png",
+          "output/playwright/door-couch-regression-board.png"
+        ],
+        "limits": "No authenticated live room/reconnect or cross-client multiplayer test. No actual player accounts, balances or placements changed."
+      }
+    },
+    {
+      "id": "interaction-04",
+      "title": "Sofa family",
+      "items": [
+        "sofa-sage",
+        "sofa-terracotta",
+        "sofa-cream",
+        "three-seat-sofa"
+      ],
+      "state": "installed",
+      "contract": "seat",
+      "gates": [
+        "Preserve canonical fronts and each distinct item identity/price.",
+        "Approved new three-seat profiles/rear; reuse accepted two-seat shape for palette variants.",
+        "Complete all four native directions and actual seat counts; source-RGBA foregrounds and clear exits.",
+        "12 focused tests plus current-batch Firefox visual/interaction review passed."
+      ],
+      "routedToSprite": [
+        "sofa"
+      ],
+      "previousRecommendedRepresentations": {
+        "sofa-sage": "volumetric_3d",
+        "sofa-terracotta": "volumetric_3d",
+        "sofa-cream": "volumetric_3d",
+        "three-seat-sofa": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "sofa-sage": "sprite",
+        "sofa-terracotta": "sprite",
+        "sofa-cream": "sprite",
+        "three-seat-sofa": "sprite"
+      },
+      "representation": "sprite",
+      "representationChoice": "Continuation of the owner-selected 2D sprite batch workflow.",
+      "completedAt": "2026-11-10T18:09:44.641953+00:00",
+      "spriteExports": {
+        "sofa-sage": "db50fd58992d",
+        "sofa-terracotta": "8cd0b76b49ed",
+        "sofa-cream": "ceea03b669ba",
+        "three-seat-sofa": "114b8fc6c40c"
+      },
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "interaction-05",
+      "title": "Loveseat and chaise",
+      "items": [
+        "sage-loveseat-east",
+        "sage-loveseat-west",
+        "sage-chaise"
+      ],
+      "state": "awaiting_representation_choice",
+      "contract": "seat",
+      "gates": [
+        "Ask owner to choose 3D + 2D renders or 2D sprites; wait for an answer when unspecified.",
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "previousRecommendedRepresentations": {
+        "sage-loveseat-east": "volumetric_3d",
+        "sage-loveseat-west": "volumetric_3d",
+        "sage-chaise": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "sage-loveseat-east": "awaiting_owner_choice",
+        "sage-loveseat-west": "awaiting_owner_choice",
+        "sage-chaise": "awaiting_owner_choice"
+      }
+    },
+    {
+      "id": "interaction-06",
+      "title": "Shared benches",
+      "items": [
+        "garden-bench",
+        "community-bench"
+      ],
+      "state": "awaiting_representation_choice",
+      "contract": "seat",
+      "gates": [
+        "Ask owner to choose 3D + 2D renders or 2D sprites; wait for an answer when unspecified.",
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "previousRecommendedRepresentations": {
+        "garden-bench": "volumetric_3d",
+        "community-bench": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "garden-bench": "awaiting_owner_choice",
+        "community-bench": "awaiting_owner_choice"
+      }
+    },
+    {
+      "id": "interaction-07",
+      "title": "Resting beds",
+      "items": [
+        "single-bed",
+        "double-bed",
+        "sage-bed"
+      ],
+      "state": "awaiting_representation_choice",
+      "contract": "rest",
+      "gates": [
+        "Ask owner to choose 3D + 2D renders or 2D sprites; wait for an answer when unspecified.",
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "previousRecommendedRepresentations": {
+        "single-bed": "volumetric_3d",
+        "double-bed": "volumetric_3d",
+        "sage-bed": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "single-bed": "awaiting_owner_choice",
+        "double-bed": "awaiting_owner_choice",
+        "sage-bed": "awaiting_owner_choice"
+      }
+    },
+    {
+      "id": "interaction-11",
+      "title": "Cat climbing structures",
+      "items": [
+        "cat-tree",
+        "tall-cat-climbing-tower",
+        "basket-cat-stand"
+      ],
+      "state": "awaiting_representation_choice",
+      "contract": "climb",
+      "gates": [
+        "Ask owner to choose 3D + 2D renders or 2D sprites; wait for an answer when unspecified.",
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "previousRecommendedRepresentations": {
+        "cat-tree": "volumetric_3d",
+        "tall-cat-climbing-tower": "volumetric_3d",
+        "basket-cat-stand": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "cat-tree": "awaiting_owner_choice",
+        "tall-cat-climbing-tower": "awaiting_owner_choice",
+        "basket-cat-stand": "awaiting_owner_choice"
+      }
+    },
+    {
+      "id": "interaction-12",
+      "title": "Cat perch and hammock",
+      "items": [
+        "cozy-cat-perch",
+        "window-perch",
+        "hanging-cat-hammock"
+      ],
+      "state": "awaiting_representation_choice",
+      "contract": "perch",
+      "gates": [
+        "Ask owner to choose 3D + 2D renders or 2D sprites; wait for an answer when unspecified.",
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "previousRecommendedRepresentations": {
+        "cozy-cat-perch": "volumetric_3d",
+        "window-perch": "volumetric_3d",
+        "hanging-cat-hammock": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "cozy-cat-perch": "awaiting_owner_choice",
+        "window-perch": "awaiting_owner_choice",
+        "hanging-cat-hammock": "awaiting_owner_choice"
+      }
+    },
+    {
+      "id": "interaction-13",
+      "title": "Cat resting beds",
+      "items": [
+        "cat-bed",
+        "small-cat-bed",
+        "round-fluffy-cat-bed"
+      ],
+      "state": "awaiting_representation_choice",
+      "contract": "perch",
+      "gates": [
+        "Ask owner to choose 3D + 2D renders or 2D sprites; wait for an answer when unspecified.",
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "previousRecommendedRepresentations": {
+        "cat-bed": "volumetric_3d",
+        "small-cat-bed": "volumetric_3d",
+        "round-fluffy-cat-bed": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "cat-bed": "awaiting_owner_choice",
+        "small-cat-bed": "awaiting_owner_choice",
+        "round-fluffy-cat-bed": "awaiting_owner_choice"
+      }
+    },
+    {
+      "id": "interaction-14",
+      "title": "Interactive table surface",
+      "items": [
+        "coffee-table"
+      ],
+      "state": "awaiting_representation_choice",
+      "contract": "perch",
+      "gates": [
+        "Ask owner to choose 3D + 2D renders or 2D sprites; wait for an answer when unspecified.",
+        "Confirm meaningful action and state/actor contract before angle generation.",
+        "Show generated multi-angle references and resolve owner review before model creation.",
+        "Review native state/facing art and actor contact allowance before installation."
+      ],
+      "previousRecommendedRepresentations": {
+        "coffee-table": "volumetric_3d"
+      },
+      "targetRepresentations": {
+        "coffee-table": "awaiting_owner_choice"
+      }
+    }
+  ],
+  "rules": [
+    "Canonical source fronts remain unchanged.",
+    "Show generated multi-angle sheets and record each batch review before dependent model edits.",
+    "No accounts, balances or saved placements are generated or replaced.",
+    "Production art rendering uses isolated Firefox; no application checks/builds/browser verification without a request.",
+    "Classify representation first; retained 2D remains a separate sprite review task and never counts as a converted 3D model.",
+    "Track persistent object states separately from occupancy leases and visual animation phases.",
+    "Queue entries describe planned work and never claim that declared actions have been runtime-verified.",
+    "A state change is not a geometry requirement. Candles, lights, food/water levels and plant-care visuals remain 2D unless a separate physical-view or actor-fit need is requested.",
+    "Ask for representation before an unspecified request/batch; do not infer it from silence.",
+    "The 60-second default is only for generated artwork review, never representation choice.",
+    "Sitting, collision, docking and state changes are independent of furniture art representation."
+  ],
+  "convertedThisRun": 6,
+  "remaining": 18,
+  "nextBatch": "interaction-05",
+  "spriteBatches": [
+    {
+      "id": "sprite-couch-pilot",
+      "title": "Original 2D couch contact trial",
+      "items": [
+        "sofa"
+      ],
+      "state": "installed_local_trial",
+      "representation": "sprite",
+      "choice": "Owner accepted the proposed sprite-only couch workflow.",
+      "artReview": "unchanged_original_no_generated_art",
+      "revision": "3917ae976060",
+      "manifest": "assets/furniture-studio/sprites/sofa/manifest.json",
+      "preview": "/play?compare=furniture&asset=sofa&representation=sprite",
+      "verificationReport": "docs/implementation/furniture-sprite-couch-2026-11-11.md",
+      "verificationScope": "Firefox local actor/contact preview; no authenticated room transactions.",
+      "facings": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "review": {
+        "art": "Reused accepted 2D turnaround profiles/rear, exact native pixels; original front unchanged. No new model or generated art.",
+        "runtime": "Firefox: four seated facings, above-item rotation preserves both seats, stand/re-sit and rear safe exit, collision spot check passed. Rear seat elevation visually corrected.",
+        "scope": "Local trial only; authenticated room transactions and multiplayer were not retested.",
+        "evidence": "output/playwright/couch-seated-four-views.png"
+      }
+    },
+    {
+      "id": "interaction-03-sprite",
+      "sourceBatch": "interaction-03",
+      "title": "Wooden door passage",
+      "items": [
+        "wooden-door"
+      ],
+      "state": "installed",
+      "representation": "sprite",
+      "revision": "0d01fc443211",
+      "manifest": "assets/furniture-studio/sprites/wooden-door/manifest.json",
+      "reviewScope": "11 focused tests and Firefox local trial/stage/editor/mobile review; live multiplayer not tested."
+    },
+    {
+      "id": "interaction-04-sprite",
+      "sourceBatch": "interaction-04",
+      "title": "Sofa family",
+      "items": [
+        "sofa-sage",
+        "sofa-terracotta",
+        "sofa-cream",
+        "three-seat-sofa"
+      ],
+      "state": "installed",
+      "representation": "sprite",
+      "exports": {
+        "sofa-sage": "db50fd58992d",
+        "sofa-terracotta": "8cd0b76b49ed",
+        "sofa-cream": "ceea03b669ba",
+        "three-seat-sofa": "114b8fc6c40c"
+      },
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "interaction-2d-01",
+      "title": "Existing sprite state and contact interactions",
+      "items": [
+        "decorative-lights",
+        "garden-bush",
+        "bamboo-window"
+      ],
+      "state": "queued",
+      "targetRepresentation": "retain_2d",
+      "contracts": {
+        "decorative-lights": "light",
+        "garden-bush": "soft_contact",
+        "bamboo-window": "soft_contact"
+      },
+      "work": "State/contact review only; no source mesh, turnaround or GLB needed."
+    },
+    {
+      "id": "interaction-2d-02",
+      "sourceBatch": "interaction-02",
+      "title": "Switchable lights",
+      "items": [
+        "candles",
+        "floor-lamp",
+        "garden-lamp"
+      ],
+      "state": "queued",
+      "targetRepresentation": "retain_2d",
+      "contract": "light",
+      "work": "Native state/interaction sprites only; a state change does not require a mesh or turnaround."
+    },
+    {
+      "id": "interaction-2d-03",
+      "sourceBatch": "interaction-08",
+      "title": "Food bowl states",
+      "items": [
+        "feeding-bowl-full",
+        "food-bowl-empty",
+        "food-bowl-half",
+        "food-bowl-full"
+      ],
+      "state": "queued",
+      "targetRepresentation": "retain_2d",
+      "contract": "food",
+      "work": "Native state/interaction sprites only; a state change does not require a mesh or turnaround."
+    },
+    {
+      "id": "interaction-2d-04",
+      "sourceBatch": "interaction-09",
+      "title": "Water bowl states",
+      "items": [
+        "water-bowl-empty",
+        "water-bowl-half",
+        "water-bowl-full"
+      ],
+      "state": "queued",
+      "targetRepresentation": "retain_2d",
+      "contract": "water",
+      "work": "Native state/interaction sprites only; a state change does not require a mesh or turnaround."
+    },
+    {
+      "id": "interaction-2d-05",
+      "sourceBatch": "interaction-10",
+      "title": "Care stations",
+      "items": [
+        "automatic-feeder",
+        "water-fountain",
+        "garden-feeding",
+        "double-feeding-tray"
+      ],
+      "state": "queued",
+      "targetRepresentation": "retain_2d",
+      "contract": "care_station",
+      "work": "Native state/interaction sprites only; a state change does not require a mesh or turnaround."
+    },
+    {
+      "id": "interaction-2d-06",
+      "sourceBatch": "interaction-15",
+      "title": "Waterable garden plants",
+      "items": [
+        "flower-pot",
+        "garden-pot",
+        "garden-banana"
+      ],
+      "state": "queued",
+      "targetRepresentation": "retain_2d",
+      "contract": "plant",
+      "work": "Native state/interaction sprites only; a state change does not require a mesh or turnaround."
+    }
+  ],
+  "representationPlan": "assets/furniture-studio/batches/representation-plan.json",
+  "representationReviewedAt": "2026-11-10T15:08:37.543261+00:00",
+  "authoredModelIds": [
+    "studio-couch",
+    "curtain-passage",
+    "aquarium",
+    "table",
+    "side-table",
+    "bookshelf",
+    "chair",
+    "dining-chair",
+    "armchair"
+  ],
+  "summary": {
+    "catalogIds": 110,
+    "authored3D": 9,
+    "queuedInteractive3D": 0,
+    "queuedHybrid3D": 0,
+    "queuedVolumetric3D": 0,
+    "queuedInteractive2D": 20,
+    "deferred2D": 57,
+    "awaitingRepresentationChoice": 18,
+    "installedInteractive2D": 6
+  },
+  "remainingSpriteReview": 20,
+  "remainingAuthoring": 38,
+  "nextSpriteBatch": "interaction-2d-01",
+  "interactionPlan": "assets/furniture-studio/batches/interaction-plan.json",
+  "scopeUpdatedAt": "2026-11-10T18:09:44.641953+00:00",
+  "previousRepresentationBatches": [
+    {
+      "id": "2026-11-10-02",
+      "category": "Living room",
+      "items": [
+        "sofa",
+        "armchair",
+        "floor-lamp"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "sofa": "volumetric_3d",
+        "armchair": "volumetric_3d",
+        "floor-lamp": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-03",
+      "category": "Living room",
+      "items": [
+        "refrigerator",
+        "stove",
+        "sink-counter"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "refrigerator": "volumetric_3d",
+        "stove": "volumetric_3d",
+        "sink-counter": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-04",
+      "category": "Living room",
+      "items": [
+        "three-seat-sofa",
+        "television",
+        "tv-cabinet"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "three-seat-sofa": "volumetric_3d",
+        "television": "volumetric_3d",
+        "tv-cabinet": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-05",
+      "category": "Living room",
+      "items": [
+        "chair",
+        "decorative-pillows",
+        "kitchen-counter"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "chair": "volumetric_3d",
+        "decorative-pillows": "volumetric_3d",
+        "kitchen-counter": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-06",
+      "category": "Living room",
+      "items": [
+        "dining-table",
+        "dining-chair",
+        "cupboards"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "dining-table": "volumetric_3d",
+        "dining-chair": "volumetric_3d",
+        "cupboards": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-07",
+      "category": "Living room",
+      "items": [
+        "kitchen-shelves",
+        "food-storage-containers",
+        "candles"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "kitchen-shelves": "volumetric_3d",
+        "food-storage-containers": "volumetric_3d",
+        "candles": "hybrid_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-08",
+      "category": "Living room",
+      "items": [
+        "storage-box",
+        "books",
+        "coffee-table"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "storage-box": "volumetric_3d",
+        "books": "volumetric_3d",
+        "coffee-table": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-09",
+      "category": "Living room",
+      "items": [
+        "sofa-sage",
+        "sofa-terracotta",
+        "sofa-cream"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "sofa-sage": "volumetric_3d",
+        "sofa-terracotta": "volumetric_3d",
+        "sofa-cream": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-10",
+      "category": "Living room",
+      "items": [
+        "sage-loveseat-east",
+        "sage-loveseat-west",
+        "round-flower-table"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "sage-loveseat-east": "volumetric_3d",
+        "sage-loveseat-west": "volumetric_3d",
+        "round-flower-table": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-11",
+      "category": "Living room",
+      "items": [
+        "sage-chaise",
+        "wicker-display-cabinet"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "sage-chaise": "volumetric_3d",
+        "wicker-display-cabinet": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-12",
+      "category": "Bedroom",
+      "items": [
+        "single-bed",
+        "wardrobe",
+        "desk"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "single-bed": "volumetric_3d",
+        "wardrobe": "volumetric_3d",
+        "desk": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-13",
+      "category": "Bedroom",
+      "items": [
+        "double-bed",
+        "bedside-table",
+        "mirror"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "double-bed": "volumetric_3d",
+        "bedside-table": "volumetric_3d",
+        "mirror": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-14",
+      "category": "Bedroom",
+      "items": [
+        "dresser",
+        "sage-bed",
+        "lantern-cabinet"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "dresser": "volumetric_3d",
+        "sage-bed": "volumetric_3d",
+        "lantern-cabinet": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-15",
+      "category": "Decorations",
+      "items": [],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "decorative-rug",
+        "wall-clock",
+        "painting"
+      ],
+      "targetRepresentations": {},
+      "previousState": "routed_to_2d"
+    },
+    {
+      "id": "2026-11-10-16",
+      "category": "Decorations",
+      "items": [
+        "wall-shelf"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "picture-frame",
+        "decorative-lights"
+      ],
+      "targetRepresentations": {
+        "wall-shelf": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-17",
+      "category": "Decorations",
+      "items": [],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "small-rug"
+      ],
+      "targetRepresentations": {},
+      "previousState": "routed_to_2d"
+    },
+    {
+      "id": "2026-11-10-18",
+      "category": "Plants",
+      "items": [
+        "small-indoor-plant",
+        "large-indoor-plant",
+        "flower-pot"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "small-indoor-plant": "hybrid_3d",
+        "large-indoor-plant": "hybrid_3d",
+        "flower-pot": "hybrid_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-19",
+      "category": "Pet essentials",
+      "items": [
+        "cat-bed",
+        "scratching-post",
+        "feeding-bowl-full"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "cat-bed": "volumetric_3d",
+        "scratching-post": "volumetric_3d",
+        "feeding-bowl-full": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-20",
+      "category": "Pet essentials",
+      "items": [
+        "small-cat-bed",
+        "round-fluffy-cat-bed",
+        "wooden-cat-house"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "small-cat-bed": "volumetric_3d",
+        "round-fluffy-cat-bed": "volumetric_3d",
+        "wooden-cat-house": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-21",
+      "category": "Pet essentials",
+      "items": [
+        "cat-tree",
+        "tall-cat-climbing-tower",
+        "cat-tunnel"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "cat-tree": "volumetric_3d",
+        "tall-cat-climbing-tower": "volumetric_3d",
+        "cat-tunnel": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-22",
+      "category": "Pet essentials",
+      "items": [
+        "window-perch",
+        "hanging-cat-hammock",
+        "cat-basket"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "window-perch": "volumetric_3d",
+        "hanging-cat-hammock": "volumetric_3d",
+        "cat-basket": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-23",
+      "category": "Pet essentials",
+      "items": [
+        "cardboard-box",
+        "cat-carrier",
+        "automatic-feeder"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "cardboard-box": "volumetric_3d",
+        "cat-carrier": "volumetric_3d",
+        "automatic-feeder": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-24",
+      "category": "Pet essentials",
+      "items": [
+        "pet-food-storage-container",
+        "pet-food-bag",
+        "treat-container"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "pet-food-storage-container": "volumetric_3d",
+        "pet-food-bag": "volumetric_3d",
+        "treat-container": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-25",
+      "category": "Pet essentials",
+      "items": [
+        "water-fountain"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "yarn-ball",
+        "feather-wand"
+      ],
+      "targetRepresentations": {
+        "water-fountain": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-26",
+      "category": "Pet essentials",
+      "items": [],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "toy-mouse",
+        "rubber-ball",
+        "fish-plush-toy"
+      ],
+      "targetRepresentations": {},
+      "previousState": "routed_to_2d"
+    },
+    {
+      "id": "2026-11-10-27",
+      "category": "Pet essentials",
+      "items": [
+        "interactive-track-toy",
+        "toy-basket",
+        "litter-box"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "interactive-track-toy": "volumetric_3d",
+        "toy-basket": "volumetric_3d",
+        "litter-box": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-28",
+      "category": "Pet essentials",
+      "items": [
+        "small-towel",
+        "pet-blanket"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "grooming-brush"
+      ],
+      "targetRepresentations": {
+        "small-towel": "volumetric_3d",
+        "pet-blanket": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-29",
+      "category": "Pet essentials",
+      "items": [
+        "cleaning-supplies",
+        "first-aid-kit",
+        "first-aid-pouch"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "cleaning-supplies": "volumetric_3d",
+        "first-aid-kit": "volumetric_3d",
+        "first-aid-pouch": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-30",
+      "category": "Pet essentials",
+      "items": [
+        "food-bowl-empty",
+        "food-bowl-half",
+        "food-bowl-full"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "food-bowl-empty": "volumetric_3d",
+        "food-bowl-half": "volumetric_3d",
+        "food-bowl-full": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-31",
+      "category": "Pet essentials",
+      "items": [
+        "water-bowl-empty",
+        "water-bowl-full",
+        "water-bowl-half"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "water-bowl-empty": "volumetric_3d",
+        "water-bowl-full": "volumetric_3d",
+        "water-bowl-half": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-32",
+      "category": "Pet essentials",
+      "items": [
+        "pet-blanket-sage",
+        "pet-blanket-terracotta",
+        "pet-blanket-cream"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "pet-blanket-sage": "volumetric_3d",
+        "pet-blanket-terracotta": "volumetric_3d",
+        "pet-blanket-cream": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-33",
+      "category": "Pet essentials",
+      "items": [
+        "basket-cat-stand",
+        "cozy-cat-perch",
+        "double-feeding-tray"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "basket-cat-stand": "volumetric_3d",
+        "cozy-cat-perch": "volumetric_3d",
+        "double-feeding-tray": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-34",
+      "category": "Garden",
+      "items": [
+        "garden-bench",
+        "garden-pot",
+        "garden-feeding"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "garden-bench": "volumetric_3d",
+        "garden-pot": "hybrid_3d",
+        "garden-feeding": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-35",
+      "category": "Garden",
+      "items": [
+        "garden-banana",
+        "garden-lamp",
+        "community-bench"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "garden-banana": "hybrid_3d",
+        "garden-lamp": "volumetric_3d",
+        "community-bench": "volumetric_3d"
+      },
+      "previousState": "queued"
+    },
+    {
+      "id": "2026-11-10-36",
+      "category": "Garden",
+      "items": [],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "garden-bush"
+      ],
+      "targetRepresentations": {},
+      "previousState": "routed_to_2d"
+    },
+    {
+      "id": "2026-11-10-37",
+      "category": "Decor",
+      "items": [],
+      "state": "superseded_by_interaction_scope",
+      "routed2DItems": [
+        "woven-area-rug",
+        "bamboo-window",
+        "woven-runner"
+      ],
+      "targetRepresentations": {},
+      "previousState": "routed_to_2d"
+    },
+    {
+      "id": "2026-11-10-38",
+      "category": "interior",
+      "items": [
+        "wooden-door"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentations": {
+        "wooden-door": "volumetric_3d"
+      },
+      "previousState": "queued"
+    }
+  ],
+  "previousSpriteBatches": [
+    {
+      "id": "2026-11-10-2d-01",
+      "group": "floor-coverings",
+      "items": [
+        "decorative-rug",
+        "small-rug",
+        "woven-area-rug",
+        "woven-runner"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentation": "retain_2d",
+      "work": [
+        "Review native contour/alpha at integer zoom; preserve source PNG.",
+        "Review supported facing, layers, collision and interaction/state metadata."
+      ],
+      "note": "Sprite polish/review only; no generated turnaround or GLB required."
+    },
+    {
+      "id": "2026-11-10-2d-02",
+      "group": "wall-art-and-fixtures",
+      "items": [
+        "wall-clock",
+        "painting",
+        "picture-frame",
+        "decorative-lights",
+        "bamboo-window"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentation": "retain_2d",
+      "work": [
+        "Review native contour/alpha at integer zoom; preserve source PNG.",
+        "Review supported facing, layers, collision and interaction/state metadata."
+      ],
+      "note": "Sprite polish/review only; no generated turnaround or GLB required."
+    },
+    {
+      "id": "2026-11-10-2d-03",
+      "group": "soft-foliage",
+      "items": [
+        "garden-bush"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentation": "retain_2d",
+      "work": [
+        "Review native contour/alpha at integer zoom; preserve source PNG.",
+        "Review supported facing, layers, collision and interaction/state metadata."
+      ],
+      "note": "Sprite polish/review only; no generated turnaround or GLB required."
+    },
+    {
+      "id": "2026-11-10-2d-04",
+      "group": "small-toys",
+      "items": [
+        "yarn-ball",
+        "feather-wand",
+        "toy-mouse"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentation": "retain_2d",
+      "work": [
+        "Review native contour/alpha at integer zoom; preserve source PNG.",
+        "Review supported facing, layers, collision and interaction/state metadata."
+      ],
+      "note": "Sprite polish/review only; no generated turnaround or GLB required."
+    },
+    {
+      "id": "2026-11-10-2d-05",
+      "group": "small-props",
+      "items": [
+        "rubber-ball",
+        "fish-plush-toy",
+        "grooming-brush"
+      ],
+      "state": "superseded_by_interaction_scope",
+      "targetRepresentation": "retain_2d",
+      "work": [
+        "Review native contour/alpha at integer zoom; preserve source PNG.",
+        "Review supported facing, layers, collision and interaction/state metadata."
+      ],
+      "note": "Sprite polish/review only; no generated turnaround or GLB required."
+    }
+  ],
+  "deferredCount": 57,
+  "deferredItems": [
+    "wardrobe",
+    "desk",
+    "refrigerator",
+    "stove",
+    "sink-counter",
+    "television",
+    "tv-cabinet",
+    "decorative-rug",
+    "wall-clock",
+    "bedside-table",
+    "mirror",
+    "dresser",
+    "decorative-pillows",
+    "kitchen-counter",
+    "dining-table",
+    "cupboards",
+    "kitchen-shelves",
+    "food-storage-containers",
+    "small-indoor-plant",
+    "large-indoor-plant",
+    "painting",
+    "picture-frame",
+    "wall-shelf",
+    "storage-box",
+    "books",
+    "small-rug",
+    "scratching-post",
+    "wooden-cat-house",
+    "cat-tunnel",
+    "cat-basket",
+    "cardboard-box",
+    "cat-carrier",
+    "pet-food-storage-container",
+    "pet-food-bag",
+    "treat-container",
+    "yarn-ball",
+    "feather-wand",
+    "toy-mouse",
+    "rubber-ball",
+    "fish-plush-toy",
+    "interactive-track-toy",
+    "toy-basket",
+    "litter-box",
+    "grooming-brush",
+    "small-towel",
+    "pet-blanket",
+    "cleaning-supplies",
+    "first-aid-kit",
+    "first-aid-pouch",
+    "pet-blanket-sage",
+    "pet-blanket-terracotta",
+    "pet-blanket-cream",
+    "round-flower-table",
+    "woven-area-rug",
+    "lantern-cabinet",
+    "wicker-display-cabinet",
+    "woven-runner"
+  ],
+  "catalogCorrections": [
+    {
+      "id": "bedside-table",
+      "issue": "Catalog declares rest and one human seat on a small cabinet.",
+      "plan": "Remove the copied bed action/socket and leave as 2D inspection-only for now; storage interactions stay deferred.",
+      "state": "planned_not_applied"
+    },
+    {
+      "id": "small-indoor-plant",
+      "issue": "Catalog declares toggle_door.",
+      "plan": "Remove the door action; hold conversion until a proper water_plant approach/supply contract is implemented.",
+      "state": "planned_not_applied"
+    },
+    {
+      "id": "large-indoor-plant",
+      "issue": "Catalog declares toggle_door.",
+      "plan": "Remove the door action; hold conversion until a proper water_plant approach/supply contract is implemented.",
+      "state": "planned_not_applied"
+    }
+  ],
+  "previousInteractionScopeSummary": {
+    "catalogIds": 110,
+    "authored3D": 6,
+    "queuedInteractive3D": 44,
+    "queuedHybrid3D": 4,
+    "queuedVolumetric3D": 40,
+    "queuedInteractive2D": 3,
+    "deferred2D": 57
+  },
+  "convertedSinceInitialQueue": 6,
+  "representationChoice": {
+    "requiredWhenUnspecified": true,
+    "question": "Should this use 3D + 2D renders, or 2D sprites only?",
+    "silenceChoosesRepresentation": false,
+    "choiceScope": "Agreed request or batch; reuse an already explicit choice."
+  },
+  "previousWorkflowSummary": {
+    "catalogIds": 110,
+    "authored3D": 9,
+    "queuedInteractive3D": 24,
+    "queuedHybrid3D": 0,
+    "queuedVolumetric3D": 24,
+    "queuedInteractive2D": 20,
+    "deferred2D": 57
+  },
+  "latestExecution": {
+    "batch": "interaction-04",
+    "representation": "sprite",
+    "items": [
+      "sofa-sage",
+      "sofa-terracotta",
+      "sofa-cream",
+      "three-seat-sofa"
+    ],
+    "modelsCreated": 0,
+    "review": {
+      "completedAt": "2026-11-10T18:09:44.641953+00:00",
+      "tests": {
+        "clientPassed": 9,
+        "backendPassed": 3,
+        "commands": [
+          "node --import tsx --test tests/sofa-family.test.ts",
+          "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+        ],
+        "database": "Generated records only in isolated test DB; destroyed after tests."
+      },
+      "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+      "evidence": "output/playwright/sofa-family/visual-review.png",
+      "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+      "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+      "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+    }
+  }
+}

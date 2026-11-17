@@ -20,3 +20,7 @@ These are the frontend requirements explicitly requested by the owner. They do n
 - Typography: use self-hosted **Saira Condensed** for primary headings, names and world labels, and **Instrument Sans** for secondary body text, controls and dialogue. Keep these roles consistent across the game, platform and management dashboard; use the existing font tokens.
 
 - The owner now authorizes fixtures persisted in the actual database without repeated visible Sample tags. Keep stable internal seed provenance, the real API adapter and no in-browser/proximity fixtures. Never turn seeded animals or generated illustrations into identification references, verified Kibble or collected payments. See the live-social-backends guide for the real service boundaries.
+
+## Weapon authoring
+
+- Use `.agents/skills/pawtrail-weapons/SKILL.md` for new usable weapons: inspect the base character, create quick front/side concepts, build geometry with a generated 2D skin, then create three regular abilities and one ultimate with matching generated icons and Item Studio integration. Focused revisions can reuse approved assets. Keep existing verification permissions and local/platform boundaries.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "PawTrail Weapons"
+  short_description: "Textured weapons with equipment and skill icons"
+  brand_color: "#A365CA"
+  icon_small: "./assets/icon.png"
+  default_prompt: "Use $pawtrail-weapons to create a weapon from my reference, with front/side concepts, a textured model, a weapon icon, three regular abilities, one ultimate and matching ability icons in Item Studio."

@@ -58,12 +58,41 @@ export function navigateActorPreview() {
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
 export function navigateFurnitureCreator() {
+  navigateFurnitureEditor()
+}
+export function navigateFurnitureEditor(assetId?: string) {
   const path = window.location.pathname === '/' ? '/' : '/play'
-  window.history.pushState(null, '', path + '?preview=furniture')
+  const query = new URLSearchParams({ preview: 'furniture' })
+  if (assetId) query.set('asset', assetId)
+  window.history.pushState(null, '', path + '?' + query)
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 export function navigateFurnitureComparison() {
   const path = window.location.pathname === '/' ? '/' : '/play'
   window.history.pushState(null, '', path + '?compare=furniture')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateSkinStudio() {
+  const path = window.location.pathname === '/' ? '/' : '/play'
+  window.history.pushState(null, '', path + '?preview=skin')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateStageEditor(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=stage')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateActorExplainer(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=anatomy')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateItemStudio(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=items')
   window.dispatchEvent(new PopStateEvent('popstate'))
 }

@@ -1,4 +1,4 @@
-import { furniture, furnitureAt } from "./geometry";
+import { furniture, furnitureAt, groundForState } from "./geometry";
 import type { Placement, Point, Rect } from "./types";
 import { fixedCells, type Zone } from "./community";
 import { floorPlan } from "./presets";
@@ -54,12 +54,13 @@ export const footRect = (p: Point): Rect => ({
   width: FOOT.halfWidth * 2,
   height: FOOT.height,
 });
-export function colliders(p: Placement) {
-  return (furnitureAt(p)?.geometry.ground ?? []).map((r) => worldRect(p, r));
+export function colliders(p: Placement, state?: {open?:boolean}) {
+  const def=furnitureAt(p)
+  return (def?groundForState(def,state):[]).map((r) => worldRect(p, r));
 }
 export function visualBounds(p: Placement) {
   const d = furnitureAt(p);
-  return worldRect(p, [0, 0, d.width, d.height]);
+  return worldRect(p, d.visibleBounds ?? [0, 0, d.width, d.height])
 }
 /** Built only on a layout/object-state change. Artwork dimensions never determine walking collision. */
 export class Navigation {
@@ -98,8 +99,7 @@ export class Navigation {
       const [x, y] = cell.split(",").map(Number);
       this.rects.push({ x: x * 32, y: y * 32, width: 32, height: 32 });
     }
-    for (const p of layout)
-      if (!states[p.id]?.open) this.rects.push(...colliders(p));
+    for (const p of layout) this.rects.push(...colliders(p,states[p.id]));
     for (const r of this.rects) {
       for (
         let x = Math.floor((r.x - FOOT.halfWidth) / NAV_STEP);

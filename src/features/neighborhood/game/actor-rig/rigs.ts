@@ -1,3 +1,5 @@
+import {humanGait} from './human-gait'
+import {humanIdle} from './human-idle'
 import * as T from 'three'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
 import actions from './actions.json'
@@ -12,8 +14,9 @@ import {catOptions,catBreedColors,catJumpMotion,catBodyScale,type CatOptions} fr
 import {catCoat,attachCatDetails} from './cat-parts'
 import {DEFAULT_CHARACTER_FACE,type FaceColors} from './face-details'
 export type Kind='rescuer'|'orange-tabby'
-export type RigPoseOptions={locomotionPhase?:number;gait?:'walk'|'run'}
-export type Rig={kind:Kind;root:T.Group;nodes:T.Object3D[];pose:(action:string,phase:number,layers?:RigPoseOptions)=>void}
+export type SecondaryMotion={phase:number;locomotion:number}
+export type RigPoseOptions={locomotionPhase?:number;gait?:'walk'|'run';secondaryMotion?:SecondaryMotion;idleSoleHeight?:number;referenceStance?:boolean}
+export type Rig={kind:Kind;root:T.Group;nodes:T.Object3D[];itemSockets?:Record<string,T.Object3D>;pose:(action:string,phase:number,layers?:RigPoseOptions)=>void}
 export {actions}
 import BASE_COLORS from './palette.json'
 const C=BASE_COLORS
@@ -254,38 +257,57 @@ export function createRescuer(appearance:AppearanceOptions={}):Rig{
  part('BlanketFold',blanket,C.shirtDark,2.5,-.2,.85,.7,5.5,.3,.1)
  reveal(pillow,false);reveal(blanket,false)
  const reset=restPose(nodes)
+ const idleDown=new T.Vector3(0,-1,0),idleUp=new T.Vector3(0,1,0),idleAim=new T.Vector3(),idleToe=new T.Quaternion()
  function pose(action:string,phase:number,layers:RigPoseOptions={}){
   reset()
   const locomoting=usesWalkingLegs(action)&&typeof layers.locomotionPhase==='number'
   const stridePhase=locomoting?layers.locomotionPhase!:phase,strideT=stridePhase*Math.PI*2
-  const t=phase*Math.PI*2,running=layers.gait==='run'||['run','power_run','rescue_dash'].includes(action),walking=action==='walk'||running||locomoting
-  upper.position.y=walking?-.6+Math.cos(strideT*2)*.12:Math.sin(t)*.24
+  const t=phase*Math.PI*2,explicitRun=['run','power_run','rescue_dash'].includes(action),walking=action==='walk'||explicitRun||locomoting,running=explicitRun||walking&&layers.gait==='run'
+  const gaitPose=humanGait(stridePhase,running)
+  const idlePose=action==='idle'&&!walking&&!layers.referenceStance?humanIdle(phase,layers.idleSoleHeight??(outfit==='gown'?1.6:2.08)):undefined
+  upper.position.y=walking?gaitPose.bodyY:Math.sin(t)*.24
+  upper.position.x=walking?gaitPose.pelvisX:0
+  upper.position.z=walking?gaitPose.bodyZ:0
   chest.scale.y=1+(walking?0:Math.sin(t)*.015)
-  skull.rotation.x=walking?-.025:Math.sin(t)*.016;skull.rotation.y=walking?0:Math.sin(t)*.02
+  skull.rotation.x=walking?gaitPose.headPitch:Math.sin(t)*.016
+  skull.rotation.y=walking?-gaitPose.torsoYaw*.3:Math.sin(t)*.02
+  skull.rotation.z=walking?-gaitPose.torsoRoll*.5:0
   eyes.scale.y=!walking&&phase>=.75&&phase<.875?.12:1
   for(let i=0;i<2;i++){
    if(walking){
-    // Both hips stay attached to one pelvis. Solve knees from a planted-foot
-    // path rather than moving each shorts/hip joint up and down independently.
-    const step=(stridePhase+i*.5)%1,stride=running?4:2.6,hipY=(running?12.1:12.4)+Math.cos(strideT*2)*(running?.3:.12),contact=running?.42:.6
-    let footZ:number,lift=0,pitch=0
-    if(step<contact){footZ=stride*(1-2*step/contact)}
-    else{
-     const swing=(step-contact)/(1-contact),travel=swing-Math.sin(swing*Math.PI*2)/(Math.PI*2)
-     footZ=stride*(2*travel-1);lift=Math.pow(Math.sin(swing*Math.PI),1.5)*(running?2.3:.85);pitch=-Math.sin(swing*Math.PI)*(running?.12:.04)
-    }
-    const down=hipY-(2.2+lift),distance=Math.min(10.79,Math.hypot(down,footZ))
-    const knee=Math.acos(T.MathUtils.clamp((distance*distance-5.5*5.5-5.3*5.3)/(2*5.5*5.3),-1,1))
-    const hip=-Math.atan2(footZ,down)-Math.atan2(5.3*Math.sin(knee),5.5+5.3*Math.cos(knee))
-    hips[i].position.y=hipY;hips[i].rotation.x=hip;knees[i].rotation.x=knee;ankles[i].rotation.x=-hip-knee+pitch
-    const arm=footZ/stride*(running?.65:.2)
-    shoulders[i].rotation.x=arm;elbows[i].rotation.x=(running?-.8:-.13)-Math.max(0,-arm)*.45
+    const leg=gaitPose.legs[i],arm=gaitPose.arms[i]
+    hips[i].position.x+=gaitPose.pelvisX;hips[i].position.y=leg.y;hips[i].position.z=leg.z
+    hips[i].rotation.set(leg.hip,leg.yaw,leg.roll)
+    knees[i].rotation.x=leg.knee;ankles[i].rotation.set(leg.ankle,0,leg.ankleRoll)
+    shoulders[i].rotation.set(...arm.shoulder);elbows[i].rotation.set(...arm.elbow);wrists[i].rotation.set(...arm.wrist)
    }else{
     shoulders[i].rotation.x=Math.sin(t)*.035*(i===0?1:-1)
+    elbows[i].rotation.x=-.14
    }
   }
-  if(running){spine.rotation.x=.16;skull.rotation.x=-.06;stance.position.y=Math.max(0,Math.sin(strideT*2))*.45}
-  const strideArms=shoulders.map(node=>node.rotation.x)
+  if(walking){spine.rotation.set(gaitPose.lean,gaitPose.torsoYaw,gaitPose.torsoRoll)}
+  if(idlePose){
+   const p=idlePose
+   upper.position.set(p.pelvisX,p.bodyY,p.pelvisZ)
+   chest.scale.set(1+p.inhale*.003,1+p.inhale*.009,1+p.inhale*.012)
+   spine.rotation.set(p.lean,0,p.roll)
+   skull.rotation.set(p.headPitch,p.headYaw,-p.roll*.4)
+   for(let i=0;i<2;i++){
+    const side=i===0?-1:1,leg=p.legs[i]
+    hips[i].position.set(side*2.6+p.pelvisX,leg.y,p.pelvisZ)
+    // Aim the two-bone chain at a fixed ankle, then cancel its rotation at the foot.
+    // Unlike a body bob plus bent knees, this keeps the whole sole flat and planted.
+    hips[i].quaternion.setFromUnitVectors(idleDown,idleAim.set(...leg.direction))
+    hips[i].rotateX(-leg.bend);knees[i].rotation.set(leg.knee,0,0)
+    ankles[i].quaternion.copy(hips[i].quaternion).multiply(knees[i].quaternion).invert()
+     .multiply(idleToe.setFromAxisAngle(idleUp,leg.toeOut))
+    shoulders[i].position.y+=p.shoulderLift-side*p.weight*.025
+    shoulders[i].rotation.set(-.025+p.lag*.012,side*.01,side*(.045+p.lag*.007))
+    elbows[i].rotation.set(-.2+p.lag*.015,0,side*.012)
+    wrists[i].rotation.set(-.025+p.lag*.008,side*p.lag*.008,side*.012)
+   }
+  }
+  const strideArms=shoulders.map((node,i)=>({shoulder:node.rotation.clone(),elbow:elbows[i].rotation.clone(),wrist:wrists[i].rotation.clone()}))
   const walkingY=upper.position.y
   const walkingLegs=locomoting?[...hips,...knees,...ankles].map(node=>({node,p:node.position.clone(),q:node.quaternion.clone()})):[]
   const crouch=(amount:number)=>{const a=-1.6*amount,k=2.1*amount,y=5.5*Math.cos(a)+5.3*Math.cos(a+k)+2.1;upper.position.y=y-13;for(let i=0;i<2;i++){hips[i].position.y=y;hips[i].rotation.x=a;knees[i].rotation.x=k;ankles[i].rotation.x=-a-k}}
@@ -431,8 +453,9 @@ export function createRescuer(appearance:AppearanceOptions={}):Rig{
   }
   if(locomoting){upper.position.y=walkingY-(action==='gentle_approach'?1:0);for(const {node,p,q} of walkingLegs){node.position.copy(p);node.quaternion.copy(q)}}
   if(running&&['run','power_run','rescue_dash','power_up'].includes(action)){
-   spine.rotation.x=action==='rescue_dash'?.3:.18;skull.rotation.x=-.08
-   for(let i=0;i<2;i++){const arm=strideArms[i],side=i===0?-1:1;shoulders[i].rotation.set(arm,0,side*.08);elbows[i].rotation.set(-.85-Math.max(0,-arm)*.4,0,0);wrists[i].rotation.set(-.1,0,0);reveal(powerFists[i],true)}
+   // Action layers can brace the torso, but do not introduce a second arm cycle.
+   spine.rotation.x=action==='rescue_dash'?.32:gaitPose.lean;skull.rotation.x=gaitPose.headPitch
+   for(let i=0;i<2;i++){shoulders[i].rotation.copy(strideArms[i].shoulder);elbows[i].rotation.copy(strideArms[i].elbow);wrists[i].rotation.copy(strideArms[i].wrist);reveal(powerFists[i],action!=='run')}
   }
   if(goldenHair&&superEyes){
    const powered=action==='power_up'||action==='power_run'

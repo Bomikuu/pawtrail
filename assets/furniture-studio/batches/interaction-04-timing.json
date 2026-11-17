@@ -1,0 +1,54 @@
+{
+  "batch": "interaction-04",
+  "measurement": "Wall-clock checkpoints from first source inspection through final record writes; includes agent reasoning/tool waits between checkpoints. Overlapping substeps are not added again.",
+  "startedAt": "2026-11-10T17:55:58.100000+00:00",
+  "completedAt": "2026-11-10T18:09:44.665636+00:00",
+  "elapsedSeconds": 826.6,
+  "phases": [
+    {
+      "phase": "Inspect queue, sources and reuse",
+      "startedAt": "2026-11-10T17:55:58.100000+00:00",
+      "endedAt": "2026-11-10T17:57:28.150000+00:00",
+      "seconds": 90.0
+    },
+    {
+      "phase": "Prepare native artwork and contacts",
+      "startedAt": "2026-11-10T17:57:28.150000+00:00",
+      "endedAt": "2026-11-10T18:02:10.055000+00:00",
+      "seconds": 281.9
+    },
+    {
+      "phase": "Register batch and adapt existing seat preview",
+      "startedAt": "2026-11-10T18:02:10.055000+00:00",
+      "endedAt": "2026-11-10T18:04:19.919000+00:00",
+      "seconds": 129.9
+    },
+    {
+      "phase": "Focused tests and Firefox visual/interaction review",
+      "startedAt": "2026-11-10T18:04:19.919000+00:00",
+      "endedAt": "2026-11-10T18:08:24.075000+00:00",
+      "seconds": 244.2
+    },
+    {
+      "phase": "Record verified revisions and timings",
+      "startedAt": "2026-11-10T18:08:24.075000+00:00",
+      "endedAt": "2026-11-10T18:09:44.665636+00:00",
+      "seconds": 80.6
+    }
+  ],
+  "overlappingSubsteps": {
+    "imageGenerationSeconds": 58.5,
+    "devServerAndFirefoxRecoverySeconds": 107.3
+  },
+  "notes": [
+    "Local port 3000 was down; restarted existing Next dev server.",
+    "First Firefox load aborted before navigation; clean goto succeeded.",
+    "12 focused tests passed. Current batch only, no unrelated visual sweeps."
+  ],
+  "exports": {
+    "sofa-sage": "db50fd58992d",
+    "sofa-terracotta": "8cd0b76b49ed",
+    "sofa-cream": "ceea03b669ba",
+    "three-seat-sofa": "114b8fc6c40c"
+  }
+}

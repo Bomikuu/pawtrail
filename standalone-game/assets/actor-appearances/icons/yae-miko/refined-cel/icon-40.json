@@ -1,0 +1,16 @@
+{
+  "id": "yae-miko",
+  "nativeArtSize": [
+    40,
+    40
+  ],
+  "displayFrameSize": [
+    48,
+    48
+  ],
+  "file": "/pawtrail-game/actor-studio/icons/yae-miko/v3-40-329b37c36b/icon.png",
+  "runtimeBytes": 1084,
+  "sourceIcon": "/pawtrail-game/actor-studio/icons/yae-miko/v1-6d4109e6d3/icon.png",
+  "frame": "/pawtrail-game/actor-studio/icons/pixel-frame.svg",
+  "processing": "nearest-neighbor from preserved 64px master; no dithering or regeneration"
+}

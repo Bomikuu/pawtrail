@@ -1,0 +1,66 @@
+{
+  "id": "spectral-guardian-v1",
+  "nativeTile": [
+    64,
+    64
+  ],
+  "atlas": [
+    128,
+    128
+  ],
+  "filter": "nearest",
+  "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-707cbe1b-4170-4c18-94cf-712582f8b712.png",
+  "method": "AI-generated 2x2 texture atlas; quadrant extraction and nearest-neighbor palette-limited native exports",
+  "surfaces": [
+    "body",
+    "armor",
+    "blade",
+    "talisman"
+  ],
+  "usage": "3D spectral guardian body, armor, swords and orbiting talismans; original geometry and animation in code",
+  "reference": "Owner-provided 2026-11-11 screencast; motion and composition guidance, original guardian design",
+  "totalNativePNGBytes": 122978,
+  "concept": {
+    "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-0c783475-601f-4809-88fa-33b2714a8c09.png",
+    "file": "front-side-concept.png",
+    "purpose": "Fast front/side silhouette, equipment and guardian reference"
+  },
+  "abilityIcons": {
+    "primary": {
+      "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-9bd20cb2-588b-4757-8165-8ba23d918f24.png",
+      "file": "skill-primary.png",
+      "native": [
+        64,
+        64
+      ],
+      "role": "regular skill"
+    },
+    "running": {
+      "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-1061a2ec-11de-48ee-a4e3-2fe06a8f4cab.png",
+      "file": "skill-running.png",
+      "native": [
+        64,
+        64
+      ],
+      "role": "regular skill"
+    },
+    "extend": {
+      "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-60ccb388-00ab-4f8f-a5db-0987c78e8c4f.png",
+      "file": "skill-extend.png",
+      "native": [
+        64,
+        64
+      ],
+      "role": "regular skill"
+    },
+    "special": {
+      "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-24659462-ecc8-4ce9-b0d1-665adbcda8d3.png",
+      "file": "skill-special.png",
+      "native": [
+        64,
+        64
+      ],
+      "role": "ultimate"
+    }
+  }
+}

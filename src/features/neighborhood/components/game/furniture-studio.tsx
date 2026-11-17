@@ -23,18 +23,20 @@ import { FurniturePair } from "./furniture-pair";
 import {
   FACINGS,
   furnitureDefinitions,
+  furnitureSeatCount,
   facingLabel,
   type CouchStyle,
 } from "@/features/neighborhood/game/furniture/model";
 import {
   navigatePlay,
   navigateFurnitureComparison,
+  navigateFurnitureEditor,
 } from "@/features/neighborhood/game/play-navigation";
 
 const initialDefinition = furnitureDefinitions[0];
 const draftKey = "pawtrail:furniture-design:v1";
 export default function FurnitureStudio() {
-  const [itemId, setItemId] = useState(initialDefinition.id);
+  const [itemId, setItemId] = useState(() => furnitureDefinitions.find(item => item.id === new URLSearchParams(window.location.search).get('asset'))?.id ?? initialDefinition.id)
   const definition =
     furnitureDefinitions.find((item) => item.id === itemId) ??
     initialDefinition;
@@ -145,16 +147,17 @@ export default function FurnitureStudio() {
           </Button>
           <div>
             <h1 className="font-heading text-2xl font-bold">
-              Furniture creator
+              Furniture setup
             </h1>
             <p className="text-xs text-muted-foreground">
-              Build a piece. Give it a place.
+              Styles, actor contacts and build rules.
             </p>
           </div>
         </div>
-        <Button variant="outline" onClick={navigateFurnitureComparison}>
-          Compare & interact
-        </Button>
+        <div className="flex flex-wrap justify-end gap-2">
+          <Button variant="outline" onClick={() => navigateFurnitureEditor(definition.id)}>Texture editor</Button>
+          <Button variant="outline" onClick={navigateFurnitureComparison}>Compare & interact</Button>
+        </div>
       </header>
       <main className="grid min-h-0 flex-1 overflow-auto lg:grid-cols-[minmax(0,1fr)_22rem] lg:overflow-hidden">
         <section className="flex flex-col lg:min-h-0">
@@ -209,8 +212,8 @@ export default function FurnitureStudio() {
                 key={item.value}
                 size="sm"
                 disabled={
-                  definition.model !== "couch" &&
-                  (item.value >= 0 || item.value === -3)
+                  item.value >= furnitureSeatCount(definition) ||
+                  item.value === -3 && furnitureSeatCount(definition) < 2
                 }
                 variant={seat === item.value ? "secondary" : "outline"}
                 aria-pressed={seat === item.value}

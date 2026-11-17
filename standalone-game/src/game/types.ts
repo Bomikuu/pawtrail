@@ -174,6 +174,9 @@ export type Dialogue = {
   npcId?: string;
   portrait?: string;
   appearanceId?: string;
+  portraitCollection?: string;
+  portraitPose?: import('./actor-rig/photo-portrait-catalog').PhotoPortraitPose;
+  subtitle?: string;
   portraitSubject?: import('./actor-rig/portrait-source').PortraitSubject;
   choices?: DialogueChoice[];
 };

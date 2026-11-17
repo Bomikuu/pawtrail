@@ -26,3 +26,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 <!-- END:nextjs-agent-rules -->
 
 - Live data is database-only, with authorized fixtures populated through `backend/social/management/commands/seed_community.py`. Keep current/default real API mode, internal seed keys and no browser fixture fallback. The social domains live in `backend/social`; identity/calibration evidence remains separate. Full platform pages use the Django API adapter; do not restore the retired unavailable-state guards.
+
+## Weapon authoring
+
+- Use `.agents/skills/pawtrail-weapons/SKILL.md` for new usable weapons: inspect the base character, create quick front/side concepts, build geometry with a generated 2D skin, then create three regular abilities and one ultimate with matching generated icons and Item Studio integration. Focused revisions can reuse approved assets. Keep existing verification permissions and local/platform boundaries.

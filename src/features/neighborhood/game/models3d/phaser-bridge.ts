@@ -20,6 +20,7 @@ import { LiveCharacter } from '../runtime/live-character';
 import { allowsMovingAction, actorEffectAction } from '../actor-rig/action-layers';
 import { gameAppearance, type GameAppearance } from '../actor-rig/game-appearances';
 import { CREATOR_FRAME } from '../actor-rig/pixel-renderer';
+import { resolveInteractionYaw } from './interaction-facing'
 const baseAppearance={appearance:defaultAppearance()};
 let serial = 0,
   renderer: ReturnType<typeof pixelRenderer> | undefined,
@@ -153,11 +154,7 @@ export function bindModel(
           : action.includes("up")
             ? Math.PI
             : 0;
-    const interactionYaw = sprite.getData("modelFacing");
-    if (!moving && !allowsMovingAction(action) && !/^(walk|run|idle|standing|watch)/.test(action) &&
-        typeof interactionYaw === "number" && Number.isFinite(interactionYaw)) {
-      yaw = interactionYaw;
-    }
+    yaw = resolveInteractionYaw(yaw, moving, action, sprite.getData('modelFacing'), sprite.getData('modelPoseFacing'))
     const custom=state.kind==='player'&&customCharacterId(state.identity);
     if(state.kind==='player'&&personalId!==state.identity){personalId=state.identity;personalFailed='';if(custom)void resolveSavedCharacter(state.identity)}
     if(state.kind==='player'&&!custom&&(preferenceDirty||preferenceId!==state.identity)){

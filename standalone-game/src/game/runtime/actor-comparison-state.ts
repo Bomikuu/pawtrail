@@ -70,6 +70,8 @@ export type ComparisonState = {
   mode: 'legacy' | 'skin' | 'creator' | 'cat-creator'
   appearance: string
   presentationAction: string
+  portraitAction: string
+  portraitPose: import('../actor-rig/photo-portrait-catalog').PhotoPortraitPose
   action: ComparisonAction
   direction: ComparisonDirection
   timing: 'synchronized' | 'native'
@@ -88,7 +90,7 @@ export type ComparisonState = {
 
 let state: ComparisonState = {
   mode: 'legacy', appearance: '',
-  presentationAction:'walk', action: 'walk', direction: 'down', timing: 'synchronized', paused: false,
+  presentationAction:'walk', portraitAction:'idle', portraitPose:'three-quarter-left', action: 'walk', direction: 'down', timing: 'synchronized', paused: false,
   zoom: 3, zoomLimit: 4, catDetail: false, actorDetail: false, inputX: 0, inputY: 0, restart: 0, status: 'loading', load: 0, error: '',
 }
 const listeners = new Set<() => void>()

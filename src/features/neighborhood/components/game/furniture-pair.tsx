@@ -13,14 +13,12 @@ import { PixelActor, humanClips } from "@/features/neighborhood/game/actor-rig/p
 import { characterCreator } from "@/features/neighborhood/game/creator/state"
 import { loadGameFonts } from "@/features/neighborhood/game/font-loader"
 import couchReference from "@/features/neighborhood/game/furniture/references/couch.json"
-import couchTurnaround from "@/features/neighborhood/game/furniture/references/couch-turnaround.json"
-import aquariumTurnaround from "@/features/neighborhood/game/furniture/references/aquarium-turnaround.json"
+import { furnitureTurnaround } from "@/features/neighborhood/game/furniture/references/turnarounds"
 
 function referenceView(definition: FurnitureDefinition, rotation: number) {
-  const references = definition.model === "couch" ? couchTurnaround.referenceViews
-    : definition.model === "aquarium" ? aquariumTurnaround.referenceViews : null
+  const references = furnitureTurnaround(definition.model)?.referenceViews
   if (references)
-    return references[String(rotation) as keyof typeof references] ?? references["0"]
+    return references[String(rotation)] ?? references["0"]
   return { file: definition.reference, ...definition.referenceFrame,
     label: "Original front view" }
 }
@@ -114,7 +112,7 @@ export function FurniturePair({
     actorCanvas.height = 80
     setError("")
     void loadGameFonts()
-    for (const angle of ["couch", "aquarium"].includes(definition.model) ? [0, 90, 180, 270] : [0]) {
+    for (const angle of furnitureTurnaround(definition.model) ? [0, 90, 180, 270] : [0]) {
       const photo = new Image()
       photo.onerror = () => {
         if (!stopped) setError("The reference could not load. Reopen this page to retry.")
@@ -240,7 +238,7 @@ export function FurniturePair({
       )}
       {[
         {
-          title: ["couch", "aquarium"].includes(definition.model) && rotation !== 0
+          title: furnitureTurnaround(definition.model) && rotation !== 0
             ? "Turnaround reference" : "Original " + definition.model,
           ref: original,
           detail: referenceView(definition, rotation).label,

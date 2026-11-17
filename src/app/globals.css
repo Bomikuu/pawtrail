@@ -1,6 +1,8 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 @import 'tw-animate-css';
 @import '../styles/complex.css';
+@source '../';
+@source '../../node_modules/@sitebuilder';
 @custom-variant dark (&:is(.dark *));
 @theme inline {
   --color-background: var(--background);

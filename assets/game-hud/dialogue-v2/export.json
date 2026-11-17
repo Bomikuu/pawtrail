@@ -1,0 +1,141 @@
+{
+  "tool": "built-in image_gen",
+  "source": "textures-generated.png",
+  "reference": "owner-reference.png",
+  "processing": "Measured source regions, alpha threshold 224, nearest-neighbor native export, 64 colors without dithering. Text/portraits/icons remain separate DOM/runtime content.",
+  "assets": [
+    {
+      "id": "panel",
+      "file": "panel.png",
+      "nativeSize": [
+        128,
+        128
+      ],
+      "slice": 24,
+      "sourceRegion": [
+        0,
+        150,
+        464,
+        665
+      ],
+      "sourceCrop": [
+        32,
+        61,
+        450,
+        472
+      ],
+      "bytes": 8608
+    },
+    {
+      "id": "portrait",
+      "file": "portrait.png",
+      "nativeSize": [
+        128,
+        192
+      ],
+      "slice": 16,
+      "sourceRegion": [
+        470,
+        150,
+        759,
+        665
+      ],
+      "sourceCrop": [
+        20,
+        75,
+        275,
+        461
+      ],
+      "bytes": 8657
+    },
+    {
+      "id": "speech",
+      "file": "speech.png",
+      "nativeSize": [
+        240,
+        128
+      ],
+      "slice": 16,
+      "sourceRegion": [
+        759,
+        150,
+        1254,
+        665
+      ],
+      "sourceCrop": [
+        18,
+        159,
+        462,
+        394
+      ],
+      "bytes": 4745
+    },
+    {
+      "id": "ribbon",
+      "file": "ribbon.png",
+      "nativeSize": [
+        240,
+        76
+      ],
+      "slice": null,
+      "sourceRegion": [
+        0,
+        777,
+        458,
+        1016
+      ],
+      "sourceCrop": [
+        41,
+        64,
+        430,
+        180
+      ],
+      "bytes": 8964
+    },
+    {
+      "id": "action",
+      "file": "action.png",
+      "nativeSize": [
+        192,
+        64
+      ],
+      "slice": 16,
+      "sourceRegion": [
+        470,
+        777,
+        940,
+        1016
+      ],
+      "sourceCrop": [
+        24,
+        56,
+        396,
+        187
+      ],
+      "bytes": 3213
+    },
+    {
+      "id": "close",
+      "file": "close.png",
+      "nativeSize": [
+        48,
+        48
+      ],
+      "slice": 8,
+      "sourceRegion": [
+        953,
+        777,
+        1210,
+        1016
+      ],
+      "sourceCrop": [
+        43,
+        44,
+        199,
+        197
+      ],
+      "bytes": 1641
+    }
+  ],
+  "runtimeBytes": 35828
+}

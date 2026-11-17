@@ -1,0 +1,12 @@
+{
+  "id": "amber-outrider",
+  "style": "Refined cel",
+  "nativeSize": [
+    48,
+    48
+  ],
+  "file": "/pawtrail-game/actor-studio/icons/amber-outrider/v2-48-26606ce1d9/icon.png",
+  "runtimeBytes": 1121,
+  "sourceIcon": "/pawtrail-game/actor-studio/icons/amber-outrider/v1-26a2324bf7/icon.png",
+  "processing": "nearest-neighbor 48px app-icon export; no regeneration"
+}

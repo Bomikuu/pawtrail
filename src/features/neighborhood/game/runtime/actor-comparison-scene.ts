@@ -1,3 +1,5 @@
+import {approachFacing} from '../systems/studio-locomotion'
+import {HUMAN_GAIT} from '../actor-rig/human-gait'
 import {enterAbilities,activateLocalAbility,cancelLocalAbility,activeAbility,movementProfile,isAbility} from '../abilities/state';
 import {headingVector} from '../abilities/appearance';
 import Phaser from 'phaser'
@@ -9,6 +11,7 @@ import { ActorGroundShadow } from './actor-shadow'
 import { actorPreviews } from './actor-previews'
 import { PixelActor, CREATOR_FRAME, humanClips } from '../actor-rig/pixel-renderer'
 import { characterCreator, creatorPreviewCapture } from '../creator/state'
+import { creatorModelFactory } from '../creator/preview-models'
 import { appearanceHeadHeight } from '../actor-rig/appearance'
 import { allowsMovingAction, usesWalkingLegs, actorEffectAction } from '../actor-rig/action-layers'
 import {ActionPlayback} from '../actor-rig/action-playback'
@@ -59,6 +62,12 @@ export class ActorComparisonScene extends Phaser.Scene {
   private pressed = new Set<string>()
   private elapsed = 0
   private strideElapsed = 0
+  private humanYaw:number|undefined
+  private humanAction=''
+  private humanPhase=0
+  private humanFromAction=''
+  private humanFromPhase=0
+  private humanTransitionAt=0
   private presentationClock=0
   private playback=new ActionPlayback()
   private offset = { x: 0, y: 0 }
@@ -74,6 +83,7 @@ export class ActorComparisonScene extends Phaser.Scene {
   private appearanceRevision=-1
   private appearanceChangedAt=0
   private renderSignature=''
+  private garmentWeight=0
 
   constructor() { super('ActorCompare') }
 
@@ -111,6 +121,7 @@ export class ActorComparisonScene extends Phaser.Scene {
     this.lastZoom = 0
     this.clipSignature = ''
     this.clips = []
+    this.garmentWeight=0
     if (actorComparison.getSnapshot().status === 'error') return
     this.ground = this.add.tileSprite(0, 0, 1, 1, 'compare:grass', 0).setOrigin(0).setDepth(0)
     this.marks = this.add.graphics().setDepth(1)
@@ -121,7 +132,7 @@ export class ActorComparisonScene extends Phaser.Scene {
     if(creator || cats){
       try{
         const draft=cats?catCreator.getSnapshot():characterCreator.getSnapshot()
-        this.live=cats?new PixelCat(catCreator.getSnapshot().appearance):new PixelActor(characterCreator.getSnapshot().appearance,CREATOR_FRAME.density)
+        this.live=cats?new PixelCat(catCreator.getSnapshot().appearance):new PixelActor(characterCreator.getSnapshot().appearance,CREATOR_FRAME.density,creatorModelFactory(characterCreator.getSnapshot().previewModel))
         const frame=cats?CAT_CREATOR_FRAME:CREATOR_FRAME
         this.appearanceRevision=draft.renderRevision;this.appearanceChangedAt=0;this.renderSignature=''
         this.liveTexture=this.textures.createCanvas('creator:live',frame.width,frame.height)!
@@ -289,13 +300,14 @@ export class ActorComparisonScene extends Phaser.Scene {
     }
     if (!options.paused){this.elapsed += Math.min(delta, 50) / 1000;this.presentationClock+=Math.min(delta,50)}
     const gait:'walk'|'run'=motion.running?'run':'walk';
-    if(moving&&traveled>.001)this.strideElapsed+=traveled/(gait==='run'?104:84);
+    if(moving&&traveled>.001)this.strideElapsed+=traveled/(gait==='run'?(options.mode==='cat-creator'?104:HUMAN_GAIT.runCycleDistance):(options.mode==='cat-creator'?84:HUMAN_GAIT.walkCycleDistance));
     else if(!options.paused && (options.mode==='creator'||options.mode==='cat-creator') && (moving||['walk','run'].includes(options.action)))this.strideElapsed+=Math.min(delta,50)/1000*liveClips[gait].fps/(liveClips[gait].frames??8);
     const requested=options.action==='power_up'&&moving&&motion.running?'power_run':moving&&!allowsMovingAction(options.action)?motion.running?'run':'walk':options.action
     const presentation=this.playback.resolve(requested,this.presentationClock)
     const action=presentation.action as ComparisonAction
     if(options.presentationAction!==action)actorComparison.patch({presentationAction:action})
-    const locomotionFrame=moving&&usesWalkingLegs(action)?Math.floor(this.strideElapsed*(liveClips[gait].frames??12))%(liveClips[gait].frames??12):undefined
+    const stepFrame=(this.strideElapsed%1)*(liveClips[gait].frames??12)
+    const locomotionFrame=moving&&usesWalkingLegs(action)?options.mode==='cat-creator'?Math.floor(stepFrame):Math.floor(stepFrame*64)/64:undefined
     const signature = action + '/' + direction
     if (signature !== this.clipSignature) {
       this.clips = this.views.map(view => view.live ? (()=>{const clip=liveClips[action==='feed'?'eat':action==='water'?'drink':action]??liveClips[action]??liveClips.idle;return {frames:Array.from({length:clip.frames??8},(_,i)=>i),fps:clip.fps,once:clip.repeat===0}})() : view.native ? originalClip(view.kind, action, direction) : currentClip(view.sheet, action, direction))
@@ -303,9 +315,18 @@ export class ActorComparisonScene extends Phaser.Scene {
     }
     const clips = this.clips
     const sharedDuration = Math.max(...this.views.flatMap((view, i) => view.native ? [] : [clips[i].frames.length / clips[i].fps]))
+    const portraitClip=clips[Math.max(0,this.views.findIndex(view=>view.live))]
+    const portraitDuration=presentation.elapsedMs===undefined&&options.timing==='synchronized'?sharedDuration:portraitClip.frames.length/portraitClip.fps
+    const portraitElapsed=presentation.elapsedMs===undefined?this.elapsed:presentation.elapsedMs/1000
+    const portraitAction=portraitClip.once&&portraitElapsed>=portraitDuration?'idle':action
+    if(options.portraitAction!==portraitAction)actorComparison.patch({portraitAction})
     this.marks.clear()
     const detail=faceInspection(options)
     if(!detail)this.marks.lineStyle(1, 0xf9e4bd, .75).lineBetween(Math.floor(this.world.width / 2), 0, Math.floor(this.world.width / 2), this.world.height)
+    const refined=options.mode==='creator'&&characterCreator.getSnapshot().previewModel!=='shared'
+    const garmentTarget=action==='run'||moving&&gait==='run'?1.25:action==='walk'||moving?1:0
+    if(!options.paused)this.garmentWeight+=(garmentTarget-this.garmentWeight)*(1-Math.exp(-Math.min(delta,50)/180))
+    const secondaryMotion=options.mode!=='cat-creator'?{phase:Math.floor((this.presentationClock%2400)/2400*64)/64,locomotion:Math.round(this.garmentWeight*8)/8}:undefined
     this.views.forEach((view, index) => {
       view.sprite.setVisible(!detail||!view.original);view.label.setVisible(!detail||!view.original)
       if(detail&&view.original){view.effects?.hide();return}
@@ -321,9 +342,20 @@ export class ActorComparisonScene extends Phaser.Scene {
       if(view.live&&options.mode==='cat-creator')view.sprite.setData('actorBodyScale',catBodyScale(catCreator.getSnapshot().appearance.cat.bodySize))
       view.shadow?.update(view.sprite, action, this.presentationClock, options.paused, direction)
       if(view.live&&this.live&&this.liveTexture){
-        const signature=action+':'+direction+':'+frame+':'+(locomotionFrame??'-')+':'+gait
+        const previewPhase=options.mode!=='cat-creator'?Math.floor(phase*64)/64:undefined
+        const angle=-Math.max(0,['down','down_left','left','up_left','up','up_right','right','down_right'].indexOf(direction))*Math.PI/4
+        this.humanYaw=this.humanYaw===undefined||options.paused||!moving?angle:approachFacing(this.humanYaw,angle,Math.min(delta,40)/1000)
+        if(this.humanAction!==action){this.humanFromAction=this.humanAction;this.humanFromPhase=this.humanPhase;this.humanAction=action;this.humanTransitionAt=this.presentationClock}
+        const blend=options.paused?1:Math.min(1,(this.presentationClock-this.humanTransitionAt)/HUMAN_GAIT.blendMs)
+        if(blend>=1)this.humanFromAction=''
+        const renderOptions={yaw:Math.round(this.humanYaw/(Math.PI/36))*Math.PI/36,fromAction:this.humanFromAction||undefined,fromPhase:Math.floor(this.humanFromPhase*64)/64,transition:Math.round(blend*16)/16} 
+        this.humanPhase=phase
+        const signature=action+':'+direction+':'+frame+':'+(locomotionFrame??'-')+':'+gait+':'+previewPhase+':'+secondaryMotion?.phase+':'+secondaryMotion?.locomotion+':'+JSON.stringify(renderOptions)
         if(signature!==this.renderSignature){
-          try{this.liveTexture.context.putImageData(this.live.frame(options.mode==='cat-creator'?(action==='feed'?'eat':action==='water'?'drink':action):action,direction,frame,locomotionFrame,gait),0,0);this.liveTexture.refresh();this.renderSignature=signature}
+          try{
+            const pixels=this.live instanceof PixelActor?this.live.frame(action,direction,frame,locomotionFrame,gait,previewPhase,secondaryMotion,renderOptions):this.live.frame(action==='feed'?'eat':action==='water'?'drink':action,direction,frame,locomotionFrame,gait)
+            this.liveTexture.context.putImageData(pixels,0,0);this.liveTexture.refresh();this.renderSignature=signature
+          }
           catch(error){actorComparison.patch({status:'error',error:error instanceof Error?error.message:'The character frame could not render.'});return}
         }
       }else view.sprite.setFrame(frame)

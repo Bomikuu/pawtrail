@@ -3,7 +3,8 @@ import json,time,math
 from pathlib import Path
 from .models import PlayerGameProfile,PlayerCharacter
 from django.core.cache import cache
-RULES=json.loads((Path(__file__).resolve().parents[2]/'src/game/abilities/definitions.json').read_text())
+RULES_PATH=Path(__file__).resolve().parents[2]/'src/game/abilities/definitions.json'
+RULES=json.loads(RULES_PATH.read_text())
 DEFINITIONS=RULES['abilities']
 def _read(player,now):
     value=player.ability_state if isinstance(player.ability_state,dict) else {}

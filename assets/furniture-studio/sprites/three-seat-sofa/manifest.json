@@ -1,0 +1,826 @@
+{
+  "version": 1,
+  "id": "three-seat-sofa",
+  "representation": "sprite",
+  "revision": "114b8fc6c40c",
+  "source": "/assets/game/housing/furniture/three-seat-sofa-complete-v1.png",
+  "sourceSha256": "91ab3306eac685f3e9e0473f4ff0d08b733c911e0287671861146ac24efea550",
+  "frame": {
+    "width": 96,
+    "height": 64,
+    "anchor": [
+      48,
+      62
+    ]
+  },
+  "item": {
+    "id": "three-seat-sofa",
+    "label": "Three Seat Sofa",
+    "file": "/assets/game/housing/furniture/three-seat-sofa-complete-v1.png",
+    "width": 96,
+    "height": 64,
+    "anchor": [
+      48,
+      62
+    ],
+    "footprint": [
+      3,
+      46,
+      90,
+      16
+    ],
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "sit",
+    "price": 111,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          5,
+          46,
+          86,
+          16
+        ]
+      ],
+      "placement": [
+        [
+          5,
+          46,
+          86,
+          16
+        ]
+      ],
+      "seats": [
+        {
+          "id": "seat-1",
+          "point": [
+            22,
+            60
+          ],
+          "exit": [
+            22,
+            78
+          ],
+          "facing": "down",
+          "elevation": 8
+        },
+        {
+          "id": "seat-2",
+          "point": [
+            48,
+            60
+          ],
+          "exit": [
+            48,
+            78
+          ],
+          "facing": "down",
+          "elevation": 8
+        },
+        {
+          "id": "seat-3",
+          "point": [
+            74,
+            60
+          ],
+          "exit": [
+            74,
+            78
+          ],
+          "facing": "down",
+          "elevation": 8
+        }
+      ],
+      "approaches": [
+        [
+          22,
+          78
+        ],
+        [
+          48,
+          78
+        ],
+        [
+          74,
+          78
+        ],
+        [
+          -6,
+          54
+        ],
+        [
+          102,
+          54
+        ],
+        [
+          48,
+          32
+        ]
+      ],
+      "surfaces": [
+        {
+          "id": "perch-1",
+          "point": [
+            48,
+            58
+          ],
+          "elevation": 14,
+          "landingBounds": [
+            38,
+            52,
+            20,
+            12
+          ],
+          "approach": [
+            48,
+            72
+          ],
+          "descent": [
+            48,
+            72
+          ],
+          "species": [
+            "cat"
+          ],
+          "capacity": 1,
+          "links": []
+        }
+      ],
+      "occlusion": "base",
+      "actions": [
+        "sit",
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "representation": "sprite",
+    "defaultStyle": "original",
+    "renderedViews": {
+      "0": {
+        "width": 96,
+        "height": 64,
+        "anchor": [
+          48,
+          62
+        ],
+        "visibleBounds": [
+          2,
+          3,
+          92,
+          59
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          5,
+          46,
+          86,
+          16
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              5,
+              46,
+              86,
+              16
+            ]
+          ],
+          "placement": [
+            [
+              5,
+              46,
+              86,
+              16
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                22,
+                60
+              ],
+              "exit": [
+                22,
+                78
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                48,
+                60
+              ],
+              "exit": [
+                48,
+                78
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-3",
+              "point": [
+                74,
+                60
+              ],
+              "exit": [
+                74,
+                78
+              ],
+              "facing": "down",
+              "elevation": 8
+            }
+          ],
+          "approaches": [
+            [
+              22,
+              78
+            ],
+            [
+              48,
+              78
+            ],
+            [
+              74,
+              78
+            ],
+            [
+              -6,
+              54
+            ],
+            [
+              102,
+              54
+            ],
+            [
+              48,
+              32
+            ]
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                58
+              ],
+              "elevation": 14,
+              "landingBounds": [
+                38,
+                52,
+                20,
+                12
+              ],
+              "approach": [
+                48,
+                72
+              ],
+              "descent": [
+                48,
+                72
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "90": {
+        "width": 96,
+        "height": 64,
+        "anchor": [
+          48,
+          62
+        ],
+        "visibleBounds": [
+          26,
+          3,
+          43,
+          59
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          28,
+          45,
+          40,
+          17
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              28,
+              45,
+              40,
+              17
+            ]
+          ],
+          "placement": [
+            [
+              28,
+              45,
+              40,
+              17
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                42,
+                46
+              ],
+              "exit": [
+                12,
+                46
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                42,
+                52
+              ],
+              "exit": [
+                12,
+                52
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-3",
+              "point": [
+                42,
+                58
+              ],
+              "exit": [
+                12,
+                58
+              ],
+              "facing": "down",
+              "elevation": 8
+            }
+          ],
+          "approaches": [
+            [
+              12,
+              46
+            ],
+            [
+              12,
+              52
+            ],
+            [
+              12,
+              58
+            ],
+            [
+              48,
+              78
+            ],
+            [
+              82,
+              52
+            ],
+            [
+              48,
+              32
+            ]
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                42,
+                56
+              ],
+              "elevation": 14,
+              "landingBounds": [
+                32,
+                50,
+                20,
+                12
+              ],
+              "approach": [
+                12,
+                52
+              ],
+              "descent": [
+                12,
+                52
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "180": {
+        "width": 96,
+        "height": 64,
+        "anchor": [
+          48,
+          62
+        ],
+        "visibleBounds": [
+          2,
+          4,
+          92,
+          58
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          5,
+          46,
+          86,
+          16
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              5,
+              46,
+              86,
+              16
+            ]
+          ],
+          "placement": [
+            [
+              5,
+              46,
+              86,
+              16
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                74,
+                58
+              ],
+              "exit": [
+                74,
+                34
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                48,
+                58
+              ],
+              "exit": [
+                48,
+                34
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-3",
+              "point": [
+                22,
+                58
+              ],
+              "exit": [
+                22,
+                34
+              ],
+              "facing": "down",
+              "elevation": 8
+            }
+          ],
+          "approaches": [
+            [
+              74,
+              34
+            ],
+            [
+              48,
+              34
+            ],
+            [
+              22,
+              34
+            ],
+            [
+              -6,
+              54
+            ],
+            [
+              102,
+              54
+            ],
+            [
+              48,
+              78
+            ]
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                56
+              ],
+              "elevation": 14,
+              "landingBounds": [
+                38,
+                50,
+                20,
+                12
+              ],
+              "approach": [
+                48,
+                34
+              ],
+              "descent": [
+                48,
+                34
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "270": {
+        "width": 96,
+        "height": 64,
+        "anchor": [
+          48,
+          62
+        ],
+        "visibleBounds": [
+          27,
+          3,
+          42,
+          59
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          28,
+          45,
+          40,
+          17
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              28,
+              45,
+              40,
+              17
+            ]
+          ],
+          "placement": [
+            [
+              28,
+              45,
+              40,
+              17
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                54,
+                58
+              ],
+              "exit": [
+                84,
+                58
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                54,
+                52
+              ],
+              "exit": [
+                84,
+                52
+              ],
+              "facing": "down",
+              "elevation": 8
+            },
+            {
+              "id": "seat-3",
+              "point": [
+                54,
+                46
+              ],
+              "exit": [
+                84,
+                46
+              ],
+              "facing": "down",
+              "elevation": 8
+            }
+          ],
+          "approaches": [
+            [
+              84,
+              46
+            ],
+            [
+              84,
+              52
+            ],
+            [
+              84,
+              58
+            ],
+            [
+              48,
+              78
+            ],
+            [
+              14,
+              52
+            ],
+            [
+              48,
+              32
+            ]
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                54,
+                56
+              ],
+              "elevation": 14,
+              "landingBounds": [
+                44,
+                50,
+                20,
+                12
+              ],
+              "approach": [
+                84,
+                52
+              ],
+              "descent": [
+                84,
+                52
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      }
+    },
+    "frontFile": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/0-front.png",
+    "styles": [
+      {
+        "id": "original",
+        "label": "Three Seat Sofa",
+        "color": "#898a4a",
+        "views": {
+          "0": {
+            "file": "/assets/game/housing/furniture/three-seat-sofa-complete-v1.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/0-front.png"
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/90.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/90-front.png"
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/180.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/180-front.png"
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/270.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/three-seat-sofa/114b8fc6c40c/270-front.png"
+          }
+        }
+      }
+    ]
+  },
+  "views": {
+    "90": {
+      "sheet": "assets/furniture-studio/references/three-seat-sofa/turnaround-sprite-v1.png",
+      "cell": 0,
+      "scale": 0.125,
+      "size": [
+        43,
+        59
+      ],
+      "method": "Uniform per-view native reduction and canonical front palette; transparent alpha, no distortion."
+    },
+    "180": {
+      "sheet": "assets/furniture-studio/references/three-seat-sofa/turnaround-sprite-v1.png",
+      "cell": 1,
+      "scale": 0.13710879284649777,
+      "size": [
+        92,
+        58
+      ],
+      "method": "Uniform per-view native reduction and canonical front palette; transparent alpha, no distortion."
+    },
+    "270": {
+      "sheet": "assets/furniture-studio/references/three-seat-sofa/turnaround-sprite-v1.png",
+      "cell": 2,
+      "scale": 0.125,
+      "size": [
+        42,
+        59
+      ],
+      "method": "Uniform per-view native reduction and canonical front palette; transparent alpha, no distortion."
+    }
+  },
+  "foreground": "Exact pixels extracted from each finished view; arms in front/profile, complete rear body for natural high-back occlusion.",
+  "contacts": {
+    "actorScale": 1,
+    "seatCount": 3,
+    "contract": "Existing shared seat claims, normal-size actors and safe exits."
+  },
+  "artReview": {
+    "state": "explicit_yes",
+    "generatedSheet": "assets/furniture-studio/references/three-seat-sofa/turnaround-sprite-v1.png",
+    "tool": "built-in image_gen",
+    "prompt": "assets/furniture-studio/references/three-seat-sofa/turnaround-sprite-v1.prompt.txt",
+    "sheetSha256": "3247b17bf93fe2731edf2401ec6e8af8f62d1f78160a9894b3d72cfd7359c19a"
+  },
+  "review": {
+    "completedAt": "2026-11-10T18:09:44.641953+00:00",
+    "tests": {
+      "clientPassed": 9,
+      "backendPassed": 3,
+      "commands": [
+        "node --import tsx --test tests/sofa-family.test.ts",
+        "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+      ],
+      "database": "Generated records only in isolated test DB; destroyed after tests."
+    },
+    "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+    "evidence": "output/playwright/sofa-family/visual-review.png",
+    "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+    "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+    "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+  },
+  "exporter": "scripts/prepare-sprite-sofa-family.py",
+  "exporterSha256": "b09e5d9add4c1dfe91cc76ddd826d388220a60939b7e4cb63055e372063b7169",
+  "assetBytes": 11797
+}

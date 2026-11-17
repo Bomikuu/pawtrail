@@ -1,0 +1,23 @@
+{
+  "id": "amber-outrider",
+  "style": "Refined cel",
+  "previewModel": "amber",
+  "nativeSize": [
+    64,
+    64
+  ],
+  "contentBounds": [
+    7,
+    2,
+    57,
+    62
+  ],
+  "file": "/pawtrail-game/actor-studio/icons/amber-outrider/v1-26a2324bf7/icon.png",
+  "revision": "v1-26a2324bf7",
+  "runtimeBytes": 1640,
+  "generation": "built-in ImageGen",
+  "source": "generated-source.png",
+  "reference": "portrait-reference.png",
+  "prompt": "prompt.txt",
+  "processing": "alpha threshold 160, content fit with 2px margin, nearest-neighbor resize, 64 indexed colors, no dithering"
+}

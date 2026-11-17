@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "id": "wooden-door",
+  "representation": "sprite",
+  "revision": "0d01fc443211",
+  "source": {
+    "closed": {
+      "file": "/assets/game/housing/tilesets/door-closed-housing-v1.png",
+      "sha256": "225a17dd3eedf270bc85d4233a50c8d2d9f694914ead78f41155c9febcd08005"
+    },
+    "open": {
+      "file": "/assets/game/housing/tilesets/door-open-housing-v1.png",
+      "sha256": "a5b0f0362ee22bf21ff1ce87a914fa1b859d27e56a30ebc6b3e35aafc265fe13"
+    }
+  },
+  "production": "Canonical closed door pixels extracted from their wall tile, exact integer 2x nearest-neighbor. Open state preserves that same frame and makes only the inner panel transparent. The old opaque open tile is a source reference. No new generated artwork or model; fixed-facing architectural door.",
+  "frame": {
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      64
+    ]
+  },
+  "item": {
+    "id": "wooden-door",
+    "label": "Wooden door",
+    "file": "/pawtrail-game/furniture-sprites/wooden-door/0d01fc443211/closed.png",
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      64
+    ],
+    "footprint": [
+      12,
+      42,
+      44,
+      22
+    ],
+    "blocking": true,
+    "rotatable": false,
+    "category": "interior",
+    "interaction": "inspect",
+    "price": 20,
+    "zones": [
+      "interior",
+      "yard"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          12,
+          42,
+          44,
+          22
+        ]
+      ],
+      "placement": [
+        [
+          12,
+          42,
+          44,
+          22
+        ]
+      ],
+      "approaches": [
+        [
+          32,
+          78
+        ],
+        [
+          32,
+          32
+        ]
+      ],
+      "seats": [],
+      "surfaces": [],
+      "occlusion": "base",
+      "actions": [
+        "toggle_door",
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0
+    ],
+    "representation": "sprite",
+    "stateViews": {
+      "open": {
+        "file": "/pawtrail-game/furniture-sprites/wooden-door/0d01fc443211/open.png",
+        "ground": [
+          [
+            12,
+            42,
+            8,
+            22
+          ],
+          [
+            48,
+            42,
+            8,
+            22
+          ]
+        ]
+      }
+    }
+  },
+  "actorContract": {
+    "actorScale": 1,
+    "closed": "Panel blocks passage.",
+    "open": "Only frame posts remain solid.",
+    "close": "Owner only; refuse while any actor/pet foot overlaps the doorway.",
+    "cancel": "No state change before completion.",
+    "authority": "Live object_states and idempotency remain server-owned. Preview state is local."
+  },
+  "review": {
+    "completedAt": "2026-11-10T17:50:46.814852+00:00",
+    "art": "Existing canonical door pixels, exact 2x native export. Outer wall pixels extracted; identical frame in both states, transparent open aperture. No generated art or model.",
+    "tests": {
+      "client": {
+        "command": "node --import tsx --test tests/door-passage.test.ts",
+        "passed": 3
+      },
+      "backend": {
+        "command": "backend/.venv/bin/python backend/manage.py test housing.test_door --noinput --verbosity 1",
+        "passed": 8,
+        "data": "Generated records in isolated SQLite test database, destroyed afterward."
+      }
+    },
+    "firefox": [
+      "Closed passage blocks the actor.",
+      "Open passage permits crossing while both jambs remain solid.",
+      "Occupied doorway rejects closing; clearing it permits closing.",
+      "Cancel leaves state unchanged.",
+      "Actor fits without scaling.",
+      "Couch regression: both seats, all four directions, standing.",
+      "320px mobile width has no horizontal overflow; open action works.",
+      "Furniture editor interaction-preview round trip.",
+      "Actual stage editor: imported isolated local stage, opened door, inspected native canvas."
+    ],
+    "typecheck": {
+      "result": "Project-wide typecheck reports diagnostics outside changed files. Changed files have no diagnostics.",
+      "log": "output/playwright/door-typecheck.log"
+    },
+    "evidence": [
+      "output/playwright/door-final.png",
+      "output/playwright/door-passage-fit.png",
+      "output/playwright/door-frame-contact.png",
+      "output/playwright/door-occupied.png",
+      "output/playwright/door-mobile.png",
+      "output/playwright/door-stage-editor.png",
+      "output/playwright/door-couch-regression-board.png"
+    ],
+    "limits": "No authenticated live room/reconnect or cross-client multiplayer test. No actual player accounts, balances or placements changed."
+  },
+  "assetBytes": {
+    "closed": 877,
+    "open": 565
+  }
+}

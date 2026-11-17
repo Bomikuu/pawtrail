@@ -1,4 +1,4 @@
-import copy,json,math
+import copy,json,math,re
 from pathlib import Path
 from collections import deque
 from .community import fixed_cells,reserved_cells
@@ -43,9 +43,13 @@ def validate_layout(layout,inventory,zone='interior',other_layout=None,preset='s
     ids=set();counts={};occupied=[[x*32,y*32,32,32] for x,y in fixed_cells(zone,preset=preset)|reserved_cells(zone,preset)]
     for p in other_layout or []:counts[p['item']]=counts.get(p['item'],0)+1
     for p in layout:
-        if not isinstance(p,dict) or not {'id','item','x','y','rotation'}<=set(p) or set(p)-{'id','item','x','y','rotation','style'}:raise ValidationError('Invalid furniture placement.')
+        if not isinstance(p,dict) or not {'id','item','x','y','rotation'}<=set(p) or set(p)-{'id','item','x','y','rotation','style','upholsteryColor'}:raise ValidationError('Invalid furniture placement.')
         if not isinstance(p['id'],str) or len(p['id'])>80 or p['id'] in ids or p['item'] not in ITEMS:raise ValidationError('Unknown or duplicate furniture.')
         ids.add(p['id']);d=definition(p)
+        if 'upholsteryColor' in p:
+            color=p['upholsteryColor']
+            if p['item']!='sofa' or not isinstance(color,str) or not re.fullmatch(r'#[0-9a-fA-F]{6}',color):raise ValidationError('Choose a six-digit upholstery color for a supported sofa.')
+            p['upholsteryColor']=color.lower()
         if 'style' in p and p['style'] not in [style['id'] for style in d.get('styles',[])]:raise ValidationError('Choose an available furniture style.')
         if ('interior' if zone=='upstairs' else zone) not in d.get('zones',['interior']):raise ValidationError('This piece is not suitable for this space.')
         counts[p['item']]=counts.get(p['item'],0)+1

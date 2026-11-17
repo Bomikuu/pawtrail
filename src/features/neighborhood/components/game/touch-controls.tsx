@@ -6,10 +6,14 @@ export function TouchControls({
   disabled,
   onMove,
   onInteract,
+  showInteract = true,
+  className = "md:hidden",
 }: {
   disabled: boolean;
   onMove?: (x: number, y: number) => void;
   onInteract?: () => void;
+  showInteract?: boolean;
+  className?: string;
 }) {
   const [knob, setKnob] = useState({ x: 0, y: 0 });
   const stop = () => {
@@ -33,7 +37,7 @@ export function TouchControls({
   };
   return (
     <div
-      className="pointer-events-none absolute inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-10 flex items-end justify-between md:hidden"
+      className={"pointer-events-none absolute inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-10 flex items-end justify-between " + className}
       aria-label="Touch controls"
     >
       <div
@@ -61,7 +65,7 @@ export function TouchControls({
           <span className="size-3 rounded-full bg-primary/70" />
         </span>
       </div>
-      <Button
+      {showInteract && <Button
         disabled={disabled}
         className="pointer-events-auto size-14 rounded-md border-2 border-[#fff8ed] shadow-md"
         size="icon"
@@ -69,7 +73,7 @@ export function TouchControls({
         aria-label="Interact with the closest animal, person, or object"
       >
         <Hand className="size-6" />
-      </Button>
+      </Button>}
     </div>
   );
 }

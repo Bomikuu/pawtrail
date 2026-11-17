@@ -1,0 +1,67 @@
+{
+  "tool": "built-in image_gen",
+  "publicFolder": "public/pawtrail-game/actor-studio/illustrations/yae-miko/v1-3d798d294407",
+  "revision": "3d798d294407",
+  "runtimeBytes": 184710,
+  "nativeSize": [
+    160,
+    240
+  ],
+  "styleAuthority": "approved Yae Miko Refined cel portrait",
+  "identityReference": "identity-reference.png",
+  "styleReference": "style-reference.png",
+  "sourceMapping": "Motion sheet: 1086x1448, 3 columns by 2 rows. Source aspect ratio preserved when preparing the 160x320 working cells; final fitting uses a single scale across the complete motion envelope.",
+  "registration": [
+    {
+      "frame": 0,
+      "translation": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 1,
+      "translation": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 2,
+      "translation": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 3,
+      "translation": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 4,
+      "translation": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 5,
+      "translation": [
+        0,
+        0
+      ]
+    }
+  ],
+  "commonCrop": [
+    38,
+    53,
+    189,
+    320
+  ],
+  "uniformScale": 0.8389513108614233,
+  "production": "Generated alpha preserved as a crisp binary silhouette (threshold 224); disconnected gutter debris removed. Whole-frame registration and one common nearest-neighbor scale, no per-frame stretching, 96-color shared palette without dithering. No runtime facial compositing or mesh warping.",
+  "review": "Source and native contact sheet inspected. Owner acceptance and live motion review pending."
+}

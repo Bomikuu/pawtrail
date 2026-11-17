@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
-import { ArrowRight, PawPrint } from "lucide-react";
+import { useEffect, useState, type ReactNode } from "react";
+import { ChevronRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NPCS } from "@/game/data";
 import type { Dialogue, DialogueChoice } from "@/game/types";
 import { DialoguePortrait } from "./dialogue-portrait";
-import {
-  InteractionAction,
-  InteractionDialog,
-} from "./shared/interaction-card";
+import { DialogueHud, DialogueNextButton, DialoguePageProgress } from "./shared/dialogue-hud";
 
 /** Keyed by the conversation so pages and text always start with their speaker. */
 export function GameDialogue({
   dialogue,
   onClose,
   onChoice,
+  portraitControls,
 }: {
   dialogue: Dialogue;
   onClose: () => void;
   onChoice: (choice: DialogueChoice) => void;
+  portraitControls?: ReactNode;
 }) {
   const [page, setPage] = useState(0),
     [letters, setLetters] = useState(0);
@@ -26,21 +25,28 @@ export function GameDialogue({
   const revealing = letters < paragraph.length,
     last = page === paragraphs.length - 1;
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setLetters(paragraph.length);
-      return;
-    }
-    setLetters(0);
-    const timer = window.setInterval(
-      () =>
-        setLetters((value) => {
-          const next = Math.min(paragraph.length, value + 2);
-          if (next === paragraph.length) window.clearInterval(timer);
-          return next;
-        }),
-      28,
-    );
-    return () => window.clearInterval(timer);
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timer: number | undefined;
+    const begin = () => {
+      window.clearInterval(timer);
+      if (media.matches) {
+        setLetters(paragraph.length);
+        return;
+      }
+      setLetters(0);
+      timer = window.setInterval(
+        () =>
+          setLetters((value) => {
+            const next = Math.min(paragraph.length, value + 2);
+            if (next === paragraph.length) window.clearInterval(timer);
+            return next;
+          }),
+        28,
+      );
+    };
+    begin();
+    media.addEventListener("change", begin);
+    return () => { window.clearInterval(timer); media.removeEventListener("change", begin); };
   }, [paragraph]);
   function advance() {
     if (revealing) setLetters(paragraph.length);
@@ -50,17 +56,18 @@ export function GameDialogue({
     } else onClose();
   }
   return (
-    <InteractionDialog
-      open
+    <DialogueHud
       onClose={onClose}
       title={dialogue.name}
       subtitle={
-        dialogue.npcId
+        dialogue.subtitle ?? (dialogue.npcId
           ? (NPCS[dialogue.npcId]?.personality ??
             "Your neighborhood care circle")
-          : "Around the neighborhood"
+          : "Around the neighborhood")
       }
-      portrait={<DialoguePortrait dialogue={dialogue} talking={revealing} />}
+      portrait={<DialoguePortrait dialogue={dialogue} talking={revealing} frameless />}
+      portraitControls={portraitControls}
+      progress={<DialoguePageProgress current={page + 1} total={paragraphs.length} />}
       actions={
         <>
           {last &&
@@ -69,35 +76,37 @@ export function GameDialogue({
               <Button
                 key={index}
                 variant="outline"
-                className="h-auto min-h-11 max-w-full rounded-md border-[#bc8751] bg-[#fff7e9] px-4 py-3 text-sm whitespace-normal text-[#553421] hover:bg-[#f7ddb1] hover:text-[#45291e]"
+                className="h-auto min-h-10 max-w-full rounded-md border-[#bc8751] bg-[#fff7e9] px-3 py-2 text-sm whitespace-normal text-[#553421] hover:bg-[#f7ddb1] hover:text-[#45291e]"
                 onClick={() => onChoice(choice)}
               >
                 {choice.label}
               </Button>
             ))}
-          <InteractionAction
+          <DialogueNextButton
+            type="button"
+            autoFocus
             onClick={advance}
             aria-label={
               revealing
                 ? "Show full dialogue"
                 : !last
                   ? "Continue conversation"
-                  : "Thanks, neighbor! Close conversation"
+                  : "Close conversation"
             }
           >
             {last ? (
-              <PawPrint aria-hidden="true" className="size-6 fill-current" />
+              <Check aria-hidden="true" className="size-5" />
             ) : (
-              <ArrowRight aria-hidden="true" className="size-6" />
+              <ChevronRight aria-hidden="true" className="size-5 fill-current" />
             )}
-            {revealing ? "Show text" : !last ? "Continue" : "Thanks, neighbor!"}
-          </InteractionAction>
+            {revealing ? "Show text" : !last ? "Next" : "Done"}
+          </DialogueNextButton>
         </>
       }
     >
       <p
         aria-hidden="true"
-        className="min-h-20 whitespace-pre-line text-base leading-relaxed font-medium sm:text-lg lg:text-xl lg:leading-relaxed"
+        className="min-h-16 whitespace-pre-line text-sm font-normal leading-relaxed sm:text-base"
       >
         {paragraph.slice(0, letters)}
         {revealing && (
@@ -107,14 +116,6 @@ export function GameDialogue({
       <p className="sr-only" aria-live="polite" aria-atomic="true">
         {paragraph}
       </p>
-      {paragraphs.length > 1 && (
-        <p
-          className="mt-4 text-xs font-medium text-[#805d3c]"
-          aria-label={`Part ${page + 1} of ${paragraphs.length}`}
-        >
-          {page + 1} / {paragraphs.length}
-        </p>
-      )}
-    </InteractionDialog>
+    </DialogueHud>
   );
 }

@@ -52,8 +52,16 @@ import { track } from "@/features/neighborhood/game/store";
 import { worldConditions, weatherLabel } from "@/features/neighborhood/game/immersion-data";
 const CommunityMap = lazy(() => import("@/features/neighborhood/components/game/community/app"));
 const ActorComparison = lazy(() => import("@/features/neighborhood/components/game/actor-comparison"));
+const StageEditor = lazy(() => import('@/features/neighborhood/components/game/stage-editor'))
+const ItemStudio = lazy(() => import('@/features/neighborhood/components/game/item-studio/app'))
+const SkinStudio = lazy(() => import('@/features/neighborhood/components/game/skin-studio'))
+const ActorExplainer = lazy(() => import('@/features/neighborhood/components/game/actor-explainer'))
+const AmberModelStudy = lazy(() => import('@/features/neighborhood/components/game/amber-model-study'))
+const AmberVolumeStudy = lazy(() => import('@/features/neighborhood/components/game/amber-volume-study'))
+const YaeModelStudy = lazy(() => import('@/features/neighborhood/components/game/yae-model-study'))
 const PortraitGallery = lazy(() => import('@/features/neighborhood/components/game/portrait-gallery'));
 const FurnitureStudio = lazy(() => import('@/features/neighborhood/components/game/furniture-studio'))
+const FurnitureEditor = lazy(() => import('@/features/neighborhood/components/game/furniture-editor'))
 const FurnitureComparison = lazy(() => import('@/features/neighborhood/components/game/furniture-comparison'))
 function GameApp({
   platform,
@@ -424,9 +432,14 @@ export default function App({ platform }: { platform?: PlatformBridge }) {
     return () => window.removeEventListener("popstate", update);
   }, []);
   const query = new URLSearchParams(routeSearch);
+  if(query.get('compare')==='amber')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Amber model study…"/>}><AmberModelStudy/></Suspense></GameErrorBoundary>
+  if(query.get('compare')==='amber-volume')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Amber volume study…"/>}><AmberVolumeStudy/></Suspense></GameErrorBoundary>
+  if(query.get('compare')==='yae')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Yae Miko model study…"/>}><YaeModelStudy/></Suspense></GameErrorBoundary>
+  if(query.get('preview')==='items')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening item studio…"/>}><ItemStudio/></Suspense></GameErrorBoundary>
+  if(query.get('preview')==='stage')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening stage editor…"/>}><StageEditor/></Suspense></GameErrorBoundary>
+  if(query.get('preview')==='skin')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening texture studio…"/>}><SkinStudio/></Suspense></GameErrorBoundary>
+  if(query.get('preview')==='anatomy')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening the character walkthrough…"/>}><ActorExplainer/></Suspense></GameErrorBoundary>
   if(query.get('preview')==='portraits')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening 2D portrait studio…"/>}><PortraitGallery/></Suspense></GameErrorBoundary>;
-  if (query.get('compare') === 'furniture') return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening furniture comparison…" />}><FurnitureComparison /></Suspense></GameErrorBoundary>
-  if (query.get('preview') === 'furniture') return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening furniture creator…" />}><FurnitureStudio /></Suspense></GameErrorBoundary>
   if (query.get('preview') === 'cats')
     return (
       <GameErrorBoundary>
@@ -435,6 +448,9 @@ export default function App({ platform }: { platform?: PlatformBridge }) {
         </Suspense>
       </GameErrorBoundary>
     );
+  if (query.get('compare') === 'furniture') return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening furniture comparison…" />}><FurnitureComparison /></Suspense></GameErrorBoundary>
+  if (query.get('preview') === 'furniture') return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening furniture editor…" />}><FurnitureEditor /></Suspense></GameErrorBoundary>
+  if (query.get('preview') === 'furniture-setup') return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening furniture setup…" />}><FurnitureStudio /></Suspense></GameErrorBoundary>
   if (query.get("preview") === "actors")
     return (
       <GameErrorBoundary>

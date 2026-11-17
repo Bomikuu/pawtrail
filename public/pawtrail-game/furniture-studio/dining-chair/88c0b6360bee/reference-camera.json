@@ -1,0 +1,176 @@
+{
+  "source": "/assets/game/housing/furniture/dining-chair-complete-v1.png",
+  "sha256": "fcbacc0689dc82875d84f12f75ca9cd7955ede7d6423b19e76ac1a91c4c619a6",
+  "representation": "Closed individual chair frame/cushion volumes, canonical material patches and approved hidden-face painting. No full-object billboard.",
+  "render": {
+    "projection": "orthographic",
+    "nativeFrame": [
+      96,
+      112
+    ],
+    "nativeAnchor": [
+      48,
+      96
+    ],
+    "sourceAnchor": [
+      16,
+      30
+    ],
+    "camera": [
+      0,
+      34.5,
+      90
+    ],
+    "facingCalibration": {
+      "sidePitchDegrees": 8,
+      "blendPower": 2
+    },
+    "filter": "nearest",
+    "toneMapping": "none"
+  },
+  "turnaround": {
+    "sheet": "assets/furniture-studio/references/dining-chair/turnaround-v2.png",
+    "sha256": "4c5b2488fe4899c1ed0cc166cfb4cd9f43d0e1a87d9d443e3510662b0d0d8cfe",
+    "views": {
+      "0": {
+        "file": "/assets/game/housing/furniture/dining-chair-complete-v1.png",
+        "width": 32,
+        "height": 32,
+        "anchor": [
+          16,
+          30
+        ],
+        "label": "Original front · canonical"
+      },
+      "45": {
+        "file": "/pawtrail-game/furniture-references/dining-chair/c71224b0530e/reference-45.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated front 3/4",
+        "cellBounds": [
+          121,
+          74,
+          379,
+          443
+        ],
+        "occupiedSize": [
+          28,
+          41
+        ],
+        "footBaseline": 101
+      },
+      "90": {
+        "file": "/pawtrail-game/furniture-references/dining-chair/c71224b0530e/reference-90.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated left",
+        "cellBounds": [
+          146,
+          88,
+          365,
+          439
+        ],
+        "occupiedSize": [
+          24,
+          39
+        ],
+        "footBaseline": 100
+      },
+      "135": {
+        "file": "/pawtrail-game/furniture-references/dining-chair/c71224b0530e/reference-135.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated rear 3/4",
+        "cellBounds": [
+          119,
+          80,
+          388,
+          444
+        ],
+        "occupiedSize": [
+          30,
+          40
+        ],
+        "footBaseline": 101
+      },
+      "180": {
+        "file": "/pawtrail-game/furniture-references/dining-chair/c71224b0530e/reference-180.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated back",
+        "cellBounds": [
+          135,
+          88,
+          343,
+          439
+        ],
+        "occupiedSize": [
+          23,
+          39
+        ],
+        "footBaseline": 100
+      },
+      "270": {
+        "file": "/pawtrail-game/furniture-references/dining-chair/c71224b0530e/reference-270.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated right",
+        "cellBounds": [
+          150,
+          76,
+          369,
+          432
+        ],
+        "occupiedSize": [
+          24,
+          39
+        ],
+        "footBaseline": 100
+      }
+    },
+    "dimensions": {
+      "width": 22,
+      "depth": 20,
+      "height": 30.5
+    },
+    "projection": {
+      "sidePitchDegrees": 8,
+      "blendPower": 2
+    },
+    "review": {
+      "state": "explicit_yes",
+      "responseWindowSeconds": 60,
+      "default": "Proceed under owner-authorized no-response default; not affirmative approval",
+      "shownAt": "2026-11-10T16:00:33.188214+00:00",
+      "exception": "Original fronts remain canonical; dining generated proportions remain taller, so original compact proportions take precedence.",
+      "resolvedAt": "2026-11-10T16:01:47.943729+00:00",
+      "response": "Good enough — build these three",
+      "respondedAt": "2026-11-10T16:03:24.653301+00:00",
+      "startedUnderDefaultAt": "2026-11-10T16:01:47.943729+00:00"
+    },
+    "reviewFacings": [
+      45,
+      135
+    ]
+  }
+}

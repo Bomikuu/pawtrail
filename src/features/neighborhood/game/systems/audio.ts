@@ -1,3 +1,5 @@
+import {playItemSound} from './item-sounds'
+import type {ItemSound} from '../items/document'
 import { ActionSoundVoice, type ActionSound } from './action-sounds'
 
 export type AudioPreferences = {
@@ -60,6 +62,7 @@ class AudioManager {
   private rain: { source: AudioBufferSourceNode; gain: GainNode } | null = null
   private loadingRain = false
   private actionVoices = new Set<ActionSoundVoice>()
+  itemEffect(kind:ItemSound){if(!this.context||this.context.state!=='running'||!this.channels.effects)return()=>{};return playItemSound(this.context,this.channels.effects,kind)}
   createActionVoice(sound: ActionSound, cat = false) {
     if (!this.context || this.context.state !== 'running' || !this.channels.effects || this.actionVoices.size >= 8) return
     let voice: ActionSoundVoice

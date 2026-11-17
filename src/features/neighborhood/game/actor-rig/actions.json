@@ -1,11 +1,11 @@
 {
   "rescuer": {
     "idle": {
-      "fps": 4,
+      "fps": 3.2,
       "repeat": -1
     },
     "walk": {
-      "fps": 15,
+      "fps": 20,
       "repeat": -1,
       "frames": 12
     },
@@ -141,7 +141,7 @@
       "frames": 12
     },
     "run": {
-      "fps": 18,
+      "fps": 26,
       "repeat": -1,
       "frames": 12
     },

@@ -1,0 +1,65 @@
+{
+  "revision": "5a17b27d3162",
+  "publicFolder": "public/pawtrail-game/actor-studio/illustrations/amber-outrider/v2-5a17b27d3162",
+  "runtimeBytes": 137257,
+  "nativeSize": [
+    160,
+    240
+  ],
+  "styleAuthority": "approved Amber Refined cel portrait",
+  "priorV1": "rejected by owner for being too smooth; preserved as history",
+  "tool": "built-in image_gen",
+  "registration": [
+    {
+      "frame": 0,
+      "translation": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 1,
+      "translation": [
+        10,
+        0
+      ]
+    },
+    {
+      "frame": 2,
+      "translation": [
+        10,
+        0
+      ]
+    },
+    {
+      "frame": 3,
+      "translation": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 4,
+      "translation": [
+        10,
+        0
+      ]
+    },
+    {
+      "frame": 5,
+      "translation": [
+        10,
+        0
+      ]
+    }
+  ],
+  "commonCrop": [
+    39,
+    22,
+    191,
+    247
+  ],
+  "uniformScale": 0.9473684210526315,
+  "production": "Alpha threshold 224; disconnected sheet debris removed; whole-frame integer translation and one common nearest-neighbor scale; 96-color shared palette without dithering. No procedural facial animation.",
+  "livePlaybackReview": "pending"
+}

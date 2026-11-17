@@ -1,0 +1,813 @@
+{
+  "version": 1,
+  "id": "table",
+  "revision": "4e917d0781de",
+  "reference": "/assets/game/housing/furniture/table-housing-v1.png",
+  "source": "src/game/furniture/reference-timber.ts",
+  "definition": {
+    "id": "table",
+    "label": "Table",
+    "model": "table",
+    "reference": "/assets/game/housing/furniture/table-housing-v1.png",
+    "description": "Low honey-oak table with a deep solid apron and four short timber feet.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "referenceFrame": {
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        53
+      ]
+    },
+    "styles": [
+      {
+        "id": "original",
+        "label": "Honey oak",
+        "fabric": "#e28c4b",
+        "light": "#ffd995",
+        "shade": "#805a36",
+        "pillow": "#f7dda3",
+        "wood": "#e28c4b"
+      },
+      {
+        "id": "walnut",
+        "label": "Walnut",
+        "fabric": "#8f5c3e",
+        "light": "#b9865a",
+        "shade": "#553b2b",
+        "pillow": "#f7dda3",
+        "wood": "#8f5c3e"
+      },
+      {
+        "id": "pale",
+        "label": "Pale oak",
+        "fabric": "#d7bf8f",
+        "light": "#f5e5c0",
+        "shade": "#99815d",
+        "pillow": "#f7dda3",
+        "wood": "#d7bf8f"
+      }
+    ],
+    "price": 79,
+    "construction": {
+      "seconds": 0,
+      "materials": []
+    }
+  },
+  "item": {
+    "id": "table",
+    "label": "Table",
+    "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-0.png",
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ],
+    "footprint": [
+      21,
+      91,
+      54,
+      10
+    ],
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "admire",
+    "price": 79,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          21,
+          91,
+          54,
+          10
+        ]
+      ],
+      "placement": [
+        [
+          21,
+          91,
+          54,
+          10
+        ]
+      ],
+      "approaches": [
+        [
+          48,
+          115
+        ],
+        [
+          7,
+          96
+        ],
+        [
+          48,
+          77
+        ],
+        [
+          89,
+          96
+        ]
+      ],
+      "seats": [],
+      "surfaces": [
+        {
+          "id": "perch-1",
+          "point": [
+            48,
+            96
+          ],
+          "elevation": 29,
+          "landingBounds": [
+            25,
+            92,
+            46,
+            8
+          ],
+          "approach": [
+            48,
+            115
+          ],
+          "descent": [
+            48,
+            115
+          ],
+          "species": [
+            "cat"
+          ],
+          "capacity": 1,
+          "links": []
+        }
+      ],
+      "occlusion": "base",
+      "actions": [
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "indicatorHeight": 39,
+    "visibleBounds": [
+      20,
+      61,
+      56,
+      41
+    ],
+    "defaultStyle": "original",
+    "renderedViews": {
+      "0": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 39,
+        "footprint": [
+          21,
+          91,
+          54,
+          10
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              21,
+              91,
+              54,
+              10
+            ]
+          ],
+          "placement": [
+            [
+              21,
+              91,
+              54,
+              10
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              115
+            ],
+            [
+              7,
+              96
+            ],
+            [
+              48,
+              77
+            ],
+            [
+              89,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                96
+              ],
+              "elevation": 29,
+              "landingBounds": [
+                25,
+                92,
+                46,
+                8
+              ],
+              "approach": [
+                48,
+                115
+              ],
+              "descent": [
+                48,
+                115
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          20,
+          61,
+          56,
+          41
+        ]
+      },
+      "90": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 38,
+        "footprint": [
+          33,
+          94,
+          30,
+          4
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              33,
+              94,
+              30,
+              4
+            ]
+          ],
+          "placement": [
+            [
+              33,
+              94,
+              30,
+              4
+            ]
+          ],
+          "approaches": [
+            [
+              19,
+              96
+            ],
+            [
+              48,
+              112
+            ],
+            [
+              48,
+              80
+            ],
+            [
+              77,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                96
+              ],
+              "elevation": 31,
+              "landingBounds": [
+                37,
+                94,
+                22,
+                4
+              ],
+              "approach": [
+                19,
+                96
+              ],
+              "descent": [
+                19,
+                96
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          32,
+          62,
+          32,
+          37
+        ]
+      },
+      "180": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 39,
+        "footprint": [
+          21,
+          91,
+          54,
+          10
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              21,
+              91,
+              54,
+              10
+            ]
+          ],
+          "placement": [
+            [
+              21,
+              91,
+              54,
+              10
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              77
+            ],
+            [
+              48,
+              115
+            ],
+            [
+              7,
+              96
+            ],
+            [
+              89,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                96
+              ],
+              "elevation": 29,
+              "landingBounds": [
+                25,
+                92,
+                46,
+                8
+              ],
+              "approach": [
+                48,
+                77
+              ],
+              "descent": [
+                48,
+                77
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          20,
+          61,
+          56,
+          41
+        ]
+      },
+      "270": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 38,
+        "footprint": [
+          33,
+          94,
+          30,
+          4
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              33,
+              94,
+              30,
+              4
+            ]
+          ],
+          "placement": [
+            [
+              33,
+              94,
+              30,
+              4
+            ]
+          ],
+          "approaches": [
+            [
+              77,
+              96
+            ],
+            [
+              48,
+              112
+            ],
+            [
+              19,
+              96
+            ],
+            [
+              48,
+              80
+            ]
+          ],
+          "seats": [],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                96
+              ],
+              "elevation": 31,
+              "landingBounds": [
+                37,
+                94,
+                22,
+                4
+              ],
+              "approach": [
+                77,
+                96
+              ],
+              "descent": [
+                77,
+                96
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          32,
+          62,
+          32,
+          37
+        ]
+      }
+    },
+    "styles": [
+      {
+        "id": "original",
+        "label": "Honey oak",
+        "color": "#e28c4b",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/original-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "walnut",
+        "label": "Walnut",
+        "color": "#8f5c3e",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/walnut-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "pale",
+        "label": "Pale oak",
+        "color": "#d7bf8f",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/table/4e917d0781de/pale-270-front.png",
+            "motion": []
+          }
+        }
+      }
+    ]
+  },
+  "frame": {
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ]
+  },
+  "filter": "nearest",
+  "referenceStudy": {
+    "source": "/assets/game/housing/furniture/table-housing-v1.png",
+    "sha256": "98a06c7f30417d7605c0dcbf7138432336cd4a02f710d141aee159a538f5571b",
+    "representation": "Distinct closed structural parts with canonical front paint and reviewed side/rear paint; no full-object billboard.",
+    "render": {
+      "projection": "orthographic",
+      "nativeFrame": [
+        96,
+        112
+      ],
+      "nativeAnchor": [
+        48,
+        96
+      ],
+      "sourceAnchor": [
+        32,
+        53
+      ],
+      "camera": [
+        0,
+        34.5,
+        90
+      ],
+      "facingCalibration": {
+        "sidePitchDegrees": 5,
+        "blendPower": 1
+      },
+      "filter": "nearest",
+      "toneMapping": "none"
+    },
+    "turnaround": {
+      "sheet": "assets/furniture-studio/references/table/turnaround-v2.png",
+      "sha256": "fd820bc9f75d65ea0a0f34e8746d0c8fab0308b93daa69c3cadc5d89babf6b7e",
+      "views": {
+        "0": {
+          "file": "/assets/game/housing/furniture/table-housing-v1.png",
+          "width": 64,
+          "height": 64,
+          "anchor": [
+            32,
+            53
+          ],
+          "label": "Original front · canonical"
+        },
+        "45": {
+          "file": "/pawtrail-game/furniture-references/table/d4b296c3293a/reference-45.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated front 3/4",
+          "cellBounds": [
+            37,
+            121,
+            459,
+            430
+          ],
+          "occupiedSize": [
+            54,
+            40
+          ],
+          "footBaseline": 101
+        },
+        "90": {
+          "file": "/pawtrail-game/furniture-references/table/d4b296c3293a/reference-90.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated left",
+          "cellBounds": [
+            127,
+            132,
+            386,
+            415
+          ],
+          "occupiedSize": [
+            33,
+            36
+          ],
+          "footBaseline": 98
+        },
+        "135": {
+          "file": "/pawtrail-game/furniture-references/table/d4b296c3293a/reference-135.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated rear 3/4",
+          "cellBounds": [
+            46,
+            121,
+            468,
+            434
+          ],
+          "occupiedSize": [
+            54,
+            40
+          ],
+          "footBaseline": 101
+        },
+        "180": {
+          "file": "/pawtrail-game/furniture-references/table/d4b296c3293a/reference-180.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated back",
+          "cellBounds": [
+            46,
+            140,
+            466,
+            414
+          ],
+          "occupiedSize": [
+            54,
+            35
+          ],
+          "footBaseline": 101
+        },
+        "270": {
+          "file": "/pawtrail-game/furniture-references/table/d4b296c3293a/reference-270.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated right",
+          "cellBounds": [
+            127,
+            132,
+            386,
+            415
+          ],
+          "occupiedSize": [
+            33,
+            36
+          ],
+          "footBaseline": 98
+        }
+      },
+      "dimensions": {
+        "width": 54,
+        "depth": 30,
+        "height": 31
+      },
+      "projection": {
+        "sidePitchDegrees": 5,
+        "blendPower": 1
+      },
+      "review": {
+        "state": "explicit_yes",
+        "shownAt": "2026-11-10T14:17:31.076592+00:00",
+        "responseWindowSeconds": 60,
+        "default": "Proceed under the owner-authorized no-response default; not affirmative approval",
+        "exception": "Canonical front remains authoritative, including the table source height39 versus generated native front35.",
+        "resolvedAt": "2026-11-10T14:18:49.831522+00:00",
+        "startedUnderDefaultAt": "2026-11-10T14:18:49.831522+00:00",
+        "response": "Good enough — build these three",
+        "respondedAt": "2026-11-10T14:21:14.520876+00:00"
+      },
+      "reviewFacings": [
+        45,
+        135
+      ]
+    }
+  },
+  "note": "Reference-guided authored geometry; explicit projected contacts and native foreground layers."
+}

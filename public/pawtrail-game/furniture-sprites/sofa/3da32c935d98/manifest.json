@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "id": "sofa",
+  "representation": "sprite",
+  "revision": "3da32c935d98",
+  "source": "/assets/game/housing/furniture/sofa-housing-v1.png",
+  "sourceSha256": "f729133fb6df0563c4678ee43a58b8b30dd9284bf92708faa3b3feb6b7ebd43d",
+  "frame": {
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      60
+    ]
+  },
+  "item": {
+    "id": "sofa",
+    "label": "Sofa",
+    "file": "/assets/game/housing/furniture/sofa-housing-v1.png",
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      60
+    ],
+    "footprint": [
+      5,
+      43,
+      54,
+      17
+    ],
+    "blocking": true,
+    "rotatable": false,
+    "category": "Living room",
+    "interaction": "sit",
+    "price": 79,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          5,
+          43,
+          54,
+          17
+        ]
+      ],
+      "placement": [
+        [
+          5,
+          43,
+          54,
+          17
+        ]
+      ],
+      "approaches": [
+        [
+          22,
+          74
+        ],
+        [
+          42,
+          74
+        ],
+        [
+          -6,
+          52
+        ],
+        [
+          70,
+          52
+        ],
+        [
+          32,
+          32
+        ]
+      ],
+      "seats": [
+        {
+          "id": "seat-1",
+          "point": [
+            22,
+            57
+          ],
+          "facing": "down",
+          "elevation": 8,
+          "exit": [
+            22,
+            74
+          ]
+        },
+        {
+          "id": "seat-2",
+          "point": [
+            42,
+            57
+          ],
+          "facing": "down",
+          "elevation": 8,
+          "exit": [
+            42,
+            74
+          ]
+        }
+      ],
+      "surfaces": [
+        {
+          "id": "perch-1",
+          "point": [
+            32,
+            56
+          ],
+          "elevation": 14,
+          "landingBounds": [
+            22,
+            50,
+            20,
+            12
+          ],
+          "approach": [
+            32,
+            70
+          ],
+          "descent": [
+            32,
+            70
+          ],
+          "species": [
+            "cat"
+          ],
+          "capacity": 1,
+          "links": []
+        }
+      ],
+      "occlusion": "base",
+      "actions": [
+        "sit",
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0
+    ],
+    "frontFile": "/pawtrail-game/furniture-sprites/sofa/3da32c935d98/foreground.png",
+    "representation": "sprite"
+  },
+  "foreground": {
+    "file": "/pawtrail-game/furniture-sprites/sofa/3da32c935d98/foreground.png",
+    "layers": [
+      "leftArm",
+      "rightArm"
+    ],
+    "method": "Exact source RGBA pixels; no repaint, model or generated reference."
+  },
+  "contacts": {
+    "actorScale": 1,
+    "seatedPelvis": "Explicit native seat points/elevation; review with actual actor.",
+    "occupancy": "Existing room seat leases; local StagePlaytest uses a separate shared reservation map."
+  }
+}

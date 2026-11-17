@@ -10,7 +10,7 @@ import { actorComparison, comparisonActions, previewActions, comparisonDirection
 import { actorPreviews } from '@/game/runtime/actor-previews'
 import { ActorPreviewReference } from './actor-preview-reference'
 import { loadGameFonts } from '@/game/font-loader'
-import { navigatePlay } from '@/game/play-navigation'
+import { navigatePlay, navigateSkinStudio } from '@/game/play-navigation'
 import { gameStore } from '@/game/store'
 import { CharacterCreatorEditor } from './character-creator-editor'
 import { characterCreator } from '@/game/creator/state'
@@ -18,6 +18,7 @@ import actions from '@/game/actor-rig/actions.json'
 import { audio } from '@/game/systems/audio'
 import { CatCreatorEditor } from './cat-creator-editor'
 import { catCreator } from '@/game/cat-creator/state'
+import { ActorDialoguePreview } from './actor-dialogue-preview'
 
 const directions = [
   { label: 'Move left', Icon: ArrowLeft, x: -1, y: 0 },
@@ -42,15 +43,16 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
     return available.some(entry => entry.id === requested) ? requested! : available[0]?.id ?? ''
   })
   const appearance = preview && !creator ? available.find(entry => entry.id === appearanceId) ?? available[0] : undefined
+  const refined=creator&&draft.previewModel!=='shared'
   const choices = useMemo(() => cats ? previewActions.filter(action => (action.value === 'feed' ? 'eat' : action.value === 'water' ? 'drink' : action.value) in actions['orange-tabby']) : creator ? previewActions.filter(action=>action.value in actions.rescuer) : preview ? previewActions.filter(action => {
     const name = appearance?.sheet.kind === 'cat' ? ({feed:'eat',water:'drink'} as Record<string,string>)[action.value] ?? action.value : action.value
     return !!appearance?.sheet.animations[name + '-down'] && (action.value !== 'fly' || !!appearance.cat?.wings && appearance.cat.wings !== 'none')
-  }) : comparisonActions, [preview, appearance, creator, cats])
+  }) : comparisonActions, [preview, appearance, creator, cats, refined])
 
   useEffect(() => {
     let canceled = false
     let release: (() => void) | undefined
-    actorComparison.patch({ mode: cats ? 'cat-creator' : creator ? 'creator' : preview ? 'skin' : 'legacy', appearance: appearance?.id ?? '', status: 'loading', load: 0, error: '', inputX: 0, inputY: 0 })
+    actorComparison.patch({ mode: cats ? 'cat-creator' : creator ? 'creator' : preview ? 'skin' : 'legacy', appearance: appearance?.id ?? '', status: 'loading', load: 0, error: '', portraitAction:'idle', inputX: 0, inputY: 0 })
     if (preview && !editing && !appearance) { actorComparison.patch({status:'ready'}); return }
     const query = new URLSearchParams(window.location.search)
     const pose = query.get('pose'), facing = query.get('facing')
@@ -65,6 +67,7 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
     window.addEventListener('pawtrail:renderer-error', failed)
     Promise.all([import('@/game/runtime/session'), loadGameFonts()]).then(async ([session]) => {
       if (canceled || !host.current) return
+      if(creator){const {prepareCreatorModel}=await import('@/game/creator/preview-models');await prepareCreatorModel(draft.previewModel);if(canceled||!host.current)return}
       if (attempt) session.resetWorldRenderer()
       const cleanup = await session.mountWorld(host.current, 'ActorCompare', () => {
         if (!canceled && actorComparison.getSnapshot().status !== 'error') {
@@ -82,9 +85,9 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
       actorComparison.patch({ inputX: 0, inputY: 0 })
       window.removeEventListener('pawtrail:renderer-error', failed)
     }
-  }, [attempt, preview, creator, cats, editing ? undefined : appearance, choices])
+  }, [attempt, preview, creator, cats, editing ? undefined : appearance, choices, creator?draft.previewModel:undefined])
 
-  useEffect(() => { if(!creator)return; const id=new URLSearchParams(window.location.search).get('skin');if(id)characterCreator.template(id) }, [creator])
+  useEffect(() => { if(!creator)return; const id=new URLSearchParams(window.location.search).get('skin');if(id)characterCreator.template(id==='amber'?'amber-outrider':id==='yae'?'yae-miko':id) }, [creator])
   useEffect(() => { if(!cats)return; const id=new URLSearchParams(window.location.search).get('skin');if(id)catCreator.template(id) }, [cats])
   useEffect(() => { if(cats && catDraft.appearance.cat.wings==='none' && state.action==='fly')actorComparison.patch({action:'idle'}) }, [cats, catDraft.appearance.cat.wings, state.action])
 
@@ -111,6 +114,9 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
             <p className="mt-1.5 text-sm text-muted-foreground">{cats ? 'Their shape, coat and personality—live beside the approved tabby. Try every action with sounds and shadows.' : creator ? 'Your look, with every movement. Changes appear here as you create.' : preview ? 'Review your reference-guided character using the approved movement set.' : 'One rescuer and one orange tabby. The same ground, scale and controls.'}</p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            {creator && <Button variant="outline" onClick={navigateSkinStudio}>Paint a skin</Button>}
+            {creator && <ActorDialoguePreview name={draft.name || 'Your character'} appearance={draft.appearance} model={draft.previewModel} />}
+            {creator&&draft.previewModel!=='shared'&&<Button variant="outline" onClick={()=>{window.history.pushState(null,'',window.location.pathname+'?compare='+(draft.previewModel==='yae'?'yae':'amber'));window.dispatchEvent(new PopStateEvent('popstate'))}}>Model study</Button>}
             {editing && <Button variant={inspecting?'secondary':'outline'} aria-pressed={inspecting} onClick={()=>toggleFaceInspection(cats?'cat':'actor')}><Eye className="size-4" />{inspecting?'Full body':'Inspect face'}</Button>}
             {creator && state.presentationAction==='jetpack_land' && <span role="status" className="text-xs text-muted-foreground">Landing…</span>}
             <Button variant="outline" disabled={preview && !editing && !appearance} onClick={() => actorComparison.patch({ paused: !state.paused })}>
@@ -132,7 +138,7 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
             </Select>
           </div>
           <div className="min-w-0 space-y-1.5 md:w-44">
-            <label id="compare-facing-label" className="text-xs font-semibold">Facing</label>
+            <label id="compare-facing-label" className="text-xs font-semibold">Model angle</label>
             <Select value={state.direction} onValueChange={value => actorComparison.patch({ direction: value as ComparisonDirection })}>
               <SelectTrigger aria-labelledby="compare-facing-label" className="w-full"><SelectValue /></SelectTrigger>
               <SelectContent>{comparisonDirections.map(direction => <SelectItem key={direction.value} value={direction.value}>{direction.label}</SelectItem>)}</SelectContent>
@@ -196,7 +202,7 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
             ))}
           </div>
         </div>
-        <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">{creator ? 'Save a look to your library, then choose Use in game. Keep several characters and switch whenever you like.' : preview ? 'Appearance preview only. This character has not been added to your game roster.' : 'Comparison only. Your saved character, animals, care progress and Kibble stay unchanged.'}</p>
+        <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">{refined ? 'Refined actor preview with the shared action set. Choose another template to create and save a custom look.' : creator ? 'Save a look to your library, then choose Use in game. Keep several characters and switch whenever you like.' : preview ? 'Appearance preview only. This character has not been added to your game roster.' : 'Comparison only. Your saved character, animals, care progress and Kibble stay unchanged.'}</p>
         </div>
       </main>
     </PlayShell>

@@ -67,7 +67,7 @@ export function CatCreatorEditor() {
   }
   const colors: [keyof CatAppearance['colors'], string][] = [['orange', 'Main fur'], ['furLight', 'Fur highlights'], ['stripe', 'Markings & points'], ['cream', 'Pale fur'], ['hat', 'Hat'], ['leather', 'Boots'], ['ribbon', 'Ribbon'], ['feather', 'Wings']]
   return <aside className="order-2 min-w-0 space-y-4 lg:order-none" aria-label="Create your cat">
-    <CreatorPortrait subject={{kind:'cat',appearance:a}} name={draft.name}/>
+    <CreatorPortrait subject={{kind:'cat',appearance:a}} name={draft.name} action={preview.portraitAction}/>
     <section className="space-y-4 rounded-md border bg-card p-4 shadow-sm">
       <div className="flex items-start justify-between gap-3"><div><h2 className="font-heading text-2xl font-bold">Create your cat</h2><p className="mt-1 text-xs leading-relaxed text-muted-foreground">Shape their coat, tail and little extras. Every change appears live.</p></div><Cat className="mt-1 size-5 shrink-0 text-primary" /></div>
       <div className="space-y-1.5"><label htmlFor="cat-template" className="text-xs font-semibold">Start with a look</label><Select value="" onValueChange={id => replace(() => { catCreator.template(id); setNotice('') })}><SelectTrigger id="cat-template" className="w-full"><SelectValue placeholder="Choose a template" /></SelectTrigger><SelectContent>{catTemplates.map(row => <SelectItem key={row.id} value={row.id}>{row.name}</SelectItem>)}</SelectContent></Select></div>

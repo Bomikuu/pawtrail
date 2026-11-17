@@ -1,3 +1,4 @@
+import {approachVelocity} from '../systems/studio-locomotion'
 import { bindModel } from "../models3d/phaser-bridge";
 import { preloadBakedActors, registerBakedActors } from "./baked-actors";
 import Phaser from "phaser";
@@ -191,6 +192,7 @@ export const facing = (x: number, y: number) =>
       ? "up"
       : "down";
 /** One player controller; Arcade bodies and kinematic room actors share input, speed and arrival semantics. */
+const humanMotors=new WeakMap<Phaser.GameObjects.Sprite,{velocity:{x:number;y:number};at:number}>()
 export function moveActor(
   sprite: Phaser.GameObjects.Sprite,
   input: Point,
@@ -215,9 +217,12 @@ export function moveActor(
     }
   }
   const body = (sprite as Phaser.Physics.Arcade.Sprite).body as Phaser.Physics.Arcade.Body|undefined;
-  const velocity = movementVector(x, y, sprint, speed),
-    dt = body?.setVelocity?Math.max(1/60,Math.min(delta,40)/1000):Math.min(delta,40)/1000,
+  let velocity = movementVector(x, y, sprint, speed)
+  const dt = body?.setVelocity?Math.max(1/60,Math.min(delta,40)/1000):Math.min(delta,40)/1000,
     next = path[0];
+  const now=performance.now(),previous=humanMotors.get(sprite)
+  velocity=approachVelocity(previous&&now-previous.at<100?previous.velocity:{x:0,y:0},velocity,Math.min(delta,40)/1000)
+  humanMotors.set(sprite,{velocity,at:now})
   let dx = velocity.x * dt,
     dy = velocity.y * dt;
   if (

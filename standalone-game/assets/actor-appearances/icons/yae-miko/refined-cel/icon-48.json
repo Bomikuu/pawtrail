@@ -1,0 +1,12 @@
+{
+  "id": "yae-miko",
+  "style": "Refined cel",
+  "nativeSize": [
+    48,
+    48
+  ],
+  "file": "/pawtrail-game/actor-studio/icons/yae-miko/v2-48-deb4007bfb/icon.png",
+  "runtimeBytes": 1292,
+  "sourceIcon": "/pawtrail-game/actor-studio/icons/yae-miko/v1-6d4109e6d3/icon.png",
+  "processing": "nearest-neighbor 48px app-icon export; no regeneration"
+}

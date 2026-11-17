@@ -1,0 +1,663 @@
+{
+  "version": 1,
+  "id": "sofa-terracotta",
+  "representation": "sprite",
+  "revision": "8cd0b76b49ed",
+  "source": "/assets/game/housing/furniture/sofa-terracotta-complete-v1.png",
+  "sourceSha256": "fc49dabfde44071998d9a12403d59099e07bbc01f5ca774e27e6173d7a7d3573",
+  "frame": {
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      62
+    ]
+  },
+  "item": {
+    "id": "sofa-terracotta",
+    "label": "Sofa Terracotta",
+    "file": "/assets/game/housing/furniture/sofa-terracotta-complete-v1.png",
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      62
+    ],
+    "footprint": [
+      3,
+      46,
+      58,
+      16
+    ],
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "sit",
+    "price": 79,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          5,
+          45,
+          54,
+          17
+        ]
+      ],
+      "placement": [
+        [
+          5,
+          45,
+          54,
+          17
+        ]
+      ],
+      "approaches": [
+        [
+          22,
+          76
+        ],
+        [
+          42,
+          76
+        ],
+        [
+          -6,
+          54
+        ],
+        [
+          70,
+          54
+        ],
+        [
+          32,
+          34
+        ]
+      ],
+      "seats": [
+        {
+          "id": "seat-1",
+          "point": [
+            22,
+            59
+          ],
+          "facing": "down",
+          "elevation": 8,
+          "exit": [
+            22,
+            76
+          ]
+        },
+        {
+          "id": "seat-2",
+          "point": [
+            42,
+            59
+          ],
+          "facing": "down",
+          "elevation": 8,
+          "exit": [
+            42,
+            76
+          ]
+        }
+      ],
+      "surfaces": [
+        {
+          "id": "perch-1",
+          "point": [
+            32,
+            58
+          ],
+          "elevation": 14,
+          "landingBounds": [
+            22,
+            52,
+            20,
+            12
+          ],
+          "approach": [
+            32,
+            72
+          ],
+          "descent": [
+            32,
+            72
+          ],
+          "species": [
+            "cat"
+          ],
+          "capacity": 1,
+          "links": []
+        }
+      ],
+      "occlusion": "base",
+      "actions": [
+        "sit",
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "representation": "sprite",
+    "defaultStyle": "original",
+    "renderedViews": {
+      "0": {
+        "width": 64,
+        "height": 64,
+        "anchor": [
+          32,
+          62
+        ],
+        "visibleBounds": [
+          2,
+          14,
+          60,
+          48
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          5,
+          45,
+          54,
+          17
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              5,
+              45,
+              54,
+              17
+            ]
+          ],
+          "placement": [
+            [
+              5,
+              45,
+              54,
+              17
+            ]
+          ],
+          "approaches": [
+            [
+              22,
+              76
+            ],
+            [
+              42,
+              76
+            ],
+            [
+              -6,
+              54
+            ],
+            [
+              70,
+              54
+            ],
+            [
+              32,
+              34
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                22,
+                59
+              ],
+              "facing": "down",
+              "elevation": 8,
+              "exit": [
+                22,
+                76
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                42,
+                59
+              ],
+              "facing": "down",
+              "elevation": 8,
+              "exit": [
+                42,
+                76
+              ]
+            }
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                32,
+                58
+              ],
+              "elevation": 14,
+              "landingBounds": [
+                22,
+                52,
+                20,
+                12
+              ],
+              "approach": [
+                32,
+                72
+              ],
+              "descent": [
+                32,
+                72
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "90": {
+        "width": 64,
+        "height": 64,
+        "anchor": [
+          32,
+          62
+        ],
+        "visibleBounds": [
+          14,
+          16,
+          35,
+          46
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          15,
+          45,
+          34,
+          17
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              15,
+              45,
+              34,
+              17
+            ]
+          ],
+          "placement": [
+            [
+              15,
+              45,
+              34,
+              17
+            ]
+          ],
+          "approaches": [
+            [
+              0,
+              54
+            ],
+            [
+              0,
+              61
+            ],
+            [
+              26,
+              76
+            ],
+            [
+              58,
+              54
+            ],
+            [
+              32,
+              34
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                26,
+                54
+              ],
+              "facing": "down",
+              "elevation": 5,
+              "exit": [
+                0,
+                54
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                26,
+                58
+              ],
+              "facing": "down",
+              "elevation": 5,
+              "exit": [
+                0,
+                61
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "180": {
+        "width": 64,
+        "height": 64,
+        "anchor": [
+          32,
+          62
+        ],
+        "visibleBounds": [
+          2,
+          19,
+          59,
+          43
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          5,
+          45,
+          54,
+          17
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              5,
+              45,
+              54,
+              17
+            ]
+          ],
+          "placement": [
+            [
+              5,
+              45,
+              54,
+              17
+            ]
+          ],
+          "approaches": [
+            [
+              41,
+              36
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              -6,
+              54
+            ],
+            [
+              70,
+              54
+            ],
+            [
+              32,
+              76
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                41,
+                54
+              ],
+              "facing": "down",
+              "elevation": 14,
+              "exit": [
+                41,
+                36
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                23,
+                54
+              ],
+              "facing": "down",
+              "elevation": 14,
+              "exit": [
+                23,
+                36
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      },
+      "270": {
+        "width": 64,
+        "height": 64,
+        "anchor": [
+          32,
+          62
+        ],
+        "visibleBounds": [
+          14,
+          17,
+          35,
+          45
+        ],
+        "indicatorHeight": 62,
+        "footprint": [
+          15,
+          45,
+          34,
+          17
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              15,
+              45,
+              34,
+              17
+            ]
+          ],
+          "placement": [
+            [
+              15,
+              45,
+              34,
+              17
+            ]
+          ],
+          "approaches": [
+            [
+              64,
+              61
+            ],
+            [
+              64,
+              54
+            ],
+            [
+              38,
+              76
+            ],
+            [
+              6,
+              54
+            ],
+            [
+              32,
+              34
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                38,
+                58
+              ],
+              "facing": "down",
+              "elevation": 5,
+              "exit": [
+                64,
+                61
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                38,
+                54
+              ],
+              "facing": "down",
+              "elevation": 5,
+              "exit": [
+                64,
+                54
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        }
+      }
+    },
+    "frontFile": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/0-front.png",
+    "styles": [
+      {
+        "id": "original",
+        "label": "Sofa Terracotta",
+        "color": "#b15431",
+        "views": {
+          "0": {
+            "file": "/assets/game/housing/furniture/sofa-terracotta-complete-v1.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/0-front.png"
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/90.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/90-front.png"
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/180.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/180-front.png"
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/270.png",
+            "frontFile": "/pawtrail-game/furniture-sprites/sofa-terracotta/8cd0b76b49ed/270-front.png"
+          }
+        }
+      }
+    ]
+  },
+  "views": {
+    "90": {
+      "file": "/pawtrail-game/furniture-sprites/sofa/3917ae976060/90.png",
+      "method": "Approved couch shape, native +2px vertical translation and documented upholstery palette mapping.",
+      "palette": [
+        "63452e",
+        "985037",
+        "b15431",
+        "b56a47",
+        "cf6d3b",
+        "ce8659",
+        "e3a776"
+      ]
+    },
+    "180": {
+      "file": "/pawtrail-game/furniture-sprites/sofa/3917ae976060/180.png",
+      "method": "Approved couch shape, native +2px vertical translation and documented upholstery palette mapping.",
+      "palette": [
+        "63452e",
+        "985037",
+        "b15431",
+        "b56a47",
+        "cf6d3b",
+        "ce8659",
+        "e3a776"
+      ]
+    },
+    "270": {
+      "file": "/pawtrail-game/furniture-sprites/sofa/3917ae976060/270.png",
+      "method": "Approved couch shape, native +2px vertical translation and documented upholstery palette mapping.",
+      "palette": [
+        "63452e",
+        "985037",
+        "b15431",
+        "b56a47",
+        "cf6d3b",
+        "ce8659",
+        "e3a776"
+      ]
+    }
+  },
+  "foreground": "Exact pixels extracted from each finished view; arms in front/profile, complete rear body for natural high-back occlusion.",
+  "contacts": {
+    "actorScale": 1,
+    "seatCount": 2,
+    "contract": "Existing shared seat claims, normal-size actors and safe exits."
+  },
+  "artReview": {
+    "state": "approved_shape_and_existing_fronts_reused",
+    "generatedSheet": null
+  },
+  "review": {
+    "completedAt": "2026-11-10T18:09:44.641953+00:00",
+    "tests": {
+      "clientPassed": 9,
+      "backendPassed": 3,
+      "commands": [
+        "node --import tsx --test tests/sofa-family.test.ts",
+        "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+      ],
+      "database": "Generated records only in isolated test DB; destroyed after tests."
+    },
+    "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+    "evidence": "output/playwright/sofa-family/visual-review.png",
+    "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+    "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+    "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+  },
+  "exporter": "scripts/prepare-sprite-sofa-family.py",
+  "exporterSha256": "b09e5d9add4c1dfe91cc76ddd826d388220a60939b7e4cb63055e372063b7169",
+  "assetBytes": 9632
+}

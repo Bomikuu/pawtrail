@@ -18,6 +18,8 @@ import {
   Columns2,
   UserRound,
   Armchair,
+  Swords,
+  Layers,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,7 +34,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { navigatePlay, navigateActorComparison, navigateActorPreview, navigateFurnitureCreator, navigateFurnitureComparison, type PlayDestination } from "@/game/play-navigation";
+import { navigatePlay, navigateActorComparison, navigateActorPreview, navigateSkinStudio, navigateItemStudio, navigateStageEditor, navigateActorExplainer, navigateFurnitureCreator, navigateFurnitureComparison, type PlayDestination } from "@/game/play-navigation";
 import { PLAY_CONTROLS, type PlayControlActions } from "./play-controls";
 import { CatMemeWheel } from "./cat-meme-wheel";
 import type { CatMemeId } from "@/game/cat-memes";
@@ -143,7 +145,11 @@ export function PlayHeader({
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateActorPreview}>
               <UserRound className="size-4" />Character creator
             </DropdownMenuItem>
-            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateFurnitureCreator}><Armchair className="size-4" />Furniture creator</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateStageEditor}><Map className="size-4" />Stage & room editor</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateSkinStudio}><UserRound className="size-4" />Character studio</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateItemStudio}><Swords className="size-4" />Item & Ability Studio</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateActorExplainer}><Layers className="size-4" />How characters work</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateFurnitureCreator}><Armchair className="size-4" />Furniture editor</DropdownMenuItem>
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateFurnitureComparison}><Armchair className="size-4" />Furniture comparison</DropdownMenuItem>
             {window.location.pathname.startsWith("/play") && (
               <DropdownMenuItem asChild className="min-h-11 text-foreground">

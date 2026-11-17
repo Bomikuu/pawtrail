@@ -1,0 +1,23 @@
+{
+  "id": "yae-miko",
+  "style": "Refined cel",
+  "previewModel": "yae",
+  "nativeSize": [
+    64,
+    64
+  ],
+  "contentBounds": [
+    3,
+    2,
+    60,
+    62
+  ],
+  "file": "/pawtrail-game/actor-studio/icons/yae-miko/v1-6d4109e6d3/icon.png",
+  "revision": "v1-6d4109e6d3",
+  "runtimeBytes": 1960,
+  "generation": "built-in ImageGen",
+  "source": "generated-source.png",
+  "reference": "portrait-reference.png",
+  "prompt": "prompt.txt",
+  "processing": "alpha threshold 160, content fit with 2px margin, nearest-neighbor resize, 64 indexed colors, no dithering"
+}

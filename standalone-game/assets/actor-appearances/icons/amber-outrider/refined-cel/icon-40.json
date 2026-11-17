@@ -1,0 +1,16 @@
+{
+  "id": "amber-outrider",
+  "nativeArtSize": [
+    40,
+    40
+  ],
+  "displayFrameSize": [
+    48,
+    48
+  ],
+  "file": "/pawtrail-game/actor-studio/icons/amber-outrider/v3-40-76a6f83802/icon.png",
+  "runtimeBytes": 943,
+  "sourceIcon": "/pawtrail-game/actor-studio/icons/amber-outrider/v1-26a2324bf7/icon.png",
+  "frame": "/pawtrail-game/actor-studio/icons/pixel-frame.svg",
+  "processing": "nearest-neighbor from preserved 64px master; no dithering or regeneration"
+}
