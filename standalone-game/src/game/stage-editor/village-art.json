@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "grounds": [
+    {
+      "id": "village:terrain",
+      "label": "Old Quarter \u00b7 cobbled streets",
+      "file": "/pawtrail-game/map-art/sampaguita-village-v1/ground.png",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "assets": [
+    {
+      "id": "village:workshop",
+      "label": "Wide slate-roof workshop",
+      "category": "Village houses",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/sampaguita-village-v1/workshop.png",
+      "width": 280,
+      "height": 216,
+      "anchor": [
+        140,
+        210
+      ],
+      "footprint": [
+        22,
+        153,
+        236,
+        55
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "village:townhouse",
+      "label": "Terracotta-roof townhouse",
+      "category": "Village houses",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/sampaguita-village-v1/townhouse.png",
+      "width": 208,
+      "height": 240,
+      "anchor": [
+        104,
+        234
+      ],
+      "footprint": [
+        20,
+        174,
+        168,
+        58
+      ],
+      "rotations": [
+        0
+      ]
+    }
+  ]
+}

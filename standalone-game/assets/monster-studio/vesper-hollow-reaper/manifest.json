@@ -1,0 +1,58 @@
+{
+  "id": "vesper-hollow-reaper",
+  "version": 1,
+  "representation": "native-layered-hovering-2d",
+  "atlas": "parts.webp",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "columns": 4,
+  "rows": 4,
+  "parts": {
+    "hood": 0,
+    "torso": 1,
+    "leftSleeve": 2,
+    "rightSleeve": 3,
+    "scythe": 4,
+    "leftHem": 5,
+    "rightHem": 6,
+    "trail": 7
+  },
+  "enragedFrameOffset": 8,
+  "weaponGrip": {
+    "x": 0.29,
+    "y": 0.54
+  },
+  "holdingHand": {
+    "x": 0.22,
+    "y": 0.26
+  },
+  "holdingShoulder": {
+    "x": 0.77,
+    "y": 0.85
+  },
+  "anchorConvention": "Sprite UV coordinates measured from bottom-left of the registered native cell",
+  "illustrations": {
+    "normal": "normal.webp",
+    "enraged": "enraged.webp",
+    "width": 384,
+    "height": 384
+  },
+  "portrait": {
+    "url": "portrait.webp",
+    "width": 128,
+    "height": 128
+  },
+  "icon": {
+    "url": "icon.png",
+    "width": 64,
+    "height": 64
+  },
+  "provenance": "Built-in ImageGen from supplied scythe-skeleton reference; hard-alpha, nearest-neighbor and non-dithered palette export",
+  "runtimeBytes": {
+    "parts.webp": 137192,
+    "portrait.webp": 3488,
+    "icon.png": 5664,
+    "normal.webp": 16686,
+    "enraged.webp": 26922
+  }
+}

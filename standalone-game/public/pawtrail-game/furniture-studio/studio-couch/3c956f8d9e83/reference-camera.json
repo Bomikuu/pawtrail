@@ -1,0 +1,212 @@
+{
+  "source": "/assets/game/housing/furniture/sofa-housing-v1.png",
+  "sha256": "f729133fb6df0563c4678ee43a58b8b30dd9284bf92708faa3b3feb6b7ebd43d",
+  "render": {
+    "projection": "orthographic",
+    "nativeFrame": [
+      96,
+      112
+    ],
+    "nativeAnchor": [
+      48,
+      96
+    ],
+    "cameraPosition": [
+      0,
+      34.5,
+      90
+    ],
+    "cameraTarget": [
+      0,
+      0,
+      0
+    ],
+    "frustum": [
+      -48,
+      48,
+      96,
+      -16,
+      0.1,
+      300
+    ],
+    "origin": "center floor pivot at source (32,51)",
+    "outputColorSpace": "srgb",
+    "toneMapping": "none",
+    "filter": "nearest",
+    "antialias": false,
+    "referenceFacing": 0,
+    "referencePhase": 0
+  },
+  "landmarks": {
+    "opaqueBounds": [
+      3,
+      13,
+      58,
+      47
+    ],
+    "back": [
+      8,
+      13,
+      48,
+      26
+    ],
+    "seat": [
+      13,
+      38,
+      38,
+      13
+    ],
+    "arms": [
+      [
+        3,
+        27,
+        10,
+        28
+      ],
+      [
+        51,
+        27,
+        10,
+        28
+      ]
+    ],
+    "pillows": {
+      "pillowLeft": [
+        [
+          11,
+          29
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          22,
+          27
+        ],
+        [
+          25,
+          29
+        ],
+        [
+          26,
+          32
+        ],
+        [
+          26,
+          36
+        ],
+        [
+          24,
+          39
+        ],
+        [
+          22,
+          41
+        ],
+        [
+          15,
+          42
+        ],
+        [
+          12,
+          39
+        ],
+        [
+          11,
+          35
+        ],
+        [
+          9,
+          32
+        ]
+      ],
+      "pillowRight": [
+        [
+          39,
+          27
+        ],
+        [
+          43,
+          28
+        ],
+        [
+          48,
+          29
+        ],
+        [
+          51,
+          29
+        ],
+        [
+          53,
+          31
+        ],
+        [
+          52,
+          34
+        ],
+        [
+          51,
+          37
+        ],
+        [
+          51,
+          41
+        ],
+        [
+          48,
+          42
+        ],
+        [
+          42,
+          40
+        ],
+        [
+          39,
+          39
+        ],
+        [
+          37,
+          36
+        ],
+        [
+          37,
+          32
+        ]
+      ]
+    },
+    "skirt": [
+      12,
+      51,
+      40,
+      4
+    ],
+    "feet": [
+      [
+        8,
+        55,
+        5,
+        5
+      ],
+      [
+        51,
+        55,
+        5,
+        5
+      ]
+    ]
+  },
+  "normalizedLandmarks": {
+    "backTop": 0.203125,
+    "seatTop": 0.59375,
+    "seatFront": 0.75,
+    "skirtTop": 0.796875,
+    "floor": 0.9375
+  },
+  "approach": "Separate closed curved source-painted cushions, angled pillows, rolled arms, seat, skirt and feet. Hidden upholstery is an authored continuation of visible fabric."
+}

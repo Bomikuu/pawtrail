@@ -1,0 +1,86 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": "assets/maps/care-grove-v2/prompts.json",
+  "sources": {
+    "ground": "9e9830b8aa7d7019f4ed40030d71de0886fda9356bc6ab3667fd172e948f56f3",
+    "hall": "369c5a00780f02eae535998b044aa2766478d00576cf8f6bcde2185e642b2a22",
+    "pine": "0458d094b25d3983aad29e4b5c4b5c9ae9c80c82f58150d4796545675b9e7b43",
+    "cliff": "3392f0b1e2ba82e6ea112ed1f1f98c2a0195c7c940e5e8a0512163b7d6b9566d",
+    "bush": "0441091866f8c8cccb051c9d82ea30867f550d2b7633c6ae223dde93b249b631",
+    "bareTree": "0d30ee0c2c484c6528ea3e721ac9028c226c10c60d511b180d6a878f5fb02e2d"
+  },
+  "registry": "src/game/stage-editor/grove-art.json",
+  "layout": "src/game/stage-editor/maps/care-grove-v2.json",
+  "nativeGroundSize": [
+    1024,
+    768
+  ],
+  "runtimeImages": {
+    "ground.png": {
+      "bytes": 1726074,
+      "dimensions": [
+        1024,
+        768
+      ]
+    },
+    "cliff.png": {
+      "bytes": 91006,
+      "dimensions": [
+        172,
+        272
+      ]
+    },
+    "hall.png": {
+      "bytes": 134268,
+      "dimensions": [
+        311,
+        240
+      ]
+    },
+    "pine-small.png": {
+      "bytes": 8925,
+      "dimensions": [
+        67,
+        135
+      ]
+    },
+    "bush.png": {
+      "bytes": 2607,
+      "dimensions": [
+        64,
+        32
+      ]
+    },
+    "pine.png": {
+      "bytes": 15429,
+      "dimensions": [
+        90,
+        180
+      ]
+    },
+    "bareTree.png": {
+      "bytes": 24661,
+      "dimensions": [
+        100,
+        149
+      ]
+    }
+  },
+  "localOnly": true,
+  "newArtwork": [
+    "ground",
+    "hall",
+    "pine",
+    "cliff",
+    "bush",
+    "bareTree"
+  ],
+  "preservedInteractions": [
+    "benches",
+    "door",
+    "lamps",
+    "food station",
+    "planters"
+  ],
+  "review": "Native artwork inspection only; no automated checks/tests/builds or browser review requested"
+}

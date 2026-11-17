@@ -1,0 +1,144 @@
+{
+  "id": "amber-parts-baked-v1",
+  "version": 1,
+  "representation": "offline-3d-to-2d",
+  "url": "/pawtrail-game/actor-studio/amber-parts-baked-v1/sprites.png",
+  "frameWidth": 64,
+  "frameHeight": 80,
+  "columns": 16,
+  "rows": 10,
+  "frames": 160,
+  "groundPixel": {
+    "x": 32,
+    "y": 60
+  },
+  "anchor": {
+    "x": 0.5,
+    "y": 0.75
+  },
+  "directions": [
+    "down",
+    "left",
+    "up",
+    "right"
+  ],
+  "clips": {
+    "idle": {
+      "down": {
+        "start": 0,
+        "frames": 16,
+        "durationMs": 2500
+      },
+      "left": {
+        "start": 40,
+        "frames": 16,
+        "durationMs": 2500
+      },
+      "up": {
+        "start": 80,
+        "frames": 16,
+        "durationMs": 2500
+      },
+      "right": {
+        "start": 120,
+        "frames": 16,
+        "durationMs": 2500
+      }
+    },
+    "walk": {
+      "down": {
+        "start": 16,
+        "frames": 12,
+        "durationMs": 800
+      },
+      "left": {
+        "start": 56,
+        "frames": 12,
+        "durationMs": 800
+      },
+      "up": {
+        "start": 96,
+        "frames": 12,
+        "durationMs": 800
+      },
+      "right": {
+        "start": 136,
+        "frames": 12,
+        "durationMs": 800
+      }
+    },
+    "run": {
+      "down": {
+        "start": 28,
+        "frames": 12,
+        "durationMs": 500
+      },
+      "left": {
+        "start": 68,
+        "frames": 12,
+        "durationMs": 500
+      },
+      "up": {
+        "start": 108,
+        "frames": 12,
+        "durationMs": 500
+      },
+      "right": {
+        "start": 148,
+        "frames": 12,
+        "durationMs": 500
+      }
+    }
+  },
+  "filter": "nearest",
+  "outline": "one native pixel, shared dark contour",
+  "authoring": "reference-guided Blender meshes by parts; not neural mesh generation",
+  "face": "approved Amber texture, mapped onto a curved mesh with bone-driven blink states",
+  "sourceModel": "/pawtrail-game/actor-studio/amber-parts-baked-v1/amber-parts.glb",
+  "sourceViews": "/pawtrail-game/actor-studio/amber-parts-baked-v1/source-views.webp",
+  "sourceFile": "assets/actor-appearances/amber-parts-baked-v1/amber-parts.blend",
+  "sourceModelBytes": 805964,
+  "modelMeshes": 95,
+  "sourceModelSha256": "5f6ae2e7a79e702e944a3341bf7baf92202c696a36b0c175eaa51b61f0a63b63",
+  "sourceScriptSha256": "30ca4f4922340ffe35b13eb35630f7671fc821c3c367845ede584fefd3a9e00f",
+  "modelAnimations": [
+    "idle",
+    "run",
+    "walk"
+  ],
+  "partCount": 95,
+  "partCategories": {
+    "bodice": 1,
+    "head": 5,
+    "shorts": 3,
+    "jacket": 2,
+    "trim": 22,
+    "sleeves": 6,
+    "gloves": 6,
+    "legs": 2,
+    "boots": 10,
+    "belt": 3,
+    "cape": 2,
+    "face": 3,
+    "hair": 16,
+    "goggles": 11,
+    "ribbon": 3
+  },
+  "triangles": 19480,
+  "bytes": 99836,
+  "decodedAtlasBytes": 3276800,
+  "bake": {
+    "tool": "Blender 5.0.1 Cycles CPU",
+    "threads": 2,
+    "sourceFrame": [
+      256,
+      320
+    ],
+    "samples": 16,
+    "pillowVersion": "13.0.0"
+  },
+  "runtime": "sprite atlas playback only; no character mesh, pose evaluation or WebGL renderer",
+  "installation": "comparison only",
+  "review": "source and native artwork inspected; live comparison and full actor acceptance pending",
+  "sourceScriptNote": "save-version setting changed after rendering; geometry and pose code unchanged"
+}

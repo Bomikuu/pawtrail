@@ -1,0 +1,1622 @@
+[
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      0
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.2368421052631575,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      189,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "half",
+    "sheetCell": [
+      1,
+      0
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      188,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      0
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.7105263157894797,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      187,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "small",
+    "sheetCell": [
+      3,
+      0
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "open",
+    "sheetCell": [
+      4,
+      0
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      188,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      1
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.2368421052631575,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      189,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "half",
+    "sheetCell": [
+      1,
+      1
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      188,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      1
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "small",
+    "sheetCell": [
+      3,
+      1
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "open",
+    "sheetCell": [
+      4,
+      1
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.7105263157894797,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      187,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      2
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.0,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      190,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "half",
+    "sheetCell": [
+      1,
+      2
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      188,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      2
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "small",
+    "sheetCell": [
+      3,
+      2
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.2368421052631575,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      189,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "open",
+    "sheetCell": [
+      4,
+      2
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      3
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.0,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      190,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "half",
+    "sheetCell": [
+      1,
+      3
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.7105263157894797,
+      15.736842105263165
+    ],
+    "sourceSize": [
+      187,
+      218
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      3
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.7105263157894797,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      187,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "small",
+    "sheetCell": [
+      3,
+      3
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.2368421052631575,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      189,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "open",
+    "sheetCell": [
+      4,
+      3
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      4
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.2368421052631575,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      189,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "half",
+    "sheetCell": [
+      1,
+      4
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.7105263157894797,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      187,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      4
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "small",
+    "sheetCell": [
+      3,
+      4
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      188,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "open",
+    "sheetCell": [
+      4,
+      4
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.7105263157894797,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      187,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      5
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.2368421052631575,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      189,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "half",
+    "sheetCell": [
+      1,
+      5
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      14.31578947368422
+    ],
+    "sourceSize": [
+      188,
+      221
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      5
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.7105263157894797,
+      15.26315789473685
+    ],
+    "sourceSize": [
+      187,
+      219
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "small",
+    "sheetCell": [
+      3,
+      5
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.2368421052631575,
+      14.789473684210535
+    ],
+    "sourceSize": [
+      189,
+      220
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "open",
+    "sheetCell": [
+      4,
+      5
+    ],
+    "scale": 0.47368421052631576,
+    "wholeFrameOffset": [
+      3.473684210526315,
+      14.31578947368422
+    ],
+    "sourceSize": [
+      188,
+      221
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      0
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "half",
+    "sheetCell": [
+      1,
+      0
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.9278350515463885,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      190,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      0
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.6958762886597896,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      191,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "small",
+    "sheetCell": [
+      3,
+      0
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.463917525773198,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      192,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "open",
+    "sheetCell": [
+      4,
+      0
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.463917525773198,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      192,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      1
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.9278350515463885,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      190,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "half",
+    "sheetCell": [
+      1,
+      1
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.9278350515463885,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      190,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      1
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.9278350515463885,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      190,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "small",
+    "sheetCell": [
+      3,
+      1
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.6958762886597896,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      191,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "open",
+    "sheetCell": [
+      4,
+      1
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.463917525773198,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      192,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      2
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.6958762886597896,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      191,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "half",
+    "sheetCell": [
+      1,
+      2
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      2
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      20.64948453608247
+    ],
+    "sourceSize": [
+      193,
+      212
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "small",
+    "sheetCell": [
+      3,
+      2
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.6958762886597896,
+      20.18556701030927
+    ],
+    "sourceSize": [
+      191,
+      213
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "open",
+    "sheetCell": [
+      4,
+      2
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.463917525773198,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      192,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      3
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      20.18556701030927
+    ],
+    "sourceSize": [
+      193,
+      213
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "half",
+    "sheetCell": [
+      1,
+      3
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.463917525773198,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      192,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      3
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "small",
+    "sheetCell": [
+      3,
+      3
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "open",
+    "sheetCell": [
+      4,
+      3
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      4
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.0,
+      20.18556701030927
+    ],
+    "sourceSize": [
+      194,
+      213
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "half",
+    "sheetCell": [
+      1,
+      4
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      4
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "small",
+    "sheetCell": [
+      3,
+      4
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "open",
+    "sheetCell": [
+      4,
+      4
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      193,
+      214
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      5
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      20.18556701030927
+    ],
+    "sourceSize": [
+      193,
+      213
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "half",
+    "sheetCell": [
+      1,
+      5
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.6958762886597896,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      191,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      5
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.231958762886599,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      193,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "small",
+    "sheetCell": [
+      3,
+      5
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.463917525773198,
+      19.25773195876289
+    ],
+    "sourceSize": [
+      192,
+      215
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "open",
+    "sheetCell": [
+      4,
+      5
+    ],
+    "scale": 0.4639175257731959,
+    "wholeFrameOffset": [
+      3.463917525773198,
+      19.721649484536073
+    ],
+    "sourceSize": [
+      192,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      0
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      21.193877551020407
+    ],
+    "sourceSize": [
+      195,
+      213
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "half",
+    "sheetCell": [
+      1,
+      0
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      21.193877551020407
+    ],
+    "sourceSize": [
+      195,
+      213
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      0
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "small",
+    "sheetCell": [
+      3,
+      0
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.45918367346939,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      194,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "open",
+    "sheetCell": [
+      4,
+      0
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.45918367346939,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      194,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      1
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "half",
+    "sheetCell": [
+      1,
+      1
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.0,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      196,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      1
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.45918367346939,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      194,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "small",
+    "sheetCell": [
+      3,
+      1
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "open",
+    "sheetCell": [
+      4,
+      1
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.45918367346939,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      194,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      2
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "half",
+    "sheetCell": [
+      1,
+      2
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.0,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      196,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      2
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "small",
+    "sheetCell": [
+      3,
+      2
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "open",
+    "sheetCell": [
+      4,
+      2
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.45918367346939,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      194,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      3
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "half",
+    "sheetCell": [
+      1,
+      3
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      3
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "small",
+    "sheetCell": [
+      3,
+      3
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.0,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      196,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "open",
+    "sheetCell": [
+      4,
+      3
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.45918367346939,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      194,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      4
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "half",
+    "sheetCell": [
+      1,
+      4
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      4
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "small",
+    "sheetCell": [
+      3,
+      4
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      195,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "open",
+    "sheetCell": [
+      4,
+      4
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.45918367346939,
+      20.734693877551024
+    ],
+    "sourceSize": [
+      194,
+      214
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "rest",
+    "sheetCell": [
+      0,
+      5
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "half",
+    "sheetCell": [
+      1,
+      5
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "closed",
+    "sheetCell": [
+      2,
+      5
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "small",
+    "sheetCell": [
+      3,
+      5
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "open",
+    "sheetCell": [
+      4,
+      5
+    ],
+    "scale": 0.45918367346938777,
+    "wholeFrameOffset": [
+      3.2295918367346914,
+      20.275510204081627
+    ],
+    "sourceSize": [
+      195,
+      215
+    ]
+  }
+]

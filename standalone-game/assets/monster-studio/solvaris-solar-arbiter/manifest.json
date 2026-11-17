@@ -1,0 +1,109 @@
+{
+  "id": "solvaris-solar-arbiter",
+  "version": 1,
+  "representation": "native-articulated-2d-colossus",
+  "atlas": "parts.webp",
+  "cellWidth": 384,
+  "cellHeight": 384,
+  "columns": 4,
+  "rows": 6,
+  "enragedFrameOffset": 12,
+  "parts": {
+    "halo": 0,
+    "head": 1,
+    "torso": 2,
+    "lowerBody": 3,
+    "leftShoulder": 4,
+    "rightShoulder": 5,
+    "leftUpperArm": 6,
+    "rightUpperArm": 7,
+    "leftForearm": 8,
+    "rightForearm": 9,
+    "leftHand": 10,
+    "rightHand": 11
+  },
+  "limbAnchors": {
+    "leftUpperArm": {
+      "proximal": [
+        0.65,
+        0.86
+      ],
+      "distal": [
+        0.4,
+        0.15
+      ]
+    },
+    "rightUpperArm": {
+      "proximal": [
+        0.35,
+        0.86
+      ],
+      "distal": [
+        0.6,
+        0.15
+      ]
+    },
+    "leftForearm": {
+      "proximal": [
+        0.37,
+        0.86
+      ],
+      "distal": [
+        0.65,
+        0.15
+      ]
+    },
+    "rightForearm": {
+      "proximal": [
+        0.63,
+        0.86
+      ],
+      "distal": [
+        0.35,
+        0.15
+      ]
+    }
+  },
+  "handWrist": [
+    0.5,
+    0.85
+  ],
+  "anchorConvention": "Registered sprite UVs from bottom-left; proximal joints point toward the shoulder.",
+  "worldScale": {
+    "nominalHeight": 30,
+    "haloSpan": 28,
+    "playerScaleChanged": false
+  },
+  "portrait": {
+    "file": "portraits.webp",
+    "cellWidth": 128,
+    "cellHeight": 128,
+    "states": [
+      "alert",
+      "threatening",
+      "hurt"
+    ],
+    "enragedRow": 1
+  },
+  "illustrations": {
+    "normal": "normal.webp",
+    "enraged": "enraged.webp",
+    "width": 384,
+    "height": 384
+  },
+  "icon": {
+    "file": "icon.png",
+    "width": 64,
+    "height": 64
+  },
+  "decodedAtlasBytes": 14155776,
+  "provenance": "Built-in ImageGen from owner deity reference. Original masters/prompts retained; hard alpha removes generation matte, nearest-neighbor and non-dithered exports.",
+  "runtimeArtworkBytes": {
+    "parts.webp": 290288,
+    "portrait.webp": 7930,
+    "icon.png": 9068,
+    "portraits.webp": 43650,
+    "normal.webp": 29396,
+    "enraged.webp": 33952
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "pawtrail",
+  "label": "PawTrail",
+  "skills": [
+    "furniture-batch"
+  ],
+  "instructions": "Work directly in the registered standalone game workspace. Read its AGENTS.md first. The social app is a separate worktree; copy only explicitly authorized modules and assets. Preserve actual shadcn/ui components and Tailwind layout, Saira Condensed headings and Instrument Sans body text. Native manifests govern dimensions, animation counts and integer nearest-neighbor rendering. Project instructions govern agents, tests, builds and Firefox verification; the profile grants none of those independently. Local authoring state and prototype Kibble are not authoritative server records.",
+  "paths": {
+    "instructions": "AGENTS.md",
+    "queue": "assets/furniture-studio/batches/conversion-queue.json",
+    "catalog": "src/game/housing/catalog.json",
+    "backend_catalog": "backend/housing/catalog.json",
+    "sprite_manifests": "assets/furniture-studio/sprites",
+    "sprite_outputs": "public/pawtrail-game/furniture-sprites",
+    "definitions": "src/game/furniture/definitions.json",
+    "interactions": "src/game/furniture/interactions.json",
+    "trial": "src/game/furniture/sprite-couch-trial.ts",
+    "renderer": "src/game/housing/scene.ts"
+  },
+  "authoring": {
+    "default_representation": "sprite",
+    "representation_basis": "Owner's standing 2D furniture batch workflow; honor any newer explicit choice.",
+    "required_seat_facings": [
+      "front",
+      "right",
+      "back",
+      "left"
+    ],
+    "style": "Preserve canonical native art, warm light/middle/shadow divisions and existing thin brown contours. Keep transparent RGBA; do not double-outline finished sprites.",
+    "preview_route": "/play?compare=furniture&asset={item}&representation=sprite",
+    "editor_route": "/play?preview=furniture&asset={item}",
+    "backend_authority": "Keep existing lit/open/counter fields, idempotent actions, inventory, revision and occupancy rules. Preserve prices and inventory IDs. A preview is local and does not prove live account persistence."
+  },
+  "project": "pawtrail"
+}

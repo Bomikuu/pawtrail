@@ -1,7 +1,7 @@
 export const ATLAS_SIZE = 256
 export type SkinPart = string
-export type SurfaceGroup = 'Clothing' | 'Hair' | 'Face' | 'Accessories'
-export type SkinSheet = { id: SkinPart; label: string; color: string; pieces: string[]; width?: number; height?: number; group?: SurfaceGroup; description?: string; meshes?: string[] }
+export type SurfaceGroup = 'Clothing' | 'Hair' | 'Face' | 'Accessories' | 'Silhouettes'
+export type SkinSheet = { id: SkinPart; label: string; color: string; pieces: string[]; width?: number; height?: number; group?: SurfaceGroup; layout?:'silhouette'; description?: string; meshes?: string[] }
 export const skinParts: SkinSheet[] = [
   { id: 'shirt', label: 'Shirt', color: '#4c8b81', pieces: ['Body', 'Left sleeve', 'Right sleeve'] },
   { id: 'pants', label: 'Pants', color: '#c69b63', pieces: ['Waist', 'Left leg', 'Right leg'] },

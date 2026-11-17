@@ -1,0 +1,2060 @@
+{
+  "generationMode": "built-in image_gen",
+  "palette": [
+    "33251c",
+    "4a3324",
+    "63452e",
+    "805a36",
+    "9b6a3b",
+    "b47c40",
+    "ce9148",
+    "e8aa57",
+    "f4c778",
+    "f7dda3",
+    "fff0c8",
+    "fff8e5",
+    "504d2a",
+    "656238",
+    "77763e",
+    "898a4a",
+    "9da05c",
+    "b1b771",
+    "c6cd8a",
+    "d8dda5",
+    "985037",
+    "b56a47",
+    "ce8659",
+    "e3a776",
+    "b9aa86",
+    "cfbf9c",
+    "e5d5b2",
+    "f2e3c5",
+    "b15431",
+    "cf6d3b",
+    "e28c4b",
+    "f6b868"
+  ],
+  "postprocessing": "Observed source-grid crops, threshold alpha128 to remove glow, native nearest-neighbor fitting, disconnected boundary fragment removal, palette remap without dithering, explicit fixed canvas; state/animation rows have actual exported frame positions.",
+  "newAssets": [
+    {
+      "id": "three-seat-sofa",
+      "file": "/assets/game/housing/furniture/three-seat-sofa-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-living-source.png",
+      "sourceRect": [
+        20,
+        50,
+        590,
+        480
+      ],
+      "frameWidth": 96,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        48,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        3,
+        94,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        90,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 29,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "television",
+      "file": "/assets/game/housing/furniture/television-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-living-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        4,
+        2,
+        27,
+        30
+      ],
+      "collisionFootprintPixels": [
+        5,
+        14,
+        21,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 18,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "tv-cabinet",
+      "file": "/assets/game/housing/furniture/tv-cabinet-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-living-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        60,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        55,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 14,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "side-table",
+      "file": "/assets/game/housing/furniture/side-table-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-living-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        28,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        23,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 14,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "decorative-rug",
+      "file": "/assets/game/housing/furniture/decorative-rug-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-living-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        3,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 16,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "wall-clock",
+      "file": "/assets/game/housing/furniture/wall-clock-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-living-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        2,
+        29,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 20,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "double-bed",
+      "file": "/assets/game/housing/furniture/double-bed-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-bedroom-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        5,
+        2,
+        59,
+        62
+      ],
+      "collisionFootprintPixels": [
+        6,
+        46,
+        52,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 31,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "bedside-table",
+      "file": "/assets/game/housing/furniture/bedside-table-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-bedroom-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        29,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        24,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 16,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "chair",
+      "file": "/assets/game/housing/furniture/chair-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-bedroom-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        7,
+        2,
+        25,
+        30
+      ],
+      "collisionFootprintPixels": [
+        8,
+        14,
+        16,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 14,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "mirror",
+      "file": "/assets/game/housing/furniture/mirror-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-bedroom-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        13,
+        30,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 20,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "dresser",
+      "file": "/assets/game/housing/furniture/dresser-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-bedroom-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        23,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        58,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 19,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "decorative-pillows",
+      "file": "/assets/game/housing/furniture/decorative-pillows-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-bedroom-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        9,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 20,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "kitchen-counter",
+      "file": "/assets/game/housing/furniture/kitchen-counter-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-kitchen-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        9,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        58,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 18,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "dining-table",
+      "file": "/assets/game/housing/furniture/dining-table-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-kitchen-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        61,
+        62
+      ],
+      "collisionFootprintPixels": [
+        4,
+        46,
+        56,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 13,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "dining-chair",
+      "file": "/assets/game/housing/furniture/dining-chair-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-kitchen-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        7,
+        2,
+        24,
+        30
+      ],
+      "collisionFootprintPixels": [
+        8,
+        14,
+        15,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 17,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "cupboards",
+      "file": "/assets/game/housing/furniture/cupboards-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-kitchen-source.png",
+      "sourceRect": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        12,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 17,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "kitchen-shelves",
+      "file": "/assets/game/housing/furniture/kitchen-shelves-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-kitchen-source.png",
+      "sourceRect": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        13,
+        2,
+        50,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 28,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "food-storage-containers",
+      "file": "/assets/game/housing/furniture/food-storage-containers-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-kitchen-source.png",
+      "sourceRect": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        6,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 25,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "small-indoor-plant",
+      "file": "/assets/game/housing/furniture/small-indoor-plant-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        28,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        23,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 20,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "large-indoor-plant",
+      "file": "/assets/game/housing/furniture/large-indoor-plant-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        384,
+        0,
+        768,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        29,
+        30,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 18,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "flower-pot",
+      "file": "/assets/game/housing/furniture/flower-pot-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        768,
+        0,
+        1152,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        28,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        23,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 27,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "painting",
+      "file": "/assets/game/housing/furniture/painting-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        1152,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        2,
+        29,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 23,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "picture-frame",
+      "file": "/assets/game/housing/furniture/picture-frame-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        0,
+        512,
+        384,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        5,
+        2,
+        27,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 19,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "decorative-lights",
+      "file": "/assets/game/housing/furniture/decorative-lights-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        384,
+        512,
+        768,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        62,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 20,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "candles",
+      "file": "/assets/game/housing/furniture/candles-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        768,
+        512,
+        1152,
+        1024
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        3,
+        2,
+        29,
+        30
+      ],
+      "collisionFootprintPixels": [
+        4,
+        14,
+        24,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 20,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "wall-shelf",
+      "file": "/assets/game/housing/furniture/wall-shelf-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor1-source.png",
+      "sourceRect": [
+        1152,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        9,
+        62,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "wall",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 14,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "storage-box",
+      "file": "/assets/game/housing/furniture/storage-box-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor2-source.png",
+      "sourceRect": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        3,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 14,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "books",
+      "file": "/assets/game/housing/furniture/books-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor2-source.png",
+      "sourceRect": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        30
+      ],
+      "collisionFootprintPixels": [
+        3,
+        14,
+        26,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 31,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "small-rug",
+      "file": "/assets/game/housing/furniture/small-rug-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor2-source.png",
+      "sourceRect": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        2,
+        2,
+        62,
+        30
+      ],
+      "collisionFootprintPixels": null,
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 21,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "coffee-table",
+      "file": "/assets/game/housing/furniture/coffee-table-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-decor2-source.png",
+      "sourceRect": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 32,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        30
+      ],
+      "occupiedBounds": [
+        5,
+        2,
+        58,
+        30
+      ],
+      "collisionFootprintPixels": [
+        6,
+        14,
+        51,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 27,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "notes": "Decorative plant is baked into this coffee-table variant.",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "sofa-sage",
+      "file": "/assets/game/housing/furniture/sofa-sage-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-colors-source.png",
+      "sourceRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        14,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        58,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 25,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "sofa-terracotta",
+      "file": "/assets/game/housing/furniture/sofa-terracotta-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-colors-source.png",
+      "sourceRect": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        14,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        58,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 22,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    },
+    {
+      "id": "sofa-cream",
+      "file": "/assets/game/housing/furniture/sofa-cream-complete-v1.png",
+      "source": "/assets/game/housing/furniture/sources-complete/complete-colors-source.png",
+      "sourceRect": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "occupiedBounds": [
+        2,
+        14,
+        62,
+        62
+      ],
+      "collisionFootprintPixels": [
+        3,
+        46,
+        58,
+        16
+      ],
+      "placementLayer": "floor",
+      "collisionStatus": "proposed; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteColors": 25,
+      "productionReady": false,
+      "reviewStatus": "native dimensions, silhouette separation, palette and binary alpha inspected; scene placement pending",
+      "technicalChecks": {
+        "fileExists": true,
+        "gridDimensions": true,
+        "binaryAlpha": true,
+        "tileMultiple": true,
+        "alphaMargins": true
+      }
+    }
+  ],
+  "existingAssets": [
+    {
+      "id": "sofa",
+      "file": "sofa-housing-v1.png",
+      "source": "sofa-housing-v1-source.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        5,
+        43,
+        54,
+        17
+      ],
+      "collisionStatus": "proposed placement footprint; not tested in gameplay",
+      "occupiedBounds": [
+        3,
+        13,
+        61,
+        60
+      ],
+      "nativeColors": 23,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "productionReady": false,
+      "reviewStatus": "native export prepared; perspective and silhouette visually reviewed; in-engine placement and art-direction approval pending",
+      "metadataSource": "/assets/game/housing/furniture/furniture-first-batch.json"
+    },
+    {
+      "id": "table",
+      "file": "table-housing-v1.png",
+      "source": "table-housing-v1-source.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        58
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.90625
+      ],
+      "collisionFootprintPixels": [
+        6,
+        34,
+        52,
+        24
+      ],
+      "collisionStatus": "proposed placement footprint; not tested in gameplay",
+      "occupiedBounds": [
+        5,
+        19,
+        59,
+        58
+      ],
+      "nativeColors": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "productionReady": false,
+      "reviewStatus": "native export prepared; perspective and silhouette visually reviewed; in-engine placement and art-direction approval pending",
+      "metadataSource": "/assets/game/housing/furniture/furniture-first-batch.json"
+    },
+    {
+      "id": "armchair",
+      "file": "armchair-housing-v1.png",
+      "source": "armchair-housing-v1-source.png",
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        3,
+        48,
+        26,
+        12
+      ],
+      "collisionStatus": "proposed, not engine tested",
+      "occupiedBounds": [
+        2,
+        27,
+        30,
+        60
+      ],
+      "nativeColors": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sourceDimensions": [
+        887,
+        1774
+      ],
+      "sourceCrop": [
+        148,
+        566,
+        740,
+        1267
+      ],
+      "productionReady": false,
+      "reviewStatus": "Integer4x contact sheet visually inspected: perspective, silhouette, shared colors and binary-alpha edges coherent; in-engine placement pending",
+      "metadataSource": "/assets/game/housing/furniture/living-room-batch-2.json"
+    },
+    {
+      "id": "bookshelf",
+      "file": "bookshelf-housing-v1.png",
+      "source": "bookshelf-housing-v1-source.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        11,
+        48,
+        42,
+        12
+      ],
+      "collisionStatus": "proposed, not engine tested",
+      "occupiedBounds": [
+        10,
+        4,
+        54,
+        60
+      ],
+      "nativeColors": 26,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sourceCrop": [
+        325,
+        242,
+        929,
+        1011
+      ],
+      "productionReady": false,
+      "reviewStatus": "Integer4x contact sheet visually inspected: perspective, silhouette, shared colors and binary-alpha edges coherent; in-engine placement pending",
+      "metadataSource": "/assets/game/housing/furniture/living-room-batch-2.json"
+    },
+    {
+      "id": "floor-lamp",
+      "file": "floor-lamp-housing-v1.png",
+      "source": "floor-lamp-housing-v1-source.png",
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        8,
+        55,
+        16,
+        5
+      ],
+      "collisionStatus": "proposed, not engine tested",
+      "occupiedBounds": [
+        5,
+        4,
+        26,
+        60
+      ],
+      "nativeColors": 25,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sourceDimensions": [
+        887,
+        1774
+      ],
+      "sourceCrop": [
+        187,
+        224,
+        700,
+        1565
+      ],
+      "productionReady": false,
+      "reviewStatus": "Integer4x contact sheet visually inspected: perspective, silhouette, shared colors and binary-alpha edges coherent; in-engine placement pending",
+      "finalPixelCleanup": "Fit silhouette inside 28x56 safe region using nearest-neighbor; centered with baseline60 and transparent margins.",
+      "metadataSource": "/assets/game/housing/furniture/living-room-batch-2.json"
+    },
+    {
+      "id": "single-bed",
+      "file": "single-bed-housing-v1.png",
+      "source": "single-bed-housing-v1-source.png",
+      "sourceDimensions": [
+        887,
+        1774
+      ],
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "occupiedBounds": [
+        2,
+        4,
+        30,
+        62
+      ],
+      "anchorPixels": [
+        16,
+        62
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.96875
+      ],
+      "collisionFootprintPixels": [
+        3,
+        43,
+        26,
+        19
+      ],
+      "collisionStatus": "proposed footprint; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "nativeColors": 28,
+      "prompt": "Use case: stylized-concept. Asset type: PawTrail reusable SINGLE BED furniture sprite, native32x64 logical pixels. Image1 is style reference only. Generate ONE isolated small narrow wooden single bed, headboard at top, footboard at bottom, visible cream pillow and sage-green folded blanket over cream mattress, honey-oak frame with warmdarkbrown outlines. Strict orthographic top-down three-quarter RPG perspective matching classic cozy16bit pixelart; bed long axis vertical, both sides symmetrical, no isometric angle. Upperleftlighting. Crisp square pixelclusters, flat limitedpalette2or3tones/material, enlarged nearest-neighbor logicalpixels with readability at32x64. Warm cream/honeyoak/sage palette matching reference sofa and wood. Actual transparent background, no floor, no room, no cast shadow or glow outside silhouette, no text/labels/gridlines/characters/extraobjects, no smooth gradients, no blur, no antialiasing. Entire bed centered and completely visible with modest transparentmargin. This is one static furniture object for a tilebased game, not a decoratedscene.",
+      "productionReady": false,
+      "reviewStatus": "native transparency, silhouette, pixel edges and top-down perspective visually inspected at4x; final in-engine placement pending",
+      "metadataSource": "/assets/game/housing/furniture/bedroom-batch-2.json"
+    },
+    {
+      "id": "wardrobe",
+      "file": "wardrobe-housing-v1.png",
+      "source": "wardrobe-housing-v1-source.png",
+      "sourceDimensions": [
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "occupiedBounds": [
+        2,
+        2,
+        62,
+        62
+      ],
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.96875
+      ],
+      "collisionFootprintPixels": [
+        3,
+        42,
+        58,
+        20
+      ],
+      "collisionStatus": "proposed footprint; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "nativeColors": 17,
+      "prompt": "Use case: stylized-concept. Asset type: PawTrail reusable wooden WARDROBE furniture sprite, native64x64 logicalpixels. Image1 is style reference only. ONE isolated squat honey-oak wooden wardrobe, two closed paneled doors with small round brass knobs, slight visible horizontal top surface, short four feet. Front faces straight down toward viewer, upright verticals and horizontal top, strict orthographic top-down three-quarter RPG perspective, NOT isometric. Match reference woodframe/outline/style, cozy crisp16bit pixelart, upperleftlight, warmdarkbrownoutline, limited cream/honeyoak/terracotta palette. Strong legible pixelclusters, enlarged nearest-neighbor logical64x64 density, avoid fine grain noise. Centered whole object with transparentmargin and TRUE transparent background; no floor, scene, walls, clothes, extraobjects, labels/text, castglow, broadshadow, smooth gradients, antialiasing, 3D or blur. This static64x64 sprite must match a32pixel tile game and player32x48.",
+      "productionReady": false,
+      "reviewStatus": "native transparency, silhouette, pixel edges and top-down perspective visually inspected at4x; final in-engine placement pending",
+      "metadataSource": "/assets/game/housing/furniture/bedroom-batch-2.json"
+    },
+    {
+      "id": "desk",
+      "file": "desk-housing-v1.png",
+      "source": "desk-housing-v1-source.png",
+      "sourceDimensions": [
+        1536,
+        1024
+      ],
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "occupiedBounds": [
+        2,
+        23,
+        62,
+        62
+      ],
+      "anchorPixels": [
+        32,
+        62
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.96875
+      ],
+      "collisionFootprintPixels": [
+        3,
+        49,
+        58,
+        13
+      ],
+      "collisionStatus": "proposed footprint; not engine-verified",
+      "alphaValues": [
+        0,
+        255
+      ],
+      "nativeColors": 14,
+      "prompt": "Use case: stylized-concept. Asset type: PawTrail reusable wooden DESK furniture sprite, native64x64 logicalpixels. Image1 is housing style reference only. ONE isolated honey-oak writing desk with a broad EMPTY rectangular desktop, single small drawer pedestal on right and two simple legs on left. No chair, books, lamps or addedobjects. Front faces directly downward, top surface visible from above with horizontal topedge andverticallegs. Strict orthographic topdown three-quarter RPG perspective, notisometric. Match reference warmdarkbrownoutline, honeyoak wood3shades, creamhighlight, upperleftlight. Cozy original16bit pixelart with clearly definedsquarepixelclusters enlargednearest, readablenative64x64 logicaldensity. Centered full object with transparentmargin; genuine transparentbackground no floor/wall/shadowglow, text labels gridlines gradients smoothvector antialiasing blur 3D or fullscene. For32pixeltilegame and32x48 player.",
+      "productionReady": false,
+      "reviewStatus": "native transparency, silhouette, pixel edges and top-down perspective visually inspected at4x; final in-engine placement pending",
+      "metadataSource": "/assets/game/housing/furniture/bedroom-batch-2.json"
+    },
+    {
+      "id": "refrigerator",
+      "file": "refrigerator-housing-v1.png",
+      "source": "refrigerator-housing-v1-source.png",
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        3,
+        44,
+        26,
+        16
+      ],
+      "collisionStatus": "Proposed placement footprint, not tested in game",
+      "occupiedBounds": [
+        2,
+        6,
+        30,
+        60
+      ],
+      "sourceBounds": [
+        201,
+        452,
+        686,
+        1379
+      ],
+      "nativeColors": 20,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteMatches": true,
+      "productionReady": false,
+      "reviewStatus": "Native silhouette, cream/sage palette, top-down three-quarter perspective and crisp pixels visually reviewed; in-engine placement/art-direction approval pending",
+      "metadataSource": "/assets/game/housing/furniture/kitchen-batch-2.json"
+    },
+    {
+      "id": "stove",
+      "file": "stove-housing-v1.png",
+      "source": "stove-housing-v1-source.png",
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        3,
+        44,
+        26,
+        16
+      ],
+      "collisionStatus": "Proposed placement footprint, not tested in game",
+      "occupiedBounds": [
+        2,
+        25,
+        30,
+        60
+      ],
+      "sourceBounds": [
+        522,
+        269,
+        1014,
+        888
+      ],
+      "nativeColors": 20,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteMatches": true,
+      "productionReady": false,
+      "reviewStatus": "Native silhouette, cream/sage palette, top-down three-quarter perspective and crisp pixels visually reviewed; in-engine placement/art-direction approval pending",
+      "metadataSource": "/assets/game/housing/furniture/kitchen-batch-2.json"
+    },
+    {
+      "id": "sink-counter",
+      "file": "sink-counter-housing-v1.png",
+      "source": "sink-counter-housing-v1-source.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        4,
+        44,
+        55,
+        16
+      ],
+      "collisionStatus": "Proposed placement footprint, not tested in game",
+      "occupiedBounds": [
+        3,
+        6,
+        60,
+        60
+      ],
+      "sourceBounds": [
+        417,
+        203,
+        1117,
+        863
+      ],
+      "nativeColors": 27,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteMatches": true,
+      "productionReady": false,
+      "reviewStatus": "Native silhouette, cream/sage palette, top-down three-quarter perspective and crisp pixels visually reviewed; in-engine placement/art-direction approval pending",
+      "metadataSource": "/assets/game/housing/furniture/kitchen-batch-2.json"
+    }
+  ],
+  "prompts": {
+    "living": "Use case: stylized-concept. PawTrail game livingroom sprite atlas. Image1 STYLE REFERENCE ONLY. True transparentbackground, SIX isolated objects exactly3columns2rows, equalcells withwidepadding, nooverlap. Row1: wide THREE-seat sage-green sofa with three distinct cushions; small cream television darkscreen; low honeyoak TVcabinet. Row2: honeyoak small side table; terracotta-and-cream decorative circular rug; round honeyoak wallclock blank simplehands NO numerals. Orthographic topdown3/4 classic16bit farmingRPG pixelart, NOTisometric, upperleftlight, darkwarmbrownoutlines, crisp squarepixelclusters, noantialias no gradients/glow. Sameworldscale32pxbase, sofa96x64logical, cabinet64x32, otherfurniture32or64logical. No characters, scenery, labels, text, frames, checkerboard. Each object complete, separate, centered withinitscell, generous ACTUAL transparency. Originalart matchesstylepalette honeyoak cream sage terracotta.",
+    "bedroom": "Use case: stylized-concept. PawTrail BEDROOM sprite atlas, Image1 style referenceonly. EXACTLY SIX SEPARATE furnitureobjects in3columns2rows on real transparentbackground, generouswidegaps, equal512x512cells on1536x1024 canvas. Row1: double bed with two cream pillows sageblanket honeyoakframe; small honeyoak bedside table; simple honeyoak wooden chair. Row2: tall standing mirror honeyoakframe; low wide honeyoak dresser; two decorative creamandsage pillows grouped asoneitem. Originalcozy16bitpixelart strict topdown3/4ORTHOGRAPHIC notisometric, identicalworldscale32base, upperleftlighting, warmbrownoutline, honeyoak cream sage terracotta palette. Eachobjectfitscomfortablyinsidecell, fullsilhouette nooverlap and noextraneousprops, nativepixelclusters cleannearestlook. Transparentarea notglow, no labels/text/numbers/gridlines/room/floor/shadows outsideobjects. No antialias gradients 3D painting. Characterbedscale64x64logical, table32,chair32,mirror32x64,dresser64x64,pillows32.",
+    "kitchen": "Use case stylized-concept. Asset type PawTrail KITCHEN sprite atlas. Image1 style referenceonly. Six independent isolatedfurnitureobjects in EXACT3columns2rows on transparentcanvas1536x1024. Each centered512x512cell with100pxpadding and NOoverlap. Row1: honeyoak kitchen counter creamworktop; square honeyoak diningtable; wooden diningchair sagecushion. Row2: wallmounted doublecupboard honeyoak doors; openkitchenshelves withfew creamcups; clusterof3closed foodstoragejars asoneobject. Nativebase32pixel worldscale, counter/table64x64,chair32x32,cupboard64x64,shelves64x32,jars32x32. Topdown3/4ORTHOGRAPHIC classic16bitRPG NOTisometric, upperleftlighting flatlimitedshades warmbrownoutline cream honeyoak sage terracotta palette. Crisp squaredpixels noantialias no smooth gradients or glow. Actualtransparentgaps, no background/floor/scene/text/numerals/labels/UI/gridlines. Fullindividualsilhouettes.",
+    "decor1": "Use case stylized-concept. PawTrail decoration SPRITE ATLAS, eightisolateditems EXACT4columns2rows ontransparent1536x1024canvas. Image1 STYLEreferenceonly. Cellwidth384 height512, eachitem centeredwithwidecleartransparentmargins nooverlap. Row1: smallindoor pottedfern; largeindoor pottedleafyplant; flowerpot withflowers; framedlandscape painting no text. Row2: smallpictureframe showingpaw; stringofdecorativelights; paircreamcandles; honeyoak wallshelf empty. Nativeobjects32or64px multiples, largeplant32x64, lights64x32,shelf64x32. Classiccozy16bitRPG topdown3/4ORTHOGRAPHIC NOTisometric, upperleftlighting, warmbrownoutlines, honeyoak/cream/sage/terracotta pastelpalette. Readable squarepixelclusters, cleancrispedges. No background, floor, room, UI, letters,numbers,labels,borders,gradient,glow,antialias,photorealism. Isolatedfullobjects only.",
+    "decor2": "Use case stylized-concept. PawTrail smallhomeobjects SPRITE ATLAS: FOUR isolated objects in2columns2rows transparentcanvas, equalcells,generoustransparentpadding. TopLeft woodenstoragebox; topRight stackofclosedbooks; bottomLeft smallrectangularsage-and-cream wovenrug; bottomRight LOW honeyoakcoffeetable. Image1 STYLEreferenceonly. Originalcrisp16bitpixelart topdown3/4orthographic NOTisometric upperleftlight warmbrownoutlines honeyoak cream sage terracotta palette, identicalworldscale32base. Boxes/books32x32logical, rug/coffeetable64x32logical. Noletters/text/labels/scene/floor/background/gridlines/antialias/glow/gradients, fullobjects separated.",
+    "colors": "Use case stylized-concept. PawTrail COLOR VARIANTS spriteatlas. Image1 STYLE REFERENCE ONLY existingtwoseatsofa. Exactly6isolatedsprites3columns2rows ontransparent1536x1024canvas, widepadding nooverlap. Row1 SAMEtwo-seat honeyoakframedsofa threeclothcolorvariants leftSAGEGREEN centerTERRACOTTA rightCREAM. Keepidenticaltwo-seatgeometry outlinearmsbacklegs,andpawpillowsthroughout; changeonlyclothcolor. Row2 SAMEfoldedpetblanket threecolorvariants leftSAGEGREEN centerTERRACOTTA rightCREAM. Sameblanketshape/fold/pawpattern. Native sofa64x64 andblanket64x32, upperleftlight darkwarmbrownoutline, crisp16bitpixelclusters strict topdown3/4ORTHOGRAPHIC notisometric, noantialias gradients/glow. Truebackgroundtransparency no scenes,floors,text,numbers,labels,UI/gridlines. Fullisolatedobjects."
+  },
+  "limitations": [
+    "Placement anchors and collision footprints are proposals until engine verification.",
+    "Generated source renders have antialiased glow; native exports remove it.",
+    "Animation loop pacing/continuity requires playback review; no production-ready claim."
+  ],
+  "requirementCoverage": {
+    "living room": {
+      "two-seat sofa": "sofa",
+      "three-seat sofa": "three-seat-sofa",
+      "armchair": "armchair",
+      "coffee table": "coffee-table",
+      "television": "television",
+      "TV cabinet": "tv-cabinet",
+      "bookshelf": "bookshelf",
+      "side table": "side-table",
+      "floor lamp": "floor-lamp",
+      "decorative rug": "decorative-rug",
+      "wall clock": "wall-clock",
+      "indoor plants": "small-indoor-plant"
+    },
+    "bedroom": {
+      "single bed": "single-bed",
+      "double bed": "double-bed",
+      "bedside table": "bedside-table",
+      "wardrobe": "wardrobe",
+      "desk": "desk",
+      "chair": "chair",
+      "mirror": "mirror",
+      "dresser": "dresser",
+      "decorative pillows": "decorative-pillows"
+    },
+    "kitchen": {
+      "kitchen counter": "kitchen-counter",
+      "dining table": "dining-table",
+      "dining chairs": "dining-chair",
+      "refrigerator": "refrigerator",
+      "stove": "stove",
+      "sink": "sink-counter",
+      "cupboards": "cupboards",
+      "kitchen shelves": "kitchen-shelves",
+      "food storage containers": "food-storage-containers"
+    },
+    "decorations": {
+      "small indoor plants": "small-indoor-plant",
+      "large indoor plants": "large-indoor-plant",
+      "flower pots": "flower-pot",
+      "paintings": "painting",
+      "picture frames": "picture-frame",
+      "decorative lights": "decorative-lights",
+      "candles": "candles",
+      "wall shelves": "wall-shelf",
+      "storage boxes": "storage-box",
+      "books": "books",
+      "small rugs": "small-rug"
+    }
+  },
+  "colorVariations": [
+    "sage",
+    "terracotta",
+    "cream"
+  ],
+  "sourceReview": "All generated category sources and native contact sheets visually inspected; misplaced neighbor fragments removed from source cell boundaries."
+}

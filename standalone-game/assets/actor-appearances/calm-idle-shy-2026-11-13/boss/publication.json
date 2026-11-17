@@ -1,0 +1,13 @@
+{
+  "name": "Vaelrith",
+  "folder": "/pawtrail-game/monsters/vaelrith-riftbound/illustration-v3-calm-f5b4575b2e0c",
+  "nativeSize": [
+    384,
+    256
+  ],
+  "style": "Refined cel",
+  "motion": "Neck, head & throat movement",
+  "frames": 16,
+  "runtimeBytes": 615324,
+  "cycleMs": 5150
+}

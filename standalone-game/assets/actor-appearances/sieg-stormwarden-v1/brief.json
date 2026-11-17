@@ -1,0 +1,20 @@
+{
+  "id": "sieg",
+  "name": "Sieg",
+  "style": "Refined cel pixel RPG",
+  "status": "preview-installed-and-visually-reviewed",
+  "voice": {
+    "status": "omitted-by-owner"
+  },
+  "design": {
+    "hair": "swept ash-black hair with a copper forelock",
+    "eyes": "amber",
+    "clothing": "short navy-and-teal storm cape, asymmetric brass shoulder armor, fitted ivory shirt, charcoal trousers and wrapped boots",
+    "weapon": "distinct short broad blade with a forked brass guard",
+    "aura": "teal wind runes, separate rear/front layers",
+    "background": "storm-lit coastal waystation with warm lanterns, separate animated layer",
+    "proportions": "Adult illustration guided by owner video; stylized gameplay world scale preserved"
+  },
+  "referencePolicy": "Loose dark-fantasy inspiration; change silhouette, palette, costume, blade and pose. Do not reproduce the uploaded design.",
+  "revision": 2
+}

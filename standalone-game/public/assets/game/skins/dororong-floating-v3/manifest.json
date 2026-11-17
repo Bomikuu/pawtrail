@@ -1,0 +1,381 @@
+{
+  "id": "dororong-floating",
+  "version": 3,
+  "representation": "joint-attached-directional-cutouts",
+  "generator": "built-in image_gen",
+  "reference": "source/reference.png",
+  "palette": [
+    "#2b2028",
+    "#4b3542",
+    "#815a70",
+    "#a27890",
+    "#c38fab",
+    "#e6b3d0",
+    "#f4cbe3",
+    "#fffdfb",
+    "#efe9ee",
+    "#d5cbd5",
+    "#bab0bd",
+    "#f7eef3",
+    "#fffefd",
+    "#19161a",
+    "#dedadd"
+  ],
+  "surfaces": {
+    "layer-head-front": {
+      "file": "layer-head-front.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 6077
+    },
+    "layer-garment-front": {
+      "file": "layer-garment-front.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1766
+    },
+    "layer-head-right": {
+      "file": "layer-head-right.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 4946
+    },
+    "layer-garment-right": {
+      "file": "layer-garment-right.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1861
+    },
+    "layer-head-back": {
+      "file": "layer-head-back.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 3614
+    },
+    "layer-garment-back": {
+      "file": "layer-garment-back.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1593
+    },
+    "layer-head-left": {
+      "file": "layer-head-left.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 4351
+    },
+    "layer-garment-left": {
+      "file": "layer-garment-left.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1821
+    },
+    "layer-shoulder-left-front": {
+      "file": "layer-shoulder-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 628
+    },
+    "layer-elbow-left-front": {
+      "file": "layer-elbow-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 441
+    },
+    "layer-wrist-left-front": {
+      "file": "layer-wrist-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 427
+    },
+    "layer-hip-left-front": {
+      "file": "layer-hip-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 614
+    },
+    "layer-knee-left-front": {
+      "file": "layer-knee-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 598
+    },
+    "layer-ankle-left-front": {
+      "file": "layer-ankle-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 481
+    },
+    "layer-shoulder-left-right": {
+      "file": "layer-shoulder-left-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 628
+    },
+    "layer-elbow-left-right": {
+      "file": "layer-elbow-left-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 441
+    },
+    "layer-wrist-left-right": {
+      "file": "layer-wrist-left-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 427
+    },
+    "layer-hip-left-right": {
+      "file": "layer-hip-left-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 614
+    },
+    "layer-knee-left-right": {
+      "file": "layer-knee-left-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 598
+    },
+    "layer-ankle-left-right": {
+      "file": "layer-ankle-left-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 481
+    },
+    "layer-shoulder-left-back": {
+      "file": "layer-shoulder-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 689
+    },
+    "layer-elbow-left-back": {
+      "file": "layer-elbow-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 467
+    },
+    "layer-wrist-left-back": {
+      "file": "layer-wrist-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 438
+    },
+    "layer-hip-left-back": {
+      "file": "layer-hip-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 667
+    },
+    "layer-knee-left-back": {
+      "file": "layer-knee-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 618
+    },
+    "layer-ankle-left-back": {
+      "file": "layer-ankle-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 460
+    },
+    "layer-shoulder-left-left": {
+      "file": "layer-shoulder-left-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 606
+    },
+    "layer-elbow-left-left": {
+      "file": "layer-elbow-left-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 432
+    },
+    "layer-wrist-left-left": {
+      "file": "layer-wrist-left-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 431
+    },
+    "layer-hip-left-left": {
+      "file": "layer-hip-left-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 612
+    },
+    "layer-knee-left-left": {
+      "file": "layer-knee-left-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 598
+    },
+    "layer-ankle-left-left": {
+      "file": "layer-ankle-left-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 481
+    },
+    "layer-shoulder-right-front": {
+      "file": "layer-shoulder-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 606
+    },
+    "layer-elbow-right-front": {
+      "file": "layer-elbow-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 432
+    },
+    "layer-wrist-right-front": {
+      "file": "layer-wrist-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 431
+    },
+    "layer-hip-right-front": {
+      "file": "layer-hip-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 612
+    },
+    "layer-knee-right-front": {
+      "file": "layer-knee-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 598
+    },
+    "layer-ankle-right-front": {
+      "file": "layer-ankle-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 481
+    },
+    "layer-shoulder-right-right": {
+      "file": "layer-shoulder-right-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 606
+    },
+    "layer-elbow-right-right": {
+      "file": "layer-elbow-right-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 432
+    },
+    "layer-wrist-right-right": {
+      "file": "layer-wrist-right-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 431
+    },
+    "layer-hip-right-right": {
+      "file": "layer-hip-right-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 612
+    },
+    "layer-knee-right-right": {
+      "file": "layer-knee-right-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 598
+    },
+    "layer-ankle-right-right": {
+      "file": "layer-ankle-right-right.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 481
+    },
+    "layer-shoulder-right-back": {
+      "file": "layer-shoulder-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 677
+    },
+    "layer-elbow-right-back": {
+      "file": "layer-elbow-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 461
+    },
+    "layer-wrist-right-back": {
+      "file": "layer-wrist-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 449
+    },
+    "layer-hip-right-back": {
+      "file": "layer-hip-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 680
+    },
+    "layer-knee-right-back": {
+      "file": "layer-knee-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 639
+    },
+    "layer-ankle-right-back": {
+      "file": "layer-ankle-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 454
+    },
+    "layer-shoulder-right-left": {
+      "file": "layer-shoulder-right-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 628
+    },
+    "layer-elbow-right-left": {
+      "file": "layer-elbow-right-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 441
+    },
+    "layer-wrist-right-left": {
+      "file": "layer-wrist-right-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 427
+    },
+    "layer-hip-right-left": {
+      "file": "layer-hip-right-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 614
+    },
+    "layer-knee-right-left": {
+      "file": "layer-knee-right-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 598
+    },
+    "layer-ankle-right-left": {
+      "file": "layer-ankle-right-left.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 481
+    }
+  },
+  "panelLayout": "joint-panels-v2",
+  "pivots": {
+    "upperArm_forearm_thigh_shin": [
+      32,
+      24
+    ],
+    "hand": [
+      32,
+      48
+    ],
+    "foot": [
+      32,
+      32
+    ]
+  },
+  "review": {
+    "source_art": "visually inspected",
+    "browser_actions": "pending; not authorized by current workspace rules"
+  }
+}

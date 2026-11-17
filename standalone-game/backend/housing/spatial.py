@@ -28,7 +28,10 @@ class Navigation:
         fixed=fixed_cells(zone,hub,preset)|{(x,y) for x in range(w) for y in range(h) if x in [0,w-1] or y in [0,h-1]}
         self.rects=[[x*32,y*32,32,32] for x,y in fixed]
         for p in layout:
-            if not (states or {}).get(p['id'],{}).get('open'):self.rects += [rect(p,r) for r in definition(p)['geometry']['ground']]
+            d=definition(p);ground=d['geometry']['ground']
+            if (states or {}).get(p['id'],{}).get('open'):
+                ground=d.get('stateViews',{}).get('open',{}).get('ground',ground)
+            self.rects += [rect(p,r) for r in ground]
         self.blocked=set()
         for x,y,rw,rh in self.rects:
             for gx in range(math.floor((x-5)/8),math.floor((x+rw+5)/8)+1):

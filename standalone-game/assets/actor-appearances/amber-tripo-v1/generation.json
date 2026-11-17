@@ -1,0 +1,60 @@
+{
+  "sourceReference": "assets/actor-appearances/amber-anime-v3/modeling-reference.png",
+  "sourceSha256": "c4598bd0f7dfc620c8e90b174ec5dd6b21a1b040e36401ff6109532743921984",
+  "provider": "Tripo",
+  "status": "cancelled-by-owner",
+  "accountObservation": "Signed in. UI shows 200 credits; Multi-View and model exports require upgrade. Single-image H3.1 Geometry & Texture shows 55 credits. No generation submitted and no credits spent.",
+  "scope": "One textured, unrigged model for owner review. No animation, rigging, sprite bake or game installation.",
+  "inputs": [
+    {
+      "view": "front",
+      "file": "inputs/amber-front.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "crop": [
+        55,
+        0,
+        542,
+        1024
+      ],
+      "sha256": "d693e6a6af886d6098f55b6d0abb6c9daf0a3a2c5bb5189af12d122f09bcd469",
+      "resampled": false
+    },
+    {
+      "view": "side",
+      "file": "inputs/amber-side.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "crop": [
+        650,
+        0,
+        965,
+        1024
+      ],
+      "sha256": "22f19b5a8ac07adb23bd39a0c782d9884c5dd154e65c36ccdd6afb0807d26bf7",
+      "resampled": false
+    },
+    {
+      "view": "back",
+      "file": "inputs/amber-back.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "crop": [
+        1000,
+        0,
+        1510,
+        1024
+      ],
+      "sha256": "ca2486aebd73d649e34e11e2920f18a8862e54857c7922404b1c29528ecffcfe",
+      "resampled": false
+    }
+  ],
+  "modelTaskId": null,
+  "modelFile": null
+}

@@ -1,0 +1,97 @@
+{
+  "id": "neon-heights-v1",
+  "name": "Sampaguita Neon Heights",
+  "startedAt": "2026-11-15T11:35:16.154647+00:00",
+  "request": "Cyberpunk map similar to the supplied neon skyline image",
+  "brief": {
+    "tiles": [
+      48,
+      36
+    ],
+    "nativePixels": [
+      1536,
+      1152
+    ],
+    "composition": "Dense upper skyline blocks, connected illuminated boulevards, hologram plaza and lower observation/maintenance terrace",
+    "arrival": [
+      768,
+      1088
+    ],
+    "representation": "Existing elevated 2D pixel stage, fresh neon palette and architecture from new reference",
+    "newArtwork": [
+      "ground",
+      "spire",
+      "arc-tower",
+      "hab-block",
+      "holo-head",
+      "holo-koi",
+      "kiosk",
+      "hvac",
+      "railing"
+    ]
+  },
+  "phases": {
+    "art": {
+      "status": "complete",
+      "startedAt": "2026-11-15T11:35:16.154647+00:00",
+      "serviceStartedAt": "2026-11-15T11:35:43.579000+00:00",
+      "completedAt": "2026-11-15T11:43:17.005000+00:00",
+      "serviceWallSeconds": 453.426,
+      "sourceCount": 9,
+      "callsPerSource": 1
+    },
+    "authoring": {
+      "status": "complete",
+      "startedAt": "2026-11-15T11:35:16.154647+00:00",
+      "completedAt": "2026-11-15T11:45:19.806121+00:00"
+    },
+    "integration": {
+      "status": "complete",
+      "completedAt": "2026-11-15T11:47:26.090547+00:00",
+      "files": [
+        "src/game/stage-editor/data.ts",
+        "src/components/game/stage-editor.tsx",
+        "docs/implementation/stage-editor.md"
+      ],
+      "entry": "/play?preview=stage&map=cyberpunk"
+    },
+    "nativeReview": {
+      "status": "complete",
+      "completedAt": "2026-11-15T11:47:26.090547+00:00",
+      "evidence": [
+        "assets/maps/neon-heights-v1/native-overview.png",
+        "assets/maps/neon-heights-v1/asset-sheet.png"
+      ],
+      "observations": [
+        "Viewed assembled native map and eight-prop sheet on a dark background; reflective terrain and transparent cutouts retain the cyan/magenta reference palette and fine pixel detail.",
+        "Initial north skyline looked undersized; replaced five placements with exact integer 2x variants and inspected the revised overview. Upper stories intentionally continue beyond the north edge.",
+        "Refined solid footprints to visible bases; the overview shows an open central arrival, plaza and both boulevards. This is artwork observation, not verified actor clearance."
+      ],
+      "pending": [
+        "Actual app loading",
+        "Live walking and collision clearance",
+        "Actor visibility and occlusion behind towers"
+      ]
+    },
+    "liveReview": {
+      "status": "pending",
+      "reason": "No automated checks/tests/builds or browser verification requested"
+    },
+    "nativeExport": {
+      "status": "complete",
+      "completedAt": "2026-11-15T11:45:19.806121+00:00",
+      "evidence": "assets/maps/neon-heights-v1/native-overview.png"
+    }
+  },
+  "limits": [
+    "Separate local stage; existing maps and user saves preserved",
+    "No new 3D renderer, combat, NPCs, rewards, accounts or overworld portals",
+    "Holograms and city props are scenery; no implied building interiors or vehicle controls"
+  ],
+  "objectCount": 34,
+  "towerCount": 11,
+  "authoringCompleteAt": "2026-11-15T11:47:26.090547+00:00",
+  "runtimeAssets": 12,
+  "nativePropDefinitions": 11,
+  "timingNote": "Source service timestamps are measured per call. Authoring includes first export, native artwork review, skyline scale/footprint revision and second export. App/browser tests were not run."
+}

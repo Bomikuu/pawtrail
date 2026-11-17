@@ -141,7 +141,11 @@ export function createReferenceAquarium(
     oneSided = false,
   ) {
     const [x, y, w, h] = rect;
-    const width = map.image.width, height = map.image.height;
+    const image = map.image;
+    if (!image || typeof image !== 'object' || !('width' in image) || !('height' in image) ||
+      typeof image.width !== 'number' || typeof image.height !== 'number' || image.width <= 0 || image.height <= 0)
+      throw Error('Aquarium texture dimensions are unavailable.');
+    const width = image.width, height = image.height;
     const g = new T.BufferGeometry();
     g.setAttribute("position", new T.Float32BufferAttribute(points.flat(), 3));
     // DataTexture has no image flip; preserve the original top-to-bottom pixel indices.

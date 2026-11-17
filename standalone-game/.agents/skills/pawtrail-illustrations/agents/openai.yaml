@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Illustrations"
+  short_description: "Living character art for loading and ability screens"
+  default_prompt: "Use $pawtrail-illustrations to combine new Sieghart's mature painted detail, anatomy and material depth with old Sieg's pixel texture, cel structure and semi-bold edges. Preserve both influences in the normal and demonic smiling/angry attack illustrations. Require stable anatomy/grip, natural cloth follow-through and a smooth loop. Keep actor/background/aura separate, ask for feedback under the owner's continuation rule, and retain the combined illustration as the model and icon reference."

@@ -1,0 +1,277 @@
+{
+  "recordedAt": "2026-11-13T06:29:27.472973+00:00",
+  "browser": "Codex in-app browser",
+  "authorization": "Owner explicitly requested in-app visual verification of actor/boss breathing and Amber Shy in all three angles.",
+  "scope": "Focused review of the changed portrait/illustration idle performances and Amber Refined cel Shy; no encounter or broad application testing.",
+  "verdict": "pass for the requested visual scope; no product repairs required",
+  "portraitPublication": {
+    "id": "amber-refined-cel",
+    "name": "Refined cel",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      1,
+      3,
+      94,
+      116
+    ],
+    "runtimeBytes": 245949,
+    "referenceBytes": 10495,
+    "completeBytes": 256444,
+    "poseCount": 3,
+    "expressionCount": 7,
+    "uniqueFullFrames": 124,
+    "sourceImagesUsed": 109,
+    "encoding": "lossless-webp-complete-frames",
+    "styleKey": "refined-cel",
+    "characterId": "amber",
+    "characterName": "Amber",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-calm-v3/91b6c54014fe",
+    "revision": "91b6c54014fe",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "budgetBytes": 300000,
+    "idleFrameCounts": {
+      "front-pout": 2,
+      "three-quarter-left": 4,
+      "head-tilt-smile-right": 4
+    },
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised",
+      "shy"
+    ]
+  },
+  "viewports": {
+    "actor": [
+      1070,
+      900
+    ],
+    "boss": [
+      1841,
+      900
+    ]
+  },
+  "amberShy": {
+    "front": {
+      "rest": "pass",
+      "halfBlink": "pass",
+      "closedBlink": "pass",
+      "smallSpeech": "pass",
+      "openSpeech": "pass",
+      "breathing": "pass",
+      "combinedBlinkSpeechBreathing": "pass",
+      "returnToShyRest": "pass",
+      "angleChangeWhileSpeakingInActorInspector": "pass",
+      "automaticClosedBlinkObservedAtMs": [
+        646,
+        4480,
+        8400
+      ],
+      "evidence": {
+        "staticStates": [
+          "front-shy-rest.jpg",
+          "front-shy-half-blink.jpg",
+          "front-shy-closed-blink.jpg",
+          "front-shy-small-speech.jpg",
+          "front-shy-open-speech.jpg"
+        ],
+        "combinedPlayback": "front-shy-combined-live.gif",
+        "returnToRest": "front-shy-return-to-rest.jpg",
+        "inspectorSpeaking": "inspector-front-shy-speaking.jpg"
+      }
+    },
+    "three-quarter": {
+      "rest": "pass",
+      "halfBlink": "pass",
+      "closedBlink": "pass",
+      "smallSpeech": "pass",
+      "openSpeech": "pass",
+      "breathing": "pass",
+      "combinedBlinkSpeechBreathing": "pass",
+      "returnToShyRest": "pass",
+      "angleChangeWhileSpeakingInActorInspector": "pass",
+      "automaticClosedBlinkObservedAtMs": [
+        640,
+        4560,
+        8480
+      ],
+      "evidence": {
+        "staticStates": [
+          "three-quarter-shy-rest.jpg",
+          "three-quarter-shy-half-blink.jpg",
+          "three-quarter-shy-closed-blink.jpg",
+          "three-quarter-shy-small-speech.jpg",
+          "three-quarter-shy-open-speech.jpg"
+        ],
+        "combinedPlayback": "three-quarter-shy-combined-live.gif",
+        "returnToRest": "three-quarter-shy-return-to-rest.jpg",
+        "inspectorSpeaking": "inspector-three-quarter-shy-speaking.jpg"
+      }
+    },
+    "head-tilt": {
+      "rest": "pass",
+      "halfBlink": "pass",
+      "closedBlink": "pass",
+      "smallSpeech": "pass",
+      "openSpeech": "pass",
+      "breathing": "pass",
+      "combinedBlinkSpeechBreathing": "pass",
+      "returnToShyRest": "pass",
+      "angleChangeWhileSpeakingInActorInspector": "pass",
+      "automaticClosedBlinkObservedAtMs": [
+        2881,
+        7483
+      ],
+      "evidence": {
+        "staticStates": [
+          "head-tilt-shy-rest.jpg",
+          "head-tilt-shy-half-blink.jpg",
+          "head-tilt-shy-closed-blink.jpg",
+          "head-tilt-shy-small-speech.jpg",
+          "head-tilt-shy-open-speech.jpg"
+        ],
+        "combinedPlayback": "head-tilt-shy-combined-live.gif",
+        "returnToRest": "head-tilt-shy-return-to-rest.jpg",
+        "inspectorSpeaking": "inspector-head-tilt-shy-speaking.jpg"
+      }
+    }
+  },
+  "motion": {
+    "amberNeutralFront": {
+      "verdict": "pass",
+      "judgment": "Restrained, visible breathing; stable facial proportions and small shoulder/head movement, without the previous rapid sway.",
+      "evidence": "front-neutral-breathing-live.gif"
+    },
+    "amberIllustration": {
+      "verdict": "pass",
+      "judgment": "Calmer idle; hair/ribbon/coat follow-through remains visible and the feet remain anchored with the complete lower body visible.",
+      "cycleMs": 4800,
+      "evidence": "amber-illustration-live.gif"
+    },
+    "vaelrithIllustration": {
+      "verdict": "pass",
+      "judgment": "Slow anatomy-led head/neck/jaw movement; structural wall remains anchored and loop continuity is acceptable at the current pixel-art display size.",
+      "cycleMs": 5150,
+      "evidence": "vaelrith-illustration-live.gif"
+    },
+    "vaelrithPortrait": {
+      "verdict": "pass",
+      "judgment": "Held watchful expression with a slower breath/jaw change; no missing drawing or load error.",
+      "cycleMs": 4200,
+      "evidence": "vaelrith-portrait-live.gif"
+    },
+    "bossPortraitPause": {
+      "verdict": "pass for observed pause hold",
+      "evidence": "vaelrith-portrait-paused.gif",
+      "note": "Play art was restored; no separate complete post-resume cycle was recorded."
+    }
+  },
+  "captureObservations": {
+    "front-neutral-breathing-live": {
+      "frames": 110,
+      "durationMs": 8801,
+      "distinctRenderedCrops": 4,
+      "renderedCrop": [
+        288,
+        360
+      ]
+    },
+    "front-shy-combined-live": {
+      "frames": 110,
+      "durationMs": 8800,
+      "distinctRenderedCrops": 6,
+      "renderedCrop": [
+        288,
+        360
+      ]
+    },
+    "three-quarter-shy-combined-live": {
+      "frames": 110,
+      "durationMs": 8800,
+      "distinctRenderedCrops": 6,
+      "renderedCrop": [
+        288,
+        360
+      ]
+    },
+    "head-tilt-shy-combined-live": {
+      "frames": 110,
+      "durationMs": 8800,
+      "distinctRenderedCrops": 6,
+      "renderedCrop": [
+        288,
+        360
+      ]
+    },
+    "amber-illustration-live": {
+      "frames": 133,
+      "durationMs": 10640,
+      "distinctRenderedCrops": 12,
+      "renderedCrop": [
+        192,
+        320
+      ]
+    },
+    "vaelrith-illustration-live": {
+      "frames": 138,
+      "durationMs": 11040,
+      "distinctRenderedCrops": 16,
+      "renderedCrop": [
+        384,
+        256
+      ]
+    },
+    "vaelrith-portrait-live": {
+      "frames": 110,
+      "durationMs": 8800,
+      "distinctRenderedCrops": 2,
+      "renderedCrop": [
+        256,
+        256
+      ]
+    },
+    "vaelrith-portrait-paused": {
+      "frames": 15,
+      "durationMs": 1203,
+      "distinctRenderedCrops": 1,
+      "renderedCrop": [
+        256,
+        256
+      ]
+    }
+  },
+  "consoleErrors": {
+    "actor": [],
+    "boss": []
+  },
+  "method": "Manual UI actions through cua_repl; native full-viewport screenshots sampled over real elapsed time; recorded frame crops/contact sheets reviewed visually. Pixel-change counts only support coverage and do not replace visual judgment.",
+  "excludedCaptureEvidence": [
+    "shy-front-rest/",
+    "shy-front-speaking/",
+    "shy-front-context.jpg"
+  ],
+  "captureIssue": "The clipped screenshot API returned the wrong rectangle. Those initial captures were excluded; all accepted captures use native full-viewport screenshots.",
+  "notReviewed": [
+    "Other unchanged emotions/styles",
+    "Mobile layouts",
+    "OS reduced-motion emulation",
+    "3D encounter/combat behavior",
+    "Voice listening"
+  ],
+  "execution": "No automated test suite, typecheck or production build was run. No runtime artwork, timings, models or voice files were changed during this review.",
+  "finalPreviews": {
+    "actor": "http://127.0.0.1:3000/play?preview=actors&skin=amber-outrider",
+    "boss": "http://127.0.0.1:3000/play?preview=monsters"
+  }
+}

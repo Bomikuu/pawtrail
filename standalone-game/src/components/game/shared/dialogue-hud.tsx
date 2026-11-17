@@ -29,7 +29,7 @@ export function DialoguePageProgress({ current, total }: { current: number; tota
 
 /** Shared reference-guided parchment HUD; the conversation owns all progression. */
 export function DialogueHud({
-  title, subtitle, portrait, children, actions, progress, portraitControls, onClose,
+  title, subtitle, portrait, children, actions, progress, portraitControls, onClose, bodyFont = false,
 }: {
   title: string
   subtitle: string
@@ -39,6 +39,7 @@ export function DialogueHud({
   progress?: ReactNode
   portraitControls?: ReactNode
   onClose: () => void
+  bodyFont?: boolean
 }) {
   const returnFocus = useRef(typeof document !== 'undefined' ? document.activeElement : null)
   return (
@@ -54,7 +55,7 @@ export function DialogueHud({
           }
         }}
         className="top-auto bottom-[max(0.5rem,env(safe-area-inset-bottom))] max-h-[65dvh] w-[calc(100%-1rem)] max-w-[52rem] translate-y-0 gap-0 overflow-y-auto rounded-md border-[12px] border-transparent bg-[#fff0d1] bg-clip-padding p-2 text-[#57331d] shadow-xl selection:bg-[#e9bd7b] selection:text-[#45291e] [font-family:var(--font-dialogue)] [image-rendering:pixelated] data-[state=open]:slide-in-from-bottom-2 motion-reduce:animate-none sm:w-[calc(100%-2rem)] sm:max-w-[52rem] sm:border-[14px] sm:p-2"
-        style={frame('panel', 24)}
+        style={{...frame('panel', 24),...(bodyFont?{fontFamily:'var(--font-sans)'}:{})}}
       >
         <div className="grid grid-cols-[112px_minmax(0,1fr)] items-start gap-3 sm:grid-cols-[208px_minmax(0,1fr)] sm:gap-4">
           <div className="self-start">
@@ -67,7 +68,7 @@ export function DialogueHud({
             <header className="min-w-0 pr-8">
               <div className="flex min-h-8 w-fit min-w-0 max-w-[16rem] items-center gap-2 bg-[length:100%_100%] bg-no-repeat py-1 pr-6 pl-3 sm:gap-2" style={{ backgroundImage: `url(${art}ribbon.png)` }}>
                 <PawPrint aria-hidden="true" className="size-4 shrink-0 fill-[#ffe7b0] text-[#ffe7b0]" />
-                <DialogTitle className="min-w-0 break-words text-lg font-medium leading-tight text-[#fff2d4] [text-shadow:0_1px_0_#71361f] sm:text-xl">{title}</DialogTitle>
+                <DialogTitle style={bodyFont?{fontFamily:'var(--font-heading)'}:undefined} className="min-w-0 break-words text-lg font-medium leading-tight text-[#fff2d4] [text-shadow:0_1px_0_#71361f] sm:text-xl">{title}</DialogTitle>
               </div>
               <DialogDescription className="sr-only">{subtitle}</DialogDescription>
             </header>

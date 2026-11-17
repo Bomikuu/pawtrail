@@ -1,7 +1,7 @@
-import {useAbilities} from './shared/ability-status';
+import {AbilityStatus,useAbilities} from './shared/ability-status';
 import {isAbility,abilitySeconds} from '@/game/abilities/state';
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Eye, Minus, Pause, PawPrint, Play, Plus, RotateCcw } from 'lucide-react'
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Eye, Maximize2, Minimize2, Minus, Pause, PawPrint, Play, Plus, RotateCcw } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -19,6 +19,8 @@ import { audio } from '@/game/systems/audio'
 import { CatCreatorEditor } from './cat-creator-editor'
 import { catCreator } from '@/game/cat-creator/state'
 import { ActorDialoguePreview } from './actor-dialogue-preview'
+import { ActorVoicePreview } from './actor-voice-preview'
+import { ModelRotationControls, directionRotation, useModelRotation } from './shared/model-rotation-controls'
 
 const directions = [
   { label: 'Move left', Icon: ArrowLeft, x: -1, y: 0 },
@@ -37,6 +39,11 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
   const progress = useSyncExternalStore(gameStore.subscribe, gameStore.getSnapshot, gameStore.getSnapshot).progress
   const host = useRef<HTMLDivElement>(null)
   const [attempt, setAttempt] = useState(0)
+  const [expanded, setExpanded] = useState(false)
+  const [blenderRequested, setBlenderRequested] = useState(() => new URLSearchParams(window.location.search).get('model') === 'blender')
+  const blenderComparison = creator && draft.previewModel === 'amber' && blenderRequested
+  useModelRotation(host, { enabled: blenderComparison, degrees: state.rotation ?? directionRotation(state.direction), zoom: state.zoom, maxZoom: state.zoomLimit,
+    onRotate: rotation => actorComparison.patch({ rotation }), onZoom: zoom => actorComparison.patch({ zoom }) })
   const available = actorPreviews.filter(entry => !cats || entry.kind === 'orange-tabby')
   const [appearanceId, setAppearanceId] = useState(() => {
     const requested = new URLSearchParams(typeof window === 'undefined' ? '' : window.location.search).get('skin')
@@ -52,7 +59,9 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
   useEffect(() => {
     let canceled = false
     let release: (() => void) | undefined
-    actorComparison.patch({ mode: cats ? 'cat-creator' : creator ? 'creator' : preview ? 'skin' : 'legacy', appearance: appearance?.id ?? '', status: 'loading', load: 0, error: '', portraitAction:'idle', inputX: 0, inputY: 0 })
+    const enteringBlender = blenderComparison && !actorComparison.getSnapshot().amberBlender
+    actorComparison.patch({ mode: cats ? 'cat-creator' : creator ? 'creator' : preview ? 'skin' : 'legacy', amberBlender: blenderComparison, appearance: appearance?.id ?? '', status: 'loading', load: 0, error: '', portraitAction:'idle', inputX: 0, inputY: 0, rotation: null,
+      ...(enteringBlender ? { zoom: 6, action: 'idle', direction: 'down_left' } : {}) })
     if (preview && !editing && !appearance) { actorComparison.patch({status:'ready'}); return }
     const query = new URLSearchParams(window.location.search)
     const pose = query.get('pose'), facing = query.get('facing')
@@ -68,6 +77,7 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
     Promise.all([import('@/game/runtime/session'), loadGameFonts()]).then(async ([session]) => {
       if (canceled || !host.current) return
       if(creator){const {prepareCreatorModel}=await import('@/game/creator/preview-models');await prepareCreatorModel(draft.previewModel);if(canceled||!host.current)return}
+      if(blenderComparison){const {prepareAmberBlenderStudy}=await import('@/game/actor-rig/amber-blender-study');await prepareAmberBlenderStudy();if(canceled||!host.current)return}
       if (attempt) session.resetWorldRenderer()
       const cleanup = await session.mountWorld(host.current, 'ActorCompare', () => {
         if (!canceled && actorComparison.getSnapshot().status !== 'error') {
@@ -76,8 +86,8 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
       })
       if (canceled) cleanup()
       else release = cleanup
-    }).catch(() => {
-      if (!canceled) actorComparison.patch({ status: 'error', error: 'The comparison field could not open. Please retry.' })
+    }).catch(error => {
+      if (!canceled) actorComparison.patch({ status: 'error', error: error instanceof Error ? error.message : 'The comparison field could not open. Please retry.' })
     })
     return () => {
       canceled = true
@@ -85,7 +95,7 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
       actorComparison.patch({ inputX: 0, inputY: 0 })
       window.removeEventListener('pawtrail:renderer-error', failed)
     }
-  }, [attempt, preview, creator, cats, editing ? undefined : appearance, choices, creator?draft.previewModel:undefined])
+  }, [attempt, preview, creator, cats, editing ? undefined : appearance, choices, creator?draft.previewModel:undefined, blenderComparison])
 
   useEffect(() => { if(!creator)return; const id=new URLSearchParams(window.location.search).get('skin');if(id)characterCreator.template(id==='amber'?'amber-outrider':id==='yae'?'yae-miko':id) }, [creator])
   useEffect(() => { if(!cats)return; const id=new URLSearchParams(window.location.search).get('skin');if(id)catCreator.template(id) }, [cats])
@@ -93,15 +103,16 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
 
   const stop = () => actorComparison.patch({ inputX: 0, inputY: 0 })
   return (
-    <PlayShell>
+    <PlayShell floatingAbilities={!blenderComparison&&!editing}>
       <PlayHeader location={cats ? 'Cat creator' : creator ? 'Character creator' : preview ? 'Character preview' : 'Character & cat comparison'} balance={progress.kibble} scope="local">
+        {!cats && <Button variant="outline" size="sm" onClick={() => { if (creator && characterCreator.dirty() && !window.confirm('Leave the creator? Your draft stays on this device, but save it to keep it in your library.')) return; history.pushState(null, '', location.pathname + '?compare=amber-representations'); window.dispatchEvent(new PopStateEvent('popstate')) }}>Amber · 3D / 2D comparison</Button>}
         <Button variant="outline" className="rounded-md" onClick={() => { if(!editing || !(cats ? catCreator.dirty() : characterCreator.dirty()) || window.confirm('Leave the creator? Your draft stays on this device, but save it to keep it in your library.')) navigatePlay('explore') }}>
           <ArrowLeft className="size-4" /><span className="hidden sm:inline">Back to Explore</span>
         </Button>
       </PlayHeader>
-      <main onPointerDownCapture={() => { void audio.unlock() }} onKeyDownCapture={() => { void audio.unlock() }} className={'min-h-0 flex-1 overflow-y-auto p-3 md:p-5 ' + (editing ? 'grid items-start gap-5 lg:grid-cols-[340px_minmax(0,1fr)] xl:grid-cols-[360px_minmax(0,1fr)]' : preview ? 'grid items-start gap-5 lg:grid-cols-[260px_minmax(0,1fr)]' : '')}>
+      <main onPointerDownCapture={() => { void audio.unlock() }} onKeyDownCapture={() => { void audio.unlock() }} className={'min-h-0 flex-1 overflow-y-auto p-3 md:p-5 ' + (editing ? expanded&&blenderComparison?'grid items-start gap-5':'grid items-start gap-5 lg:grid-cols-[340px_minmax(0,1fr)] xl:grid-cols-[360px_minmax(0,1fr)]' : preview ? 'grid items-start gap-5 lg:grid-cols-[260px_minmax(0,1fr)]' : '')}>
         {cats && <CatCreatorEditor />}
-        {creator && <CharacterCreatorEditor />}
+        {creator && <div className={expanded&&blenderComparison?'hidden':''}><CharacterCreatorEditor /></div>}
         {preview && !editing && <ActorPreviewReference appearance={appearance} loading={state.status === 'loading'} onSelect={id => {
           setAppearanceId(id)
           const query = new URLSearchParams(window.location.search); query.set('skin',id)
@@ -110,13 +121,21 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
         <div className={'order-1 min-w-0 lg:order-none ' + (editing ? 'lg:sticky lg:top-0' : '')}>
         <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h2 className="font-heading text-3xl font-bold leading-none">{cats ? 'Make a cat of your own.' : creator ? 'Meet your next adventurer.' : preview ? 'A new look, ready to explore.' : 'Original & current, together'}</h2>
-            <p className="mt-1.5 text-sm text-muted-foreground">{cats ? 'Their shape, coat and personality—live beside the approved tabby. Try every action with sounds and shadows.' : creator ? 'Your look, with every movement. Changes appear here as you create.' : preview ? 'Review your reference-guided character using the approved movement set.' : 'One rescuer and one orange tabby. The same ground, scale and controls.'}</p>
+            <h2 className="font-heading text-3xl font-bold leading-none">{blenderComparison ? 'Amber, shaped in Blender.' : cats ? 'Make a cat of your own.' : creator ? 'Meet your next adventurer.' : preview ? 'A new look, ready to explore.' : 'Original & current, together'}</h2>
+            <p className="mt-1.5 text-sm text-muted-foreground">{blenderComparison ? 'Current Amber beside her Blender revision. Same camera, pixel textures and shared actions; fuller shapes and tailored edges.' : cats ? 'Their shape, coat and personality—live beside the approved tabby. Try every action with sounds and shadows.' : creator ? 'Your look, with every movement. Changes appear here as you create.' : preview ? 'Review your reference-guided character using the approved movement set.' : 'One rescuer and one orange tabby. The same ground, scale and controls.'}</p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            {blenderComparison && <Button variant="outline" aria-pressed={expanded} onClick={() => setExpanded(value => !value)}>{expanded?<Minimize2 className="size-4"/>:<Maximize2 className="size-4"/>}{expanded?'Show portrait panel':'Expand comparison'}</Button>}
+            {creator && draft.previewModel === 'amber' && <Button variant={blenderComparison ? 'secondary' : 'outline'} aria-pressed={blenderComparison} onClick={() => {
+              const next = !blenderRequested
+              setBlenderRequested(next)
+              const query = new URLSearchParams(window.location.search)
+              if (next) query.set('model', 'blender'); else query.delete('model')
+              window.history.replaceState(null, '', window.location.pathname + '?' + query)
+            }}>{blenderComparison ? 'Close Blender comparison' : 'Compare Blender revision'}</Button>}
             {creator && <Button variant="outline" onClick={navigateSkinStudio}>Paint a skin</Button>}
             {creator && <ActorDialoguePreview name={draft.name || 'Your character'} appearance={draft.appearance} model={draft.previewModel} />}
-            {creator&&draft.previewModel!=='shared'&&<Button variant="outline" onClick={()=>{window.history.pushState(null,'',window.location.pathname+'?compare='+(draft.previewModel==='yae'?'yae':'amber'));window.dispatchEvent(new PopStateEvent('popstate'))}}>Model study</Button>}
+            {creator&&['amber','yae'].includes(draft.previewModel)&&<Button variant="outline" onClick={()=>{window.history.pushState(null,'',window.location.pathname+'?compare='+(draft.previewModel==='yae'?'yae':'amber'));window.dispatchEvent(new PopStateEvent('popstate'))}}>Model study</Button>}
             {editing && <Button variant={inspecting?'secondary':'outline'} aria-pressed={inspecting} onClick={()=>toggleFaceInspection(cats?'cat':'actor')}><Eye className="size-4" />{inspecting?'Full body':'Inspect face'}</Button>}
             {creator && state.presentationAction==='jetpack_land' && <span role="status" className="text-xs text-muted-foreground">Landing…</span>}
             <Button variant="outline" disabled={preview && !editing && !appearance} onClick={() => actorComparison.patch({ paused: !state.paused })}>
@@ -139,7 +158,7 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
           </div>
           <div className="min-w-0 space-y-1.5 md:w-44">
             <label id="compare-facing-label" className="text-xs font-semibold">Model angle</label>
-            <Select value={state.direction} onValueChange={value => actorComparison.patch({ direction: value as ComparisonDirection })}>
+            <Select value={state.direction} onValueChange={value => actorComparison.patch({ direction: value as ComparisonDirection, rotation: null })}>
               <SelectTrigger aria-labelledby="compare-facing-label" className="w-full"><SelectValue /></SelectTrigger>
               <SelectContent>{comparisonDirections.map(direction => <SelectItem key={direction.value} value={direction.value}>{direction.label}</SelectItem>)}</SelectContent>
             </Select>
@@ -160,13 +179,17 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
             <Button variant="outline" size="icon" disabled={state.zoom >= state.zoomLimit} aria-label="Zoom in" onClick={() => actorComparison.patch({ zoom: state.zoom + 1 })}><Plus className="size-4" /></Button>
           </div>
         </div>
+        {blenderComparison && <div className="mb-3 flex flex-wrap items-center justify-between gap-2 rounded-md border bg-muted/30 px-3 py-2">
+          <ModelRotationControls degrees={state.rotation ?? directionRotation(state.direction)} onChange={rotation => actorComparison.patch({ rotation })} onReset={() => actorComparison.patch({ rotation: null, direction: 'down_left', zoom: blenderComparison ? 6 : 3, inputX: 0, inputY: 0 })} />
+          <p className="text-xs text-muted-foreground">Drag the field to rotate · Ctrl + wheel to zoom</p>
+        </div>}
         <section className="overflow-hidden rounded-md border" aria-label={preview ? 'Approved rig and new appearance preview' : 'Side by side character and cat comparison'}>
           <div className="grid grid-cols-2 divide-x border-b bg-muted/50 text-center">
-            {!(inspecting)&&<div className="px-3 py-2.5"><h3 className="font-heading text-xl font-bold">{preview ? 'Approved base' : 'Original 2D'}</h3><p className="text-xs text-muted-foreground">{preview ? 'Shared rig and movements' : 'Original game sprites'}</p></div>}
-            <div className={'px-3 py-2.5 '+(inspecting?'col-span-2':'')}><h3 className="font-heading text-xl font-bold">{cats ? catDraft.name || 'Your cat' : creator ? draft.name || 'Your character' : preview ? appearance?.name ?? 'Your next appearance' : 'Current appearance'}</h3><p className="text-xs text-muted-foreground">{inspecting?'Face details':editing ? 'Live pixel preview' : preview ? 'Reference-guided skin' : 'New pixel renders from the 3D rigs'}</p></div>
+            {!(inspecting)&&<div className="px-3 py-2.5"><h3 className="font-heading text-xl font-bold">{blenderComparison ? 'Current Amber' : preview ? 'Approved base' : 'Original 2D'}</h3><p className="text-xs text-muted-foreground">{blenderComparison ? 'Existing refined model' : preview ? 'Shared rig and movements' : 'Original game sprites'}</p></div>}
+            <div className={'px-3 py-2.5 '+(inspecting?'col-span-2':'')}><h3 className="font-heading text-xl font-bold">{blenderComparison ? 'Blender revision' : cats ? catDraft.name || 'Your cat' : creator ? draft.name || 'Your character' : preview ? appearance?.name ?? 'Your next appearance' : 'Current appearance'}</h3><p className="text-xs text-muted-foreground">{inspecting?'Face details':blenderComparison ? 'Fuller body · layered hair · tailored edges' : editing ? 'Live pixel preview' : preview ? 'Reference-guided skin' : 'New pixel renders from the 3D rigs'}</p></div>
           </div>
-          <div className={'relative h-[58dvh] max-h-[720px] bg-[#6a9039] ' + (editing ? 'min-h-[360px]' : state.zoom === 4 ? 'min-h-[640px]' : 'min-h-[480px]')}>
-            <div ref={host} className="absolute inset-0 overflow-hidden [&_canvas]:[image-rendering:pixelated]" onPointerDown={() => host.current?.querySelector('canvas')?.focus({ preventScroll: true })} />
+          <div className={'relative bg-[#6a9039] ' + (expanded&&blenderComparison?'h-[max(72dvh,640px)]':'h-[58dvh] max-h-[720px] '+(editing ? 'min-h-[360px]' : state.zoom === 4 ? 'min-h-[640px]' : 'min-h-[480px]'))}>
+            <div ref={host} className="absolute inset-0 touch-pan-y overflow-hidden [&_canvas]:[image-rendering:pixelated]" onPointerDown={() => host.current?.querySelector('canvas')?.focus({ preventScroll: true })} />
             {preview && !editing && !appearance && <div className="absolute inset-0 grid place-items-center bg-background/95 p-6 text-center"><div><PawPrint className="mx-auto mb-3 size-8" /><p className="font-heading text-xl font-bold">Your next character starts here.</p><p className="mt-2 max-w-sm text-sm text-muted-foreground">Use PawTrail Actors with your image reference to create an appearance for this preview.</p></div></div>}
             {state.status === 'loading' && (!preview || editing || appearance) && (
               <div className="absolute inset-0 grid place-items-center bg-background/95" role="status">
@@ -180,6 +203,8 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
             )}
           </div>
         </section>
+        {blenderComparison&&<div className="mt-3"><AbilityStatus inline/></div>}
+        {creator && <ActorVoicePreview model={draft.previewModel} />}
         <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
           <div id="actor-comparison-help" className="space-y-1 text-xs text-muted-foreground">
             <p>{inspecting?'Close view of your eyes and face details. Choose Full body to return to the comparison.':<>Click the field, then use WASD or arrow keys. Or hold the arrow controls to move {preview ? 'both appearances' : 'both pairs'}.</>}</p>
@@ -202,7 +227,7 @@ export default function ActorComparisonPage({ preview = false, creator = false, 
             ))}
           </div>
         </div>
-        <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">{refined ? 'Refined actor preview with the shared action set. Choose another template to create and save a custom look.' : creator ? 'Save a look to your library, then choose Use in game. Keep several characters and switch whenever you like.' : preview ? 'Appearance preview only. This character has not been added to your game roster.' : 'Comparison only. Your saved character, animals, care progress and Kibble stay unchanged.'}</p>
+        <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">{blenderComparison ? 'Comparison only. Both use the existing action, portrait and voice workflow. The Blender revision is not installed in your game or saved characters. Review idle, walking, running and care/rest actions before promotion.' : refined ? 'Refined actor preview with the shared action set. Choose another template to create and save a custom look.' : creator ? 'Save a look to your library, then choose Use in game. Keep several characters and switch whenever you like.' : preview ? 'Appearance preview only. This character has not been added to your game roster.' : 'Comparison only. Your saved character, animals, care progress and Kibble stay unchanged.'}</p>
         </div>
       </main>
     </PlayShell>

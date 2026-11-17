@@ -1,0 +1,306 @@
+{
+  "id": "aquarium",
+  "revision": "3ecf3bb08f2d",
+  "preview": true,
+  "definition": {
+    "id": "aquarium",
+    "label": "Little reef aquarium",
+    "model": "aquarium",
+    "reference": "/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+    "description": "Wide oak aquarium with reviewed side/rear panels, a planted teal tank and two animated fish.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "referenceFrame": {
+      "width": 96,
+      "height": 64,
+      "anchor": [
+        48,
+        60
+      ]
+    },
+    "styles": [
+      {
+        "id": "sage",
+        "label": "Honey oak",
+        "fabric": "#ad591e",
+        "light": "#de8a2e",
+        "shade": "#713810",
+        "pillow": "#f6e7bc",
+        "wood": "#a34e18"
+      },
+      {
+        "id": "terracotta",
+        "label": "Walnut",
+        "fabric": "#965137",
+        "light": "#e2b258",
+        "shade": "#784324",
+        "pillow": "#f4e2bb",
+        "wood": "#92552b"
+      },
+      {
+        "id": "oat",
+        "label": "Pale oak",
+        "fabric": "#c2a474",
+        "light": "#e2b258",
+        "shade": "#784324",
+        "pillow": "#a7ba7d",
+        "wood": "#92552b"
+      }
+    ],
+    "price": 160,
+    "construction": {
+      "seconds": 90,
+      "materials": [
+        {
+          "id": "timber",
+          "label": "Timber",
+          "amount": 6,
+          "price": 3
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "amount": 4,
+          "price": 5
+        }
+      ]
+    }
+  },
+  "views": {
+    "0": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 63,
+      "footprint": [
+        3,
+        92,
+        90,
+        8
+      ],
+      "reaction": {
+        "kind": "loop",
+        "fps": 6
+      },
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            3,
+            92,
+            90,
+            8
+          ]
+        ],
+        "placement": [
+          [
+            3,
+            92,
+            90,
+            8
+          ]
+        ],
+        "approaches": [
+          [
+            48,
+            107
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "care_aquarium",
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        2,
+        38,
+        92,
+        63
+      ]
+    },
+    "90": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 69,
+      "footprint": [
+        37,
+        90,
+        22,
+        12
+      ],
+      "reaction": {
+        "kind": "loop",
+        "fps": 6
+      },
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            37,
+            90,
+            22,
+            12
+          ]
+        ],
+        "placement": [
+          [
+            37,
+            90,
+            22,
+            12
+          ]
+        ],
+        "approaches": [
+          [
+            17,
+            96
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "care_aquarium",
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        35,
+        32,
+        26,
+        71
+      ]
+    },
+    "180": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 63,
+      "footprint": [
+        3,
+        92,
+        90,
+        8
+      ],
+      "reaction": {
+        "kind": "loop",
+        "fps": 6
+      },
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            3,
+            92,
+            90,
+            8
+          ]
+        ],
+        "placement": [
+          [
+            3,
+            92,
+            90,
+            8
+          ]
+        ],
+        "approaches": [
+          [
+            48,
+            85
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "care_aquarium",
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        2,
+        38,
+        92,
+        63
+      ]
+    },
+    "270": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 69,
+      "footprint": [
+        37,
+        90,
+        22,
+        12
+      ],
+      "reaction": {
+        "kind": "loop",
+        "fps": 6
+      },
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            37,
+            90,
+            22,
+            12
+          ]
+        ],
+        "placement": [
+          [
+            37,
+            90,
+            22,
+            12
+          ]
+        ],
+        "approaches": [
+          [
+            79,
+            96
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "care_aquarium",
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        35,
+        32,
+        26,
+        71
+      ]
+    }
+  },
+  "note": "Canonical-style authoring preview only; no catalog, generated registry or full export replaced."
+}

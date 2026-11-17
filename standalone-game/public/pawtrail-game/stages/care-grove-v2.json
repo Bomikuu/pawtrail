@@ -1,0 +1,754 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "Sampaguita Care Grove",
+  "width": 32,
+  "height": 24,
+  "baseTile": "terrain:0",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "objects": [
+    {
+      "id": "care-lodge",
+      "asset": "grove:hall",
+      "x": 808,
+      "y": 288,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-00",
+      "asset": "grove:pine",
+      "x": 52,
+      "y": 142,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-01",
+      "asset": "grove:pine",
+      "x": 144,
+      "y": 194,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-02",
+      "asset": "grove:pine",
+      "x": 66,
+      "y": 270,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-03",
+      "asset": "grove:pine",
+      "x": 156,
+      "y": 338,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-04",
+      "asset": "grove:pine",
+      "x": 56,
+      "y": 422,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-05",
+      "asset": "grove:pine",
+      "x": 160,
+      "y": 478,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-06",
+      "asset": "grove:pine",
+      "x": 62,
+      "y": 590,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-07",
+      "asset": "grove:pine",
+      "x": 124,
+      "y": 674,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-08",
+      "asset": "grove:pine",
+      "x": 48,
+      "y": 754,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-09",
+      "asset": "grove:pine",
+      "x": 268,
+      "y": 122,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-10",
+      "asset": "grove:pine-small",
+      "x": 390,
+      "y": 112,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-11",
+      "asset": "grove:pine",
+      "x": 490,
+      "y": 154,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-12",
+      "asset": "grove:pine",
+      "x": 612,
+      "y": 118,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-13",
+      "asset": "grove:pine",
+      "x": 978,
+      "y": 156,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-14",
+      "asset": "grove:pine-small",
+      "x": 1000,
+      "y": 314,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-15",
+      "asset": "grove:bareTree",
+      "x": 966,
+      "y": 500,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-16",
+      "asset": "grove:pine",
+      "x": 1004,
+      "y": 662,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "woodland-17",
+      "asset": "grove:bareTree",
+      "x": 930,
+      "y": 738,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-tree-0",
+      "asset": "grove:pine-small",
+      "x": 420,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-tree-1",
+      "asset": "grove:pine-small",
+      "x": 638,
+      "y": 374,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-tree-2",
+      "asset": "grove:pine-small",
+      "x": 542,
+      "y": 254,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-tree-3",
+      "asset": "grove:pine-small",
+      "x": 222,
+      "y": 680,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-tree-4",
+      "asset": "grove:pine-small",
+      "x": 878,
+      "y": 690,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "quiet-bench",
+      "asset": "f:garden-bench",
+      "x": 368,
+      "y": 224,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-bench",
+      "asset": "f:community-bench",
+      "x": 448,
+      "y": 416,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "courtyard-bench",
+      "asset": "f:garden-bench",
+      "x": 896,
+      "y": 384,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-gate",
+      "asset": "f:wooden-door",
+      "x": 272,
+      "y": 352,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-fence-0",
+      "asset": "native:fence_straight",
+      "x": 160,
+      "y": 352,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-fence-1",
+      "asset": "native:fence_straight",
+      "x": 220,
+      "y": 352,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-fence-2",
+      "asset": "native:fence_straight",
+      "x": 328,
+      "y": 352,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-fence-3",
+      "asset": "native:fence_straight",
+      "x": 384,
+      "y": 352,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "feeding-station",
+      "asset": "f:garden-feeding",
+      "x": 688,
+      "y": 480,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "herb-planter",
+      "asset": "f:garden-pot",
+      "x": 528,
+      "y": 352,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "courtyard-planter",
+      "asset": "f:flower-pot",
+      "x": 896,
+      "y": 304,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "path-light",
+      "asset": "f:garden-lamp",
+      "x": 832,
+      "y": 608,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-light",
+      "asset": "f:garden-lamp",
+      "x": 336,
+      "y": 272,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-sign",
+      "asset": "native:wooden_sign",
+      "x": 576,
+      "y": 688,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "garden-sign",
+      "asset": "native:wooden_sign",
+      "x": 384,
+      "y": 496,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "lodge-sign",
+      "asset": "native:wooden_sign",
+      "x": 720,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-00",
+      "asset": "grove:bush",
+      "x": 218,
+      "y": 452,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-01",
+      "asset": "grove:bush",
+      "x": 224,
+      "y": 486,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-02",
+      "asset": "grove:bush",
+      "x": 258,
+      "y": 430,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-03",
+      "asset": "grove:bush",
+      "x": 326,
+      "y": 416,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-04",
+      "asset": "grove:bush",
+      "x": 392,
+      "y": 472,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-05",
+      "asset": "grove:bush",
+      "x": 504,
+      "y": 480,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-06",
+      "asset": "grove:bush",
+      "x": 552,
+      "y": 448,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-07",
+      "asset": "grove:bush",
+      "x": 602,
+      "y": 486,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-08",
+      "asset": "grove:bush",
+      "x": 616,
+      "y": 514,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-09",
+      "asset": "grove:bush",
+      "x": 728,
+      "y": 520,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-10",
+      "asset": "grove:bush",
+      "x": 934,
+      "y": 436,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-11",
+      "asset": "grove:bush",
+      "x": 664,
+      "y": 300,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-12",
+      "asset": "grove:bush",
+      "x": 676,
+      "y": 274,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-13",
+      "asset": "grove:bush",
+      "x": 936,
+      "y": 314,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-14",
+      "asset": "grove:bush",
+      "x": 904,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-15",
+      "asset": "native:garden_pot",
+      "x": 398,
+      "y": 190,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-16",
+      "asset": "grove:bush",
+      "x": 310,
+      "y": 242,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-17",
+      "asset": "grove:bush",
+      "x": 340,
+      "y": 262,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-18",
+      "asset": "grove:bush",
+      "x": 208,
+      "y": 264,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-19",
+      "asset": "grove:bush",
+      "x": 226,
+      "y": 590,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-20",
+      "asset": "grove:bush",
+      "x": 280,
+      "y": 636,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-21",
+      "asset": "grove:bush",
+      "x": 340,
+      "y": 682,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-22",
+      "asset": "grove:bush",
+      "x": 402,
+      "y": 716,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-23",
+      "asset": "grove:bush",
+      "x": 612,
+      "y": 686,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-24",
+      "asset": "grove:bush",
+      "x": 688,
+      "y": 716,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-25",
+      "asset": "grove:bush",
+      "x": 768,
+      "y": 664,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planting-26",
+      "asset": "grove:bush",
+      "x": 884,
+      "y": 626,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-fence-0",
+      "asset": "native:fence_straight",
+      "x": 288,
+      "y": 756,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-fence-1",
+      "asset": "native:fence_straight",
+      "x": 352,
+      "y": 756,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-fence-2",
+      "asset": "native:fence_straight",
+      "x": 416,
+      "y": 756,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-fence-3",
+      "asset": "native:fence_straight",
+      "x": 640,
+      "y": 756,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-fence-4",
+      "asset": "native:fence_straight",
+      "x": 704,
+      "y": 756,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-fence-5",
+      "asset": "native:fence_straight",
+      "x": 768,
+      "y": 756,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "western-cliff",
+      "asset": "grove:cliff",
+      "x": 60,
+      "y": 296,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ],
+  "groundArt": "grove:terrain"
+}

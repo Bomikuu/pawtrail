@@ -1,0 +1,358 @@
+{
+  "item": "chair",
+  "batch": "interaction-01",
+  "canonicalFront": "public/assets/game/housing/furniture/chair-complete-v1.png",
+  "sourceSha256": "663052097e3e5a4b2f2448e7ea47f045ab180c1c86779128cec221ea99f44a41",
+  "sourceCatalog": {
+    "id": "chair",
+    "label": "Chair",
+    "file": "/assets/game/housing/furniture/chair-complete-v1.png",
+    "width": 32,
+    "height": 32,
+    "anchor": [
+      16,
+      30
+    ],
+    "footprint": [
+      8,
+      14,
+      16,
+      16
+    ],
+    "blocking": true,
+    "rotatable": false,
+    "category": "Living room",
+    "interaction": "sit",
+    "price": 31,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          8,
+          14,
+          16,
+          16
+        ]
+      ],
+      "placement": [
+        [
+          8,
+          14,
+          16,
+          16
+        ]
+      ],
+      "approaches": [
+        [
+          16,
+          40
+        ],
+        [
+          -2,
+          22
+        ],
+        [
+          34,
+          22
+        ],
+        [
+          16,
+          6
+        ]
+      ],
+      "seats": [
+        {
+          "id": "seat-1",
+          "point": [
+            16,
+            28
+          ],
+          "facing": "down",
+          "elevation": 0,
+          "exit": [
+            16,
+            40
+          ]
+        }
+      ],
+      "surfaces": [
+        {
+          "id": "perch-1",
+          "point": [
+            16,
+            26
+          ],
+          "elevation": 14,
+          "landingBounds": [
+            6,
+            20,
+            20,
+            12
+          ],
+          "approach": [
+            16,
+            40
+          ],
+          "descent": [
+            16,
+            40
+          ],
+          "species": [
+            "cat"
+          ],
+          "capacity": 1,
+          "links": []
+        }
+      ],
+      "occlusion": "base",
+      "actions": [
+        "sit",
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0
+    ]
+  },
+  "state": "installed",
+  "toolMode": "built-in image_gen",
+  "selectedSheet": "turnaround-v2.png",
+  "prompt": "turnaround-prompt.txt",
+  "cellOrder": [
+    "front",
+    "left-profile",
+    "back",
+    "right-profile",
+    "front-three-quarter",
+    "rear-three-quarter"
+  ],
+  "review": {
+    "state": "explicit_yes",
+    "responseWindowSeconds": 60,
+    "default": "Proceed under owner-authorized no-response default; not affirmative approval",
+    "shownAt": "2026-11-10T16:00:33.188214+00:00",
+    "exception": "Original fronts remain canonical; dining generated proportions remain taller, so original compact proportions take precedence.",
+    "resolvedAt": "2026-11-10T16:01:47.943729+00:00",
+    "response": "Good enough \u2014 build these three",
+    "respondedAt": "2026-11-10T16:03:24.653301+00:00",
+    "startedUnderDefaultAt": "2026-11-10T16:01:47.943729+00:00"
+  },
+  "derivedReferences": {
+    "dimensions": {
+      "width": 22,
+      "depth": 21,
+      "height": 32
+    },
+    "version": "b981826ca538",
+    "uniformScale": 0.09401709401709402,
+    "views": {
+      "0": {
+        "file": "/pawtrail-game/furniture-references/chair/b981826ca538/reference-0.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated front",
+        "cellBounds": [
+          140,
+          93,
+          374,
+          446
+        ],
+        "occupiedSize": [
+          22,
+          33
+        ],
+        "footBaseline": 100
+      },
+      "90": {
+        "file": "/pawtrail-game/furniture-references/chair/b981826ca538/reference-90.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated left",
+        "cellBounds": [
+          146,
+          92,
+          372,
+          446
+        ],
+        "occupiedSize": [
+          21,
+          33
+        ],
+        "footBaseline": 100
+      },
+      "180": {
+        "file": "/pawtrail-game/furniture-references/chair/b981826ca538/reference-180.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated back",
+        "cellBounds": [
+          134,
+          93,
+          370,
+          446
+        ],
+        "occupiedSize": [
+          22,
+          33
+        ],
+        "footBaseline": 100
+      },
+      "270": {
+        "file": "/pawtrail-game/furniture-references/chair/b981826ca538/reference-270.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated right",
+        "cellBounds": [
+          135,
+          75,
+          362,
+          438
+        ],
+        "occupiedSize": [
+          21,
+          34
+        ],
+        "footBaseline": 100
+      },
+      "45": {
+        "file": "/pawtrail-game/furniture-references/chair/b981826ca538/reference-45.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated front 3/4",
+        "cellBounds": [
+          105,
+          75,
+          370,
+          451
+        ],
+        "occupiedSize": [
+          25,
+          35
+        ],
+        "footBaseline": 101
+      },
+      "135": {
+        "file": "/pawtrail-game/furniture-references/chair/b981826ca538/reference-135.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated rear 3/4",
+        "cellBounds": [
+          123,
+          84,
+          409,
+          451
+        ],
+        "occupiedSize": [
+          27,
+          35
+        ],
+        "footBaseline": 101
+      }
+    }
+  },
+  "geometryJustification": "True seat depth and actor docking/clearance, with coherent side and back facings.",
+  "sheetSha256": "ccf0145a9b0be00c9e7185ed5b426c8a7a992772ec4b275f09f258198ac6d9fa",
+  "generatedMaster": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-1ecbfbd1-40eb-46dc-91df-56e5c2469a0e.png",
+  "correctionPrompt": "correction-prompt.txt",
+  "technicalReview": {
+    "alpha": "Raw generated sheets have a semi-transparent brown halo; native alpha224 component import removes it, keeping raw masters unchanged.",
+    "canonicalFront": "Original front remains authoritative; generated views supply unknown side/rear design.",
+    "counts": "Dining chair retains two inner back splats/three gaps; armchair has one right-hand cream floral pillow; wooden chair has one back gap.",
+    "proportion": "Wooden-chair correction is compact. Dining generated views remain taller than the original front; canonical front proportions take precedence in the shared model.",
+    "actorAllowance": "Seat dimensions will be fitted to the actual unscaled actor before final export; no actor fit claimed from 2D sheets."
+  },
+  "modelCalibration": {
+    "dimensions": {
+      "width": 22,
+      "depth": 20,
+      "height": 31
+    },
+    "seatHeight": 12,
+    "projection": {
+      "sidePitchDegrees": 8,
+      "blendPower": 2
+    },
+    "note": "Compact canonical fronts take precedence over taller generated drawings. Shared actor projection stays native; no actor scaling."
+  },
+  "implementation": {
+    "revision": "05ea6280e31e",
+    "installedAt": "2026-11-10T16:12:16.041908+00:00",
+    "source": "src/game/furniture/reference-chairs.ts",
+    "nativeFrame": [
+      96,
+      112
+    ],
+    "nativeFacings": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "authoringAngles": [
+      45,
+      135
+    ],
+    "styles": [
+      "original",
+      "walnut",
+      "pale"
+    ],
+    "nativeImages": 24,
+    "sourceModel": "assets/furniture-studio/exports/chair/source-model.glb",
+    "actorFit": {
+      "source": "seat-fit.json",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "note": "Single native seat; measured source rig through four breathing phases; feet clear the floor rather than being retargeted to plant."
+    },
+    "preserved": [
+      "source PNG",
+      "catalog ID and price",
+      "construction rules",
+      "existing cat perch contract"
+    ],
+    "review": {
+      "mode": "isolated Firefox art production and native artifact inspection",
+      "evidence": [
+        "output/furniture/interaction-01/chair-facings.png",
+        "output/furniture/interaction-01/chair-corners.png",
+        "output/furniture/interaction-01/seated-actor-review.png"
+      ],
+      "limitations": [
+        "Generated hidden faces/camera remain approximate; original front proportions take precedence.",
+        "No application tests/checks/builds or live browser/game interaction verification.",
+        "No accounts, saved placements or balances changed."
+      ]
+    }
+  }
+}

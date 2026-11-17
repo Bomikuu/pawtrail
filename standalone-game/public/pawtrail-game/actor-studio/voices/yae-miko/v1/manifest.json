@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "actorId": "yae-miko",
+  "name": "Yae Miko",
+  "language": "ja-JP",
+  "profileId": "c65920a1",
+  "kind": "original-synthetic-character-voice",
+  "scope": "game-and-preview",
+  "totalBytes": 73961,
+  "cues": [
+    {
+      "id": "hi",
+      "text": "あら、来たのね。待っていたわ。",
+      "romanization": "Ara, kita no ne. Matte ita wa.",
+      "translation": "Oh, you came. I was waiting.",
+      "durationSeconds": 3.8828958333333334,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/yae-miko/v1/hi.ogg",
+      "bytes": 12156,
+      "action": "wave",
+      "actionLabel": "Wave"
+    },
+    {
+      "id": "bye",
+      "text": "また会いましょう。気をつけて。",
+      "romanization": "Mata aimashō. Ki o tsukete.",
+      "translation": "Until we meet again. Take care.",
+      "durationSeconds": 5.312333333333333,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/yae-miko/v1/bye.ogg",
+      "bytes": 16033,
+      "action": "wave",
+      "actionLabel": "Farewell wave"
+    },
+    {
+      "id": "attack",
+      "text": "逃がさないわ。覚悟なさい。",
+      "romanization": "Nigasanai wa. Kakugo nasai.",
+      "translation": "You will not escape. Prepare yourself.",
+      "durationSeconds": 2.3145625,
+      "portraitEmotion": "angry",
+      "file": "/pawtrail-game/actor-studio/voices/yae-miko/v1/attack.ogg",
+      "bytes": 7403,
+      "action": "power_up",
+      "actionLabel": "Power up"
+    },
+    {
+      "id": "hurt",
+      "text": "うっ……油断したわ。",
+      "romanization": "U... yudan shita wa.",
+      "translation": "Ugh… I let my guard down.",
+      "durationSeconds": 3.52,
+      "portraitEmotion": "sad",
+      "file": "/pawtrail-game/actor-studio/voices/yae-miko/v1/hurt.ogg",
+      "bytes": 11849,
+      "action": "sick",
+      "actionLabel": "Hurt rehearsal"
+    },
+    {
+      "id": "thanks",
+      "text": "ありがとう。助かったわ。",
+      "romanization": "Arigatō. Tasukatta wa.",
+      "translation": "Thank you. That helped.",
+      "durationSeconds": 4.071729166666667,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/yae-miko/v1/thanks.ogg",
+      "bytes": 13123,
+      "action": "clap",
+      "actionLabel": "Clap"
+    },
+    {
+      "id": "encouragement",
+      "text": "大丈夫。あなたならできるわ。",
+      "romanization": "Daijōbu. Anata nara dekiru wa.",
+      "translation": "It’s all right. You can do this.",
+      "durationSeconds": 4.254708333333333,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/yae-miko/v1/encouragement.ogg",
+      "bytes": 13397,
+      "action": "cheer",
+      "actionLabel": "Cheer"
+    }
+  ]
+}

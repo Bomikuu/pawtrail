@@ -1,0 +1,43 @@
+{
+  "id": "eko-9-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "eko-9",
+  "characterName": "EKO-9",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    18,
+    90,
+    101
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/eko-9-refined-cel-v1/de543c13b4e4",
+  "revision": "de543c13b4e4",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 228219,
+  "referenceBytes": 10903,
+  "runtimeBytes": 217316,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

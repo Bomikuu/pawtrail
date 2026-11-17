@@ -1,0 +1,3 @@
+### Error
+Error: Selection stayed open: Action. Inspect a fresh snapshot; do not continue the batch.
+

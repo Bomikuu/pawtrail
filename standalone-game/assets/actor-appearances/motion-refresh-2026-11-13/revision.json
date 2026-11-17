@@ -1,0 +1,149 @@
+{
+  "recordedAt": "2026-11-13T05:23:51.805753+00:00",
+  "scope": "Amber Refined cel portraits, Amber full-body illustration, Vaelrith illustration and Amber six-cue voice revision",
+  "representation": "Existing articulated 3D with painted 2D skin; Tripo canceled without generation/credits",
+  "publications": {
+    "portrait": {
+      "id": "amber-refined-cel",
+      "name": "Refined cel",
+      "playback": "complete-frames",
+      "nativeCell": [
+        96,
+        120
+      ],
+      "contentBounds": [
+        1,
+        3,
+        94,
+        116
+      ],
+      "runtimeBytes": 258285,
+      "referenceBytes": 10495,
+      "completeBytes": 268780,
+      "poseCount": 3,
+      "expressionCount": 6,
+      "uniqueFullFrames": 132,
+      "sourceImagesUsed": 117,
+      "encoding": "lossless-webp-complete-frames",
+      "styleKey": "refined-cel",
+      "characterId": "amber",
+      "characterName": "Amber",
+      "folder": "/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-motion-v2/05b643c934e7",
+      "revision": "05b643c934e7",
+      "poseIds": [
+        "front-pout",
+        "three-quarter-left",
+        "head-tilt-smile-right"
+      ],
+      "budgetBytes": 300000,
+      "idleFramesPerAngle": 12
+    },
+    "illustration": {
+      "name": "Amber",
+      "folder": "/pawtrail-game/actor-studio/illustrations/amber-outrider/full-body-v3-02aa637ed9bd",
+      "nativeSize": [
+        192,
+        320
+      ],
+      "style": "Refined cel",
+      "motion": "Full-body idle · hair, ribbon & coat sway",
+      "frames": 12,
+      "runtimeBytes": 160875
+    },
+    "boss": {
+      "name": "Vaelrith",
+      "folder": "/pawtrail-game/monsters/vaelrith-riftbound/illustration-v2-09a54d91815c",
+      "nativeSize": [
+        384,
+        256
+      ],
+      "style": "Refined cel",
+      "motion": "Neck, head & throat movement",
+      "frames": 16,
+      "runtimeBytes": 615259
+    }
+  },
+  "voice": {
+    "revision": "v2",
+    "profileId": "12b7981e",
+    "runtimeBytes": 36029,
+    "cues": [
+      {
+        "id": "hi",
+        "requestedText": "こんにちは。",
+        "durationSeconds": 1.8269583333333332,
+        "bytes": 5885,
+        "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/hi.wav",
+        "audioId": "9de60ae1",
+        "generationRequestSeconds": 326.81,
+        "listeningAccepted": false,
+        "sha256": "75b8e498ad53e8ad6632cbdf054181e3dca8ca3a79212bad64a86b39924bbd1f"
+      },
+      {
+        "id": "attack",
+        "requestedText": "くらえ！",
+        "durationSeconds": 1.347,
+        "bytes": 4504,
+        "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/attack.wav",
+        "audioId": "b0df0a3b",
+        "generationRequestSeconds": 49.23,
+        "listeningAccepted": false,
+        "sha256": "5ff87187d68c584c5f3668fce102515c07cfdd5ec508dcfb9b754dc8fbd6cf26"
+      },
+      {
+        "id": "bye",
+        "requestedText": "またね！",
+        "durationSeconds": 3.4662916666666668,
+        "bytes": 11589,
+        "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/bye.wav",
+        "audioId": "15df0332",
+        "generationRequestSeconds": 110.85,
+        "listeningAccepted": false,
+        "sha256": "0f58bd3b9d9c7fc567ad39235f92088cb7aa6309f69c7fba1c6e50c7d78dfef0"
+      },
+      {
+        "id": "hurt",
+        "requestedText": "うっ！",
+        "durationSeconds": 1.5258958333333332,
+        "bytes": 4602,
+        "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/hurt.wav",
+        "audioId": "a65788d7",
+        "generationRequestSeconds": 53.06,
+        "listeningAccepted": false,
+        "sha256": "5e97c855e523729444ac48b4ce26b725bef781abd5afa9ef6dc97adbedd17d34"
+      },
+      {
+        "id": "thanks",
+        "requestedText": "ありがとう！助かった！",
+        "durationSeconds": 1.6,
+        "bytes": 5091,
+        "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/thanks.wav",
+        "audioId": "d8889c93",
+        "generationRequestSeconds": 29.42,
+        "listeningAccepted": false,
+        "sha256": "d70668fd297ea42d3833511d1a03e8abbfa36ae49e866074ac0411054374dc4c"
+      },
+      {
+        "id": "encouragement",
+        "requestedText": "頑張ろう！",
+        "durationSeconds": 1.3301666666666667,
+        "bytes": 4358,
+        "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/encouragement.wav",
+        "audioId": "fa290c61",
+        "generationRequestSeconds": 51.84,
+        "listeningAccepted": false,
+        "sha256": "20e264a205bc260092c19f4da4a7909e589678e8d3fb617b8053e33be1fe21ff"
+      }
+    ],
+    "overlongTakes": "Retained in VoiceStudio/pawtrail/amber-audition-v2/overlong-takes; not installed.",
+    "processing": "Cached VoxCPM2 with opt-in CPU int8 LM Linear weights; original AudioVAE/speaker. Temporary external service source restored after generation."
+  },
+  "inspection": {
+    "sourceArt": "Inspected with image tools",
+    "nativeExports": "Inspected contact sheets, including neutral rest/blink/speech transitions and full-body/anchored boss coverage",
+    "livePlayback": "Pending; browser verification not authorized for this request",
+    "listening": "Pending owner audition; requested scripts are not verified transcripts",
+    "testsBuildsBrowser": "Not run, per current project instructions",
+    "ownerAcceptance": "Pending"
+  }
+}

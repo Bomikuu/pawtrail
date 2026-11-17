@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-12",
+  "scope": "native 2D creature in existing 3D encounter",
+  "preview": "/play?preview=monsters&monsterView=2d",
+  "comparison": "representation selector, one version loaded at a time; switching resets",
+  "skillCopies": [
+    ".agents/skills/pawtrail-monsters",
+    "/home/micxsz/.codex/skills/pawtrail-monsters"
+  ],
+  "automatedTestsRun": false,
+  "buildRun": false,
+  "browserOpened": false,
+  "review": "generated artwork inspected; in-game behavior and visual comparison pending owner review"
+}

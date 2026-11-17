@@ -1,0 +1,58 @@
+{
+  "id": "shardback",
+  "parentBoss": "vaelrith-riftbound",
+  "familyId": "vaelrith",
+  "tier": "normal",
+  "representation": "native-authored-2d-frames",
+  "atlas": "../actors.webp",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "columns": 5,
+  "rows": 5,
+  "row": 3,
+  "enragedRow": null,
+  "poses": {
+    "idle": 0,
+    "walk": 1,
+    "windup": 2,
+    "attack": 3,
+    "hurt": 4
+  },
+  "authoredPoseCount": 5,
+  "portrait": {
+    "file": "portraits.webp",
+    "cellWidth": 128,
+    "cellHeight": 128,
+    "states": [
+      "alert",
+      "threatening",
+      "hurt"
+    ]
+  },
+  "icon": {
+    "file": "icon.png",
+    "width": 64,
+    "height": 64
+  },
+  "illustration": {
+    "normal": "normal.webp",
+    "enraged": null,
+    "motion": "runtime breathing, not additional authored image frames"
+  },
+  "worldHeight": 0.85,
+  "baseline": 248,
+  "contentHeight": 173,
+  "registration": {
+    "union": [
+      1,
+      14,
+      238,
+      251
+    ],
+    "scale": 0.9789029535864979,
+    "baselinePerFrame": 248
+  },
+  "collisionRadius": 0.38,
+  "profile": "profile.json",
+  "provenance": "Built-in ImageGen derived from approved parent-boss artwork; full prompts and master retained."
+}

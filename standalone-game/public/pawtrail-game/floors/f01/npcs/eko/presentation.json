@@ -1,0 +1,18 @@
+{
+  "id": "eko",
+  "name": "EKO-9",
+  "portraitCollection": "eko-9-refined-cel",
+  "illustration": {
+    "name": "EKO-9",
+    "folder": "/pawtrail-game/floors/f01/npcs/eko/illustration",
+    "nativeSize": [
+      192,
+      320
+    ],
+    "style": "Refined cel + painterly",
+    "motion": "Authored hologram head-and-shoulders motion, blink and full grounded emitter"
+  },
+  "icon": "/pawtrail-game/floors/f01/npcs/eko/icon.png",
+  "portraitBytes": 228219,
+  "scope": "friendly anchored hologram NPC \u00b7 normal only \u00b7 no biological lower body, combat or voices"
+}

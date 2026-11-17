@@ -1,0 +1,20 @@
+{
+  "illustrations": {
+    "bytes": 3841755,
+    "files": 12,
+    "revision": "v2"
+  },
+  "icon": {
+    "bytes": 1250,
+    "files": 2
+  },
+  "model-textures-and-profile": {
+    "bytes": 40789,
+    "files": 8
+  },
+  "portrait": {
+    "bytes": 279067,
+    "files": 5
+  },
+  "totalBytes": 4162861
+}

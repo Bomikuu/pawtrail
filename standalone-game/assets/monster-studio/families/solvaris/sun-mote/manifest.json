@@ -1,0 +1,58 @@
+{
+  "id": "sun-mote",
+  "parentBoss": "solvaris-solar-arbiter",
+  "familyId": "solvaris",
+  "tier": "normal",
+  "representation": "native-authored-2d-frames",
+  "atlas": "../actors.webp",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "columns": 5,
+  "rows": 5,
+  "row": 4,
+  "enragedRow": null,
+  "poses": {
+    "idle": 0,
+    "walk": 1,
+    "windup": 2,
+    "attack": 3,
+    "hurt": 4
+  },
+  "authoredPoseCount": 5,
+  "portrait": {
+    "file": "portraits.webp",
+    "cellWidth": 128,
+    "cellHeight": 128,
+    "states": [
+      "alert",
+      "threatening",
+      "hurt"
+    ]
+  },
+  "icon": {
+    "file": "icon.png",
+    "width": 64,
+    "height": 64
+  },
+  "illustration": {
+    "normal": "normal.webp",
+    "enraged": null,
+    "motion": "runtime breathing, not additional authored image frames"
+  },
+  "worldHeight": 0.85,
+  "baseline": 248,
+  "contentHeight": 225,
+  "registration": {
+    "union": [
+      16,
+      10,
+      211,
+      222
+    ],
+    "scale": 1.0943396226415094,
+    "baselinePerFrame": 248
+  },
+  "collisionRadius": 0.25,
+  "profile": "profile.json",
+  "provenance": "Built-in ImageGen derived from approved parent-boss artwork; full prompts and master retained."
+}

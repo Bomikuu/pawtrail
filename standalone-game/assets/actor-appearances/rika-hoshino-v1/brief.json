@@ -1,0 +1,25 @@
+{
+  "name": "Rika Hoshino",
+  "mech": "Peony-7",
+  "id": "rika-hoshino",
+  "voices": "omitted-by-owner",
+  "startedAt": "2026-11-14T19:46:08Z",
+  "scope": "pilot and fully playable mech; own movement and cockpit entry/exit; existing actor/portrait/icon/illustration contracts; full visual review; no automated tests or agents",
+  "stages": [
+    "reference-and-brief",
+    "illustrations-generation",
+    "illustrations-export-and-review",
+    "portrait-first-sheet-and-native-face-check",
+    "remaining-portraits-and-export",
+    "native-icon-check",
+    "profile",
+    "pilot-model-face-check-and-build",
+    "mech-build-and-play-controls",
+    "preview-integration",
+    "full-visual-review",
+    "delivery"
+  ],
+  "portraitStyle": "Refined cel",
+  "illustrationFeedback": "Both designs explicitly approved by owner",
+  "normalIllustrationVariant": "normal-fixed"
+}

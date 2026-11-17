@@ -1,0 +1,56 @@
+{
+  "familyId": "vesper",
+  "parentBoss": "vesper-hollow-reaper",
+  "id": "huskling",
+  "name": "Huskling",
+  "title": "Talisman-Bound Shade",
+  "tier": "normal",
+  "row": 3,
+  "enragedRow": null,
+  "maxHp": 250,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 0.95,
+  "radius": 0.28,
+  "speed": 1.8,
+  "hover": 0.12,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A small indigo hood surrounds a skull and a fluttering red talisman. It gathers near the reaper’s bell.",
+  "weakness": "The talisman dims after a grasp, creating a recovery opening.",
+  "temperament": "Cautious pack hunter",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "hollow-grasp",
+      "name": "Hollow Grasp",
+      "shape": "sector",
+      "outer": 1.5,
+      "inner": 0,
+      "angle": 100,
+      "target": "self",
+      "damage": 11,
+      "windup": 1000,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 3700,
+      "description": "Two skeletal hands reach through a short wedge. Move behind the hood."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/huskling-model.png",
+    "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+    "phase": "Not applicable: normal mob has no boss enrage.",
+    "automatedTests": false,
+    "build": false
+  }
+}

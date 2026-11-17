@@ -1,0 +1,12 @@
+{
+  "portraitBytes": 278121,
+  "portraitFolder": "/pawtrail-game/game-assets/dialogue-portraits/sieg-refined-cel-v1/dd086bd24e58",
+  "iconBytes": 2204,
+  "illustrationBytes": 350121,
+  "nativePortraitFrames": 108,
+  "voice": "omitted-by-owner",
+  "runtimeReview": "pending",
+  "modelTextureBytes": 12762,
+  "totalRuntimeBytes": 643208,
+  "assetReview": "Native portrait rests and composed illustration visually inspected. Runtime model/actions pending owner review; no automated checks run."
+}

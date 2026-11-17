@@ -16,6 +16,7 @@ These are the frontend requirements explicitly requested by the owner. They do n
 - Implement directly without agents. Do not run automated tests, checks, builds, or browser verification unless requested.
 - Open external websites/browser links in Firefox and prefer Firefox for browser automation. Explain a tool limitation before choosing another browser.
 - Keep prototype saves and Kibble clearly local. Never treat client reward totals as authoritative Django data.
+- Every interactive action must visibly register its real outcome. Use animated contact sprites (slash flashes, sparks or elemental bursts) at the affected enemy/player on confirmed fictional-combat hits, alongside applied damage numbers and clear status feedback; show pending, success, failure or changed state for other interactions. A console log, sound or color alone is insufficient. Reuse bounded shared feedback and preserve reduced motion; never display unconfirmed damage, saves or rewards as successful.
 - The generated native asset manifests are authoritative for frame dimensions and animation counts. Keep pixel-art rendering nearest-neighbor with integer zoom.
 - Typography: use self-hosted **Saira Condensed** for primary headings, names and world labels, and **Instrument Sans** for secondary body text, controls and dialogue. Keep these roles consistent across the game, platform and management dashboard; use the existing font tokens.
 
@@ -24,3 +25,45 @@ These are the frontend requirements explicitly requested by the owner. They do n
 ## Weapon authoring
 
 - Use `.agents/skills/pawtrail-weapons/SKILL.md` for new usable weapons: inspect the base character, create quick front/side concepts, build geometry with a generated 2D skin, then create three regular abilities and one ultimate with matching generated icons and Item Studio integration. Focused revisions can reuse approved assets. Keep existing verification permissions and local/platform boundaries.
+
+## Monster authoring
+
+- Use `.agents/skills/pawtrail-monsters/SKILL.md` for monsters and giant bosses,
+  including wall-anchored/multi-headed creatures. Follow the artwork-first actor
+  sequence with a creature profile, weaknesses, explicit HP units, a native 2D
+  sprite/layer rig or selected 3D representation
+  and encounter rehearsal. Preserve current verification permissions and
+  fictional-combat/platform authority boundaries.
+
+
+## Actor production tooling
+
+- New actor jobs use `scripts/actor-job.py` and `docs/actor-production-tools.md`
+  for durable timing, declared export inputs and resumable Firefox evidence.
+- Captures and structural readiness are not visual approval. Keep the full actor
+  quality checklist, explicit omissions and dependency-aware re-review.
+- Preserve the existing restrictions on agents, automated tests/checks/builds and
+  browser verification. Tool availability alone does not expand authorization.
+
+## Map authoring
+
+- Use `.agents/skills/pawtrail-floors/SKILL.md` for whole-floor concept/planning:
+  themed regions with multiple stages, a shared tower lobby/local staging areas,
+  ecosystem, story, quests, puzzles, materials, mobs, bosses and loot. Deliver a
+  readable design and dependency-ordered implementation phases for owner review;
+  planning alone does not start map, asset or encounter production.
+- Include NPC decision memory and personal/faction reputation in floor plans,
+  with authored branching dialogue, later callbacks and explicit state/persistence
+  specifications. Scripts must cover actual choices and consequences; appearance
+  production alone does not implement NPC memory or reputation.
+
+- Use `.agents/skills/pawtrail-maps/SKILL.md` for reference-guided game maps made
+  from a description or reference. Generate the envisioned map concept and wait
+  for explicit owner approval before production. Then use
+  `.agents/skills/pawtrail-assets/SKILL.md` for the asset packages: assess animation
+  for every asset, animate cyberpunk scenery and use textured 3D for newly authored
+  player-interactive map assets. Keep editable layouts and real collision/actor
+  contacts; distinguish rendered 3D-source sprites from live 3D, and a local stage
+  preview from a connected world installation.
+- Preserve existing verification permissions and local/platform authority
+  boundaries. A skill-authoring request does not itself create or replace a map.

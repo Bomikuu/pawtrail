@@ -1,0 +1,56 @@
+{
+  "familyId": "morvane",
+  "parentBoss": "morvane-ossuary-serpent",
+  "id": "bone-crawler",
+  "name": "Bone Crawler",
+  "title": "Lesser Rib Crawler",
+  "tier": "normal",
+  "row": 2,
+  "enragedRow": null,
+  "maxHp": 300,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 0.8,
+  "radius": 0.34,
+  "speed": 1.95,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A compact procession of ribs and little bony legs follows the vibrations of living footsteps.",
+  "weakness": "Its low skull is vulnerable after a forward bite.",
+  "temperament": "Cautious pack hunter",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "rib-bite",
+      "name": "Rib Bite",
+      "shape": "sector",
+      "outer": 1.45,
+      "inner": 0,
+      "angle": 95,
+      "target": "self",
+      "damage": 11,
+      "windup": 900,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 3800,
+      "description": "A short snapping bite; circle behind the skull."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/bone-crawler-model.png",
+    "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+    "phase": "Not applicable: normal mob has no boss enrage.",
+    "automatedTests": false,
+    "build": false
+  }
+}

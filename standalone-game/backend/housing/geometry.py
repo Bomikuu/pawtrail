@@ -57,7 +57,7 @@ def validate_layout(layout,inventory,zone='interior',other_layout=None,preset='s
         if type(p['x']) is not int or type(p['y']) is not int or not 1<=p['x']<width-1 or not 2<=p['y']<height-1:raise ValidationError('Keep pieces within the editable space.')
         if type(p['rotation']) is not int or p['rotation'] not in d.get('supportedRotations',([0,90,180,270] if d['rotatable'] else [0])):raise ValidationError('This piece cannot rotate.')
         # All art stays inside the plot; upper pixels may rise above the tile anchor.
-        left,top,rw,rh=rect(p,[0,0,d['width'],d['height']])
+        left,top,rw,rh=rect(p,d.get('visibleBounds',[0,0,d['width'],d['height']]))
         if left<0 or top<0 or left+rw>width*32 or top+rh>height*32:raise ValidationError('The complete piece must fit inside this space.')
         shapes=[rect(p,r) for r in d['geometry']['placement']]
         if any(overlaps(a,b) for a in shapes for b in occupied):raise ValidationError('Keep the entrance route, house and other pieces clear.')

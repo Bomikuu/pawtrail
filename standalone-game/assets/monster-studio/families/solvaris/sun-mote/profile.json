@@ -1,0 +1,47 @@
+{
+  "familyId": "solvaris",
+  "parentBoss": "solvaris-solar-arbiter",
+  "id": "sun-mote",
+  "name": "Sun Mote",
+  "title": "Ribbon-Tailed Solar Wisp",
+  "tier": "normal",
+  "row": 4,
+  "enragedRow": null,
+  "maxHp": 260,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 0.85,
+  "radius": 0.25,
+  "speed": 2.0,
+  "hover": 0.2,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A faceted ivory core floats inside eight golden rays. Two red ribbons trail behind this small remnant of the broken celestial mechanism.",
+  "weakness": "Its pulsing rays leave a small safe center and a recovery opening.",
+  "temperament": "Territorial observatory sentinel",
+  "origin": "The Sunken Orrery, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "mote-pulse",
+      "name": "Mote Pulse",
+      "shape": "ring",
+      "outer": 1.9,
+      "inner": 0.6,
+      "angle": 110,
+      "target": "self",
+      "damage": 11,
+      "windup": 1100,
+      "active": 360,
+      "recovery": 850,
+      "cooldown": 4100,
+      "description": "A golden pulse forms around the core. Stand in the clear center or outside its rim."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: corrected artwork loaded, started, paused and captured. Full attack/contact/defeat sequence unreviewed."
+}

@@ -1,0 +1,56 @@
+{
+  "familyId": "kaedros",
+  "parentBoss": "kaedros-embermaw",
+  "id": "ember-whelp",
+  "name": "Ember Whelp",
+  "title": "Riverbank Hatchling",
+  "tier": "normal",
+  "row": 2,
+  "enragedRow": null,
+  "maxHp": 280,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 1.0,
+  "radius": 0.32,
+  "speed": 1.8,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A green hatchling with amber cheeks practices small bursts of breath beside the warm river.",
+  "weakness": "Its cheek glow gives the short breath away.",
+  "temperament": "Cautious pack hunter",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "warm-breath",
+      "name": "Warm Breath",
+      "shape": "sector",
+      "outer": 1.7,
+      "inner": 0,
+      "angle": 90,
+      "target": "self",
+      "damage": 11,
+      "windup": 950,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 3700,
+      "description": "A short cone of hot breath; move to the side."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/ember-whelp-model.png",
+    "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+    "phase": "Not applicable: normal mob has no boss enrage.",
+    "automatedTests": false,
+    "build": false
+  }
+}

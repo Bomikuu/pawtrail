@@ -1,0 +1,21 @@
+{
+  "albedoNativeSize": [
+    1254,
+    1254
+  ],
+  "upscaled": false,
+  "baseColor": "Generated Amber-specific woven cloth, embroidery, leather, hair strands and aged brass surface atlas.",
+  "normal": "Small material relief from albedo feature gradients; large folds and seams are geometry.",
+  "roughness": "Authored response by material with bounded feature variation.",
+  "metallic": "Brass tile only; cloth, skin, hair and leather remain dielectric.",
+  "ambientOcclusion": "Separate Blender geometry bake using BakeUV, not color-derived shadow.",
+  "headSize": [
+    1024,
+    1024
+  ],
+  "skinSRGB": [
+    253,
+    221,
+    205
+  ]
+}

@@ -1,0 +1,2196 @@
+{
+  "job": "rika-hoshino",
+  "cases": [
+    {
+      "id": "rika-hoshino/action/idle",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "idle",
+      "durationMs": 1875,
+      "state": "pass",
+      "fingerprint": "962c2096724b11087c8c1f261db2ee9ac2dc0437226071fc538dc51e3c6dc748",
+      "capture": {
+        "id": "0dab2ab659194149a2b0ac371a078f37",
+        "at": "2026-11-15T04:12:53.181420+00:00",
+        "type": "review.capture",
+        "case": "rika-hoshino/action/idle",
+        "fingerprint": "962c2096724b11087c8c1f261db2ee9ac2dc0437226071fc538dc51e3c6dc748",
+        "evidence": [
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/action-idle/45ac057bac34449daa056dc7d54b380b/body-0.png",
+            "sha256": "b479da8ee2a15e943b327f707035aff821271a96787957b49b5add5bf44e753a",
+            "bytes": 24953,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/action-idle/45ac057bac34449daa056dc7d54b380b/body-1.png",
+            "sha256": "5d708adbf9962e70d5d3f3ca319045e440b7eff1346ec1d4d0ca6ed2757f2ea6",
+            "bytes": 25047,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/action-idle/45ac057bac34449daa056dc7d54b380b/paired-portrait-0.png",
+            "sha256": "edf9e82135ed99dd27d45531e6b6fb963c14c0d8a83193baebeaaaf2c9c43a95",
+            "bytes": 28692,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/action-idle/45ac057bac34449daa056dc7d54b380b/paired-portrait-1.png",
+            "sha256": "cee65d35c44c895d4f61d7e8ad0ece58445cde11204160c5fada9730c7811fa4",
+            "bytes": 28662,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/action-idle/45ac057bac34449daa056dc7d54b380b/return.png",
+            "sha256": "b4f5bba26f203c8c3bbe3b5f380efd632c8253cdd6d1e968dd0124c257df13fa",
+            "bytes": 25084,
+            "files": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rika-hoshino/action/walk",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "walk",
+      "durationMs": 600,
+      "state": "pending",
+      "fingerprint": "e98e5d56c2fea7d3950ae9155a3468fd5a78dbfb82cf8554560a92ce9ee1404c",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/feed",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "feed",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "033c70d3f257259fe3d8f6640da8aa994000955a440f0a004089ce01d79f5ecb",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/pet",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "pet",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "de7b9d803bda812715100c13b335b488d5d105026a8026b3d09ca1bd22495398",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/sit",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sit",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "1846d8b2635b0b3a0c0a6f8d2ce41601b8cf647e7464a155eb3c4dcb814418b3",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/sleep",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sleep",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "a80cc14ec52fc795daf01e61f5a60f39542f26ba7d026f4338da64126a1727bc",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/pick_up",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "pick_up",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "65dffe39781ab3ecb36933902b29222e8c348ab9f4c88cbf50a075ca5f800cf2",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/water",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "water",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "3afe45b847023b80ed16a059a98d208b7115dceee8abf2915547a071bd05fc47",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/play",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "play",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "921f7a03bd88036a941d9b9a9320f9d5b59346b28912c7d7e605210a328b467c",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/clean",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "clean",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "d3cd857dcf6747843019da092f5d9d5f06ef17a3d4d96b51a8c573c5933f3ac4",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/wave",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "wave",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "cda26a775307c6c35367c49d4133861beb57c370d53f28b50452996db8dacfb4",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/laugh",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "laugh",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "0105a142f52221d32795f9704ff03dd0a4b34105ea1fcf8fd79a64459c27ac19",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/dance",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "dance",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "c2011277c854f1aad1215bfd4f3fe8a67c425d5c5f0a573c6797cf55ece51905",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/clap",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "clap",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "7cee4183289aa8fa2d9d3216ab8c0a86c379353095f609b13dcf0908096fbcbd",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/cheer",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "cheer",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "33f13ecb9f37cf404f24419cfbf3ea75f778a92cc51bc3970ebeda705d878746",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/hold_item",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "hold_item",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "1194f98d935b7db4a475afff8fad36b009f3c7c20150f2fb9e9ad0002f7880f9",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/give_gift",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "give_gift",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "024793031196790e1583e06a4a8639c3fd5a269a3bbba90c5f505d1ca8245e60",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/inspect",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "inspect",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "3a0cb3c9baee3b43a08152361c1e3508c5d25c526fe49da98c22864430622c7f",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/sad",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sad",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "d47348d33a9d64892c6c528fbb87ae9dc7c591b68771eb8a37c921b6212c49fe",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/happy",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "happy",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "0888bc76e0419e3b6f83cfff26c81cfdbd6552bf1b5006b40ce42edc3dbc96ee",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/angry",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "angry",
+      "durationMs": 1200,
+      "state": "pending",
+      "fingerprint": "b0c97f68f193231f56f19dce0e29f16d5a29e8961efbb74a1ff7f9c490c3cd4f",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/float",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "float",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "2ec877ede6c6d383af2b79a07137cd0c46908cfb31353a59a5b2de8092b4aea1",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/tired",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "tired",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "353117cc3de296744dba149f25d8c827b83205704713bd1812df14a97360a176",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/surprised",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "surprised",
+      "durationMs": 1200,
+      "state": "pending",
+      "fingerprint": "94e826b829a80c26fe1fe7995dafc07903f064c84622cb933d1881295cfab605",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/sick",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sick",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "3696f6640385b0f45da303344ffc8e59acc827090670764b8ed3b62f155c5566",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/ride",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "ride",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "b794124c4ef61f231a889ea8a49383d463d99bab2d32f49ea406ab0990168659",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/power_up",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "power_up",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "d53f61cb3f6d3d2c0ddd559a2dbb206e33cc7131cfac96ce9b0f4bda6d604524",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/jetpack",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "jetpack",
+      "durationMs": 1333,
+      "state": "pending",
+      "fingerprint": "e4f37d37d27eff08a95dcb3cb650ff9f459f9960a5f6ca798af5c321591fb25c",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/jetpack_takeoff",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "jetpack_takeoff",
+      "durationMs": 500,
+      "state": "pending",
+      "fingerprint": "6f45c02d1edaa3709134378286e9e9a62083fb507c24b20ba1aabd41183b3ec3",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/jetpack_land",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "jetpack_land",
+      "durationMs": 600,
+      "state": "pending",
+      "fingerprint": "8e0a467faefe8482fc7f7b2a4714e23efe864d68d672f453e5dd1d5537d79821",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/run",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "run",
+      "durationMs": 462,
+      "state": "pending",
+      "fingerprint": "bd20a4fcdb30d91b487a930b891c5982098f4b6a63c5da1d8f425e0e817ba7ac",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/power_run",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "power_run",
+      "durationMs": 667,
+      "state": "pending",
+      "fingerprint": "a179cbb157468e3801ccdb978fb74a63f604a8303778215ab8056ddd0ab6f67b",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/rescue_dash",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "rescue_dash",
+      "durationMs": 667,
+      "state": "pending",
+      "fingerprint": "82695099e4ddb06e6ce91d5fc19386519df5829866751826c7b8393a2949d122",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/action/gentle_approach",
+      "actor": "rika-hoshino",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "gentle_approach",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "d6918e60b69eb1a0ccf362252d93c862707f1059eb28bb0c6b8a2fa62576d667",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/heading/down",
+      "actor": "rika-hoshino",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "down",
+      "state": "pending",
+      "fingerprint": "41092dfee0c2898e8d902fcddbf168321e95aabb334ce53aef03c09220c3eed3",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/heading/down_left",
+      "actor": "rika-hoshino",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "down_left",
+      "state": "pending",
+      "fingerprint": "d519edf90fe3d7b948bb283f337494e9caa463522245cf9b29975f5a43347eae",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/heading/left",
+      "actor": "rika-hoshino",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "left",
+      "state": "pending",
+      "fingerprint": "7afbea6b95215735ffdf82e82c7d58a3711599a01576c45db6340ac8815d8a52",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/heading/up",
+      "actor": "rika-hoshino",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "up",
+      "state": "pending",
+      "fingerprint": "65f7d64984e1db17e64c92230a68be5da9fd72c155212b198e46abc9c66b8839",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/idle",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "idle",
+      "state": "pending",
+      "fingerprint": "ed4d296483996967d18e84d65578cb479d960e1cc60b5774a4a29837dfb91335",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/smile",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "smile",
+      "state": "pending",
+      "fingerprint": "710d72197cfff40596c5a7742c9d609a8241c6e2488f7cba82d60567e0b552ff",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/happy",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "happy",
+      "state": "pending",
+      "fingerprint": "bc47f6ae7d2f5ca06475cd01f1356ad43e129ee57449d4bed1b2ff1626669181",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/sad",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "sad",
+      "state": "pending",
+      "fingerprint": "da5b6327a82ff3e002656ac7dd81103354531b2e924dc6e66461f01988750338",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/angry",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "angry",
+      "state": "pending",
+      "fingerprint": "c575a1ba4820ce1bf4bb307d747e9a60338c9ecaadc7d8eba41efedc6fa6d1dc",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/surprised",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "surprised",
+      "state": "pending",
+      "fingerprint": "5283e5d2bf4edfa0c7c41845ed905b6788dab4be2c08343f7bb9d81a17f3ed51",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/idle",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "idle",
+      "state": "pending",
+      "fingerprint": "4c29fac453a9ed755c32f99d568e163af98fdebfe6f666be6d0da0790319d3fc",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/smile",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "smile",
+      "state": "captured — needs visual review",
+      "fingerprint": "0d4c4ac9cf0f30f4569fefc930bc4e5d6c3ebc527f597ff19916e45971b7c351",
+      "capture": {
+        "id": "bfcfbd5ee524474c9540d620439af2f7",
+        "at": "2026-11-15T04:13:37.527567+00:00",
+        "type": "review.capture",
+        "case": "rika-hoshino/portrait/three-quarter-left/smile",
+        "fingerprint": "0d4c4ac9cf0f30f4569fefc930bc4e5d6c3ebc527f597ff19916e45971b7c351",
+        "evidence": [
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/portrait-three-quarter-left-smile/4df6486a46a747069ad8ec0fa1e41152/rest.png",
+            "sha256": "4278bc0a7e5e134f9610df54fc4285b34893cc37ae8afb46af284cb2c951ee94",
+            "bytes": 54133,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/portrait-three-quarter-left-smile/4df6486a46a747069ad8ec0fa1e41152/speech-blink-breath-0.png",
+            "sha256": "2ec2a2dce2612ae39b650db23585eb69febd36ab3acc74deecfca5edb98fa6c4",
+            "bytes": 54113,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/portrait-three-quarter-left-smile/4df6486a46a747069ad8ec0fa1e41152/speech-blink-breath-1.png",
+            "sha256": "240efd4682d0d03d5ac7d98bd941f8789a82f25a2dcbbec4662667fae8e18c23",
+            "bytes": 54453,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/portrait-three-quarter-left-smile/4df6486a46a747069ad8ec0fa1e41152/speech-blink-breath-2.png",
+            "sha256": "240efd4682d0d03d5ac7d98bd941f8789a82f25a2dcbbec4662667fae8e18c23",
+            "bytes": 54453,
+            "files": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/happy",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "happy",
+      "state": "pending",
+      "fingerprint": "f6619d497f9f235313e8e910700f7d4108558f19eb29de452145aaf1f895a366",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/sad",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "sad",
+      "state": "pending",
+      "fingerprint": "50a3c11358190b43bd0074cf5edcbbe290557d2ee97ee8640377e56cb219c1ba",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/angry",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "angry",
+      "state": "pending",
+      "fingerprint": "9d10bfcd82ad8daec455870d9ed421bdfcec829d0dfc05b3059175d127a85696",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/surprised",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "surprised",
+      "state": "pending",
+      "fingerprint": "c969bbec6aa1d8c2f692dd27f22a8c0d8c7ccef48b2d0ee762938844aa3d74d0",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/idle",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "idle",
+      "state": "pending",
+      "fingerprint": "0b3d96845e5483035903d1de172600c95682684209c6ee2935cd1951715c6f8c",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/smile",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "smile",
+      "state": "pending",
+      "fingerprint": "fb0d1c781d84f46325cae3e6403774e40048673ab0425f8788a4e8e6e47d55f3",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/happy",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "happy",
+      "state": "pending",
+      "fingerprint": "7c4cd0870aec46cf7f9b30a388861cc356854a4d23c8b88c7a53549cfc44b354",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/sad",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "sad",
+      "state": "pending",
+      "fingerprint": "2cf61f90d4ca579bb4bad2292d85aa95b6198f7c9f4a7b37cabba83d90de3499",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/angry",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "angry",
+      "state": "pending",
+      "fingerprint": "f04039cc32f7028080f21c260380ec84d3457b230a98d375d29d85745ef5ca60",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/surprised",
+      "actor": "rika-hoshino",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "surprised",
+      "state": "pending",
+      "fingerprint": "0c3bf6dd01c720e9b844d1d14bbb1e9f49b181454e420d7f5ed0358d7159ea8c",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/illustration/normal",
+      "actor": "rika-hoshino",
+      "kind": "illustration",
+      "groups": [
+        "illustration",
+        "preview"
+      ],
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement.",
+      "variant": "normal",
+      "cycleMs": 5000,
+      "state": "captured — needs visual review",
+      "fingerprint": "fb268417eefafa81195a2f137b0ad54ef4e73c892ac0a0858dd7ee4ee28c4b1c",
+      "capture": {
+        "id": "845bf3a95d1d4948964a4eb8ca8713ef",
+        "at": "2026-11-15T04:14:33.825848+00:00",
+        "type": "review.capture",
+        "case": "rika-hoshino/illustration/normal",
+        "fingerprint": "fb268417eefafa81195a2f137b0ad54ef4e73c892ac0a0858dd7ee4ee28c4b1c",
+        "evidence": [
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-0.png",
+            "sha256": "14fb718417307172726002610b21e3d730a32a8eeef882dc01239738985e87bb",
+            "bytes": 192862,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-1.png",
+            "sha256": "01f55af98b2ec215b7e668a0749eb6037593cfe4b613b04cafc8cf93e09b83ae",
+            "bytes": 192374,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-2.png",
+            "sha256": "267ed2dd6dc420792a6bae4d136e9c95a4121b7c20abd3488e8f6dcb77739d2d",
+            "bytes": 192166,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-3.png",
+            "sha256": "3431b146078588e81e94fa763d11dbebbf46c545db05c9798c8139c255a0e986",
+            "bytes": 192313,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-4.png",
+            "sha256": "f4ac211ca33d157548550f03a8b2805fa43a1e16cb8dda2eea9b1c774e801961",
+            "bytes": 192556,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-5.png",
+            "sha256": "adeb02ee8c2e6bb44eb87a7058ebe3d67fa6ac1ce9be960b74666aa1bbecce02",
+            "bytes": 192346,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-6.png",
+            "sha256": "b4bcbd8650ee5a595f8164fdcc7cbdd0410e229898c46d66ff36d2971277930e",
+            "bytes": 192129,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-7.png",
+            "sha256": "d27e471d47b42710fc7f93403cc0a871373ff8776741f4864ded45fe565cd89f",
+            "bytes": 192346,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-8.png",
+            "sha256": "d9346f5c7c7719421592c396db1ca2876a1de91468d13eefc1664f43ac9d5708",
+            "bytes": 192524,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/actor-loop-9.png",
+            "sha256": "4c66369974472bdb6aaae0b1648449151456cb9611d78d7cfe965dd4460cbcd7",
+            "bytes": 192220,
+            "files": 1
+          },
+          {
+            "path": "assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/illustration-normal/e1ba702b637a42d9984c2925915c37ec/layers-restored.png",
+            "sha256": "8e212e59759e26723f1024470c4b69c6e26e1f1f22040e835f47087863211794",
+            "bytes": 228811,
+            "files": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rika-hoshino/illustration/enraged",
+      "actor": "rika-hoshino",
+      "kind": "illustration",
+      "groups": [
+        "illustration",
+        "preview"
+      ],
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement.",
+      "variant": "enraged",
+      "cycleMs": 5000,
+      "state": "pending",
+      "fingerprint": "3db4c96bb085381ea3726931dec1ce5cd95d0251379e2729686095f752a966f2",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/icon",
+      "actor": "rika-hoshino",
+      "kind": "icon",
+      "groups": [
+        "icon",
+        "preview"
+      ],
+      "instructions": "Inspect native 40px artwork and integer enlargement: readable face, three-quarter identity, hair/accessories, woody default border and distinct active glow.",
+      "state": "pending",
+      "fingerprint": "dba807e160300b4cff90864b88d5a9358520fba253d561d2077a5ac240b940eb",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/dialogue",
+      "actor": "rika-hoshino",
+      "kind": "dialogue",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect selected angle in the compact wood HUD, typewriter speech/rest, all pages/choices, emotion transitions, pause/restoration and close behavior.",
+      "state": "pending",
+      "fingerprint": "ee956971619ef2eb2e905dcf693afde5d188ed75e7181150c27523d101c3ad8d",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/lifecycle",
+      "actor": "rika-hoshino",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "In Firefox: move while acting, turn, pause/resume, replace/cancel, complete one-shots, expire timed actions, return to idle, leave/re-enter the scene, and inspect effects/audio cleanup. Keep sound, shadow and ground circle attached and separate.",
+      "state": "pending",
+      "fingerprint": "a19f0bb87c47cda28706ea45e83d684bb442dd8727badc9164555d9f14bd9d68",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/illustration-controls",
+      "actor": "rika-hoshino",
+      "kind": "manual",
+      "groups": [
+        "illustration",
+        "preview"
+      ],
+      "instructions": "In Firefox: pause, resume, restart, visibility return and reduced-motion still for both variants. Check independent background/aura controls and subdued composition.",
+      "state": "pending",
+      "fingerprint": "4d34459ee6ed5ce724c757456d00d2d0162e02b70c066937f3036341cb8c1eef",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/likeness",
+      "actor": "rika-hoshino",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "illustration",
+        "portrait",
+        "icon",
+        "preview"
+      ],
+      "instructions": "Side by side with approved art: identity, mature illustration anatomy, own face fitting and materials, curved/tapered geometry, textured long hair/cloth fronts/reverses/edges and maximum swing. Inspect native and enlarged sizes.",
+      "state": "pending",
+      "fingerprint": "e18d4b3bc0f990afa056ab617ab9c02f10ce8b487edc8e248cb45d33c2055403",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/sound-shadow",
+      "actor": "rika-hoshino",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Listen to applicable shared action sounds, check floating ground shadow and drawn ground circle, mute/interruption/cleanup. Omitted speech does not omit action-SFX review.",
+      "state": "pending",
+      "fingerprint": "c2c5e668888b56d151dec57c5eb9706773d00cb5e2fadaa8e04fc99be300c4d0",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/mobile",
+      "actor": "rika-hoshino",
+      "kind": "mobile",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect portrait, controls, model and keyboard/touch alternatives at 390px, without horizontal overflow.",
+      "state": "pending",
+      "fingerprint": "ffcca1c56f016507383ef58ac049897a990d1fe038162e08867f85cf5949ee52",
+      "capture": null
+    },
+    {
+      "id": "rika-hoshino/gameplay",
+      "actor": "rika-hoshino",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "portrait",
+        "gameplay"
+      ],
+      "instructions": "Use the real roster in an isolated Firefox profile. Walk/run/turn, test collision/depth and care/interactions, verify portrait and return/cleanup. No authoritative rewards/account writes.",
+      "state": "pending",
+      "fingerprint": "753b76c287dd35c1783369714ad5936215f0566208c31cd0ce5d20a87e3b8949",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/idle",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "idle",
+      "durationMs": 1875,
+      "state": "pending",
+      "fingerprint": "08f039e9d6a6bcdca4084024deb410c848675dee3ee06045b884657a8e45243b",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/walk",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "walk",
+      "durationMs": 600,
+      "state": "pending",
+      "fingerprint": "4a93400af48858233167566539090c1e282df691e5aa9a856769ec44cb35f660",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/feed",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "feed",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "b7052058fac5d61f30978cb17a5717bde07f15ab98d09ebc66b65c12e40db521",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/pet",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "pet",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "d127998ae74f646b0fbd43f3be6ef39de93296cea88e634c8004b0144a2351c9",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/sit",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sit",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "c4408d2de068d5e28af23a2aab009ed1c395187a0410e6cf65eb329d148a809c",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/sleep",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sleep",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "1cb24519684f636df70ad2977f0b018d037f3b17c13863f037449a1cd43cf230",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/pick_up",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "pick_up",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "2c9c4362385ff9db9168ba428c695d14de0afd5af2b0bfadf4ab89142a4eb5cb",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/water",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "water",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "afcc49b67d7cac712af9b09036480612dde9ce18f3524f640791c436bf1dd5d2",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/play",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "play",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "2e9f087fbddee62ac9bd31b252736187a1f0d1fe2d8d1658e13ee0025e22b84f",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/clean",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "clean",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "64d809efde4e3bc899bacb8fa33b9fde1ee8a13cb3f93e7f7043790d7bb1bc49",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/wave",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "wave",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "e86c2616d49796c922e3f58ec525b927336ed37b6625d3c60f39e19dcd7b936e",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/laugh",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "laugh",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "408eb80e3785ebf59a7b6071de02f9a2f627aa76890ff8a65ee51016164b9fa3",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/dance",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "dance",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "23390ced9e8a57c4653bed19a7713cdbcf2cc5e49d73c945fcd0fae8ca706f7f",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/clap",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "clap",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "b804199b100699efdeccfad23c421660d0f7d3dbffec71a47c7a647f7738bb2e",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/cheer",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "cheer",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "bff5307193b81d3829d56b34e34f5405693089cd3c5903d169571e582979ed23",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/hold_item",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "hold_item",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "1bb3b8e08a0e056df6a9d7fa18c23e5c88041bcbc6a2bb7774bd9ae552d40f41",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/give_gift",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "give_gift",
+      "durationMs": 750,
+      "state": "pending",
+      "fingerprint": "7602328bc7fe61d81d206ce8f6a5652dbe79114885bbc254dacc246083bdb534",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/inspect",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "inspect",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "1eb001b0a1c559140cc5a42d682541f5cc7f60585a23c14a46e135629a796de1",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/sad",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sad",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "71ae88c9a72c2866f372be3252ca97bae5e64400dd6ae11e593f3fa255c6a9c2",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/happy",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "happy",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "1c902fe077412979ed2ebc458a6a06faa1deecffe9ff01495b24eeaa67c73442",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/angry",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "angry",
+      "durationMs": 1200,
+      "state": "pending",
+      "fingerprint": "b5c1121c0b4cd629e593f342f247afd0a9ce5480b1b31619af9df6cceb2e992a",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/float",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "float",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "b3d6cb5efdcd1e70ba7b4836a0218d1b4b5c6dbf01fc4eb3fb69d95e6b6f2cc3",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/tired",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "tired",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "c579cf442e707f77e8d2be956a3db761ada6e9219d9453296cd060e83b30bb9b",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/surprised",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "surprised",
+      "durationMs": 1200,
+      "state": "pending",
+      "fingerprint": "1cff9d46b25b2f1076f13fbbce5d99bd1e8e9fc7db280ed7ecfc5f39bd372c05",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/sick",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "sick",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "2542d272463a2430ca06189f39d7f515c6b12575ee73d1cec04f99972fbc32ed",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/ride",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "ride",
+      "durationMs": 1000,
+      "state": "pending",
+      "fingerprint": "ebbe07a285629c18aeae42c4fe1448f41cba9dee053a3b5d99938ba0c2a88e10",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/power_up",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "power_up",
+      "durationMs": 2000,
+      "state": "pending",
+      "fingerprint": "88c3dbba218d45b9092746efd15077bf42ff517d681c688e75c68ae3813e6ecc",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/jetpack",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "jetpack",
+      "durationMs": 1333,
+      "state": "pending",
+      "fingerprint": "aeb7714789d5efc679bbac0fb801f27900c8a8c695258a5a9045c466f12637ef",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/jetpack_takeoff",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "jetpack_takeoff",
+      "durationMs": 500,
+      "state": "pending",
+      "fingerprint": "77ff8efc9e3e4e30cd0bffaebbab01c8be82bb18f39efb079e90ec6d87c2aebb",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/jetpack_land",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "jetpack_land",
+      "durationMs": 600,
+      "state": "pending",
+      "fingerprint": "87145bd6ac3f79a276a2e50875355f5198bdffd7693cfec54a7b0adca6a93fe5",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/run",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "run",
+      "durationMs": 462,
+      "state": "pending",
+      "fingerprint": "1d23b2eb16be840bf14c7e9e1f2b9aa4a5c721814f4904b565e6451376415af2",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/power_run",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "power_run",
+      "durationMs": 667,
+      "state": "pending",
+      "fingerprint": "f62de32cacbc90c5081a288f45cf7fc6d93174e4813a5e5f281093e6462bed80",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/rescue_dash",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "rescue_dash",
+      "durationMs": 667,
+      "state": "pending",
+      "fingerprint": "de0bb7f00ea0e2f623cbe074119a93617bb50527aee1ef95433ec4472b6d0a57",
+      "capture": null
+    },
+    {
+      "id": "peony-7/action/gentle_approach",
+      "actor": "peony-7",
+      "kind": "action",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action.",
+      "action": "gentle_approach",
+      "durationMs": 1500,
+      "state": "pending",
+      "fingerprint": "01853180a5565c7aaca846bea87e8ba6b8737864ee8603870384227e45d617ab",
+      "capture": null
+    },
+    {
+      "id": "peony-7/heading/down",
+      "actor": "peony-7",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "down",
+      "state": "pending",
+      "fingerprint": "d69a1431461705588fba953ad4a0eb0d72fd291f79eda01bc7e1f26ea0bb695e",
+      "capture": null
+    },
+    {
+      "id": "peony-7/heading/down_left",
+      "actor": "peony-7",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "down_left",
+      "state": "pending",
+      "fingerprint": "abb7af23d980c094347cad8ed6f3fd13303c0bb268ca1e385144e1b51832305f",
+      "capture": null
+    },
+    {
+      "id": "peony-7/heading/left",
+      "actor": "peony-7",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "left",
+      "state": "pending",
+      "fingerprint": "af5c93402c2d54161456e1afa34f6dbd36126e229b528c644165f6655ae19a26",
+      "capture": null
+    },
+    {
+      "id": "peony-7/heading/up",
+      "actor": "peony-7",
+      "kind": "heading",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance.",
+      "direction": "up",
+      "state": "pending",
+      "fingerprint": "77f18a91ec957ff725270ed822da5daceced37d99e1d6c8194d487f65314aa53",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/front-pout/idle",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "idle",
+      "state": "pending",
+      "fingerprint": "732ca6920f65056aaf8d560431a52459ee0d34acd0c5ef9c06031f53885c3971",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/front-pout/smile",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "smile",
+      "state": "pending",
+      "fingerprint": "4f7f8b8b1c19098d5edf5da7be65a480f4d89ff53f4bfc170ef15126168dbc43",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/front-pout/happy",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "happy",
+      "state": "pending",
+      "fingerprint": "e8df5a97e1b08b3c112c17a47e0b7df625348541336d3ffd7585fe2fa9ecafe2",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/front-pout/sad",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "sad",
+      "state": "pending",
+      "fingerprint": "22ce640236245f24eb0d254a96c21bce7f9510e9bbc0514ebb3ebcd646933982",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/front-pout/angry",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "angry",
+      "state": "pending",
+      "fingerprint": "f67872fb57d5c9ec4cb5f3b08dc75b4671868a50e8652f3190119054e3f370ec",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/front-pout/surprised",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "front-pout",
+      "emotion": "surprised",
+      "state": "pending",
+      "fingerprint": "194fb94c193f435cd0bd0f4ddd7e21548da3b24dda506365d16813a5b737ba89",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/idle",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "idle",
+      "state": "pending",
+      "fingerprint": "80b63afb3c14bd2c3b142e6fdc1d1dc836cd3efb25a7fdb3f0a2ca3d43ec46c3",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/smile",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "smile",
+      "state": "pending",
+      "fingerprint": "9530ab279f9f1dbfc8502ad516d7012230cfb94ce672f78f28cd7da741f8025c",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/happy",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "happy",
+      "state": "pending",
+      "fingerprint": "31061d9199d1fd53943373cbba249a92b813b10c1cd41dee7e004253997a9184",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/sad",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "sad",
+      "state": "pending",
+      "fingerprint": "a5b0a1590ab545963f3e62019cc24e6ccd9ef4fc6131a40f6b4ce497fb43b9ac",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/angry",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "angry",
+      "state": "pending",
+      "fingerprint": "2e954fd00cb6597ba24126747d913923b3693c7cc880ddaf3d3a23e7fb8cddbe",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/surprised",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "three-quarter-left",
+      "emotion": "surprised",
+      "state": "pending",
+      "fingerprint": "769c1bf456f6e92fdd6d2581dc46b9e4fa157e85d0276b7bea79a5a15ca8ce0f",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/idle",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "idle",
+      "state": "pending",
+      "fingerprint": "845cf66db3cde021af8166003db43931afebe8501a23381dce28d3233f15653f",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/smile",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "smile",
+      "state": "pending",
+      "fingerprint": "21dfab36f33262886ca001d9332e47a624aca41216018f80753fe01b8ba02b10",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/happy",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "happy",
+      "state": "pending",
+      "fingerprint": "223cd930b456589bcce09e0d57a6066a57704a017637685765cb7a201b93b499",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/sad",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "sad",
+      "state": "pending",
+      "fingerprint": "cbb5c14f6641b67b1fe57bcd1c57290d0a260aa7bf7d5b18529d675b566017ff",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/angry",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "angry",
+      "state": "pending",
+      "fingerprint": "21351ad03043dc98484404b2ab876cecb8decb483e753a058de74d70934fdfaa",
+      "capture": null
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/surprised",
+      "actor": "peony-7",
+      "kind": "portrait",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions.",
+      "pose": "head-tilt-smile-right",
+      "emotion": "surprised",
+      "state": "pending",
+      "fingerprint": "ad0bb7c97920441a12cd46789b6b30f486945af88bb68bed0ae0ae49b762021c",
+      "capture": null
+    },
+    {
+      "id": "peony-7/illustration/normal",
+      "actor": "peony-7",
+      "kind": "illustration",
+      "groups": [
+        "illustration",
+        "preview"
+      ],
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement.",
+      "variant": "normal",
+      "cycleMs": 5000,
+      "state": "pending",
+      "fingerprint": "a78dc3539f25d3e0cf0a8672e76f7e844b2130722deb036a5db5f9a3855c7101",
+      "capture": null
+    },
+    {
+      "id": "peony-7/illustration/enraged",
+      "actor": "peony-7",
+      "kind": "illustration",
+      "groups": [
+        "illustration",
+        "preview"
+      ],
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement.",
+      "variant": "enraged",
+      "cycleMs": 5000,
+      "state": "pending",
+      "fingerprint": "ab6291cb19d1dc0ce09e5b6eb9524109f37194a0d80f937561103750ab5115a5",
+      "capture": null
+    },
+    {
+      "id": "peony-7/icon",
+      "actor": "peony-7",
+      "kind": "icon",
+      "groups": [
+        "icon",
+        "preview"
+      ],
+      "instructions": "Inspect native 40px artwork and integer enlargement: readable face, three-quarter identity, hair/accessories, woody default border and distinct active glow.",
+      "state": "pending",
+      "fingerprint": "5fa2b8a10b35d741773de732c89b6ad294627e8609f8597b74a6e329c2062488",
+      "capture": null
+    },
+    {
+      "id": "peony-7/dialogue",
+      "actor": "peony-7",
+      "kind": "dialogue",
+      "groups": [
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect selected angle in the compact wood HUD, typewriter speech/rest, all pages/choices, emotion transitions, pause/restoration and close behavior.",
+      "state": "pending",
+      "fingerprint": "5a6f3176753ec6a4640b0d63665244d70b9d45d1e2ed524d4c7a20b24671b0da",
+      "capture": null
+    },
+    {
+      "id": "peony-7/lifecycle",
+      "actor": "peony-7",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "In Firefox: move while acting, turn, pause/resume, replace/cancel, complete one-shots, expire timed actions, return to idle, leave/re-enter the scene, and inspect effects/audio cleanup. Keep sound, shadow and ground circle attached and separate.",
+      "state": "pending",
+      "fingerprint": "38aaec8e4f3c1986cb808a0ad284d96c4301eff205d1bf74082dd4987ad5a194",
+      "capture": null
+    },
+    {
+      "id": "peony-7/illustration-controls",
+      "actor": "peony-7",
+      "kind": "manual",
+      "groups": [
+        "illustration",
+        "preview"
+      ],
+      "instructions": "In Firefox: pause, resume, restart, visibility return and reduced-motion still for both variants. Check independent background/aura controls and subdued composition.",
+      "state": "pending",
+      "fingerprint": "7283e981701fdf9cad05738f61584b0298240adde926c1ee201f2fcc86e5dc8c",
+      "capture": null
+    },
+    {
+      "id": "peony-7/likeness",
+      "actor": "peony-7",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "illustration",
+        "portrait",
+        "icon",
+        "preview"
+      ],
+      "instructions": "Side by side with approved art: identity, mature illustration anatomy, own face fitting and materials, curved/tapered geometry, textured long hair/cloth fronts/reverses/edges and maximum swing. Inspect native and enlarged sizes.",
+      "state": "pending",
+      "fingerprint": "9afaaed666d86b2826a8a77380fc2480d67b78e04c8449d3aa8d0b3190065f05",
+      "capture": null
+    },
+    {
+      "id": "peony-7/sound-shadow",
+      "actor": "peony-7",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "preview"
+      ],
+      "instructions": "Listen to applicable shared action sounds, check floating ground shadow and drawn ground circle, mute/interruption/cleanup. Omitted speech does not omit action-SFX review.",
+      "state": "pending",
+      "fingerprint": "7ccd36ffcc27097482ca929393e9c0fa48bfac8999482aa2e9c89a3de7879be4",
+      "capture": null
+    },
+    {
+      "id": "peony-7/mobile",
+      "actor": "peony-7",
+      "kind": "mobile",
+      "groups": [
+        "model",
+        "portrait",
+        "preview"
+      ],
+      "instructions": "Inspect portrait, controls, model and keyboard/touch alternatives at 390px, without horizontal overflow.",
+      "state": "pending",
+      "fingerprint": "7c547ee6a11a0060ea2b328715e6e80fd16a2ed16b5a69ca83e3d0cc154c27cf",
+      "capture": null
+    },
+    {
+      "id": "peony-7/gameplay",
+      "actor": "peony-7",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "portrait",
+        "gameplay"
+      ],
+      "instructions": "Use the real roster in an isolated Firefox profile. Walk/run/turn, test collision/depth and care/interactions, verify portrait and return/cleanup. No authoritative rewards/account writes.",
+      "state": "pending",
+      "fingerprint": "6c455013cb927e6dba3577a725f86198de2b6042b2e900cb7efe1262d35c17b0",
+      "capture": null
+    },
+    {
+      "id": "peony-7/vehicle",
+      "actor": "peony-7",
+      "kind": "manual",
+      "groups": [
+        "model",
+        "gameplay",
+        "preview"
+      ],
+      "instructions": "Enter/exit cockpit, preserve a safe handoff position, inspect canopy opening and vehicle footprint, test narrow gaps and blocked human furniture. Check parked sit/sleep/float/ride with all limbs visible.",
+      "state": "pending",
+      "fingerprint": "2ea076fc2a55141411eb9cf1a0acebcec07193f94d7038201e0ee6b1c53bfbfd",
+      "capture": null
+    }
+  ],
+  "complete": false,
+  "omissions": [
+    {
+      "actor": "rika-hoshino",
+      "voices": "omitted",
+      "reason": "Explicitly omitted for this job by the owner"
+    },
+    {
+      "actor": "peony-7",
+      "voices": "omitted",
+      "reason": "Explicitly omitted for this job by the owner"
+    }
+  ]
+}

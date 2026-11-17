@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Character Icons"
+  short_description: "Illustration-derived character icons with coarser pixels"
+  default_prompt: "Use $pawtrail-character-icons to derive a compact three-quarter icon from the approved normal animated illustration, using a matching static view or dedicated icon when needed. Preserve its identity and illustration style with coarser pixels, the woody frame and active glow, independently of the dialogue portrait style."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Actors"
+  short_description: "Actors with matching art and personality-led six-cue voices"
+  default_prompt: "Use $pawtrail-actors to create normal and demonic smiling/angry attack illustrations first, combining new Sieghart's mature painted detail/material depth with old Sieg's pixel texture, cel structure and semi-bold edges. Verify natural anchored motion and ask for feedback under the owner's continuation rule. Ask the portrait style with Amber examples; derive the three-quarter icon from the combined illustration. Build the shared-rig model last and review textured volume, actions, portraits and foot circle."

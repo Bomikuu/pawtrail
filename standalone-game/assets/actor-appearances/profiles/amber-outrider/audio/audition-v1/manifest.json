@@ -1,0 +1,334 @@
+{
+  "version": 1,
+  "engine": "voxcpm2",
+  "profileId": "12b7981e",
+  "kind": "original-synthetic-character-voice",
+  "language": "ja-JP",
+  "scope": "local-audition",
+  "listeningReview": "pending owner audition",
+  "cues": [
+    {
+      "id": "hi",
+      "text": "やっほー！一緒に行こう！",
+      "romanization": "Yahhō! Issho ni ikō!",
+      "translation": "Hey! Let's go together!",
+      "direction": "Friendly, smiling greeting followed by an upbeat invitation. Easy natural rhythm, not a shout.",
+      "portraitEmotion": "smile",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hi.ogg",
+      "review": "Owner accepted the original audition on 2026-11-13.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hi.mp3",
+      "durationSeconds": 3.0364791666666666,
+      "voiceStudioAudioId": "9c2d40fd",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v1/hi.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hi.ogg",
+          "bytes": 9830,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.043000"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hi.mp3",
+          "bytes": 18812,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.036500"
+            }
+          }
+        }
+      },
+      "listeningAccepted": true
+    },
+    {
+      "id": "attack",
+      "text": "いくよ！くらえ！",
+      "romanization": "Iku yo! Kurae!",
+      "translation": "Here I go! Take this!",
+      "direction": "A quick anticipatory call, then a crisp projected attack shout. Confident and spirited, retaining the same bright speaker identity.",
+      "portraitEmotion": "angry",
+      "portraitIntent": "focused determination",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/attack.ogg",
+      "review": "Owner accepted the original audition on 2026-11-13.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/attack.mp3",
+      "durationSeconds": 1.5134375,
+      "voiceStudioAudioId": "b1b9acd8",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v1/attack.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/attack.ogg",
+          "bytes": 4726,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.519958"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/attack.mp3",
+          "bytes": 9740,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.513958"
+            }
+          }
+        }
+      },
+      "listeningAccepted": true
+    },
+    {
+      "id": "bye",
+      "text": "またね！気をつけて！",
+      "romanization": "Mata ne! Ki o tsukete!",
+      "translation": "See you! Take care!",
+      "direction": "A warm, smiling farewell, gentle and upbeat.",
+      "deliveryControl": "Warm, friendly and gently cheerful farewell with a soft smiling Japanese delivery",
+      "portraitEmotion": "smile",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/bye.ogg",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/bye.mp3",
+      "durationSeconds": 2.7696875,
+      "voiceStudioAudioId": "39197e20",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v1/bye.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/bye.ogg",
+          "bytes": 8260,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "2.776208"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/bye.mp3",
+          "bytes": 17228,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "2.769708"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hurt",
+      "text": "うっ！痛っ！",
+      "romanization": "U! Ita!",
+      "translation": "Ugh! Ow!",
+      "direction": "A brief startled pain reaction, restrained and clear, without a prolonged scream.",
+      "deliveryControl": "Brief startled pain reaction, a short sharp breath then a quick pained Japanese exclamation",
+      "portraitEmotion": "sad",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hurt.ogg",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hurt.mp3",
+      "durationSeconds": 2.3318333333333334,
+      "voiceStudioAudioId": "75f1bb63",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v1/hurt.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hurt.ogg",
+          "bytes": 7214,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "2.338333"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/hurt.mp3",
+          "bytes": 14636,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "2.331833"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "thanks",
+      "text": "ありがとう！助かった！",
+      "romanization": "Arigatō! Tasukatta!",
+      "translation": "Thank you! That helped!",
+      "direction": "Sincere, relieved gratitude with a bright smile.",
+      "deliveryControl": "Sincere, grateful and relieved with a bright warm smile, natural Japanese rhythm",
+      "portraitEmotion": "smile",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/thanks.ogg",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/thanks.mp3",
+      "durationSeconds": 1.6,
+      "voiceStudioAudioId": "d8889c93",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v1/thanks.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/thanks.ogg",
+          "bytes": 5091,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.606500"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/thanks.mp3",
+          "bytes": 10172,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.600000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "encouragement",
+      "text": "大丈夫！一緒に頑張ろう！",
+      "romanization": "Daijōbu! Issho ni ganbarō!",
+      "translation": "It’ll be okay! Let’s do our best together!",
+      "direction": "Reassuring and caring first, then gently energized and hopeful.",
+      "deliveryControl": "Kind and reassuring, then hopeful and encouraging, clear warm Japanese delivery",
+      "portraitEmotion": "smile",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/encouragement.ogg",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/encouragement.mp3",
+      "durationSeconds": 3.017125,
+      "voiceStudioAudioId": "041f42ca",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v1/encouragement.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/encouragement.ogg",
+          "bytes": 10198,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.023625"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v1/encouragement.mp3",
+          "bytes": 18668,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.017125"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

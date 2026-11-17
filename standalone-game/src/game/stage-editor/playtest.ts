@@ -13,6 +13,7 @@ import { PixelActor, CREATOR_FRAME, humanClips } from '../actor-rig/pixel-render
 import { creatorTemplates } from '../creator/state'
 import { prepareCreatorModel, creatorModelFactory } from '../creator/preview-models'
 import type { CreatorPreviewModel } from '../creator/preview-models'
+import {playCharacterPresets,type PlayCharacter} from './play-character-presets'
 import type { ActorAppearance } from '../actor-rig/appearance'
 import { movementVector } from '../systems/behavior'
 import { footRect, intersects, worldRect, worldPoint } from '../housing/spatial'
@@ -20,14 +21,17 @@ import { groundForState } from '../housing/geometry'
 import type { Point, Rect, Placement, ObjectState } from '../housing/types'
 import { InteractionController } from '../housing/interactions'
 import { clearSegment, interactionPath } from './interaction-path'
-import { assetsById, assetView, footprint, depthOf, type StageDocument, type StageObject } from './data'
+import { assetsById, assetView, footprint, depthOf, stagePoint, stageRect, type StageDocument, type StageObject } from './data'
+import type { FloorNpcId } from '../floors/npcs'
 
-export type PlayCharacter='amber'|'yae'
-export type PlayInteractionPrompt={target:string;label:string;description:string;button:string;kind:'sit'|'rest'|'door'|'light';disabled:boolean}
+export type {PlayCharacter} from './play-character-presets'
+export type PlayInteractionPrompt={target:string;label:string;description:string;button:string;kind:'sit'|'rest'|'door'|'light'|'care';disabled:boolean}
 type SeatTarget={object:StageObject;seatId:string;label:string;kind:'sit'|'rest';point:Point;exit:Point;approaches:Point[];direction:string;elevation:number}
-type PlaytestOptions={claims?:Map<string,string>;actorId?:string;name?:string;objectStates?:Record<string,ObjectState>;occupants?:()=>Point[]}
+export type PlaytestOptions={movementBounds?:()=>Rect|null;dynamicSolids?:()=>Rect[];onAbilityEvents?:(events:AbilityEvent[],play:StagePlaytest)=>void;realTargets?:boolean;claims?:Map<string,string>;actorId?:string;name?:string;objectStates?:Record<string,ObjectState>;occupants?:()=>Point[];onObject?:(object:StageObject)=>boolean;objectPrompt?:(object:StageObject)=>{label:string;button:string;description:string}|null}
 type InteractionPlan={target:SeatTarget;approach:Point;exit:Point}
 type Solid={rect:Rect;label:string}
+const objectActions=['toggle_door','toggle_light','fill_food','fill_water','water_plant','preview_allocation','inspect_plan','inspect_stock','talk_npc'] as const
+type ObjectAction=typeof objectActions[number]
 const directions=['down','down_left','left','up_left','up','up_right','right','down_right']
 const sector=(x:number,y:number)=>directions[(Math.round(Math.atan2(-x,y)/(Math.PI/4))+8)%8]
 /** Disposable rehearsal actor. No room edits, game progress, inventory or platform writes. */
@@ -73,6 +77,14 @@ export class StagePlaytest {
   private objectTarget:{object:StageObject;label:string}|null=null
   private gesture:string|null=null
   private stateSignature=''
+  private npcRequest:FloorNpcId|null=null
+  private onObject:PlaytestOptions['onObject']
+  private objectPrompt:PlaytestOptions['objectPrompt']
+  takeNpcRequest(){const request=this.npcRequest;this.npcRequest=null;return request}
+  private abilityEvents:PlaytestOptions['onAbilityEvents']
+  private realTargets=false
+  private movementBounds:PlaytestOptions['movementBounds']
+  private dynamicSolids:PlaytestOptions['dynamicSolids']
   private item:ItemDocument|null=null
   private cutInSource='playtest-'+crypto.randomUUID()
   readonly ability=new AbilitySession()
@@ -96,12 +108,14 @@ export class StagePlaytest {
     return result
   }
   private consumeAbility(events:AbilityEvent[],silent=false){
-    this.effects.consume(events,silent)
+    if(!silent)this.abilityEvents?.(events,this)
+    // Real floor controllers emit their own confirmed contact sprite and applied damage.
+    this.effects.consume(this.realTargets?events.filter(event=>event.kind!=='hit'):events,silent)
     for(const event of events){
       if(event.kind==='hit'&&event.targetId){
         this.hitCounts.set(event.targetId,(this.hitCounts.get(event.targetId)??0)+1)
         this.hitTimes.set(event.targetId,this.ability.snapshot().time)
-        if(event.impulse)this.recoils.set(event.targetId,{velocity:{x:event.impulse.x/(.075*(1-Math.exp(-220/75))),y:event.impulse.y/(.075*(1-Math.exp(-220/75)))},remaining:220})
+        if(event.impulse&&!this.realTargets)this.recoils.set(event.targetId,{velocity:{x:event.impulse.x/(.075*(1-Math.exp(-220/75))),y:event.impulse.y/(.075*(1-Math.exp(-220/75)))},remaining:220})
         if(!silent)this.hitPause=Math.max(this.hitPause,event.hitStop??0)
       }
       if(event.kind!=='sound'){this.abilityLog.unshift(`${Math.round(event.time)} ms · ${event.kind}${event.targetId?' · '+event.targetId:''}`);if(this.abilityLog.length>40)this.abilityLog.pop()}
@@ -159,7 +173,10 @@ export class StagePlaytest {
   face(direction:string){this.direction=direction;this.yaw=-directions.indexOf(direction)*Math.PI/4;this.signature=''}
 
   private constructor(private stage:StageDocument,character:PlayCharacter,actor:PixelActor,initial?:Point,options:PlaytestOptions={}){
-    this.actor=actor;this.character=character;this.name=options.name??(character==='amber'?'Amber':'Yae Miko')
+    this.movementBounds=options.movementBounds;this.dynamicSolids=options.dynamicSolids
+    this.abilityEvents=options.onAbilityEvents;this.realTargets=!!options.realTargets
+    this.onObject=options.onObject;this.objectPrompt=options.objectPrompt
+    this.actor=actor;this.character=character;this.name=options.name??playCharacterPresets[character].name
     this.claims=options.claims??new Map();this.actorId=options.actorId??crypto.randomUUID()
     this.objectStates=options.objectStates??{};this.occupants=options.occupants??(()=>[this.position])
     this.sprite.width=actor.bounds.width*CREATOR_FRAME.density;this.sprite.height=actor.bounds.height*CREATOR_FRAME.density
@@ -179,19 +196,20 @@ export class StagePlaytest {
       recover:()=>this.releasePose(),message:text=>{this.feedback=text},
     })
   }
-  static async create(stage:StageDocument,character:PlayCharacter,initial?:Point,item?:ItemDocument){
+  static async create(stage:StageDocument,character:PlayCharacter,initial?:Point,item?:ItemDocument,options:PlaytestOptions={}){
     const illustration=item?actorIllustrations[character]:undefined
     if(illustration)void loadActorIllustration(illustration).catch(()=>{})
     await Promise.all([prepareCreatorModel(character),item?prepareItem(item):Promise.resolve()])
-    const preset=creatorTemplates.find(row=>row.id===(character==='amber'?'amber-outrider':'yae-miko'))!
+    const preset=creatorTemplates.find(row=>row.id===playCharacterPresets[character].id)!
     if(item)item=structuredClone(item)
     const actor=new PixelActor(preset.appearance,CREATOR_FRAME.density,item?equippedFactory(creatorModelFactory(character),item):creatorModelFactory(character),item?{padding:item.guardian||item.equipment.paired?36:24,palette:itemPalette(item),preserveAlpha:!!item.guardian,measureActions:['idle',...availableActions(item).map(key=>'item-'+key)]}:{})
-    try{const play=new StagePlaytest(stage,character,actor,initial);if(item){play.item=item;play.ability.equip(item);const p=play.position;play.setTrainingTargets([{id:'near',rect:{x:p.x-30,y:p.y-64,width:18,height:22},kind:'training',eligible:true},{id:'far',rect:{x:p.x+12,y:p.y-116,width:24,height:24},kind:'training',eligible:true},{id:'wide',rect:{x:p.x-44,y:p.y-176,width:64,height:24},kind:'training',eligible:true}])}return play}catch(error){actor.dispose();throw error}
+    try{const play=new StagePlaytest(stage,character,actor,initial,options);if(item){play.item=item;play.ability.equip(item);const p=play.position;if(!options.realTargets)play.setTrainingTargets([{id:'near',rect:{x:p.x-30,y:p.y-64,width:18,height:22},kind:'training',eligible:true},{id:'far',rect:{x:p.x+12,y:p.y-116,width:24,height:24},kind:'training',eligible:true},{id:'wide',rect:{x:p.x-44,y:p.y-176,width:64,height:24},kind:'training',eligible:true}])}return play}catch(error){actor.dispose();throw error}
   }
   static async createForCreator(stage:StageDocument,pick:{appearance:ActorAppearance;previewModel:CreatorPreviewModel;name:string},initial:Point,options:PlaytestOptions={}){
     await prepareCreatorModel(pick.previewModel)
     const actor=new PixelActor(pick.appearance,CREATOR_FRAME.density,creatorModelFactory(pick.previewModel))
-    try{return new StagePlaytest(stage,pick.previewModel==='yae'?'yae':'amber',actor,initial,{...options,name:options.name??pick.name})}catch(error){actor.dispose();throw error}
+    const character=pick.previewModel in playCharacterPresets?pick.previewModel as PlayCharacter:'amber'
+    try{return new StagePlaytest(stage,character,actor,initial,{...options,name:options.name??pick.name})}catch(error){actor.dispose();throw error}
   }
   private add(rect:Rect,label:string){
     if(rect.width<=0||rect.height<=0)return
@@ -212,17 +230,24 @@ export class StagePlaytest {
       if(asset.furniture){
         if(!asset.furniture.blocking)continue
         const placement:Placement={id:object.id,item:asset.furniture.id,x:(object.x-16)/32,y:(object.y-32)/32,rotation:object.rotation,style:object.style}
-        for(const rect of groundForState(view,this.objectStates[object.id]))this.add(worldRect(placement,rect),asset.label)
+        for(const rect of groundForState(view,this.objectStates[object.id]))this.add(stageRect(object,rect),asset.label)
       }else this.add(footprint(object),asset.label)
     }
-    for(let y=0;y<this.stage.height;y++)for(let x=0;x<this.stage.width;x++)if((this.stage.tiles[x+','+y]??this.stage.baseTile)==='terrain:17')this.add({x:x*32,y:y*32,width:32,height:32},'Water')
+    for(let y=0;y<this.stage.height;y++)for(let x=0;x<this.stage.width;x++)if(assetsById[this.stage.tiles[x+','+y]??this.stage.baseTile]?.blocking)this.add({x:x*32,y:y*32,width:32,height:32},'Water')
   }
+  private foot(point:Point){return this.character==='peony'?{x:point.x-12,y:point.y-8,width:24,height:8}:footRect(point)}
   private obstruction(point:Point){
-    const foot=footRect(point),w=this.stage.width*32,h=this.stage.height*32
+    const foot=this.foot(point),w=this.stage.width*32,h=this.stage.height*32
     if(foot.x<0||foot.y<0||foot.x+foot.width>w||foot.y+foot.height>h)return 'Stage boundary'
+    if(this.stage.walkable&&![[foot.x,foot.y],[foot.x+foot.width,foot.y],[foot.x,foot.y+foot.height],[foot.x+foot.width,foot.y+foot.height]].every(([x,y])=>insidePolygon(x,y,this.stage.walkable!)))return 'Walkway edge'
+    const allowed=this.movementBounds?.();if(allowed&&(foot.x<allowed.x||foot.y<allowed.y||foot.x+foot.width>allowed.x+allowed.width||foot.y+foot.height>allowed.y+allowed.height))return 'Encounter boundary'
+    if(this.dynamicSolids?.().some(s=>intersects(foot,s)))return 'Encounter body'
     for(let x=Math.floor(foot.x/32);x<=Math.floor((foot.x+foot.width)/32);x++)for(let y=Math.floor(foot.y/32);y<=Math.floor((foot.y+foot.height)/32);y++)for(const solid of this.cells.get(x+','+y)??[])if(intersects(foot,solid.rect))return solid.label
     return ''
   }
+  relocate(point:Point){this.interactions.cancel();if(this.obstruction(point))return false;Object.assign(this.position,point);this.lastSafe={...point};this.velocity={x:0,y:0};this.path=[];this.signature='';return true}
+  canWalk(point:Point){return !this.obstruction(point)}
+  confirmedContact(from:Point){this.interactions.cancel();const dx=this.position.x-from.x,dy=this.position.y-from.y,len=Math.hypot(dx,dy)||1;this.moveGround(dx/len*7,dy/len*7);this.hitPause=Math.max(this.hitPause,65);this.signature=''}
   private findSpawn(preferred:Point):Point|null{
     const point={x:Math.max(5,Math.min(this.stage.width*32-5,preferred.x)),y:Math.max(6,Math.min(this.stage.height*32,preferred.y))}
     if(!this.obstruction(point))return point
@@ -238,8 +263,8 @@ export class StagePlaytest {
       if(!kind)continue
       const view=assetView(object),placement:Placement={id:object.id,item:base.id,x:(object.x-16)/32,y:(object.y-32)/32,rotation:object.rotation,style:object.style}
       for(const seat of view.geometry.seats){
-        const point=worldPoint(placement,seat.point),exit=worldPoint(placement,seat.exit)
-        const approaches=[exit,...view.geometry.approaches.map(p=>worldPoint(placement,p))]
+        const point=stagePoint(object,seat.point),exit=stagePoint(object,seat.exit)
+        const approaches=[exit,...view.geometry.approaches.map(p=>stagePoint(object,p))]
         const facing=Math.max(0,directions.indexOf(seat.facing)),turn=Math.round(object.rotation/45)
         this.targets.push({object,seatId:seat.id,label:base.label,kind,point,exit,approaches,direction:directions[(facing+turn)%8],elevation:object.elevation+seat.elevation})
       }
@@ -268,45 +293,73 @@ export class StagePlaytest {
     for(const target of this.targets){if(this.claims.has(this.key(target))&&this.claims.get(this.key(target))!==this.actorId)continue;const distance=Math.hypot(target.point.x-this.position.x,target.point.y-this.position.y);if(distance<best){best=distance;closest=target}}
     return closest
   }
+  private objectAction(object:StageObject):ObjectAction|undefined{
+    const actions=assetView(object).geometry.actions
+    return objectActions.find(action=>actions.includes(action))
+  }
+  private careComplete(action:ObjectAction,state:ObjectState|undefined){
+    return action==='fill_food'?(state?.food??0)>0:action==='fill_water'?(state?.water??0)>0:action==='water_plant'?state?.wateredAt!==undefined:false
+  }
   private nearbyObject(){
-    return this.stage.objects.filter(object=>assetsById[object.asset].furniture?.geometry.actions.some(action=>action==='toggle_door'||action==='toggle_light')).map(object=>({object,label:assetsById[object.asset].label})).sort((a,b)=>Math.hypot(a.object.x-this.position.x,a.object.y-this.position.y)-Math.hypot(b.object.x-this.position.x,b.object.y-this.position.y)).find(row=>Math.hypot(row.object.x-this.position.x,row.object.y-this.position.y)<96)
+    return this.stage.objects.filter(object=>this.objectAction(object)).map(object=>({object,label:assetsById[object.asset].label})).sort((a,b)=>Math.hypot(a.object.x-this.position.x,a.object.y-this.position.y)-Math.hypot(b.object.x-this.position.x,b.object.y-this.position.y)).find(row=>Math.hypot(row.object.x-this.position.x,row.object.y-this.position.y)<96)
+  }
+  /** Resolve one nearest target for both the displayed prompt and the E key. */
+  private nearbyChoice(){
+    const object=this.nearbyObject(),seat=this.nearby()
+    if(object&&seat&&Math.hypot(seat.point.x-this.position.x,seat.point.y-this.position.y)<=Math.hypot(object.object.x-this.position.x,object.object.y-this.position.y))return {seat,object:undefined}
+    return {seat:object?null:seat,object}
   }
   useObject(objectId:string){
     if(this.interactions.active)return false
-    const object=this.stage.objects.find(row=>row.id===objectId),asset=object&&assetsById[object.asset]
-    if(!object||!asset?.furniture?.geometry.actions.some(action=>action==='toggle_door'||action==='toggle_light'))return false
-    const action=asset.furniture.geometry.actions.includes('toggle_door')?'toggle_door':'toggle_light'
-    const view=assetView(object),placement:Placement={id:object.id,item:asset.furniture.id,x:(object.x-16)/32,y:(object.y-32)/32,rotation:object.rotation}
+    const object=this.stage.objects.find(row=>row.id===objectId),asset=object&&assetsById[object.asset],action=object&&this.objectAction(object)
+    if(!object||!asset?.furniture||!action)return false
+    if(this.careComplete(action,this.objectStates[object.id])){this.feedback='This care task is already complete for this playtest.';return false}
+    const view=assetView(object),placement:Placement={id:object.id,item:asset.furniture.id,x:(object.x-16)/32,y:(object.y-32)/32,rotation:object.rotation,style:object.style}
     const clear=(point:Point)=>!this.obstruction(point)
-    const approaches=view.geometry.approaches.map(point=>worldPoint(placement,point)).filter(clear).sort((a,b)=>Math.hypot(a.x-this.position.x,a.y-this.position.y)-Math.hypot(b.x-this.position.x,b.y-this.position.y))
+    const approaches=view.geometry.approaches.map(point=>stagePoint(object,point)).filter(clear).sort((a,b)=>Math.hypot(a.x-this.position.x,a.y-this.position.y)-Math.hypot(b.x-this.position.x,b.y-this.position.y))
     for(const approach of approaches){
       const path=interactionPath(this.position,approach,clear);if(!path)continue
       const opening=!this.objectStates[object.id]?.open,lighting=this.objectStates[object.id]?.lit===false
       this.feedback=''
-      this.interactions.start({target:object.id,label:asset.label,action,point:approach,lookAt:{x:object.x,y:object.y-8},path,duration:350,local:true,onComplete:()=>{
-        if(action==='toggle_door'&&!opening&&this.occupants().some(point=>view.geometry.ground.some(rect=>intersects(footRect(point),worldRect(placement,rect))))){this.feedback='Wait until the doorway is clear before closing it.';return false}
-        this.objectStates[object.id]={...this.objectStates[object.id],...(action==='toggle_door'?{open:opening}:{lit:lighting})}
-        this.feedback=action==='toggle_door'?(opening?'Door opened.':'Door closed.'):(lighting?'Candles lit.':'Candles extinguished.');return true
+      this.interactions.start({target:object.id,label:asset.label,action,point:approach,lookAt:{x:object.x,y:object.y-8},path,duration:action==='toggle_door'||action==='toggle_light'?350:1000,local:true,onComplete:()=>{
+        if(this.onObject?.(object)){this.feedback='Ready.';return true}
+        if(action==='talk_npc'&&asset.npc){this.npcRequest=asset.npc;this.feedback='Character presentation opened.';return true}
+        if(action==='toggle_door'&&!opening&&this.occupants().some(point=>view.geometry.ground.some(rect=>intersects(this.foot(point),stageRect(object,rect))))){this.feedback='Wait until the doorway is clear before closing it.';return false}
+        const preview=action==='preview_allocation'||action==='inspect_plan'||action==='inspect_stock'
+        const change:ObjectState=preview?{open:opening,lit:opening}:action==='toggle_door'?{open:opening}:action==='toggle_light'?{lit:lighting}:action==='fill_food'?{food:1}:action==='fill_water'?{water:1}:{wateredAt:this.elapsed*1000}
+        this.objectStates[object.id]={...this.objectStates[object.id],...change}
+        this.feedback=preview?(opening?(action==='preview_allocation'?'P01 console powered for inspection. Allocation choices arrive in Phase 3; no Cell was spent.':action==='inspect_plan'?'Route: Concourse → Lantern Landing → Lumen Market. Travel is not installed in this art rehearsal.':'Counter opened for inspection. Shop purchases arrive in Phase 3; nothing was purchased.'):'Inspection closed.'):action==='toggle_door'?(opening?(asset.liveModel?'Lift doors opened. Travel is not installed in this art rehearsal.':'Door opened.'):'Door closed.'):action==='toggle_light'?(lighting?'Light switched on.':'Light switched off.'):action==='fill_food'?'Food bowl refilled.':action==='fill_water'?'Water bowl refilled.':'Plant watered.'
+        if(action==='toggle_door'){this.solids.length=0;this.cells.clear();this.buildSolids()}
+        return true
       }},this.elapsed*1000)
       this.objectTarget={object,label:asset.label};return true
     }
     this.feedback='The approach is blocked. Clear a side of the furniture.';return false
   }
   prompt():PlayInteractionPrompt|null{
-    const door=this.objectTarget??this.nearbyObject()
-    if(door&&assetsById[door.object.asset].furniture?.geometry.actions.includes('toggle_light'))return {target:door.object.id,label:door.label,kind:'light',button:this.interactions.active?'Cancel':this.objectStates[door.object.id]?.lit===false?'Turn on':'Turn off',description:this.feedback||'Press E to switch the light.',disabled:false}
-    if(door)return {target:door.object.id,label:door.label,kind:'door',button:this.interactions.active?'Cancel':this.objectStates[door.object.id]?.open?'Close door':'Open door',description:this.feedback||'Press E to use the door. Its frame stays solid.',disabled:false}
-    const active=this.interactions.active,target=this.plan?.target??this.nearby()
+    const active=this.interactions.active,choice=this.nearbyChoice(),object=this.objectTarget??(!this.plan?choice.object:undefined)
+    if(object){
+      const bound=this.objectPrompt?.(object.object)
+      if(bound)return{target:object.object.id,...bound,kind:'care',disabled:false,button:active?'Cancel':bound.button,description:active?'Approaching '+bound.label+'…':bound.description}
+      const action=this.objectAction(object.object)!,state=this.objectStates[object.object.id],complete=this.careComplete(action,state)
+      const kind=action==='toggle_door'?'door':action==='toggle_light'?'light':'care'
+      const preview=action==='preview_allocation'||action==='inspect_plan'||action==='inspect_stock'
+      const button=active?'Cancel':action==='talk_npc'?'Talk':preview?(state?.open?'Close inspection':'Inspect'):action==='toggle_door'?(state?.open?'Close door':'Open door'):action==='toggle_light'?(state?.lit===false?'Turn on':'Turn off'):complete?(action==='water_plant'?'Watered':action==='fill_food'?'Food stocked':'Water filled'):action==='fill_food'?'Refill food':action==='fill_water'?'Refill water':'Water plant'
+      const pending=active?.phase==='approach'?'Walking to an open approach…':active?.phase==='complete'?this.feedback:'Finishing the action…'
+      const description=active?pending:this.feedback||(complete?'Care complete · local to this playtest.':action==='toggle_door'?'Press E to use the door. Its frame stays solid.':action==='toggle_light'?'Press E to switch the light.':'Press E to approach and help · local playtest.')
+      return {target:object.object.id,label:object.label,kind,button,description,disabled:!active&&complete}
+    }
+    const target=this.plan?.target??choice.seat
     if(!target)return null
     if(active)return {target:target.object.id,label:target.label,kind:target.kind,disabled:false,button:this.heldPose?(target.kind==='rest'?'Wake up':'Stand up'):'Cancel',description:this.heldPose?(target.kind==='rest'?'Sleeping · press E or move to wake up.':'Seated · press E or move to stand up.'):(active.phase==='approach'?'Walking to an open approach…':'Getting into position…')}
+    if(this.character==='peony')return{target:target.object.id,label:target.label,kind:target.kind,button:'Exit cockpit first',disabled:true,description:'Peony-7 is too large for human furniture. Exit the cockpit to sit or sleep.'}
     const blocked=!target.approaches.some(point=>!this.obstruction(point))
     return {target:target.object.id,label:target.label,kind:target.kind,button:target.kind==='rest'?'Sleep':'Sit down',disabled:blocked,description:blocked?'Clear an approach in Edit to use this furniture.':this.feedback||'Press E or choose the action to approach.'}
   }
   interact(){
-    if(this.interactions.active){this.interactions.cancel();this.feedback='';return}
-    const door=this.nearbyObject();if(door){this.useObject(door.object.id);return}
-    const target=this.nearby();if(!target)return
-    this.beginInteraction(target)
+    if(this.interactions.active){this.interactions.cancel();this.feedback='Action stopped.';return}
+    const choice=this.nearbyChoice();if(choice.object){this.useObject(choice.object.object.id);return}
+    if(choice.seat)this.beginInteraction(choice.seat)
   }
   private key(target:SeatTarget){return target.object.id+'/'+target.seatId}
   sitOn(objectId:string,seatId:string){
@@ -315,6 +368,7 @@ export class StagePlaytest {
     return this.beginInteraction(target)
   }
   private beginInteraction(target:SeatTarget){
+    if(this.character==='peony'){this.feedback='Exit the cockpit before using human furniture.';return false}
     const owner=this.claims.get(this.key(target))
     if(owner&&owner!==this.actorId){this.feedback='That seat is occupied. Choose the other seat.';return false}
     if(this.plan?.target===target&&this.interactions.active)return true
@@ -345,6 +399,7 @@ export class StagePlaytest {
   stand(){this.interactions.cancel();this.feedback=''}
   report(){return {name:this.name,x:Math.round(this.position.x),y:Math.round(this.position.y),seated:!!this.heldPose,seatId:this.plan?.target.seatId??null,phase:this.interactions.active?.phase??'idle',message:this.feedback,contact:this.contact}}
   objectState(id:string){return this.objectStates[id]}
+  setObjectStates(states:Record<string,ObjectState>){this.objectStates=states;this.stateSignature='';this.feedback=''}
   respawn(){this.velocity={x:0,y:0};this.renderAction='';this.fromAction='';this.interactions.cancel();this.feedback='';const spawn=this.findSpawn({x:this.stage.width*16,y:this.stage.height*32-64});if(spawn){Object.assign(this.position,spawn);this.lastSafe={...spawn};this.contact='';this.moving=false;this.signature=''}}
   tick(delta:number,input:Point,sprint:boolean){
     const signature=JSON.stringify(this.objectStates)
@@ -413,15 +468,18 @@ export class StagePlaytest {
     if(debug){
       context.save();context.fillStyle='#72e4ac20';const radius=action.area.range+action.area.width+action.area.offset;for(let y=Math.max(0,Math.floor((origin.y-radius)/32));y<Math.min(this.stage.height,Math.ceil((origin.y+radius)/32));y++)for(let x=Math.max(0,Math.floor((origin.x-radius)/32));x<Math.min(this.stage.width,Math.ceil((origin.x+radius)/32));x++){const tile={x:x*32,y:y*32,width:32,height:32};if(areaHits(origin,direction,action.area,tile)&&clearSight(origin,tile,this.solids.map(s=>s.rect)))context.fillRect(tile.x+1,tile.y+1,30,30)}context.restore()
       drawArea(context,origin,direction,action.area);context.save();context.lineWidth=1;for(const target of this.trainingTargets){const hit=areaHits(origin,direction,action.area,target.rect),clear=clearSight(origin,target.rect,this.solids.map(s=>s.rect));context.strokeStyle=target.eligible&&hit&&clear?'#83efb0':'#bcae90';context.strokeRect(target.rect.x,target.rect.y,target.rect.width,target.rect.height)}for(const p of snapshot.projectiles){context.save();context.translate(p.position.x,p.position.y);context.rotate(Math.atan2(p.forward.y,p.forward.x));context.strokeStyle='#8be8fa';context.strokeRect(-p.spec.depth/2,-p.spec.width/2,p.spec.depth,p.spec.width);context.restore()}context.restore()}
-    for(const target of this.trainingTargets){const p=center(target.rect),flash=snapshot.time-(this.hitTimes.get(target.id)??-1000)<160;context.save();context.fillStyle=flash?'#fff6c2':'#ba8151';context.fillRect(p.x-2,p.y-5,4,11);context.fillStyle=flash?'#fff6c2':'#a04e36';context.fillRect(target.rect.x,target.rect.y,target.rect.width,target.rect.height-5);context.strokeStyle='#4b302b';context.strokeRect(target.rect.x+.5,target.rect.y+.5,target.rect.width-1,target.rect.height-5);context.fillStyle='#f9ddb2';context.fillRect(p.x-3,p.y-8,6,6);context.font='10px sans-serif';context.textAlign='center';context.fillStyle='#fff2d5';context.fillText(String(this.hitCounts.get(target.id)??0),p.x,target.rect.y-4);context.restore()}
+    if(!this.realTargets)for(const target of this.trainingTargets){const p=center(target.rect),flash=snapshot.time-(this.hitTimes.get(target.id)??-1000)<160;context.save();context.fillStyle=flash?'#fff6c2':'#ba8151';context.fillRect(p.x-2,p.y-5,4,11);context.fillStyle=flash?'#fff6c2':'#a04e36';context.fillRect(target.rect.x,target.rect.y,target.rect.width,target.rect.height-5);context.strokeStyle='#4b302b';context.strokeRect(target.rect.x+.5,target.rect.y+.5,target.rect.width-1,target.rect.height-5);context.fillStyle='#f9ddb2';context.fillRect(p.x-3,p.y-8,6,6);context.font='10px sans-serif';context.textAlign='center';context.fillStyle='#fff2d5';context.fillText(String(this.hitCounts.get(target.id)??0),p.x,target.rect.y-4);context.restore()}
     this.effects.draw(context,snapshot)
   }
   drawDiagnostics(context:CanvasRenderingContext2D,scale:number){
     context.save();context.lineWidth=1/scale
     for(const solid of this.solids){context.strokeStyle=solid.label===this.contact?'#ffb563':'#ff898280';context.strokeRect(solid.rect.x,solid.rect.y,solid.rect.width,solid.rect.height)}
     if(this.plan){context.strokeStyle='#8bcfff';context.beginPath();context.arc(this.plan.approach.x,this.plan.approach.y,4,0,Math.PI*2);context.moveTo(this.plan.approach.x,this.plan.approach.y);context.lineTo(this.plan.target.point.x,this.plan.target.point.y);context.stroke();context.strokeRect(this.plan.exit.x-3,this.plan.exit.y-3,6,6)}
-    const foot=footRect(this.position);context.fillStyle=this.contact?'#ffb56380':'#70f8c180';context.fillRect(foot.x,foot.y,foot.width,foot.height);context.strokeStyle=this.contact?'#ffb563':'#70f8c1';context.strokeRect(foot.x,foot.y,foot.width,foot.height);context.restore()
+    const foot=this.foot(this.position);context.fillStyle=this.contact?'#ffb56380':'#70f8c180';context.fillRect(foot.x,foot.y,foot.width,foot.height);context.strokeStyle=this.contact?'#ffb563':'#70f8c1';context.strokeRect(foot.x,foot.y,foot.width,foot.height);context.restore()
   }
   status(){return `${this.name} · ${Math.round(this.position.x)}, ${Math.round(this.position.y)} px · ${this.heldPose?(this.heldPose==='sleep'?'Sleeping':'Seated')+' · '+(this.plan?.target.label??''):this.interactions.active?'Approaching '+this.plan?.target.label:this.feedback|| (this.contact?'Contact: '+this.contact:this.moving?(this.running?'Running':'Walking'):'Idle')}`}
   dispose(){ultimateCutIn.clear(this.cutInSource);this.ability.cancel('leave');this.effects.clear();if(!this.disposed){this.disposed=true;this.interactions.cancel();this.actor.dispose()}}
 }
+
+/** Concave deck boundary; foot corners are checked at each movement substep. */
+function insidePolygon(x:number,y:number,polygon:number[][]){let inside=false;for(let i=0,j=polygon.length-1;i<polygon.length;j=i++){const[a,b]=polygon[i],[c,d]=polygon[j];if((b>y)!==(d>y)&&x<(c-a)*(y-b)/(d-b)+a)inside=!inside}return inside}

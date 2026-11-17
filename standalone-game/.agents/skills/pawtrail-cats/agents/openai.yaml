@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Cats"
+  short_description: "Cat breeds, coats, accessories, actions and sounds"
+  default_prompt: "Use $pawtrail-cats to create a reference-guided cat with recognizable breed, coat, tail and accessories, shared actions, sounds and shadows; use the live cat creator and private library for supported combinations."

@@ -1,0 +1,43 @@
+{
+  "id": "mara-solis-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "mara-solis",
+  "characterName": "Mara Solis",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    17,
+    90,
+    102
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/mara-solis-refined-cel-v1/8f6e4c189903",
+  "revision": "8f6e4c189903",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 264790,
+  "referenceBytes": 11676,
+  "runtimeBytes": 253114,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

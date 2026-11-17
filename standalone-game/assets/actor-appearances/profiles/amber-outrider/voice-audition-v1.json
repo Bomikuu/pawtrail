@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "actorId": "amber-outrider",
+  "name": "Amber",
+  "scope": "local-authoring-audition",
+  "status": "six-cue-pack-installed-in-game-and-preview",
+  "language": "ja-JP",
+  "profile": {
+    "role": "Energetic exploration companion",
+    "age": null,
+    "ageNote": "Exact age not established in this adaptation.",
+    "origin": "Mondstadt (fictional source setting)",
+    "personality": [
+      "bright",
+      "friendly",
+      "courageous",
+      "encouraging"
+    ],
+    "biography": "In this PawTrail adaptation, Amber welcomes new explorers and helps them find animals and neighbors who need support. Her confidence and curiosity make her quick to volunteer, while her warm encouragement keeps companions moving.",
+    "provenance": {
+      "nameAndOrigin": "established fictional identity",
+      "personalityAndBiography": "PawTrail voice-direction adaptation inspired by the approved illustration"
+    },
+    "illustration": "/pawtrail-game/actor-studio/illustrations/amber-outrider/full-body-v3-02aa637ed9bd/poster.webp"
+  },
+  "voiceDirection": {
+    "speaker": "One original young-adult feminine character voice across all six cues",
+    "quality": "Clear, bright, energetic and matter-of-fact. Friendly confidence with even pitch and direct projection; reserve flirtatious delivery for characters whose profile explicitly calls for it.",
+    "language": "Natural Japanese pronunciation and rhythm",
+    "continuity": "Keep the same saved speaker/profile across all six cues; vary performance, not identity.",
+    "referenceUse": "Use the approved illustration and written brief for an original voice. The supplied gameplay MP3 has not been heard; no exact reference-voice match or cloning is claimed."
+  },
+  "provider": {
+    "name": "VoiceStudio",
+    "baseUrl": "http://127.0.0.1:3900",
+    "engineId": "voxcpm2",
+    "voiceProfileId": "12b7981e",
+    "status": "Six cues generated with the same saved original voice; installed in game and preview",
+    "application": "/home/micxsz/.local/bin/voicestudio",
+    "skill": "/home/micxsz/.codex/skills/voicestudio",
+    "applicationVersion": "0.5.7",
+    "storageRoot": "/run/media/micxsz/Drive/VoiceStudio",
+    "device": "cpu"
+  },
+  "cues": [
+    {
+      "id": "hi",
+      "text": "こんにちは。",
+      "romanization": "Konnichiwa.",
+      "translation": "Hello.",
+      "direction": "A direct friendly greeting with even pitch, clear forward projection and brisk conversational rhythm. Professional, confident adventurer delivery.",
+      "portraitEmotion": "smile",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "deliveryControl": "A direct friendly greeting with even pitch, clear forward projection and brisk conversational rhythm. Professional, confident adventurer delivery.",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hi.ogg",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hi.mp3",
+      "durationSeconds": 1.8269583333333332,
+      "voiceStudioAudioId": "9de60ae1",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/hi.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hi.ogg",
+          "bytes": 5885,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.833458"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hi.mp3",
+          "bytes": 11612,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.826958"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "attack",
+      "text": "くらえ！",
+      "romanization": "Kurae!",
+      "translation": "Take this!",
+      "direction": "One crisp projected combat call with a firm onset and decisive short ending.",
+      "portraitEmotion": "angry",
+      "portraitIntent": "focused determination",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "deliveryControl": "Brief attack shout.",
+      "previousOverlongTake": {
+        "durationSeconds": 4.16,
+        "files": [
+          {
+            "file": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/overlong-takes/attack.wav",
+            "sha256": "293190a9c88a2d0b48f420c9844eb8d6a644f5ba59b6c706068e21dafe15ac97"
+          },
+          {
+            "file": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/overlong-takes/attack.take.json",
+            "sha256": "1f405d0422911bc1bbef1738197a6d5b5bad8d2f8c680d5d16b0278dfe541de6"
+          }
+        ],
+        "reason": "Overlong for a brief action cue; not published."
+      },
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/attack.ogg",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/attack.mp3",
+      "durationSeconds": 1.347,
+      "voiceStudioAudioId": "b0df0a3b",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/attack.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/attack.ogg",
+          "bytes": 4504,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.353500"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/attack.mp3",
+          "bytes": 8732,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.347000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bye",
+      "text": "またね！",
+      "romanization": "Mata ne!",
+      "translation": "See you!",
+      "direction": "One short friendly farewell, brisk and clear with an even conversational cadence.",
+      "deliveryControl": "Brief, friendly and direct.",
+      "portraitEmotion": "smile",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "previousOverlongTake": {
+        "durationSeconds": 12.873770833333333,
+        "files": [
+          {
+            "file": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/overlong-takes/bye.wav",
+            "sha256": "4c7732e1ee5871cf1e2e44b9ebdc395283423737cf35c15700a73f17de9c9aea"
+          },
+          {
+            "file": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/overlong-takes/bye.take.json",
+            "sha256": "6c52448cdfb6364abe15c2517e252899ad54e6f9ff6e09a5baeb57801ab3bb13"
+          }
+        ],
+        "reason": "Overlong for a brief action cue; not published."
+      },
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/bye.ogg",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/bye.mp3",
+      "durationSeconds": 3.4662916666666668,
+      "voiceStudioAudioId": "15df0332",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/bye.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/bye.ogg",
+          "bytes": 11589,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.472792"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/bye.mp3",
+          "bytes": 21404,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.466292"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hurt",
+      "text": "うっ！",
+      "romanization": "U!",
+      "translation": "Ugh!",
+      "direction": "One clipped physical impact grunt with a firm glottal onset, low effort and a quick stop.",
+      "deliveryControl": "One very brief impact grunt.",
+      "portraitEmotion": "sad",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "previousOverlongTake": {
+        "durationSeconds": 3.464354166666667,
+        "files": [
+          {
+            "file": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/overlong-takes/hurt.wav",
+            "sha256": "d1f4c9b3e2b950258ae21784967fee5995ad30dbae7434eb2f4d5abe494c20ee"
+          },
+          {
+            "file": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/overlong-takes/hurt.take.json",
+            "sha256": "df4a69f73c9ec905d4ea3e664c5252f72a84ff498d0d820ff19cdb13a193949f"
+          }
+        ],
+        "reason": "Overlong for a brief action cue; not published."
+      },
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hurt.ogg",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hurt.mp3",
+      "durationSeconds": 1.5258958333333332,
+      "voiceStudioAudioId": "a65788d7",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/hurt.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hurt.ogg",
+          "bytes": 4602,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.532417"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/hurt.mp3",
+          "bytes": 9740,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.525917"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "thanks",
+      "text": "ありがとう！助かった！",
+      "romanization": "Arigatō! Tasukatta!",
+      "translation": "Thank you! That helped!",
+      "direction": "Sincere, relieved gratitude with a bright smile.",
+      "deliveryControl": "Sincere, grateful and relieved with a bright warm smile, natural Japanese rhythm",
+      "portraitEmotion": "smile",
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/thanks.ogg",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/thanks.mp3",
+      "durationSeconds": 1.6,
+      "voiceStudioAudioId": "d8889c93",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/thanks.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/thanks.ogg",
+          "bytes": 5091,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.606500"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/thanks.mp3",
+          "bytes": 10172,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.600000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "encouragement",
+      "text": "頑張ろう！",
+      "romanization": "Ganbarō!",
+      "translation": "Let’s do our best!",
+      "direction": "One brief encouraging call with firm, steady and supportive energy.",
+      "deliveryControl": "One brief encouraging call with firm, steady and supportive energy.",
+      "portraitEmotion": "smile",
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "listeningAccepted": false,
+      "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/encouragement.ogg",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/encouragement.mp3",
+      "durationSeconds": 1.3301666666666667,
+      "voiceStudioAudioId": "fa290c61",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/amber-audition-v2/encouragement.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/encouragement.ogg",
+          "bytes": 4358,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.336667"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/amber-outrider/audio/audition-v2/encouragement.mp3",
+          "bytes": 8588,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "1.330167"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "production": {
+    "purpose": "Six-cue actor-preview voice pack",
+    "maxPackCues": 6,
+    "packTargetBytes": 100000,
+    "currentAudioBytes": 36029,
+    "filesGenerated": true,
+    "listeningReview": "Pending owner listening for all new takes; retained appreciation also awaits its existing listening review.",
+    "gameInstallation": "Game and actor preview",
+    "modelSelection": "VoxCPM2 selected by owner; authoring models stored on Drive",
+    "auditionPreviewBytes": 70248,
+    "previewIntegration": "Installed; runtime/browser review not performed",
+    "publicAudioBytes": 36029,
+    "previewUrl": "/play?preview=actors&skin=amber-outrider&art=portrait",
+    "worldIntegration": true,
+    "worldReview": "Source integrated; runtime/browser and new listening review not performed",
+    "audioProcessing": "Existing VoxCPM2 cached model and saved actor profile; opt-in CPU int8 LM Linear weights, unchanged source-dtype activations and original float32 AudioVAE. Voice listening acceptance remains pending.",
+    "motionRefresh": "2026-11-13; authored portrait idle and full-body illustration installed; live visual/listening acceptance pending."
+  },
+  "voiceRevision": "audition-v2",
+  "voicePolicy": {
+    "longerCue": "thanks",
+    "hurt": "One short grunt, one utterance.",
+    "otherCues": "One short utterance.",
+    "greeting": "Neutral friendly delivery; no default flirting."
+  }
+}

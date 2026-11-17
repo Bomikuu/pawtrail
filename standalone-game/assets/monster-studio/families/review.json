@@ -1,0 +1,182 @@
+{
+  "scope": "local fictional-combat preview",
+  "members": [
+    {
+      "id": "gloamwarden",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/gloamwarden-model.png",
+      "combat": "Rift Rupture applied 24 player damage; reset observed.",
+      "phase": "Distinct form observed via explicitly labelled phase rehearsal; natural threshold crossing not reviewed.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "riftling",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/riftling-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "shardback",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/shardback-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "ashwing",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/ashwing-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "cindervane",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/cindervane-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Distinct form observed via explicitly labelled phase rehearsal; natural threshold crossing not reviewed.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "ember-whelp",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/ember-whelp-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "cinder-imp",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/cinder-imp-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "coalback",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/coalback-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "ribwarden",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/ribwarden-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Distinct form observed via explicitly labelled phase rehearsal; natural threshold crossing not reviewed.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "bone-crawler",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/bone-crawler-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "skull-skitter",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/skull-skitter-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "grave-adder",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/grave-adder-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "bellwarden",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/bellwarden-model.png",
+      "combat": "Bell Reap 22 and Hollow Chime 26 applied damage; final safe-center review retained 100 player HP; recovery counter 270; phase-rehearsed 450 HP defeated with ultimate; reset observed.",
+      "phase": "Distinct form observed via explicitly labelled phase rehearsal; natural threshold crossing not reviewed.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "lantern-wisp",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/lantern-wisp-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "huskling",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/huskling-model.png",
+      "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    },
+    {
+      "id": "sickle-shade",
+      "date": "2026-11-12",
+      "browser": "Firefox",
+      "modelAndScale": "loaded, started/paused and screenshot inspected",
+      "capture": "output/playwright/boss-families/sickle-shade-model.png",
+      "combat": "Little Reap applied 13 player damage; recovery counter applied 270; remaining 30 HP defeated; reset observed.",
+      "phase": "Not applicable: normal mob has no boss enrage.",
+      "automatedTests": false,
+      "build": false
+    }
+  ],
+  "limits": "See docs/implementation/boss-families.md"
+}

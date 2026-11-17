@@ -1,0 +1,12 @@
+{
+  "key": "05-rainline-skybridge-v1",
+  "name": "Rainline Skybridge — Courier Walk and Signal Archive",
+  "stage": "f01.stage.skybridge",
+  "startedAt": "2026-11-15 15:28:02 UTC",
+  "completedAt": "2026-11-15 15:30:17 UTC",
+  "source": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-ff9ae9e7-48eb-4934-8f8f-4ec99f8685b0.png",
+  "status": "generated_concept",
+  "approval": "awaiting_explicit_owner_review",
+  "mode": "built-in image_gen",
+  "transparent": false
+}

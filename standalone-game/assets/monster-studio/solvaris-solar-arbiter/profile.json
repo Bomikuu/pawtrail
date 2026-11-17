@@ -1,0 +1,45 @@
+{
+  "id": "solvaris-solar-arbiter",
+  "name": "Solvaris",
+  "title": "The Solar Arbiter",
+  "description": "A colossal horn-masked solar guardian with open palms, flowing sacred armor and a vast segmented golden halo.",
+  "biography": "Solvaris once held the moving seals of a celestial observatory in balance. When the observatory fell silent, the guardian began judging every approaching footstep as an intrusion. Its gilded hands shape the verdict, but the palm seals become vulnerable when a judgment is spent.",
+  "origin": "The Sunken Orrery, an original fictional PawTrail location",
+  "temperament": [
+    "solemn",
+    "unyielding",
+    "ritualistic",
+    "patient"
+  ],
+  "motivation": "Restore the silent observatory’s broken celestial order.",
+  "reference": {
+    "image": "references/owner-deity-reference.jpg",
+    "design": "Owner-supplied horned, gold-armored deity-like warrior with segmented halo.",
+    "scaleCue": "Grand Chase Classic Samsara was offered as a colossal scale cue, not a design to copy; no exact dimensions from that game are claimed."
+  },
+  "representation": "native-layered-2d, fixed three-quarter camera, in the existing WebGL arena",
+  "scale": {
+    "nominalHeightInPlayerUnits": 30,
+    "haloSpanInPlayerUnits": 28,
+    "bodyHeightInPlayerUnits": 26,
+    "playerScaleChanged": false,
+    "comparison": "Vaelrith is authored at 8 height / 15 span. Morvane has a 33-segment body with 0.6-unit spacing (19.2 units between end segment centers). Solvaris is the largest authored overall silhouette."
+  },
+  "health": {
+    "maxHp": 18000,
+    "hpPerBar": 1000,
+    "barCount": 18,
+    "enrageAt": 0.3
+  },
+  "weaknesses": [
+    "The lowered palm seals can be hit for ×1.75 damage during recovery.",
+    "Armored feet take ×0.35 damage; the high head and halo are not ground-melee targets."
+  ],
+  "combat": "Three distinct locked-ground patterns: a falling palm, an annular halo decree and multiple targeted astral pillars. Enrage adds wider fields, extra pillars and faster cooldowns.",
+  "scope": "Local fictional-combat preview; no real animal, account inventory or verified rewards changed.",
+  "sounds": {
+    "shared": "Existing item/contact sounds and mute.",
+    "dedicatedVocals": "Pending; no new speech model authorized or downloaded."
+  },
+  "review": "Implemented; Firefox 2026-11-12 observed scale/fit/pan/follow, three normal attacks, accepted palm hit, enrage rehearsal, wider patterns, pillar dodge and reset. Full defeat and natural threshold crossing unreviewed. See docs/implementation/solvaris-solar-arbiter.md."
+}

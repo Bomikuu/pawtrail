@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Furniture"
+  short_description: "Interactive furniture from sprites or rendered models"
+  default_prompt: "Use $pawtrail-furniture to ask whether I want 2D sprites or 3D + 2D renders unless I already chose, then author furniture with collision, states and actual actor contacts using that workflow. Reuse existing art and work in reviewable batches."

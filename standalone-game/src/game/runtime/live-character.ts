@@ -4,6 +4,7 @@ import type { SavedCharacter } from '../actor-rig/appearance'
 import {canonicalActorAction,usesWalkingLegs} from '../actor-rig/action-layers'
 import {ActionPlayback} from '../actor-rig/action-playback'
 import {HUMAN_GAIT} from '../actor-rig/human-gait'
+import type { Rig } from '../actor-rig/rigs'
 import {approachFacing} from '../systems/studio-locomotion'
 import type { BakedDirection } from './baked-actors'
 const directions=['down','down_left','left','up_left','up','up_right','right','down_right']
@@ -24,8 +25,8 @@ export class LiveCharacter {
   private fromPhase=0
   private transitionAt=0
   private yaw:number|undefined
-  constructor(private texture:Phaser.Textures.CanvasTexture,row:Pick<SavedCharacter,'appearance'>&{headScale?:number}){
-    this.actor=new PixelActor(row.appearance,CREATOR_FRAME.density);this.appearance=row.appearance
+  constructor(private texture:Phaser.Textures.CanvasTexture,row:Pick<SavedCharacter,'appearance'>&{headScale?:number},factory?: (appearance:SavedCharacter['appearance'])=>Rig){
+    this.actor=new PixelActor(row.appearance,CREATOR_FRAME.density,factory);this.appearance=row.appearance
     texture.setSize(CREATOR_FRAME.width,CREATOR_FRAME.height);texture.setFilter(Phaser.Textures.FilterMode.NEAREST)
   }
   update(row:Pick<SavedCharacter,'appearance'>&{headScale?:number},requested:string,moving:boolean,direction:BakedDirection,time:number,timeScale:number,reduced:boolean,distance=0){

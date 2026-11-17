@@ -1,0 +1,29 @@
+{
+  "assetId": "sofa",
+  "reviewDate": "2026-11-11",
+  "sourceSpriteRevision": "3917ae976060",
+  "maskRevision": "df94be47c344",
+  "representation": "2d_sprite_with_indexed_upholstery_mask",
+  "installation": "local_sprite_trial_only",
+  "preview": "/play?compare=furniture&asset=sofa&representation=sprite",
+  "sourceArtUnchanged": true,
+  "perColorSpriteFiles": 0,
+  "protectedMaterials": ["wood", "pillows", "pillow_motifs", "brown_contours"],
+  "functionalReview": {
+    "unitTestFile": "tests/sofa-palette.test.ts",
+    "unitTestsPassed": 5,
+    "browser": "Firefox",
+    "facings": [0, 90, 180, 270],
+    "changedUpholsteryPixels": {"0": 1523, "90": 813, "180": 1704, "270": 770},
+    "colorsCheckedPerFacing": ["#376db7", "#e5d5b2"],
+    "protectedRgbaAndAlphaExact": true,
+    "restoreExact": true,
+    "customHexAndInvalidInputChecked": true,
+    "bothActorsRemainSeatedThroughColorAndRotation": true,
+    "pngRequestsDuringColorChanges": 0,
+    "pageErrorsDuringReview": 0
+  },
+  "visualEvidence": "palette-seated-review.png",
+  "visualReview": "passed_all_four_facings_unoccupied_and_seated",
+  "scope": "Existing seat geometry, collision, saved styles and live room persistence are unchanged. Colors are local authoring preview state."
+}

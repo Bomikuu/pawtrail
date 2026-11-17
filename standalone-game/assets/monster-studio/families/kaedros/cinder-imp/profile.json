@@ -1,0 +1,56 @@
+{
+  "familyId": "kaedros",
+  "parentBoss": "kaedros-embermaw",
+  "id": "cinder-imp",
+  "name": "Cinder Imp",
+  "title": "Scurrying Emberling",
+  "tier": "normal",
+  "row": 3,
+  "enragedRow": null,
+  "maxHp": 240,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 1.05,
+  "radius": 0.28,
+  "speed": 2.3,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A quick upright lizard darts between cooled lava stones, leaving tiny embers in its wake.",
+  "weakness": "It pauses to recover after striking the marked ground.",
+  "temperament": "Cautious pack hunter",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "cinder-pop",
+      "name": "Cinder Pop",
+      "shape": "circle",
+      "outer": 1.05,
+      "inner": 0,
+      "angle": 105,
+      "target": "player",
+      "damage": 10,
+      "windup": 900,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 3400,
+      "description": "An ember pops at your marked position. Keep walking."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/cinder-imp-model.png",
+    "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+    "phase": "Not applicable: normal mob has no boss enrage.",
+    "automatedTests": false,
+    "build": false
+  }
+}

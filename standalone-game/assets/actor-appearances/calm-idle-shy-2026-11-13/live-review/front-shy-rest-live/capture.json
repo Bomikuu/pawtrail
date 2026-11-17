@@ -1,0 +1,628 @@
+{
+  "browser": "Codex in-app browser",
+  "name": "front-shy-rest-live",
+  "durationMs": 8823,
+  "frames": [
+    {
+      "file": "000.jpg",
+      "atMs": 0
+    },
+    {
+      "file": "001.jpg",
+      "atMs": 89
+    },
+    {
+      "file": "002.jpg",
+      "atMs": 147
+    },
+    {
+      "file": "003.jpg",
+      "atMs": 193
+    },
+    {
+      "file": "004.jpg",
+      "atMs": 245
+    },
+    {
+      "file": "005.jpg",
+      "atMs": 283
+    },
+    {
+      "file": "006.jpg",
+      "atMs": 327
+    },
+    {
+      "file": "007.jpg",
+      "atMs": 367
+    },
+    {
+      "file": "008.jpg",
+      "atMs": 415
+    },
+    {
+      "file": "009.jpg",
+      "atMs": 460
+    },
+    {
+      "file": "010.jpg",
+      "atMs": 506
+    },
+    {
+      "file": "011.jpg",
+      "atMs": 547
+    },
+    {
+      "file": "012.jpg",
+      "atMs": 588
+    },
+    {
+      "file": "013.jpg",
+      "atMs": 625
+    },
+    {
+      "file": "014.jpg",
+      "atMs": 672
+    },
+    {
+      "file": "015.jpg",
+      "atMs": 720
+    },
+    {
+      "file": "016.jpg",
+      "atMs": 763
+    },
+    {
+      "file": "017.jpg",
+      "atMs": 810
+    },
+    {
+      "file": "018.jpg",
+      "atMs": 852
+    },
+    {
+      "file": "019.jpg",
+      "atMs": 897
+    },
+    {
+      "file": "020.jpg",
+      "atMs": 942
+    },
+    {
+      "file": "021.jpg",
+      "atMs": 988
+    },
+    {
+      "file": "022.jpg",
+      "atMs": 1030
+    },
+    {
+      "file": "023.jpg",
+      "atMs": 1074
+    },
+    {
+      "file": "024.jpg",
+      "atMs": 1115
+    },
+    {
+      "file": "025.jpg",
+      "atMs": 1157
+    },
+    {
+      "file": "026.jpg",
+      "atMs": 1199
+    },
+    {
+      "file": "027.jpg",
+      "atMs": 1243
+    },
+    {
+      "file": "028.jpg",
+      "atMs": 1288
+    },
+    {
+      "file": "029.jpg",
+      "atMs": 2337
+    },
+    {
+      "file": "030.jpg",
+      "atMs": 2373
+    },
+    {
+      "file": "031.jpg",
+      "atMs": 2427
+    },
+    {
+      "file": "032.jpg",
+      "atMs": 2467
+    },
+    {
+      "file": "033.jpg",
+      "atMs": 2513
+    },
+    {
+      "file": "034.jpg",
+      "atMs": 2553
+    },
+    {
+      "file": "035.jpg",
+      "atMs": 2589
+    },
+    {
+      "file": "036.jpg",
+      "atMs": 2625
+    },
+    {
+      "file": "037.jpg",
+      "atMs": 3677
+    },
+    {
+      "file": "038.jpg",
+      "atMs": 3729
+    },
+    {
+      "file": "039.jpg",
+      "atMs": 3766
+    },
+    {
+      "file": "040.jpg",
+      "atMs": 3812
+    },
+    {
+      "file": "041.jpg",
+      "atMs": 3850
+    },
+    {
+      "file": "042.jpg",
+      "atMs": 3896
+    },
+    {
+      "file": "043.jpg",
+      "atMs": 3969
+    },
+    {
+      "file": "044.jpg",
+      "atMs": 4011
+    },
+    {
+      "file": "045.jpg",
+      "atMs": 4097
+    },
+    {
+      "file": "046.jpg",
+      "atMs": 4145
+    },
+    {
+      "file": "047.jpg",
+      "atMs": 4217
+    },
+    {
+      "file": "048.jpg",
+      "atMs": 4258
+    },
+    {
+      "file": "049.jpg",
+      "atMs": 4297
+    },
+    {
+      "file": "050.jpg",
+      "atMs": 4336
+    },
+    {
+      "file": "051.jpg",
+      "atMs": 4374
+    },
+    {
+      "file": "052.jpg",
+      "atMs": 4410
+    },
+    {
+      "file": "053.jpg",
+      "atMs": 4446
+    },
+    {
+      "file": "054.jpg",
+      "atMs": 4482
+    },
+    {
+      "file": "055.jpg",
+      "atMs": 4542
+    },
+    {
+      "file": "056.jpg",
+      "atMs": 4580
+    },
+    {
+      "file": "057.jpg",
+      "atMs": 4617
+    },
+    {
+      "file": "058.jpg",
+      "atMs": 4655
+    },
+    {
+      "file": "059.jpg",
+      "atMs": 4692
+    },
+    {
+      "file": "060.jpg",
+      "atMs": 4727
+    },
+    {
+      "file": "061.jpg",
+      "atMs": 4763
+    },
+    {
+      "file": "062.jpg",
+      "atMs": 4809
+    },
+    {
+      "file": "063.jpg",
+      "atMs": 4845
+    },
+    {
+      "file": "064.jpg",
+      "atMs": 4897
+    },
+    {
+      "file": "065.jpg",
+      "atMs": 4938
+    },
+    {
+      "file": "066.jpg",
+      "atMs": 4980
+    },
+    {
+      "file": "067.jpg",
+      "atMs": 5022
+    },
+    {
+      "file": "068.jpg",
+      "atMs": 5078
+    },
+    {
+      "file": "069.jpg",
+      "atMs": 5130
+    },
+    {
+      "file": "070.jpg",
+      "atMs": 5165
+    },
+    {
+      "file": "071.jpg",
+      "atMs": 5202
+    },
+    {
+      "file": "072.jpg",
+      "atMs": 5239
+    },
+    {
+      "file": "073.jpg",
+      "atMs": 5276
+    },
+    {
+      "file": "074.jpg",
+      "atMs": 5312
+    },
+    {
+      "file": "075.jpg",
+      "atMs": 5347
+    },
+    {
+      "file": "076.jpg",
+      "atMs": 5393
+    },
+    {
+      "file": "077.jpg",
+      "atMs": 5427
+    },
+    {
+      "file": "078.jpg",
+      "atMs": 5507
+    },
+    {
+      "file": "079.jpg",
+      "atMs": 5544
+    },
+    {
+      "file": "080.jpg",
+      "atMs": 5583
+    },
+    {
+      "file": "081.jpg",
+      "atMs": 5622
+    },
+    {
+      "file": "082.jpg",
+      "atMs": 5660
+    },
+    {
+      "file": "083.jpg",
+      "atMs": 5694
+    },
+    {
+      "file": "084.jpg",
+      "atMs": 5728
+    },
+    {
+      "file": "085.jpg",
+      "atMs": 5763
+    },
+    {
+      "file": "086.jpg",
+      "atMs": 5798
+    },
+    {
+      "file": "087.jpg",
+      "atMs": 5833
+    },
+    {
+      "file": "088.jpg",
+      "atMs": 5869
+    },
+    {
+      "file": "089.jpg",
+      "atMs": 5903
+    },
+    {
+      "file": "090.jpg",
+      "atMs": 5939
+    },
+    {
+      "file": "091.jpg",
+      "atMs": 5982
+    },
+    {
+      "file": "092.jpg",
+      "atMs": 6017
+    },
+    {
+      "file": "093.jpg",
+      "atMs": 6112
+    },
+    {
+      "file": "094.jpg",
+      "atMs": 6170
+    },
+    {
+      "file": "095.jpg",
+      "atMs": 6227
+    },
+    {
+      "file": "096.jpg",
+      "atMs": 6263
+    },
+    {
+      "file": "097.jpg",
+      "atMs": 6299
+    },
+    {
+      "file": "098.jpg",
+      "atMs": 6334
+    },
+    {
+      "file": "099.jpg",
+      "atMs": 6372
+    },
+    {
+      "file": "100.jpg",
+      "atMs": 6407
+    },
+    {
+      "file": "101.jpg",
+      "atMs": 6444
+    },
+    {
+      "file": "102.jpg",
+      "atMs": 6513
+    },
+    {
+      "file": "103.jpg",
+      "atMs": 6569
+    },
+    {
+      "file": "104.jpg",
+      "atMs": 6611
+    },
+    {
+      "file": "105.jpg",
+      "atMs": 6649
+    },
+    {
+      "file": "106.jpg",
+      "atMs": 6684
+    },
+    {
+      "file": "107.jpg",
+      "atMs": 6732
+    },
+    {
+      "file": "108.jpg",
+      "atMs": 6768
+    },
+    {
+      "file": "109.jpg",
+      "atMs": 6824
+    },
+    {
+      "file": "110.jpg",
+      "atMs": 6868
+    },
+    {
+      "file": "111.jpg",
+      "atMs": 6904
+    },
+    {
+      "file": "112.jpg",
+      "atMs": 6943
+    },
+    {
+      "file": "113.jpg",
+      "atMs": 6988
+    },
+    {
+      "file": "114.jpg",
+      "atMs": 7023
+    },
+    {
+      "file": "115.jpg",
+      "atMs": 7072
+    },
+    {
+      "file": "116.jpg",
+      "atMs": 7109
+    },
+    {
+      "file": "117.jpg",
+      "atMs": 7189
+    },
+    {
+      "file": "118.jpg",
+      "atMs": 7243
+    },
+    {
+      "file": "119.jpg",
+      "atMs": 7288
+    },
+    {
+      "file": "120.jpg",
+      "atMs": 7331
+    },
+    {
+      "file": "121.jpg",
+      "atMs": 7376
+    },
+    {
+      "file": "122.jpg",
+      "atMs": 7421
+    },
+    {
+      "file": "123.jpg",
+      "atMs": 7462
+    },
+    {
+      "file": "124.jpg",
+      "atMs": 7499
+    },
+    {
+      "file": "125.jpg",
+      "atMs": 7535
+    },
+    {
+      "file": "126.jpg",
+      "atMs": 7572
+    },
+    {
+      "file": "127.jpg",
+      "atMs": 7607
+    },
+    {
+      "file": "128.jpg",
+      "atMs": 7697
+    },
+    {
+      "file": "129.jpg",
+      "atMs": 7743
+    },
+    {
+      "file": "130.jpg",
+      "atMs": 7777
+    },
+    {
+      "file": "131.jpg",
+      "atMs": 7823
+    },
+    {
+      "file": "132.jpg",
+      "atMs": 7867
+    },
+    {
+      "file": "133.jpg",
+      "atMs": 7905
+    },
+    {
+      "file": "134.jpg",
+      "atMs": 7940
+    },
+    {
+      "file": "135.jpg",
+      "atMs": 8013
+    },
+    {
+      "file": "136.jpg",
+      "atMs": 8060
+    },
+    {
+      "file": "137.jpg",
+      "atMs": 8095
+    },
+    {
+      "file": "138.jpg",
+      "atMs": 8130
+    },
+    {
+      "file": "139.jpg",
+      "atMs": 8168
+    },
+    {
+      "file": "140.jpg",
+      "atMs": 8212
+    },
+    {
+      "file": "141.jpg",
+      "atMs": 8247
+    },
+    {
+      "file": "142.jpg",
+      "atMs": 8284
+    },
+    {
+      "file": "143.jpg",
+      "atMs": 8322
+    },
+    {
+      "file": "144.jpg",
+      "atMs": 8356
+    },
+    {
+      "file": "145.jpg",
+      "atMs": 8406
+    },
+    {
+      "file": "146.jpg",
+      "atMs": 8441
+    },
+    {
+      "file": "147.jpg",
+      "atMs": 8491
+    },
+    {
+      "file": "148.jpg",
+      "atMs": 8529
+    },
+    {
+      "file": "149.jpg",
+      "atMs": 8577
+    },
+    {
+      "file": "150.jpg",
+      "atMs": 8629
+    },
+    {
+      "file": "151.jpg",
+      "atMs": 8665
+    },
+    {
+      "file": "152.jpg",
+      "atMs": 8701
+    },
+    {
+      "file": "153.jpg",
+      "atMs": 8739
+    },
+    {
+      "file": "154.jpg",
+      "atMs": 8773
+    }
+  ],
+  "method": "native full-viewport screenshots; no clipped capture API"
+}

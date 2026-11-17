@@ -1,0 +1,254 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "Rainline Skybridge",
+  "width": 40,
+  "height": 24,
+  "baseTile": "tile:stone",
+  "groundArt": "f01:skybridge-ground",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "objects": [
+    {
+      "id": "return-undergrid",
+      "asset": "f01:lift",
+      "x": 155,
+      "y": 555,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "switchyard-gate",
+      "asset": "f01:lift",
+      "x": 1165,
+      "y": 335,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "p03",
+      "asset": "f01:archive",
+      "x": 895,
+      "y": 230,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "archive-locker",
+      "asset": "f01:supply",
+      "x": 1020,
+      "y": 295,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "maintenance-plaque",
+      "asset": "f01:planning",
+      "x": 780,
+      "y": 250,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "nyx",
+      "asset": "f01:nyx",
+      "x": 390,
+      "y": 285,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "courier-shelter",
+      "asset": "f01:clinic-canopy",
+      "x": 365,
+      "y": 270,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "courier-seat",
+      "asset": "f01:camp-seat",
+      "x": 445,
+      "y": 290,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "bridge-rail-0",
+      "asset": "f01:railing",
+      "x": 605,
+      "y": 596,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "bridge-rail-1",
+      "asset": "f01:railing",
+      "x": 730,
+      "y": 596,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "bridge-rail-2",
+      "asset": "f01:railing",
+      "x": 855,
+      "y": 596,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "bridge-advert",
+      "asset": "f01:holo-head",
+      "x": 110,
+      "y": 450,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "bridge-koi",
+      "asset": "f01:holo-koi",
+      "x": 800,
+      "y": 535,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ],
+  "walkable": [
+    [
+      32,
+      625
+    ],
+    [
+      403,
+      625
+    ],
+    [
+      435,
+      581
+    ],
+    [
+      965,
+      581
+    ],
+    [
+      1028,
+      530
+    ],
+    [
+      1099,
+      514
+    ],
+    [
+      1146,
+      435
+    ],
+    [
+      1241,
+      392
+    ],
+    [
+      1241,
+      194
+    ],
+    [
+      1178,
+      194
+    ],
+    [
+      1154,
+      241
+    ],
+    [
+      1028,
+      241
+    ],
+    [
+      988,
+      218
+    ],
+    [
+      988,
+      111
+    ],
+    [
+      791,
+      111
+    ],
+    [
+      727,
+      158
+    ],
+    [
+      712,
+      214
+    ],
+    [
+      585,
+      221
+    ],
+    [
+      530,
+      178
+    ],
+    [
+      403,
+      178
+    ],
+    [
+      372,
+      225
+    ],
+    [
+      316,
+      229
+    ],
+    [
+      293,
+      253
+    ],
+    [
+      190,
+      265
+    ],
+    [
+      166,
+      297
+    ],
+    [
+      79,
+      308
+    ],
+    [
+      32,
+      332
+    ]
+  ]
+}

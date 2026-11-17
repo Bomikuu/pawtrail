@@ -1,0 +1,48 @@
+{
+  "id": "f01-phase5-switchyard-concept-v1",
+  "status": "approved",
+  "scope": "Switchyard concept image only; no dependent asset/model/NPC/runtime production before explicit owner approval",
+  "authorization": "Owner: proceed to phase 5, show Switchyard concept for approval before creating assets, then connect Sena, Iron Marshal and Kurogane",
+  "stage": "f01.stage.switchyard",
+  "clientDate": "2026-11-16",
+  "timezone": "Asia/Manila",
+  "startedAt": "2026-11-15 16:27:40 UTC",
+  "refs": [
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/floors/f01-neon-heights/batch-b-v1/undergrid-native-art-layout.png",
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-b-v1/05-rainline-skybridge-v1.png",
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/monsters/families/kurogane/v1/iron-marshal/normal.webp",
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/monsters/families/kurogane/v1/prism-gunner/normal.webp"
+  ],
+  "prompt": "Use case: stylized-concept.\nAsset type: one complete PawTrail game map composition proposal, \"Neon Switchyard\", Floor 01 Phase 5. This image is a concept for owner approval, not an asset sheet or gameplay screenshot.\nReference roles: image 1 is the CURRENT native Undergrid art, defining fine pixel texture, graphite metals, worn material edges and restrained cyan/magenta/warm light values. Image 2 is the approved adjacent Rainline map concept, defining the consistent fixed top-down three-quarter camera and inhabited neon city context. Image 3 is the EXISTING IRON MARSHAL identity, which MUST remain recognizable, not redesigned. Image 4 is the existing Prism Gunner, only for one small optional patrol away from the boss dock.\nPrimary request: envision a coherent deserted cyberpunk rail freight yard as the next connected stage. One complete landscape overview, approximately 4:3 aspect, framed to show all entrances and the whole traversable loop. Proposed native map is 36 by 28 cells (1152 by 896 pixels) but DO NOT draw a tile grid or repeated square ground-cell seams. All playable paths share one clear ground plane. Camera is top-down three-quarter with visible prop tops and south-facing fronts, not a cinematic ground-level perspective or true diamond isometric board.\nComposition, fixed geographical contract:\nSOUTHWEST: a broad safe arrival/return landing from Rainline Skybridge, bounded by low railings; include a recognizable service stair portal at the map edge, without a crossing elevated walkway covering gameplay.\nUPPER LEFT: the Freight Dispatch cabin, a modest weathered steel-and-masonry yard office with a shallow roof, warm amber service windows and an external service desk facing the open lane. Two-slot authorization terminal beside the desk, quiet checkpoint beacon and a closed supply bin. A tiny generic staff figure locates Sena's future interaction; this is NOT a final Sena character design. This cabin, its waiting area and the return landing are outside all combat space.\nWEST MIDDLE: a clearly closed secondary maintenance gate, the future shortcut back to Lumen Market. A short branch connects it to the main lane; this gate is visibly locked at this stage.\nCENTRE: a broad, readable winding freight service lane joining the southwest landing, dispatch cabin and northeast main gate. Flat recessed rail spurs and a few grouped freight containers tell the yard's story without blocking the route. Buildings/containers cluster asymmetrically around its perimeter; no uniform scatter, endless identical rows or oversized props. Keep walking/outfit clearance.\nLOWER RIGHT: a separate large Marshal Dock, approximately a quarter of the map, recessed inside low crash barriers and short industrial fence segments with one very obvious wide entrance. It is a flat open encounter pad, not a pit or raised second floor. Its interior must have substantial EMPTY dodge space in every direction, chipped restrained yellow edge paint and a few grounded loading fixtures outside the combat floor. Place ONE existing Iron Marshal here: black/graphite armored command mech, warm ivory/gold trim, squared helmet, magenta reactor core, prominent carried cyan riot shield, matching image 3. About 3.4 times a human's height, not an enormous Kurogane stand-in. Preserve the small decorative hovering shoulder emitters if present, but DO NOT make four standalone destructible funnel towers here. No extra enemies inside the Marshal arena. No firing, attack effects or visible telegraph overlays in this concept.\nUPPER RIGHT: an imposing CLOSED reinforced Bastion access bulkhead at the edge, with a small exterior waiting/entry pad and two unlit authorization sockets. The readable route leads to it from Sena's desk and from the dock exit. The main Kurogane boss is in a SEPARATE arena beyond this door and must NOT appear in the Switchyard.\nUPPER CENTRAL SIDE SPUR: at most one small matching Prism Gunner near cargo, outside the Marshal Dock and away from Sena/return areas; retain an obvious bypass. Do not add a swarm.\nEnvironment: industrial rail signals, grounded power cabinets, articulated crane arm over the perimeter cargo only, cable conduits, fans, dim far-city silhouettes at the edge, damp pavement with restrained reflected light. Weathered graphite and steel blue, muted burgundy and warm brass accents; narrow cyan/magenta emitters and selective amber lamps. Fine detailed painted PIXEL ART, precise stepped colored outlines, deep colored recesses, readable ground midtones. Match the supplied PawTrail art; not photorealistic, smooth 3D render, chunky sticker pixels, black silhouettes, neon bloom or heavy outlines.\nPlanned animated elements can be shown in representative still poses: crane warning lamps, signal strips, slowly rotating machinery fans, terminal scan glow and puddle highlights. Keep buildings and floor geometry solid and grounded; no magical floating buildings or glossy hologram-only architecture.\nOutput: ONE polished full-map concept, opaque complete scene. No UI, HUD, logo, health bars, quest icons, numbered zones, labels, titles, arrows, speech bubbles, frame, concept-sheet panels or text. No boss spoilers or final ending controller.",
+  "plannedSize": {
+    "tiles": [
+      36,
+      28
+    ],
+    "tilePixels": 32,
+    "native": [
+      1152,
+      896
+    ]
+  },
+  "constraints": {
+    "approval": "explicit owner reply required; no silence default",
+    "agents": "not used",
+    "verification": "tests, checks, builds and browser verification remain deferred"
+  },
+  "output": "docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png",
+  "source": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-4f230348-b46b-4ccc-9d01-f9024f37a9a0.png",
+  "completedAt": "2026-11-15 16:29:25 UTC",
+  "approval": "Explicit owner: Approve concept F v1 \u2014 proceed",
+  "imageSize": [
+    1448,
+    1086
+  ],
+  "review": {
+    "scope": "generated concept image only",
+    "observation": "Visually inspected the generated image: safe cabin NW, return SW, locked shortcut west, separate open Marshal Dock SE, closed Bastion gate NE; current enemy identities retained",
+    "runtime": "not reviewed; no map or assets installed",
+    "approval": "explicit owner reply required; silence does not approve production"
+  },
+  "approvedAt": "2026-11-15T16:31:49.641159+00:00"
+}

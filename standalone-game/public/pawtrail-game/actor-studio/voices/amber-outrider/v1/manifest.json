@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "actorId": "amber-outrider",
+  "name": "Amber",
+  "language": "ja-JP",
+  "profileId": "12b7981e",
+  "kind": "original-synthetic-character-voice",
+  "scope": "game-and-preview",
+  "totalBytes": 45319,
+  "cues": [
+    {
+      "id": "hi",
+      "text": "やっほー！一緒に行こう！",
+      "romanization": "Yahhō! Issho ni ikō!",
+      "translation": "Hey! Let's go together!",
+      "durationSeconds": 3.0364791666666666,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v1/hi.ogg",
+      "bytes": 9830,
+      "action": "wave",
+      "actionLabel": "Wave"
+    },
+    {
+      "id": "attack",
+      "text": "いくよ！くらえ！",
+      "romanization": "Iku yo! Kurae!",
+      "translation": "Here I go! Take this!",
+      "durationSeconds": 1.5134375,
+      "portraitEmotion": "angry",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v1/attack.ogg",
+      "bytes": 4726,
+      "action": "power_up",
+      "actionLabel": "Power up"
+    },
+    {
+      "id": "bye",
+      "text": "またね！気をつけて！",
+      "romanization": "Mata ne! Ki o tsukete!",
+      "translation": "See you! Take care!",
+      "durationSeconds": 2.7696875,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v1/bye.ogg",
+      "bytes": 8260,
+      "action": "wave",
+      "actionLabel": "Farewell wave"
+    },
+    {
+      "id": "hurt",
+      "text": "うっ！痛っ！",
+      "romanization": "U! Ita!",
+      "translation": "Ugh! Ow!",
+      "durationSeconds": 2.3318333333333334,
+      "portraitEmotion": "sad",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v1/hurt.ogg",
+      "bytes": 7214,
+      "action": "sick",
+      "actionLabel": "Hurt rehearsal"
+    },
+    {
+      "id": "thanks",
+      "text": "ありがとう！助かった！",
+      "romanization": "Arigatō! Tasukatta!",
+      "translation": "Thank you! That helped!",
+      "durationSeconds": 1.6,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v1/thanks.ogg",
+      "bytes": 5091,
+      "action": "clap",
+      "actionLabel": "Clap"
+    },
+    {
+      "id": "encouragement",
+      "text": "大丈夫！一緒に頑張ろう！",
+      "romanization": "Daijōbu! Issho ni ganbarō!",
+      "translation": "It’ll be okay! Let’s do our best together!",
+      "durationSeconds": 3.017125,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v1/encouragement.ogg",
+      "bytes": 10198,
+      "action": "cheer",
+      "actionLabel": "Cheer"
+    }
+  ]
+}

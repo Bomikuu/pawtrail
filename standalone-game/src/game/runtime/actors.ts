@@ -7,6 +7,7 @@ import catalog from "../housing/catalog.json";
 import type { Point } from "../housing/types";
 import { movementVector } from "../systems/behavior";
 import type { ContactMotor } from '../furniture/contacts'
+import { gameVoice } from './game-voice'
 export const playerTexture = (id: string) =>
   "actor:player:" + (id in catalog.players ? id : "rescuer");
 const catNames: Record<string, string> = {
@@ -113,7 +114,7 @@ export function configurePlayer(sprite: Phaser.GameObjects.Sprite, id: string) {
   sprite.vertexRoundMode = "fullAuto";
   const body = (sprite as Phaser.Physics.Arcade.Sprite).body as
     Phaser.Physics.Arcade.Body | undefined;
-  if (body?.setSize) body.setSize(10, 6).setOffset(a[0] - 5, a[1] - 6);
+  if (body?.setSize) {const half=id==='peony-7'?12:5,height=id==='peony-7'?8:6;body.setSize(half*2,height).setOffset(a[0]-half,a[1]-height)}
 }
 export function configureAnimal(sprite: Phaser.GameObjects.Sprite, id: string) {
   const s = native.sheets[animalSheet(id) as keyof typeof native.sheets];
@@ -135,6 +136,7 @@ export function playPlayer(
   repeat?: number,
 ) {
   sprite.setData("modelAction", action);
+  if(sprite.getData('actorLocalAudio'))gameVoice.action(id,action)
   const texture = playerTexture(id),
     aliases: Record<string, string> = {
       sleep: "sit",

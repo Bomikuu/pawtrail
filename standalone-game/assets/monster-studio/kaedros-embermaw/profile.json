@@ -1,0 +1,28 @@
+{
+  "id": "kaedros-embermaw",
+  "name": "Kaedros",
+  "title": "The Embermaw Hydra",
+  "origin": "The Cinderwater crossing (invented PawTrail fantasy lore)",
+  "temperament": "Territorial, vigilant, increasingly desperate when wounded",
+  "motivation": "Guard its river sanctuary against intruders",
+  "habitat": "Volcanic river islands",
+  "role": "Roaming five-headed boss; fictional combat only",
+  "reference": "/home/micxsz/pawtrail-boss-reference.jpg",
+  "observedReferenceFeatures": ["Five horned green dragon heads", "Cream segmented throats", "One chunky four-legged body", "Burgundy bat wings", "Curling tail"],
+  "inventedFeatures": ["Name and biography", "Ember-cracked enraged phase", "Attack timings and health"],
+  "representation": "Native illustrated cutout rig in the existing Three.js arena renderer; shared Amber player and item engine",
+  "health": { "maxHp": 3600, "hpPerBar": 600, "barCount": 6, "enrageThreshold": 0.3 },
+  "weaknesses": [
+    { "id": "exposed-chest", "condition": "Attack recovery", "multiplier": 1.65 },
+    { "id": "armored-scales", "condition": "Other grounded states", "multiplier": 0.75 }
+  ],
+  "immunities": ["Sword contact while airborne", "Damage during the 1.8 second enrage transition"],
+  "phaseChanges": {
+    "normal": { "fireSeconds": 3.2, "fireCooldownSeconds": 8.5, "stompCooldownSeconds": 11.5, "stompRadiusInPlayerHeights": 1.65 },
+    "enraged": { "fireSeconds": 4.2, "fireCooldownSeconds": 5.4, "stompCooldownSeconds": 6.9, "stompRadiusInPlayerHeights": 2.35, "satelliteAoEs": 3, "satelliteRadius": 1.1 }
+  },
+  "audio": { "implemented": "Existing shared item cast/contact cues; muted control and cancellation", "pending": "Six dedicated creature vocal cues; no copied reference audio" },
+  "rewards": "None; no account inventory, real animal record or verified Kibble mutation",
+  "installation": "/play?preview=monsters&boss=kaedros",
+  "review": "See docs/implementation/kaedros-boss-arena.md for exact observed review scope"
+}

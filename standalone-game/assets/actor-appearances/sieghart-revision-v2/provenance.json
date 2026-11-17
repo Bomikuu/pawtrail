@@ -1,0 +1,53 @@
+{
+  "mode": "Built-in image generation; authorized local production pass",
+  "identityReference": "../sieghart-painterly-v1/hero-generated.png",
+  "portraitStyleReference": "Amber Refined cel, amber-refined-cel-calm-v3/91b6c54014fe",
+  "prompts": [
+    "enraged-expression-prompt.txt",
+    "enraged-prompt.txt",
+    "enraged-smirk-prompt.txt",
+    "icon-prompt.txt",
+    "normal-prompt.txt",
+    "portrait-0-prompt.txt",
+    "portrait-1-prompt.txt",
+    "portrait-2-prompt.txt"
+  ],
+  "sources": [
+    {
+      "file": "normal-generated.png",
+      "sha256": "1fcf4c3906024acd067955ed5f3b8fdea19c556d095a5b1f64b124ea9bf0701a"
+    },
+    {
+      "file": "enraged-generated.png",
+      "sha256": "c0ba038c231c2ffb24c7c4d3c42cbdc24e5b7149b3b0e89b9e951ed57124c6d9"
+    },
+    {
+      "file": "enraged-draft-generated.png",
+      "sha256": "eeb077d16dd4c9056b75e49b48caca45b068ddaa439964bfd002e3103bf4ac3d"
+    },
+    {
+      "file": "enraged-scowl-generated.png",
+      "sha256": "56457b8ac783b83053c83af2ca525534ef65062583f348ae16972f2496175f90"
+    },
+    {
+      "file": "portrait-0-generated.png",
+      "sha256": "6d11c042a067af21c661c89877cdbd0193d527a33b10257254ecc78f7327ae30"
+    },
+    {
+      "file": "portrait-1-generated.png",
+      "sha256": "6d5610482894406a5d5f2cd4738bc4852de54fc0153c1c262a83b2fb6d9388c7"
+    },
+    {
+      "file": "portrait-2-generated.png",
+      "sha256": "f7fca0fbcb7bc50e046494ddb676a8ffee2e7014cd8a5cfedb0c32444ebe586f"
+    },
+    {
+      "file": "icon-generated.png",
+      "sha256": "c7bc0a641413f06aac0783910d32db3a8050d4e150f85927b9832f858367e02a"
+    },
+    {
+      "file": "amber-refined-style-reference.png",
+      "sha256": "1b5975805d2055675a1525b4efeabf99c35c1720ea7d3b473f56f8222b8f89a6"
+    }
+  ]
+}

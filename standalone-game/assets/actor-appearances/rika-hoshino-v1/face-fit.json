@@ -1,0 +1,40 @@
+{
+  "crop": [
+    40,
+    47,
+    80,
+    90
+  ],
+  "polygon": [
+    [
+      45,
+      68
+    ],
+    [
+      76,
+      66
+    ],
+    [
+      76,
+      78
+    ],
+    [
+      67,
+      86
+    ],
+    [
+      60,
+      89
+    ],
+    [
+      49,
+      85
+    ],
+    [
+      44,
+      77
+    ]
+  ],
+  "skin": "#f3c4a5",
+  "note": "Own front neutral source: face center x61 due to ponytail; eyes around y70, mouth83, chin89. Forehead room keeps eyes below separate fringe."
+}

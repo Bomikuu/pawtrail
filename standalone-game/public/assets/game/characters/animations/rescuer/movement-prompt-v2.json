@@ -1,0 +1,8 @@
+{
+  "variant": "rescuer",
+  "group": "movement",
+  "rows": 8,
+  "cols": 4,
+  "prompt": "Use case: stylized-concept. Asset type: original PawTrail player animation spritesheet. Image1 is style reference, image2 is the exact rescuer design reference; keep young mediumbrown skin, short tousled darkbrown hair, sagegreen short sleeved shirt, rust shorts, brown shoes, tan backpack. Topdown3/4 orthographic RPG pixelart, warmbrown outlines upperleftlight, crisp logical32x48 pixel character with identical proportions across EVERY frame. TRANSPARENT background no glow. EXACTLY4columns and8rows,32 separate sprites, equalcells. Each horizontal row4 animation frames, with big transparent separation between rows. Rows top to bottom: walk down (alternating left/right steps); walk up with backpack visible; walk left; walk right; idle down blinking and breathing; idle up breathing; idle left breathing; idle right breathing. All fullbody character centered, feet baseline fixed. First and last pose allow loop. Face orientation must follow requested directions. No text, labels, borders, floor, scenery, shadows extending cell, extra characters, gradients, blur, isometric. This is an aligned animation sheet, NOT a game screenshot.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-678c485c-7c92-45f6-be1a-d7b718ce3a14.png"
+}

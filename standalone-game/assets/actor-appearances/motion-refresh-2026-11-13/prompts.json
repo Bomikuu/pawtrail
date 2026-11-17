@@ -1,0 +1,44 @@
+[
+  {
+    "id": "portrait-front",
+    "refs": [
+      "/tmp/pawtrail-motion-reference-assets/front-pout.png"
+    ],
+    "prompt": "Create an authored pixel-art PORTRAIT IDLE animation sprite sheet from the exact attached Amber portrait. This is a focused animation revision, not a redesign. Keep precisely this Refined cel pixel style: chunky stepped outlines, flat discrete shadow clusters, brown hair, amber eyes, red rabbit ribbon, brass goggles, red jacket and ivory bodice. Transparent background. Exactly 4 columns by 3 rows = 12 equally sized cells in chronological row-major order. Each cell contains one COMPLETE intact head-and-shoulders bust with the same 4:5 frame, logical native pixel grid 96x120, fixed scale and torso baseline, at least 4 logical pixels transparent padding at top/sides. No UI, labels, grid lines, frame numbers, scenery, duplicate fragments or clipping. All 12 poses face FRONT, keep both eyes visible and a neutral friendly closed mouth; do NOT turn into a profile or a different camera angle. Draw a clearly visible yet restrained Dota-like living portrait performance: actual slight neck/shoulder weight shift and head settling, 3-4 logical pixels of lateral head travel, tiny natural head cant, hair tips and rabbit ribbon lagging behind; chest breathes gently while lower shoulder anchor stays fixed. Frames 0-2 ease from leftmost weight shift toward center, 3-5 toward rightmost, 6-8 continue soft follow-through, 9-11 settle toward left. This is 12 genuinely different whole drawings with coherent anatomy, not identical repeated portraits or a zoomed image. Frame 0 and 11 should allow a seamless continuous loop. Preserve the reference likeness, pixel cluster scale, gaze and open eyes. No painted smooth anime rendering, blur or gradients.",
+    "transparent": true
+  },
+  {
+    "id": "portrait-quarter",
+    "refs": [
+      "/tmp/pawtrail-motion-reference-assets/three-quarter-left.png"
+    ],
+    "prompt": "Create a 12-frame complete-portrait idle sprite sheet from this EXACT Amber Refined cel pixel portrait. Transparent background; exactly 4 columns x3 rows, equally sized 4:5 cells, each a COMPLETE head/shoulders bust, native logical pixel grid96x120, clear 4px safe gutters, same torso baseline and scale. Match the reference's chunky pixels, stepped contour, flat brown hair highlights, face/eye shapes, red rabbit ribbon, brass goggles, red coat and ivory bodice. No redesign. KEEP the THREE-QUARTER-LEFT camera angle in EVERY frame; never turn to front, side or back. Neutral friendly expression with open eyes, mouth closed. Author noticeable living idle motion around this held angle: slight neck/head/shoulder weight shift, 3-4 logical pixels lateral head movement, tiny shoulder counter-motion and breathing, delayed hair/ribbon settling. A soft continuous back-and-forth cycle across 12 distinct consecutive whole drawings in row-major order; eased turns and seamless end-to-start. Keep face proportions, costume connections and the lower bust anchor consistent. No frame numbers, labels, UI, grid lines, clipping, ghosting, detached eye/mouth patches, smooth painterly shading or whole-image resizing.",
+    "transparent": true
+  },
+  {
+    "id": "portrait-tilt",
+    "refs": [
+      "/tmp/pawtrail-motion-reference-assets/head-tilt-smile-right.png"
+    ],
+    "prompt": "Author an idle animation sprite sheet for the EXACT attached Amber pixel portrait, retaining its Refined cel style and approved TILTED-HEAD/RIGHT-facing three-quarter pose. Exactly 4 columns x3 rows =12 equal complete bust frames in chronological order. Transparent background, clean separated4:5 cells, logical pixel grid96x120, 4px safe padding and fixed shoulder baseline/scale. Preserve the angled head, gaze, face/eye design, brown long hair, red rabbit ribbon, brass goggles and red/ivory outfit. Every drawing MUST KEEP this selected tilted-head camera angle, with a neutral friendly closed-mouth expression and open eyes. Add genuine authored body/neck motion rather than merely duplicate or translate the drawing: restrained 3-4pixel head travel, small shoulder weight shifts, visible soft breathing, head settling, ribbon tips and hair lagging. Form a smooth eased back-and-forth idle cycle with seamless frame11-to0 return. Keep character proportions and the selected tilt. Use coarse intentional pixel clusters, stepped edges and discrete shadow colors matching the reference. No UI, text, grid marks, clipped ornaments, neighboring sprite fragments, smooth painted faces, gradients or blur.",
+    "transparent": true
+  },
+  {
+    "id": "amber-full-body-rest",
+    "refs": [
+      "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/actor-studio/illustrations/amber-outrider/v2-5a17b27d3162/poster.webp",
+      "/tmp/pawtrail-motion-reference-assets/three-quarter-left.png",
+      "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/actor-studio/references/amber-outrider.webp"
+    ],
+    "prompt": "Extend the FIRST attached Amber pixel-art illustration into a COMPLETE FULL-BODY RESTING illustration for the same PawTrail actor. Preserve her salute/hand-at-goggles pose, the three-quarter camera angle, friendly closed-mouth expression, recognizable brown hair, amber eyes, red rabbit ribbon, brass goggles, red/ivory embroidered outfit and utility pouch. Image1 supplies the existing illustration and pose; image2 is the authoritative Refined cel PIXEL ART face/style; image3 is ONLY identity and missing lower-body costume reference. Show the entire lower body down through both thighs, knees, fitted dark boots with red/gold panels, feet, heels and soles. Do not stop at thighs, crop the boots, omit legs or hide them behind a fade. Keep a native logical 192x320 pixel-art composition with at least12 logical pixels of clear margin above ribbon, below feet and around hair/hand/coat tips. Transparent background; one complete character cutout, no scenery, ground platform, text, panel, cast shadow or UI. Visible chunky pixels and stepped silhouette; limited discrete material shadow clusters, clear anime pixel facial features. Maintain the portrait-led pixel language rather than smooth cel anime painting. More room for the body, not smaller missing legs. This resting frame will anchor a later whole-body idle animation, so use stable feet and a balanced relaxed posture.",
+    "transparent": true
+  },
+  {
+    "id": "vaelrith-illustration",
+    "refs": [
+      "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/monsters/vaelrith-riftbound/v1/poster.webp"
+    ],
+    "prompt": "Make a chronological 16-frame COMPLETE ILLUSTRATION idle animation sprite sheet of EXACTLY the attached Vaelrith wall-anchored three-headed purple armored serpent boss. The attached pixel art is identity and style authority. EXACTLY4columns x4rows equal3:2 landscape cells, ideally1536x1024 sheet with384x256 logical frames. Transparent background; no text, UI, labels, numbering, grid lines, scenery or other creatures. Every frame contains the full existing three heads and all visible necks, matching broken masonry anchor/base; the masonry stays completely stationary and registered at the same ground anchor. Preserve the same frontal/three-quarter composition, head count THREE, swept black-violet horns and plates, turquoise armor seams and bright magenta inner mouths. No camera change or zoom. Draw actual noticeable creature motion across16distinct whole drawings: center head leans forward slightly then settles back, side necks counter-sway at staggered phases, jaws and throats flex with breathing, armor/neck overlaps change coherently and glow pulses subtly. Animate anatomical shapes rather than translate/scale the entire picture. Movement must be visible but restrained, about6-10native pixels of head displacement with the fixed wall roots. One continuous eased idle cycle with delayed neck follow-through and smooth frame15-to0 seam, not four repeated frames or sixteen unrelated designs. Keep clear transparent safe gutters and all horns/necks/stone bases inside every cell. Match the original chunky pixel shading, stepped outlines and discrete palette; no smooth plastic 3D, painted blur, smear, floating detached heads or additional limbs. The torso remains anchored inside the wall; do not invent a walking body.",
+    "transparent": true
+  }
+]

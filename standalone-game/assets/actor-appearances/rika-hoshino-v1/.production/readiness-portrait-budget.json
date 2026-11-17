@@ -1,0 +1,14 @@
+{
+  "stage": "portrait-budget",
+  "ready": true,
+  "inputs": [
+    {
+      "id": "portrait-pack",
+      "sha256": "330a2aea0a5545f1e020246591c6e71902350fe7bea95159e5c2c091fb65eaf3",
+      "bytes": 202880,
+      "files": 5
+    }
+  ],
+  "errors": [],
+  "at": "2026-11-15T04:10:23.371280+00:00"
+}

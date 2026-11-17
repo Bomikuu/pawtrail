@@ -1,0 +1,72 @@
+{
+  "id": "care-grove-v1",
+  "name": "Sampaguita Care Grove",
+  "journalStartedAt": "2026-11-15T07:59:55.346592+00:00",
+  "scope": "Editable local stage and existing playtest integration",
+  "brief": {
+    "tiles": [
+      32,
+      24
+    ],
+    "layout": "Upper-right shelter landmark, wooded left perimeter, branching stone/dirt paths, planted central care garden",
+    "interactions": [
+      "sit/stand",
+      "open/close garden door",
+      "toggle lights",
+      "refill feeding station",
+      "water plants"
+    ],
+    "spawn": "Clear lower-center path; current shared spawn convention"
+  },
+  "inputs": [
+    ".agents/skills/pawtrail-maps/references/reference-layout.png",
+    "assets/pixel-art-v1/manifest.json",
+    "src/game/housing/catalog.json",
+    "src/game/housing/community-art.json",
+    "public/pawtrail-game/game-assets/world-manifest.json"
+  ],
+  "phases": {
+    "discovery": {
+      "status": "complete",
+      "timing": "Read-only discovery occurred before journal creation; no duration claimed"
+    },
+    "authoring": {
+      "status": "complete",
+      "startedAt": "2026-11-15T07:59:55.346634+00:00",
+      "completedAt": "2026-11-15T08:04:30.506479+00:00",
+      "lastExportAt": "2026-11-15T08:10:11.305639+00:00"
+    },
+    "integration": {
+      "status": "complete",
+      "startedAt": "2026-11-15T08:04:30.506479+00:00",
+      "completedAt": "2026-11-15T08:11:14.830007+00:00",
+      "evidence": [
+        "src/game/stage-editor/data.ts",
+        "src/game/stage-editor/canvas.ts",
+        "src/game/stage-editor/playtest.ts",
+        "src/components/game/stage-editor.tsx"
+      ]
+    },
+    "liveReview": {
+      "status": "pending",
+      "reason": "Not requested; owner will try the stage. No tests/build/browser verification authorized by this request."
+    },
+    "nativeReview": {
+      "status": "complete",
+      "completedAt": "2026-11-15T08:11:14.830007+00:00",
+      "evidence": "assets/maps/care-grove-v1/native-overview.png",
+      "observations": [
+        "Upper-right shelter and wooded edge preserve reference composition using native art",
+        "Connected broad dirt paths repaired after first export to eliminate repeating grassy holes",
+        "Runtime actor scale, collisions and interaction playback are not approved by this artwork review"
+      ]
+    }
+  },
+  "boundaries": "No overworld replacement, account writes, inventory costs or Kibble rewards",
+  "entry": "/play?preview=stage&map=care-grove",
+  "omissions": [
+    "No enterable lodge interior or overworld portal",
+    "No NPC/combat/account records",
+    "Live play review pending; no automated checks/tests/builds/browser verification requested"
+  ]
+}

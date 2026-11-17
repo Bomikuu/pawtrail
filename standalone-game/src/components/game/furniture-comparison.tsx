@@ -22,8 +22,10 @@ import {
 } from '@/components/ui/select'
 import { PlayShell } from './shared/play-chrome'
 import { FurniturePair } from './furniture-pair'
-import { navigateFurnitureCreator, navigatePlay } from '@/game/play-navigation'
-import { furnitureDefinitions, facingLabel } from '@/game/furniture/model'
+import { SpriteFurnitureTrial } from './sprite-furniture-trial'
+import { navigateFurnitureEditor, navigatePlay } from '@/game/play-navigation'
+import { furnitureDefinitions, furnitureSeatCount, facingLabel } from '@/game/furniture/model'
+import { furnitureTurnaround } from '@/game/furniture/references/turnarounds'
 import {
   FurnitureField,
   type FieldOptions,
@@ -40,10 +42,10 @@ const arrows = [
 ]
 
 export default function FurnitureComparison() {
-  const [itemId, setItemId] = useState(initialDefinition.id)
+  const [itemId, setItemId] = useState(() => furnitureDefinitions.find(item => item.id === new URLSearchParams(window.location.search).get('asset'))?.id ?? initialDefinition.id)
   const definition =
     furnitureDefinitions.find((item) => item.id === itemId) ?? initialDefinition
-  const [tab, setTab] = useState<'couch' | 'field'>('couch'),
+  const [tab, setTab] = useState<'couch' | 'field' | 'sprite'>(()=>new URLSearchParams(window.location.search).get('representation')==='sprite'?'sprite':'couch'),
     [rotation, setRotation] = useState(0),
     [style, setStyle] = useState(definition.styles[0]),
     [seat, setSeat] = useState(-1)
@@ -112,6 +114,7 @@ export default function FurnitureComparison() {
   }, [tab])
   const stop = () => field.current?.input(0, 0)
   const focus = () => canvas.current?.focus({ preventScroll: true })
+  if(tab==='sprite')return <SpriteFurnitureTrial onBack={()=>{const url=new URL(window.location.href);url.searchParams.delete('representation');url.searchParams.set('asset',definition.id);window.history.replaceState(null,'',url);setTab('couch')}}/>
   return (
     <PlayShell>
       <header className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b px-4 py-3 sm:px-6">
@@ -133,9 +136,9 @@ export default function FurnitureComparison() {
             </p>
           </div>
         </div>
-        <Button variant="outline" onClick={navigateFurnitureCreator}>
+        <Button variant="outline" onClick={() => navigateFurnitureEditor(definition.id)}>
           <SlidersHorizontal className="size-4" />
-          Furniture creator
+          Furniture editor
         </Button>
       </header>
       <main className="min-h-0 flex-1 overflow-auto p-3 sm:p-5">
@@ -150,6 +153,7 @@ export default function FurnitureComparison() {
             </p>
           </div>
           <div className="flex gap-1" role="group" aria-label="Comparison view">
+            <Button size="sm" variant="outline" onClick={()=>{const url=new URL(window.location.href);url.searchParams.set('asset','sofa');url.searchParams.set('representation','sprite');window.history.replaceState(null,'',url);setTab('sprite')}}>2D couch trial</Button>
             <Button
               size="sm"
               variant={tab === 'couch' ? 'default' : 'outline'}
@@ -219,7 +223,7 @@ export default function FurnitureComparison() {
               {tab === 'couch' ? (
                 <>
                   <p>
-                    {['couch', 'aquarium'].includes(definition.model)
+                    {furnitureTurnaround(definition.model)
                       ? 'Each turn pairs the model with its matching reference. Interaction points and collision turn with it.'
                       : 'The original keeps its front view. The 3D model turns with its collision and interaction contacts.'}
                   </p>
@@ -360,8 +364,8 @@ export default function FurnitureComparison() {
                         size="sm"
                         variant={seat === value.value ? 'secondary' : 'outline'}
                         disabled={
-                          definition.model !== 'couch' &&
-                          (value.value >= 0 || value.value === -3)
+                          value.value >= furnitureSeatCount(definition) ||
+                          value.value === -3 && furnitureSeatCount(definition) < 2
                         }
                         aria-pressed={seat === value.value}
                         onClick={() => setSeat(value.value)}
@@ -371,8 +375,8 @@ export default function FurnitureComparison() {
                     ))}
                   </div>
                   <p className="text-xs leading-relaxed text-muted-foreground">
-                    Preview your character beside the furniture or seated on a
-                    couch. Curtains and fish animate as separate parts.
+                    Preview your character beside the furniture or using its
+                    available seats. Curtains and fish animate as separate parts.
                   </p>
                 </section>
               </>

@@ -10,6 +10,16 @@ backpack; feathered wings; and an equipped sword/sheath. Colors include linked
 highlights/shadows and individual channels. Hair tucks beneath hats and hoods.
 Gowns, long hair, wings and equipped gear retain their shared motion policies.
 
+The reusable shared humanoid now uses the refined-v2 curved face/torso and
+tapered limbs, retaining all joint anchors, shared movement and world scale.
+**Custom base · Refined v2** is a neutral starting template. In the texture
+studio (`/play?preview=skin`), it also has oversized transparent drawing panels
+attached to the head, torso and limbs. Whole-image artwork can extend beyond the
+body silhouette without editing its vertices. These panels require separate
+view artwork; thickness still needs geometry. Read
+[the skin-studio guide](skin-texture-studio.md) for import sizes, templates,
+classic package compatibility and the studio-local save boundary.
+
 The comparison field previews every human action from the authoritative
 `src/game/actor-rig/actions.json`, eight headings, pause/restart, synchronized or
 native timing, keyboard/touch movement, integer zoom and existing emote props.

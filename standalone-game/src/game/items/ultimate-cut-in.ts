@@ -1,6 +1,6 @@
 import {actorIllustrations} from '../creator/illustrations'
 
-export type UltimateCutInState={id:string;source:string;castId:string;character:'amber'|'yae';ability:string;leaving:boolean}
+export type UltimateCutInState={id:string;source:string;castId:string;character:'amber'|'yae'|'rika'|'peony';ability:string;leaving:boolean}
 let state:UltimateCutInState|null=null,serial=0
 let leaveTimer:ReturnType<typeof setTimeout>|undefined,clearTimer:ReturnType<typeof setTimeout>|undefined
 const listeners=new Set<()=>void>()

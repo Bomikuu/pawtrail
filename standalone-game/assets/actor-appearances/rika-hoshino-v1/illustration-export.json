@@ -1,0 +1,198 @@
+{
+  "nativeSize": [
+    320,
+    448
+  ],
+  "cycleMs": 5000,
+  "style": "Refined cel + painterly",
+  "variants": [
+    {
+      "variant": "normal",
+      "sourceBounds": [
+        81,
+        73,
+        1084,
+        1194
+      ],
+      "scale": 0.29112662013958124,
+      "translation": [
+        -9.581256231306082,
+        88.39481555333998
+      ],
+      "folder": "public/pawtrail-game/actor-studio/illustrations/rika-hoshino/v1/normal",
+      "runtimeBytes": 163388,
+      "decodedPartsBytes": 667648,
+      "parts": [
+        {
+          "id": "body",
+          "rect": [
+            0,
+            0,
+            265,
+            326
+          ],
+          "offset": [
+            41,
+            110
+          ],
+          "root": [
+            0,
+            0
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "length": 1,
+          "amplitude": 0,
+          "phase": 0
+        },
+        {
+          "id": "ponytail",
+          "rect": [
+            269,
+            0,
+            66,
+            104
+          ],
+          "offset": [
+            14,
+            185
+          ],
+          "root": [
+            71.93419740777667,
+            193.20039880358922
+          ],
+          "direction": [
+            -0.7,
+            1
+          ],
+          "length": 101.89431704885344,
+          "amplitude": 6.5,
+          "phase": 0.3
+        },
+        {
+          "id": "hair-crown",
+          "rect": [
+            339,
+            0,
+            5,
+            4
+          ],
+          "offset": [
+            73,
+            185
+          ],
+          "root": [
+            72.22532402791624,
+            189.1246261216351
+          ],
+          "direction": [
+            -0.7,
+            -1
+          ],
+          "length": 20.378863409770688,
+          "amplitude": 2.8,
+          "phase": 0.8
+        }
+      ]
+    },
+    {
+      "variant": "enraged",
+      "sourceBounds": [
+        16,
+        14,
+        1184,
+        1290
+      ],
+      "scale": 0.25,
+      "translation": [
+        10.0,
+        113.5
+      ],
+      "folder": "public/pawtrail-game/actor-studio/illustrations/rika-hoshino/v1/enraged",
+      "runtimeBytes": 161038,
+      "decodedPartsBytes": 653312,
+      "parts": [
+        {
+          "id": "body",
+          "rect": [
+            0,
+            0,
+            287,
+            319
+          ],
+          "offset": [
+            19,
+            117
+          ],
+          "root": [
+            0,
+            0
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "length": 1,
+          "amplitude": 0,
+          "phase": 0
+        },
+        {
+          "id": "ponytail",
+          "rect": [
+            291,
+            0,
+            80,
+            80
+          ],
+          "offset": [
+            14,
+            196
+          ],
+          "root": [
+            85.0,
+            208.5
+          ],
+          "direction": [
+            -1,
+            0.3
+          ],
+          "length": 85.0,
+          "amplitude": 7.0,
+          "phase": 0.3
+        },
+        {
+          "id": "moonfeather-energy",
+          "rect": [
+            375,
+            0,
+            54,
+            36
+          ],
+          "offset": [
+            50,
+            217
+          ],
+          "root": [
+            97.5,
+            243.5
+          ],
+          "direction": [
+            -1,
+            -0.35
+          ],
+          "length": 52,
+          "amplitude": 4.0,
+          "phase": 0.3,
+          "cycles": 3,
+          "pulse": {
+            "min": 0.8,
+            "max": 1,
+            "cycles": 2
+          }
+        }
+      ]
+    }
+  ]
+}

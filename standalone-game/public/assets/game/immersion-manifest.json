@@ -1,0 +1,2101 @@
+{
+  "version": 1,
+  "generationMode": "built-in image_gen",
+  "palette": [
+    "#fae8ce",
+    "#321b1f",
+    "#442628",
+    "#6a9039",
+    "#8e5641",
+    "#297f80",
+    "#4f9694",
+    "#df9850",
+    "#c2c04b",
+    "#bda193",
+    "#7d6764",
+    "#d79770",
+    "#ebb272",
+    "#605053",
+    "#47363b",
+    "#5b383a",
+    "#5e565a",
+    "#dca68a",
+    "#f0c38b",
+    "#c48358",
+    "#d38553",
+    "#c28864",
+    "#e68667",
+    "#c86856",
+    "#e2725a",
+    "#ad9085",
+    "#b79a8a",
+    "#512e2e",
+    "#5b402f",
+    "#81605a",
+    "#b76954",
+    "#87998c",
+    "#8fa99e",
+    "#73953a",
+    "#7e9f39",
+    "#442c2e",
+    "#3d3d2b",
+    "#2b8081",
+    "#5b8580",
+    "#ddbb9d",
+    "#eaceb3",
+    "#838c5d",
+    "#8cab42",
+    "#578448",
+    "#6d9340",
+    "#bb6246",
+    "#d06644",
+    "#416d3d",
+    "#55643e",
+    "#fae0b0",
+    "#fae3c0",
+    "#a65a3d",
+    "#a95e4c",
+    "#b1a89a",
+    "#b2b6ad",
+    "#86706c",
+    "#8b7775",
+    "#4c6b6c",
+    "#655f61",
+    "#7b4134",
+    "#7e4641",
+    "#51474c",
+    "#575556"
+  ],
+  "source": "assets/immersion-v1/generation-prompts.json",
+  "assets": [
+    {
+      "id": "missions:board-normal",
+      "file": "/assets/game/missions/board/board-normal.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          0,
+          0,
+          362,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "missions:board-available",
+      "file": "/assets/game/missions/board/board-available.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          362,
+          0,
+          724,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "missions:board-new",
+      "file": "/assets/game/missions/board/board-new.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          724,
+          0,
+          1086,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "missions:board-nearby",
+      "file": "/assets/game/missions/board/board-nearby.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          1086,
+          0,
+          1448,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "missions:wood-frame",
+      "file": "/assets/game/missions/board/wood-frame.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          0,
+          362,
+          362,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "missions:cork-tile",
+      "file": "/assets/game/missions/board/cork-tile.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          362,
+          362,
+          724,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "missions:paper-note",
+      "file": "/assets/game/missions/board/paper-note.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          724,
+          362,
+          1086,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "missions:pushpin",
+      "file": "/assets/game/missions/board/pushpin.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          1086,
+          362,
+          1448,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "missions:portrait-frame",
+      "file": "/assets/game/missions/board/portrait-frame.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          0,
+          724,
+          362,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "missions:completion-stamp",
+      "file": "/assets/game/missions/board/completion-stamp.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          362,
+          724,
+          724,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "missions:reward-token",
+      "file": "/assets/game/missions/board/reward-token.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          724,
+          724,
+          1086,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "missions:mission-marker",
+      "file": "/assets/game/missions/board/mission-marker.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/missions-source.png",
+      "sourceRects": [
+        [
+          1086,
+          724,
+          1448,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "portraits:orange_tabby",
+      "file": "/assets/game/missions/portraits/orange_tabby.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          0,
+          0,
+          397,
+          396
+        ]
+      ]
+    },
+    {
+      "id": "portraits:black_cat",
+      "file": "/assets/game/missions/portraits/black_cat.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          397,
+          0,
+          793,
+          396
+        ]
+      ]
+    },
+    {
+      "id": "portraits:white_cat",
+      "file": "/assets/game/missions/portraits/white_cat.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          793,
+          0,
+          1190,
+          396
+        ]
+      ]
+    },
+    {
+      "id": "portraits:tuxedo",
+      "file": "/assets/game/missions/portraits/tuxedo.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          1190,
+          0,
+          1586,
+          396
+        ]
+      ]
+    },
+    {
+      "id": "portraits:calico",
+      "file": "/assets/game/missions/portraits/calico.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          1586,
+          0,
+          1983,
+          396
+        ]
+      ]
+    },
+    {
+      "id": "portraits:siamese",
+      "file": "/assets/game/missions/portraits/siamese.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          0,
+          396,
+          397,
+          793
+        ]
+      ]
+    },
+    {
+      "id": "portraits:gray_tabby",
+      "file": "/assets/game/missions/portraits/gray_tabby.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          397,
+          396,
+          793,
+          793
+        ]
+      ]
+    },
+    {
+      "id": "portraits:brown_aspin",
+      "file": "/assets/game/missions/portraits/brown_aspin.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          793,
+          396,
+          1190,
+          793
+        ]
+      ]
+    },
+    {
+      "id": "portraits:white_puppy",
+      "file": "/assets/game/missions/portraits/white_puppy.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          1190,
+          396,
+          1586,
+          793
+        ]
+      ]
+    },
+    {
+      "id": "portraits:spotted_dog",
+      "file": "/assets/game/missions/portraits/spotted_dog.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/portraits-source.png",
+      "sourceRects": [
+        [
+          1586,
+          396,
+          1983,
+          793
+        ]
+      ]
+    },
+    {
+      "id": "inventory:cat-food",
+      "file": "/assets/game/inventory/items/cat-food.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          0,
+          0,
+          237,
+          237
+        ]
+      ]
+    },
+    {
+      "id": "inventory:dog-food",
+      "file": "/assets/game/inventory/items/dog-food.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          237,
+          0,
+          474,
+          237
+        ]
+      ]
+    },
+    {
+      "id": "inventory:fish-treats",
+      "file": "/assets/game/inventory/items/fish-treats.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          474,
+          0,
+          711,
+          237
+        ]
+      ]
+    },
+    {
+      "id": "inventory:pet-snack",
+      "file": "/assets/game/inventory/items/pet-snack.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          711,
+          0,
+          948,
+          237
+        ]
+      ]
+    },
+    {
+      "id": "inventory:water-bottle",
+      "file": "/assets/game/inventory/items/water-bottle.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          948,
+          0,
+          1185,
+          237
+        ]
+      ]
+    },
+    {
+      "id": "inventory:grooming-brush",
+      "file": "/assets/game/inventory/items/grooming-brush.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1185,
+          0,
+          1422,
+          237
+        ]
+      ]
+    },
+    {
+      "id": "inventory:first-aid",
+      "file": "/assets/game/inventory/items/first-aid.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1422,
+          0,
+          1659,
+          237
+        ]
+      ]
+    },
+    {
+      "id": "inventory:cleaning-kit",
+      "file": "/assets/game/inventory/items/cleaning-kit.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          0,
+          237,
+          237,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "inventory:yarn-ball",
+      "file": "/assets/game/inventory/items/yarn-ball.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          237,
+          237,
+          474,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "inventory:feather-wand",
+      "file": "/assets/game/inventory/items/feather-wand.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          474,
+          237,
+          711,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "inventory:toy-mouse",
+      "file": "/assets/game/inventory/items/toy-mouse.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          711,
+          237,
+          948,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "inventory:rubber-ball",
+      "file": "/assets/game/inventory/items/rubber-ball.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          948,
+          237,
+          1185,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "inventory:wood",
+      "file": "/assets/game/inventory/items/wood.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1185,
+          237,
+          1422,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "inventory:stone",
+      "file": "/assets/game/inventory/items/stone.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1422,
+          237,
+          1659,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "inventory:fabric",
+      "file": "/assets/game/inventory/items/fabric.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          0,
+          474,
+          237,
+          711
+        ]
+      ]
+    },
+    {
+      "id": "inventory:recyclables",
+      "file": "/assets/game/inventory/items/recyclables.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          237,
+          474,
+          474,
+          711
+        ]
+      ]
+    },
+    {
+      "id": "inventory:lost-collar",
+      "file": "/assets/game/inventory/items/lost-collar.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          474,
+          474,
+          711,
+          711
+        ]
+      ]
+    },
+    {
+      "id": "inventory:letter",
+      "file": "/assets/game/inventory/items/letter.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          711,
+          474,
+          948,
+          711
+        ]
+      ]
+    },
+    {
+      "id": "inventory:animal-tag",
+      "file": "/assets/game/inventory/items/animal-tag.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          948,
+          474,
+          1185,
+          711
+        ]
+      ]
+    },
+    {
+      "id": "inventory:mission-supplies",
+      "file": "/assets/game/inventory/items/mission-supplies.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1185,
+          474,
+          1422,
+          711
+        ]
+      ]
+    },
+    {
+      "id": "inventory:paw-token",
+      "file": "/assets/game/inventory/items/paw-token.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1422,
+          474,
+          1659,
+          711
+        ]
+      ]
+    },
+    {
+      "id": "inventory:photo",
+      "file": "/assets/game/inventory/items/photo.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          0,
+          711,
+          237,
+          948
+        ]
+      ]
+    },
+    {
+      "id": "inventory:badge",
+      "file": "/assets/game/inventory/items/badge.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          237,
+          711,
+          474,
+          948
+        ]
+      ]
+    },
+    {
+      "id": "inventory:rare-decoration",
+      "file": "/assets/game/inventory/items/rare-decoration.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          474,
+          711,
+          711,
+          948
+        ]
+      ]
+    },
+    {
+      "id": "inventory:backpack",
+      "file": "/assets/game/inventory/items/backpack.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          711,
+          711,
+          948,
+          948
+        ]
+      ]
+    },
+    {
+      "id": "inventory:slot",
+      "file": "/assets/game/inventory/items/slot.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          948,
+          711,
+          1185,
+          948
+        ]
+      ]
+    },
+    {
+      "id": "inventory:selected-slot",
+      "file": "/assets/game/inventory/items/selected-slot.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1185,
+          711,
+          1422,
+          948
+        ]
+      ]
+    },
+    {
+      "id": "inventory:pickup-sparkle",
+      "file": "/assets/game/inventory/items/pickup-sparkle.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 1,
+      "source": "assets/immersion-v1/inventory-source.png",
+      "sourceRects": [
+        [
+          1422,
+          711,
+          1659,
+          948
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:happy",
+      "file": "/assets/game/soundboard/animations/happy.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          0,
+          181,
+          181
+        ],
+        [
+          181,
+          0,
+          362,
+          181
+        ],
+        [
+          362,
+          0,
+          543,
+          181
+        ],
+        [
+          543,
+          0,
+          724,
+          181
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:confused",
+      "file": "/assets/game/soundboard/animations/confused.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          181,
+          181,
+          362
+        ],
+        [
+          181,
+          181,
+          362,
+          362
+        ],
+        [
+          362,
+          181,
+          543,
+          362
+        ],
+        [
+          543,
+          181,
+          724,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:angry",
+      "file": "/assets/game/soundboard/animations/angry.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          362,
+          181,
+          543
+        ],
+        [
+          181,
+          362,
+          362,
+          543
+        ],
+        [
+          362,
+          362,
+          543,
+          543
+        ],
+        [
+          543,
+          362,
+          724,
+          543
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:sleepy",
+      "file": "/assets/game/soundboard/animations/sleepy.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          543,
+          181,
+          724
+        ],
+        [
+          181,
+          543,
+          362,
+          724
+        ],
+        [
+          362,
+          543,
+          543,
+          724
+        ],
+        [
+          543,
+          543,
+          724,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:surprised",
+      "file": "/assets/game/soundboard/animations/surprised.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          724,
+          181,
+          905
+        ],
+        [
+          181,
+          724,
+          362,
+          905
+        ],
+        [
+          362,
+          724,
+          543,
+          905
+        ],
+        [
+          543,
+          724,
+          724,
+          905
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:crying",
+      "file": "/assets/game/soundboard/animations/crying.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          905,
+          181,
+          1086
+        ],
+        [
+          181,
+          905,
+          362,
+          1086
+        ],
+        [
+          362,
+          905,
+          543,
+          1086
+        ],
+        [
+          543,
+          905,
+          724,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:laughing",
+      "file": "/assets/game/soundboard/animations/laughing.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          1086,
+          181,
+          1267
+        ],
+        [
+          181,
+          1086,
+          362,
+          1267
+        ],
+        [
+          362,
+          1086,
+          543,
+          1267
+        ],
+        [
+          543,
+          1086,
+          724,
+          1267
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:excited",
+      "file": "/assets/game/soundboard/animations/excited.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          1267,
+          181,
+          1448
+        ],
+        [
+          181,
+          1267,
+          362,
+          1448
+        ],
+        [
+          362,
+          1267,
+          543,
+          1448
+        ],
+        [
+          543,
+          1267,
+          724,
+          1448
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:silly",
+      "file": "/assets/game/soundboard/animations/silly.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          1448,
+          181,
+          1629
+        ],
+        [
+          181,
+          1448,
+          362,
+          1629
+        ],
+        [
+          362,
+          1448,
+          543,
+          1629
+        ],
+        [
+          543,
+          1448,
+          724,
+          1629
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:loving",
+      "file": "/assets/game/soundboard/animations/loving.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          1629,
+          181,
+          1810
+        ],
+        [
+          181,
+          1629,
+          362,
+          1810
+        ],
+        [
+          362,
+          1629,
+          543,
+          1810
+        ],
+        [
+          543,
+          1629,
+          724,
+          1810
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:suspicious",
+      "file": "/assets/game/soundboard/animations/suspicious.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          1810,
+          181,
+          1991
+        ],
+        [
+          181,
+          1810,
+          362,
+          1991
+        ],
+        [
+          362,
+          1810,
+          543,
+          1991
+        ],
+        [
+          543,
+          1810,
+          724,
+          1991
+        ]
+      ]
+    },
+    {
+      "id": "soundboard:relaxed",
+      "file": "/assets/game/soundboard/animations/relaxed.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "source": "assets/immersion-v1/soundboard-source.png",
+      "sourceRects": [
+        [
+          0,
+          1991,
+          181,
+          2172
+        ],
+        [
+          181,
+          1991,
+          362,
+          2172
+        ],
+        [
+          362,
+          1991,
+          543,
+          2172
+        ],
+        [
+          543,
+          1991,
+          724,
+          2172
+        ]
+      ]
+    },
+    {
+      "id": "weather:rain-light",
+      "file": "/assets/game/weather/rain/rain-light.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          0,
+          0,
+          280,
+          280
+        ]
+      ]
+    },
+    {
+      "id": "weather:rain-heavy",
+      "file": "/assets/game/weather/rain/rain-heavy.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          280,
+          0,
+          561,
+          280
+        ]
+      ]
+    },
+    {
+      "id": "weather:splash-0",
+      "file": "/assets/game/weather/rain/splash-0.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          561,
+          0,
+          842,
+          280
+        ]
+      ]
+    },
+    {
+      "id": "weather:splash-1",
+      "file": "/assets/game/weather/rain/splash-1.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          842,
+          0,
+          1122,
+          280
+        ]
+      ]
+    },
+    {
+      "id": "weather:splash-2",
+      "file": "/assets/game/weather/rain/splash-2.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          0,
+          280,
+          280,
+          561
+        ]
+      ]
+    },
+    {
+      "id": "weather:splash-3",
+      "file": "/assets/game/weather/rain/splash-3.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          280,
+          280,
+          561,
+          561
+        ]
+      ]
+    },
+    {
+      "id": "weather:puddle-0",
+      "file": "/assets/game/weather/puddles/puddle-0.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          561,
+          280,
+          842,
+          561
+        ]
+      ]
+    },
+    {
+      "id": "weather:puddle-1",
+      "file": "/assets/game/weather/puddles/puddle-1.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          842,
+          280,
+          1122,
+          561
+        ]
+      ]
+    },
+    {
+      "id": "weather:ripple-0",
+      "file": "/assets/game/weather/puddles/ripple-0.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          0,
+          561,
+          280,
+          841
+        ]
+      ]
+    },
+    {
+      "id": "weather:ripple-1",
+      "file": "/assets/game/weather/puddles/ripple-1.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          280,
+          561,
+          561,
+          841
+        ]
+      ]
+    },
+    {
+      "id": "weather:ripple-2",
+      "file": "/assets/game/weather/puddles/ripple-2.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          561,
+          561,
+          842,
+          841
+        ]
+      ]
+    },
+    {
+      "id": "weather:ripple-3",
+      "file": "/assets/game/weather/puddles/ripple-3.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          842,
+          561,
+          1122,
+          841
+        ]
+      ]
+    },
+    {
+      "id": "weather:cloud-small",
+      "file": "/assets/game/weather/clouds/cloud-small.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          0,
+          841,
+          280,
+          1122
+        ]
+      ]
+    },
+    {
+      "id": "weather:cloud-medium",
+      "file": "/assets/game/weather/clouds/cloud-medium.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          280,
+          841,
+          561,
+          1122
+        ]
+      ]
+    },
+    {
+      "id": "weather:cloud-large",
+      "file": "/assets/game/weather/clouds/cloud-large.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          561,
+          841,
+          842,
+          1122
+        ]
+      ]
+    },
+    {
+      "id": "weather:cloud-thin",
+      "file": "/assets/game/weather/clouds/cloud-thin.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          842,
+          841,
+          1122,
+          1122
+        ]
+      ]
+    },
+    {
+      "id": "weather:cloud-dark",
+      "file": "/assets/game/weather/clouds/cloud-dark.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          0,
+          1122,
+          280,
+          1402
+        ]
+      ]
+    },
+    {
+      "id": "weather:cloud-overcast",
+      "file": "/assets/game/weather/clouds/cloud-overcast.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          280,
+          1122,
+          561,
+          1402
+        ]
+      ]
+    },
+    {
+      "id": "weather:cloud-shadow",
+      "file": "/assets/game/weather/clouds/cloud-shadow.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          561,
+          1122,
+          842,
+          1402
+        ]
+      ]
+    },
+    {
+      "id": "weather:wet-ground",
+      "file": "/assets/game/weather/effects/wet-ground.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/weather-source.png",
+      "sourceRects": [
+        [
+          842,
+          1122,
+          1122,
+          1402
+        ]
+      ]
+    },
+    {
+      "id": "night:streetlamp-off",
+      "file": "/assets/game/environment/night/streetlamp-off.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          0,
+          0,
+          362,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "night:streetlamp-on",
+      "file": "/assets/game/environment/night/streetlamp-on.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          362,
+          0,
+          724,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "night:window-off",
+      "file": "/assets/game/environment/night/window-off.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          724,
+          0,
+          1086,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "night:window-on",
+      "file": "/assets/game/environment/night/window-on.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          1086,
+          0,
+          1448,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "night:moon",
+      "file": "/assets/game/environment/night/moon.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          0,
+          362,
+          362,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "night:stars",
+      "file": "/assets/game/environment/night/stars.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          362,
+          362,
+          724,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "night:lantern-off",
+      "file": "/assets/game/environment/night/lantern-off.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          724,
+          362,
+          1086,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "night:lantern-on",
+      "file": "/assets/game/environment/night/lantern-on.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          1086,
+          362,
+          1448,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "night:indoor-lamp-off",
+      "file": "/assets/game/environment/night/indoor-lamp-off.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          0,
+          724,
+          362,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "night:indoor-lamp-on",
+      "file": "/assets/game/environment/night/indoor-lamp-on.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          362,
+          724,
+          724,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "night:fire-0",
+      "file": "/assets/game/environment/night/fire-0.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          724,
+          724,
+          1086,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "night:fire-1",
+      "file": "/assets/game/environment/night/fire-1.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/night-source.png",
+      "sourceRects": [
+        [
+          1086,
+          724,
+          1448,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "interactive:bench",
+      "file": "/assets/game/environment/interactive/bench.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          0,
+          0,
+          362,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "interactive:bush",
+      "file": "/assets/game/environment/interactive/bush.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          362,
+          0,
+          724,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "interactive:bush-rustle",
+      "file": "/assets/game/environment/interactive/bush-rustle.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          724,
+          0,
+          1086,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "interactive:tree",
+      "file": "/assets/game/environment/interactive/tree.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          1086,
+          0,
+          1448,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "interactive:mailbox",
+      "file": "/assets/game/environment/interactive/mailbox.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          0,
+          362,
+          362,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "interactive:mailbox-open",
+      "file": "/assets/game/environment/interactive/mailbox-open.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          362,
+          362,
+          724,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "interactive:bin",
+      "file": "/assets/game/environment/interactive/bin.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          724,
+          362,
+          1086,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "interactive:bin-open",
+      "file": "/assets/game/environment/interactive/bin-open.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          1086,
+          362,
+          1448,
+          724
+        ]
+      ]
+    },
+    {
+      "id": "interactive:covered-rest",
+      "file": "/assets/game/environment/interactive/covered-rest.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          0,
+          724,
+          362,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "interactive:supply-crate",
+      "file": "/assets/game/environment/interactive/supply-crate.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          362,
+          724,
+          724,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "interactive:collectible-marker",
+      "file": "/assets/game/environment/interactive/collectible-marker.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          724,
+          724,
+          1086,
+          1086
+        ]
+      ]
+    },
+    {
+      "id": "interactive:letter-marker",
+      "file": "/assets/game/environment/interactive/letter-marker.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "source": "assets/immersion-v1/interactive-source.png",
+      "sourceRects": [
+        [
+          1086,
+          724,
+          1448,
+          1086
+        ]
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "file": "/assets/game/soundboard/audio/happy.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.48,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/confused.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.6,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/angry.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.72,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/sleepy.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.48,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/surprised.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.6,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/crying.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.72,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/laughing.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.48,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/excited.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.6,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/silly.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.72,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/loving.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.48,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/suspicious.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.6,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/soundboard/audio/relaxed.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.72,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/audio/weather/rain-loop.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 4.0,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/audio/inventory/pickup.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.24997732426303854,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/audio/missions/board.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.24997732426303854,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    },
+    {
+      "file": "/assets/game/audio/inventory/rustle.wav",
+      "sampleRate": 22050,
+      "channels": 1,
+      "seconds": 0.24997732426303854,
+      "rights": "Original procedural synthesis for PawTrail; no third-party recordings."
+    }
+  ],
+  "limitations": [
+    "Native dimensions/alpha are authored by this exporter; playback and performance are not certified."
+  ]
+}

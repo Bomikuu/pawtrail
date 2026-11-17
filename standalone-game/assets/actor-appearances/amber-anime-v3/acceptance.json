@@ -1,0 +1,7 @@
+{
+  "sourceModel": "Amber anime v3",
+  "sourceViews": "Front, side, back and face authoring renders inspected. Fringe/eye occlusion, intersecting thigh/shorts, crown coverage and hair layers corrected.",
+  "scope": "Live reference-guided Blender model revision, preserving earlier comparison assets.",
+  "runtimeReview": "Pending owner review; no automated tests, build, checks or browser verification were run.",
+  "remaining": "Hand-authored interpretation, not a reconstruction guaranteed to exactly match the reference. Retargeting the full gameplay action set and roster installation remain outside this focused comparison."
+}

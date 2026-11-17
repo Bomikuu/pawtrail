@@ -1,0 +1,47 @@
+{
+  "familyId": "solvaris",
+  "parentBoss": "solvaris-solar-arbiter",
+  "id": "gilded-sentinel",
+  "name": "Gilded Sentinel",
+  "title": "Orrery Plate Guard",
+  "tier": "normal",
+  "row": 3,
+  "enragedRow": null,
+  "maxHp": 420,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 1.15,
+  "radius": 0.42,
+  "speed": 1.3,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "An ivory-and-gold construct keeps silent watch beneath broad shoulder plates. A single dark face slit brightens before its heavy fist falls.",
+  "weakness": "Dodge the frontal fist, then counterattack during its heavy recovery.",
+  "temperament": "Territorial observatory sentinel",
+  "origin": "The Sunken Orrery, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "gilded-slam",
+      "name": "Gilded Slam",
+      "shape": "sector",
+      "outer": 2.0,
+      "inner": 0,
+      "angle": 110,
+      "target": "self",
+      "damage": 14,
+      "windup": 1250,
+      "active": 360,
+      "recovery": 850,
+      "cooldown": 4700,
+      "description": "A heavy fist covers the forward wedge. Move around its side."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: corrected artwork loaded, started, paused and captured. Full attack/contact/defeat sequence unreviewed."
+}

@@ -1,5 +1,24 @@
 # PawTrail game interface
 
+The Parts model → 2D Amber comparison loads a pre-baked atlas only. Keep its
+separate source-model disclosure explicit: actual source views, model statistics
+and an opt-in GLB download. Preserve the old live/rendered/native modes and make
+the new source geometry clear; do not imply it is the same mesh or a neural
+generation result. Pose playback remains a local comparison, not game installation.
+
+Amber's representation comparison is a separate local motion study with one
+selected mode loaded on request. Use the shared shadcn controls for mode, common
+action, cardinal facing, pause, restart and integer pixel zoom. Keep Full 3D,
+painted 3D-to-pixels and authored native 2D clearly labeled, preserve the feet
+anchor and cycle timing, and disclose reused stride art instead of implying a
+complete 2D actor action library. The live creator and roster remain unchanged.
+
+Monster Studio compares native layered 2D, painted live 3D and unfiltered full 3D through
+compact shadcn buttons beside the encounter workspace. Keep HP, attacks, feedback,
+player scale and stage controls shared; label the fixed-camera 2D boss separately
+from the unchanged 3D arena/player. Switching releases the old preview and resets
+the rehearsal. Load only on request and keep runtime review status explicit.
+
 Mode: Experience for the explorable world; Operate for inventory, journal, and dialogue. Preserve the generated 63-color art, upper-left light, native 32px terrain scale, 32×48 rescuer frames, and 32×32 animal frames. Render at integer zoom with nearest-neighbor sampling. The game fills the viewport below a compact cream toolbar. Restrained orange actions and brown text match PawTrail. Primary headings, names and world labels use Saira Condensed; secondary body text, controls and dialogue use Instrument Sans. Both are self-hosted, with matching roles in the social platform and dashboard. No animated decorative page hero.
 
 The canvas is the primary surface. A small care objective sits in a corner; proximity reveals contextual actions at the bottom. Journal, backpack, and help use official shadcn Dialog/Tabs/Button/Progress components. Movement supports WASD/arrows, tap-to-walk, and a touch direction pad. Dialogue and menus pause simulation, and closing them restores control. Show genuine load progress, retryable loading failures, saved/local-only status, clear resource requirements and completed actions. Reduced motion disables camera smoothing and incidental tweens; it does not hide state feedback.
@@ -138,6 +157,15 @@ include the edits. Do not silently turn this into a new rig or a gameplay skin
 installation. See docs/implementation/skin-texture-studio.md.
 
 ## Item & Ability Studio
+
+Monster Studio (`/play?preview=monsters`) extends the same local authoring world
+for reference-led creatures. Preserve the real player rig and world scale, fixed
+wall attachments, readable ground danger and one canonical boss HP pool. Reuse
+official controls, the shared wooden icon frame, native pixel output and the
+heading/body font roles. Artwork views and the combat rehearsal stay distinct;
+source installation is not runtime acceptance. See
+`docs/implementation/vaelrith-monster-preview.md` for the first boss and its
+pending review status.
 
 `/play?preview=items` expands the existing studio world in Operate mode. Keep the
 bounded parts/library outliner, central actor or training canvas, property

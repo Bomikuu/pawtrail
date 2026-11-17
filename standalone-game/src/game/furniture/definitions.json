@@ -215,6 +215,348 @@
           }
         ]
       }
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "model": "table",
+      "reference": "/assets/game/housing/furniture/table-housing-v1.png",
+      "description": "Low honey-oak table with a deep solid apron and four short timber feet.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 64,
+        "height": 64,
+        "anchor": [
+          32,
+          53
+        ]
+      },
+      "styles": [
+        {
+          "id": "original",
+          "label": "Honey oak",
+          "fabric": "#e28c4b",
+          "light": "#ffd995",
+          "shade": "#805a36",
+          "pillow": "#f7dda3",
+          "wood": "#e28c4b"
+        },
+        {
+          "id": "walnut",
+          "label": "Walnut",
+          "fabric": "#8f5c3e",
+          "light": "#b9865a",
+          "shade": "#553b2b",
+          "pillow": "#f7dda3",
+          "wood": "#8f5c3e"
+        },
+        {
+          "id": "pale",
+          "label": "Pale oak",
+          "fabric": "#d7bf8f",
+          "light": "#f5e5c0",
+          "shade": "#99815d",
+          "pillow": "#f7dda3",
+          "wood": "#d7bf8f"
+        }
+      ],
+      "price": 79,
+      "construction": {
+        "seconds": 0,
+        "materials": []
+      }
+    },
+    {
+      "id": "side-table",
+      "label": "Side Table",
+      "model": "side-table",
+      "reference": "/assets/game/housing/furniture/side-table-complete-v1.png",
+      "description": "Beveled square table with four legs and a low inset shelf.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 32,
+        "height": 32,
+        "anchor": [
+          16,
+          26
+        ]
+      },
+      "styles": [
+        {
+          "id": "original",
+          "label": "Honey oak",
+          "fabric": "#e28c4b",
+          "light": "#ffd995",
+          "shade": "#805a36",
+          "pillow": "#f7dda3",
+          "wood": "#e28c4b"
+        },
+        {
+          "id": "walnut",
+          "label": "Walnut",
+          "fabric": "#8f5c3e",
+          "light": "#b9865a",
+          "shade": "#553b2b",
+          "pillow": "#f7dda3",
+          "wood": "#8f5c3e"
+        },
+        {
+          "id": "pale",
+          "label": "Pale oak",
+          "fabric": "#d7bf8f",
+          "light": "#f5e5c0",
+          "shade": "#99815d",
+          "pillow": "#f7dda3",
+          "wood": "#d7bf8f"
+        }
+      ],
+      "price": 31,
+      "construction": {
+        "seconds": 0,
+        "materials": []
+      }
+    },
+    {
+      "id": "bookshelf",
+      "label": "Bookshelf",
+      "model": "bookshelf",
+      "reference": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+      "description": "Shallow timber bookcase with three rows of individual books and an inset plain rear.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 64,
+        "height": 64,
+        "anchor": [
+          32,
+          58
+        ]
+      },
+      "styles": [
+        {
+          "id": "original",
+          "label": "Honey oak",
+          "fabric": "#e28c4b",
+          "light": "#ffd995",
+          "shade": "#805a36",
+          "pillow": "#f7dda3",
+          "wood": "#e28c4b"
+        },
+        {
+          "id": "walnut",
+          "label": "Walnut",
+          "fabric": "#8f5c3e",
+          "light": "#b9865a",
+          "shade": "#553b2b",
+          "pillow": "#f7dda3",
+          "wood": "#8f5c3e"
+        },
+        {
+          "id": "pale",
+          "label": "Pale oak",
+          "fabric": "#d7bf8f",
+          "light": "#f5e5c0",
+          "shade": "#99815d",
+          "pillow": "#f7dda3",
+          "wood": "#d7bf8f"
+        }
+      ],
+      "price": 79,
+      "construction": {
+        "seconds": 0,
+        "materials": []
+      }
+    },
+    {
+      "id": "chair",
+      "label": "Chair",
+      "model": "chair",
+      "reference": "/assets/game/housing/furniture/chair-complete-v1.png",
+      "description": "Reference-guided single-seat chair with physical actor docking, clearance and matching native facings.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 32,
+        "height": 32,
+        "anchor": [
+          16,
+          30
+        ]
+      },
+      "styles": [
+        {
+          "id": "original",
+          "label": "Honey oak",
+          "fabric": "#a1a65d",
+          "light": "#ffd995",
+          "shade": "#805a36",
+          "pillow": "#f7dda3",
+          "wood": "#d58b46"
+        },
+        {
+          "id": "walnut",
+          "label": "Walnut",
+          "fabric": "#a1a65d",
+          "light": "#b9865a",
+          "shade": "#553b2b",
+          "pillow": "#f7dda3",
+          "wood": "#8f5c3e"
+        },
+        {
+          "id": "pale",
+          "label": "Pale oak",
+          "fabric": "#a1a65d",
+          "light": "#f5e5c0",
+          "shade": "#99815d",
+          "pillow": "#f7dda3",
+          "wood": "#d7bf8f"
+        }
+      ],
+      "price": 31,
+      "construction": {
+        "seconds": 0,
+        "materials": []
+      }
+    },
+    {
+      "id": "dining-chair",
+      "label": "Dining Chair",
+      "model": "dining-chair",
+      "reference": "/assets/game/housing/furniture/dining-chair-complete-v1.png",
+      "description": "Reference-guided single-seat dining chair with physical actor docking, clearance and matching native facings.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 32,
+        "height": 32,
+        "anchor": [
+          16,
+          30
+        ]
+      },
+      "styles": [
+        {
+          "id": "original",
+          "label": "Honey oak",
+          "fabric": "#a1a65d",
+          "light": "#ffd995",
+          "shade": "#805a36",
+          "pillow": "#f7dda3",
+          "wood": "#d58b46"
+        },
+        {
+          "id": "walnut",
+          "label": "Walnut",
+          "fabric": "#a1a65d",
+          "light": "#b9865a",
+          "shade": "#553b2b",
+          "pillow": "#f7dda3",
+          "wood": "#8f5c3e"
+        },
+        {
+          "id": "pale",
+          "label": "Pale oak",
+          "fabric": "#a1a65d",
+          "light": "#f5e5c0",
+          "shade": "#99815d",
+          "pillow": "#f7dda3",
+          "wood": "#d7bf8f"
+        }
+      ],
+      "price": 31,
+      "construction": {
+        "seconds": 0,
+        "materials": []
+      }
+    },
+    {
+      "id": "armchair",
+      "label": "Armchair",
+      "model": "armchair",
+      "reference": "/assets/game/housing/furniture/armchair-housing-v1.png",
+      "description": "Reference-guided single-seat armchair with physical actor docking, clearance and matching native facings.",
+      "frame": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ]
+      },
+      "referenceFrame": {
+        "width": 32,
+        "height": 64,
+        "anchor": [
+          16,
+          60
+        ]
+      },
+      "styles": [
+        {
+          "id": "original",
+          "label": "Sage",
+          "fabric": "#8b9050",
+          "light": "#b7bf78",
+          "shade": "#535c31",
+          "pillow": "#f7dda3",
+          "wood": "#ce9148"
+        },
+        {
+          "id": "terracotta",
+          "label": "Terracotta",
+          "fabric": "#b86443",
+          "light": "#df9c70",
+          "shade": "#704331",
+          "pillow": "#f7dda3",
+          "wood": "#ce9148"
+        },
+        {
+          "id": "cream",
+          "label": "Cream",
+          "fabric": "#d7c9a8",
+          "light": "#f8e9c9",
+          "shade": "#95866b",
+          "pillow": "#f7dda3",
+          "wood": "#ce9148"
+        }
+      ],
+      "price": 47,
+      "construction": {
+        "seconds": 0,
+        "materials": []
+      }
     }
   ]
 }

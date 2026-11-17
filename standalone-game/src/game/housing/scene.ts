@@ -1,3 +1,4 @@
+import { furnitureStateView } from '../furniture/state-view';
 import {enterAbilities,movementProfile,activeAbility,isAbility,cancelLocalAbility} from '../abilities/state';
 import {gameAppearance,headingVector} from '../abilities/appearance';
 import {allowsMovingAction} from '../actor-rig/action-layers';
@@ -62,13 +63,18 @@ import { preloadCatFaces, catReaction } from "../soundboard";
 import { SHARED_FINDS, sharedWorld } from "../immersion-data";
 import { ContactMotor } from '../furniture/contacts'
 import { RoomReactions } from '../furniture/room-reactions'
+import { gameVoice } from '../runtime/game-voice'
 import { FurnitureRotationControl } from '../furniture/rotation-control'
+import { SofaPaletteTextures } from '../furniture/sofa-palette-textures'
+import { readSofaColor } from '../furniture/sofa-color-preference'
+import { SOFA_DEFAULT_COLOR } from '../furniture/palette-color'
 type Actor = Phaser.GameObjects.Sprite;
 export class HomeScene extends Phaser.Scene {
   private contactMotor = new ContactMotor()
   private roomReactions!: RoomReactions
   private furnitureFronts = new Map<string, Phaser.GameObjects.Image>();
   private rotationControl!: FurnitureRotationControl;
+  private sofaColors!: SofaPaletteTextures
   private companionRuntime?: CompanionRuntime;
   private encounters!: CommunityEncounters;
   private outdoors!: Outdoors;
@@ -119,6 +125,7 @@ export class HomeScene extends Phaser.Scene {
   private lastStep = 0;
   private actionUntil = 0;
   private actionName = "";
+  private lastCareVoice = '';
   private atmosphere?: Atmosphere;
   private discoveries = new Map<string, Phaser.GameObjects.Image>();
   private interactionHint?: Phaser.GameObjects.Text;
@@ -150,6 +157,9 @@ export class HomeScene extends Phaser.Scene {
       );
     for (const i of catalogue.items) {
       this.load.image("f:" + i.id, i.file);
+      if (i.stateViews?.open) this.load.image(`f:${i.id}:open`,i.stateViews.open.file);
+      if (i.stateViews?.unlit) this.load.image(`f:${i.id}:unlit`,i.stateViews.unlit.file);
+      if (i.frontFile) this.load.image(`f:${i.id}:front`, i.frontFile);
       for (const style of i.styles ?? []) for (const [rotation, view] of Object.entries(style.views)) {
         this.load.image(`f:${i.id}:${style.id}:${rotation}`, view.file);
         this.load.image(`f:${i.id}:${style.id}:${rotation}:front`, view.frontFile);
@@ -223,6 +233,7 @@ export class HomeScene extends Phaser.Scene {
     this.outdoorVersion = "";
     this.path = [];
     this.actionUntil = 0;
+    this.lastCareVoice = '';
     const leaveAbilities=enterAbilities('room');
     const abilityEnded=(event:Event)=>{const id=(event as CustomEvent).detail?.id;if(this.player?.getData('modelEmoteAction')===id){this.player.setData('modelEmoteUntil',0).setData('modelEmoteAction','').setData('modelAction','idle_'+this.direction);this.actionUntil=0}};
     window.addEventListener('pawtrail:ability-ended',abilityEnded);this.events.once(Phaser.Scenes.Events.SHUTDOWN,()=>{leaveAbilities();window.removeEventListener('pawtrail:ability-ended',abilityEnded)});
@@ -239,6 +250,7 @@ export class HomeScene extends Phaser.Scene {
 
     this.disposed = false;
     this.outdoors = new Outdoors(this);
+    this.sofaColors = new SofaPaletteTextures(this)
     this.roomReactions = new RoomReactions(this)
     this.rotationControl = new FurnitureRotationControl(this, () => this.command({ type: 'rotate' }))
     this.encounters = new CommunityEncounters(this);
@@ -246,7 +258,14 @@ export class HomeScene extends Phaser.Scene {
     this.petShadows = this.add.graphics().setDepth(-1);
     this.interactions = new InteractionController({
       now: () => this.time.now,
-      status: (interaction) => patch({ interaction }),
+      status: (interaction) => {
+        patch({ interaction });
+        const active=this.interactions?.active;
+        if(interaction?.phase==='complete'&&interaction.id!==this.lastCareVoice&&active&&['feed','water','pet','play','fill_food','fill_water'].includes(active.action)){
+          this.lastCareVoice=interaction.id;
+          void gameVoice.speak(homes.get().data?.player.appearance??'rescuer','encouragement','home');
+        }
+      },
       send: (event) => live(event),
       path: (path) => {
         this.path = path;
@@ -365,6 +384,9 @@ export class HomeScene extends Phaser.Scene {
       .setOrigin(0.5, 46 / 48);
     configurePlayer(this.player, "rescuer");
     this.player.setData('actorLocalAudio', true);
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN,gameVoice.enterScene('home'));
+    const releaseVoiceState=homes.subscribe(()=>{const current=homes.get();if(current.status!=='online'||current.decoration)gameVoice.stop()});
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN,releaseVoiceState);
     this.data.set('actorAudioListener', this.player);
     installMemeAnchors(this, id => id === 'me' ? this.player : this.actors.get(id));
     this.keys = this.input.keyboard!.addKeys(
@@ -432,7 +454,10 @@ export class HomeScene extends Phaser.Scene {
       if (this.disposed) return;
       this.interactions.cancel();
       this.poses.clear();
-      this.furnitureFronts.clear();
+      this.props.forEach(image => image.destroy()); this.props.clear()
+      this.furnitureFronts.forEach(image => image.destroy()); this.furnitureFronts.clear()
+      this.ghost?.destroy(); this.ghost = null
+      this.sofaColors.dispose()
       this.rotationControl.destroy()
       this.roomReactions.destroy()
       this.contactMotor.reset()
@@ -494,6 +519,8 @@ export class HomeScene extends Phaser.Scene {
     this.encounters.sync();
     const version =
       h.roomId +
+      ":" +
+      (s.decoration ? "decorating" : "playing") +
       ":" +
       h.revision +
       ":" +
@@ -569,7 +596,7 @@ export class HomeScene extends Phaser.Scene {
       for (const p of s.decoration ? s.draft : h.activeLayout) {
         const def = furnitureAt(p);
         if (!def || !this.textures.exists("f:" + p.item)) continue;
-        const art = furnitureArt(p)!;
+        const art = this.sofaColors.resolve(p, furnitureArt(p)!);
         const image = this.add
           .image(art.x, art.y, art.texture)
           .setOrigin(...art.origin)
@@ -609,6 +636,9 @@ export class HomeScene extends Phaser.Scene {
           },
         );
       }
+      this.sofaColors.retain(new Set(['ghost', ...(s.decoration ? s.draft : h.activeLayout)
+        .filter(p => p.item === 'sofa' && p.upholsteryColor && p.upholsteryColor !== SOFA_DEFAULT_COLOR)
+        .map(p => `placed:${p.id}`)]))
       this.roomReactions.sync(s.decoration ? [] : h.activeLayout, this.props, this.furnitureFronts)
       if (this.lastHouse !== h.roomId + ":" + h.interiorPreset) {
         this.lastHouse = h.roomId + ":" + h.interiorPreset;
@@ -659,7 +689,7 @@ export class HomeScene extends Phaser.Scene {
       const state = h.objectStates?.[p.id] ?? {},
         d = furnitureAt(p);
       if (d.geometry.actions.includes("toggle_light"))
-        image.setTint(state.lit === false ? 0x888893 : 0xffffff);
+        image.setTint(state.lit === false && !d.stateViews?.unlit ? 0x888893 : 0xffffff);
       if (d.geometry.actions.includes("water_plant"))
         image.setTint(
           state.wateredAt && Date.now() / 1000 - state.wateredAt < 3600
@@ -672,8 +702,8 @@ export class HomeScene extends Phaser.Scene {
             ? 0xd7f6ff
             : 0xffffff,
         );
-      if (p.item === "wooden-door")
-        image.setTexture(state.open ? "door:open" : "f:" + p.item);
+      if (d.stateViews)
+        image.setTexture("f:" + p.item + furnitureStateView(d,state).suffix);
       const kind = d.geometry.actions.includes("fill_water")
         ? "water"
         : d.geometry.actions.includes("fill_food")
@@ -810,7 +840,7 @@ export class HomeScene extends Phaser.Scene {
         .setOrigin(def.anchor[0] / def.width, def.anchor[1] / def.height)
         .setDepth(9999)
         .setAlpha(0.75);
-    const art = furnitureArt(this.candidate)!;
+    const art = this.sofaColors.resolve(this.candidate, furnitureArt(this.candidate)!, 'ghost');
     this.ghost.setTexture(art.texture).setOrigin(...art.origin);
     this.rotationControl.sync(this.candidate)
     this.ghost
@@ -854,6 +884,7 @@ export class HomeScene extends Phaser.Scene {
     patch({ placementPreview: null });
     this.ghost?.destroy();
     this.ghost = null;
+    this.sofaColors.release('ghost')
     this.candidate = null;
     this.shadow.clear();
     this.props.forEach((p) => p.setAlpha(1));
@@ -1060,6 +1091,7 @@ export class HomeScene extends Phaser.Scene {
         x: 12,
         y: 10,
         rotation: 0,
+        ...(c.item === 'sofa' && readSofaColor() !== SOFA_DEFAULT_COLOR ? { upholsteryColor: readSofaColor() } : {}),
       };
       this.rotate = 0;
       this.candidate.x = c.at
@@ -1071,6 +1103,25 @@ export class HomeScene extends Phaser.Scene {
       this.drawGhost();
       this.drag = true;
       return;
+    }
+    if (c.type === 'upholstery-color') {
+      const state = homes.get()
+      if (!state.decoration || !/^#[0-9a-f]{6}$/i.test(c.color)) return
+      const current = this.candidate ?? state.draft.find(p => p.id === state.selectedFurniture)
+      if (current?.item !== 'sofa') return
+      const next: Placement = { ...current, upholsteryColor: c.color.toLowerCase() }
+      if (next.upholsteryColor === SOFA_DEFAULT_COLOR) delete next.upholsteryColor
+      if (this.candidate) {
+        this.candidate = next; this.drawGhost()
+        const placed = state.draft.find(p => p.id === next.id)
+        // A color-only edit is ready immediately; moved/new pieces retain their placement preview.
+        if (placed && placed.x === next.x && placed.y === next.y && placed.rotation === next.rotation) this.commit()
+      }
+      else {
+        edit(state.draft.map(p => p.id === next.id ? next : p))
+        patch({ notice: 'Upholstery updated. Save arrangement to keep this sofa’s color.' })
+      }
+      return
     }
     if (c.type === 'style') {
       const current = this.candidate ?? homes.get().draft.find(p => p.id === homes.get().selectedFurniture);
@@ -1519,6 +1570,7 @@ export class HomeScene extends Phaser.Scene {
       if (id === s.data?.player.id) {
         this.actionName = animation;
         this.actionUntil = this.time.now + duration;
+        gameVoice.accepted(s.data?.player.appearance??'rescuer',animation,'home');
       }
       audio.effect("ui");
     }
@@ -1759,7 +1811,9 @@ export class HomeScene extends Phaser.Scene {
         : length
           ? (motion.running?"run_":"walk_") + this.direction
           : "idle_" + this.direction;
-    if (this.localPose) this.player.setData('modelFacing', ({ down: 0, left: -Math.PI / 2, up: Math.PI, right: Math.PI / 2 } as Record<string, number>)[this.localPose.facing]);
+    const poseFacing = this.localPose ? ({ down: 0, left: -Math.PI / 2, up: Math.PI, right: Math.PI / 2 } as Record<string, number>)[this.localPose.facing] : null
+    this.player.setData('modelPoseFacing', poseFacing)
+    if (poseFacing !== null) this.player.setData('modelFacing', poseFacing)
     playPlayer(this, this.player, s.data.player.appearance, this.localPose?.animation ?? desired);
     this.player.setDepth(this.localPose?.groundY ?? this.player.y);
     if (!s.decoration) {
@@ -1833,7 +1887,9 @@ export class HomeScene extends Phaser.Scene {
       a.y = Phaser.Math.Linear(a.y, pose?.y ?? r.y, blend);
       this.roomReactions.effects.observe(id, a, r.walking, (r.environment?.wetUntil ?? 0) * 1000 > Date.now(), !outside, performance.now())
       this.roomReactions.equipped(id, a, pose ? '' : r.environment?.tool ?? '')
-      if (pose) a.setData('modelFacing', ({ down: 0, left: -Math.PI / 2, up: Math.PI, right: Math.PI / 2 } as Record<string, number>)[pose.facing]);
+      const poseFacing = pose ? ({ down: 0, left: -Math.PI / 2, up: Math.PI, right: Math.PI / 2 } as Record<string, number>)[pose.facing] : null
+      a.setData('modelPoseFacing', poseFacing)
+      if (poseFacing !== null) a.setData('modelFacing', poseFacing)
       playPlayer(
         this,
         a,

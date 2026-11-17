@@ -1,0 +1,75 @@
+{
+  "mode": "built-in image_gen",
+  "jobs": [
+    {
+      "key": "lobby-ground",
+      "kind": "scenery",
+      "transparent": false,
+      "reference": "01-wayfarer-concourse-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. Create only the continuous empty FLOOR of the approved tower lobby, viewed at the same camera. Landscape 8:7 ratio, whole floor fills image. Slate graphite stone/metal with muted warm amber inlaid narrow routes: broad vertical central aisle from south entrance to northern lift, central circular compass/diamond inlay, two side branches towards trading counter west and expedition board east. Some restrained warm worn material detail. Remove every wall, column, person, furniture, lift, plant, sign and equipment from the ground painting; those will be separate objects. No cast object shadows. Keep the floor calm, no uniform square cell boundaries or raised stairs."
+    },
+    {
+      "key": "lobby-wall",
+      "kind": "scenery",
+      "transparent": true,
+      "reference": "01-wayfarer-concourse-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. One reusable tower lobby NORTH WALL SECTION cutout: wide graphite stone and aged-metal wall with two slender buttress columns, warm amber lamp inset, small muted teal vertical light strip, weathered panels and a little trailing ivy. Match architecture from approved lobby, with clearly visible front and shallow top ledge. Width about twice height of the visible wall face; tall enough for a normal person doorway scale. Do not include lift/door opening, furniture, people, floor or surrounding scene. Genuine transparent background, object fully visible, no haze or matte."
+    },
+    {
+      "key": "market-ground",
+      "kind": "scenery",
+      "transparent": false,
+      "reference": "03-lumen-market-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. Only the empty continuous GROUND painting for the approved Lumen Market. Landscape 8:7 ratio, fill entire frame with wet graphite pavement. Broad main road bends from WEST/left entry at y40% across center then to north/upper service gate at x55%. Open side working pads lower-left for repair bay, right-middle for vendor, lower-right for a maintenance cache pocket. Subtle cyan/magenta reflections and warm small reflected lamp marks, no intense global glow. Remove ALL buildings, stalls, signs, gates, boxes, rails, people, plants and overhead objects. No cast prop shadows. Continuous ground with irregular material wear, never visible uniform square map cells."
+    },
+    {
+      "key": "repair-bay",
+      "kind": "scenery",
+      "transparent": true,
+      "reference": "03-lumen-market-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. One standalone Lumen Market repair-bay facade/shelter cutout from approved lower-left workshop: low charcoal curved lintel, heavy angular side posts, upper shallow roof with vent cabinet, amber work lamp, cyan narrow side light, open front recess with tools hung on rear wall and dry shelves. Leave central floor opening and front approach clear for a separately modeled crafting console. No person, no freestanding workbench, no surrounding ground, buildings or rails. Complete isolated structure, same three-quarter game perspective, genuine transparent background. Width about 1.5 times height, readable open workspace."
+    },
+    {
+      "key": "awning-stall",
+      "kind": "scenery",
+      "transparent": true,
+      "reference": "03-lumen-market-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. One small standalone cyberpunk market awning structure: four thin charcoal/copper posts, gently sagging muted burgundy cloth canopy with pale worn seams and magenta trim, tiny warm hanging lamp, rear side shelving with a few closed parts boxes. The front center remains OPEN and empty for separate usable counter/NPC. No person, front counter, road, neighboring stalls, ground, writing or backdrop. Whole object with all four feet visible, matching approved market camera, transparent background and no broad halo."
+    },
+    {
+      "key": "clinic-canopy",
+      "kind": "scenery",
+      "transparent": true,
+      "reference": "02-neon-heights-arrival-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. One standalone Lantern Landing field-medic shelter from lower-left of approved arrival concept: cream/ochre fabric canopy on dark metal posts, soft amber work lamps, small teal diagnostic screen on REAR wall, cloth rolled kit and closed supply crates along LEFT edge. No medical cross or brand mark. Leave front-right bay OPEN for separate real 3D camp seat and unscaled actor to approach/sit. No baked seat, person, lift, street, rails, ground or surrounding city. Complete shelter, true alpha transparent background, grounded warm 2D pixel materials matching the source."
+    },
+    {
+      "key": "lift-reference",
+      "kind": "model-reference",
+      "transparent": true,
+      "reference": "01-wayfarer-concourse-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. Coherent reference sheet for ONE interactive prop, four views in a 2 by 2 grid: top-left FRONT, top-right LEFT SIDE, bottom-left BACK, bottom-right RIGHT SIDE. No written labels. Match scale, proportions, component counts, paint colors and construction across all views. Orthographic elevated game camera, real three-dimensional volume, common floor/pivot, generous cell gutters and complete object in every cell. Genuine transparent background, no backdrop or ground plane; only a small attached contact shadow. These are 2D references for a real textured 3D model, not four identical front views. Subject: tower access lift gate from the approved lobby. Charcoal/slate angular door-frame, two warm amber vertical columns, two central sliding metal door leaves with narrow teal glass window strips and three thin vertical seams, shallow entry sill, small bronze diamond/paw medallion over lintel. Self-contained freestanding lift-door cabinet with substantial side and rear housings, closed back maintenance panel, no extra architecture. Preserve exactly TWO door leaves and TWO main columns in all views. Front and rear are visibly different. Wide enough for a real adult actor with allowance; clear interior doorway about 1.5 actor widths and 1.25 actor height. Other views must show depth, same trim and accessible maintenance panels. No person or ground."
+    },
+    {
+      "key": "allocation-reference",
+      "kind": "model-reference",
+      "transparent": true,
+      "reference": "03-lumen-market-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. Coherent reference sheet for ONE interactive prop, four views in a 2 by 2 grid: top-left FRONT, top-right LEFT SIDE, bottom-left BACK, bottom-right RIGHT SIDE. No written labels. Match scale, proportions, component counts, paint colors and construction across all views. Orthographic elevated game camera, real three-dimensional volume, common floor/pivot, generous cell gutters and complete object in every cell. Genuine transparent background, no backdrop or ground plane; only a small attached contact shadow. These are 2D references for a real textured 3D model, not four identical front views. Subject: P01 power-allocation console. A compact three-column charcoal/copper cabinet on two short feet, three distinct icon display panels across its sloped upper face: safety controller, clinic service and tram service; use abstract simple geometric pictograms WITHOUT letters or numbers. Cyan left and right status displays, magenta middle display. Exactly THREE chunky physical toggle levers on the front lower edge, one per panel, and exactly THREE thick insulated cable outlets. Back has service panels and cable routing, not duplicated front displays. Rounded beveled edges, small amber fasteners, detailed worn 2D texture on actual constructible mass. About waist-high to actor, screen top readable from camera. No person/ground."
+    },
+    {
+      "key": "planning-reference",
+      "kind": "model-reference",
+      "transparent": true,
+      "reference": "01-wayfarer-concourse-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. Coherent reference sheet for ONE interactive prop, four views in a 2 by 2 grid: top-left FRONT, top-right LEFT SIDE, bottom-left BACK, bottom-right RIGHT SIDE. No written labels. Match scale, proportions, component counts, paint colors and construction across all views. Orthographic elevated game camera, real three-dimensional volume, common floor/pivot, generous cell gutters and complete object in every cell. Genuine transparent background, no backdrop or ground plane; only a small attached contact shadow. These are 2D references for a real textured 3D model, not four identical front views. Subject: freestanding expedition/route-planning board. A broad wood/aged-metal framed vertical bulletin panel on TWO substantial rear-braced legs, three pinned pale schematic paper/map regions under a warm top lamp, ONE small teal terminal shelf below right. No legible text, only abstract route lines. Height about normal actor head level, bottom shelf at waist. Rear shows dark wooden/metal braces and lamp wiring, no mirrored front papers. Same geometry and number of supports in every view, fine textured rendering, muted amber/slate palette. No person or surrounding room."
+    },
+    {
+      "key": "counter-reference",
+      "kind": "model-reference",
+      "transparent": true,
+      "reference": "03-lumen-market-v1",
+      "prompt": "Detailed textured 2D RPG pixel artwork matching the approved reference: elevated top-down three-quarter camera, fine material shading, graphite/slate structural surfaces, warm recesses, cyan/magenta localized emissions, precise restrained dark contours. No photographic blur or excessive bloom, no legible text, logos, HUD, watermark or editor grid. This is an original reusable game asset. Coherent reference sheet for ONE interactive prop, four views in a 2 by 2 grid: top-left FRONT, top-right LEFT SIDE, bottom-left BACK, bottom-right RIGHT SIDE. No written labels. Match scale, proportions, component counts, paint colors and construction across all views. Orthographic elevated game camera, real three-dimensional volume, common floor/pivot, generous cell gutters and complete object in every cell. Genuine transparent background, no backdrop or ground plane; only a small attached contact shadow. These are 2D references for a real textured 3D model, not four identical front views. Subject: Ivo merchant salvage counter, independent of its canopy. A waist-high angular charcoal/aged-copper counter cabinet, broad worn oak/metal top, one enclosed glass display insert in right half holding a small cyan-lit emergency-cell case, ONE amber desk lamp on left corner, three front recessed drawer panels, small teal side status strip. Rear accessible open storage cubbies and standing space side of counter, not another front. Rounded corners and beveled stepped base, no stool/person/canopy/sign. Detailed painted material divisions. Ensure same component placement at every view; counter depth enough to stand behind without clipping."
+    }
+  ]
+}

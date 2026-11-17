@@ -1,0 +1,43 @@
+{
+  "id": "aurelia-weiss-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "aurelia-weiss",
+  "characterName": "Aurelia Weiss",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    19,
+    90,
+    100
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/aurelia-weiss-refined-cel-v1/1597a05be466",
+  "revision": "1597a05be466",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 289795,
+  "referenceBytes": 12821,
+  "runtimeBytes": 276974,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

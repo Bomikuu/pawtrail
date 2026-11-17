@@ -1,0 +1,26 @@
+{
+  "portrait": {
+    "bytes": 202880,
+    "files": 5
+  },
+  "illustrations": {
+    "bytes": 324426,
+    "files": 14
+  },
+  "modelTexturesAndProfile": {
+    "bytes": 89973,
+    "files": 15
+  },
+  "pilotIcon": {
+    "bytes": 4358,
+    "files": 2
+  },
+  "mechIcon": {
+    "bytes": 3601,
+    "files": 1
+  },
+  "total": {
+    "bytes": 625238,
+    "files": 37
+  }
+}

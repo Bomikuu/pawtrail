@@ -46,6 +46,7 @@ export type InteractionStatus = {
   held?: boolean;
 } | null;
 export type Placement = {
+  upholsteryColor?: string;
   style?: string;
   id: string;
   item: string;
@@ -66,12 +67,14 @@ export type Person = {
   roomId?: string | null;
 };
 export type Furniture = {
+  visibleBounds?: number[];
   reaction?: { kind: string; fps: number; sensor?: number[] };
   motion?: { file: string; frontFile: string }[];
   indicatorHeight?: number;
   defaultStyle?: string;
   frontFile?: string;
-  renderedViews?: Record<string, { width: number; height: number; anchor: number[]; indicatorHeight?: number; reaction?: {kind: string; fps: number; sensor?: number[]}; footprint: number[]; geometry: FurnitureGeometry }>;
+  stateViews?: { open?: { file: string; ground: number[][] }; unlit?: { file: string } };
+  renderedViews?: Record<string, { width: number; height: number; anchor: number[]; visibleBounds?: number[]; indicatorHeight?: number; reaction?: {kind: string; fps: number; sensor?: number[]}; footprint: number[]; geometry: FurnitureGeometry }>;
   styles?: { id: string; label: string; color: string; views: Record<string, { file: string; frontFile: string; motion?: { file: string; frontFile: string }[] }> }[];
   construction?: { seconds: number; materials: { id: string; label: string; amount: number; price: number }[] };
   geometry: FurnitureGeometry;
@@ -283,6 +286,7 @@ export type HomesState = {
   petTick: number;
 };
 export type SceneCommand =
+  | { type: 'upholstery-color'; color: string }
   | { type: 'dig' }
   | { type: "object-action"; target: string; action: string }
   | { type: "debug-geometry"; enabled: boolean }

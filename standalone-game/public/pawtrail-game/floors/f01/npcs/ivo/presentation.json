@@ -1,0 +1,18 @@
+{
+  "id": "ivo",
+  "name": "Ivo Mercado",
+  "portraitCollection": "ivo-mercado-refined-cel",
+  "illustration": {
+    "name": "Ivo Mercado",
+    "folder": "/pawtrail-game/floors/f01/npcs/ivo/illustration",
+    "nativeSize": [
+      192,
+      320
+    ],
+    "style": "Refined cel + painterly",
+    "motion": "Authored full-body idle and blink"
+  },
+  "icon": "/pawtrail-game/floors/f01/npcs/ivo/icon.png",
+  "portraitBytes": 264432,
+  "scope": "friendly NPC · normal only · no voices"
+}

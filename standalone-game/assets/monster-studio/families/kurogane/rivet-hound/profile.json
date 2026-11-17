@@ -1,0 +1,47 @@
+{
+  "familyId": "kurogane",
+  "parentBoss": "kurogane-neon-bastion",
+  "id": "rivet-hound",
+  "name": "Rivet Hound",
+  "title": "Quadruped Pursuit Unit",
+  "tier": "normal",
+  "row": 2,
+  "enragedRow": null,
+  "maxHp": 360,
+  "hpPerBar": 360,
+  "enrageAt": 0,
+  "height": 1.05,
+  "radius": 0.45,
+  "speed": 2.05,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A low four-legged machine tracks intruders through the power yard using a cyan jaw sensor.",
+  "weakness": "Sidestep its committed jaw lunge, then strike during recovery.",
+  "temperament": "Programmed perimeter guardian",
+  "origin": "The Neon Switchyard, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "rivet-lunge",
+      "name": "Rivet Lunge",
+      "shape": "sector",
+      "outer": 1.9,
+      "inner": 0,
+      "angle": 80,
+      "target": "self",
+      "damage": 12,
+      "windup": 950,
+      "active": 380,
+      "recovery": 950,
+      "cooldown": 4700,
+      "description": "The hound lowers its armored jaw and locks a short forward lunge. Sidestep the wedge."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: model, movement, Rivet Lunge 12 HP, accepted sword damage and zero-HP defeat observed."
+}

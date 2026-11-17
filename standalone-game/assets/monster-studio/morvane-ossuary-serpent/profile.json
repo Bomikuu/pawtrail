@@ -1,0 +1,25 @@
+{
+  "id": "morvane-ossuary-serpent",
+  "name": "Morvane",
+  "title": "The Ossuary Serpent",
+  "origin": "A forgotten ossuary beneath the Cinderwater ruins; original fantasy lore",
+  "temperament": "Relentless, territorial and drawn to living footsteps",
+  "motivation": "Keep intruders from breaking its ancient binding",
+  "habitat": "Ruined burial halls and subterranean courtyards",
+  "reference": "/home/micxsz/pawtrail-skeleton-snake-reference.jpg",
+  "referenceFeatures": ["Tall crowned humanoid skull", "Glowing red eyes", "Open lower jaw", "Exposed ribs and spine", "Long pointed forelimbs", "Many skeletal walking legs"],
+  "inventedFeatures": ["Name, origin and biography", "Long path-following serpent body", "Crimson marrow enrage and combat timings"],
+  "representation": "Native 2D cutout rig in the shared roaming-boss arena renderer; real Amber rig and equipped sword",
+  "size": { "bodySegments": 33, "segmentSpacingInPlayerHeights": 0.6, "centerlineLengthInPlayerHeights": 19.2, "crownHeightInPlayerHeights": 5.6 },
+  "health": { "maxHp": 6000, "hpPerBar": 600, "bars": 10, "enrageThreshold": 0.3 },
+  "weaknesses": ["Skull lowers into reach during a bite or recovery", "Recovery skull contact deals 1.65x", "Ribs take 0.65x"],
+  "moves": {
+    "grave-bite": { "warningMs": 1100, "contactMs": 1400, "normalRadius": 1.05, "enragedRadius": 1.5, "normalCooldownMs": 6500, "enragedCooldownMs": 4000 },
+    "ossuary-wave": { "warningMs": 1200, "normalSegmentIntervalMs": 45, "enragedSegmentIntervalMs": 35, "normalRadius": 0.8, "enragedRadius": 1.12, "normalCooldownMs": 11000, "enragedCooldownMs": 7000 }
+  },
+  "pursuit": { "normalPlayerHeightsPerSecond": 1.65, "enragedPlayerHeightsPerSecond": 2.3, "turnRadiansPerSecond": 2.1 },
+  "authority": "Local fictional combat. One shared HP pool, one accepted damage receipt per strike. No real animal or verified Kibble changes.",
+  "audio": "Shared item/contact cues and mute; dedicated six-cue creature pack pending",
+  "installation": "/play?preview=monsters&boss=morvane",
+  "review": "See docs/implementation/morvane-skeleton-serpent.md for observed screenshots and limits"
+}

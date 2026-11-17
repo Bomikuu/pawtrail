@@ -1,0 +1,40 @@
+{
+  "id": "f01-batch-d-v1",
+  "status": "authored_installed_runtime_verification_pending",
+  "representation": "actual textured GLBs rendered live through the existing shared prop context; native foreground masks for bench",
+  "scope": "approved Phase 6 Koi Lamp and Bastion Bench",
+  "review": {
+    "status": "explicit_yes",
+    "reply": "Good enough \u2014 model both",
+    "at": "2026-11-15T17:26:05.594242+00:00"
+  },
+  "verification": {
+    "tests": "Nine focused cases authored; not run",
+    "typecheck": "not run",
+    "build": "not run",
+    "browser": "not run",
+    "nativeActorFit": "not observed",
+    "animationAndInteractions": "not observed",
+    "ownerDecision": "Skip verification for now remains in effect"
+  },
+  "completedAt": "2026-11-15T17:53:16.450101+00:00",
+  "delivery": "docs/game-design/floors/f01-neon-heights/phase-6-delivery.md",
+  "modelScript": "scripts/author-f01-batch-d-props.py",
+  "registryScript": "scripts/install-f01-batch-d.py",
+  "inputs": "authoring-inputs.json",
+  "runtimeBytes": 1204193,
+  "nativeInspection": [
+    "model-native-review.png",
+    "reference-model-board.png",
+    "bench-native-contacts.png",
+    "lobby-native-art-layout.png",
+    "arrival-native-art-layout.png",
+    "market-native-art-layout.png"
+  ],
+  "timing": {
+    "artService": "Two independent reference jobs completed in the recorded tool call, approximately 81 seconds combined wall wait",
+    "engineering": "interleaved with owner art review and native modeling; exclusive active duration not measured",
+    "nativeAuthoring": "Fresh Blender jobs, two threads; revised only for current-item silhouette/material/clearance changes",
+    "runtimeVerification": "not run; no duration claimed"
+  }
+}

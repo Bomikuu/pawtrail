@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-12",
+  "preview": "/play?compare=amber-representations",
+  "modes": [
+    "full-3d",
+    "painted-3d",
+    "native-2d"
+  ],
+  "actions": [
+    "idle",
+    "walk",
+    "run"
+  ],
+  "directions": [
+    "down",
+    "left",
+    "up",
+    "right"
+  ],
+  "nativeRun": "shared stride at faster cadence; dedicated sprint art pending",
+  "nativeAtlasBytes": 96864,
+  "decodedAtlasBytes": 655360,
+  "liveRosterChanged": false,
+  "automatedTestsRun": false,
+  "typeCheckRun": false,
+  "buildRun": false,
+  "browserOpened": false,
+  "review": "generated/native artwork inspected; live motion and full actor acceptance pending"
+}

@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "id": "mara-solis",
+  "projectRoot": "../../..",
+  "actors": [
+    {
+      "id": "mara-solis",
+      "name": "Mara Solis",
+      "modelKind": "humanoid",
+      "previewUrl": "http://127.0.0.1:5173/play?preview=stage&map=f01-arrival",
+      "voices": "omitted",
+      "voiceOmissionReason": "Explicitly omitted for this job by the owner",
+      "installInGame": false,
+      "illustrationName": "Mara Solis",
+      "illustrationVariants": [
+        "normal"
+      ],
+      "illustrationCycleMs": 4800,
+      "portrait": {
+        "collection": "mara-solis-floor",
+        "poses": [
+          "front-pout",
+          "three-quarter-left",
+          "head-tilt-smile-right"
+        ],
+        "emotions": [
+          "idle",
+          "smile",
+          "happy",
+          "sad",
+          "angry",
+          "surprised"
+        ]
+      },
+      "dependencies": {
+        "model": [
+          {
+            "path": "src/game/floors/npcs/mara.ts",
+            "imports": true
+          },
+          "src/game/actor-rig/rigs.ts"
+        ],
+        "portrait": [
+          "public/pawtrail-game/floors/f01/npcs/mara/presentation.json",
+          "src/game/actor-rig/photo-portrait-catalog.json",
+          "src/game/actor-rig/photo-portrait-renderer.ts"
+        ],
+        "illustration": [
+          "public/pawtrail-game/floors/f01/npcs/mara/illustration",
+          "src/game/creator/illustration-motion.ts",
+          "src/game/creator/illustration-assets.ts"
+        ],
+        "icon": [
+          "public/pawtrail-game/floors/f01/npcs/mara/icon.png",
+          "src/components/game/shared/character-icon.tsx"
+        ],
+        "preview": [
+          "src/game/floors/npcs.ts",
+          "src/game/stage-editor/canvas.ts",
+          "src/components/game/floor-npc-panel.tsx"
+        ],
+        "gameplay": [
+          "src/game/runtime/actors.ts",
+          "src/game/models3d/phaser-bridge.ts",
+          "src/game/stage-editor/playtest.ts",
+          "src/components/game/stage-editor.tsx"
+        ]
+      },
+      "scope": "friendly-floor-npc-first-loop",
+      "portraitStyle": "Refined cel",
+      "portraitDefaultAngle": "three-quarter-left",
+      "iconAngle": "three-quarter-left",
+      "scopeOmissions": [
+        "enraged illustration and combat kit: friendly NPC, not requested",
+        "voice: deferred by approved floor plan",
+        "full hero/comparison acceptance: outside this batch"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "normal",
+      "path": "assets/actor-appearances/mara-solis-floor-v1/normal-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "portrait-0",
+      "path": "assets/actor-appearances/mara-solis-floor-v1/portrait-0-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "portrait-1",
+      "path": "assets/actor-appearances/mara-solis-floor-v1/portrait-1-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "portrait-2",
+      "path": "assets/actor-appearances/mara-solis-floor-v1/portrait-2-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "illustration-runtime",
+      "kind": "directory",
+      "path": "public/pawtrail-game/floors/f01/npcs/mara/illustration",
+      "minFiles": 3
+    },
+    {
+      "id": "icon-runtime",
+      "kind": "image",
+      "path": "public/pawtrail-game/floors/f01/npcs/mara/icon.png",
+      "size": [
+        48,
+        48
+      ]
+    },
+    {
+      "id": "portrait-runtime",
+      "kind": "directory",
+      "path": "assets/actor-appearances/mara-solis-floor-v1/portrait-runtime",
+      "maxBytes": 300000,
+      "minFiles": 5
+    }
+  ],
+  "exports": {
+    "native_art": {
+      "requires": [
+        "normal",
+        "portrait-0",
+        "portrait-1",
+        "portrait-2"
+      ],
+      "produces": [
+        "illustration-runtime",
+        "icon-runtime",
+        "portrait-runtime"
+      ]
+    }
+  },
+  "verification": {
+    "status": "deferred_by_owner",
+    "decision": "Skip verification for now",
+    "nativeReview": "static illustration and portrait reference sheets inspected; motion/gameplay acceptance not inferred"
+  }
+}

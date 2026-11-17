@@ -1,0 +1,17 @@
+{
+  "asset": "public/pawtrail-game/monsters/vaelrith-riftbound/v1/manifest.json",
+  "artwork": "All six existing complete portrait drawings retained unchanged",
+  "timing": {
+    "sequence": [
+      0,
+      1,
+      0
+    ],
+    "durationsMs": [
+      1800,
+      800,
+      1600
+    ]
+  },
+  "liveReview": "pending; no browser verification requested"
+}

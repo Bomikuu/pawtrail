@@ -1,0 +1,12 @@
+{
+  "normal": {
+    "folder": "/pawtrail-game/actor-studio/illustrations/sieghart/v2/normal",
+    "bytes": 588511,
+    "frames": 6
+  },
+  "enraged": {
+    "folder": "/pawtrail-game/actor-studio/illustrations/sieghart/v2/enraged",
+    "bytes": 585422,
+    "frames": 6
+  }
+}

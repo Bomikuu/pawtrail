@@ -8,16 +8,19 @@ import { bakedActor, bakedDirection, preloadBakedActors, preloadBakedSheet, type
 import { actorComparison, faceInspection, type ComparisonAction, type ComparisonDirection } from './actor-comparison-state'
 import { ActorEmoteEffects } from './emote-effects'
 import { ActorGroundShadow } from './actor-shadow'
+import { ActorGroundSigil } from './actor-sigil'
 import { actorPreviews } from './actor-previews'
 import { PixelActor, CREATOR_FRAME, humanClips } from '../actor-rig/pixel-renderer'
 import { characterCreator, creatorPreviewCapture } from '../creator/state'
 import { creatorModelFactory } from '../creator/preview-models'
+import { createAmberBlenderStudy } from '../actor-rig/amber-blender-study'
 import { appearanceHeadHeight } from '../actor-rig/appearance'
 import { allowsMovingAction, usesWalkingLegs, actorEffectAction } from '../actor-rig/action-layers'
 import {ActionPlayback} from '../actor-rig/action-playback'
 import { PixelCat, CAT_CREATOR_FRAME, catClips } from '../actor-rig/cat-pixel-renderer'
 import { catCreator, catPreviewCapture } from '../cat-creator/state'
 import { catBodyScale } from '../actor-rig/cat-appearance'
+import { actorPreviewVoice, previewVoiceActorId } from './actor-preview-voice'
 
 type Kind = 'player' | 'cat'
 type Clip = { frames: number[]; fps: number; once: boolean }
@@ -59,6 +62,7 @@ export class ActorComparisonScene extends Phaser.Scene {
   private views: View[] = []
   private ground!: Phaser.GameObjects.TileSprite
   private marks!: Phaser.GameObjects.Graphics
+  private magicCircle?: ActorGroundSigil
   private pressed = new Set<string>()
   private elapsed = 0
   private strideElapsed = 0
@@ -75,11 +79,15 @@ export class ActorComparisonScene extends Phaser.Scene {
   private lastZoom = 0
   private lastDetail = false
   private lastAction = ''
+  private lastVoiceAction = ''
+  private lastVoiceRestart = -1
   private lastRestart = -1
   private clipSignature = ''
   private clips: Clip[] = []
   private live?:PixelActor | PixelCat
   private liveTexture?:Phaser.Textures.CanvasTexture
+  private referenceLive?:PixelActor
+  private referenceTexture?:Phaser.Textures.CanvasTexture
   private appearanceRevision=-1
   private appearanceChangedAt=0
   private renderSignature=''
@@ -88,6 +96,7 @@ export class ActorComparisonScene extends Phaser.Scene {
   constructor() { super('ActorCompare') }
 
   preload() {
+    ActorGroundSigil.preload(this)
     actorComparison.patch({ status: 'loading', load: 0, error: '' })
     this.load.on('progress', (load: number) => actorComparison.patch({ load }))
     this.load.on('loaderror', () => actorComparison.patch({ status: 'error', error: 'A comparison asset could not load. Please retry.' }))
@@ -117,6 +126,8 @@ export class ActorComparisonScene extends Phaser.Scene {
     this.offset = { x: 0, y: 0 }
     this.pressed.clear()
     this.lastAction = ''
+    this.lastVoiceAction = ''
+    this.lastVoiceRestart = -1
     this.lastRestart = -1
     this.lastZoom = 0
     this.clipSignature = ''
@@ -125,33 +136,42 @@ export class ActorComparisonScene extends Phaser.Scene {
     if (actorComparison.getSnapshot().status === 'error') return
     this.ground = this.add.tileSprite(0, 0, 1, 1, 'compare:grass', 0).setOrigin(0).setDepth(0)
     this.marks = this.add.graphics().setDepth(1)
+    this.magicCircle = new ActorGroundSigil(this)
     let previewTexture: string | undefined
     const creator=actorComparison.getSnapshot().mode==='creator'
     const cats=actorComparison.getSnapshot().mode==='cat-creator'
+    const blenderComparison=creator&&actorComparison.getSnapshot().amberBlender&&characterCreator.getSnapshot().previewModel==='amber'
     if(creator){const leave=enterAbilities('preview');this.events.once(Phaser.Scenes.Events.SHUTDOWN,leave)}
     if(creator || cats){
       try{
         const draft=cats?catCreator.getSnapshot():characterCreator.getSnapshot()
-        this.live=cats?new PixelCat(catCreator.getSnapshot().appearance):new PixelActor(characterCreator.getSnapshot().appearance,CREATOR_FRAME.density,creatorModelFactory(characterCreator.getSnapshot().previewModel))
+        this.live=cats?new PixelCat(catCreator.getSnapshot().appearance):new PixelActor(characterCreator.getSnapshot().appearance,CREATOR_FRAME.density,blenderComparison?createAmberBlenderStudy:creatorModelFactory(characterCreator.getSnapshot().previewModel))
         const frame=cats?CAT_CREATOR_FRAME:CREATOR_FRAME
         this.appearanceRevision=draft.renderRevision;this.appearanceChangedAt=0;this.renderSignature=''
         this.liveTexture=this.textures.createCanvas('creator:live',frame.width,frame.height)!
         this.liveTexture.setFilter(Phaser.Textures.FilterMode.NEAREST)
+        if(blenderComparison){
+          this.referenceLive=new PixelActor(characterCreator.getSnapshot().appearance,CREATOR_FRAME.density,creatorModelFactory('amber'))
+          this.referenceTexture=this.textures.createCanvas('creator:reference',frame.width,frame.height)!
+          this.referenceTexture.setFilter(Phaser.Textures.FilterMode.NEAREST)
+        }
         if(cats)catPreviewCapture.set(()=>{(this.live as PixelCat).setAppearance(catCreator.getSnapshot().appearance);return this.live!.portrait()})
         else creatorPreviewCapture.set(()=>{(this.live as PixelActor).setAppearance(characterCreator.getSnapshot().appearance);return this.live!.portrait()})
         const kind=cats?'cat':'player',base=bakedActor(kind,cats?'orange_tabby':'rescuer')!
         for(const original of [true,false]){
-          const sheet=original?base:{...base,texture:'creator:live',frameWidth:frame.width,frameHeight:frame.height,anchor:frame.anchor}
+          const reference=original&&blenderComparison
+          const sheet=original&&!reference?base:{...base,texture:reference?'creator:reference':'creator:live',frameWidth:frame.width,frameHeight:frame.height,anchor:frame.anchor}
           this.textures.get(sheet.texture).setFilter(Phaser.Textures.FilterMode.NEAREST)
           const sprite=this.add.sprite(0,0,sheet.texture).setOrigin(sheet.anchor.x,sheet.anchor.y)
-          if(!original)sprite.setScale(1/frame.density).setData('actorPixelDensity',frame.density)
+          if(!original||reference)sprite.setScale(1/frame.density).setData('actorPixelDensity',frame.density)
           sprite.vertexRoundMode='fullAuto'
-          const label=this.add.text(0,0,original?'Approved base':cats?'Your cat':'Your character',{fontFamily:'Saira Condensed',fontSize:'8px',color:'#38271e',backgroundColor:'#fff2da',padding:{left:3,right:3,top:1,bottom:1}}).setOrigin(.5,0).setDepth(4)
-          this.views.push({sprite,kind,original,native:false,live:!original,sheet,label,effects:new ActorEmoteEffects(this,kind)})
+          const label=this.add.text(0,0,blenderComparison?(original?'Current Amber':'Blender revision'):original?'Approved base':cats?'Your cat':'Your character',{fontFamily:'Saira Condensed',fontSize:'8px',color:'#38271e',backgroundColor:'#fff2da',padding:{left:3,right:3,top:1,bottom:1}}).setOrigin(.5,0).setDepth(4)
+          this.views.push({sprite,kind,original,native:false,live:!original||reference,sheet,label,effects:new ActorEmoteEffects(this,kind)})
         }
       }catch(error){
-        this.live?.dispose();this.live=undefined;creatorPreviewCapture.set(undefined);catPreviewCapture.set(undefined)
+        this.live?.dispose();this.live=undefined;this.referenceLive?.dispose();this.referenceLive=undefined;creatorPreviewCapture.set(undefined);catPreviewCapture.set(undefined)
         if(this.textures.exists('creator:live'))this.textures.remove('creator:live')
+        if(this.textures.exists('creator:reference'))this.textures.remove('creator:reference')
         actorComparison.patch({status:'error',error:error instanceof Error?error.message:'The appearance renderer could not open.'});return
       }
     }else if (actorComparison.getSnapshot().mode === 'skin') {
@@ -212,8 +232,13 @@ export class ActorComparisonScene extends Phaser.Scene {
     canvas.addEventListener('blur', clear)
     this.scale.on('resize', this.layout, this)
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.magicCircle?.destroy(); this.magicCircle = undefined
+      actorPreviewVoice.stop()
       for (const view of this.views) { view.effects?.destroy(); view.shadow?.destroy() }
       if(creator || cats){creatorPreviewCapture.set(undefined);catPreviewCapture.set(undefined);this.live?.dispose();this.live=undefined;for(const view of this.views)if(view.live)view.sprite.destroy();if(this.textures.exists('creator:live'))this.textures.remove('creator:live');this.liveTexture=undefined}
+      this.referenceLive?.dispose();this.referenceLive=undefined
+      if(this.textures.exists('creator:reference'))this.textures.remove('creator:reference')
+      this.referenceTexture=undefined
       if (previewTexture) {
         for (const view of this.views) if (!view.native && view.sheet.texture === previewTexture) view.sprite.destroy()
         if (this.textures.exists(previewTexture)) this.textures.remove(previewTexture)
@@ -240,8 +265,9 @@ export class ActorComparisonScene extends Phaser.Scene {
     const preview = options.mode === 'skin' ? actorPreviews.find(entry => entry.id === options.appearance) : undefined
     const editing=options.mode==='creator'||options.mode==='cat-creator'
     const detail=faceInspection(options)
-    const minimumWidth = detail?80:options.mode==='cat-creator'?176:editing?144:preview ? (preview.sheet.frameWidth + 8) * 2 : 1
-    const zoomLimit = Math.max(1, Math.min(detail?10:4, Math.floor(this.scale.width / minimumWidth), detail?Math.floor(this.scale.height/48):editing?Math.floor(this.scale.height/112):4))
+    const blender=options.amberBlender&&!!this.referenceLive
+    const minimumWidth = detail?80:blender?100:options.mode==='cat-creator'?176:editing?144:preview ? (preview.sheet.frameWidth + 8) * 2 : 1
+    const zoomLimit = Math.max(1, Math.min(detail?10:blender?10:4, Math.floor(this.scale.width / minimumWidth), detail?Math.floor(this.scale.height/48):blender?Math.floor(this.scale.height/80):editing?Math.floor(this.scale.height/112):4))
     const zoom = Math.min(options.zoom, zoomLimit)
     if (zoom !== options.zoom || zoomLimit !== options.zoomLimit) actorComparison.patch({zoom,zoomLimit})
     this.lastZoom = zoom
@@ -260,7 +286,10 @@ export class ActorComparisonScene extends Phaser.Scene {
       if(options.mode==='creator'){
         const selected=options.action==='power_run'?'power_up':options.action;
         if(isAbility(selected)){
-          if(!activateLocalAbility(selected,characterCreator.getSnapshot().appearance)){actorComparison.patch({action:'idle'});return}
+          if(!activateLocalAbility(selected,characterCreator.getSnapshot().appearance)){
+            if(previewVoiceActorId(characterCreator.getSnapshot().previewModel))actorPreviewVoice.fail('That ability is unavailable or cooling down. No voice was played.')
+            actorComparison.patch({action:'idle'});return
+          }
         }else cancelLocalAbility();
       }
       if (options.restart !== this.lastRestart){this.offset = { x: 0, y: 0 };this.strideElapsed=0;this.presentationClock=0;this.playback.reset()}
@@ -269,6 +298,11 @@ export class ActorComparisonScene extends Phaser.Scene {
     }
     const ability=options.action==='power_run'?'power_up':options.action;
     if(options.mode==='creator'&&isAbility(ability)&&activeAbility()?.id!==ability){actorComparison.patch({action:'idle'});return}
+    if(options.mode==='creator'&&previewVoiceActorId(characterCreator.getSnapshot().previewModel)&&!options.paused&&
+      (options.action!==this.lastVoiceAction||options.restart!==this.lastVoiceRestart)){
+      actorPreviewVoice.accepted(options.action, !this.lastVoiceAction||options.action===this.lastVoiceAction)
+      this.lastVoiceAction=options.action;this.lastVoiceRestart=options.restart
+    }
     const motion=options.mode==='cat-creator'?{speed:options.action==='run'?155:105,running:options.action==='run',dash:false,gentle:false}:movementProfile(characterCreator.getSnapshot().appearance,options.action==='run');
     let x = options.inputX + (this.pressed.has('d') || this.pressed.has('arrowright') ? 1 : 0) - (this.pressed.has('a') || this.pressed.has('arrowleft') ? 1 : 0)
     let y = options.inputY + (this.pressed.has('s') || this.pressed.has('arrowdown') ? 1 : 0) - (this.pressed.has('w') || this.pressed.has('arrowup') ? 1 : 0)
@@ -290,12 +324,12 @@ export class ActorComparisonScene extends Phaser.Scene {
       this.offset.y = Phaser.Math.Clamp(this.offset.y + y / length * motion.speed*.25 * dt, -maxY, maxY)
       traveled=Math.hypot(this.offset.x-before.x,this.offset.y-before.y)*4;
       direction = bakedDirection(Math.atan2(x, y), direction)
-      if (direction !== options.direction) actorComparison.patch({ direction })
+      if (direction !== options.direction || options.rotation !== null) actorComparison.patch({ direction, rotation: null })
     }
     const draft=options.mode==='cat-creator'?catCreator.getSnapshot():characterCreator.getSnapshot()
     const liveClips=options.mode==='cat-creator'?catClips:humanClips
     if(this.live&&draft.renderRevision!==this.appearanceRevision&&_time-this.appearanceChangedAt>=100){
-      try{if(this.live instanceof PixelCat)this.live.setAppearance(catCreator.getSnapshot().appearance);else this.live.setAppearance(characterCreator.getSnapshot().appearance);this.appearanceRevision=draft.renderRevision;this.appearanceChangedAt=_time;this.renderSignature=''}
+      try{if(this.live instanceof PixelCat)this.live.setAppearance(catCreator.getSnapshot().appearance);else this.live.setAppearance(characterCreator.getSnapshot().appearance);this.referenceLive?.setAppearance(characterCreator.getSnapshot().appearance);this.appearanceRevision=draft.renderRevision;this.appearanceChangedAt=_time;this.renderSignature=''}
       catch(error){actorComparison.patch({status:'error',error:error instanceof Error?error.message:'This appearance could not render.'});return}
     }
     if (!options.paused){this.elapsed += Math.min(delta, 50) / 1000;this.presentationClock+=Math.min(delta,50)}
@@ -321,7 +355,15 @@ export class ActorComparisonScene extends Phaser.Scene {
     const portraitAction=portraitClip.once&&portraitElapsed>=portraitDuration?'idle':action
     if(options.portraitAction!==portraitAction)actorComparison.patch({portraitAction})
     this.marks.clear()
+    this.magicCircle?.hide()
     const detail=faceInspection(options)
+    const editing=options.mode==='creator'||options.mode==='cat-creator'
+    this.ground.setVisible(!editing&&!options.amberBlender)
+    if(editing||options.amberBlender){
+      this.marks.fillStyle(0xe4e1d2).fillRect(0,0,this.world.width,this.world.height)
+      this.marks.lineStyle(1,0xb9ad91,.09)
+      for(let y=0;y<this.world.height;y+=32)this.marks.lineBetween(0,y,this.world.width,y)
+    }
     if(!detail)this.marks.lineStyle(1, 0xf9e4bd, .75).lineBetween(Math.floor(this.world.width / 2), 0, Math.floor(this.world.width / 2), this.world.height)
     const refined=options.mode==='creator'&&characterCreator.getSnapshot().previewModel!=='shared'
     const garmentTarget=action==='run'||moving&&gait==='run'?1.25:action==='walk'||moving?1:0
@@ -336,31 +378,46 @@ export class ActorComparisonScene extends Phaser.Scene {
       const phase = clip.once ? Math.min(elapsed / duration, .999999) : elapsed / duration % 1
       const frame = clip.frames[Math.min(clip.frames.length - 1, Math.floor(phase * clip.frames.length))]
       const px = Math.round(this.world.width * (detail ? .5 : view.original ? .25 : .75) + this.offset.x)
-      const py = Math.round((detail?this.world.height*.5+(options.mode==='cat-creator'?6.5*catBodyScale(catCreator.getSnapshot().appearance.cat.bodySize):27):this.world.height * (options.mode !== 'legacy' ? .62 : view.kind === 'player' ? .43 : .79)) + this.offset.y)
+      const py = Math.round((detail?this.world.height*.5+(options.mode==='cat-creator'?6.5*catBodyScale(catCreator.getSnapshot().appearance.cat.bodySize):27):this.world.height * (options.amberBlender ? .78 : options.mode !== 'legacy' ? .62 : view.kind === 'player' ? .43 : .79)) + this.offset.y)
       view.sprite.setPosition(px, py).setDepth(2)
+      if(view.live&&!detail&&options.mode==='creator'&&['sieg','sieghart','aurelia','rika','peony','mira'].includes(characterCreator.getSnapshot().previewModel)){
+        // A ground-bound selection sigil, separate from the contact shadow.
+        const model=characterCreator.getSnapshot().previewModel
+        if(model==='sieghart'||model==='aurelia'||model==='rika'||model==='peony'||model==='mira')this.magicCircle?.update(px,py+1,this.presentationClock,model)
+        else {
+          this.marks.lineStyle(1,0x72a3a0,.55).strokeEllipse(px,py+1,34,11)
+          this.marks.lineStyle(1,0xb99055,.7)
+          for(let i=0;i<6;i++){const angle=i*Math.PI/3,x=Math.round(px+Math.cos(angle)*15),y=Math.round(py+1+Math.sin(angle)*4);this.marks.strokeRect(x-1,y-1,2,2)}
+        }
+      }
       view.sprite.setData('actorLocalAudio', true)
       if(view.live&&options.mode==='cat-creator')view.sprite.setData('actorBodyScale',catBodyScale(catCreator.getSnapshot().appearance.cat.bodySize))
       view.shadow?.update(view.sprite, action, this.presentationClock, options.paused, direction)
-      if(view.live&&this.live&&this.liveTexture){
+      if(view.live&&this.live&&this.liveTexture&&(!view.original||!this.referenceLive)){
         const previewPhase=options.mode!=='cat-creator'?Math.floor(phase*64)/64:undefined
-        const angle=-Math.max(0,['down','down_left','left','up_left','up','up_right','right','down_right'].indexOf(direction))*Math.PI/4
+        const angle=options.rotation!==null&&!moving?-options.rotation*Math.PI/180:-Math.max(0,['down','down_left','left','up_left','up','up_right','right','down_right'].indexOf(direction))*Math.PI/4
         this.humanYaw=this.humanYaw===undefined||options.paused||!moving?angle:approachFacing(this.humanYaw,angle,Math.min(delta,40)/1000)
         if(this.humanAction!==action){this.humanFromAction=this.humanAction;this.humanFromPhase=this.humanPhase;this.humanAction=action;this.humanTransitionAt=this.presentationClock}
         const blend=options.paused?1:Math.min(1,(this.presentationClock-this.humanTransitionAt)/HUMAN_GAIT.blendMs)
         if(blend>=1)this.humanFromAction=''
-        const renderOptions={yaw:Math.round(this.humanYaw/(Math.PI/36))*Math.PI/36,fromAction:this.humanFromAction||undefined,fromPhase:Math.floor(this.humanFromPhase*64)/64,transition:Math.round(blend*16)/16} 
+        const renderOptions={yaw:Math.round(this.humanYaw/(Math.PI/180))*Math.PI/180,fromAction:this.humanFromAction||undefined,fromPhase:Math.floor(this.humanFromPhase*64)/64,transition:Math.round(blend*16)/16} 
         this.humanPhase=phase
         const signature=action+':'+direction+':'+frame+':'+(locomotionFrame??'-')+':'+gait+':'+previewPhase+':'+secondaryMotion?.phase+':'+secondaryMotion?.locomotion+':'+JSON.stringify(renderOptions)
         if(signature!==this.renderSignature){
           try{
             const pixels=this.live instanceof PixelActor?this.live.frame(action,direction,frame,locomotionFrame,gait,previewPhase,secondaryMotion,renderOptions):this.live.frame(action==='feed'?'eat':action==='water'?'drink':action,direction,frame,locomotionFrame,gait)
+            if(this.referenceLive&&this.referenceTexture){
+              this.referenceTexture.context.putImageData(this.referenceLive.frame(action,direction,frame,locomotionFrame,gait,previewPhase,secondaryMotion,renderOptions),0,0)
+              this.referenceTexture.refresh()
+            }
             this.liveTexture.context.putImageData(pixels,0,0);this.liveTexture.refresh();this.renderSignature=signature
           }
           catch(error){actorComparison.patch({status:'error',error:error instanceof Error?error.message:'The character frame could not render.'});return}
         }
-      }else view.sprite.setFrame(frame)
-      view.effects?.update(view.sprite, view.live&&options.mode!=='cat-creator'?actorEffectAction(characterCreator.getSnapshot().appearance,action):action, this.presentationClock, false, direction, view.live&&options.mode!=='cat-creator'?appearanceHeadHeight(characterCreator.getSnapshot().appearance):view.sheet.headHeight, !view.original && !options.paused)
-      if(view.live&&view.label.text!==draft.name)view.label.setText(draft.name||(options.mode==='cat-creator'?'Your cat':'Your character'))
+      }else if(!view.live)view.sprite.setFrame(frame)
+      view.effects?.update(view.sprite, view.live&&options.mode!=='cat-creator'?actorEffectAction(characterCreator.getSnapshot().appearance,action):action, this.presentationClock, false, direction, view.live&&options.mode!=='cat-creator'?(characterCreator.getSnapshot().previewModel==='peony'?57:characterCreator.getSnapshot().previewModel==='mira'?54:appearanceHeadHeight(characterCreator.getSnapshot().appearance)):view.sheet.headHeight, !view.original && !options.paused)
+      const name=options.amberBlender&&this.referenceLive?(view.original?'Current Amber':'Blender revision'):draft.name||(options.mode==='cat-creator'?'Your cat':'Your character')
+      if(view.live&&view.label.text!==name)view.label.setText(name)
       view.label.setPosition(px, py + 7)
     })
   }

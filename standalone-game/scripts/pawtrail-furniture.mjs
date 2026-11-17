@@ -10,19 +10,31 @@ import { createServer } from "vite";
 const root = path.resolve(import.meta.dirname, ".."),
   args = process.argv.slice(2);
 const value = (name) => args[args.indexOf(name) + 1];
-if (args[0] !== "render" || !args.includes("--id"))
+const preview = args.includes('--preview');
+if (args[0] !== "render" || (!args.includes("--id") && !args.includes('--ids')))
   throw Error(
-    "Use: node scripts/pawtrail-furniture.mjs render --id studio-couch [--install]",
+    "Use: node scripts/pawtrail-furniture.mjs render --id item OR --ids item1,item2 [--preview | --install]",
   );
+if (args.includes('--id') && args.includes('--ids')) throw Error('Use either --id or --ids.');
+if (preview && args.includes('--install')) throw Error('Preview exports cannot install an incomplete style set.');
 const definitions = JSON.parse(
   await fs.readFile(
     path.join(root, "src/game/furniture/definitions.json"),
     "utf8",
   ),
 );
-const definition = definitions.items.find((item) => item.id === value("--id"));
-if (!definition || !/^[a-z0-9-]+$/.test(definition.id))
-  throw Error("Choose an existing furniture definition.");
+const ids = String(value(args.includes('--ids') ? '--ids' : '--id') ?? '').split(',').map(id => id.trim());
+if (new Set(ids).size !== ids.length || ids.some(id => !/^[a-z0-9-]+$/.test(id))) throw Error('Choose distinct existing furniture IDs.');
+const selected = ids.map(id => definitions.items.find(item => item.id === id));
+if (selected.some(item => !item)) throw Error('Choose existing furniture definitions.');
+let definition = selected[0];
+const originalCatalog = JSON.parse(await fs.readFile(path.join(root, 'src/game/housing/catalog.json'), 'utf8'));
+let existingItem = originalCatalog.items.find(item => item.id === definition.id);
+const batchReferences = {
+  ...JSON.parse(await fs.readFile(path.join(root, 'src/game/furniture/references/batch-01.json'), 'utf8')),
+  ...JSON.parse(await fs.readFile(path.join(root, 'src/game/furniture/references/chairs.json'), 'utf8')),
+};
+let batchReference = batchReferences[definition.model];
 const port = 5184,
   origin = `http://127.0.0.1:${port}`,
   session = "pawtrail-furniture-" + process.pid;
@@ -104,7 +116,7 @@ const server = await createServer({
               if (
                 data.id !== definition.id ||
                 !Array.isArray(data.frames) ||
-                data.frames.length !== definition.styles.length * 4
+                data.frames.length !== (preview ? 1 : definition.styles.length) * 4 || !!data.preview !== preview
               )
                 throw Error("Incomplete furniture render");
               const keys = new Set();
@@ -113,7 +125,7 @@ const server = await createServer({
                 if (
                   keys.has(key) ||
                   !/^[a-z0-9-]+$/.test(frame.style) ||
-                  !definition.styles.some(
+                  !(preview ? definition.styles.slice(0,1) : definition.styles).some(
                     (style) => style.id === frame.style,
                   ) ||
                   ![0, 90, 180, 270].includes(frame.rotation)
@@ -131,6 +143,26 @@ const server = await createServer({
                 .update(JSON.stringify({ definition, frames: data.frames }))
                 .digest("hex")
                 .slice(0, 12);
+              if (preview) {
+                const output = path.join(root, 'assets/furniture-studio/previews', definition.id, revision);
+                await fs.mkdir(output, { recursive: true });
+                for (const frame of data.frames) await fs.writeFile(path.join(output, `view-${frame.rotation}.png`), Buffer.from(frame.image,'base64'));
+                for (const view of data.turnaround ?? []) {
+                  if (![45,135].includes(view.rotation)) throw Error('Invalid preview corner angle.');
+                  await fs.writeFile(path.join(output, `view-${view.rotation}.png`),Buffer.from(stablePNG(view.image),'base64'));
+                }
+                for (const view of data.seated ?? []) {
+                  if (![0,90,180,270].includes(view.rotation) || !['stand','sit'].includes(view.pose)) throw Error('Invalid actor preview.');
+                  await fs.writeFile(path.join(output, `${view.pose === 'stand' ? 'standing' : 'seated'}-${view.rotation}.png`),Buffer.from(stablePNG(view.image),'base64'));
+                }
+                if (data.fit) await writeJSON(path.join(output,'seat-fit.json'),data.fit);
+                await writeJSON(path.join(output,'manifest.json'), { id: definition.id, revision, preview: true, definition,
+                  views: Object.fromEntries(data.frames.map(frame => [frame.rotation,frame.view])),
+                  note: 'Canonical-style authoring preview only; no catalog, generated registry or full export replaced.' });
+                installed = { id: definition.id, preview: true, revision, images: data.frames.length + (data.turnaround?.length ?? 0) + (data.seated?.length ?? 0), output, installed: false };
+                response.setHeader('Content-Type','application/json'); response.end(JSON.stringify(installed));
+                return;
+              }
               const relative = `pawtrail-game/furniture-studio/${definition.id}/${revision}`,
                 output = path.join(root, "public", relative);
               const source = path.join(
@@ -196,7 +228,7 @@ const server = await createServer({
                 await fs.writeFile(
                   path.join(
                     source,
-                    `seated-${preview.rotation}${preview.seat === undefined ? "" : "-" + (preview.seat === -3 ? "both" : preview.seat + 1)}.png`,
+                    `${preview.pose === 'stand' ? 'standing' : 'seated'}-${preview.rotation}${preview.seat === undefined ? "" : "-" + (preview.seat === -3 ? "both" : preview.seat + 1)}.png`,
                   ),
                   Buffer.from(preview.image, "base64"),
                 );
@@ -212,23 +244,39 @@ const server = await createServer({
               await fs.writeFile(path.join(source, "source-model.glb"), model);
               const first = styles[0].views["0"];
               const item = {
+                ...existingItem,
                 id: definition.id,
                 label: definition.label,
                 file: first.file,
                 ...views["0"],
-                blocking: true,
+                blocking: existingItem?.blocking ?? true,
                 rotatable: true,
-                category: "Living room",
-                interaction: definition.model === "couch" ? "sit" : "inspect",
-                price: definition.price,
-                zones: ["interior"],
+                category: existingItem?.category ?? "Living room",
+                interaction: existingItem?.interaction ?? (definition.model === "couch" ? "sit" : "inspect"),
+                price: existingItem?.price ?? definition.price,
+                zones: existingItem?.zones ?? ["interior"],
                 supportedRotations: [0, 90, 180, 270],
                 defaultStyle: styles[0].id,
                 renderedViews: views,
                 styles,
-                construction: definition.construction,
+                // Converting existing art must not introduce free/changed crafting rules.
+                construction: existingItem ? existingItem.construction : definition.construction,
               };
               let referenceStudy;
+              if (batchReference) {
+                referenceStudy = {
+                  source: batchReference.source, sha256: batchReference.sha256,
+                  representation: batchReference.representation,
+                  render: { projection: 'orthographic', nativeFrame: [96,112], nativeAnchor: [48,96],
+                    sourceAnchor: batchReference.sourceFrame.anchor, camera: [0,34.5,90],
+                    facingCalibration: batchReference.projection, filter: 'nearest', toneMapping: 'none' },
+                  turnaround: { sheet: batchReference.sheet, sha256: batchReference.sheetSha256,
+                    views: batchReference.referenceViews, dimensions: batchReference.dimensions,
+                    projection: batchReference.projection, review: batchReference.review, reviewFacings: [45,135] },
+                };
+                await writeJSON(path.join(source, 'reference-camera.json'), referenceStudy);
+                await writeJSON(path.join(output, 'reference-camera.json'), referenceStudy);
+              }
               if (["aquarium", "couch"].includes(definition.model)) {
                 const reference = JSON.parse(
                   await fs.readFile(
@@ -277,7 +325,7 @@ const server = await createServer({
                 id: definition.id,
                 revision,
                 reference: definition.reference,
-                source:
+                source: batchReference ? batchReference.modelSource ?? 'src/game/furniture/reference-timber.ts' :
                   definition.model === "aquarium"
                     ? "src/game/furniture/aquarium.ts"
                     : definition.model === "couch"
@@ -359,18 +407,25 @@ try {
     origin + "/assets/furniture-studio/export.html",
     "--browser=firefox",
   ]);
-  console.log(
-    (
-      await cli([
-        "run-code",
-        `async(page)=>{await page.waitForFunction(()=>typeof window.exportFurniture==='function',undefined,{timeout:30000});return page.evaluate(async()=>await window.exportFurniture(${JSON.stringify(definition.id)}))}`,
-      ])
-    )
-      .split("### Ran Playwright code")[0]
-      .trim(),
-  );
-  if (!installed)
-    throw Error("The furniture authoring page did not return an export.");
+  for (const item of selected) {
+    definition = item;
+    existingItem = originalCatalog.items.find(entry => entry.id === item.id);
+    batchReference = batchReferences[item.model];
+    installed = undefined;
+    console.log('Authoring ' + item.id + (preview ? ' (canonical preview)' : ' (full export)'));
+    console.log(
+      (
+        await cli([
+          "run-code",
+          `async(page)=>{await page.waitForFunction(()=>typeof window.exportFurniture==='function',undefined,{timeout:30000});return page.evaluate(async()=>await window.exportFurniture(${JSON.stringify(definition.id)},${preview}))}`,
+        ])
+      )
+        .split("### Ran Playwright code")[0]
+        .trim(),
+    );
+    if (!installed)
+      throw Error("The furniture authoring page did not return an export.");
+  }
   console.log(
     "Furniture creator: http://127.0.0.1:3000/play?preview=furniture",
   );

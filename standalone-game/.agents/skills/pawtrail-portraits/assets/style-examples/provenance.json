@@ -1,0 +1,37 @@
+{
+  "purpose": "Existing approved examples for the portrait style-choice question; no new artwork or runtime installation.",
+  "examples": [
+    {
+      "file": "amber-front-pout.png",
+      "character": "amber",
+      "style": "Refined cel",
+      "pose": "front-pout",
+      "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-calm-v3/91b6c54014fe/reference/front-pout-neutral.png",
+      "sha256": "89b77feb04551ec4265c3249b7108260dd420ec70539f636a82d72600e4182c4"
+    },
+    {
+      "file": "amber-three-quarter-left.png",
+      "character": "amber",
+      "style": "Refined cel",
+      "pose": "three-quarter-left",
+      "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-calm-v3/91b6c54014fe/reference/three-quarter-left-neutral.png",
+      "sha256": "9fa6d4b3127e8d560a65d459413c8bc4d7b54e88c953c9c84988db56c3245ade"
+    },
+    {
+      "file": "amber-head-tilt-smile-right.png",
+      "character": "amber",
+      "style": "Refined cel",
+      "pose": "head-tilt-smile-right",
+      "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-calm-v3/91b6c54014fe/reference/head-tilt-smile-right-neutral.png",
+      "sha256": "93476f273ec1283d2aaa6024f28ece9c6f977c2a136c852f61ba0da2d6ad1a89"
+    },
+    {
+      "file": "sieghart-three-quarter-left.png",
+      "character": "sieghart",
+      "style": "Painterly anime fantasy",
+      "pose": "three-quarter-left",
+      "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/game-assets/dialogue-portraits/sieghart-painterly-v1/76f25abadbd2/reference/three-quarter-left-neutral.png",
+      "sha256": "e3bf4e0edb9b3ca12d99fd96d8066938a5d7cde2fe10935a785da9b2eb70485f"
+    }
+  ]
+}

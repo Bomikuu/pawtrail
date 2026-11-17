@@ -1,10 +1,14 @@
-import {useEffect,useMemo,useState,useSyncExternalStore} from 'react';
+import {useEffect,useMemo,useRef,useState,useSyncExternalStore} from 'react';
 import {characterLibrary,loadCharacterLibrary,getSavedCharacter} from '@/game/creator/library';
 import {customCharacterId} from '@/game/actor-rig/appearance';
 import {CharacterMiniature} from './character-creator-editor';
 import {gameAppearance} from '@/game/actor-rig/game-appearances';
 import {modelPreferences} from '@/game/models3d/preferences';
 import {navigateActorPreview} from '@/game/play-navigation';
+import {featuredActors} from '@/game/runtime/featured-actors';
+import {prepareCreatorModel} from '@/game/creator/preview-models';
+import {featuredActorIcons} from '@/game/creator/character-icons';
+import {CharacterIcon} from './shared/character-icon';
 import { ModelWorkshop } from "./model-workshop";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,6 +22,8 @@ function CharacterPreview({ id }: { id: CharacterId }) {
   const [revision,setRevision]=useState(0)
   useEffect(()=>{const refresh=()=>setRevision(value=>value+1);window.addEventListener('pawtrail:models3d',refresh);return()=>window.removeEventListener('pawtrail:models3d',refresh)},[])
   const look=useMemo(()=>gameAppearance(id,modelPreferences(id))??gameAppearance('rescuer')!,[id,revision])
+  const icon=featuredActorIcons.find(actor=>actor.id===id)
+  if(icon)return <CharacterIcon src={icon.icon}/>
   return <CharacterMiniature character={{appearance:look.appearance,headScale:look.headScale,bodyScale:look.bodyScale,name:CHARACTER_OPTIONS.find(row=>row.id===id)?.name??'Trail rescuer'}}/>
 }
 
@@ -33,6 +39,17 @@ export function CharacterPicker({
   accountOnly?: boolean;
 }) {
   const library=useSyncExternalStore(characterLibrary.subscribe,characterLibrary.getSnapshot,characterLibrary.getSnapshot);
+  const [loading,setLoading]=useState(''),[error,setError]=useState('');
+  const selection=useRef(0);
+  useEffect(()=>()=>{selection.current++},[]);
+  const choose=async(id:CharacterId)=>{
+    const token=++selection.current,actor=featuredActors[id];setError('');
+    if(!actor){onSelect(id);return}
+    setLoading(id);
+    try{await prepareCreatorModel(actor.model);if(token===selection.current)onSelect(id)}
+    catch{if(token===selection.current)setError(actor.name+' could not load. Please try selecting the character again.')}
+    finally{if(token===selection.current)setLoading('')}
+  };
   useEffect(()=>{void loadCharacterLibrary()},[]);
   const selected = characterId(value);
   const personal=getSavedCharacter(selected);
@@ -42,7 +59,9 @@ export function CharacterPicker({
     CHARACTER_OPTIONS[0];
   return (
     <div className="space-y-3">
-      {selected !== "rescuer" && !customCharacterId(selected) && <ModelWorkshop identity={selected} />}
+      {loading&&<p role="status" className="text-sm">Loading {featuredActors[loading]?.name}…</p>}
+      {error&&<p role="alert" className="text-sm text-destructive">{error}</p>}
+      {selected !== "rescuer" && !customCharacterId(selected) && !featuredActors[selected] && <ModelWorkshop identity={selected} />}
       <div className="flex items-center gap-4 rounded-xl bg-muted/40 p-3">
         {personal ? <CharacterMiniature character={personal}/> : <CharacterPreview id={selected} />}
         <div className="min-w-0 space-y-1" role="status">
@@ -52,8 +71,8 @@ export function CharacterPicker({
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap items-center justify-between gap-2"><h4 className="font-heading text-lg font-bold">Personal characters</h4><Button type="button" variant="outline" size="sm" disabled={disabled} onClick={navigateActorPreview}>Character creator</Button></div>
-      {saved.length ? <div className="grid grid-cols-2 gap-2 sm:grid-cols-3" role="group" aria-label="Choose a personal character">{saved.map(row=><Button key={row.id} type="button" variant="outline" disabled={disabled} aria-pressed={selected===row.id} onClick={()=>onSelect(row.id as CharacterId)} className="h-auto flex-col gap-2 rounded-md p-3 aria-pressed:border-primary aria-pressed:bg-primary/10"><CharacterMiniature character={row}/><span className="max-w-full truncate text-xs font-bold">{row.name}</span><span className="text-[10px] text-muted-foreground">{row.scope==='account'?'Account':'This device'}</span></Button>)}</div> : <p className="rounded-md border border-dashed p-3 text-xs text-muted-foreground">{accountOnly?'Save a character to your PawTrail account to wear it at home.':'Create and save your first personal look in the character creator.'}</p>}
+      <div className="flex flex-wrap items-center justify-between gap-2"><h4 className="font-heading text-lg font-bold">Personal characters</h4><Button type="button" variant="outline" size="sm" disabled={disabled||!!loading} onClick={navigateActorPreview}>Character creator</Button></div>
+      {saved.length ? <div className="grid grid-cols-2 gap-2 sm:grid-cols-3" role="group" aria-label="Choose a personal character">{saved.map(row=><Button key={row.id} type="button" variant="outline" disabled={disabled||!!loading} aria-pressed={selected===row.id} onClick={()=>onSelect(row.id as CharacterId)} className="h-auto flex-col gap-2 rounded-md p-3 aria-pressed:border-primary aria-pressed:bg-primary/10"><CharacterMiniature character={row}/><span className="max-w-full truncate text-xs font-bold">{row.name}</span><span className="text-[10px] text-muted-foreground">{row.scope==='account'?'Account':'This device'}</span></Button>)}</div> : <p className="rounded-md border border-dashed p-3 text-xs text-muted-foreground">{accountOnly?'Save a character to your PawTrail account to wear it at home.':'Create and save your first personal look in the character creator.'}</p>}
       <h4 className="font-heading text-lg font-bold">PawTrail characters</h4>
       <div
         className="grid grid-cols-2 gap-2 sm:grid-cols-4"
@@ -65,9 +84,9 @@ export function CharacterPicker({
             key={character.id}
             type="button"
             variant="outline"
-            disabled={disabled}
+            disabled={disabled||!!loading}
             aria-pressed={selected === character.id}
-            onClick={() => onSelect(character.id)}
+            onClick={() => void choose(character.id)}
             className="relative h-auto min-w-0 flex-col gap-2 whitespace-normal rounded-md px-2 py-3 text-center transition-colors aria-pressed:border-primary aria-pressed:bg-primary/10 hover:bg-muted focus-visible:ring-2"
           >
             <CharacterPreview id={character.id} />

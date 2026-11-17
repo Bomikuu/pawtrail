@@ -1,0 +1,11 @@
+{
+  "id": "sieghart",
+  "style": "Refined cel + painterly",
+  "angle": "three-quarter-left",
+  "source": "normal-generated.png \u2192 dedicated icon-generated.png",
+  "nativeSize": [
+    40,
+    40
+  ],
+  "bytes": 1065
+}

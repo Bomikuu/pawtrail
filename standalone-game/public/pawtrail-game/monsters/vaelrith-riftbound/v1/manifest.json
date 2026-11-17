@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "id": "vaelrith-riftbound",
+  "revision": "v1",
+  "portrait": {
+    "file": "portraits.webp",
+    "frame": [
+      128,
+      128
+    ],
+    "grid": [
+      3,
+      2
+    ],
+    "expressions": {
+      "watchful": [
+        0,
+        3
+      ],
+      "threatening": [
+        1,
+        4
+      ],
+      "hurt": [
+        2,
+        5
+      ]
+    },
+    "angles": [
+      "front",
+      "three-quarter",
+      "head-tilt"
+    ],
+    "bundleBytes": 133427,
+    "idlePerformance": {
+      "sequence": [
+        0,
+        1,
+        0
+      ],
+      "durationsMs": [
+        1800,
+        800,
+        1600
+      ]
+    },
+    "motionRevision": "calm-breathing-v2"
+  },
+  "icon": {
+    "file": "icon.png",
+    "nativeSize": [
+      48,
+      48
+    ],
+    "bytes": 6890,
+    "framedFile": "icon-framed.png",
+    "framedNativeSize": [
+      40,
+      40
+    ]
+  },
+  "illustration": {
+    "file": "illustration.webp",
+    "frame": [
+      384,
+      256
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "sequence": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1
+    ],
+    "frameMs": 420,
+    "poster": "poster.webp"
+  },
+  "materials": {
+    "armor": "armor.png",
+    "throat": "throat.png",
+    "stone": "stone.png",
+    "horn": "horn.png"
+  },
+  "audio": {
+    "original": true,
+    "method": "deterministic procedural synthesis",
+    "cues": 6
+  },
+  "review": {
+    "design": "owner-approved",
+    "runtime": "pending; not authorized",
+    "animationSeam": "pending live review",
+    "sound": "pending listening"
+  },
+  "health": {
+    "status": "owner_selected",
+    "maxHp": 10000,
+    "hpPerBar": 1000,
+    "barCount": 10,
+    "interpretation": "Owner answered 10x in response to the stacked-bar HP question; retain 1,000 HP per bar."
+  },
+  "model": {
+    "source": "src/game/monsters/rig.ts",
+    "attachment": "fixed wall root",
+    "playerSource": "actual Amber creator model, original scale",
+    "headCount": 3,
+    "neckSegmentsPerHead": 4,
+    "nominalPlayerHeightRatio": 8,
+    "widthInPlayerHeights": 15,
+    "geometryReview": "pending runtime inspection"
+  },
+  "runtimeAssetBytes": 1333600,
+  "effects": {
+    "riftfire": {
+      "manifest": "/pawtrail-game/monsters/vaelrith-riftbound/effects/riftfire-v1/manifest.json",
+      "frames": 16,
+      "nativeFrame": [
+        64,
+        96
+      ],
+      "pool": 8,
+      "tileSizeInPlayerHeights": 0.6,
+      "sharedAtlasSource": true
+    },
+    "confirmedContact": {
+      "manifest": "/pawtrail-game/effects/hit-impact-v1/manifest.json",
+      "frames": 24,
+      "nativeFrame": [
+        64,
+        64
+      ],
+      "pool": 12,
+      "sharedAtlasSource": true,
+      "position": "struck seal/throat or player body",
+      "trigger": "accepted positive damage only",
+      "liveVisualReview": "pending"
+    }
+  },
+  "animation": {
+    "activeFpsCap": 30,
+    "poseSamplesPerAttack": 32,
+    "attackTimelines": 5,
+    "pausedRendering": "on explicit changes only",
+    "movement": "interpolated windup, strike and recovery; neck follow-through and jaw damping",
+    "representation": "scalar articulated poses; no pre-rendered bitmap cache"
+  },
+  "representations": {
+    "volume-3d": {
+      "source": "src/game/monsters/rig.ts",
+      "camera": "orbit"
+    },
+    "layered-2d": {
+      "source": "src/game/monsters/layered-view.ts",
+      "manifest": "/pawtrail-game/monsters/vaelrith-riftbound/layered-2d-v1/manifest.json",
+      "camera": "fixed, zoom supported",
+      "review": "pending live owner comparison"
+    },
+    "full-3d": {
+      "source": "src/game/monsters/rig.ts",
+      "factory": "VaelrithRig.createFull3D",
+      "camera": "orbit",
+      "materials": "solid PBR, no painted creature maps",
+      "render": "unfiltered 640x480, antialiasing, ACES",
+      "shadowMap": [
+        512,
+        512
+      ],
+      "rig": "same approved articulated creature with moderate curved-surface subdivision",
+      "review": "pending live owner comparison"
+    }
+  }
+}

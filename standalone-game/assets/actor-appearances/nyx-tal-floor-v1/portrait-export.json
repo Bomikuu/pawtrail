@@ -1,0 +1,43 @@
+{
+  "id": "nyx-tal-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "nyx-tal",
+  "characterName": "Nyx Tal",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    24,
+    90,
+    95
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/nyx-tal-refined-cel-v1/71e2e2c2d39b",
+  "revision": "71e2e2c2d39b",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 243031,
+  "referenceBytes": 11264,
+  "runtimeBytes": 231767,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

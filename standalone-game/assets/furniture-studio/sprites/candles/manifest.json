@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "id": "candles",
+  "representation": "sprite",
+  "revision": "1a58df4c3bdd",
+  "source": {
+    "file": "/assets/game/housing/furniture/candles-complete-v1.png",
+    "sha256": "d56cb44fd1838e3599a832f9412e42a364466d4a026217918b09a082daa2410b"
+  },
+  "frame": {
+    "width": 32,
+    "height": 32,
+    "anchor": [
+      16,
+      30
+    ]
+  },
+  "production": "Original native on pixels; unlit removes only the two recorded flame regions. Wicks, wax, plate and contours remain canonical. No new generation, mesh or hidden facings.",
+  "flameRegions": [
+    [
+      8,
+      2,
+      14,
+      9
+    ],
+    [
+      20,
+      10,
+      25,
+      16
+    ]
+  ],
+  "item": {
+    "id": "candles",
+    "label": "Candles",
+    "file": "/pawtrail-game/furniture-sprites/candles/1a58df4c3bdd/lit.png",
+    "width": 32,
+    "height": 32,
+    "anchor": [
+      16,
+      30
+    ],
+    "footprint": [
+      4,
+      14,
+      24,
+      16
+    ],
+    "blocking": true,
+    "rotatable": false,
+    "category": "Living room",
+    "interaction": "admire",
+    "price": 31,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          4,
+          14,
+          24,
+          16
+        ]
+      ],
+      "placement": [
+        [
+          4,
+          14,
+          24,
+          16
+        ]
+      ],
+      "approaches": [
+        [
+          16,
+          40
+        ],
+        [
+          -6,
+          22
+        ],
+        [
+          38,
+          22
+        ],
+        [
+          16,
+          6
+        ]
+      ],
+      "seats": [],
+      "surfaces": [],
+      "occlusion": "base",
+      "actions": [
+        "toggle_light",
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0
+    ],
+    "representation": "sprite",
+    "stateViews": {
+      "unlit": {
+        "file": "/pawtrail-game/furniture-sprites/candles/1a58df4c3bdd/unlit.png"
+      }
+    }
+  },
+  "actorContract": {
+    "facing": "Fixed front; rotation remains disabled.",
+    "solid": "Original ground/placement geometry is unchanged.",
+    "state": "Existing lit flag defaults on unless explicitly false.",
+    "action": "Existing toggle_light; permissions/idempotency remain server-owned.",
+    "preview": "Shared actor/controller trial is local; account persistence requires separate authenticated evidence."
+  },
+  "review": {
+    "art": "source_and_state_board_reviewed",
+    "pixelContract": "Original lit pixels preserved; 46 flame pixels removed; 952 pixels outside flame regions unchanged.",
+    "focusedTests": {
+      "passed": 9,
+      "scope": "Light state selection, matched frontend/backend contracts, existing door geometry and facing invariants."
+    },
+    "localInteraction": "pending_firefox_navigation_timeout",
+    "authenticatedPersistence": "not_run"
+  }
+}

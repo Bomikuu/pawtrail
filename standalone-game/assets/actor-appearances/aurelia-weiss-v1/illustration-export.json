@@ -1,0 +1,366 @@
+{
+  "style": "Refined cel + painterly",
+  "nativeSize": [
+    320,
+    448
+  ],
+  "method": "Continuous pinned painted parts; independent background and sigil aura",
+  "variants": [
+    {
+      "variant": "normal",
+      "sourceBounds": [
+        15,
+        5,
+        1012,
+        1524
+      ],
+      "scale": 0.27913100724160633,
+      "translation": [
+        16.66622778143514,
+        10.60434496379196
+      ],
+      "folder": "public/pawtrail-game/actor-studio/illustrations/aurelia-weiss/v1/normal",
+      "runtimeBytes": 382226,
+      "decodedPartsBytes": 1130496,
+      "parts": [
+        {
+          "id": "body",
+          "rect": [
+            0,
+            0,
+            230,
+            424
+          ],
+          "offset": [
+            37,
+            12
+          ],
+          "root": [
+            0,
+            0
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "length": 1,
+          "amplitude": 0,
+          "phase": 0
+        },
+        {
+          "id": "feather-left",
+          "rect": [
+            234,
+            0,
+            109,
+            261
+          ],
+          "offset": [
+            21,
+            164
+          ],
+          "root": [
+            114.36208031599736,
+            169.70901909150757
+          ],
+          "direction": [
+            -0.3,
+            1
+          ],
+          "length": 251.2179065174457,
+          "amplitude": 5.5,
+          "phase": -0.9
+        },
+        {
+          "id": "feather-right",
+          "rect": [
+            347,
+            0,
+            108,
+            179
+          ],
+          "offset": [
+            191,
+            245
+          ],
+          "root": [
+            228.80579328505596,
+            247.86570111915734
+          ],
+          "direction": [
+            0.25,
+            1
+          ],
+          "length": 181.43515470704412,
+          "amplitude": 6.5,
+          "phase": -1.9
+        },
+        {
+          "id": "hair-long",
+          "rect": [
+            0,
+            428,
+            101,
+            124
+          ],
+          "offset": [
+            190,
+            94
+          ],
+          "root": [
+            189.72745227123107,
+            103.55497037524687
+          ],
+          "direction": [
+            1,
+            0.5
+          ],
+          "length": 131.19157340355497,
+          "amplitude": 7.5,
+          "phase": 0.3
+        },
+        {
+          "id": "hair-crown",
+          "rect": [
+            105,
+            428,
+            33,
+            25
+          ],
+          "offset": [
+            101,
+            26
+          ],
+          "root": [
+            114.36208031599736,
+            48.287030941408815
+          ],
+          "direction": [
+            0,
+            -1
+          ],
+          "length": 26.517445687952602,
+          "amplitude": 3.0,
+          "phase": -0.4
+        },
+        {
+          "id": "hair-temple",
+          "rect": [
+            142,
+            428,
+            11,
+            28
+          ],
+          "offset": [
+            96,
+            50
+          ],
+          "root": [
+            104.59249506254113,
+            58.056616194865036
+          ],
+          "direction": [
+            -0.3,
+            1
+          ],
+          "length": 25.12179065174457,
+          "amplitude": 2.5,
+          "phase": 0.8
+        }
+      ]
+    },
+    {
+      "variant": "enraged",
+      "sourceBounds": [
+        3,
+        4,
+        1154,
+        1354
+      ],
+      "scale": 0.2536924413553432,
+      "translation": [
+        13.23892267593397,
+        92.5004344048653
+      ],
+      "folder": "public/pawtrail-game/actor-studio/illustrations/aurelia-weiss/v1/enraged",
+      "runtimeBytes": 371771,
+      "decodedPartsBytes": 784384,
+      "parts": [
+        {
+          "id": "body",
+          "rect": [
+            0,
+            0,
+            216,
+            343
+          ],
+          "offset": [
+            65,
+            93
+          ],
+          "root": [
+            0,
+            0
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "length": 1,
+          "amplitude": 0,
+          "phase": 0
+        },
+        {
+          "id": "feather-left",
+          "rect": [
+            220,
+            0,
+            101,
+            159
+          ],
+          "offset": [
+            14,
+            258
+          ],
+          "root": [
+            98.22589052997395,
+            273.8905299739357
+          ],
+          "direction": [
+            -0.3,
+            1
+          ],
+          "length": 172.51086012163336,
+          "amplitude": 6.5,
+          "phase": -0.8
+        },
+        {
+          "id": "feather-right",
+          "rect": [
+            325,
+            0,
+            85,
+            174
+          ],
+          "offset": [
+            221,
+            253
+          ],
+          "root": [
+            223.8036490008688,
+            275.1589921807124
+          ],
+          "direction": [
+            0.35,
+            1
+          ],
+          "length": 172.51086012163336,
+          "amplitude": 7.0,
+          "phase": -1.8
+        },
+        {
+          "id": "hair-long-left",
+          "rect": [
+            414,
+            0,
+            83,
+            99
+          ],
+          "offset": [
+            14,
+            156
+          ],
+          "root": [
+            88.07819287576021,
+            167.33970460469155
+          ],
+          "direction": [
+            -1,
+            0.5
+          ],
+          "length": 104.0139009556907,
+          "amplitude": 8.0,
+          "phase": 0.3
+        },
+        {
+          "id": "hair-long-right",
+          "rect": [
+            0,
+            347,
+            86,
+            31
+          ],
+          "offset": [
+            177,
+            155
+          ],
+          "root": [
+            178.13900955690704,
+            164.8027801911381
+          ],
+          "direction": [
+            1,
+            0.15
+          ],
+          "length": 93.86620330147699,
+          "amplitude": 7.0,
+          "phase": 1.1
+        },
+        {
+          "id": "hair-crown",
+          "rect": [
+            90,
+            347,
+            37,
+            28
+          ],
+          "offset": [
+            105,
+            114
+          ],
+          "root": [
+            124.86359687228497,
+            138.1650738488271
+          ],
+          "direction": [
+            0,
+            -1
+          ],
+          "length": 30.44309296264118,
+          "amplitude": 3.2,
+          "phase": -0.4
+        },
+        {
+          "id": "moonfeather-energy",
+          "rect": [
+            131,
+            347,
+            54,
+            36
+          ],
+          "offset": [
+            81,
+            129
+          ],
+          "root": [
+            128.66898349261513,
+            155.16246741963508
+          ],
+          "direction": [
+            -1,
+            -0.35
+          ],
+          "length": 52,
+          "amplitude": 4.0,
+          "phase": 0.3,
+          "cycles": 3,
+          "pulse": {
+            "min": 0.8,
+            "max": 1,
+            "cycles": 2
+          }
+        }
+      ]
+    }
+  ]
+}

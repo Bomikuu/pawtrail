@@ -1,0 +1,81 @@
+{
+  "portrait": {
+    "id": "sieghart-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "sieghart",
+    "characterName": "Sieghart",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      26,
+      90,
+      93
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/sieghart-refined-cel-v1/75914160c2fc",
+    "revision": "75914160c2fc",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 217929,
+    "referenceBytes": 18622,
+    "runtimeBytes": 199307,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  "illustrations": {
+    "normal": {
+      "folder": "/pawtrail-game/actor-studio/illustrations/sieghart/v2/normal",
+      "bytes": 588511,
+      "frames": 6
+    },
+    "enraged": {
+      "folder": "/pawtrail-game/actor-studio/illustrations/sieghart/v2/enraged",
+      "bytes": 585422,
+      "frames": 6
+    }
+  },
+  "icon": {
+    "actor": "sieghart",
+    "style": "Refined cel",
+    "angle": "three-quarter-left",
+    "nativeSize": [
+      40,
+      40
+    ],
+    "displaySize": [
+      48,
+      48
+    ],
+    "frame": "shared woody frame and active glow",
+    "source": "icon-generated.png",
+    "file": "/pawtrail-game/actor-studio/icons/sieghart/v3/icon.png",
+    "bytes": 698
+  },
+  "newRuntimeArtworkBytes": 1392560,
+  "authoringSourcesExcluded": true,
+  "modelSurfaceMaps": "Existing Sieghart v1 painted maps, unchanged",
+  "previousPainterlyPortrait": "Preserved as separate selectable option",
+  "verification": "Focused Firefox visual review; no automated suites/builds/typechecks",
+  "reviewStatus": "focused-Firefox-review-complete",
+  "reviewRecord": "REVIEW.md"
+}

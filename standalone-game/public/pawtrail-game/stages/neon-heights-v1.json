@@ -1,0 +1,354 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "Sampaguita Neon Heights",
+  "width": 48,
+  "height": 36,
+  "baseTile": "terrain:12",
+  "groundArt": "neon:terrain",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "objects": [
+    {
+      "id": "tower-north-1",
+      "asset": "neon:spire-large",
+      "x": 152,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-2",
+      "asset": "neon:hab-block-large",
+      "x": 440,
+      "y": 304,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-3",
+      "asset": "neon:arc-tower-large",
+      "x": 768,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-4",
+      "asset": "neon:spire-large",
+      "x": 1096,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-5",
+      "asset": "neon:hab-block-large",
+      "x": 1384,
+      "y": 312,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-1",
+      "asset": "neon:hab-block",
+      "x": 152,
+      "y": 744,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-2",
+      "asset": "neon:arc-tower",
+      "x": 440,
+      "y": 752,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-3",
+      "asset": "neon:hab-block",
+      "x": 1096,
+      "y": 744,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-4",
+      "asset": "neon:spire",
+      "x": 1384,
+      "y": 752,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-terrace-west",
+      "asset": "neon:hab-block",
+      "x": 168,
+      "y": 1128,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-terrace-east",
+      "asset": "neon:hab-block",
+      "x": 1368,
+      "y": 1136,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "central-android-projection",
+      "asset": "neon:holo-head",
+      "x": 672,
+      "y": 576,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "plaza-koi-projection",
+      "asset": "neon:holo-koi",
+      "x": 872,
+      "y": 672,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "boulevard-koi-projection",
+      "asset": "neon:holo-koi",
+      "x": 360,
+      "y": 392,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "street-kiosk-0",
+      "asset": "neon:kiosk",
+      "x": 608,
+      "y": 800,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "street-kiosk-1",
+      "asset": "neon:kiosk",
+      "x": 944,
+      "y": 800,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-0",
+      "asset": "neon:hvac",
+      "x": 400,
+      "y": 1104,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-1",
+      "asset": "neon:hvac",
+      "x": 528,
+      "y": 1048,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-2",
+      "asset": "neon:hvac",
+      "x": 1040,
+      "y": 1048,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-3",
+      "asset": "neon:hvac",
+      "x": 1160,
+      "y": 1104,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-0",
+      "asset": "neon:railing",
+      "x": 64,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-1",
+      "asset": "neon:railing",
+      "x": 192,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-2",
+      "asset": "neon:railing",
+      "x": 320,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-3",
+      "asset": "neon:railing",
+      "x": 448,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-4",
+      "asset": "neon:railing",
+      "x": 576,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-5",
+      "asset": "neon:railing",
+      "x": 960,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-6",
+      "asset": "neon:railing",
+      "x": 1088,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-7",
+      "asset": "neon:railing",
+      "x": 1216,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-8",
+      "asset": "neon:railing",
+      "x": 1344,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-9",
+      "asset": "neon:railing",
+      "x": 1472,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-0",
+      "asset": "neon:railing",
+      "x": 432,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-1",
+      "asset": "neon:railing",
+      "x": 560,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-2",
+      "asset": "neon:railing",
+      "x": 976,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-3",
+      "asset": "neon:railing",
+      "x": 1104,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "taskStartedAt": "2026-11-14T19:46:08Z",
+  "timezone": "Asia/Manila",
+  "scope": "Pilot + fully playable mech, voices omitted",
+  "generationCalls": [
+    {
+      "id": "normal",
+      "startedAt": "2026-11-14T19:48:00.900Z",
+      "finishedAt": "2026-11-14T19:48:57.381Z",
+      "elapsedMs": 56481
+    },
+    {
+      "id": "normal-fixed",
+      "startedAt": "2026-11-14T19:49:29.977Z",
+      "finishedAt": "2026-11-14T19:50:12.209Z",
+      "elapsedMs": 42232
+    },
+    {
+      "id": "enraged",
+      "startedAt": "2026-11-14T19:49:29.977Z",
+      "finishedAt": "2026-11-14T19:50:59.315Z",
+      "elapsedMs": 89338
+    },
+    {
+      "id": "normal-underlay",
+      "startedAt": "2026-11-14T19:51:58.217Z",
+      "finishedAt": "2026-11-14T19:52:43.227Z",
+      "elapsedMs": 45010
+    },
+    {
+      "id": "enraged-underlay",
+      "startedAt": "2026-11-14T19:51:58.221Z",
+      "finishedAt": "2026-11-14T19:53:14.618Z",
+      "elapsedMs": 76397
+    },
+    {
+      "id": "background",
+      "startedAt": "2026-11-14T19:51:58.221Z",
+      "finishedAt": "2026-11-14T19:53:46.853Z",
+      "elapsedMs": 108632
+    },
+    {
+      "id": "sigil",
+      "startedAt": "2026-11-14T19:51:58.221Z",
+      "finishedAt": "2026-11-14T19:54:36.202Z",
+      "elapsedMs": 157981
+    },
+    {
+      "id": "turnaround",
+      "startedAt": "2026-11-14T19:57:17.204Z",
+      "finishedAt": "2026-11-14T19:57:57.282Z",
+      "elapsedMs": 40078
+    },
+    {
+      "id": "portrait-0",
+      "finishedAt": "2026-11-14T20:03:24.922983+00:00",
+      "completionSource": "generated source file mtime",
+      "startedAt": null,
+      "elapsedMs": 40800,
+      "timingPrecision": "rounded duration retained in session handoff"
+    },
+    {
+      "id": "portrait-1",
+      "finishedAt": "2026-11-14T20:05:21.437742+00:00",
+      "completionSource": "generated source file mtime",
+      "startedAt": null,
+      "elapsedMs": null
+    },
+    {
+      "id": "portrait-2",
+      "finishedAt": "2026-11-14T20:06:00.507997+00:00",
+      "completionSource": "generated source file mtime",
+      "startedAt": null,
+      "elapsedMs": null
+    },
+    {
+      "id": "icon-native",
+      "finishedAt": "2026-11-14T20:06:49.924319+00:00",
+      "completionSource": "generated source file mtime",
+      "startedAt": null,
+      "elapsedMs": null
+    },
+    {
+      "id": "mech-icon-native",
+      "finishedAt": "2026-11-14T20:07:34.690611+00:00",
+      "completionSource": "generated source file mtime",
+      "startedAt": null,
+      "elapsedMs": null
+    }
+  ],
+  "stages": [
+    {
+      "id": "reference-and-brief",
+      "startedAt": "2026-11-14T19:46:08Z",
+      "finishedAt": "2026-11-14T19:48:00.900Z",
+      "elapsedMs": 112900,
+      "evidence": "Task start and first generation timer; includes scope clarification."
+    },
+    {
+      "id": "illustrations-turnaround-export",
+      "startedAt": "2026-11-14T19:48:00.900Z",
+      "finishedAt": "2026-11-14T19:59:00.461647Z",
+      "elapsedMs": 659561,
+      "evidence": "First generation start to successful illustration export; includes prompt preparation, generation, framing repair, independent layers and static turnaround."
+    },
+    {
+      "id": "portrait-and-icon-production",
+      "startedAt": "2026-11-14T19:59:00.461647Z",
+      "finishedAt": "2026-11-14T20:11:05.446453Z",
+      "elapsedMs": 724985,
+      "evidence": "Production interval from completed illustration export to final native icon crop export; includes first-face check, generation, packing and setup. Overlaps model work."
+    },
+    {
+      "id": "model-and-game-integration",
+      "startedAt": "2026-11-14T20:07:05.580779Z",
+      "finishedAt": "2026-11-14T20:21:59.715100Z",
+      "elapsedMs": 894135,
+      "timingPrecision": "Bounded from surface export and last integration file timestamp, not a continuous stopwatch.",
+      "evidence": "Dedicated pilot and vehicle factories, textures, preview/room/roster integration; overlaps icons and initial browser inspection."
+    },
+    {
+      "id": "initial-review-and-fixes",
+      "startedAt": "2026-11-14T20:16:41.722Z",
+      "finishedAt": "2026-11-14T20:29:00Z",
+      "elapsedMs": 738278,
+      "timingPrecision": "Review start from browser console; end rounded to last pre-interruption tool interaction. Not all of this interval is browser execution.",
+      "evidence": "Initial clean browser, face-angle captures, cockpit selection, integration name correction; interrupted before final acceptance."
+    },
+    {
+      "id": "resumed-final-review-and-delivery",
+      "startedAt": "2026-11-15T03:31:00Z",
+      "finishedAt": "2026-11-15T03:45:51.145754+00:00",
+      "evidence": "Drive recovery, restart in Firefox, all actions, all portrait angles/emotions, loops, main game and room; includes observed parking-pose repair.",
+      "elapsedMs": 891146
+    }
+  ],
+  "notes": [
+    "Parallel generation calls overlap; do not sum their elapsed times as wall-clock time.",
+    "Owner explicitly approved both illustration designs and selected Refined cel. Voices omitted.",
+    "Host session interruption/unmounted drive occurred after 2026-11-14T20:29Z; work resumed 2026-11-15T03:31Z. This inactive interval is not production time. Exact shutdown time was not observed.",
+    "Original per-call timers for the final five image jobs were lost across the host interruption. Their actual file completion timestamps are retained below; missing starts are not invented."
+  ],
+  "exports": [
+    {
+      "stage": "illustrations",
+      "startedAt": "2026-11-14T19:56:16.717157+00:00",
+      "finishedAt": "2026-11-14T19:56:24.471776+00:00",
+      "elapsedMs": 7755,
+      "status": "failed",
+      "reason": "Redundant crown mask overlapped the ponytail mask; removed the redundant part before successful export."
+    },
+    {
+      "stage": "illustrations",
+      "status": "complete",
+      "startedAt": "2026-11-14T19:58:45.914467+00:00",
+      "finishedAt": "2026-11-14T19:59:00.461647+00:00",
+      "elapsedMs": 14547
+    },
+    {
+      "stage": "face_check",
+      "status": "complete",
+      "startedAt": "2026-11-14T20:03:55.622333+00:00",
+      "finishedAt": "2026-11-14T20:03:57.354536+00:00",
+      "elapsedMs": 1732
+    },
+    {
+      "stage": "portraits",
+      "status": "failed",
+      "startedAt": "2026-11-14T20:07:04.234581+00:00",
+      "finishedAt": "2026-11-14T20:07:05.485854+00:00",
+      "elapsedMs": 1251,
+      "reason": "Export was requested before the final generated sources were copied. Repeated once after files were available."
+    },
+    {
+      "stage": "surfaces",
+      "status": "complete",
+      "startedAt": "2026-11-14T20:07:05.580779+00:00",
+      "finishedAt": "2026-11-14T20:07:05.798258+00:00",
+      "elapsedMs": 218
+    },
+    {
+      "stage": "portraits",
+      "status": "complete",
+      "startedAt": "2026-11-14T20:09:02.850308+00:00",
+      "finishedAt": "2026-11-14T20:09:08.449125+00:00",
+      "elapsedMs": 5599
+    },
+    {
+      "stage": "icon",
+      "status": "complete",
+      "startedAt": "2026-11-14T20:09:08.604988+00:00",
+      "finishedAt": "2026-11-14T20:09:08.697299+00:00",
+      "elapsedMs": 92
+    },
+    {
+      "stage": "icon",
+      "status": "complete",
+      "startedAt": "2026-11-14T20:11:05.341914+00:00",
+      "finishedAt": "2026-11-14T20:11:05.446453+00:00",
+      "elapsedMs": 105
+    }
+  ],
+  "repairs": [
+    "Normal artwork framing regenerated once to preserve antenna margin.",
+    "Removed redundant overlapping enraged crown extraction.",
+    "Portrait export repeated once after remaining sources arrived.",
+    "Native pilot icon tightened from the existing generated source; no regenerated icon needed.",
+    "Firefox review dropdown interaction changed to keyboard selection after pointer selection left the list open.",
+    "Mech parking pose used a side-name string as a numeric multiplier, making leg positions invalid. Replaced with explicit left/right coordinates and repeated all four affected poses."
+  ],
+  "completedAt": "2026-11-15T03:45:51.145754+00:00",
+  "verification": {
+    "browser": "Firefox",
+    "automatedTests": false,
+    "builds": false,
+    "agents": false
+  }
+}

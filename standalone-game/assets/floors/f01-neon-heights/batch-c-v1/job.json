@@ -1,0 +1,95 @@
+{
+  "id": "f01-batch-c-v1",
+  "status": "authored_installed_runtime_verification_pending",
+  "concept": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png",
+  "approval": "Explicit owner: Approve concept F v1 \u2014 proceed",
+  "verification": {
+    "tests": "Six focused Phase 5 tests authored, not run",
+    "typecheck": "not run",
+    "build": "not run",
+    "browser": "not run",
+    "animatedRuntimeAcceptance": "pending owner authorization",
+    "decision": "Skip verification for now remains in effect"
+  },
+  "jobs": [
+    {
+      "key": "switchyard-ground",
+      "kind": "ground",
+      "status": "generated_exported_installed",
+      "source": "sources/switchyard-ground.png"
+    },
+    {
+      "key": "dispatch-cabin",
+      "kind": "scenery",
+      "status": "generated_exported_installed",
+      "source": "sources/dispatch-cabin.png"
+    },
+    {
+      "key": "freight-stack",
+      "kind": "scenery",
+      "status": "generated_exported_installed",
+      "source": "sources/freight-stack.png"
+    },
+    {
+      "key": "freight-crates",
+      "kind": "scenery",
+      "status": "generated_exported_installed",
+      "source": "sources/freight-crates.png"
+    },
+    {
+      "key": "yard-crane-layers",
+      "kind": "scenery-layers",
+      "status": "generated_exported_installed",
+      "source": "sources/yard-crane-layers.png"
+    },
+    {
+      "key": "bulkhead-reference",
+      "kind": "model-reference",
+      "status": "generated_exported_installed",
+      "source": "sources/bulkhead-reference.png"
+    },
+    {
+      "key": "authorization-reference",
+      "kind": "model-reference",
+      "status": "generated_exported_installed",
+      "source": "sources/authorization-reference.png"
+    },
+    {
+      "key": "sena-valez",
+      "kind": "npc-illustration",
+      "status": "generated_exported_installed",
+      "source": "sources/sena-valez.png"
+    }
+  ],
+  "propReview": {
+    "status": "explicit_yes",
+    "reply": "Good enough \u2014 model both",
+    "at": "2026-11-15T16:45:51.481566+00:00"
+  },
+  "npcReview": {
+    "status": "approved",
+    "reply": "Use Sena\u2019s design + Refined cel portraits",
+    "portraitStyle": "Refined cel"
+  },
+  "completedAt": "2026-11-15T17:11:05.967517+00:00",
+  "nativeInspection": [
+    "model-native-review.png: both props, four facings each",
+    "switchyard-native-art-layout.png: native art composition and Marshal scale",
+    "sena-native-art-review.png: full body, icon and three portrait angles, blink and speech states"
+  ],
+  "outputs": [
+    "public/pawtrail-game/floors/f01/batch-c-v1",
+    "public/pawtrail-game/floors/f01/npcs/sena",
+    "src/game/stage-editor/f01-batch-c-art.json",
+    "src/game/stage-editor/maps/f01-switchyard-v1.json",
+    "src/game/floors/phase5-commands.ts",
+    "src/game/floors/arena-view.ts",
+    "src/game/floors/marshal.ts"
+  ],
+  "timingPolicy": "Image-service waits, art review, engineering and native authoring overlap. Recorded spans are wall time, not inferred exclusive active model time.",
+  "bytes": {
+    "public/pawtrail-game/floors/f01/batch-c-v1": 3754759,
+    "public/pawtrail-game/floors/f01/npcs/sena": 312108,
+    "senaPortraitBundle": 213502
+  }
+}

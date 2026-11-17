@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "amber-native-2d-comparison-v1",
+  "representation": "native-2d",
+  "url": "/pawtrail-game/actor-studio/amber-native-2d-v1/sprites.png",
+  "frameWidth": 64,
+  "frameHeight": 80,
+  "columns": 8,
+  "rows": 4,
+  "frames": 32,
+  "groundPixel": {
+    "x": 32,
+    "y": 60
+  },
+  "anchor": {
+    "x": 0.5,
+    "y": 0.75
+  },
+  "idleFrames": 2,
+  "strideFrames": 6,
+  "directions": [
+    "down",
+    "left",
+    "up",
+    "right"
+  ],
+  "filter": "nearest",
+  "generation": "built-in ImageGen, native 2D artwork; not baked from the rig",
+  "registration": "shared scale, centered feet axis; existing Amber native frame height reference",
+  "referenceBodyHeight": 49,
+  "bytes": 96864,
+  "decodedAtlasBytes": 655360,
+  "actions": {
+    "idle": "standing with brief authored blink",
+    "walk": "six authored stride frames",
+    "run": "same stride frames at faster cadence; separate sprint art not yet authored"
+  },
+  "installation": "comparison only, not the live game actor library",
+  "review": "artwork inspected; live motion and full actor acceptance pending"
+}

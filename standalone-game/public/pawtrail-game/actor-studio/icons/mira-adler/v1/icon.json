@@ -1,0 +1,11 @@
+{
+  "id": "mira-adler",
+  "angle": "three-quarter-left",
+  "source": "normal illustration \u2192 dedicated compact drawing, icon-generated.png",
+  "nativeSize": [
+    40,
+    40
+  ],
+  "frame": "shared wood + active glow",
+  "bytes": 1009
+}

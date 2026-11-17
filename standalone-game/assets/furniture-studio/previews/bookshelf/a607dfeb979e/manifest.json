@@ -1,0 +1,321 @@
+{
+  "id": "bookshelf",
+  "revision": "a607dfeb979e",
+  "preview": true,
+  "definition": {
+    "id": "bookshelf",
+    "label": "Bookshelf",
+    "model": "bookshelf",
+    "reference": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+    "description": "Shallow timber bookcase with three rows of individual books and an inset plain rear.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "referenceFrame": {
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        58
+      ]
+    },
+    "styles": [
+      {
+        "id": "original",
+        "label": "Honey oak",
+        "fabric": "#e28c4b",
+        "light": "#ffd995",
+        "shade": "#805a36",
+        "pillow": "#f7dda3",
+        "wood": "#e28c4b"
+      },
+      {
+        "id": "walnut",
+        "label": "Walnut",
+        "fabric": "#8f5c3e",
+        "light": "#b9865a",
+        "shade": "#553b2b",
+        "pillow": "#f7dda3",
+        "wood": "#8f5c3e"
+      },
+      {
+        "id": "pale",
+        "label": "Pale oak",
+        "fabric": "#d7bf8f",
+        "light": "#f5e5c0",
+        "shade": "#99815d",
+        "pillow": "#f7dda3",
+        "wood": "#d7bf8f"
+      }
+    ],
+    "price": 79,
+    "construction": {
+      "seconds": 0,
+      "materials": []
+    }
+  },
+  "views": {
+    "0": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 59,
+      "footprint": [
+        26,
+        93,
+        44,
+        6
+      ],
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            26,
+            93,
+            44,
+            6
+          ]
+        ],
+        "placement": [
+          [
+            26,
+            93,
+            44,
+            6
+          ]
+        ],
+        "approaches": [
+          [
+            48,
+            113
+          ],
+          [
+            12,
+            96
+          ],
+          [
+            48,
+            79
+          ],
+          [
+            84,
+            96
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        25,
+        41,
+        46,
+        59
+      ]
+    },
+    "90": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 61,
+      "footprint": [
+        41,
+        95,
+        14,
+        2
+      ],
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            41,
+            95,
+            14,
+            2
+          ]
+        ],
+        "placement": [
+          [
+            41,
+            95,
+            14,
+            2
+          ]
+        ],
+        "approaches": [
+          [
+            27,
+            96
+          ],
+          [
+            48,
+            111
+          ],
+          [
+            48,
+            81
+          ],
+          [
+            69,
+            96
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        39,
+        39,
+        18,
+        59
+      ]
+    },
+    "180": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 59,
+      "footprint": [
+        26,
+        93,
+        44,
+        6
+      ],
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            26,
+            93,
+            44,
+            6
+          ]
+        ],
+        "placement": [
+          [
+            26,
+            93,
+            44,
+            6
+          ]
+        ],
+        "approaches": [
+          [
+            48,
+            79
+          ],
+          [
+            48,
+            113
+          ],
+          [
+            12,
+            96
+          ],
+          [
+            84,
+            96
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        25,
+        41,
+        46,
+        59
+      ]
+    },
+    "270": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "indicatorHeight": 61,
+      "footprint": [
+        41,
+        95,
+        14,
+        2
+      ],
+      "geometry": {
+        "version": 2,
+        "ground": [
+          [
+            41,
+            95,
+            14,
+            2
+          ]
+        ],
+        "placement": [
+          [
+            41,
+            95,
+            14,
+            2
+          ]
+        ],
+        "approaches": [
+          [
+            69,
+            96
+          ],
+          [
+            48,
+            111
+          ],
+          [
+            27,
+            96
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "seats": [],
+        "surfaces": [],
+        "occlusion": "base",
+        "actions": [
+          "inspect"
+        ]
+      },
+      "visibleBounds": [
+        39,
+        39,
+        18,
+        59
+      ]
+    }
+  },
+  "note": "Canonical-style authoring preview only; no catalog, generated registry or full export replaced."
+}

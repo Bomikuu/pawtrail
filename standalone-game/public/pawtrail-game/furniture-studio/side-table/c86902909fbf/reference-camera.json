@@ -1,0 +1,176 @@
+{
+  "source": "/assets/game/housing/furniture/side-table-complete-v1.png",
+  "sha256": "a2bb2b45c1eadbff112e7be498e0c35ffcc3914231dc33eb41fb5d937597279f",
+  "representation": "Distinct closed structural parts with canonical front paint and reviewed side/rear paint; no full-object billboard.",
+  "render": {
+    "projection": "orthographic",
+    "nativeFrame": [
+      96,
+      112
+    ],
+    "nativeAnchor": [
+      48,
+      96
+    ],
+    "sourceAnchor": [
+      16,
+      26
+    ],
+    "camera": [
+      0,
+      34.5,
+      90
+    ],
+    "facingCalibration": {
+      "sidePitchDegrees": 15,
+      "blendPower": 1
+    },
+    "filter": "nearest",
+    "toneMapping": "none"
+  },
+  "turnaround": {
+    "sheet": "assets/furniture-studio/references/side-table/turnaround-v1.png",
+    "sha256": "acae85eb33e9e243a7627af37ea3d6899b0c7f21022f12530ce58d4f773cb347",
+    "views": {
+      "0": {
+        "file": "/assets/game/housing/furniture/side-table-complete-v1.png",
+        "width": 32,
+        "height": 32,
+        "anchor": [
+          16,
+          26
+        ],
+        "label": "Original front · canonical"
+      },
+      "45": {
+        "file": "/pawtrail-game/furniture-references/side-table/3f135ef25a7b/reference-45.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated front 3/4",
+        "cellBounds": [
+          80,
+          75,
+          418,
+          426
+        ],
+        "occupiedSize": [
+          28,
+          29
+        ],
+        "footBaseline": 101
+      },
+      "90": {
+        "file": "/pawtrail-game/furniture-references/side-table/3f135ef25a7b/reference-90.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated left",
+        "cellBounds": [
+          116,
+          86,
+          395,
+          423
+        ],
+        "occupiedSize": [
+          23,
+          28
+        ],
+        "footBaseline": 99
+      },
+      "135": {
+        "file": "/pawtrail-game/furniture-references/side-table/3f135ef25a7b/reference-135.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated rear 3/4",
+        "cellBounds": [
+          68,
+          73,
+          414,
+          432
+        ],
+        "occupiedSize": [
+          29,
+          30
+        ],
+        "footBaseline": 101
+      },
+      "180": {
+        "file": "/pawtrail-game/furniture-references/side-table/3f135ef25a7b/reference-180.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated back",
+        "cellBounds": [
+          92,
+          86,
+          393,
+          422
+        ],
+        "occupiedSize": [
+          25,
+          28
+        ],
+        "footBaseline": 100
+      },
+      "270": {
+        "file": "/pawtrail-game/furniture-references/side-table/3f135ef25a7b/reference-270.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated right",
+        "cellBounds": [
+          142,
+          86,
+          416,
+          421
+        ],
+        "occupiedSize": [
+          23,
+          28
+        ],
+        "footBaseline": 99
+      }
+    },
+    "dimensions": {
+      "width": 25,
+      "depth": 21,
+      "height": 22
+    },
+    "projection": {
+      "sidePitchDegrees": 15,
+      "blendPower": 1
+    },
+    "review": {
+      "state": "explicit_yes",
+      "shownAt": "2026-11-10T14:17:31.076592+00:00",
+      "responseWindowSeconds": 60,
+      "default": "Proceed under the owner-authorized no-response default; not affirmative approval",
+      "exception": "Canonical front remains authoritative, including the table source height39 versus generated native front35.",
+      "resolvedAt": "2026-11-10T14:18:49.831522+00:00",
+      "startedUnderDefaultAt": "2026-11-10T14:18:49.831522+00:00",
+      "response": "Good enough — build these three",
+      "respondedAt": "2026-11-10T14:21:14.520876+00:00"
+    },
+    "reviewFacings": [
+      45,
+      135
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "version": "housing-catalog-v1",
+  "generationMode": "built-in image_gen; native export/pixel preparation",
+  "scope": "Assets only; no gameplay or UI implementation",
+  "categories": {
+    "interiors": "/assets/game/housing/tilesets/complete-interior-manifest.json",
+    "furniture": "/assets/game/housing/furniture/complete-furniture-manifest.json",
+    "petFurniture": "/assets/game/housing/pet-furniture/complete-pet-furniture-manifest.json",
+    "cats": "/assets/game/animals/cats/housing-v2/complete-cats-manifest.json",
+    "characters": "/assets/game/characters/complete-characters-manifest.json",
+    "effects": "/assets/game/effects/complete-effects-manifest.json",
+    "exteriors": "/assets/game/housing/exteriors/complete-exteriors-manifest.json",
+    "icons": "/assets/game/ui/icons/complete-icons-manifest.json",
+    "audio": "/assets/game/audio/sound-manifest.json"
+  },
+  "counts": {
+    "nativePngFiles": 1579,
+    "cats": 10,
+    "catVisibleAnimationFrames": 920,
+    "playerAppearances": 3,
+    "playerVisibleAnimationFrames": 324,
+    "socialEffectVisibleAnimationFrames": 84,
+    "furnitureAssets": 44,
+    "petFurnitureAssetsOrGroups": 44,
+    "uiIcons": 30,
+    "houses": 5,
+    "exteriorModulesAndProps": 24,
+    "newModularInteriorTiles": 116,
+    "pendingAudioClips": 30
+  },
+  "productionReady": false,
+  "limitations": [
+    "Audio files are pending; only a sound manifest is delivered.",
+    "Animation loops, fine marking consistency and in-engine collision/placement are not certified; consult per-category notes.",
+    "Static atlas/module exports are reusable artwork; no game functionality is implied."
+  ],
+  "assetFileCheckFailures": []
+}

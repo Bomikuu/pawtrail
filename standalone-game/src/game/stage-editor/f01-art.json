@@ -1,0 +1,2377 @@
+{
+  "version": 1,
+  "grounds": [
+    {
+      "id": "f01:lobby-ground",
+      "label": "Wayfarer Concourse",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/lobby-ground.png",
+      "width": 1024,
+      "height": 896,
+      "reflections": [
+        [
+          300,
+          480,
+          180,
+          28
+        ],
+        [
+          510,
+          330,
+          80,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "f01:market-ground",
+      "label": "Lumen Market",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/market-ground.png",
+      "width": 1024,
+      "height": 896,
+      "reflections": [
+        [
+          350,
+          430,
+          200,
+          18
+        ],
+        [
+          470,
+          690,
+          160,
+          22
+        ]
+      ]
+    },
+    {
+      "id": "f01:arrival-ground",
+      "label": "Neon Heights \u00b7 reflective streets",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/ground.png",
+      "width": 1536,
+      "height": 1152,
+      "reflections": [
+        [
+          690,
+          540,
+          150,
+          32
+        ],
+        [
+          550,
+          840,
+          120,
+          25
+        ],
+        [
+          950,
+          650,
+          160,
+          26
+        ]
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "f01:spire",
+      "label": "Cyan skyline spire",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/spire.png",
+      "width": 224,
+      "height": 304,
+      "anchor": [
+        112,
+        298
+      ],
+      "footprint": [
+        47,
+        265,
+        130,
+        33
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:arc-tower",
+      "label": "Magenta arc tower",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/arc-tower.png",
+      "width": 224,
+      "height": 288,
+      "anchor": [
+        112,
+        282
+      ],
+      "footprint": [
+        38,
+        249,
+        150,
+        33
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:hab-block",
+      "label": "Neon habitat block",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/hab-block.png",
+      "width": 272,
+      "height": 240,
+      "anchor": [
+        136,
+        234
+      ],
+      "footprint": [
+        14,
+        196,
+        244,
+        38
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:holo-head",
+      "label": "Android hologram",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/holo-head.png",
+      "width": 160,
+      "height": 224,
+      "anchor": [
+        80,
+        218
+      ],
+      "footprint": [
+        26,
+        184,
+        108,
+        34
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "holo-head",
+        "cycleMs": 7200,
+        "projectionBottom": 173
+      }
+    },
+    {
+      "id": "f01:holo-koi",
+      "label": "Holographic koi emitter",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/holo-koi.png",
+      "width": 160,
+      "height": 144,
+      "anchor": [
+        80,
+        138
+      ],
+      "footprint": [
+        37,
+        119,
+        86,
+        19
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "holo-koi",
+        "cycleMs": 8200,
+        "projectionBottom": 96,
+        "atlas": {
+          "file": "/pawtrail-game/floors/f01/batch-a-v1/koi-tail-atlas.png",
+          "cell": [
+            64,
+            48
+          ],
+          "columns": 4,
+          "rows": 2
+        }
+      }
+    },
+    {
+      "id": "f01:kiosk",
+      "label": "Neon street kiosk",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/kiosk.png",
+      "width": 144,
+      "height": 128,
+      "anchor": [
+        72,
+        122
+      ],
+      "footprint": [
+        23,
+        105,
+        98,
+        17
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:hvac",
+      "label": "Rooftop fan and duct",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/hvac.png",
+      "width": 96,
+      "height": 72,
+      "anchor": [
+        48,
+        68
+      ],
+      "footprint": [
+        8,
+        48,
+        80,
+        20
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "fan",
+        "cycleMs": 1800,
+        "rotor": [
+          52,
+          20,
+          18,
+          9
+        ]
+      }
+    },
+    {
+      "id": "f01:railing",
+      "label": "Steel observation railing",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/railing.png",
+      "width": 128,
+      "height": 48,
+      "anchor": [
+        64,
+        44
+      ],
+      "footprint": [
+        4,
+        30,
+        120,
+        14
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:spire-large",
+      "label": "Cyan skyline spire \u00b7 large",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/spire-large.png",
+      "width": 448,
+      "height": 608,
+      "anchor": [
+        224,
+        596
+      ],
+      "footprint": [
+        94,
+        530,
+        260,
+        66
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:arc-tower-large",
+      "label": "Magenta arc tower \u00b7 large",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/arc-tower-large.png",
+      "width": 448,
+      "height": 576,
+      "anchor": [
+        224,
+        564
+      ],
+      "footprint": [
+        76,
+        498,
+        300,
+        66
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:hab-block-large",
+      "label": "Neon habitat block \u00b7 large",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/hab-block-large.png",
+      "width": 544,
+      "height": 480,
+      "anchor": [
+        272,
+        468
+      ],
+      "footprint": [
+        28,
+        392,
+        488,
+        76
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7600
+      }
+    },
+    {
+      "id": "f01:lobby-wall",
+      "label": "Concourse wall",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/lobby-wall.png",
+      "width": 320,
+      "height": 160,
+      "anchor": [
+        160,
+        154
+      ],
+      "footprint": [
+        8,
+        137,
+        304,
+        17
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 8500
+      }
+    },
+    {
+      "id": "f01:repair-bay",
+      "label": "Repair bay shelter",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/repair-bay.png",
+      "width": 240,
+      "height": 208,
+      "anchor": [
+        120,
+        202
+      ],
+      "footprint": [
+        23,
+        166,
+        194,
+        22
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 6300
+      }
+    },
+    {
+      "id": "f01:awning-stall",
+      "label": "Market awning",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/awning-stall.png",
+      "width": 208,
+      "height": 176,
+      "anchor": [
+        104,
+        170
+      ],
+      "footprint": [
+        25,
+        145,
+        154,
+        17
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "cloth",
+        "cycleMs": 6500,
+        "projectionBottom": 70
+      }
+    },
+    {
+      "id": "f01:clinic-canopy",
+      "label": "Mara\u2019s clinic canopy",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/clinic-canopy.png",
+      "width": 240,
+      "height": 192,
+      "anchor": [
+        120,
+        186
+      ],
+      "footprint": [
+        26,
+        142,
+        188,
+        19
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "cloth",
+        "cycleMs": 7200,
+        "projectionBottom": 75
+      }
+    },
+    {
+      "id": "f01:lift",
+      "label": "Wayfarer lift",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        36.0,
+        159.504,
+        88.0,
+        16.992
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "furniture": {
+        "id": "f01-lift",
+        "label": "Wayfarer lift",
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          36.0,
+          159.504,
+          88.0,
+          16.992
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              36.0,
+              159.504,
+              88.0,
+              16.992
+            ]
+          ],
+          "placement": [
+            [
+              36.0,
+              159.504,
+              88.0,
+              16.992
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              187.824
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "toggle_door"
+          ]
+        },
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              36.0,
+              159.504,
+              88.0,
+              16.992
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  36.0,
+                  159.504,
+                  88.0,
+                  16.992
+                ]
+              ],
+              "placement": [
+                [
+                  36.0,
+                  159.504,
+                  88.0,
+                  16.992
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  187.824
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "toggle_door"
+              ]
+            },
+            "stateViews": {
+              "open": {
+                "file": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/0.png",
+                "ground": [
+                  [
+                    36.0,
+                    159.504,
+                    15.0,
+                    16.992
+                  ],
+                  [
+                    109.0,
+                    159.504,
+                    15.0,
+                    16.992
+                  ]
+                ]
+              }
+            }
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              65.0,
+              143.078,
+              30.0,
+              49.844
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  65.0,
+                  143.078,
+                  30.0,
+                  49.844
+                ]
+              ],
+              "placement": [
+                [
+                  65.0,
+                  143.078,
+                  30.0,
+                  49.844
+                ]
+              ],
+              "approaches": [
+                [
+                  45.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "toggle_door"
+              ]
+            },
+            "stateViews": {
+              "open": {
+                "file": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/90.png",
+                "ground": [
+                  [
+                    65.0,
+                    143.078,
+                    30.0,
+                    8.496
+                  ],
+                  [
+                    65.0,
+                    184.426,
+                    30.0,
+                    8.496
+                  ]
+                ]
+              }
+            }
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              36.0,
+              159.504,
+              88.0,
+              16.992
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  36.0,
+                  159.504,
+                  88.0,
+                  16.992
+                ]
+              ],
+              "placement": [
+                [
+                  36.0,
+                  159.504,
+                  88.0,
+                  16.992
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  148.176
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "toggle_door"
+              ]
+            },
+            "stateViews": {
+              "open": {
+                "file": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/180.png",
+                "ground": [
+                  [
+                    109.0,
+                    159.504,
+                    15.0,
+                    16.992
+                  ],
+                  [
+                    36.0,
+                    159.504,
+                    15.0,
+                    16.992
+                  ]
+                ]
+              }
+            }
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              65.0,
+              143.078,
+              30.0,
+              49.844
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  65.0,
+                  143.078,
+                  30.0,
+                  49.844
+                ]
+              ],
+              "placement": [
+                [
+                  65.0,
+                  143.078,
+                  30.0,
+                  49.844
+                ]
+              ],
+              "approaches": [
+                [
+                  115.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "toggle_door"
+              ]
+            },
+            "stateViews": {
+              "open": {
+                "file": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/270.png",
+                "ground": [
+                  [
+                    65.0,
+                    184.426,
+                    30.0,
+                    8.496
+                  ],
+                  [
+                    65.0,
+                    143.078,
+                    30.0,
+                    8.496
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/270.png"
+        },
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "toggle_door",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      },
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/lift/model.glb"
+      }
+    },
+    {
+      "id": "f01:allocation",
+      "label": "P01 allocation console",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/models/allocation/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        37.0,
+        158.371,
+        86.0,
+        19.258
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "furniture": {
+        "id": "f01-allocation",
+        "label": "P01 allocation console",
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/allocation/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          37.0,
+          158.371,
+          86.0,
+          19.258
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              37.0,
+              158.371,
+              86.0,
+              19.258
+            ]
+          ],
+          "placement": [
+            [
+              37.0,
+              158.371,
+              86.0,
+              19.258
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              190.656
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "preview_allocation"
+          ]
+        },
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              37.0,
+              158.371,
+              86.0,
+              19.258
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  37.0,
+                  158.371,
+                  86.0,
+                  19.258
+                ]
+              ],
+              "placement": [
+                [
+                  37.0,
+                  158.371,
+                  86.0,
+                  19.258
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  190.656
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "preview_allocation"
+              ]
+            }
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              63.0,
+              143.645,
+              34.0,
+              48.711
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  63.0,
+                  143.645,
+                  34.0,
+                  48.711
+                ]
+              ],
+              "placement": [
+                [
+                  63.0,
+                  143.645,
+                  34.0,
+                  48.711
+                ]
+              ],
+              "approaches": [
+                [
+                  40.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "preview_allocation"
+              ]
+            }
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              37.0,
+              158.371,
+              86.0,
+              19.258
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  37.0,
+                  158.371,
+                  86.0,
+                  19.258
+                ]
+              ],
+              "placement": [
+                [
+                  37.0,
+                  158.371,
+                  86.0,
+                  19.258
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  145.344
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "preview_allocation"
+              ]
+            }
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              63.0,
+              143.645,
+              34.0,
+              48.711
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  63.0,
+                  143.645,
+                  34.0,
+                  48.711
+                ]
+              ],
+              "placement": [
+                [
+                  63.0,
+                  143.645,
+                  34.0,
+                  48.711
+                ]
+              ],
+              "approaches": [
+                [
+                  120.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "preview_allocation"
+              ]
+            }
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-a-v1/models/allocation/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-a-v1/models/allocation/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-a-v1/models/allocation/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-a-v1/models/allocation/270.png"
+        },
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "preview_allocation",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      },
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/allocation/model.glb"
+      }
+    },
+    {
+      "id": "f01:planning",
+      "label": "Expedition planning board",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/models/planning/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        35.0,
+        160.07,
+        90.0,
+        15.859
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "furniture": {
+        "id": "f01-planning",
+        "label": "Expedition planning board",
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/planning/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          35.0,
+          160.07,
+          90.0,
+          15.859
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              35.0,
+              160.07,
+              90.0,
+              15.859
+            ]
+          ],
+          "placement": [
+            [
+              35.0,
+              160.07,
+              90.0,
+              15.859
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              188.391
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect_plan"
+          ]
+        },
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              35.0,
+              160.07,
+              90.0,
+              15.859
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  35.0,
+                  160.07,
+                  90.0,
+                  15.859
+                ]
+              ],
+              "placement": [
+                [
+                  35.0,
+                  160.07,
+                  90.0,
+                  15.859
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  188.391
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            }
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              66.0,
+              142.512,
+              28.0,
+              50.977
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  66.0,
+                  142.512,
+                  28.0,
+                  50.977
+                ]
+              ],
+              "placement": [
+                [
+                  66.0,
+                  142.512,
+                  28.0,
+                  50.977
+                ]
+              ],
+              "approaches": [
+                [
+                  44.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            }
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              35.0,
+              160.07,
+              90.0,
+              15.859
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  35.0,
+                  160.07,
+                  90.0,
+                  15.859
+                ]
+              ],
+              "placement": [
+                [
+                  35.0,
+                  160.07,
+                  90.0,
+                  15.859
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  147.609
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            }
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              66.0,
+              142.512,
+              28.0,
+              50.977
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  66.0,
+                  142.512,
+                  28.0,
+                  50.977
+                ]
+              ],
+              "placement": [
+                [
+                  66.0,
+                  142.512,
+                  28.0,
+                  50.977
+                ]
+              ],
+              "approaches": [
+                [
+                  116.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            }
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-a-v1/models/planning/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-a-v1/models/planning/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-a-v1/models/planning/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-a-v1/models/planning/270.png"
+        },
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "inspect_plan",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      },
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/planning/model.glb"
+      }
+    },
+    {
+      "id": "f01:counter",
+      "label": "Ivo\u2019s vendor counter",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-a-v1/models/counter/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        35.0,
+        156.672,
+        90.0,
+        22.656
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "furniture": {
+        "id": "f01-counter",
+        "label": "Ivo\u2019s vendor counter",
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/counter/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          35.0,
+          156.672,
+          90.0,
+          22.656
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ]
+          ],
+          "placement": [
+            [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              191.789
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect_stock"
+          ]
+        },
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "placement": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  191.789
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_stock"
+              ]
+            }
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              60.0,
+              142.512,
+              40.0,
+              50.977
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "placement": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "approaches": [
+                [
+                  38.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_stock"
+              ]
+            }
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "placement": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  144.211
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_stock"
+              ]
+            }
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              60.0,
+              142.512,
+              40.0,
+              50.977
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "placement": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "approaches": [
+                [
+                  122.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_stock"
+              ]
+            }
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-a-v1/models/counter/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-a-v1/models/counter/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-a-v1/models/counter/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-a-v1/models/counter/270.png"
+        },
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "inspect_stock",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      },
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-a-v1/models/counter/model.glb"
+      }
+    },
+    {
+      "id": "f01:camp-seat",
+      "label": "Concourse camp seat",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-0.png",
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ],
+      "footprint": [
+        21,
+        88,
+        54,
+        13
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "furniture": {
+        "id": "studio-couch",
+        "label": "Trail couch",
+        "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-0.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 47,
+        "footprint": [
+          21,
+          88,
+          54,
+          13
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              21,
+              88,
+              54,
+              13
+            ]
+          ],
+          "placement": [
+            [
+              21,
+              88,
+              54,
+              13
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              109
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                39,
+                98
+              ],
+              "facing": "down",
+              "elevation": 4,
+              "exit": [
+                48,
+                109
+              ]
+            },
+            {
+              "id": "seat-2",
+              "point": [
+                57,
+                98
+              ],
+              "facing": "down",
+              "elevation": 4,
+              "exit": [
+                48,
+                109
+              ]
+            }
+          ],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        },
+        "blocking": true,
+        "rotatable": true,
+        "category": "Living room",
+        "interaction": "sit",
+        "price": 79,
+        "zones": [
+          "interior"
+        ],
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "defaultStyle": "sage",
+        "renderedViews": {
+          "0": {
+            "width": 96,
+            "height": 112,
+            "anchor": [
+              48,
+              96
+            ],
+            "indicatorHeight": 47,
+            "footprint": [
+              21,
+              88,
+              54,
+              13
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  21,
+                  88,
+                  54,
+                  13
+                ]
+              ],
+              "placement": [
+                [
+                  21,
+                  88,
+                  54,
+                  13
+                ]
+              ],
+              "approaches": [
+                [
+                  48,
+                  109
+                ]
+              ],
+              "seats": [
+                {
+                  "id": "seat-1",
+                  "point": [
+                    39,
+                    98
+                  ],
+                  "facing": "down",
+                  "elevation": 4,
+                  "exit": [
+                    48,
+                    109
+                  ]
+                },
+                {
+                  "id": "seat-2",
+                  "point": [
+                    57,
+                    98
+                  ],
+                  "facing": "down",
+                  "elevation": 4,
+                  "exit": [
+                    48,
+                    109
+                  ]
+                }
+              ],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "sit",
+                "inspect"
+              ]
+            }
+          },
+          "90": {
+            "width": 96,
+            "height": 112,
+            "anchor": [
+              48,
+              96
+            ],
+            "indicatorHeight": 47,
+            "footprint": [
+              35,
+              90,
+              34,
+              12
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  35,
+                  90,
+                  34,
+                  12
+                ]
+              ],
+              "placement": [
+                [
+                  35,
+                  90,
+                  34,
+                  12
+                ]
+              ],
+              "approaches": [
+                [
+                  12,
+                  96
+                ]
+              ],
+              "seats": [
+                {
+                  "id": "seat-1",
+                  "point": [
+                    42,
+                    94
+                  ],
+                  "facing": "down",
+                  "elevation": 5,
+                  "exit": [
+                    12,
+                    96
+                  ]
+                },
+                {
+                  "id": "seat-2",
+                  "point": [
+                    42,
+                    98
+                  ],
+                  "facing": "down",
+                  "elevation": 5,
+                  "exit": [
+                    12,
+                    96
+                  ]
+                }
+              ],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "sit",
+                "inspect"
+              ]
+            }
+          },
+          "180": {
+            "width": 96,
+            "height": 112,
+            "anchor": [
+              48,
+              96
+            ],
+            "indicatorHeight": 44,
+            "footprint": [
+              21,
+              91,
+              54,
+              13
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  21,
+                  91,
+                  54,
+                  13
+                ]
+              ],
+              "placement": [
+                [
+                  21,
+                  91,
+                  54,
+                  13
+                ]
+              ],
+              "approaches": [
+                [
+                  48,
+                  83
+                ]
+              ],
+              "seats": [
+                {
+                  "id": "seat-1",
+                  "point": [
+                    57,
+                    94
+                  ],
+                  "facing": "down",
+                  "elevation": 4,
+                  "exit": [
+                    48,
+                    83
+                  ]
+                },
+                {
+                  "id": "seat-2",
+                  "point": [
+                    39,
+                    94
+                  ],
+                  "facing": "down",
+                  "elevation": 4,
+                  "exit": [
+                    48,
+                    83
+                  ]
+                }
+              ],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "sit",
+                "inspect"
+              ]
+            }
+          },
+          "270": {
+            "width": 96,
+            "height": 112,
+            "anchor": [
+              48,
+              96
+            ],
+            "indicatorHeight": 47,
+            "footprint": [
+              27,
+              90,
+              34,
+              12
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  27,
+                  90,
+                  34,
+                  12
+                ]
+              ],
+              "placement": [
+                [
+                  27,
+                  90,
+                  34,
+                  12
+                ]
+              ],
+              "approaches": [
+                [
+                  84,
+                  96
+                ]
+              ],
+              "seats": [
+                {
+                  "id": "seat-1",
+                  "point": [
+                    54,
+                    98
+                  ],
+                  "facing": "down",
+                  "elevation": 5,
+                  "exit": [
+                    84,
+                    96
+                  ]
+                },
+                {
+                  "id": "seat-2",
+                  "point": [
+                    54,
+                    94
+                  ],
+                  "facing": "down",
+                  "elevation": 5,
+                  "exit": [
+                    84,
+                    96
+                  ]
+                }
+              ],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "sit",
+                "inspect"
+              ]
+            }
+          }
+        },
+        "styles": [
+          {
+            "id": "sage",
+            "label": "Sage",
+            "color": "#898a4a",
+            "views": {
+              "0": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-0-front.png",
+                "motion": []
+              },
+              "90": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-90.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-90-front.png",
+                "motion": []
+              },
+              "180": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-180.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-180-front.png",
+                "motion": []
+              },
+              "270": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-270.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/sage-270-front.png",
+                "motion": []
+              }
+            }
+          },
+          {
+            "id": "terracotta",
+            "label": "Terracotta",
+            "color": "#bf7852",
+            "views": {
+              "0": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-0-front.png",
+                "motion": []
+              },
+              "90": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-90.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-90-front.png",
+                "motion": []
+              },
+              "180": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-180.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-180-front.png",
+                "motion": []
+              },
+              "270": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-270.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/terracotta-270-front.png",
+                "motion": []
+              }
+            }
+          },
+          {
+            "id": "oat",
+            "label": "Oat",
+            "color": "#d7c6a4",
+            "views": {
+              "0": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-0-front.png",
+                "motion": []
+              },
+              "90": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-90.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-90-front.png",
+                "motion": []
+              },
+              "180": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-180.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-180-front.png",
+                "motion": []
+              },
+              "270": {
+                "file": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-270.png",
+                "frontFile": "/pawtrail-game/furniture-studio/studio-couch/76bf5663ae50/oat-270-front.png",
+                "motion": []
+              }
+            }
+          }
+        ],
+        "construction": {
+          "seconds": 60,
+          "materials": [
+            {
+              "id": "timber",
+              "label": "Timber",
+              "amount": 6,
+              "price": 3
+            },
+            {
+              "id": "fabric",
+              "label": "Fabric",
+              "amount": 4,
+              "price": 4
+            },
+            {
+              "id": "stuffing",
+              "label": "Cushion stuffing",
+              "amount": 2,
+              "price": 2
+            }
+          ]
+        }
+      },
+      "liveModel": {
+        "existing": "studio-couch"
+      }
+    },
+    {
+      "id": "f01:mara",
+      "label": "Mara Solis",
+      "category": "Floor 01 \u00b7 NPCs",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/npcs/mara/body.png",
+      "width": 48,
+      "height": 80,
+      "anchor": [
+        24,
+        78
+      ],
+      "footprint": [
+        18,
+        74,
+        12,
+        6
+      ],
+      "rotations": [
+        0
+      ],
+      "furniture": {
+        "id": "f01-mara",
+        "label": "Mara Solis",
+        "file": "/pawtrail-game/floors/f01/npcs/mara/body.png",
+        "width": 48,
+        "height": 80,
+        "anchor": [
+          24,
+          78
+        ],
+        "footprint": [
+          18,
+          74,
+          12,
+          6
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              18,
+              74,
+              12,
+              6
+            ]
+          ],
+          "placement": [
+            [
+              18,
+              74,
+              12,
+              6
+            ]
+          ],
+          "approaches": [
+            [
+              24,
+              104
+            ],
+            [
+              0,
+              86
+            ],
+            [
+              48,
+              86
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "talk_npc"
+          ]
+        },
+        "blocking": true,
+        "rotatable": false,
+        "category": "Floor 01 \u00b7 NPCs",
+        "interaction": "talk_npc",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      },
+      "npc": "mara"
+    },
+    {
+      "id": "f01:ivo",
+      "label": "Ivo Mercado",
+      "category": "Floor 01 \u00b7 NPCs",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/npcs/ivo/body.png",
+      "width": 48,
+      "height": 80,
+      "anchor": [
+        24,
+        78
+      ],
+      "footprint": [
+        18,
+        74,
+        12,
+        6
+      ],
+      "rotations": [
+        0
+      ],
+      "furniture": {
+        "id": "f01-ivo",
+        "label": "Ivo Mercado",
+        "file": "/pawtrail-game/floors/f01/npcs/ivo/body.png",
+        "width": 48,
+        "height": 80,
+        "anchor": [
+          24,
+          78
+        ],
+        "footprint": [
+          18,
+          74,
+          12,
+          6
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              18,
+              74,
+              12,
+              6
+            ]
+          ],
+          "placement": [
+            [
+              18,
+              74,
+              12,
+              6
+            ]
+          ],
+          "approaches": [
+            [
+              24,
+              104
+            ],
+            [
+              0,
+              86
+            ],
+            [
+              48,
+              86
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "talk_npc"
+          ]
+        },
+        "blocking": true,
+        "rotatable": false,
+        "category": "Floor 01 \u00b7 NPCs",
+        "interaction": "talk_npc",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      },
+      "npc": "ivo"
+    }
+  ]
+}

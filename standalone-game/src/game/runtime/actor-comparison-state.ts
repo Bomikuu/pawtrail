@@ -68,12 +68,15 @@ export type ComparisonAction = (typeof previewActions)[number]['value']
 export type ComparisonDirection = (typeof comparisonDirections)[number]['value']
 export type ComparisonState = {
   mode: 'legacy' | 'skin' | 'creator' | 'cat-creator'
+  amberBlender: boolean
   appearance: string
   presentationAction: string
   portraitAction: string
   portraitPose: import('../actor-rig/photo-portrait-catalog').PhotoPortraitPose
+  portraitCollection?: string
   action: ComparisonAction
   direction: ComparisonDirection
+  rotation: number | null
   timing: 'synchronized' | 'native'
   paused: boolean
   zoom: number
@@ -89,8 +92,8 @@ export type ComparisonState = {
 }
 
 let state: ComparisonState = {
-  mode: 'legacy', appearance: '',
-  presentationAction:'walk', portraitAction:'idle', portraitPose:'three-quarter-left', action: 'walk', direction: 'down', timing: 'synchronized', paused: false,
+  mode: 'legacy', appearance: '', amberBlender: false,
+  presentationAction:'walk', portraitAction:'idle', portraitPose:'three-quarter-left', action: 'walk', direction: 'down', rotation: null, timing: 'synchronized', paused: false,
   zoom: 3, zoomLimit: 4, catDetail: false, actorDetail: false, inputX: 0, inputY: 0, restart: 0, status: 'loading', load: 0, error: '',
 }
 const listeners = new Set<() => void>()
@@ -108,5 +111,5 @@ export const actorComparison = {
 }
 export function toggleFaceInspection(kind:'cat'|'actor') {
   const field=kind==='cat'?'catDetail':'actorDetail',active=state[field]
-  actorComparison.patch({[field]:!active,zoom:active?3:8,...(!active?{direction:'down' as ComparisonDirection,inputX:0,inputY:0}:{})})
+  actorComparison.patch({[field]:!active,zoom:active?3:8,...(!active?{direction:'down' as ComparisonDirection,rotation:null,inputX:0,inputY:0}:{})})
 }

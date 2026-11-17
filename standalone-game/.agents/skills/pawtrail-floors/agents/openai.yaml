@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Floors"
+  short_description: "Plan floors, memorable NPCs, quests and production phases"
+  default_prompt: "Use $pawtrail-floors to plan a themed floor with connected stages, NPC dialogue scripts, persistent decision memory and reputation, quests, puzzles, resources, mobs, boss and loot, then give me implementation phases for review."

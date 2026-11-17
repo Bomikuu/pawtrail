@@ -1,0 +1,37 @@
+{
+  "id": "morvane-ossuary-serpent",
+  "version": 1,
+  "representation": "native-layered-segmented-2d",
+  "atlas": "parts.webp",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "columns": 4,
+  "rows": 4,
+  "parts": {
+    "skull": 0,
+    "jaw": 1,
+    "ribs": 2,
+    "spine": 3,
+    "arm": 4,
+    "blade": 5,
+    "leg": 6,
+    "tail": 7
+  },
+  "enragedFrameOffset": 8,
+  "bodySegments": 33,
+  "segmentSpacing": 0.6,
+  "illustrations": {
+    "normal": "normal.webp",
+    "enraged": "enraged.webp",
+    "width": 384,
+    "height": 384
+  },
+  "provenance": "Built-in ImageGen reference-guided masters; hard alpha, slicing, nearest-neighbor and non-dithered palette production export",
+  "runtimeBytes": {
+    "parts.webp": 133642,
+    "portrait.webp": 3982,
+    "icon.png": 4815,
+    "normal.webp": 23920,
+    "enraged.webp": 30904
+  }
+}

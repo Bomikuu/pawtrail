@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "id": "mira-adler",
+  "projectRoot": "../../..",
+  "actors": [
+    {
+      "id": "mira-adler",
+      "name": "Mira Adler",
+      "modelKind": "humanoid",
+      "previewUrl": "http://127.0.0.1:3000/play?preview=actors&skin=mira-adler",
+      "voices": "omitted",
+      "voiceOmissionReason": "Owner explicitly requested Skip voices for now",
+      "installInGame": false,
+      "illustrationName": "Mira Adler",
+      "illustrationVariants": [
+        "normal",
+        "enraged"
+      ],
+      "illustrationCycleMs": 4200,
+      "portrait": {
+        "collection": "mira-adler-refined-cel",
+        "poses": [
+          "front-pout",
+          "three-quarter-left",
+          "head-tilt-smile-right"
+        ],
+        "emotions": [
+          "idle",
+          "smile",
+          "happy",
+          "sad",
+          "angry",
+          "surprised"
+        ],
+        "style": "Refined cel"
+      },
+      "dependencies": {
+        "model": [
+          {
+            "path": "src/game/actor-rig/mira-rig.ts",
+            "imports": true
+          },
+          "public/pawtrail-game/actor-studio/mira-adler/v1"
+        ],
+        "portrait": [
+          "public/pawtrail-game/game-assets/dialogue-portraits/mira-adler-refined-cel-v1",
+          {
+            "path": "src/game/actor-rig/portrait-renderer.ts",
+            "optional": true
+          }
+        ],
+        "illustration": [
+          "public/pawtrail-game/actor-studio/illustrations/mira-adler/v2",
+          "src/game/creator/illustration-motion.ts",
+          "src/game/creator/illustration-assets.ts"
+        ],
+        "icon": [
+          "public/pawtrail-game/actor-studio/icons/mira-adler/v1/icon.png",
+          "src/components/game/shared/character-icon.tsx"
+        ],
+        "preview": [
+          "src/game/runtime/actor-comparison-state.ts",
+          "src/game/runtime/actor-comparison-scene.ts",
+          "src/game/creator/preview-models.ts",
+          "src/game/creator/state.ts",
+          "src/components/game/actor-comparison.tsx",
+          "src/components/game/character-creator-editor.tsx",
+          "src/components/game/shared/living-portrait.tsx",
+          "src/components/game/shared/illustration-preview.tsx",
+          "src/game/actor-rig/photo-portrait-catalog.json",
+          "src/game/actor-rig/pixel-renderer.ts",
+          "src/game/actor-rig/action-portrait.ts",
+          "src/game/actor-rig/photo-portrait-renderer.ts",
+          "src/game/runtime/actor-sigil.ts",
+          "src/game/runtime/actor-preview-voice.ts",
+          "package.json",
+          "package-lock.json"
+        ],
+        "gameplay": [
+          "src/game/runtime/actors.ts",
+          "src/game/models3d/phaser-bridge.ts",
+          "src/game/stage-editor/playtest.ts",
+          "src/components/game/stage-editor.tsx"
+        ],
+        "voice": []
+      },
+      "voiceDecision": "Skip voices for now"
+    }
+  ],
+  "assets": [
+    {
+      "id": "normal",
+      "path": "assets/actor-appearances/mira-adler-v1/normal-generated.png",
+      "kind": "image",
+      "origin": "generated",
+      "transparent": true
+    },
+    {
+      "id": "enraged",
+      "path": "assets/actor-appearances/mira-adler-v1/enraged-generated.png",
+      "kind": "image",
+      "origin": "generated",
+      "transparent": true
+    },
+    {
+      "id": "blink",
+      "path": "assets/actor-appearances/mira-adler-v1/blink-generated.png",
+      "kind": "image",
+      "origin": "generated",
+      "transparent": true,
+      "grid": {
+        "columns": 2,
+        "rows": 2
+      }
+    },
+    {
+      "id": "illustrations",
+      "path": "public/pawtrail-game/actor-studio/illustrations/mira-adler/v2",
+      "kind": "bundle",
+      "origin": "derived",
+      "minFiles": 12
+    },
+    {
+      "id": "icon",
+      "path": "public/pawtrail-game/actor-studio/icons/mira-adler/v1/icon.png",
+      "kind": "image",
+      "origin": "derived",
+      "size": [
+        40,
+        40
+      ],
+      "transparent": true
+    },
+    {
+      "id": "icon-source",
+      "path": "assets/actor-appearances/mira-adler-v1/icon-generated.png",
+      "kind": "image",
+      "origin": "generated",
+      "transparent": true
+    },
+    {
+      "id": "portrait-0",
+      "path": "assets/actor-appearances/mira-adler-v1/portrait-0-generated.png",
+      "kind": "image",
+      "origin": "generated",
+      "transparent": true,
+      "grid": {
+        "columns": 5,
+        "rows": 6
+      }
+    },
+    {
+      "id": "portrait-1",
+      "path": "assets/actor-appearances/mira-adler-v1/portrait-1-generated.png",
+      "kind": "image",
+      "origin": "generated",
+      "transparent": true,
+      "grid": {
+        "columns": 5,
+        "rows": 6
+      }
+    },
+    {
+      "id": "portrait-2",
+      "path": "assets/actor-appearances/mira-adler-v1/portrait-2-generated.png",
+      "kind": "image",
+      "origin": "generated",
+      "transparent": true,
+      "grid": {
+        "columns": 5,
+        "rows": 6
+      }
+    },
+    {
+      "id": "portrait-pack",
+      "path": "assets/actor-appearances/mira-adler-v1/portrait-runtime",
+      "kind": "bundle",
+      "origin": "derived",
+      "maxBytes": 300000,
+      "minFiles": 5
+    }
+  ],
+  "exports": {
+    "illustrations": {
+      "requires": [
+        "normal",
+        "enraged",
+        "blink"
+      ],
+      "produces": [
+        "illustrations"
+      ]
+    },
+    "icon": {
+      "requires": [
+        "normal",
+        "icon-source"
+      ],
+      "produces": [
+        "icon"
+      ]
+    },
+    "portraits": {
+      "requires": [
+        "portrait-0",
+        "portrait-1",
+        "portrait-2"
+      ],
+      "produces": [
+        "portrait-pack"
+      ]
+    }
+  },
+  "artDirection": {
+    "illustration": "Refined cel + painterly",
+    "model": "Shared createRescuer base geometry and animation; cosmetic textures and attached accessories only",
+    "reference": "source/reference.png",
+    "voices": "omitted by owner"
+  },
+  "illustrationFeedback": {
+    "status": "approved by owner",
+    "questionSentAt": "2026-11-15T08:08:05Z",
+    "rule": "Owner permits continuing after about 60 seconds. Portrait style still requires explicit choice."
+  },
+  "pending": [
+    "Authorized runtime visual acceptance: model likeness/headings, complete action matrix and contacts, natural hair motion, portrait blink/speech/breath/transitions, dialogue, framed icon and sigil"
+  ],
+  "review": {
+    "sourceArtwork": "inspected statically",
+    "normalBlink": "exported open/half/closed native drawings inspected",
+    "enragedBlink": "exported open/half/closed native drawings inspected",
+    "illustrationLiveMotion": "v2 stronger/faster motion and authored blink exported; live review pending, no browser verification requested",
+    "icon": "Dedicated 40px drawing inspected statically; framed live state pending",
+    "portrait": "Native front sheet and final resting 3-angle/6-emotion contact inspected; 279067-byte complete bundle. Runtime blink/speech/breath/transitions remain pending.",
+    "model": "Canonical geometry and joints preserved in code; source inspection only; live likeness/headings/action contacts pending.",
+    "actions": "Full existing rescuer action set bound through shared rig; actual runtime acceptance pending.",
+    "voice": "omitted by owner",
+    "firstPortraitSheet": "Front sheet inspected at native 96x120: eye colors, six emotions, half/closed lids and two mouth openings present. Runtime movement remains pending.",
+    "integration": "Creator template, lazy loader, portrait catalog, icon, illustration variants, dialogue, speech rehearsal, shadow and sigil bindings implemented."
+  },
+  "delivery": {
+    "scope": "actor preview only",
+    "url": "http://127.0.0.1:3000/play?preview=actors&skin=mira-adler",
+    "illustrationUrl": "http://127.0.0.1:3000/play?preview=actors&skin=mira-adler&art=illustration",
+    "voices": "omitted by owner",
+    "automatedTests": "not run",
+    "builds": "not run",
+    "browserVerification": "not requested; not run"
+  },
+  "illustrationRevision": {
+    "id": "v2",
+    "cycleMs": 4200,
+    "frames": 60,
+    "frameDurationMs": 70,
+    "normalClosedFrames": [
+      37,
+      38
+    ],
+    "attackClosedFrames": [
+      44,
+      45
+    ],
+    "closedHoldMs": 140,
+    "previousRevision": "v1 preserved",
+    "change": "Approximately doubled loose-tip travel with a 16% shorter sway cycle; original actor design and blink drawings reused"
+  }
+}

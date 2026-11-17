@@ -52,10 +52,14 @@ import { worldConditions, weatherLabel } from "@/game/immersion-data";
 const CommunityMap = lazy(() => import("@/components/game/community/app"));
 const ActorComparison = lazy(() => import("@/components/game/actor-comparison"));
 const StageEditor = lazy(() => import('@/components/game/stage-editor'))
+const FloorAdventure = lazy(() => import('@/components/game/floor-adventure'))
 const ItemStudio = lazy(() => import('@/components/game/item-studio/app'))
+const MonsterStudio = lazy(() => import('@/components/game/monster-studio'))
+const HydraStudio = lazy(() => import('@/components/game/hydra-studio'))
 const SkinStudio = lazy(() => import('@/components/game/skin-studio'))
 const ActorExplainer = lazy(() => import('@/components/game/actor-explainer'))
 const AmberModelStudy = lazy(() => import('@/components/game/amber-model-study'))
+const AmberRepresentationComparison = lazy(() => import('@/components/game/amber-representation-comparison'))
 const AmberVolumeStudy = lazy(() => import('@/components/game/amber-volume-study'))
 const YaeModelStudy = lazy(() => import('@/components/game/yae-model-study'))
 const PortraitGallery = lazy(() => import('@/components/game/portrait-gallery'));
@@ -431,10 +435,18 @@ export default function App({ platform }: { platform?: PlatformBridge }) {
     return () => window.removeEventListener("popstate", update);
   }, []);
   const query = new URLSearchParams(routeSearch);
+  if(query.get('floor')==='neon-heights')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Neon Heights adventure…"/>}><FloorAdventure key={query.get('slot')??'neon-local'}/></Suspense></GameErrorBoundary>
+  if(query.get('compare')==='amber-representations')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Amber representation comparison…"/>}><AmberRepresentationComparison/></Suspense></GameErrorBoundary>
   if(query.get('compare')==='amber')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Amber model study…"/>}><AmberModelStudy/></Suspense></GameErrorBoundary>
   if(query.get('compare')==='amber-volume')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Amber volume study…"/>}><AmberVolumeStudy/></Suspense></GameErrorBoundary>
   if(query.get('compare')==='yae')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening Yae Miko model study…"/>}><YaeModelStudy/></Suspense></GameErrorBoundary>
   if(query.get('preview')==='items')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening item studio…"/>}><ItemStudio/></Suspense></GameErrorBoundary>
+  if (query.get('preview') === 'monsters') {
+    const boss = query.get('boss') ?? '', creatureId = query.get('creature') || undefined
+    const variant = ['kurogane','robot'].includes(boss) ? 'robot' : ['solvaris', 'deity'].includes(boss) ? 'deity' : ['vesper', 'reaper'].includes(boss) ? 'reaper' : boss === 'morvane' ? 'serpent' : 'hydra'
+    const roaming = !!creatureId || ['kurogane','robot','solvaris', 'deity', 'vesper', 'reaper', 'morvane', 'kaedros'].includes(boss)
+    return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening monster studio…"/>}>{roaming ? <HydraStudio key={creatureId ?? variant} variant={variant} creatureId={creatureId} /> : <MonsterStudio />}</Suspense></GameErrorBoundary>
+  }
   if(query.get('preview')==='stage')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening stage editor…"/>}><StageEditor/></Suspense></GameErrorBoundary>
   if(query.get('preview')==='skin')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening texture studio…"/>}><SkinStudio/></Suspense></GameErrorBoundary>
   if(query.get('preview')==='anatomy')return <GameErrorBoundary><Suspense fallback={<PlayLoading title="Opening the character walkthrough…"/>}><ActorExplainer/></Suspense></GameErrorBoundary>

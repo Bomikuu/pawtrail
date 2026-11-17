@@ -1,0 +1,388 @@
+{
+  "version": 1,
+  "actorId": "yae-miko",
+  "name": "Yae Miko",
+  "scope": "local-authoring-and-actor-preview",
+  "status": "six-cue-pack-installed-in-game-and-preview",
+  "language": "ja-JP",
+  "profile": {
+    "origin": "Inazuma (fictional source setting)",
+    "age": null,
+    "ageNote": "Exact age not asserted; mature-adult vocal direction is an authored performance choice.",
+    "personality": [
+      "composed",
+      "perceptive",
+      "playful",
+      "self-assured"
+    ],
+    "biography": "In this PawTrail adaptation, Yae watches over the community with patient confidence and dry wit. She gently challenges companions to trust their judgment while quietly helping animals and neighbors.",
+    "provenance": "Fictional adaptation and original voice direction; not an imitation of the official performer."
+  },
+  "voiceDirection": {
+    "speaker": "One original mature feminine speaker, distinct from Amber",
+    "quality": "Smooth mid-to-low register, measured pace, elegant articulation, restrained expressive warmth and subtle teasing wit",
+    "referenceUse": "Original synthetic voice from written personality direction; no voice actor recording or cloned reference"
+  },
+  "voiceDesign": {
+    "profileName": "Yae Miko - PawTrail original Japanese voice (VoxCPM2)",
+    "seed": 1131302,
+    "attributes": {
+      "Gender": "female",
+      "Age": "middle-aged",
+      "Pitch": "low pitch"
+    },
+    "instruct": "female, middle-aged, low pitch",
+    "personality": "Original poised, perceptive and lightly teasing Japanese companion. Smooth measured delivery and quiet authority."
+  },
+  "provider": {
+    "name": "VoiceStudio",
+    "baseUrl": "http://127.0.0.1:3900",
+    "engineId": "voxcpm2",
+    "voiceProfileId": "c65920a1",
+    "storageRoot": "/run/media/micxsz/Drive/VoiceStudio",
+    "status": "Existing six-cue voice pack installed in game and actor preview",
+    "device": "cpu"
+  },
+  "production": {
+    "purpose": "Six-cue actor-preview voice pack",
+    "maxPackCues": 6,
+    "packTargetBytes": 100000,
+    "filesGenerated": true,
+    "listeningReview": "Generated cues await owner listening; per-cue acceptance is recorded in the source profile",
+    "gameInstallation": "Game and actor preview",
+    "currentAudioBytes": 73961,
+    "auditionPreviewBytes": 143688,
+    "modelSelection": "VoxCPM2 selected by owner; authoring models stored on Drive",
+    "previewIntegration": "Installed; runtime/browser review not performed",
+    "publicAudioBytes": 73961,
+    "previewUrl": "/play?preview=actors&skin=yae-miko&art=portrait",
+    "worldIntegration": true,
+    "worldReview": "Source integrated; runtime/browser and new listening review not performed"
+  },
+  "cues": [
+    {
+      "id": "hi",
+      "text": "あら、来たのね。待っていたわ。",
+      "romanization": "Ara, kita no ne. Matte ita wa.",
+      "translation": "Oh, you came. I was waiting.",
+      "portraitEmotion": "smile",
+      "direction": "A poised, warm greeting with a knowing, lightly teasing smile",
+      "deliveryControl": "Original mature female voice, smooth mid-to-low register, elegant natural Japanese. A poised, warm greeting with a knowing, lightly teasing smile",
+      "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hi.ogg",
+      "listeningAccepted": false,
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hi.mp3",
+      "durationSeconds": 3.8828958333333334,
+      "voiceStudioAudioId": "16fe651b",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/yae-miko-audition-v1/hi.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hi.ogg",
+          "bytes": 12156,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.889417"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hi.mp3",
+          "bytes": 23852,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.882917"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bye",
+      "text": "また会いましょう。気をつけて。",
+      "romanization": "Mata aimashō. Ki o tsukete.",
+      "translation": "Until we meet again. Take care.",
+      "portraitEmotion": "smile",
+      "direction": "A graceful and unhurried farewell, quietly caring",
+      "deliveryControl": "Original mature female voice, smooth mid-to-low register, elegant natural Japanese. A graceful and unhurried farewell, quietly caring",
+      "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/bye.ogg",
+      "listeningAccepted": false,
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/bye.mp3",
+      "durationSeconds": 5.312333333333333,
+      "voiceStudioAudioId": "ace30dc7",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/yae-miko-audition-v1/bye.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/bye.ogg",
+          "bytes": 16033,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "5.318833"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/bye.mp3",
+          "bytes": 32492,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "5.312333"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "attack",
+      "text": "逃がさないわ。覚悟なさい。",
+      "romanization": "Nigasanai wa. Kakugo nasai.",
+      "translation": "You will not escape. Prepare yourself.",
+      "portraitEmotion": "angry",
+      "direction": "A crisp, assured and commanding spell call, controlled projection",
+      "deliveryControl": "Original mature female voice, smooth mid-to-low register, elegant natural Japanese. A crisp, assured and commanding spell call, controlled projection",
+      "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/attack.ogg",
+      "listeningAccepted": false,
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/attack.mp3",
+      "durationSeconds": 2.3145625,
+      "voiceStudioAudioId": "2347858e",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/yae-miko-audition-v1/attack.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/attack.ogg",
+          "bytes": 7403,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "2.321083"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/attack.mp3",
+          "bytes": 14492,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "2.314583"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hurt",
+      "text": "うっ……油断したわ。",
+      "romanization": "U... yudan shita wa.",
+      "translation": "Ugh… I let my guard down.",
+      "portraitEmotion": "sad",
+      "direction": "A short restrained pain reaction followed by wry composure",
+      "deliveryControl": "Original mature female voice, smooth mid-to-low register, elegant natural Japanese. A short restrained pain reaction followed by wry composure",
+      "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hurt.ogg",
+      "listeningAccepted": false,
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hurt.mp3",
+      "durationSeconds": 3.52,
+      "voiceStudioAudioId": "0bd2435b",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/yae-miko-audition-v1/hurt.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hurt.ogg",
+          "bytes": 11849,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.526500"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/hurt.mp3",
+          "bytes": 21692,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "3.520000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "thanks",
+      "text": "ありがとう。助かったわ。",
+      "romanization": "Arigatō. Tasukatta wa.",
+      "translation": "Thank you. That helped.",
+      "portraitEmotion": "smile",
+      "direction": "Quiet sincere gratitude, gentle warmth beneath a composed voice",
+      "deliveryControl": "Original mature female voice, smooth mid-to-low register, elegant natural Japanese. Quiet sincere gratitude, gentle warmth beneath a composed voice",
+      "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/thanks.ogg",
+      "listeningAccepted": false,
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/thanks.mp3",
+      "durationSeconds": 4.071729166666667,
+      "voiceStudioAudioId": "7978fba2",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/yae-miko-audition-v1/thanks.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/thanks.ogg",
+          "bytes": 13123,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "4.078250"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/thanks.mp3",
+          "bytes": 25004,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "4.071750"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "encouragement",
+      "text": "大丈夫。あなたならできるわ。",
+      "romanization": "Daijōbu. Anata nara dekiru wa.",
+      "translation": "It’s all right. You can do this.",
+      "portraitEmotion": "smile",
+      "direction": "Calm and reassuring encouragement with a confident, affectionate smile",
+      "deliveryControl": "Original mature female voice, smooth mid-to-low register, elegant natural Japanese. Calm and reassuring encouragement with a confident, affectionate smile",
+      "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/encouragement.ogg",
+      "listeningAccepted": false,
+      "review": "Generated and format/duration measured; owner listening audition pending.",
+      "auditionPreviewFile": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/encouragement.mp3",
+      "durationSeconds": 4.254708333333333,
+      "voiceStudioAudioId": "d5db07e6",
+      "source": "/run/media/micxsz/Drive/VoiceStudio/pawtrail/yae-miko-audition-v1/encouragement.wav",
+      "exports": {
+        "ogg": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/encouragement.ogg",
+          "bytes": 13397,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "opus",
+                "sample_rate": "48000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "4.261208"
+            }
+          }
+        },
+        "mp3": {
+          "file": "assets/actor-appearances/profiles/yae-miko/audio/audition-v1/encouragement.mp3",
+          "bytes": 26156,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "mp3",
+                "sample_rate": "24000",
+                "channels": 1
+              }
+            ],
+            "format": {
+              "duration": "4.254708"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "id": "yae-loading-refined-cel-pixel",
+  "characterId": "yae-miko",
+  "style": "refined-cel",
+  "revision": "3d798d294407",
+  "nativeSize": [
+    160,
+    240
+  ],
+  "suggestedDisplaySize": [
+    320,
+    480
+  ],
+  "anchor": [
+    80,
+    232
+  ],
+  "atlas": "atlas.webp",
+  "poster": "poster.webp",
+  "animatedImage": "sway.webp",
+  "frames": [
+    {
+      "id": 0,
+      "rect": [
+        0,
+        0,
+        160,
+        240
+      ],
+      "contentBounds": [
+        16,
+        9,
+        141,
+        230
+      ]
+    },
+    {
+      "id": 1,
+      "rect": [
+        160,
+        0,
+        160,
+        240
+      ],
+      "contentBounds": [
+        16,
+        8,
+        140,
+        232
+      ]
+    },
+    {
+      "id": 2,
+      "rect": [
+        320,
+        0,
+        160,
+        240
+      ],
+      "contentBounds": [
+        16,
+        9,
+        138,
+        232
+      ]
+    },
+    {
+      "id": 3,
+      "rect": [
+        0,
+        240,
+        160,
+        240
+      ],
+      "contentBounds": [
+        16,
+        8,
+        143,
+        232
+      ]
+    },
+    {
+      "id": 4,
+      "rect": [
+        160,
+        240,
+        160,
+        240
+      ],
+      "contentBounds": [
+        16,
+        8,
+        142,
+        232
+      ]
+    },
+    {
+      "id": 5,
+      "rect": [
+        320,
+        240,
+        160,
+        240
+      ],
+      "contentBounds": [
+        16,
+        8,
+        143,
+        230
+      ]
+    }
+  ],
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationMs": [
+    320,
+    220,
+    220,
+    220,
+    220,
+    320,
+    220,
+    220,
+    220,
+    220
+  ],
+  "cycleMs": 2400,
+  "loop": true,
+  "motion": [
+    "long hair below shoulders",
+    "hanging sleeve and robe ends"
+  ],
+  "expression": "fixed closed-mouth knowing smile",
+  "sampling": "nearest-neighbor, integer enlargement",
+  "paletteColors": 96,
+  "files": {
+    "atlas.webp": 61814,
+    "poster.webp": 10894,
+    "sway.webp": 109690
+  },
+  "review": {
+    "style": "native and integer-enlarged artwork compared with approved Yae Refined cel portrait; owner acceptance pending",
+    "registration": "whole-drawing integer translations and common uniform scale",
+    "livePlayback": "pending; no browser verification requested"
+  }
+}

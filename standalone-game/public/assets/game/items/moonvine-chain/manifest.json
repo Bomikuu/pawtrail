@@ -1,0 +1,38 @@
+{
+  "id": "moonvine-chain-v1",
+  "purpose": "Generated ability icons for existing chain mechanics; geometry and skin unchanged",
+  "nativeIcon": [
+    64,
+    64
+  ],
+  "display": [
+    40,
+    40
+  ],
+  "filter": "nearest",
+  "processing": "Alpha-preserving native extraction with crisp alpha-edge cleanup and 48-color PNG export",
+  "sources": {
+    "primary": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-9c66890c-ae62-46fb-ba2b-b8679ae5b50d.png",
+    "running": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-2b91c173-a8c6-40e8-864f-1e5456ee1d42.png",
+    "extend": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-d81edefd-6be2-4762-bda9-aab3c7baa3bf.png",
+    "special": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-7fc9f02e-d2a6-460f-a48b-90daa022bd6a.png"
+  },
+  "roles": {
+    "primary": "Mooncut combo",
+    "running": "Running sweep",
+    "extend": "Reaching chain",
+    "special": "Moonvine circle ultimate"
+  },
+  "nativePNGBytes": 18385,
+  "weaponIcon": {
+    "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-9a051bb9-b3c1-4c78-8294-c542b0d17911.png",
+    "file": "weapon-icon.png",
+    "native": [
+      64,
+      64
+    ],
+    "purpose": "Equipment/selection image, separate from skill icons",
+    "processing": "Nearest-neighbor native export, crisp transparent alpha and 48-color palette",
+    "bytes": 1620
+  }
+}

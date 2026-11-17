@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail HUD Creator"
+  short_description: "Compact pixel-font dialogue HUDs with matching portraits"
+  default_prompt: "Use $pawtrail-hud to build the compact bottom-center parchment dialogue HUD with Pixelify Sans, portrait left and words right; use the angle selected in the portrait preview and keep angle controls outside dialogue."

@@ -1,0 +1,93 @@
+{
+  "face": "Own authored front neutral open/half/closed portrait regions, fitted to curved face UVs without hair/collar projection",
+  "surfaces": "Crops of the approved normal illustration, filled beneath transparency with matching material base colors",
+  "sourceCrops": {
+    "hair": [
+      740,
+      360,
+      880,
+      590
+    ],
+    "fringe": [
+      320,
+      82,
+      421,
+      165
+    ],
+    "armor": [
+      430,
+      355,
+      550,
+      550
+    ],
+    "undersuit": [
+      415,
+      855,
+      500,
+      990
+    ],
+    "skirt": [
+      415,
+      610,
+      565,
+      780
+    ],
+    "feather": [
+      95,
+      800,
+      265,
+      1160
+    ],
+    "lining": [
+      735,
+      1080,
+      860,
+      1305
+    ],
+    "boots": [
+      325,
+      895,
+      415,
+      1110
+    ],
+    "bracer": [
+      609,
+      615,
+      674,
+      766
+    ]
+  },
+  "nativeSurfaceSize": [
+    64,
+    96
+  ],
+  "bytes": {
+    "lining.png": 10481,
+    "back.png": 15478,
+    "bracer.png": 14309,
+    "face.png": 2998,
+    "fringe.png": 12900,
+    "sigil.png": 5020,
+    "armor.png": 15619,
+    "skirt.png": 13313,
+    "feather.png": 14444,
+    "undersuit.png": 12383,
+    "boots.png": 14417,
+    "profile.json": 1017,
+    "hair.png": 13584,
+    "closed.png": 2888,
+    "half.png": 2943
+  },
+  "faceSourceCrop": [
+    26,
+    48,
+    70,
+    98
+  ],
+  "backSourceCrop": [
+    1217,
+    223,
+    1334,
+    376
+  ]
+}

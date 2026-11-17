@@ -1,0 +1,992 @@
+[
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "rest",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "half",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "closed",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "small",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "open",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "rest",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "half",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "closed",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "small",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "open",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "rest",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "half",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "closed",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "small",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "open",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "rest",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "half",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "closed",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "small",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "open",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      25
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "rest",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "half",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "closed",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "small",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "open",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "rest",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "half",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "closed",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "small",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "open",
+    "scale": 0.42857142857142855,
+    "offset": [
+      3,
+      24
+    ],
+    "source": "portrait-0-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "rest",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "half",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "closed",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "small",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "open",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "rest",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "half",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "closed",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "small",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "open",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "rest",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "half",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "closed",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "small",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "open",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "rest",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "half",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "closed",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "small",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "open",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "rest",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "half",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "closed",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "small",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "open",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "rest",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "half",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "closed",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "small",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      28
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "open",
+    "scale": 0.410958904109589,
+    "offset": [
+      3,
+      27
+    ],
+    "source": "portrait-1-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "rest",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "half",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "closed",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "small",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "open",
+    "scale": 0.4147465437788018,
+    "offset": [
+      4,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "rest",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "half",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "closed",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "small",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "open",
+    "scale": 0.4147465437788018,
+    "offset": [
+      4,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "rest",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "half",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "closed",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "small",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "open",
+    "scale": 0.4147465437788018,
+    "offset": [
+      4,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "rest",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "half",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "closed",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "small",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "open",
+    "scale": 0.4147465437788018,
+    "offset": [
+      4,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "rest",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "half",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "closed",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "small",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "open",
+    "scale": 0.4147465437788018,
+    "offset": [
+      4,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "rest",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "half",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "closed",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "small",
+    "scale": 0.4147465437788018,
+    "offset": [
+      3,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "open",
+    "scale": 0.4147465437788018,
+    "offset": [
+      4,
+      26
+    ],
+    "source": "portrait-2-generated.png"
+  }
+]

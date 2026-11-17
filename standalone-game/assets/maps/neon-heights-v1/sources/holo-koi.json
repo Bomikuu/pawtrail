@@ -1,0 +1,11 @@
+{
+  "asset": "holo-koi",
+  "startedAt": "2026-11-15T11:35:43.579Z",
+  "completedAt": "2026-11-15T11:41:08.364Z",
+  "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-36cdf307-576c-457b-84e9-e3321033da1f.png",
+  "inputs": [
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/neon-heights-v1/reference.png",
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/.agents/skills/pawtrail-maps/references/approved-care-grove-style.png"
+  ],
+  "imageServiceSeconds": 324.785
+}

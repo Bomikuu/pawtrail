@@ -1,0 +1,62 @@
+{
+  "familyId": "solvaris",
+  "parentBoss": "solvaris-solar-arbiter",
+  "id": "dawnwarden",
+  "name": "Dawnwarden",
+  "title": "Herald of the Solar Mandate",
+  "tier": "mini-boss",
+  "row": 0,
+  "enragedRow": 1,
+  "maxHp": 2400,
+  "hpPerBar": 300,
+  "enrageAt": 0.3,
+  "height": 3.1,
+  "radius": 0.85,
+  "speed": 1.55,
+  "hover": 0.1,
+  "armor": 0.8,
+  "weakMultiplier": 1.5,
+  "biography": "A horn-masked herald tends the lower terraces of Solvaris’s observatory. Its smaller golden halo answers the same celestial order, but its hands reveal vulnerable seals after every edict.",
+  "weakness": "Counterattack during the edict’s recovery; ordinary armored hits deal less damage.",
+  "temperament": "Solemn guardian",
+  "origin": "The Sunken Orrery, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "dawn-edict",
+      "name": "Dawn Edict",
+      "shape": "sector",
+      "outer": 3.5,
+      "inner": 0,
+      "angle": 135,
+      "target": "self",
+      "damage": 24,
+      "windup": 1250,
+      "active": 360,
+      "recovery": 850,
+      "cooldown": 6500,
+      "description": "A broad golden hand-sweep locks a forward wedge. Circle behind the herald."
+    },
+    {
+      "id": "sanctum-ring",
+      "name": "Sanctum Ring",
+      "shape": "ring",
+      "outer": 4.2,
+      "inner": 1.3,
+      "angle": 110,
+      "target": "self",
+      "damage": 28,
+      "windup": 1550,
+      "active": 360,
+      "recovery": 850,
+      "cooldown": 9400,
+      "description": "The halo sends out a marked annulus. Its clear center and outer edge stay safe."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: corrected artwork loaded; movement/start/pause, Dawn Edict 24 HP and Sanctum Ring 28 HP contact, 720-HP enrage rehearsal and reset observed. Full defeat unreviewed."
+}

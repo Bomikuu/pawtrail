@@ -1,0 +1,54 @@
+{
+  "sourceManifest": "public/pawtrail-game/game-assets/world-manifest.json",
+  "nativeTileSize": 32,
+  "nativeSceneryScales": [
+    1,
+    2
+  ],
+  "sourceAtlasRectangles": "src/game/stage-editor/native-assets.json",
+  "selectedAssetIds": [
+    "f:community-bench",
+    "f:flower-pot",
+    "f:garden-bench",
+    "f:garden-feeding",
+    "f:garden-lamp",
+    "f:garden-pot",
+    "f:wooden-door",
+    "native:fence_straight",
+    "native:flowering_tree",
+    "native:flowering_tree:2x",
+    "native:garden_pot",
+    "native:large_tree:2x",
+    "native:leafy_shrub",
+    "native:palm",
+    "native:pink_flowers",
+    "native:rescue_shelter:2x",
+    "native:rocks:2x",
+    "native:round_bush",
+    "native:small_tree",
+    "native:small_tree:2x",
+    "native:white_flowers",
+    "native:wooden_sign",
+    "native:yellow_flowers"
+  ],
+  "sourceHashes": {
+    "public/pawtrail-game/game-assets/world-manifest.json": "6e37dd39573ae6330418a656214036c639596d573e50c48b20f58c1f1348524b",
+    "public/pawtrail-game/game-assets/terrain.png": "f39c891458389935be27850b374454a5752dc05d4778f0c73fe1a5331fe8a47d",
+    "public/pawtrail-game/game-assets/environment.png": "6c9323469efe27eae393bba585c1414f1d51274537b2ce2388b3e552462819d6",
+    "public/pawtrail-game/game-assets/buildings.png": "c181882347d2de4118462033789f1e1d96a0726d2e693bff381b9ba093effca2",
+    "src/game/housing/catalog.json": "7e8e284404ecd3af1fca361fcb15507a5cb00e4a1e2e7f4a6c64408d1b36a1ab"
+  },
+  "exports": {
+    "stage": "src/game/stage-editor/maps/care-grove.json",
+    "public": "public/pawtrail-game/stages/care-grove-v1.json",
+    "overview": "assets/maps/care-grove-v1/native-overview.png"
+  },
+  "objectCount": 79,
+  "tileCount": 768,
+  "newRasterArtwork": false,
+  "omissions": [
+    "No overworld portal or enterable lodge interior",
+    "No combat encounters or NPC/account records",
+    "Local interaction state resets on leaving Play"
+  ]
+}

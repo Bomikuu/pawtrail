@@ -1,4 +1,6 @@
 import * as T from 'three'
+import { PixelFinish } from './pixel-finish'
+export { PixelFinish } from './pixel-finish'
 import { createRescuer, disposeRig, appearancePalette, actions, type Rig, type SecondaryMotion } from './rigs'
 import { fittedAppearance, appearanceSignature, type ActorAppearance } from './appearance'
 
@@ -24,40 +26,6 @@ function acquireStage() {
   }
   stage.references++
   return stage
-}
-function srgb(v:number){return Math.max(0,Math.min(255,Math.round((v<=.0031308?v*12.92:1.055*v**(1/2.4)-.055)*255)))}
-function linear(v:number){v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}
-/** Matches scripts/pixel_actor_art.py: same palette, one-pixel contour and light edge. */
-export class PixelFinish {
-  private colors:number[][]=[]
-  private cache=new Map<number,number[]>()
-  constructor(palette:string[]){
-    const unique=new Map<string,number[]>()
-    for(const hex of palette)for(const shade of [.68,.84,1,1.08]){
-      const c=[1,3,5].map(i=>srgb(linear(parseInt(hex.slice(i,i+2),16))*shade));unique.set(c.join(','),c)
-    }
-    for(const c of [[42,28,23],[58,38,29]])unique.set(c.join(','),c)
-    this.colors=[...unique.values()].sort((a,b)=>a[0]-b[0]||a[1]-b[1]||a[2]-b[2])
-  }
-  finish(source:ImageData,contour=1,preserveAlpha=false){
-    const {width:w,height:h,data:s}=source,out=new ImageData(w,h),d=out.data
-    const radius=Math.max(1,Math.min(2,Math.round(contour)))
-    for(let y=0;y<h;y++)for(let x=0;x<w;x++){
-      const i=(y*w+x)*4
-      if(s[i+3]>=(preserveAlpha?32:128)){
-        const key=s[i]*65536+s[i+1]*256+s[i+2]
-        let c=this.cache.get(key)
-        if(!c){let best=Infinity;c=this.colors[0];for(const candidate of this.colors){const distance=(candidate[0]-s[i])**2+(candidate[1]-s[i+1])**2+(candidate[2]-s[i+2])**2;if(distance<best){best=distance;c=candidate}}
-          this.cache.set(key,c)}
-        d.set([...c,preserveAlpha?s[i+3]:255],i)
-      }else{
-        let adjacent=false
-        for(let ny=Math.max(0,y-radius);ny<=Math.min(h-1,y+radius)&&!adjacent;ny++)for(let nx=Math.max(0,x-radius);nx<=Math.min(w-1,x+radius);nx++)if(s[(ny*w+nx)*4+3]>=128){adjacent=true;break}
-        if(adjacent){const lit=(x+1<w&&s[i+7]>=128)||(y+1<h&&s[i+w*4+3]>=128);d.set(lit?[58,38,29,255]:[42,28,23,255],i)}
-      }
-    }
-    return out
-  }
 }
 /** One shared GPU context. Rebuilds geometry only for actual appearance edits. */
 export class PixelActor {

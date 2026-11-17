@@ -1,0 +1,8 @@
+{
+  "variant": "jacket-rescuer",
+  "group": "social",
+  "rows": 9,
+  "cols": 4,
+  "prompt": "Use case: identity-preserve. Image1 edit target animation sheet; Image2 newappearance reference. Replace ONLY the rescuer appearance in EVERY frame of Image1 with the rescuer from Image2: deepbrownskin, shortblackcurlyhair, tealjacket creamundershirt charcoallongpants brownshoes rustbackpack. Keep EVERY action and pose/order/props/cellspacing from Image1 exactly. 9rows4columns FOUR DISTINCT sequentialframes perrow, consistentidentityeveryframe. Fullbodyincludingfeet MUSTFIT insideallcells; add transparentpaddingaroundentiresheet ifneeded, especiallybottomrow. Crisp cozy16bit pixelart topdown3/4 unchanged. Actualtransparentbg no glow, no textlabelsgridfloorborders, no newcharacters. Animation sheet only.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-09c0a396-603c-42bb-a2a3-3c6190c305ea.png"
+}

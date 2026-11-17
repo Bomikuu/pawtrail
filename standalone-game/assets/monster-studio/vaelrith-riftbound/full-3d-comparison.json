@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-12",
+  "preview": "/play?preview=monsters&monsterView=full-3d",
+  "mode": "solid materials and native 3D rendering of the approved creature rig",
+  "unchanged": [
+    "HP",
+    "combat",
+    "player scale",
+    "attack timing",
+    "hit/fire sprites"
+  ],
+  "oneLoadedVersion": true,
+  "nativeBuffer": [
+    640,
+    480
+  ],
+  "shadowMap": [
+    512,
+    512
+  ],
+  "automatedTestsRun": false,
+  "typeCheckRun": false,
+  "buildRun": false,
+  "browserOpened": false,
+  "liveReview": "pending"
+}

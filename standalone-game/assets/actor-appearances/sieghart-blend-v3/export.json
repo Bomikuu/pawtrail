@@ -1,0 +1,81 @@
+{
+  "style": "Refined cel + painterly",
+  "method": "Continuous pinned 2D painted-part mesh; not duplicated pose frames",
+  "nativeSize": [
+    320,
+    448
+  ],
+  "cycleMs": 5000,
+  "variants": [
+    {
+      "variant": "normal",
+      "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieghart-blend-v3/normal-generated.png",
+      "sourceBounds": [
+        24,
+        7,
+        1007,
+        1532
+      ],
+      "scale": 0.2780327868852459,
+      "translation": [
+        16.67409836065573,
+        10.053770491803277
+      ],
+      "parts": [
+        "body",
+        "scarf-upper",
+        "scarf-lower",
+        "coat-hem",
+        "hair-tips",
+        "hair-crown"
+      ],
+      "runtimeBytes": {
+        "actor-poster.webp": 37312,
+        "actor.webp": 37312,
+        "background.webp": 27774,
+        "parts.webp": 38026,
+        "aura.webp": 57064,
+        "illustration.json": 5701,
+        "poster.webp": 32596
+      },
+      "decodedPartsBytes": 1140736,
+      "folder": "public/pawtrail-game/actor-studio/illustrations/sieghart/v5/normal"
+    },
+    {
+      "variant": "enraged",
+      "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieghart-blend-v3/enraged-lightning-generated.png",
+      "sourceBounds": [
+        14,
+        9,
+        1189,
+        1306
+      ],
+      "scale": 0.2519148936170213,
+      "translation": [
+        8.473191489361701,
+        106.99914893617017
+      ],
+      "parts": [
+        "body",
+        "scarf-upper",
+        "scarf-lower",
+        "coat-hem",
+        "hair-tips",
+        "hair-crown",
+        "eye-lightning"
+      ],
+      "runtimeBytes": {
+        "actor-poster.webp": 30056,
+        "actor.webp": 30056,
+        "background.webp": 27774,
+        "parts.webp": 34350,
+        "aura.webp": 57064,
+        "illustration.json": 6259,
+        "poster.webp": 26912
+      },
+      "decodedPartsBytes": 888832,
+      "folder": "public/pawtrail-game/actor-studio/illustrations/sieghart/v5/enraged"
+    }
+  ],
+  "motionRevision": "v5"
+}

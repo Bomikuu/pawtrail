@@ -1,0 +1,17 @@
+{
+  "actor": "sieghart",
+  "style": "Refined cel",
+  "angle": "three-quarter-left",
+  "nativeSize": [
+    40,
+    40
+  ],
+  "displaySize": [
+    48,
+    48
+  ],
+  "frame": "shared woody frame and active glow",
+  "source": "icon-generated.png",
+  "file": "/pawtrail-game/actor-studio/icons/sieghart/v3/icon.png",
+  "bytes": 698
+}

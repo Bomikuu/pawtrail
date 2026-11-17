@@ -1,0 +1,1478 @@
+{
+  "version": 1,
+  "grounds": [
+    {
+      "id": "f01:undergrid-ground",
+      "label": "Undergrid",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/undergrid-ground.png",
+      "width": 1280,
+      "height": 896,
+      "reflections": [
+        [
+          470,
+          350,
+          180,
+          45
+        ],
+        [
+          970,
+          650,
+          140,
+          35
+        ],
+        [
+          650,
+          790,
+          160,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "f01:skybridge-ground",
+      "label": "Rainline Skybridge",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/skybridge-ground.png",
+      "width": 1280,
+      "height": 768,
+      "reflections": [
+        [
+          700,
+          285,
+          260,
+          25
+        ],
+        [
+          300,
+          500,
+          120,
+          22
+        ],
+        [
+          20,
+          10,
+          230,
+          40
+        ],
+        [
+          1040,
+          20,
+          200,
+          30
+        ]
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "f01:pump-array",
+      "label": "Double turbine pump",
+      "category": "Floor 01 \u00b7 utility scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/pump-array.png",
+      "width": 224,
+      "height": 176,
+      "anchor": [
+        112,
+        169
+      ],
+      "footprint": [
+        13,
+        124,
+        198,
+        45
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "fan",
+        "cycleMs": 4600,
+        "rotors": [
+          [
+            96,
+            22,
+            15,
+            8
+          ],
+          [
+            138,
+            22,
+            15,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "id": "f01:coolant-reservoir",
+      "label": "Coolant reservoir",
+      "category": "Floor 01 \u00b7 utility scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/coolant-reservoir.png",
+      "width": 176,
+      "height": 128,
+      "anchor": [
+        88,
+        122
+      ],
+      "footprint": [
+        8,
+        64,
+        160,
+        58
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "flow",
+        "cycleMs": 6600,
+        "flow": [
+          32,
+          54,
+          118,
+          41
+        ]
+      }
+    },
+    {
+      "id": "f01:pipe-wall",
+      "label": "Insulated pipe wall",
+      "category": "Floor 01 \u00b7 utility scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/pipe-wall.png",
+      "width": 320,
+      "height": 144,
+      "anchor": [
+        160,
+        138
+      ],
+      "footprint": [
+        7,
+        119,
+        306,
+        19
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7800
+      }
+    },
+    {
+      "id": "f01:relay",
+      "label": "P02 relay board",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        37.0,
+        160.07,
+        86.0,
+        15.859
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/model.glb"
+      },
+      "furniture": {
+        "id": "f01-relay",
+        "label": "P02 relay board",
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          37.0,
+          160.07,
+          86.0,
+          15.859
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              37.0,
+              160.07,
+              86.0,
+              15.859
+            ]
+          ],
+          "placement": [
+            [
+              37.0,
+              160.07,
+              86.0,
+              15.859
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              192.355
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect_plan"
+          ]
+        },
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "inspect_plan",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ],
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              37.0,
+              160.07,
+              86.0,
+              15.859
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  37.0,
+                  160.07,
+                  86.0,
+                  15.859
+                ]
+              ],
+              "placement": [
+                [
+                  37.0,
+                  160.07,
+                  86.0,
+                  15.859
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  192.355
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/0.png"
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              66.0,
+              143.645,
+              28.0,
+              48.711
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  66.0,
+                  143.645,
+                  28.0,
+                  48.711
+                ]
+              ],
+              "placement": [
+                [
+                  66.0,
+                  143.645,
+                  28.0,
+                  48.711
+                ]
+              ],
+              "approaches": [
+                [
+                  37.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/90.png"
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              37.0,
+              160.07,
+              86.0,
+              15.859
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  37.0,
+                  160.07,
+                  86.0,
+                  15.859
+                ]
+              ],
+              "placement": [
+                [
+                  37.0,
+                  160.07,
+                  86.0,
+                  15.859
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  143.645
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/180.png"
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              66.0,
+              143.645,
+              28.0,
+              48.711
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  66.0,
+                  143.645,
+                  28.0,
+                  48.711
+                ]
+              ],
+              "placement": [
+                [
+                  66.0,
+                  143.645,
+                  28.0,
+                  48.711
+                ]
+              ],
+              "approaches": [
+                [
+                  123.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/270.png"
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/270.png"
+        }
+      }
+    },
+    {
+      "id": "f01:archive",
+      "label": "P03 signal archive",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        50.0,
+        158.938,
+        60.0,
+        22.656
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/model.glb"
+      },
+      "furniture": {
+        "id": "f01-archive",
+        "label": "P03 signal archive",
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          50.0,
+          158.938,
+          60.0,
+          22.656
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              50.0,
+              158.938,
+              60.0,
+              22.656
+            ]
+          ],
+          "placement": [
+            [
+              50.0,
+              158.938,
+              60.0,
+              22.656
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              194.055
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect_plan"
+          ]
+        },
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "inspect_plan",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ],
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              50.0,
+              158.938,
+              60.0,
+              22.656
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  50.0,
+                  158.938,
+                  60.0,
+                  22.656
+                ]
+              ],
+              "placement": [
+                [
+                  50.0,
+                  158.938,
+                  60.0,
+                  22.656
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  194.055
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/0.png"
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              56.0,
+              151.008,
+              40.0,
+              33.984
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  56.0,
+                  151.008,
+                  40.0,
+                  33.984
+                ]
+              ],
+              "placement": [
+                [
+                  56.0,
+                  151.008,
+                  40.0,
+                  33.984
+                ]
+              ],
+              "approaches": [
+                [
+                  34.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/90.png"
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              50.0,
+              154.406,
+              60.0,
+              22.656
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  50.0,
+                  154.406,
+                  60.0,
+                  22.656
+                ]
+              ],
+              "placement": [
+                [
+                  50.0,
+                  154.406,
+                  60.0,
+                  22.656
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  141.945
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/180.png"
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              64.0,
+              151.008,
+              40.0,
+              33.984
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  64.0,
+                  151.008,
+                  40.0,
+                  33.984
+                ]
+              ],
+              "placement": [
+                [
+                  64.0,
+                  151.008,
+                  40.0,
+                  33.984
+                ]
+              ],
+              "approaches": [
+                [
+                  126.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/270.png"
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/270.png"
+        }
+      }
+    },
+    {
+      "id": "f01:supply",
+      "label": "Utility supply cabinet",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        46.0,
+        158.938,
+        68.0,
+        25.488
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/model.glb"
+      },
+      "furniture": {
+        "id": "f01-supply",
+        "label": "Utility supply cabinet",
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          46.0,
+          158.938,
+          68.0,
+          25.488
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              46.0,
+              158.938,
+              68.0,
+              25.488
+            ]
+          ],
+          "placement": [
+            [
+              46.0,
+              158.938,
+              68.0,
+              25.488
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              194.055
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect_plan"
+          ]
+        },
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "inspect_plan",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ],
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              46.0,
+              158.938,
+              68.0,
+              25.488
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  46.0,
+                  158.938,
+                  68.0,
+                  25.488
+                ]
+              ],
+              "placement": [
+                [
+                  46.0,
+                  158.938,
+                  68.0,
+                  25.488
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  194.055
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/0.png"
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              51.0,
+              148.742,
+              45.0,
+              38.516
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  51.0,
+                  148.742,
+                  45.0,
+                  38.516
+                ]
+              ],
+              "placement": [
+                [
+                  51.0,
+                  148.742,
+                  45.0,
+                  38.516
+                ]
+              ],
+              "approaches": [
+                [
+                  34.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/90.png"
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              46.0,
+              151.574,
+              68.0,
+              25.488
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  46.0,
+                  151.574,
+                  68.0,
+                  25.488
+                ]
+              ],
+              "placement": [
+                [
+                  46.0,
+                  151.574,
+                  68.0,
+                  25.488
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  141.945
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/180.png"
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              64.0,
+              148.742,
+              45.0,
+              38.516
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  64.0,
+                  148.742,
+                  45.0,
+                  38.516
+                ]
+              ],
+              "placement": [
+                [
+                  64.0,
+                  148.742,
+                  45.0,
+                  38.516
+                ]
+              ],
+              "approaches": [
+                [
+                  126.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/270.png"
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/270.png"
+        }
+      }
+    },
+    {
+      "id": "f01:valve",
+      "label": "Coolant harvest valve",
+      "category": "Floor 01 \u00b7 usable 3D",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "footprint": [
+        35.0,
+        156.672,
+        90.0,
+        22.656
+      ],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "liveModel": {
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/model.glb"
+      },
+      "furniture": {
+        "id": "f01-valve",
+        "label": "Coolant harvest valve",
+        "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/0.png",
+        "width": 160,
+        "height": 192,
+        "anchor": [
+          80,
+          168
+        ],
+        "footprint": [
+          35.0,
+          156.672,
+          90.0,
+          22.656
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ]
+          ],
+          "placement": [
+            [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ]
+          ],
+          "approaches": [
+            [
+              80.0,
+              192.922
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect_plan"
+          ]
+        },
+        "blocking": true,
+        "rotatable": true,
+        "category": "Floor 01 \u00b7 usable 3D",
+        "interaction": "inspect_plan",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ],
+        "supportedRotations": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "renderedViews": {
+          "0": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "placement": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  192.922
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/0.png"
+          },
+          "90": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              60.0,
+              142.512,
+              40.0,
+              50.977
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "placement": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "approaches": [
+                [
+                  36.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/90.png"
+          },
+          "180": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              35.0,
+              156.672,
+              90.0,
+              22.656
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "placement": [
+                [
+                  35.0,
+                  156.672,
+                  90.0,
+                  22.656
+                ]
+              ],
+              "approaches": [
+                [
+                  80.0,
+                  143.078
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/180.png"
+          },
+          "270": {
+            "width": 160,
+            "height": 192,
+            "anchor": [
+              80,
+              168
+            ],
+            "footprint": [
+              60.0,
+              142.512,
+              40.0,
+              50.977
+            ],
+            "geometry": {
+              "version": 2,
+              "ground": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "placement": [
+                [
+                  60.0,
+                  142.512,
+                  40.0,
+                  50.977
+                ]
+              ],
+              "approaches": [
+                [
+                  124.0,
+                  168.0
+                ]
+              ],
+              "seats": [],
+              "surfaces": [],
+              "occlusion": "base",
+              "actions": [
+                "inspect_plan"
+              ]
+            },
+            "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/270.png"
+          }
+        },
+        "orientationVariants": {
+          "0": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/0.png",
+          "90": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/90.png",
+          "180": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/180.png",
+          "270": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/270.png"
+        }
+      }
+    },
+    {
+      "id": "f01:nyx",
+      "label": "Nyx Tal",
+      "category": "Floor 01 \u00b7 NPCs",
+      "kind": "object",
+      "file": "/pawtrail-game/floors/f01/npcs/nyx/body.png",
+      "width": 48,
+      "height": 80,
+      "anchor": [
+        24,
+        78
+      ],
+      "footprint": [
+        18,
+        74,
+        12,
+        6
+      ],
+      "rotations": [
+        0
+      ],
+      "furniture": {
+        "id": "f01-nyx",
+        "label": "Nyx Tal",
+        "file": "/pawtrail-game/floors/f01/npcs/nyx/body.png",
+        "width": 48,
+        "height": 80,
+        "anchor": [
+          24,
+          78
+        ],
+        "footprint": [
+          18,
+          74,
+          12,
+          6
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              18,
+              74,
+              12,
+              6
+            ]
+          ],
+          "placement": [
+            [
+              18,
+              74,
+              12,
+              6
+            ]
+          ],
+          "approaches": [
+            [
+              24,
+              104
+            ],
+            [
+              0,
+              86
+            ],
+            [
+              48,
+              86
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "talk_npc"
+          ]
+        },
+        "blocking": true,
+        "rotatable": false,
+        "category": "Floor 01 \u00b7 NPCs",
+        "interaction": "talk_npc",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      },
+      "npc": "nyx"
+    },
+    {
+      "id": "f01:eko",
+      "label": "EKO-9",
+      "category": "Floor 01 \u00b7 animated scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/holo-head.png",
+      "width": 160,
+      "height": 224,
+      "anchor": [
+        80,
+        218
+      ],
+      "footprint": [
+        26,
+        184,
+        108,
+        34
+      ],
+      "rotations": [
+        0
+      ],
+      "motion": {
+        "kind": "holo-head",
+        "cycleMs": 7200,
+        "projectionBottom": 173
+      },
+      "npc": "eko",
+      "furniture": {
+        "id": "f01-eko",
+        "label": "EKO-9",
+        "file": "/pawtrail-game/map-art/neon-heights-v1/holo-head.png",
+        "width": 160,
+        "height": 224,
+        "anchor": [
+          80,
+          218
+        ],
+        "footprint": [
+          26,
+          184,
+          108,
+          34
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              26,
+              184,
+              108,
+              34
+            ]
+          ],
+          "placement": [
+            [
+              26,
+              184,
+              108,
+              34
+            ]
+          ],
+          "approaches": [
+            [
+              80,
+              245
+            ],
+            [
+              8,
+              225
+            ],
+            [
+              152,
+              225
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "talk_npc"
+          ]
+        },
+        "blocking": true,
+        "rotatable": false,
+        "category": "Floor 01 \u00b7 animated scenery",
+        "interaction": "talk_npc",
+        "price": 0,
+        "zones": [
+          "interior",
+          "yard"
+        ]
+      }
+    }
+  ]
+}

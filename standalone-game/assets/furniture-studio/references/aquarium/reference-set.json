@@ -33,7 +33,7 @@
     ]
   },
   "implementation": {
-    "revision": "31b060873773",
+    "revision": "b4a3203453bd",
     "source": "src/game/furniture/aquarium.ts",
     "manifest": "assets/furniture-studio/exports/aquarium/manifest.json",
     "sourceGlb": "assets/furniture-studio/exports/aquarium/source-model.glb",
@@ -111,6 +111,12 @@
         "Authenticated placement, care rewards and construction transactions were not exercised.",
         "No automated tests, checks or builds were run."
       ]
+    },
+    "outlineUpdate": {
+      "recordedAt": "2026-11-10T14:57:16.491973+00:00",
+      "policy": "One native-pixel character-matched brown contour; painted interior colors preserved. Physical structural edges for reference-timber volumes; existing aquarium painted edges retained.",
+      "evidence": "output/furniture/outline-2026-11-10/before-after.png",
+      "review": "Native artifact inspection and isolated Firefox art production; no live app verification."
     }
   }
 }

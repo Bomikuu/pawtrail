@@ -1,0 +1,575 @@
+{
+  "version": 1,
+  "id": "rika-hoshino",
+  "projectRoot": "../../..",
+  "actors": [
+    {
+      "id": "rika-hoshino",
+      "name": "Rika Hoshino",
+      "modelKind": "humanoid",
+      "previewUrl": "http://127.0.0.1:3000/play?preview=actors&skin=rika-hoshino",
+      "voices": "omitted",
+      "voiceOmissionReason": "Explicitly omitted for this job by the owner",
+      "installInGame": true,
+      "illustrationName": "Rika & Peony-7",
+      "illustrationVariants": [
+        "normal",
+        "enraged"
+      ],
+      "illustrationCycleMs": 5000,
+      "portrait": {
+        "collection": "rika-hoshino-refined-cel",
+        "poses": [
+          "front-pout",
+          "three-quarter-left",
+          "head-tilt-smile-right"
+        ],
+        "emotions": [
+          "idle",
+          "smile",
+          "happy",
+          "sad",
+          "angry",
+          "surprised"
+        ]
+      },
+      "dependencies": {
+        "model": [
+          {
+            "path": "src/game/actor-rig/rika-rig.ts",
+            "imports": true
+          },
+          "public/pawtrail-game/actor-studio/rika-hoshino/v1"
+        ],
+        "portrait": [
+          "public/pawtrail-game/game-assets/dialogue-portraits/rika-hoshino-refined-cel-v1/0e239e215acc",
+          {
+            "path": "src/game/actor-rig/portrait-renderer.ts",
+            "optional": true
+          },
+          "src/game/actor-rig/authored-actor-portrait.ts"
+        ],
+        "illustration": [
+          "public/pawtrail-game/actor-studio/illustrations/rika-hoshino/v1",
+          "src/game/creator/illustration-motion.ts",
+          "src/game/creator/illustration-assets.ts"
+        ],
+        "icon": [
+          "public/pawtrail-game/actor-studio/icons/rika-hoshino/v1/icon.png",
+          "src/components/game/shared/character-icon.tsx"
+        ],
+        "preview": [
+          "src/game/runtime/actor-comparison-state.ts",
+          "src/game/runtime/actor-comparison-scene.ts",
+          "src/game/creator/preview-models.ts",
+          "src/game/creator/state.ts",
+          "src/components/game/actor-comparison.tsx",
+          "src/components/game/character-creator-editor.tsx",
+          "src/components/game/shared/living-portrait.tsx",
+          "src/components/game/shared/illustration-preview.tsx",
+          "src/game/actor-rig/photo-portrait-catalog.json",
+          "src/game/actor-rig/pixel-renderer.ts",
+          "src/game/actor-rig/action-portrait.ts",
+          "src/game/actor-rig/photo-portrait-renderer.ts",
+          "src/game/runtime/actor-sigil.ts",
+          "src/game/runtime/actor-preview-voice.ts",
+          "package.json",
+          "package-lock.json"
+        ],
+        "gameplay": [
+          "src/game/runtime/actors.ts",
+          "src/game/models3d/phaser-bridge.ts",
+          "src/game/stage-editor/playtest.ts",
+          "src/components/game/stage-editor.tsx"
+        ]
+      }
+    },
+    {
+      "id": "peony-7",
+      "name": "Peony-7",
+      "modelKind": "vehicle",
+      "previewUrl": "http://127.0.0.1:3000/play?preview=actors&skin=peony-7",
+      "voices": "omitted",
+      "voiceOmissionReason": "Explicitly omitted for this job by the owner",
+      "installInGame": true,
+      "illustrationName": "Rika & Peony-7",
+      "illustrationVariants": [
+        "normal",
+        "enraged"
+      ],
+      "illustrationCycleMs": 5000,
+      "portrait": {
+        "collection": "rika-hoshino-refined-cel",
+        "poses": [
+          "front-pout",
+          "three-quarter-left",
+          "head-tilt-smile-right"
+        ],
+        "emotions": [
+          "idle",
+          "smile",
+          "happy",
+          "sad",
+          "angry",
+          "surprised"
+        ]
+      },
+      "dependencies": {
+        "model": [
+          {
+            "path": "src/game/actor-rig/peony-rig.ts",
+            "imports": true
+          },
+          "public/pawtrail-game/actor-studio/rika-hoshino/v1"
+        ],
+        "portrait": [
+          "public/pawtrail-game/game-assets/dialogue-portraits/rika-hoshino-refined-cel-v1/0e239e215acc",
+          {
+            "path": "src/game/actor-rig/portrait-renderer.ts",
+            "optional": true
+          },
+          "src/game/actor-rig/authored-actor-portrait.ts"
+        ],
+        "illustration": [
+          "public/pawtrail-game/actor-studio/illustrations/rika-hoshino/v1",
+          "src/game/creator/illustration-motion.ts",
+          "src/game/creator/illustration-assets.ts"
+        ],
+        "icon": [
+          "public/pawtrail-game/actor-studio/icons/peony-7/v1/icon.png",
+          "src/components/game/shared/character-icon.tsx"
+        ],
+        "preview": [
+          "src/game/runtime/actor-comparison-state.ts",
+          "src/game/runtime/actor-comparison-scene.ts",
+          "src/game/creator/preview-models.ts",
+          "src/game/creator/state.ts",
+          "src/components/game/actor-comparison.tsx",
+          "src/components/game/character-creator-editor.tsx",
+          "src/components/game/shared/living-portrait.tsx",
+          "src/components/game/shared/illustration-preview.tsx",
+          "src/game/actor-rig/photo-portrait-catalog.json",
+          "src/game/actor-rig/pixel-renderer.ts",
+          "src/game/actor-rig/action-portrait.ts",
+          "src/game/actor-rig/photo-portrait-renderer.ts",
+          "src/game/runtime/actor-sigil.ts",
+          "src/game/runtime/actor-preview-voice.ts",
+          "package.json",
+          "package-lock.json"
+        ],
+        "gameplay": [
+          "src/game/runtime/actors.ts",
+          "src/game/models3d/phaser-bridge.ts",
+          "src/game/stage-editor/playtest.ts",
+          "src/components/game/stage-editor.tsx"
+        ]
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "normal",
+      "path": "assets/actor-appearances/rika-hoshino-v1/normal-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "regionRecipe": "normal"
+    },
+    {
+      "id": "enraged",
+      "path": "assets/actor-appearances/rika-hoshino-v1/enraged-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "regionRecipe": "enraged"
+    },
+    {
+      "id": "normal-underlay",
+      "path": "assets/actor-appearances/rika-hoshino-v1/normal-underlay-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "enraged-underlay",
+      "path": "assets/actor-appearances/rika-hoshino-v1/enraged-underlay-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "background",
+      "path": "assets/actor-appearances/rika-hoshino-v1/background-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "sigil",
+      "path": "assets/actor-appearances/rika-hoshino-v1/sigil-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "portrait-0",
+      "path": "assets/actor-appearances/rika-hoshino-v1/portrait-0-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "grid": {
+        "columns": 5,
+        "rows": 6
+      }
+    },
+    {
+      "id": "portrait-1",
+      "path": "assets/actor-appearances/rika-hoshino-v1/portrait-1-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "grid": {
+        "columns": 5,
+        "rows": 6
+      }
+    },
+    {
+      "id": "portrait-2",
+      "path": "assets/actor-appearances/rika-hoshino-v1/portrait-2-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "grid": {
+        "columns": 5,
+        "rows": 6
+      }
+    },
+    {
+      "id": "icon-native",
+      "path": "assets/actor-appearances/rika-hoshino-v1/icon-native-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "mech-icon-native",
+      "path": "assets/actor-appearances/rika-hoshino-v1/mech-icon-native-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "turnaround",
+      "path": "assets/actor-appearances/rika-hoshino-v1/turnaround-generated.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "early-rest",
+      "path": "assets/actor-appearances/rika-hoshino-v1/early-face/neutral-rest.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "size": [
+        96,
+        120
+      ]
+    },
+    {
+      "id": "early-half",
+      "path": "assets/actor-appearances/rika-hoshino-v1/early-face/neutral-half.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "size": [
+        96,
+        120
+      ]
+    },
+    {
+      "id": "early-closed",
+      "path": "assets/actor-appearances/rika-hoshino-v1/early-face/neutral-closed.png",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "size": [
+        96,
+        120
+      ]
+    },
+    {
+      "id": "face-fit",
+      "path": "assets/actor-appearances/rika-hoshino-v1/face-fit.json",
+      "kind": "json",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "requiredKeys": [
+        "crop",
+        "polygon",
+        "skin"
+      ]
+    },
+    {
+      "id": "profile",
+      "path": "assets/actor-appearances/rika-hoshino-v1/profile.json",
+      "kind": "json",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "requiredKeys": [
+        "id",
+        "name",
+        "voice"
+      ]
+    },
+    {
+      "id": "energy-manifest",
+      "path": "public/pawtrail-game/actor-studio/illustrations/sieghart/v5/enraged/illustration.json",
+      "kind": "json",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "energy-parts",
+      "path": "public/pawtrail-game/actor-studio/illustrations/sieghart/v5/enraged/parts.webp",
+      "kind": "image",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json."
+    },
+    {
+      "id": "portrait-pack",
+      "path": "public/pawtrail-game/game-assets/dialogue-portraits/rika-hoshino-refined-cel-v1/0e239e215acc",
+      "kind": "bundle",
+      "origin": "reused",
+      "provenance": "Existing Rika/Peony approved assets; original generation and acceptance are recorded in this job\u2019s REVIEW.md and timings.json.",
+      "maxBytes": 300000,
+      "minFiles": 5
+    }
+  ],
+  "exports": {
+    "illustrations": {
+      "requires": [
+        "normal",
+        "enraged",
+        "normal-underlay",
+        "enraged-underlay",
+        "background",
+        "sigil",
+        "energy-manifest",
+        "energy-parts"
+      ],
+      "produces": []
+    },
+    "face_check": {
+      "requires": [
+        "portrait-0"
+      ],
+      "produces": []
+    },
+    "portraits": {
+      "requires": [
+        "portrait-0",
+        "portrait-1",
+        "portrait-2"
+      ],
+      "produces": [
+        "portrait-pack"
+      ]
+    },
+    "icon": {
+      "requires": [
+        "icon-native"
+      ],
+      "produces": []
+    },
+    "surfaces": {
+      "requires": [
+        "normal",
+        "early-rest",
+        "early-half",
+        "early-closed",
+        "face-fit",
+        "sigil",
+        "profile"
+      ],
+      "produces": []
+    },
+    "portrait-budget": {
+      "requires": [
+        "portrait-pack"
+      ],
+      "produces": []
+    }
+  },
+  "illustrationParts": {
+    "normal": [
+      {
+        "id": "ponytail",
+        "polygon": [
+          [
+            280,
+            330
+          ],
+          [
+            305,
+            360
+          ],
+          [
+            255,
+            412
+          ],
+          [
+            221,
+            468
+          ],
+          [
+            210,
+            520
+          ],
+          [
+            192,
+            535
+          ],
+          [
+            164,
+            587
+          ],
+          [
+            196,
+            645
+          ],
+          [
+            200,
+            688
+          ],
+          [
+            100,
+            710
+          ],
+          [
+            20,
+            680
+          ],
+          [
+            20,
+            450
+          ],
+          [
+            100,
+            390
+          ],
+          [
+            182,
+            350
+          ]
+        ],
+        "root": [
+          280,
+          360
+        ],
+        "direction": [
+          -0.7,
+          1
+        ],
+        "length": 350,
+        "amplitude": 6.5,
+        "phase": 0.3
+      },
+      {
+        "id": "hair-crown",
+        "polygon": [
+          [
+            238,
+            326
+          ],
+          [
+            280,
+            312
+          ],
+          [
+            305,
+            328
+          ],
+          [
+            285,
+            351
+          ],
+          [
+            258,
+            361
+          ]
+        ],
+        "root": [
+          281,
+          346
+        ],
+        "direction": [
+          -0.7,
+          -1
+        ],
+        "length": 70,
+        "amplitude": 2.8,
+        "phase": 0.8
+      }
+    ],
+    "enraged": [
+      {
+        "id": "ponytail",
+        "polygon": [
+          [
+            300,
+            320
+          ],
+          [
+            350,
+            350
+          ],
+          [
+            300,
+            400
+          ],
+          [
+            260,
+            460
+          ],
+          [
+            230,
+            520
+          ],
+          [
+            240,
+            590
+          ],
+          [
+            155,
+            650
+          ],
+          [
+            0,
+            640
+          ],
+          [
+            0,
+            280
+          ],
+          [
+            200,
+            310
+          ]
+        ],
+        "root": [
+          300,
+          380
+        ],
+        "direction": [
+          -1,
+          0.3
+        ],
+        "length": 340,
+        "amplitude": 7.0,
+        "phase": 0.3
+      }
+    ]
+  },
+  "scopeNote": "Tooling adoption for existing approved art: no new generation or retrospective timing. The new review queue starts pending; historical acceptance remains in REVIEW.md."
+}

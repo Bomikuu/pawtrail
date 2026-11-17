@@ -1,4 +1,5 @@
 import {enterAbilities,activateLocalAbility,cancelLocalAbility,movementProfile,activeAbility,isAbility} from './abilities/state';
+import { gameVoice } from './runtime/game-voice';
 import {gameAppearance,headingVector} from './abilities/appearance';
 import {allowsMovingAction} from './actor-rig/action-layers';
 import { worldZoom, setWorldZoom } from "./runtime/camera";
@@ -464,6 +465,7 @@ export class WorldScene extends Phaser.Scene {
       characterId(gameStore.getSnapshot().progress.appearance),
     );
     this.player.setData('actorLocalAudio', true);
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN,gameVoice.enterScene('world'));
     this.data.set('actorAudioListener', this.player);
     this.player.setCollideWorldBounds(true);
     this.physics.world.setBounds(
@@ -970,6 +972,7 @@ export class WorldScene extends Phaser.Scene {
       this.busyUntil = mobile ? 0 : this.time.now + reactionDuration(id);
       if(!mobile)this.player.setVelocity(0, 0);
       this.playerAction(name);
+      gameVoice.accepted(gameStore.getSnapshot().progress.appearance ?? 'rescuer',name,'world');
       audio.effect("ui");
       return;
     }
@@ -1005,6 +1008,7 @@ export class WorldScene extends Phaser.Scene {
       return;
     }
     if (command.type === "pause") {
+      if(command.paused)gameVoice.stop();
       if (command.paused)
         savePosition(this.player.x, this.player.y, this.location);
       this.paused = command.paused;

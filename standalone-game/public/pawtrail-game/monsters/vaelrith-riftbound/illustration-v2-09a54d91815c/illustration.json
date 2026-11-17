@@ -1,0 +1,203 @@
+{
+  "version": 3,
+  "id": "vaelrith-illustration",
+  "revision": "09a54d91815c",
+  "nativeSize": [
+    384,
+    256
+  ],
+  "atlas": "atlas.webp",
+  "poster": "poster.webp",
+  "frames": [
+    {
+      "id": 0,
+      "rect": [
+        0,
+        0,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 1,
+      "rect": [
+        384,
+        0,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 2,
+      "rect": [
+        768,
+        0,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 3,
+      "rect": [
+        1152,
+        0,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 4,
+      "rect": [
+        0,
+        256,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 5,
+      "rect": [
+        384,
+        256,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 6,
+      "rect": [
+        768,
+        256,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 7,
+      "rect": [
+        1152,
+        256,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 8,
+      "rect": [
+        0,
+        512,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 9,
+      "rect": [
+        384,
+        512,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 10,
+      "rect": [
+        768,
+        512,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 11,
+      "rect": [
+        1152,
+        512,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 12,
+      "rect": [
+        0,
+        768,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 13,
+      "rect": [
+        384,
+        768,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 14,
+      "rect": [
+        768,
+        768,
+        384,
+        256
+      ]
+    },
+    {
+      "id": 15,
+      "rect": [
+        1152,
+        768,
+        384,
+        256
+      ]
+    }
+  ],
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "durationMs": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "motion": [
+    "neck/head counter-sway",
+    "jaw/throat breathing",
+    "fixed wall anchor"
+  ],
+  "review": {
+    "source": "Source/native contacts inspected",
+    "liveCycle": "pending owner review; no browser checks performed"
+  },
+  "sourceFile": "assets/actor-appearances/motion-refresh-2026-11-13/sources/vaelrith-illustration.png"
+}

@@ -1,0 +1,7 @@
+Browser tab: 4, Title: "PawTrail — A little care goes a long way", URL: "http://127.0.0.1:3000/play?preview=portraits".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 101
+~				70 combo box (collapsed) Eyes, Value: Resting eyes, ID: photo-portrait-blink, Secondary Actions: Expand
++					103 text Resting eyes
+~				73 combo box (collapsed) Mouth, Value: Resting mouth, ID: photo-portrait-mouth, Secondary Actions: Expand
+The focused UI element is 54 button Rest

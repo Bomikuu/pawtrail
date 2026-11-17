@@ -1,0 +1,11 @@
+{
+  "owner": "pixelsbymiku-game-studios",
+  "schema_version": 1,
+  "profile": "pawtrail",
+  "files": {
+    ".agents/skills/furniture-batch/SKILL.md": "dd7bf91cdda19851f6300eaa7839343f75835ec6a290b696813928090f183293",
+    ".agents/skills/furniture-batch/references/asset-contract.md": "b2d186efb2834fcbf9db646c761aea46ab34ff0704ea34850c156f8f7c305b51",
+    ".agents/skills/furniture-batch/references/run-records.md": "0da8f6a5adb1be7036648116708422edfb2f0e5a73ad08d44352373051107181",
+    ".pixelsbymiku/project.json": "da5f16cf8fe0d57195b6c07d4ed24a93e4e9e76df4fc14dede979925474f78c8"
+  }
+}

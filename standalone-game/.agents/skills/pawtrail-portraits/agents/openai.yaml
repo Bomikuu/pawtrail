@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Portraits"
+  short_description: "Reference portraits, emotions and verified facial motion"
+  default_prompt: "Use $pawtrail-portraits to create or repair a reference-guided 2D dialogue portrait. For a new job, show actual Amber examples and ask the style, recommending Refined cel and retaining Painterly anime fantasy as a separate option. Start at three-quarter with other angles selectable, then verify the selected style's authored emotions, blinking, speech and breathing. Retain an explicit style choice during a repair."

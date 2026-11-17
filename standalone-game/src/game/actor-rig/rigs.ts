@@ -13,6 +13,8 @@ import {isJetpackAction} from './action-playback'
 import {catOptions,catBreedColors,catJumpMotion,catBodyScale,type CatOptions} from './cat-appearance'
 import {catCoat,attachCatDetails} from './cat-parts'
 import {DEFAULT_CHARACTER_FACE,type FaceColors} from './face-details'
+import {humanoidPartGeometry,humanoidFaceGeometry,humanoidHairLockGeometry} from './humanoid-base'
+import {createFaceContour} from './face-contour'
 export type Kind='rescuer'|'orange-tabby'
 export type SecondaryMotion={phase:number;locomotion:number}
 export type RigPoseOptions={locomotionPhase?:number;gait?:'walk'|'run';secondaryMotion?:SecondaryMotion;idleSoleHeight?:number;referenceStance?:boolean}
@@ -20,7 +22,7 @@ export type Rig={kind:Kind;root:T.Group;nodes:T.Object3D[];itemSockets?:Record<s
 export {actions}
 import BASE_COLORS from './palette.json'
 const C=BASE_COLORS
-export type AppearanceOptions={colors?:Partial<Record<keyof typeof BASE_COLORS,string>>;accessories?:{glasses?:boolean;facialHair?:'none'|'mustache'|'goatee';faceMarking?:'none'|'freckles'|'beauty-mark'};parts?:CharacterParts;cat?:CatOptions;face?:FaceColors;frame?:{width:number;height:number}}
+export type AppearanceOptions={baseModel?:'classic'|'refined-v2';colors?:Partial<Record<keyof typeof BASE_COLORS,string>>;accessories?:{glasses?:boolean;facialHair?:'none'|'mustache'|'goatee';faceMarking?:'none'|'freckles'|'beauty-mark'};parts?:CharacterParts;cat?:CatOptions;face?:FaceColors;frame?:{width:number;height:number}}
 export const palette=Object.values(BASE_COLORS)
 export const appearancePalette=(appearance:AppearanceOptions={})=>[...Object.values({...BASE_COLORS,...catBreedColors(appearance.cat?.breed),...appearance.colors}),...Object.values(appearance.face??{}),...(canBecomeSuperSaiyan(appearance)?Object.values(SUPER_SAIYAN_COLORS):[])]
 const shapeCache=new Map<string,T.BufferGeometry>()
@@ -75,13 +77,13 @@ function box(w:number,h:number,d:number,bevel=.35){
  const g=paintedShading(new RoundedBoxGeometry(w,h,d,1,Math.min(bevel,w/2,h/2,d/2)))
  g.userData.sharedActorGeometry=true;shapeCache.set(key,g);return g
 }
-function author(kind:Kind){
+function author(kind:Kind,refined=false){
  const root=new T.Group();root.name=kind==='rescuer'?'PawTrailRescuer':'PawTrailOrangeTabby'
  const nodes:T.Object3D[]=[root],materials=new Map<string,T.MeshBasicMaterial>();let serial=0
  const group=(name:string,parent:T.Object3D,x=0,y=0,z=0)=>{const g=new T.Group();g.name=name;g.position.set(x,y,z);parent.add(g);nodes.push(g);return g}
  const material=(color:string)=>{if(!materials.has(color))materials.set(color,new T.MeshBasicMaterial({color,vertexColors:true,toneMapped:false}));return materials.get(color)!}
- const part=(name:string,parent:T.Object3D,color:string,x:number,y:number,z:number,w:number,h:number,d:number,bevel=.35)=>{const m=new T.Mesh(box(w,h,d,bevel),material(color));m.name=name+'_'+serial++;m.position.set(x,y,z);parent.add(m);return m}
- const round=(name:string,parent:T.Object3D,color:string,x:number,y:number,z:number,w:number,h:number,d:number)=>{const g=paintedShading(new T.SphereGeometry(1,12,8));const m=new T.Mesh(g,material(color));m.name=name+'_'+serial++;m.position.set(x,y,z);m.scale.set(w/2,h/2,d/2);parent.add(m);return m}
+ const part=(name:string,parent:T.Object3D,color:string,x:number,y:number,z:number,w:number,h:number,d:number,bevel=.35)=>{const custom=refined?humanoidPartGeometry(name,w,h,d):undefined;const m=new T.Mesh(custom?paintedShading(custom):box(w,h,d,bevel),material(color));m.name=name+'_'+serial++;m.position.set(x,y,z);parent.add(m);return m}
+ const round=(name:string,parent:T.Object3D,color:string,x:number,y:number,z:number,w:number,h:number,d:number)=>{const face=refined&&name==='Face',lock=refined&&/^(SideSweptFringe|HairLock|ShortFringe)$/.test(name),shaped=face||lock,g=paintedShading(face?humanoidFaceGeometry():lock?humanoidHairLockGeometry():new T.SphereGeometry(1,12,8));const m=new T.Mesh(g,material(color));m.name=name+'_'+serial++;m.position.set(x,y,z);m.scale.set(face?w*.94:lock?w:w/2,shaped?h:h/2,shaped?d:d/2);if(face)m.add(createFaceContour(g,'#'+new T.Color(color).multiplyScalar(.7).getHexString(),.025));parent.add(m);return m}
  return {root,nodes,group,part,round}
 }
 function restPose(nodes:T.Object3D[]){
@@ -94,7 +96,7 @@ export function createRescuer(appearance:AppearanceOptions={}):Rig{
  if(appearance.parts?.headwear==='space-helmet')appearance={...appearance,parts:{...appearance.parts,hair:'cropped'}}
  const C={...BASE_COLORS,...appearance.colors},paint=(mesh:T.Mesh)=>paintHair(mesh,C)
  const face=appearance.face??{...DEFAULT_CHARACTER_FACE,nose:C.skinShadow,marking:C.hairShade}
- const {root,nodes,group,part,round}=author('rescuer'),stance=group('RescuerStance',root),upper=group('UpperBody',stance),chest=group('ChestBreath',upper,0,20.5,0)
+ const {root,nodes,group,part,round}=author('rescuer',appearance.baseModel!=='classic'),stance=group('RescuerStance',root),upper=group('UpperBody',stance),chest=group('ChestBreath',upper,0,20.5,0)
  const kit={colors:C,group,part,round,paint,shade:paintedShading},outfit=appearance.parts?.outfit??'vest',hems:T.Group[]=[]
  part('TealShirt',chest,C.shirt,0,0,0,outfit==='gown'?8:9.5,outfit==='gown'?11.2:11.8,outfit==='gown'?4.7:5.4,.7)
  part('ShirtFoldLight',chest,C.shirtLight,-1.2,.7,2.8,.8,7.2,.3,.12)
@@ -789,7 +791,7 @@ export function disposeRig(rig:Rig){
  for(const material of materials){
   const map=(material as T.MeshBasicMaterial).map
   if(map?.userData.actorKey&&--map.userData.actorUsers===0){hairPaintCache.delete(map.userData.actorKey);map.dispose()}
-  else if(map?.userData.catCoat)map.dispose()
+  else if(map?.userData.catCoat||map?.userData.actorOwned)map.dispose()
   material.dispose()
  }
  rig.root.removeFromParent()

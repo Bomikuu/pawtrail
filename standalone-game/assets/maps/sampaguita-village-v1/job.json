@@ -1,0 +1,118 @@
+{
+  "id": "sampaguita-village-v1",
+  "name": "Sampaguita Old Quarter",
+  "startedAt": "2026-11-15T10:50:28.671822+00:00",
+  "scope": "New editable village stage and existing local walk/interact rehearsal",
+  "brief": {
+    "tiles": [
+      48,
+      32
+    ],
+    "nativePixels": [
+      1536,
+      1024
+    ],
+    "buildings": "12 houses plus a stone community hall",
+    "routes": "Two connected east-west streets, central market courtyard, curved arrival spine and side alleys",
+    "arrival": [
+      768,
+      960
+    ],
+    "style": "Owner-approved Care Grove v5/village reference",
+    "reuse": [
+      "Approved cottage, hall, cart, barrels, walls and planting",
+      "Current benches, lamps, food station and planters"
+    ],
+    "newArt": [
+      "Continuous village cobblestone terrain",
+      "Wide slate workshop",
+      "Narrow terracotta townhouse"
+    ]
+  },
+  "phases": {
+    "art": {
+      "status": "complete",
+      "startedAt": "2026-11-15T10:50:28.671822+00:00",
+      "completedAt": "2026-11-15T10:53:26.162Z"
+    },
+    "authoring": {
+      "status": "complete",
+      "startedAt": "2026-11-15T10:50:28.671822+00:00",
+      "completedAt": "2026-11-15T10:55:09.988850+00:00"
+    },
+    "integration": {
+      "status": "complete",
+      "completedAt": "2026-11-15T10:57:42.007348+00:00",
+      "evidence": [
+        "src/game/stage-editor/data.ts",
+        "src/components/game/stage-editor.tsx",
+        "src/game/stage-editor/village-art.json"
+      ]
+    },
+    "nativeReview": {
+      "status": "complete",
+      "completedAt": "2026-11-15T10:57:42.007348+00:00",
+      "evidence": "assets/maps/sampaguita-village-v1/native-overview.png",
+      "observations": [
+        "12 houses across slate cottage, broad workshop and tall terracotta townhouse silhouettes",
+        "Two east-west streets connect with a courtyard, side alleys and open arrival path",
+        "Approved fine-textured muted palette retained, with no square ground seams",
+        "Props/colliders and furniture contacts remain independent of the terrain painting",
+        "Actual walking, actor/roof occlusion and action playback not verified"
+      ]
+    },
+    "liveReview": {
+      "status": "pending",
+      "reason": "No automated tests/checks/builds or browser verification requested"
+    },
+    "nativeExport": {
+      "status": "complete",
+      "completedAt": "2026-11-15T10:55:09.988850+00:00",
+      "evidence": "assets/maps/sampaguita-village-v1/native-overview.png"
+    }
+  },
+  "boundaries": [
+    "Care Grove and explicit user saves preserved",
+    "House facades are solid scenery, no new enterable interiors",
+    "No combat, NPC/account records, inventory costs or rewards"
+  ],
+  "objectCount": 64,
+  "houseCount": 12,
+  "buildingCount": 13,
+  "images": [
+    {
+      "asset": "ground",
+      "startedAt": "2026-11-15T10:50:39.860Z",
+      "completedAt": "2026-11-15T10:52:26.826Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-7eefe0dd-79ad-463f-ab1c-0657d4587519.png",
+      "inputs": [
+        "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/.agents/skills/pawtrail-maps/references/village-style-reference.png",
+        "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v5/sources/ground.png"
+      ],
+      "imageServiceSeconds": 106.966
+    },
+    {
+      "asset": "townhouse",
+      "startedAt": "2026-11-15T10:50:39.861Z",
+      "completedAt": "2026-11-15T10:51:38.337Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-efee4198-4a0f-49cd-8635-98e7425fe227.png",
+      "inputs": [
+        "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/.agents/skills/pawtrail-maps/references/village-style-reference.png",
+        "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v5/sources/village-house.png"
+      ],
+      "imageServiceSeconds": 58.476
+    },
+    {
+      "asset": "workshop",
+      "startedAt": "2026-11-15T10:50:39.861Z",
+      "completedAt": "2026-11-15T10:53:26.162Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-bec51e40-fee1-4ab5-85bb-ae28e68f1c8f.png",
+      "inputs": [
+        "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/.agents/skills/pawtrail-maps/references/village-style-reference.png",
+        "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v5/sources/village-house.png"
+      ],
+      "imageServiceSeconds": 166.301
+    }
+  ],
+  "entry": "/play?preview=stage&map=village"
+}

@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "portraitBytes": 278116,
+  "contentBounds": [
+    3,
+    14,
+    90,
+    105
+  ],
+  "iconBytes": 2773,
+  "illustrationBytes": 288816,
+  "registration": "Fixed foot pivot and baseline across all six whole frames",
+  "voice": "omitted-by-owner",
+  "modelTextureBytes": 12718,
+  "totalRuntimeBytes": 582423,
+  "runtimeReview": {
+    "browser": "Firefox",
+    "date": "2026-11-14",
+    "status": "focused-visual-review-complete",
+    "actionsExercised": 34,
+    "portraitAngles": 3,
+    "portraitEmotions": 6,
+    "blinkSpeechBreathing": "Observed in actual live canvas and inspector",
+    "evidence": "output/playwright/sieg-review",
+    "voice": "omitted-by-owner"
+  }
+}

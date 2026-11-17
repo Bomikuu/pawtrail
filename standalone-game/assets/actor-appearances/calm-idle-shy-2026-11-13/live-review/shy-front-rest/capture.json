@@ -1,0 +1,113 @@
+{
+  "browser": "Codex in-app browser",
+  "name": "shy-front-rest",
+  "durationMs": 8526,
+  "rect": {
+    "bottom": 638.75,
+    "height": 360,
+    "left": 293,
+    "right": 581,
+    "top": 278.75,
+    "width": 288,
+    "x": 293,
+    "y": 278.75
+  },
+  "frames": [
+    {
+      "file": "000.jpg",
+      "atMs": 0
+    },
+    {
+      "file": "001.jpg",
+      "atMs": 776
+    },
+    {
+      "file": "002.jpg",
+      "atMs": 1236
+    },
+    {
+      "file": "003.jpg",
+      "atMs": 1444
+    },
+    {
+      "file": "004.jpg",
+      "atMs": 1785
+    },
+    {
+      "file": "005.jpg",
+      "atMs": 2298
+    },
+    {
+      "file": "006.jpg",
+      "atMs": 2591
+    },
+    {
+      "file": "007.jpg",
+      "atMs": 3067
+    },
+    {
+      "file": "008.jpg",
+      "atMs": 3392
+    },
+    {
+      "file": "009.jpg",
+      "atMs": 4671
+    },
+    {
+      "file": "010.jpg",
+      "atMs": 5032
+    },
+    {
+      "file": "011.jpg",
+      "atMs": 5270
+    },
+    {
+      "file": "012.jpg",
+      "atMs": 5481
+    },
+    {
+      "file": "013.jpg",
+      "atMs": 5840
+    },
+    {
+      "file": "014.jpg",
+      "atMs": 6050
+    },
+    {
+      "file": "015.jpg",
+      "atMs": 6271
+    },
+    {
+      "file": "016.jpg",
+      "atMs": 6498
+    },
+    {
+      "file": "017.jpg",
+      "atMs": 6839
+    },
+    {
+      "file": "018.jpg",
+      "atMs": 7121
+    },
+    {
+      "file": "019.jpg",
+      "atMs": 7322
+    },
+    {
+      "file": "020.jpg",
+      "atMs": 7536
+    },
+    {
+      "file": "021.jpg",
+      "atMs": 7848
+    },
+    {
+      "file": "022.jpg",
+      "atMs": 8151
+    },
+    {
+      "file": "023.jpg",
+      "atMs": 8345
+    }
+  ]
+}

@@ -92,7 +92,9 @@ def handle(p,h,zone,request,position):
         if not opening:
             from django.core.cache import cache
             from .spatial import overlaps
-            people=cache.get('positions:'+h.owner_id+('' if zone=='interior' else '|'+zone),{})
+            people=dict(cache.get('positions:'+h.owner_id+('' if zone=='interior' else '|'+zone),{}))
+            # The accepted caller position remains authoritative even if its cache entry expired.
+            people[p.id]=position
             from .models import PetGameProfile
             for pet in PetGameProfile.objects.filter(owner_id=h.pk):
                 memory=cache.get('pet:'+h.owner_id+':'+pet.id)

@@ -1,6 +1,6 @@
 import catalog from './photo-portrait-catalog.json'
 
-export type PhotoPortraitStyle = typeof catalog[number] & { characterId: string; characterName: string; poseIds?: readonly string[]; budgetBytes?: number }
+export type PhotoPortraitStyle = typeof catalog[number] & { characterId: string; characterName: string; poseIds?: readonly string[]; budgetBytes?: number; emotionIds?: readonly string[];rendering?:string }
 export const PHOTO_PORTRAIT_STYLES: PhotoPortraitStyle[] = catalog.map(entry => ({
   ...entry,
   characterId: 'characterId' in entry ? String(entry.characterId) : 'photo-reference',
@@ -19,8 +19,12 @@ export type PhotoPortraitPose = typeof PHOTO_PORTRAIT_POSES[number]['id']
 export function photoPortraitPoses(style: PhotoPortraitStyle) {
   return PHOTO_PORTRAIT_POSES.filter(pose => !style.poseIds || style.poseIds.includes(pose.id))
 }
-export const PHOTO_PORTRAIT_EMOTIONS = ['idle', 'smile', 'happy', 'sad', 'angry', 'surprised'] as const
+export const PHOTO_PORTRAIT_EMOTIONS = ['idle', 'smile', 'happy', 'sad', 'angry', 'surprised', 'shy'] as const
 export type PhotoPortraitEmotion = typeof PHOTO_PORTRAIT_EMOTIONS[number]
+/** Offer only expressions actually authored for this character/style. */
+export function photoPortraitEmotions(style: PhotoPortraitStyle) {
+  return PHOTO_PORTRAIT_EMOTIONS.filter(value => style.emotionIds ? style.emotionIds.includes(value) : value !== 'shy')
+}
 export type PortraitBlink = 'auto' | 'open' | 'half' | 'closed'
 export type PortraitMouth = 'auto' | 'rest' | 'small' | 'round'
 export const PHOTO_PORTRAIT_BLINKS: { id: PortraitBlink; label: string }[] = [

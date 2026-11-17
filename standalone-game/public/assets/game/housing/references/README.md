@@ -1,0 +1,11 @@
+# PawTrail housing — first style batch
+
+Built-in image_gen produced a six-subject style reference, separate floor/wall source atlases, and seven independent object/character renders. Exact generation prompts are preserved in first-batch-prompts.json and each category's manifest/prompt file. Original generated PNGs are retained beside the native exports.
+
+This delivery covers ONLY the eight initial groups in the brief: interior tiles, sofa, wooden table, cat bed, scratching post, full feeding bowl, orange tabby idle, rescuer idle. The full housing catalog, animations, emotes, exteriors, multiplayer gameplay, audio files and UI implementation are outside this batch. No existing game assets were replaced and no gameplay/components were changed.
+
+The source atlases were inspected before slicing: the walls' actual grid boundaries differ from the requested uniform source grid and are recorded in scripts/prepare-housing-first-batch.py. Native tiles are 32×32; floor and wall atlases use limited 48-color palettes. Furniture/pet/player exports use actual transparent binary alpha and native pixel sizes. Deterministic preparation removed glow/soft alpha, fitted silhouettes within cells, used nearest-neighbor sampling and palette cleanup; this is more than exporting an untouched resized illustration.
+
+These are STYLE-REVIEW assets, not certified final production artwork. Wall corner/doorway joins still require assembly refinement; furniture collision boxes are proposed; player/cat sheets contain ONE idle frame only. No loop continuity is claimed or fabricated. The manifest records actual file dimensions and atlas positions only. The floor tiles have equal opposite edge pixels for self-repetition; this does not prove every material/variant boundary joins correctly.
+
+Review housing-first-batch-v1-review.png at integer zoom for the eight groups. The contact sheet has no labels baked into artwork; ordering is tiles, sofa, table, bed, scratching post, food bowl, cat, player. Generated sources/individual review previews remain available for detailed review. Asset image inspections and pixel/alpha/dimension checks were performed as explicitly requested by the brief; no application tests/build/browser checks were run.

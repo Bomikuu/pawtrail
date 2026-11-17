@@ -1,0 +1,86 @@
+{
+  "sources": [
+    "sources/koi-lamp-reference.png",
+    "sources/bastion-bench-reference.png"
+  ],
+  "modelScript": "scripts/author-f01-batch-d-props.py",
+  "registryScript": "scripts/install-f01-batch-d.py",
+  "nativeCompositionScript": "scripts/compose-f01-batch-d-art.py",
+  "frame": [
+    160,
+    192
+  ],
+  "anchor": [
+    80,
+    168
+  ],
+  "pitch": 34.5,
+  "facings": [
+    0,
+    90,
+    180,
+    270
+  ],
+  "paintPatches": {
+    "koi-lamp": {
+      "front": [
+        0.11,
+        0.33,
+        0.27,
+        0.42
+      ],
+      "back": [
+        0.79,
+        0.32,
+        0.9,
+        0.42
+      ]
+    },
+    "bastion-bench": {
+      "fabric": [
+        0.08,
+        0.15,
+        0.16,
+        0.23
+      ],
+      "metal": [
+        0.11,
+        0.33,
+        0.19,
+        0.35
+      ],
+      "side": [
+        0.46,
+        0.3,
+        0.53,
+        0.35
+      ],
+      "back": [
+        0.76,
+        0.17,
+        0.86,
+        0.21
+      ]
+    }
+  },
+  "actorCalibration": {
+    "humanReferenceHeight": 40,
+    "seatCenters": [
+      -26,
+      26
+    ],
+    "supportHeight": 30,
+    "pelvisRestHeight": 5.8,
+    "backCushionCount": 2,
+    "seatCushionCount": 2,
+    "benchWidth": 125,
+    "reason": "Two 40px outfit allowances separated by 12px, plus arm clearance; no actor resizing",
+    "runtimeFit": "not observed; pending owner authorization"
+  },
+  "motion": {
+    "koi-lamp": "grounded emitter; two fish and two tail pivots; lit=false hides projection",
+    "bastion-bench": "rigid frame and upholstery; emissive light cycle only"
+  },
+  "foreground": "same-source per-facing bench occluders; live model behind seated actor, front layer over actor",
+  "review": "reference cells and native models use different framing; this board is a silhouette/material comparison, not pixel-equivalence or motion evidence"
+}

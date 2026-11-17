@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
 import { Textarea } from '@/components/ui/textarea'
-import { PHOTO_PORTRAIT_STYLES, PHOTO_PORTRAIT_CHARACTERS, PHOTO_PORTRAIT_POSES, PHOTO_PORTRAIT_EMOTIONS, PHOTO_PORTRAIT_BLINKS, photoPortraitPoses, type PhotoPortraitEmotion, type PhotoPortraitPose, type PortraitBlink, type PortraitMouth } from '@/game/actor-rig/photo-portrait-catalog'
+import { PHOTO_PORTRAIT_STYLES, PHOTO_PORTRAIT_CHARACTERS, PHOTO_PORTRAIT_POSES, PHOTO_PORTRAIT_BLINKS, photoPortraitPoses, photoPortraitEmotions, type PhotoPortraitEmotion, type PhotoPortraitPose, type PortraitBlink, type PortraitMouth } from '@/game/actor-rig/photo-portrait-catalog'
 import { LivingPortrait } from './shared/living-portrait'
 import { usePortraitDialogue } from './shared/use-portrait-dialogue'
 import { NativePortraitReference } from './shared/native-portrait-reference'
@@ -35,6 +35,8 @@ export function PhotoPortraitStudio() {
   const styles = PHOTO_PORTRAIT_STYLES.filter(entry => entry.characterId === characterId)
   const style = styles.find(entry => entry.id === styleId) ?? styles[0]
   const poses = photoPortraitPoses(style)
+  const emotions = photoPortraitEmotions(style)
+  const activeEmotion = emotions.includes(emotion) ? emotion : 'idle'
   const activePose = poses.some(entry => entry.id === pose) ? pose : poses[0].id
   const completeFrames = 'playback' in style && style.playback === 'complete-frames'
   const referenceOnly = 'playback' in style && style.playback === 'reference-only'
@@ -51,11 +53,11 @@ export function PhotoPortraitStudio() {
   }
   const talking = loopTalking || dialogue.speaking
   const poseName = poses.find(entry => entry.id === activePose)!.label
-  const referenceUrl = (angle: PhotoPortraitPose) => `${style.folder}/reference/${angle}-${completeFrames || emotion === 'idle' ? 'neutral' : emotion}.png?v=${style.revision}`
+  const referenceUrl = (angle: PhotoPortraitPose) => `${style.folder}/reference/${angle}-${completeFrames || activeEmotion === 'idle' ? 'neutral' : activeEmotion}.png?v=${style.revision}`
   const portrait = (angle: PhotoPortraitPose) => referenceOnly || (reference && !completeFrames)
-    ? <NativePortraitReference src={referenceUrl(angle)} size={style.nativeCell} bounds={style.contentBounds} name={`${style.name}, ${emotion}`}/>
+    ? <NativePortraitReference src={referenceUrl(angle)} size={style.nativeCell} bounds={style.contentBounds} smooth={style.rendering==='smooth'} name={`${style.name}, ${activeEmotion}`}/>
     : <LivingPortrait
-    collection={style.id} collectionRevision={style.revision} pose={angle} expression={emotion} blink={reference ? 'open' : blink} talking={!reference && talking}
+    collection={style.id} collectionRevision={style.revision} pose={angle} expression={activeEmotion} blink={reference ? 'open' : blink} talking={!reference && talking}
     mouth={reference ? 'rest' : mouth} breathing={!reference && breathing}
     paused={reference || paused} onPausedChange={setPaused} controls={false} inspectable={false}
     name={`${style.name}, ${PHOTO_PORTRAIT_POSES.find(entry => entry.id === angle)!.label}`}
@@ -72,7 +74,7 @@ export function PhotoPortraitStudio() {
 
   return <div className="space-y-6">
     {PHOTO_PORTRAIT_CHARACTERS.length > 1 && <section aria-label="Choose a portrait character" className="flex flex-col gap-3 rounded-md border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
-      <div><h2 className="font-heading text-xl font-semibold">{style.characterName}</h2><p className="mt-1 text-xs text-muted-foreground">{styles.length} art styles · {poses.length} angles · six emotions</p></div>
+      <div><h2 className="font-heading text-xl font-semibold">{style.characterName}</h2><p className="mt-1 text-xs text-muted-foreground">{styles.length} art styles · {poses.length} angles · {emotions.length} emotions</p></div>
       <div className="space-y-1.5 sm:w-64"><Label htmlFor="portrait-character">Character</Label><Select value={characterId} onValueChange={chooseCharacter}><SelectTrigger id="portrait-character" className="w-full rounded-md text-foreground"><SelectValue/></SelectTrigger><SelectContent>{PHOTO_PORTRAIT_CHARACTERS.map(entry => <SelectItem key={entry.id} value={entry.id}>{entry.name}</SelectItem>)}</SelectContent></Select></div>
     </section>}
     <section aria-label="Choose a pixel art style" className={`flex gap-2 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 ${styles.length > 5 ? 'lg:grid-cols-3 xl:grid-cols-6' : 'lg:grid-cols-5'}`}>
@@ -107,7 +109,7 @@ export function PhotoPortraitStudio() {
           <span>{referenceOnly ? `${(style.referenceBytes / 1000).toFixed(1)} KB original artwork · all ${poses.length} angles` : `${(style.runtimeBytes / 1000).toFixed(1)} KB animation pack · all ${poses.length} angles`}</span>
           <div className="flex gap-1" aria-label="Preview background">{(['sage', 'cream', 'dark'] as const).map(value => <Button key={value} variant={background === value ? 'secondary' : 'ghost'} size="sm" className="rounded-md capitalize text-foreground" aria-pressed={background === value} onClick={() => setBackground(value)}>{value}</Button>)}</div>
         </div>
-        {completeFrames && !compare && <PortraitFrameStrip collectionId={style.id} revision={style.revision} pose={activePose} emotion={emotion}
+        {completeFrames && !compare && <PortraitFrameStrip collectionId={style.id} revision={style.revision} pose={activePose} emotion={activeEmotion}
           onSelect={state => {
             setReference(false); setPaused(true); setBreathing(false); setLoopTalking(false); dialogue.stop()
             setBlink(state === 'half' || state === 'closed' ? state : 'open')
@@ -117,7 +119,7 @@ export function PhotoPortraitStudio() {
 
       <section aria-label="Portrait controls" className="space-y-6 rounded-md border bg-card p-4 sm:p-5">
         <fieldset><legend className="mb-3 font-heading text-xl font-semibold">Emotion</legend><div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-2">
-          {PHOTO_PORTRAIT_EMOTIONS.map(value => <Button key={value} variant={emotion === value ? 'secondary' : 'outline'} className="rounded-md capitalize text-foreground" aria-pressed={emotion === value} onClick={() => setEmotion(value)}>{value === 'idle' ? 'Neutral' : value}</Button>)}
+          {emotions.map(value => <Button key={value} variant={activeEmotion === value ? 'secondary' : 'outline'} className="rounded-md capitalize text-foreground" aria-pressed={activeEmotion === value} onClick={() => setEmotion(value)}>{value === 'idle' ? 'Neutral' : value}</Button>)}
         </div></fieldset>
         <div className="space-y-2"><Label htmlFor="photo-portrait-blink">Eyes</Label><Select disabled={motionDisabled} value={blink} onValueChange={value => { setBlink(value as PortraitBlink); if (completeFrames) setMouth(value === 'half' || value === 'closed' ? 'rest' : 'auto') }}><SelectTrigger id="photo-portrait-blink" className="w-full rounded-md text-foreground"><SelectValue/></SelectTrigger><SelectContent>{PHOTO_PORTRAIT_BLINKS.map(value => <SelectItem key={value.id} value={value.id}>{value.label}</SelectItem>)}</SelectContent></Select></div>
         <div className="space-y-2"><Label htmlFor="photo-portrait-mouth">Mouth</Label><Select disabled={motionDisabled || (completeFrames && (blink === 'half' || blink === 'closed'))} value={mouth} onValueChange={value => setMouth(value as PortraitMouth)}><SelectTrigger id="photo-portrait-mouth" className="w-full rounded-md text-foreground"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="auto">Follow speech</SelectItem><SelectItem value="rest">Resting mouth</SelectItem><SelectItem value="small">Small speech shape</SelectItem><SelectItem value="round">Open speech shape</SelectItem></SelectContent></Select></div>

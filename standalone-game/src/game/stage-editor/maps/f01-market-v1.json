@@ -1,0 +1,144 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "F01 \u00b7 Lumen Market \u00b7 v1",
+  "width": 32,
+  "height": 28,
+  "baseTile": "terrain:12",
+  "groundArt": "f01:market-ground",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "objects": [
+    {
+      "id": "ivo-counter",
+      "asset": "f01:counter",
+      "x": 720,
+      "y": 530,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "ivo",
+      "asset": "f01:ivo",
+      "x": 650,
+      "y": 530,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "ivo-stall",
+      "asset": "f01:awning-stall",
+      "x": 720,
+      "y": 490,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "p01",
+      "asset": "f01:allocation",
+      "x": 500,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "repair-bay",
+      "asset": "f01:repair-bay",
+      "x": 200,
+      "y": 680,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-koi",
+      "asset": "f01:holo-koi",
+      "x": 550,
+      "y": 640,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-head",
+      "asset": "f01:holo-head",
+      "x": 920,
+      "y": 340,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-fan",
+      "asset": "f01:hvac",
+      "x": 230,
+      "y": 700,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-skyline-0",
+      "asset": "f01:hab-block",
+      "x": 120,
+      "y": 210,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-skyline-1",
+      "asset": "f01:spire",
+      "x": 420,
+      "y": 235,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-skyline-2",
+      "asset": "f01:arc-tower",
+      "x": 690,
+      "y": 240,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-skyline-3",
+      "asset": "f01:hab-block",
+      "x": 920,
+      "y": 240,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "repair-station",
+      "asset": "f01:counter",
+      "x": 365,
+      "y": 770,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ]
+}

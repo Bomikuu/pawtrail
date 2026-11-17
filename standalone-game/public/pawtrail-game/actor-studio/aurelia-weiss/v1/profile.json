@@ -1,0 +1,23 @@
+{
+  "id": "aurelia-weiss",
+  "name": "Aurelia Weiss",
+  "title": "Moonfeather Warden",
+  "age": 26,
+  "origin": "Lunewick Sanctuary",
+  "nationality": "Fictional Lunewick Concord",
+  "personality": [
+    "compassionate",
+    "composed",
+    "quietly playful",
+    "fiercely protective"
+  ],
+  "biography": "Aurelia keeps the sanctuary paths safe after dusk. She tends injured birds and lost animals before guiding travelers home, treating her elaborate ceremonial armor as a promise to stand between the vulnerable and harm.",
+  "tone": "Warm and measured, with clear reassuring words. Quiet authority becomes crisp resolve in danger.",
+  "authorship": "Original fictional interpretation inspired by the supplied visual reference; age, origin and personality are authored story choices.",
+  "voice": {
+    "status": "omitted-by-owner"
+  },
+  "runtimeScope": "Actor preview only; live roster and saved accounts unchanged",
+  "portraitStyle": "Refined cel",
+  "illustrationFeedback": "Both designs approved by owner"
+}

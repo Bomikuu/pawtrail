@@ -1,0 +1,8 @@
+{
+  "variant": "rescuer",
+  "group": "holding-item-repair",
+  "rows": 1,
+  "cols": 4,
+  "prompt": "Use case: identity-preserve. Assettype PawTrail HOLDING ITEM animationstrip replacing a croppedsource row. Exactpersonreferenceimage1, preserve hair/hat/clothing/skin/backpack/shoesidentically. Create ONLY FOUR fullbody sprites inONEhorizontalrow, fourequalcells, meaningful4framegentlebreathe/armsadjustloop whileholdingone smallplainwoodbox againstwaist. ALLfeetfullyvisible withlarge transparentmarginsaroundEVERYsprite especiallybottom. Native32x48logicalcharacter, topdown3/4 crisp16bitpixelart warmoutlinesupperleftlight. True transparentbackground no glow, no floor/scenery/labels/gridlines/newprops/newcharacters. Appearancefromreference mandatory inclpantslength andhat ifpresent.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-b28a7ca4-de4e-4492-a812-8fa3c53f60c3.png"
+}

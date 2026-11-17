@@ -1,0 +1,36 @@
+{
+  "id": "sieghart",
+  "style": "Painterly anime fantasy",
+  "portraitBytes": 289411,
+  "portraitQuality": 38,
+  "portraitNativeCell": [
+    144,
+    180
+  ],
+  "portraitFolder": "/pawtrail-game/game-assets/dialogue-portraits/sieghart-painterly-v1/76f25abadbd2",
+  "completeFrames": 108,
+  "iconBytes": 4167,
+  "illustrationBytes": 474733,
+  "modelSurfaceBytes": 40776,
+  "rendering": "Smooth 2D artwork; existing native-pixel gameplay renderer",
+  "voice": "omitted-by-owner",
+  "reviewStatus": "focused-firefox-visual-review-complete",
+  "totalServedArtworkBytes": 809087,
+  "review": {
+    "browser": "Firefox",
+    "date": "2026-11-14",
+    "actionsExercised": 34,
+    "portraitAngles": 3,
+    "portraitEmotions": 6,
+    "observations": [
+      "Model front/three-quarter/side/back compared with own artwork",
+      "Scarf direction, coat back shell, icon framing and head shape repaired",
+      "Cloth/locomotion/rest captures reviewed",
+      "Authored speech/blink/breath frames observed",
+      "Layer toggles and reduced motion reviewed",
+      "Original Sieg choice preserved"
+    ],
+    "evidence": "output/playwright/sieghart-review",
+    "voice": "omitted-by-owner"
+  }
+}

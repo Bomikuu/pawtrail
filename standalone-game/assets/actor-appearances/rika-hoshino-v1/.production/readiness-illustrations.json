@@ -1,0 +1,138 @@
+{
+  "stage": "illustrations",
+  "ready": true,
+  "inputs": [
+    {
+      "id": "normal",
+      "sha256": "9313c3a88ce6cbd022a83eb032c591b485fe635d014b262bf21ed158278e5892",
+      "bytes": 1440923,
+      "files": 1,
+      "size": [
+        1199,
+        1312
+      ],
+      "contentBounds": [
+        0,
+        23,
+        1161,
+        1292
+      ],
+      "regions": {
+        "ponytail": 28167,
+        "hair-crown": 250
+      }
+    },
+    {
+      "id": "enraged",
+      "sha256": "1887121c281859698e657643d0c7a73595ab01842f0e296939946016ffa7323a",
+      "bytes": 1865980,
+      "files": 1,
+      "size": [
+        1199,
+        1312
+      ],
+      "contentBounds": [
+        0,
+        6,
+        1187,
+        1312
+      ],
+      "regions": {
+        "ponytail": 54818
+      }
+    },
+    {
+      "id": "normal-underlay",
+      "sha256": "d3846b9c705d16f6826549c3e70d9d6964cb01fa5f236a6f23a3186cb03ad3ee",
+      "bytes": 1327293,
+      "files": 1,
+      "size": [
+        1199,
+        1312
+      ],
+      "contentBounds": [
+        25,
+        23,
+        1169,
+        1250
+      ],
+      "regions": {}
+    },
+    {
+      "id": "enraged-underlay",
+      "sha256": "20051950f4e5b4748c837f1627f3659806936c0be8cdd09f33f0761b652ae73b",
+      "bytes": 1660357,
+      "files": 1,
+      "size": [
+        1199,
+        1312
+      ],
+      "contentBounds": [
+        21,
+        9,
+        1187,
+        1300
+      ],
+      "regions": {}
+    },
+    {
+      "id": "background",
+      "sha256": "35500a4efa1a240e9690299f5ff3b1a221d102ccc7a19bdd712e1ed9fb4f3a65",
+      "bytes": 1590147,
+      "files": 1,
+      "size": [
+        1199,
+        1312
+      ],
+      "contentBounds": [
+        0,
+        0,
+        1199,
+        1312
+      ],
+      "regions": {}
+    },
+    {
+      "id": "sigil",
+      "sha256": "ff935eec9e12a4e1514aef126e5e192d3e971a8dd873d20889260cbc27da915a",
+      "bytes": 1678032,
+      "files": 1,
+      "size": [
+        1261,
+        1247
+      ],
+      "contentBounds": [
+        0,
+        19,
+        1247,
+        1247
+      ],
+      "regions": {}
+    },
+    {
+      "id": "energy-manifest",
+      "sha256": "60b83123da4ba18df911f2689a1a4ff2db05c8e6c0d2e650d625616ac5b20c40",
+      "bytes": 6259,
+      "files": 1
+    },
+    {
+      "id": "energy-parts",
+      "sha256": "b846ef273e43ac9f918b37b68db361b1f80d68a1801292f3f7aaf52b9e569bf6",
+      "bytes": 34350,
+      "files": 1,
+      "size": [
+        512,
+        434
+      ],
+      "contentBounds": [
+        0,
+        0,
+        435,
+        434
+      ],
+      "regions": {}
+    }
+  ],
+  "errors": [],
+  "at": "2026-11-15T04:09:57.082509+00:00"
+}

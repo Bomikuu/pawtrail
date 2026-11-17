@@ -1,0 +1,292 @@
+{
+  "retainedInputFrameIds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131
+  ],
+  "newArtwork": [
+    {
+      "pose": "front-pout",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        0,
+        0
+      ],
+      "frame": 106
+    },
+    {
+      "pose": "front-pout",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        1,
+        0
+      ],
+      "frame": 107
+    },
+    {
+      "pose": "front-pout",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        2,
+        0
+      ],
+      "frame": 108
+    },
+    {
+      "pose": "front-pout",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        3,
+        0
+      ],
+      "frame": 109
+    },
+    {
+      "pose": "front-pout",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        4,
+        0
+      ],
+      "frame": 110
+    },
+    {
+      "pose": "front-pout",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        5,
+        0
+      ],
+      "frame": 111
+    },
+    {
+      "pose": "three-quarter-left",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        0,
+        1
+      ],
+      "frame": 112
+    },
+    {
+      "pose": "three-quarter-left",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        1,
+        1
+      ],
+      "frame": 113
+    },
+    {
+      "pose": "three-quarter-left",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        2,
+        1
+      ],
+      "frame": 114
+    },
+    {
+      "pose": "three-quarter-left",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        3,
+        1
+      ],
+      "frame": 115
+    },
+    {
+      "pose": "three-quarter-left",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        4,
+        1
+      ],
+      "frame": 116
+    },
+    {
+      "pose": "three-quarter-left",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        5,
+        1
+      ],
+      "frame": 117
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        0,
+        2
+      ],
+      "frame": 118
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        1,
+        2
+      ],
+      "frame": 119
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        2,
+        2
+      ],
+      "frame": 120
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        3,
+        2
+      ],
+      "frame": 121
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        4,
+        2
+      ],
+      "frame": 122
+    },
+    {
+      "pose": "head-tilt-smile-right",
+      "expression": "shy",
+      "source": "shy-states.png",
+      "cell": [
+        5,
+        2
+      ],
+      "frame": 123
+    }
+  ]
+}

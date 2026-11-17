@@ -1,0 +1,91 @@
+{
+  "id": "care-grove-v2",
+  "startedAt": "2026-11-15T08:36:51.261056+00:00",
+  "request": "New generated terrain and scenery closely matching reference; no visible grid or square ground seams",
+  "reference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/.agents/skills/pawtrail-maps/references/reference-layout.png",
+  "generatedAssets": {
+    "ground": {
+      "status": "installed",
+      "source": "assets/maps/care-grove-v2/sources/ground.png",
+      "mode": "built-in image_gen",
+      "refinedBackground": false
+    },
+    "hall": {
+      "status": "installed",
+      "source": "assets/maps/care-grove-v2/sources/hall.png",
+      "mode": "built-in image_gen",
+      "refinedBackground": false
+    },
+    "pine": {
+      "status": "installed",
+      "source": "assets/maps/care-grove-v2/sources/pine.png",
+      "mode": "built-in image_gen",
+      "refinedBackground": false
+    },
+    "cliff": {
+      "status": "installed",
+      "source": "assets/maps/care-grove-v2/sources/cliff.png",
+      "mode": "built-in image_gen",
+      "refinedBackground": true
+    },
+    "bush": {
+      "status": "installed",
+      "source": "assets/maps/care-grove-v2/sources/bush.png",
+      "mode": "built-in image_gen",
+      "refinedBackground": false
+    },
+    "bareTree": {
+      "status": "installed",
+      "source": "assets/maps/care-grove-v2/sources/bareTree.png",
+      "mode": "built-in image_gen",
+      "refinedBackground": true
+    }
+  },
+  "phases": {
+    "generation": {
+      "status": "complete",
+      "startedAt": "2026-11-15T08:36:51.261056+00:00",
+      "observedCompleteAt": "2026-11-15T08:44:03.454672+00:00",
+      "timingNote": "Generation overlapped source integration; no separate provider-only duration is claimed."
+    },
+    "integration": {
+      "status": "complete",
+      "firstRecordedAt": "2026-11-15T08:43:40.700919+00:00",
+      "completedAt": "2026-11-15T08:44:03.454672+00:00",
+      "timingNote": "Source integration began while image generation was running, before the first native export stamp."
+    },
+    "liveReview": {
+      "status": "pending",
+      "reason": "Automated checks/tests/builds and browser verification not requested"
+    },
+    "nativeExport": {
+      "status": "complete",
+      "completedAt": "2026-11-15T08:43:40.700919+00:00",
+      "evidence": "assets/maps/care-grove-v2/native-overview.png"
+    },
+    "nativeReview": {
+      "status": "complete",
+      "completedAt": "2026-11-15T08:44:03.454672+00:00",
+      "evidence": "assets/maps/care-grove-v2/native-overview.png",
+      "observations": [
+        "Continuous terrain has no repeated square cell boundaries",
+        "Muted worn dirt, irregular stone paving, columned hall, firs, cliff and bare trees track the supplied reference",
+        "Generated props composite with alpha over terrain; bright v1 boulders removed from revised layout",
+        "Furniture retains independent real controller/collision definitions; actual actor playback remains pending"
+      ]
+    }
+  },
+  "preserve": [
+    "Existing stage draft and explicit local-save behavior",
+    "Real collision and authored furniture interactions",
+    "Previous v1 source assets and layout"
+  ],
+  "entry": "/play?preview=stage&map=care-grove",
+  "layout": "src/game/stage-editor/maps/care-grove-v2.json",
+  "objectCount": 74,
+  "limits": [
+    "No enterable hall interior or new overworld portal",
+    "Painted ground contains only terrain; objects remain independent",
+    "No tests/builds/browser verification run; actual walk/contact/interaction review pending"
+  ]
+}

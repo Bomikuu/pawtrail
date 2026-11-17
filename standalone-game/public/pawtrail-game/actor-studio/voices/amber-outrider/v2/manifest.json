@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "actorId": "amber-outrider",
+  "name": "Amber",
+  "language": "ja-JP",
+  "profileId": "12b7981e",
+  "kind": "original-synthetic-character-voice",
+  "scope": "game-and-preview",
+  "totalBytes": 36029,
+  "cues": [
+    {
+      "id": "hi",
+      "text": "こんにちは。",
+      "romanization": "Konnichiwa.",
+      "translation": "Hello.",
+      "durationSeconds": 1.8269583333333332,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v2/hi.ogg",
+      "bytes": 5885,
+      "action": "wave",
+      "actionLabel": "Wave"
+    },
+    {
+      "id": "attack",
+      "text": "くらえ！",
+      "romanization": "Kurae!",
+      "translation": "Take this!",
+      "durationSeconds": 1.347,
+      "portraitEmotion": "angry",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v2/attack.ogg",
+      "bytes": 4504,
+      "action": "power_up",
+      "actionLabel": "Power up"
+    },
+    {
+      "id": "bye",
+      "text": "またね！",
+      "romanization": "Mata ne!",
+      "translation": "See you!",
+      "durationSeconds": 3.4662916666666668,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v2/bye.ogg",
+      "bytes": 11589,
+      "action": "wave",
+      "actionLabel": "Farewell wave"
+    },
+    {
+      "id": "hurt",
+      "text": "うっ！",
+      "romanization": "U!",
+      "translation": "Ugh!",
+      "durationSeconds": 1.5258958333333332,
+      "portraitEmotion": "sad",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v2/hurt.ogg",
+      "bytes": 4602,
+      "action": "sick",
+      "actionLabel": "Hurt rehearsal"
+    },
+    {
+      "id": "thanks",
+      "text": "ありがとう！助かった！",
+      "romanization": "Arigatō! Tasukatta!",
+      "translation": "Thank you! That helped!",
+      "durationSeconds": 1.6,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v2/thanks.ogg",
+      "bytes": 5091,
+      "action": "clap",
+      "actionLabel": "Clap"
+    },
+    {
+      "id": "encouragement",
+      "text": "頑張ろう！",
+      "romanization": "Ganbarō!",
+      "translation": "Let’s do our best!",
+      "durationSeconds": 1.3301666666666667,
+      "portraitEmotion": "smile",
+      "file": "/pawtrail-game/actor-studio/voices/amber-outrider/v2/encouragement.ogg",
+      "bytes": 4358,
+      "action": "cheer",
+      "actionLabel": "Cheer"
+    }
+  ]
+}

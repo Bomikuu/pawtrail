@@ -1,0 +1,854 @@
+{
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    0,
+    0,
+    96,
+    120
+  ],
+  "poses": {
+    "front-pout": {
+      "expressions": {
+        "neutral": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4600,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3100,
+              4600
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "smile": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4680,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3150,
+              4660
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "happy": {
+          "eyesClosedAtRest": true,
+          "breathing": {
+            "periodMs": 4760,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3200,
+              4720
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "sad": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4840,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3250,
+              4780
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "angry": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4920,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3300,
+              4840
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "surprised": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 5000,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3350,
+              4900
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        }
+      }
+    },
+    "three-quarter-left": {
+      "expressions": {
+        "neutral": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4600,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3100,
+              4600
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "smile": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4680,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3150,
+              4660
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "happy": {
+          "eyesClosedAtRest": true,
+          "breathing": {
+            "periodMs": 4760,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3200,
+              4720
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "sad": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4840,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3250,
+              4780
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "angry": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4920,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3300,
+              4840
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "surprised": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 5000,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3350,
+              4900
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        }
+      }
+    },
+    "head-tilt-smile-right": {
+      "expressions": {
+        "neutral": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4600,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3100,
+              4600
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "smile": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4680,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3150,
+              4660
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "happy": {
+          "eyesClosedAtRest": true,
+          "breathing": {
+            "periodMs": 4760,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3200,
+              4720
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "sad": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4840,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3250,
+              4780
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "angry": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 4920,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3300,
+              4840
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        },
+        "surprised": {
+          "eyesClosedAtRest": false,
+          "breathing": {
+            "periodMs": 5000,
+            "torsoStartY": 91,
+            "anchorRows": 2
+          },
+          "blinkPerformance": {
+            "sequence": [
+              0,
+              1,
+              0
+            ],
+            "durationsMs": [
+              85,
+              110,
+              85
+            ],
+            "idleDelayMs": [
+              3350,
+              4900
+            ]
+          },
+          "speechPerformance": {
+            "sequence": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "durationsMs": [
+              180,
+              150,
+              150,
+              130,
+              230,
+              150,
+              170,
+              200
+            ]
+          }
+        }
+      }
+    }
+  }
+}

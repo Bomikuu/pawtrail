@@ -1,0 +1,23 @@
+{
+  "id": "mira-adler",
+  "name": "Mira Adler",
+  "title": "Glasshouse Guardian",
+  "age": 27,
+  "origin": "Adler Glasshouse District",
+  "nationality": "Fictional Glasshouse Free Towns",
+  "personality": [
+    "reserved",
+    "observant",
+    "reassuring",
+    "protective"
+  ],
+  "biography": "Mira tends the glasshouse district after dusk, quietly checking doors, water bowls and resting places. She speaks gently to strangers and keeps her composure under pressure, but becomes uncompromising when someone threatens the neighbors in her care.",
+  "tone": "Soft-spoken, concise and reassuring. Calm, focused resolve in danger.",
+  "authorship": "Authored fictional identity inspired by the supplied adult character art. Age, origin and personality are story choices, not facts inferred from the reference.",
+  "voice": {
+    "status": "omitted-by-owner"
+  },
+  "runtimeScope": "Actor preview authoring; live roster and saved accounts unchanged",
+  "portraitStyle": "Refined cel",
+  "illustrationFeedback": "Both normal and attack designs approved by owner"
+}

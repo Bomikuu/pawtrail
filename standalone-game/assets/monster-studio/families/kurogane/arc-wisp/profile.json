@@ -1,0 +1,47 @@
+{
+  "familyId": "kurogane",
+  "parentBoss": "kurogane-neon-bastion",
+  "id": "arc-wisp",
+  "name": "Arc Wisp",
+  "title": "Electrical Service Drone",
+  "tier": "normal",
+  "row": 4,
+  "enragedRow": null,
+  "maxHp": 280,
+  "hpPerBar": 280,
+  "enrageAt": 0,
+  "height": 0.9,
+  "radius": 0.45,
+  "speed": 1.55,
+  "hover": 0.24,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A compact round service drone with four cyan blades discharges a defensive electrical annulus when approached.",
+  "weakness": "Stay inside the clear center or outside its ring, then attack as it cools down.",
+  "temperament": "Programmed perimeter guardian",
+  "origin": "The Neon Switchyard, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "arc-pulse",
+      "name": "Arc Pulse",
+      "shape": "ring",
+      "outer": 2,
+      "inner": 0.55,
+      "angle": 360,
+      "target": "self",
+      "damage": 11,
+      "windup": 1200,
+      "active": 380,
+      "recovery": 950,
+      "cooldown": 5300,
+      "description": "The drone charges an electrical ring. Its clear center and outside edge remain safe."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: model, hovering movement and Arc Pulse 11 HP contact observed; full defeat unreviewed."
+}

@@ -1,0 +1,333 @@
+{
+  "item": "bookshelf",
+  "batch": "2026-11-10-01",
+  "canonicalFront": "public/assets/game/housing/furniture/bookshelf-housing-v1.png",
+  "sourceSha256": "522f435a39730eb294a8dfd52c71febbe88dec7096de5aad152e68254e5ccec3",
+  "sourceCatalog": {
+    "id": "bookshelf",
+    "label": "Bookshelf",
+    "file": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      60
+    ],
+    "footprint": [
+      11,
+      48,
+      42,
+      12
+    ],
+    "blocking": true,
+    "rotatable": false,
+    "category": "Living room",
+    "interaction": "read",
+    "price": 79,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          11,
+          48,
+          42,
+          12
+        ]
+      ],
+      "placement": [
+        [
+          11,
+          48,
+          42,
+          12
+        ]
+      ],
+      "approaches": [
+        [
+          32,
+          70
+        ],
+        [
+          1,
+          54
+        ],
+        [
+          63,
+          54
+        ],
+        [
+          32,
+          40
+        ]
+      ],
+      "seats": [],
+      "surfaces": [],
+      "occlusion": "base",
+      "actions": [
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0
+    ]
+  },
+  "state": "installed",
+  "review": {
+    "state": "explicit_yes",
+    "shownAt": "2026-11-10T14:17:31.076592+00:00",
+    "responseWindowSeconds": 60,
+    "default": "Proceed under the owner-authorized no-response default; not affirmative approval",
+    "exception": "Canonical front remains authoritative, including the table source height39 versus generated native front35.",
+    "resolvedAt": "2026-11-10T14:18:49.831522+00:00",
+    "startedUnderDefaultAt": "2026-11-10T14:18:49.831522+00:00",
+    "response": "Good enough \u2014 build these three",
+    "respondedAt": "2026-11-10T14:21:14.520876+00:00"
+  },
+  "toolMode": "built-in image_gen",
+  "selectedSheet": "turnaround-v1.png",
+  "sheetSha256": "f4cc6a5d060d60a353c2772c5ea069ee2739bb0f3f61569ca9021380dbcf5cb3",
+  "prompt": "turnaround-prompt.txt",
+  "cellOrder": [
+    "front",
+    "left-profile",
+    "back",
+    "right-profile",
+    "front-three-quarter",
+    "rear-three-quarter"
+  ],
+  "derivedReferences": {
+    "version": "4054aeebc546",
+    "alphaCutoff": 224,
+    "component": "largest 8-connected foreground",
+    "uniformScale": 0.14193548387096774,
+    "rawRetained": true,
+    "views": {
+      "0": {
+        "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-0.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated front",
+        "cellBounds": [
+          133,
+          53,
+          443,
+          447
+        ],
+        "occupiedSize": [
+          44,
+          56
+        ],
+        "footBaseline": 99
+      },
+      "90": {
+        "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-90.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated left",
+        "cellBounds": [
+          191,
+          53,
+          321,
+          447
+        ],
+        "occupiedSize": [
+          18,
+          56
+        ],
+        "footBaseline": 97
+      },
+      "180": {
+        "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-180.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated back",
+        "cellBounds": [
+          69,
+          53,
+          379,
+          447
+        ],
+        "occupiedSize": [
+          44,
+          56
+        ],
+        "footBaseline": 99
+      },
+      "270": {
+        "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-270.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated right",
+        "cellBounds": [
+          224,
+          52,
+          352,
+          447
+        ],
+        "occupiedSize": [
+          18,
+          56
+        ],
+        "footBaseline": 97
+      },
+      "45": {
+        "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-45.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated front 3/4",
+        "cellBounds": [
+          97,
+          47,
+          406,
+          459
+        ],
+        "occupiedSize": [
+          44,
+          58
+        ],
+        "footBaseline": 99
+      },
+      "135": {
+        "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-135.png",
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "label": "Generated rear 3/4",
+        "cellBounds": [
+          79,
+          45,
+          390,
+          463
+        ],
+        "occupiedSize": [
+          44,
+          59
+        ],
+        "footBaseline": 99
+      }
+    },
+    "dimensions": {
+      "width": 44,
+      "depth": 14,
+      "height": 54
+    },
+    "nativeReview": "turnaround-native-review.png"
+  },
+  "technicalReview": {
+    "frontCanonical": true,
+    "counts": "Table: four short feet and deep apron; side table: four legs/one lower shelf; bookshelf: three book rows/plain rear.",
+    "alpha": "Raw sheet has a semi-transparent brown halo. Derived native references isolate the opaque furniture and retain transparent background.",
+    "projection": "Generated cameras approximate the requested 21-degree orthographic projection; no exact hidden-face reconstruction claimed."
+  },
+  "modelCalibration": {
+    "dimensions": {
+      "width": 44,
+      "depth": 14,
+      "height": 55.5
+    },
+    "sourceAnchor": [
+      32,
+      58
+    ],
+    "projection": {
+      "sidePitchDegrees": 2,
+      "blendPower": 1
+    },
+    "note": "Explicit profile camera calibration compensates for the generated drawings; geometry remains shared and actor projection stays native."
+  },
+  "implementation": {
+    "revision": "78c316434804",
+    "source": "src/game/furniture/reference-timber.ts",
+    "installedAt": "2026-11-10T14:39:52.475423+00:00",
+    "facings": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "authoringAngles": [
+      45,
+      135
+    ],
+    "styles": [
+      "original",
+      "walnut",
+      "pale"
+    ],
+    "nativeImages": 24,
+    "sourceModel": "assets/furniture-studio/exports/bookshelf/source-model.glb",
+    "geometry": "Closed distinct structural volumes, shared centered pivot and real painted material maps.",
+    "contacts": "Solid projected footprint, four safe native interaction approaches; top cat perch retained on table and side-table. No human seat sockets.",
+    "preserved": [
+      "catalog ID",
+      "price",
+      "category",
+      "zones",
+      "existing interaction label",
+      "existing construction rules",
+      "canonical source PNG"
+    ],
+    "review": {
+      "mode": "isolated Firefox art production and native artifact inspection",
+      "views": [
+        0,
+        90,
+        180,
+        270,
+        45,
+        135
+      ],
+      "actor": "Actual shared actor standing nearby; no actor geometry changed.",
+      "fixed": [
+        "Dedicated horizontal wood maps remove distorted tabletop projection.",
+        "Rounded cornice radii are independent per axis.",
+        "Book cover colors wrap real volumes; pages stay on horizontal surfaces.",
+        "Four native interaction clearances remain outside the projected collision at shallow profile cameras.",
+        "Opaque visible bounds exclude transparent native-frame margins from client/server placement fitting."
+      ],
+      "limits": [
+        "Generated hidden faces and profile cameras remain approximate interpretations.",
+        "No exact all-angle pixel match claimed.",
+        "No live browser/game interaction, account mutation, automated application checks/tests or builds run.",
+        "Housing service was not listening on port8001; no stopped service was started. Catalog loads at its next startup."
+      ],
+      "evidence": [
+        "output/furniture/2026-11-10-01/bookshelf-facings.png",
+        "output/furniture/2026-11-10-01/bookshelf-corners.png",
+        "output/furniture/2026-11-10-01/actor-scale.png"
+      ]
+    },
+    "outlineUpdate": {
+      "recordedAt": "2026-11-10T14:57:16.491973+00:00",
+      "policy": "One native-pixel character-matched brown contour; painted interior colors preserved. Physical structural edges for reference-timber volumes; existing aquarium painted edges retained.",
+      "evidence": "output/furniture/outline-2026-11-10/before-after.png",
+      "review": "Native artifact inspection and isolated Firefox art production; no live app verification."
+    }
+  }
+}

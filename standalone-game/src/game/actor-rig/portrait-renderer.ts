@@ -14,6 +14,7 @@ export type DialoguePortraitRenderer = {
   assetSource?: 'illustrated' | 'authored' | 'prototype'
   nativeSize?: [number, number]
   contentBounds?: [number, number, number, number]
+  displayRendering?: 'smooth'|'pixelated'
   frame(index: number, view?: PortraitView): ImageData
   dispose(): void
 }

@@ -1,0 +1,1375 @@
+{
+  "parts": [
+    {
+      "name": "Embroidered_fitted_bodice",
+      "category": "bodice",
+      "vertices": 1025,
+      "triangles": 1998,
+      "joints": [
+        "hips",
+        "spine",
+        "chest"
+      ]
+    },
+    {
+      "name": "Neck_with_tapered_base",
+      "category": "anatomy",
+      "vertices": 175,
+      "triangles": 334,
+      "joints": [
+        "chest",
+        "neck"
+      ]
+    },
+    {
+      "name": "Continuous_anime_face_and_cranium",
+      "category": "head",
+      "vertices": 1881,
+      "triangles": 3694,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Ear_-1",
+      "category": "head",
+      "vertices": 187,
+      "triangles": 320,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Earring_-1",
+      "category": "jewelry",
+      "vertices": 91,
+      "triangles": 144,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Ear_1",
+      "category": "head",
+      "vertices": 187,
+      "triangles": 320,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Earring_1",
+      "category": "jewelry",
+      "vertices": 91,
+      "triangles": 144,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Open_jacket_real_back_and_side_panels",
+      "category": "jacket",
+      "vertices": 481,
+      "triangles": 864,
+      "joints": [
+        "spine",
+        "chest"
+      ]
+    },
+    {
+      "name": "Gold_lapel_-1",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "chest",
+        "spine"
+      ]
+    },
+    {
+      "name": "Standing_collar_-1",
+      "category": "collar",
+      "vertices": 81,
+      "triangles": 142,
+      "joints": [
+        "chest"
+      ]
+    },
+    {
+      "name": "Collar_edge_-1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "chest"
+      ]
+    },
+    {
+      "name": "Gold_lapel_1",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "chest",
+        "spine"
+      ]
+    },
+    {
+      "name": "Standing_collar_1",
+      "category": "collar",
+      "vertices": 81,
+      "triangles": 142,
+      "joints": [
+        "chest"
+      ]
+    },
+    {
+      "name": "Collar_edge_1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "chest"
+      ]
+    },
+    {
+      "name": "Burgundy_shorts_waist",
+      "category": "shorts",
+      "vertices": 231,
+      "triangles": 446,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Leather_utility_belt",
+      "category": "belt",
+      "vertices": 82,
+      "triangles": 158,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Tailored_sleeve_L",
+      "category": "sleeves",
+      "vertices": 325,
+      "triangles": 622,
+      "joints": [
+        "forearm.L",
+        "upper_arm.L"
+      ]
+    },
+    {
+      "name": "Folded_cuff_L",
+      "category": "cuffs",
+      "vertices": 125,
+      "triangles": 238,
+      "joints": [
+        "forearm.L",
+        "upper_arm.L"
+      ]
+    },
+    {
+      "name": "Cuff_piping_L1.059",
+      "category": "tailoring",
+      "vertices": 343,
+      "triangles": 586,
+      "joints": [
+        "forearm.L"
+      ]
+    },
+    {
+      "name": "Cuff_piping_L1.098",
+      "category": "tailoring",
+      "vertices": 343,
+      "triangles": 586,
+      "joints": [
+        "upper_arm.L",
+        "forearm.L"
+      ]
+    },
+    {
+      "name": "Exposed_forearm_L",
+      "category": "anatomy",
+      "vertices": 250,
+      "triangles": 478,
+      "joints": [
+        "forearm.L",
+        "wrist.L"
+      ]
+    },
+    {
+      "name": "Red_wrist_strap_L",
+      "category": "gloves",
+      "vertices": 42,
+      "triangles": 78,
+      "joints": [
+        "wrist.L"
+      ]
+    },
+    {
+      "name": "Anatomical_glove_palm_L",
+      "category": "hands",
+      "vertices": 147,
+      "triangles": 278,
+      "joints": [
+        "wrist.L"
+      ]
+    },
+    {
+      "name": "Articulated_finger1_L",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger1.01.L",
+        "finger1.02.L"
+      ]
+    },
+    {
+      "name": "Articulated_finger2_L",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger2.01.L",
+        "finger2.02.L"
+      ]
+    },
+    {
+      "name": "Articulated_finger3_L",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger3.01.L",
+        "finger3.02.L"
+      ]
+    },
+    {
+      "name": "Articulated_finger4_L",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger4.01.L",
+        "finger4.02.L"
+      ]
+    },
+    {
+      "name": "Separated_thumb_L",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "thumb.01.L",
+        "thumb.02.L"
+      ]
+    },
+    {
+      "name": "Glove_red_crest_L",
+      "category": "gloves",
+      "vertices": 143,
+      "triangles": 240,
+      "joints": [
+        "wrist.L"
+      ]
+    },
+    {
+      "name": "Sleeve_gold_seam_L",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "upper_arm.L",
+        "forearm.L"
+      ]
+    },
+    {
+      "name": "Shoulder_medallion_L",
+      "category": "jewelry",
+      "vertices": 187,
+      "triangles": 320,
+      "joints": [
+        "upper_arm.L"
+      ]
+    },
+    {
+      "name": "Shorts_leg_L",
+      "category": "shorts",
+      "vertices": 250,
+      "triangles": 478,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Thigh_anatomy_L",
+      "category": "anatomy",
+      "vertices": 290,
+      "triangles": 558,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Shaped_thigh_boot_L",
+      "category": "boots",
+      "vertices": 725,
+      "triangles": 1398,
+      "joints": [
+        "shin.L",
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Folded_red_boot_cuff_L",
+      "category": "boot_cuff",
+      "vertices": 145,
+      "triangles": 278,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Boot_gold_cuff_L",
+      "category": "tailoring",
+      "vertices": 343,
+      "triangles": 586,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Boot_instep_and_toe_L",
+      "category": "footwear",
+      "vertices": 377,
+      "triangles": 726,
+      "joints": [
+        "ankle.L"
+      ]
+    },
+    {
+      "name": "Separate_boot_sole_L",
+      "category": "footwear",
+      "vertices": 87,
+      "triangles": 166,
+      "joints": [
+        "ankle.L"
+      ]
+    },
+    {
+      "name": "Low_boot_heel_L",
+      "category": "footwear",
+      "vertices": 34,
+      "triangles": 62,
+      "joints": [
+        "ankle.L"
+      ]
+    },
+    {
+      "name": "Boot_back_seam_L",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "shin.L",
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Gold_boot_leaf_L-1",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Gold_boot_vein_L-1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Gold_boot_leaf_L1",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Gold_boot_vein_L1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "thigh.L"
+      ]
+    },
+    {
+      "name": "Hip_utility_pouch_L",
+      "category": "utility",
+      "vertices": 119,
+      "triangles": 222,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Pouch_stitched_flap_L",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Pouch_fastener_L",
+      "category": "utility",
+      "vertices": 91,
+      "triangles": 144,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Split_coattail_L",
+      "category": "cloth",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "cloth.root.L",
+        "cloth.tip.L"
+      ]
+    },
+    {
+      "name": "Coattail_gold_edge_L",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "cloth.root.L",
+        "cloth.tip.L"
+      ]
+    },
+    {
+      "name": "Tailored_sleeve_R",
+      "category": "sleeves",
+      "vertices": 325,
+      "triangles": 622,
+      "joints": [
+        "forearm.R",
+        "upper_arm.R"
+      ]
+    },
+    {
+      "name": "Folded_cuff_R",
+      "category": "cuffs",
+      "vertices": 125,
+      "triangles": 238,
+      "joints": [
+        "forearm.R",
+        "upper_arm.R"
+      ]
+    },
+    {
+      "name": "Cuff_piping_R1.059",
+      "category": "tailoring",
+      "vertices": 343,
+      "triangles": 586,
+      "joints": [
+        "forearm.R"
+      ]
+    },
+    {
+      "name": "Cuff_piping_R1.098",
+      "category": "tailoring",
+      "vertices": 343,
+      "triangles": 586,
+      "joints": [
+        "upper_arm.R",
+        "forearm.R"
+      ]
+    },
+    {
+      "name": "Exposed_forearm_R",
+      "category": "anatomy",
+      "vertices": 250,
+      "triangles": 478,
+      "joints": [
+        "forearm.R",
+        "wrist.R"
+      ]
+    },
+    {
+      "name": "Red_wrist_strap_R",
+      "category": "gloves",
+      "vertices": 42,
+      "triangles": 78,
+      "joints": [
+        "wrist.R"
+      ]
+    },
+    {
+      "name": "Anatomical_glove_palm_R",
+      "category": "hands",
+      "vertices": 147,
+      "triangles": 278,
+      "joints": [
+        "wrist.R"
+      ]
+    },
+    {
+      "name": "Articulated_finger1_R",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger1.01.R",
+        "finger1.02.R"
+      ]
+    },
+    {
+      "name": "Articulated_finger2_R",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger2.01.R",
+        "finger2.02.R"
+      ]
+    },
+    {
+      "name": "Articulated_finger3_R",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger3.01.R",
+        "finger3.02.R"
+      ]
+    },
+    {
+      "name": "Articulated_finger4_R",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "finger4.01.R",
+        "finger4.02.R"
+      ]
+    },
+    {
+      "name": "Separated_thumb_R",
+      "category": "fingers",
+      "vertices": 63,
+      "triangles": 110,
+      "joints": [
+        "thumb.01.R",
+        "thumb.02.R"
+      ]
+    },
+    {
+      "name": "Glove_red_crest_R",
+      "category": "gloves",
+      "vertices": 143,
+      "triangles": 240,
+      "joints": [
+        "wrist.R"
+      ]
+    },
+    {
+      "name": "Sleeve_gold_seam_R",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "upper_arm.R",
+        "forearm.R"
+      ]
+    },
+    {
+      "name": "Shoulder_medallion_R",
+      "category": "jewelry",
+      "vertices": 187,
+      "triangles": 320,
+      "joints": [
+        "upper_arm.R"
+      ]
+    },
+    {
+      "name": "Shorts_leg_R",
+      "category": "shorts",
+      "vertices": 250,
+      "triangles": 478,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Thigh_anatomy_R",
+      "category": "anatomy",
+      "vertices": 290,
+      "triangles": 558,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Shaped_thigh_boot_R",
+      "category": "boots",
+      "vertices": 725,
+      "triangles": 1398,
+      "joints": [
+        "shin.R",
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Folded_red_boot_cuff_R",
+      "category": "boot_cuff",
+      "vertices": 145,
+      "triangles": 278,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Boot_gold_cuff_R",
+      "category": "tailoring",
+      "vertices": 343,
+      "triangles": 586,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Boot_instep_and_toe_R",
+      "category": "footwear",
+      "vertices": 377,
+      "triangles": 726,
+      "joints": [
+        "ankle.R"
+      ]
+    },
+    {
+      "name": "Separate_boot_sole_R",
+      "category": "footwear",
+      "vertices": 87,
+      "triangles": 166,
+      "joints": [
+        "ankle.R"
+      ]
+    },
+    {
+      "name": "Low_boot_heel_R",
+      "category": "footwear",
+      "vertices": 34,
+      "triangles": 62,
+      "joints": [
+        "ankle.R"
+      ]
+    },
+    {
+      "name": "Boot_back_seam_R",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "shin.R",
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Gold_boot_leaf_R-1",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Gold_boot_vein_R-1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Gold_boot_leaf_R1",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Gold_boot_vein_R1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "thigh.R"
+      ]
+    },
+    {
+      "name": "Hip_utility_pouch_R",
+      "category": "utility",
+      "vertices": 119,
+      "triangles": 222,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Pouch_stitched_flap_R",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Pouch_fastener_R",
+      "category": "utility",
+      "vertices": 91,
+      "triangles": 144,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Split_coattail_R",
+      "category": "cloth",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "cloth.root.R",
+        "cloth.tip.R"
+      ]
+    },
+    {
+      "name": "Coattail_gold_edge_R",
+      "category": "tailoring",
+      "vertices": 49,
+      "triangles": 82,
+      "joints": [
+        "cloth.root.R",
+        "cloth.tip.R"
+      ]
+    },
+    {
+      "name": "Belt_central_buckle",
+      "category": "utility",
+      "vertices": 187,
+      "triangles": 320,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Buckle_leather_inset",
+      "category": "utility",
+      "vertices": 187,
+      "triangles": 320,
+      "joints": [
+        "hips"
+      ]
+    },
+    {
+      "name": "Bodice_fastener_1.115",
+      "category": "jewelry",
+      "vertices": 77,
+      "triangles": 120,
+      "joints": [
+        "spine"
+      ]
+    },
+    {
+      "name": "Bodice_fastener_1.19",
+      "category": "jewelry",
+      "vertices": 77,
+      "triangles": 120,
+      "joints": [
+        "chest"
+      ]
+    },
+    {
+      "name": "Bodice_fastener_1.255",
+      "category": "jewelry",
+      "vertices": 77,
+      "triangles": 120,
+      "joints": [
+        "chest"
+      ]
+    },
+    {
+      "name": "Hair_fitted_scalp",
+      "category": "hair",
+      "vertices": 533,
+      "triangles": 1038,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_-1_0",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_-1_1",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_-1_2",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_-1_3",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Cheek_frame_-1_0",
+      "category": "hair",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Cheek_frame_-1_1",
+      "category": "hair",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Cheek_frame_-1_2",
+      "category": "hair",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_0",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_1",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_2",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_3",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_4",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_5",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_6",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_7",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_-1_8",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_-1_0",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_-1_1",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_-1_2",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_-1_3",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Fine_hair_wisp_-1",
+      "category": "hair",
+      "vertices": 77,
+      "triangles": 130,
+      "joints": [
+        "hair.root"
+      ]
+    },
+    {
+      "name": "Ribbon_ear_-1",
+      "category": "ribbon",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "ribbon"
+      ]
+    },
+    {
+      "name": "Ribbon_gold_tip_-1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "ribbon"
+      ]
+    },
+    {
+      "name": "Brass_goggle_rim_-1",
+      "category": "goggles",
+      "vertices": 399,
+      "triangles": 682,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Recessed_goggle_lens_-1",
+      "category": "goggles",
+      "vertices": 225,
+      "triangles": 384,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_1_0",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_1_1",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_1_2",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Tapered_bang_1_3",
+      "category": "bangs",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Cheek_frame_1_0",
+      "category": "hair",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Cheek_frame_1_1",
+      "category": "hair",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Cheek_frame_1_2",
+      "category": "hair",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_0",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_1",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_2",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_3",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_4",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_5",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_6",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_7",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Layered_curved_hair_1_8",
+      "category": "hair",
+      "vertices": 189,
+      "triangles": 334,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_1_0",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_1_1",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_1_2",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Short_overlapping_hair_layer_1_3",
+      "category": "hair",
+      "vertices": 153,
+      "triangles": 270,
+      "joints": [
+        "hair.root",
+        "hair.tip"
+      ]
+    },
+    {
+      "name": "Fine_hair_wisp_1",
+      "category": "hair",
+      "vertices": 77,
+      "triangles": 130,
+      "joints": [
+        "hair.root"
+      ]
+    },
+    {
+      "name": "Ribbon_ear_1",
+      "category": "ribbon",
+      "vertices": 117,
+      "triangles": 206,
+      "joints": [
+        "ribbon"
+      ]
+    },
+    {
+      "name": "Ribbon_gold_tip_1",
+      "category": "tailoring",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "ribbon"
+      ]
+    },
+    {
+      "name": "Brass_goggle_rim_1",
+      "category": "goggles",
+      "vertices": 399,
+      "triangles": 682,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Recessed_goggle_lens_1",
+      "category": "goggles",
+      "vertices": 225,
+      "triangles": 384,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Goggle_bridge",
+      "category": "goggles",
+      "vertices": 35,
+      "triangles": 58,
+      "joints": [
+        "head"
+      ]
+    },
+    {
+      "name": "Goggle_leather_headband",
+      "category": "goggles",
+      "vertices": 567,
+      "triangles": 970,
+      "joints": [
+        "head"
+      ]
+    }
+  ],
+  "bones": [
+    "root",
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "hair.root",
+    "hair.tip",
+    "ribbon",
+    "clavicle.L",
+    "upper_arm.L",
+    "forearm.L",
+    "wrist.L",
+    "finger1.01.L",
+    "finger1.02.L",
+    "finger2.01.L",
+    "finger2.02.L",
+    "finger3.01.L",
+    "finger3.02.L",
+    "finger4.01.L",
+    "finger4.02.L",
+    "thumb.01.L",
+    "thumb.02.L",
+    "thigh.L",
+    "shin.L",
+    "ankle.L",
+    "toe.L",
+    "cloth.root.L",
+    "cloth.tip.L",
+    "clavicle.R",
+    "upper_arm.R",
+    "forearm.R",
+    "wrist.R",
+    "finger1.01.R",
+    "finger1.02.R",
+    "finger2.01.R",
+    "finger2.02.R",
+    "finger3.01.R",
+    "finger3.02.R",
+    "finger4.01.R",
+    "finger4.02.R",
+    "thumb.01.R",
+    "thumb.02.R",
+    "thigh.R",
+    "shin.R",
+    "ankle.R",
+    "toe.R",
+    "cloth.root.R",
+    "cloth.tip.R"
+  ]
+}

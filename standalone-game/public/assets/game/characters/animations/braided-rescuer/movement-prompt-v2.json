@@ -1,0 +1,8 @@
+{
+  "variant": "braided-rescuer",
+  "group": "movement",
+  "rows": 8,
+  "cols": 4,
+  "prompt": "Use case: identity-preserve. Image1 edit target original PawTrail movement sheet; KEEP all32poses and their row order4columns8rows. ChangeONLY entire player appearance to a new consistent friendly young woman rescuer: light warmtan skin, long chestnut braid, cream bucket hat, ochre longsleeve shirt, forestgreen pants, brownboots, small sage backpack. Identicalappearance EVERYframe and samehead/bodyproportions as original. Topdown3/4 orthographic cozy16bit cripslogical32x48pixelart, warmbrownoutlines upperleftlight. ActualtransparentbackgroundNOglow. Rows walkdown/up/left/right,idledown/up/left/right remainexact. Allfeet visible fixedbaseline withtransparentpaddingaboveandbelow. NO labels text gridfloornewcharacters blurgradientsisometric. Preserve action distinction and regular4column8row arrangement.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-3d0e3b21-3e84-4af0-9e8f-242511e3257f.png"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "dororong-floating",
+  "version": 2,
+  "source": "parts-generated.png",
+  "out": "public/assets/game/skins/dororong-floating-v2",
+  "rows": [0, 0.27, 0.6, 0.81, 1],
+  "head_box": [4, 30, 120, 120],
+  "garment_box": [27, 38, 74, 144],
+  "palette": ["#2b2028", "#4b3542", "#815a70", "#a27890", "#c38fab", "#e6b3d0", "#f4cbe3", "#fffdfb", "#efe9ee", "#d5cbd5", "#bab0bd", "#f7eef3", "#fffefd", "#19161a", "#dedadd"]
+}

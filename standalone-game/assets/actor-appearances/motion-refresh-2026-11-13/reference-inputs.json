@@ -1,0 +1,32 @@
+[
+  {
+    "role": "original approved portrait style/angle",
+    "original": "/tmp/pawtrail-motion-reference-assets/front-pout.png",
+    "saved": "assets/actor-appearances/motion-refresh-2026-11-13/references/front-pout.png",
+    "sha256": "d9c3c784a5cba13d0e41ef46fac31810c61c54656b16577657d8e0ef1a2dfca7"
+  },
+  {
+    "role": "original approved portrait style/angle",
+    "original": "/tmp/pawtrail-motion-reference-assets/three-quarter-left.png",
+    "saved": "assets/actor-appearances/motion-refresh-2026-11-13/references/three-quarter-left.png",
+    "sha256": "47f2da22e1aad1c90914ce977da9545c57dc18830049bb90e355adbd56e371aa"
+  },
+  {
+    "role": "original approved portrait style/angle",
+    "original": "/tmp/pawtrail-motion-reference-assets/head-tilt-smile-right.png",
+    "saved": "assets/actor-appearances/motion-refresh-2026-11-13/references/head-tilt-smile-right.png",
+    "sha256": "3040b3f84eb54265e344dc9f41598b8618f0d99411c15c5639fc43668caed3dc"
+  },
+  {
+    "role": "owner-supplied motion reference only; no source art/audio copied into runtime",
+    "original": "/home/micxsz/Videos/Screencasts/Screencast From 2026-11-13 12-25-28.mp4",
+    "saved": "assets/actor-appearances/motion-refresh-2026-11-13/references/owner-portrait-motion-reference.mp4",
+    "sha256": "a11ed219c5fb85280d24a250a6422fd5d352d6899d1d14cbcab88bc71558a364",
+    "durationSeconds": 6.7884,
+    "nativeSize": [
+      130,
+      146
+    ],
+    "fps": 23.274998526898827
+  }
+]

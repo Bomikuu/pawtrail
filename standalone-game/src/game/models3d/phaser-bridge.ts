@@ -20,6 +20,10 @@ import { LiveCharacter } from '../runtime/live-character';
 import { allowsMovingAction, actorEffectAction } from '../actor-rig/action-layers';
 import { gameAppearance, type GameAppearance } from '../actor-rig/game-appearances';
 import { CREATOR_FRAME } from '../actor-rig/pixel-renderer';
+import { resolveInteractionYaw } from './interaction-facing'
+import { featuredActors } from '../runtime/featured-actors'
+import { creatorModelFactory, creatorModelReady, prepareCreatorModel } from '../creator/preview-models'
+const preparingFeatured = new Set<string>()
 const baseAppearance={appearance:defaultAppearance()};
 let serial = 0,
   renderer: ReturnType<typeof pixelRenderer> | undefined,
@@ -72,6 +76,7 @@ export function bindModel(
     preferenceDirty = true,
     direction: BakedDirection = "down";
   let personal: LiveCharacter | undefined, personalId="", personalFailed="";
+  let personalModel = 'shared'
   let builtinLook: GameAppearance | undefined;
   const nativeWebGL = sprite.renderWebGL,
     nativeWebGLStep = sprite.renderWebGLStep,
@@ -153,11 +158,7 @@ export function bindModel(
           : action.includes("up")
             ? Math.PI
             : 0;
-    const interactionYaw = sprite.getData("modelFacing");
-    if (!moving && !allowsMovingAction(action) && !/^(walk|run|idle|standing|watch)/.test(action) &&
-        typeof interactionYaw === "number" && Number.isFinite(interactionYaw)) {
-      yaw = interactionYaw;
-    }
+    yaw = resolveInteractionYaw(yaw, moving, action, sprite.getData('modelFacing'), sprite.getData('modelPoseFacing'))
     const custom=state.kind==='player'&&customCharacterId(state.identity);
     if(state.kind==='player'&&personalId!==state.identity){personalId=state.identity;personalFailed='';if(custom)void resolveSavedCharacter(state.identity)}
     if(state.kind==='player'&&!custom&&(preferenceDirty||preferenceId!==state.identity)){
@@ -173,12 +174,20 @@ export function bindModel(
       if(!image.visible||sprite.x<camera.x-80||sprite.x>camera.right+80||sprite.y<camera.y-80||sprite.y>camera.bottom+80){emoteEffects.hide();pendingDistance=0;return;}
       try{
         if(rig){stage.scene.remove(rig.root);rig.dispose();rig=undefined;signature=''}
-        personal??=new LiveCharacter(texture,saved);
+        const model = featuredActors[state.identity]?.model
+        if(model&&!creatorModelReady(model)&&!preparingFeatured.has(model)){
+          preparingFeatured.add(model)
+          void prepareCreatorModel(model).catch(error=>console.error('Featured actor model unavailable',error))
+        }
+        const readyModel=model&&creatorModelReady(model)?model:'shared'
+        if(personal&&personalModel!==readyModel){personal.dispose();personal=undefined}
+        personalModel=readyModel
+        personal??=new LiveCharacter(texture,saved,creatorModelFactory(readyModel));
         suppressNative();image.anims.stop();image.setTexture(key).setOrigin(CREATOR_FRAME.anchor.x,CREATOR_FRAME.anchor.y).setData('bakedPixelActor',null)
           .setScale(sprite.scaleX*bodyScale/CREATOR_FRAME.density,sprite.scaleY*bodyScale/CREATOR_FRAME.density);
         direction=bakedDirection(yaw+(!custom?builtinLook?.yaw??0:0),direction);
         const renderedAction=personal.update(saved,action,moving,direction,time,sprite.anims.timeScale,reduced.matches,pendingDistance);
-        const height=appearanceHeadHeight(saved.appearance),head=!custom?builtinLook?.headScale??1:1;
+        const height=state.identity==='peony-7'?57:appearanceHeadHeight(saved.appearance),head=!custom?builtinLook?.headScale??1:1;
         emoteEffects.update(sprite,actorEffectAction(saved.appearance,renderedAction),time,reduced.matches,direction,height+(height-28)*(head-1));
         pendingDistance=0;return;
       }catch(error){personalFailed=state.identity;personal?.dispose();personal=undefined;texture.setSize(48,60);image.setScale(sprite.scaleX,sprite.scaleY);console.error('Appearance unavailable; showing the approved rescuer',error)}

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "id": "confirmed-hit-impact-v1",
+  "generation": "built-in ImageGen",
+  "file": "impact-atlas.png",
+  "frameWidth": 64,
+  "frameHeight": 64,
+  "columns": 4,
+  "rows": 6,
+  "frames": 24,
+  "anchor": [
+    32,
+    32
+  ],
+  "transparent": true,
+  "clips": {
+    "slash": {
+      "firstFrame": 0,
+      "frames": 8,
+      "durationMs": 333.3333333333333
+    },
+    "weak": {
+      "firstFrame": 8,
+      "frames": 8,
+      "durationMs": 375
+    },
+    "fire": {
+      "firstFrame": 16,
+      "frames": 8,
+      "durationMs": 416.6666666666667
+    }
+  },
+  "maximumVisibleImpacts": 12,
+  "bytes": 145885,
+  "trigger": "actual accepted damage/contact event at target position",
+  "reducedMotion": "peak authored frame, held briefly",
+  "review": "native artwork inspected; live encounter review pending"
+}

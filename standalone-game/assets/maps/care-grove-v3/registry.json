@@ -1,0 +1,146 @@
+{
+  "version": 3,
+  "grounds": [
+    {
+      "id": "grove:terrain",
+      "label": "Care Grove \u00b7 worn woodland",
+      "file": "/pawtrail-game/map-art/care-grove-v3/ground.png",
+      "width": 1024,
+      "height": 768
+    }
+  ],
+  "assets": [
+    {
+      "id": "grove:hall",
+      "label": "Weathered stone hall",
+      "category": "Care Grove \u00b7 generated",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/care-grove-v3/hall.png",
+      "width": 311,
+      "height": 240,
+      "anchor": [
+        155,
+        235
+      ],
+      "footprint": [
+        37,
+        194,
+        236,
+        40
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "grove:pine",
+      "label": "Woodland fir",
+      "category": "Care Grove \u00b7 generated",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/care-grove-v3/pine.png",
+      "width": 90,
+      "height": 180,
+      "anchor": [
+        45,
+        176
+      ],
+      "footprint": [
+        37,
+        164,
+        16,
+        12
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "grove:pine-small",
+      "label": "Woodland fir \u00b7 young",
+      "category": "Care Grove \u00b7 generated",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/care-grove-v3/pine-small.png",
+      "width": 67,
+      "height": 135,
+      "anchor": [
+        33,
+        132
+      ],
+      "footprint": [
+        27,
+        123,
+        12,
+        9
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "grove:cliff",
+      "label": "Mossy stone cliff",
+      "category": "Care Grove \u00b7 generated",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/care-grove-v3/cliff.png",
+      "width": 172,
+      "height": 272,
+      "anchor": [
+        86,
+        266
+      ],
+      "footprint": [
+        25,
+        141,
+        120,
+        119
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "grove:bush",
+      "label": "Dry woodland scrub",
+      "category": "Care Grove \u00b7 generated",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/care-grove-v3/bush.png",
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        30
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "grove:bareTree",
+      "label": "Gnarled woodland tree",
+      "category": "Care Grove \u00b7 generated",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/care-grove-v3/bareTree.png",
+      "width": 100,
+      "height": 149,
+      "anchor": [
+        50,
+        145
+      ],
+      "footprint": [
+        42,
+        133,
+        16,
+        12
+      ],
+      "rotations": [
+        0
+      ]
+    }
+  ]
+}

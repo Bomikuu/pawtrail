@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "id": "vaelrith-riftfire",
+  "source": "generated-master.png",
+  "generation": "built-in image_gen",
+  "file": "fire-atlas.png",
+  "frameWidth": 64,
+  "frameHeight": 96,
+  "columns": 4,
+  "rows": 4,
+  "frames": 16,
+  "anchor": [
+    32,
+    88
+  ],
+  "frameMs": 66.66666666666667,
+  "intro": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "loop": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "outro": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "rendering": "nearest-neighbor; shared atlas; pool of eight sprites",
+  "transparent": true,
+  "bytes": 144422,
+  "review": "native artwork inspected; live motion review pending"
+}

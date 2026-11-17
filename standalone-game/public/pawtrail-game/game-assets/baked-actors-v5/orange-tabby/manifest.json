@@ -1,0 +1,774 @@
+{
+  "status": "first-pair-actions-pilot",
+  "frameWidth": 32,
+  "frameHeight": 32,
+  "columns": 24,
+  "rows": 48,
+  "spacing": 0,
+  "margin": 0,
+  "filter": "nearest",
+  "groundPixel": {
+    "x": 16,
+    "y": 28
+  },
+  "anchor": {
+    "x": 0.5,
+    "y": 0.875
+  },
+  "palette": [
+    "#216a6b",
+    "#257576",
+    "#297f80",
+    "#2a1c17",
+    "#2b8485",
+    "#2e1f17",
+    "#33211c",
+    "#33231b",
+    "#38271e",
+    "#392520",
+    "#3a261d",
+    "#3a291f",
+    "#3e2923",
+    "#402b25",
+    "#417e7c",
+    "#488b89",
+    "#4b2e2f",
+    "#4f9694",
+    "#529b99",
+    "#543335",
+    "#563529",
+    "#5b383a",
+    "#5e3a3c",
+    "#5f3b2e",
+    "#64958a",
+    "#674133",
+    "#6b4435",
+    "#6fa498",
+    "#774735",
+    "#78b1a4",
+    "#7cb7aa",
+    "#834f3b",
+    "#8b4b32",
+    "#8e5641",
+    "#935944",
+    "#995338",
+    "#9a5745",
+    "#9a673f",
+    "#9b6339",
+    "#a37253",
+    "#a65a3d",
+    "#a9614d",
+    "#a97147",
+    "#aa6e3f",
+    "#ac5d3f",
+    "#b37d5c",
+    "#b76954",
+    "#b77b4d",
+    "#b87745",
+    "#b8a48a",
+    "#bc7f42",
+    "#bd6d57",
+    "#bd7f50",
+    "#be7b48",
+    "#c28864",
+    "#c6955f",
+    "#c8995b",
+    "#c98d68",
+    "#caa474",
+    "#cab498",
+    "#ce8c49",
+    "#d3c3ad",
+    "#daa569",
+    "#dac3a4",
+    "#dba864",
+    "#deb480",
+    "#df9850",
+    "#e2caaa",
+    "#e79d53",
+    "#e7d7bf",
+    "#ebb272",
+    "#edb66d",
+    "#f0c38b",
+    "#f3b876",
+    "#f5bc71",
+    "#f8ca90",
+    "#fae8ce",
+    "#fff0d5"
+  ],
+  "animations": {
+    "idle-down": {
+      "start": 0,
+      "end": 7,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-down": {
+      "start": 8,
+      "end": 15,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-down": {
+      "start": 24,
+      "end": 35,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-down": {
+      "start": 36,
+      "end": 47,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-down": {
+      "start": 48,
+      "end": 59,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-down": {
+      "start": 60,
+      "end": 71,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-down": {
+      "start": 72,
+      "end": 83,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-down": {
+      "start": 84,
+      "end": 91,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-down": {
+      "start": 96,
+      "end": 103,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-down": {
+      "start": 104,
+      "end": 111,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-down": {
+      "start": 112,
+      "end": 119,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-down": {
+      "start": 120,
+      "end": 127,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-down": {
+      "start": 128,
+      "end": 135,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-down": {
+      "start": 136,
+      "end": 143,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "idle-down_left": {
+      "start": 144,
+      "end": 151,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-down_left": {
+      "start": 152,
+      "end": 159,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-down_left": {
+      "start": 168,
+      "end": 179,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-down_left": {
+      "start": 180,
+      "end": 191,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-down_left": {
+      "start": 192,
+      "end": 203,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-down_left": {
+      "start": 204,
+      "end": 215,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-down_left": {
+      "start": 216,
+      "end": 227,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-down_left": {
+      "start": 228,
+      "end": 235,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-down_left": {
+      "start": 240,
+      "end": 247,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-down_left": {
+      "start": 248,
+      "end": 255,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-down_left": {
+      "start": 256,
+      "end": 263,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-down_left": {
+      "start": 264,
+      "end": 271,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-down_left": {
+      "start": 272,
+      "end": 279,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-down_left": {
+      "start": 280,
+      "end": 287,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "idle-left": {
+      "start": 288,
+      "end": 295,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-left": {
+      "start": 296,
+      "end": 303,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-left": {
+      "start": 312,
+      "end": 323,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-left": {
+      "start": 324,
+      "end": 335,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-left": {
+      "start": 336,
+      "end": 347,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-left": {
+      "start": 348,
+      "end": 359,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-left": {
+      "start": 360,
+      "end": 371,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-left": {
+      "start": 372,
+      "end": 379,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-left": {
+      "start": 384,
+      "end": 391,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-left": {
+      "start": 392,
+      "end": 399,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-left": {
+      "start": 400,
+      "end": 407,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-left": {
+      "start": 408,
+      "end": 415,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-left": {
+      "start": 416,
+      "end": 423,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-left": {
+      "start": 424,
+      "end": 431,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "idle-up_left": {
+      "start": 432,
+      "end": 439,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-up_left": {
+      "start": 440,
+      "end": 447,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-up_left": {
+      "start": 456,
+      "end": 467,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-up_left": {
+      "start": 468,
+      "end": 479,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-up_left": {
+      "start": 480,
+      "end": 491,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-up_left": {
+      "start": 492,
+      "end": 503,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-up_left": {
+      "start": 504,
+      "end": 515,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-up_left": {
+      "start": 516,
+      "end": 523,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-up_left": {
+      "start": 528,
+      "end": 535,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-up_left": {
+      "start": 536,
+      "end": 543,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-up_left": {
+      "start": 544,
+      "end": 551,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-up_left": {
+      "start": 552,
+      "end": 559,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-up_left": {
+      "start": 560,
+      "end": 567,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-up_left": {
+      "start": 568,
+      "end": 575,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "idle-up": {
+      "start": 576,
+      "end": 583,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-up": {
+      "start": 584,
+      "end": 591,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-up": {
+      "start": 600,
+      "end": 611,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-up": {
+      "start": 612,
+      "end": 623,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-up": {
+      "start": 624,
+      "end": 635,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-up": {
+      "start": 636,
+      "end": 647,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-up": {
+      "start": 648,
+      "end": 659,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-up": {
+      "start": 660,
+      "end": 667,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-up": {
+      "start": 672,
+      "end": 679,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-up": {
+      "start": 680,
+      "end": 687,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-up": {
+      "start": 688,
+      "end": 695,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-up": {
+      "start": 696,
+      "end": 703,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-up": {
+      "start": 704,
+      "end": 711,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-up": {
+      "start": 712,
+      "end": 719,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "idle-up_right": {
+      "start": 720,
+      "end": 727,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-up_right": {
+      "start": 728,
+      "end": 735,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-up_right": {
+      "start": 744,
+      "end": 755,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-up_right": {
+      "start": 756,
+      "end": 767,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-up_right": {
+      "start": 768,
+      "end": 779,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-up_right": {
+      "start": 780,
+      "end": 791,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-up_right": {
+      "start": 792,
+      "end": 803,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-up_right": {
+      "start": 804,
+      "end": 811,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-up_right": {
+      "start": 816,
+      "end": 823,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-up_right": {
+      "start": 824,
+      "end": 831,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-up_right": {
+      "start": 832,
+      "end": 839,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-up_right": {
+      "start": 840,
+      "end": 847,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-up_right": {
+      "start": 848,
+      "end": 855,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-up_right": {
+      "start": 856,
+      "end": 863,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "idle-right": {
+      "start": 864,
+      "end": 871,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-right": {
+      "start": 872,
+      "end": 879,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-right": {
+      "start": 888,
+      "end": 899,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-right": {
+      "start": 900,
+      "end": 911,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-right": {
+      "start": 912,
+      "end": 923,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-right": {
+      "start": 924,
+      "end": 935,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-right": {
+      "start": 936,
+      "end": 947,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-right": {
+      "start": 948,
+      "end": 955,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-right": {
+      "start": 960,
+      "end": 967,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-right": {
+      "start": 968,
+      "end": 975,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-right": {
+      "start": 976,
+      "end": 983,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-right": {
+      "start": 984,
+      "end": 991,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-right": {
+      "start": 992,
+      "end": 999,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-right": {
+      "start": 1000,
+      "end": 1007,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "idle-down_right": {
+      "start": 1008,
+      "end": 1015,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-down_right": {
+      "start": 1016,
+      "end": 1023,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "eat-down_right": {
+      "start": 1032,
+      "end": 1043,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "drink-down_right": {
+      "start": 1044,
+      "end": 1055,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    "pet-down_right": {
+      "start": 1056,
+      "end": 1067,
+      "frameRate": 9,
+      "repeat": -1
+    },
+    "sit-down_right": {
+      "start": 1068,
+      "end": 1079,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "sleep-down_right": {
+      "start": 1080,
+      "end": 1091,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "happy-down_right": {
+      "start": 1092,
+      "end": 1099,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "play-down_right": {
+      "start": 1104,
+      "end": 1111,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "groom-down_right": {
+      "start": 1112,
+      "end": 1119,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "stretch-down_right": {
+      "start": 1120,
+      "end": 1127,
+      "frameRate": 6,
+      "repeat": -1
+    },
+    "scratch-down_right": {
+      "start": 1128,
+      "end": 1135,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "climb-down_right": {
+      "start": 1136,
+      "end": 1143,
+      "frameRate": 8,
+      "repeat": -1
+    },
+    "lie_down-down_right": {
+      "start": 1144,
+      "end": 1151,
+      "frameRate": 4,
+      "repeat": -1
+    }
+  },
+  "source": "source-rig.glb",
+  "notes": "Fixed orthographic camera and cell alignment; no per-frame recentering."
+}

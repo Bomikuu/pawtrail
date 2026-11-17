@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Assets"
+  short_description: "Create animated scenery and textured interactive models"
+  default_prompt: "Use $pawtrail-assets to create a reference-matched environment asset with native animation, and use textured 3D for player-interactive map props."

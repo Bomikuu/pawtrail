@@ -1,0 +1,570 @@
+{
+  "group": "emotes",
+  "animations": [
+    {
+      "id": "happy",
+      "file": "/assets/game/effects/emotes/happy-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          2,
+          2,
+          179,
+          179
+        ],
+        [
+          183,
+          2,
+          360,
+          179
+        ],
+        [
+          364,
+          2,
+          541,
+          179
+        ],
+        [
+          545,
+          2,
+          722,
+          179
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        0,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "laughing",
+      "file": "/assets/game/effects/emotes/laughing-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          726,
+          2,
+          903,
+          179
+        ],
+        [
+          907,
+          2,
+          1084,
+          179
+        ],
+        [
+          1088,
+          2,
+          1265,
+          179
+        ],
+        [
+          1269,
+          2,
+          1446,
+          179
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        32,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "heart",
+      "file": "/assets/game/effects/emotes/heart-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          2,
+          183,
+          179,
+          360
+        ],
+        [
+          183,
+          183,
+          360,
+          360
+        ],
+        [
+          364,
+          183,
+          541,
+          360
+        ],
+        [
+          545,
+          183,
+          722,
+          360
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        64,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "wave",
+      "file": "/assets/game/effects/emotes/wave-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          726,
+          183,
+          903,
+          360
+        ],
+        [
+          907,
+          183,
+          1084,
+          360
+        ],
+        [
+          1088,
+          183,
+          1265,
+          360
+        ],
+        [
+          1269,
+          183,
+          1446,
+          360
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        96,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "sad",
+      "file": "/assets/game/effects/emotes/sad-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          2,
+          364,
+          179,
+          541
+        ],
+        [
+          183,
+          364,
+          360,
+          541
+        ],
+        [
+          364,
+          364,
+          541,
+          541
+        ],
+        [
+          545,
+          364,
+          722,
+          541
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        128,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "surprised",
+      "file": "/assets/game/effects/emotes/surprised-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          726,
+          364,
+          903,
+          541
+        ],
+        [
+          907,
+          364,
+          1084,
+          541
+        ],
+        [
+          1088,
+          364,
+          1265,
+          541
+        ],
+        [
+          1269,
+          364,
+          1446,
+          541
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        160,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "confused",
+      "file": "/assets/game/effects/emotes/confused-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          2,
+          545,
+          179,
+          722
+        ],
+        [
+          183,
+          545,
+          360,
+          722
+        ],
+        [
+          364,
+          545,
+          541,
+          722
+        ],
+        [
+          545,
+          545,
+          722,
+          722
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        192,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "angry",
+      "file": "/assets/game/effects/emotes/angry-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          726,
+          545,
+          903,
+          722
+        ],
+        [
+          907,
+          545,
+          1084,
+          722
+        ],
+        [
+          1088,
+          545,
+          1265,
+          722
+        ],
+        [
+          1269,
+          545,
+          1446,
+          722
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        224,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "sleepy",
+      "file": "/assets/game/effects/emotes/sleepy-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          2,
+          726,
+          179,
+          903
+        ],
+        [
+          183,
+          726,
+          360,
+          903
+        ],
+        [
+          364,
+          726,
+          541,
+          903
+        ],
+        [
+          545,
+          726,
+          722,
+          903
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        256,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "thumbs_up",
+      "file": "/assets/game/effects/emotes/thumbs_up-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          726,
+          726,
+          903,
+          903
+        ],
+        [
+          907,
+          726,
+          1084,
+          903
+        ],
+        [
+          1088,
+          726,
+          1265,
+          903
+        ],
+        [
+          1269,
+          726,
+          1446,
+          903
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        288,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "celebration",
+      "file": "/assets/game/effects/emotes/celebration-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          2,
+          907,
+          179,
+          1084
+        ],
+        [
+          183,
+          907,
+          360,
+          1084
+        ],
+        [
+          364,
+          907,
+          541,
+          1084
+        ],
+        [
+          545,
+          907,
+          722,
+          1084
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        320,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    },
+    {
+      "id": "paw",
+      "file": "/assets/game/effects/emotes/paw-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 4,
+      "frameRate": 6,
+      "anchorPixels": [
+        16,
+        16
+      ],
+      "sourceFrameRectsXYXY": [
+        [
+          726,
+          907,
+          903,
+          1084
+        ],
+        [
+          907,
+          907,
+          1084,
+          1084
+        ],
+        [
+          1088,
+          907,
+          1265,
+          1084
+        ],
+        [
+          1269,
+          907,
+          1446,
+          1084
+        ]
+      ],
+      "productionReady": false,
+      "loopReview": "four visually distinct sequential poses inspected; playback timing not certified",
+      "atlasRect": [
+        0,
+        352,
+        128,
+        32
+      ],
+      "distinctFrames": 4
+    }
+  ],
+  "productionReady": false
+}

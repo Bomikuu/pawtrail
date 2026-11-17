@@ -1,0 +1,164 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "F01 \u00b7 Wayfarer Concourse \u00b7 v1",
+  "width": 32,
+  "height": 28,
+  "baseTile": "terrain:12",
+  "groundArt": "f01:lobby-ground",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "objects": [
+    {
+      "id": "lift",
+      "asset": "f01:lift",
+      "x": 512,
+      "y": 210,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "planning",
+      "asset": "f01:planning",
+      "x": 725,
+      "y": 340,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "lobby-counter",
+      "asset": "f01:counter",
+      "x": 300,
+      "y": 390,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "camp-seat",
+      "asset": "f01:camp-seat",
+      "x": 300,
+      "y": 580,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "head",
+      "asset": "f01:holo-head",
+      "x": 180,
+      "y": 330,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "koi",
+      "asset": "f01:holo-koi",
+      "x": 820,
+      "y": 590,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "fan",
+      "asset": "f01:hvac",
+      "x": 860,
+      "y": 280,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "north-wall-0",
+      "asset": "f01:lobby-wall",
+      "x": 160,
+      "y": 230,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "north-wall-1",
+      "asset": "f01:lobby-wall",
+      "x": 832,
+      "y": 230,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "south-rail-0",
+      "asset": "f01:railing",
+      "x": 96,
+      "y": 830,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "south-rail-1",
+      "asset": "f01:railing",
+      "x": 224,
+      "y": 830,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "south-rail-2",
+      "asset": "f01:railing",
+      "x": 352,
+      "y": 830,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "south-rail-3",
+      "asset": "f01:railing",
+      "x": 672,
+      "y": 830,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "south-rail-4",
+      "asset": "f01:railing",
+      "x": 800,
+      "y": 830,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "south-rail-5",
+      "asset": "f01:railing",
+      "x": 928,
+      "y": 830,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ]
+}

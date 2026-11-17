@@ -1,4 +1,5 @@
 import skins from '../models3d/uv-manifest.json'
+import { featuredActors } from '../runtime/featured-actors'
 import { defaultAppearance, type ActorAppearance } from './appearance'
 import type { ModelOptions } from '../models3d/model'
 
@@ -13,6 +14,7 @@ function tint(hex: string, amount: number) {
 }
 /** Existing roster identities/palettes, rendered through the creator's shared rig. */
 export function gameAppearance(identity: string, options: Partial<ModelOptions> = {}): GameAppearance | null {
+  if (featuredActors[identity]) return { appearance: featuredActors[identity].appearance, headScale: 1, bodyScale: 1, yaw: 0 }
   const npc = identity in npcLooks ? identity : undefined
   if (npc) { identity = npcLooks[npc]; options = {} }
   options=options&&typeof options==='object'?options:{}

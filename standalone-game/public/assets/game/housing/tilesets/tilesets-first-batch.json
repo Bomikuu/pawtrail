@@ -1,0 +1,670 @@
+{
+  "tool": "built-in image_gen",
+  "nativeTileSize": [
+    32,
+    32
+  ],
+  "status": "style-review",
+  "assets": [
+    {
+      "id": "oak-light-a",
+      "file": "/assets/game/housing/tilesets/oak-light-a-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "oak-light-b",
+      "file": "/assets/game/housing/tilesets/oak-light-b-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        32,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "oak-light-c",
+      "file": "/assets/game/housing/tilesets/oak-light-c-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        64,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "oak-light-d",
+      "file": "/assets/game/housing/tilesets/oak-light-d-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        96,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "wood-dark-a",
+      "file": "/assets/game/housing/tilesets/wood-dark-a-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        0,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "wood-dark-b",
+      "file": "/assets/game/housing/tilesets/wood-dark-b-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "wood-dark-c",
+      "file": "/assets/game/housing/tilesets/wood-dark-c-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        64,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "wood-dark-d",
+      "file": "/assets/game/housing/tilesets/wood-dark-d-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        96,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "ceramic-a",
+      "file": "/assets/game/housing/tilesets/ceramic-a-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        0,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "ceramic-b",
+      "file": "/assets/game/housing/tilesets/ceramic-b-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        32,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "kitchen-a",
+      "file": "/assets/game/housing/tilesets/kitchen-a-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        64,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "kitchen-b",
+      "file": "/assets/game/housing/tilesets/kitchen-b-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        96,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "carpet-a",
+      "file": "/assets/game/housing/tilesets/carpet-a-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        0,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "carpet-b",
+      "file": "/assets/game/housing/tilesets/carpet-b-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        32,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "stone",
+      "file": "/assets/game/housing/tilesets/stone-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        64,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "patterned",
+      "file": "/assets/game/housing/tilesets/patterned-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-floors-housing-v1.png",
+      "rect": [
+        96,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "edgeWrapPixelsMatch": true,
+      "productionReady": false,
+      "review": "Native dimensions/palette/wrap verified; repeated visual composition requires art review."
+    },
+    {
+      "id": "cream-straight",
+      "file": "/assets/game/housing/tilesets/cream-straight-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-end-left",
+      "file": "/assets/game/housing/tilesets/cream-end-left-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        32,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-end-right",
+      "file": "/assets/game/housing/tilesets/cream-end-right-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        64,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-inner-left",
+      "file": "/assets/game/housing/tilesets/cream-inner-left-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        96,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-inner-right",
+      "file": "/assets/game/housing/tilesets/cream-inner-right-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        128,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-fill",
+      "file": "/assets/game/housing/tilesets/cream-fill-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        160,
+        0,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-outer-left",
+      "file": "/assets/game/housing/tilesets/cream-outer-left-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        0,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-outer-right",
+      "file": "/assets/game/housing/tilesets/cream-outer-right-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-edge-left",
+      "file": "/assets/game/housing/tilesets/cream-edge-left-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        64,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-edge-right",
+      "file": "/assets/game/housing/tilesets/cream-edge-right-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        96,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "cream-top-trim",
+      "file": "/assets/game/housing/tilesets/cream-top-trim-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        128,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "wood-panel",
+      "file": "/assets/game/housing/tilesets/wood-panel-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        160,
+        32,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "door-closed",
+      "file": "/assets/game/housing/tilesets/door-closed-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        0,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "door-open",
+      "file": "/assets/game/housing/tilesets/door-open-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        32,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "doorframe",
+      "file": "/assets/game/housing/tilesets/doorframe-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        64,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "window",
+      "file": "/assets/game/housing/tilesets/window-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        96,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "curtained-window",
+      "file": "/assets/game/housing/tilesets/curtained-window-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        128,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "wall-shelf",
+      "file": "/assets/game/housing/tilesets/wall-shelf-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        160,
+        64,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "sage-wall",
+      "file": "/assets/game/housing/tilesets/sage-wall-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        0,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "blue-wall",
+      "file": "/assets/game/housing/tilesets/blue-wall-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        32,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "beige-wall",
+      "file": "/assets/game/housing/tilesets/beige-wall-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        64,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "floral-wallpaper",
+      "file": "/assets/game/housing/tilesets/floral-wallpaper-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        96,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "room-divider",
+      "file": "/assets/game/housing/tilesets/room-divider-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        128,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    },
+    {
+      "id": "stairs",
+      "file": "/assets/game/housing/tilesets/stairs-housing-v1.png",
+      "width": 32,
+      "height": 32,
+      "atlas": "interior-walls-housing-v1.png",
+      "rect": [
+        160,
+        96,
+        32,
+        32
+      ],
+      "opaque": true,
+      "productionReady": false,
+      "review": "Source grid extracted from observed bounds. Wall joins/corners, doorway continuity and mixed-size architectural details still need assembly refinement."
+    }
+  ],
+  "limitations": [
+    "Floor texture edges match mathematically, but joint visual tiling needs review.",
+    "Walls and architectural modules are draft exports; not certified production-ready."
+  ]
+}

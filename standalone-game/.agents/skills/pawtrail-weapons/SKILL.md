@@ -11,6 +11,30 @@ workspace's AGENTS.md and preserve its permissions for agents, generation,
 automated checks and browser review. Do not change engines or replace the actor
 rig to create a weapon.
 
+## Visible interaction feedback — owner requirement
+
+Every interactive result in this skill's scope must visibly register: show pending
+work when needed, then the actual success, failure or changed state. Existing
+clear state changes may suffice; do not add a toast for every animation frame.
+Use real outcome events, never a cosmetic effect or a console log as evidence of
+success. For fictional combat, confirmed contact must play an actual animated
+impact sprite on the affected enemy/player: e.g. a slash flash, spark burst or
+elemental impact. Damage numbers, HP changes, tint and floor rings supplement
+that sprite; they do not replace it. Distinguish weak points and incoming damage
+where useful, and keep blocked/miss/cooldown cues separate from successful hits.
+Reuse suitable approved transparent VFX atlases; generate missing raster effects
+with the available image-generation workflow. Preserve native frames, anchors
+and nearest-neighbor playback; bind contact to accepted outcomes, not casts.
+Artwork-only and noncombat work do not gain new combat scope from this rule.
+
+Show accepted strikes and applied damage at their actual targets; acknowledge cooldowns, blocked attacks and genuine misses after projectiles finish. Never show hit numbers from a swing alone.
+
+Reuse the existing event/feedback layer, pool or bound transient indicators, and
+clean them up on reset/exit. Preserve contrast and useful reduced-motion feedback;
+sound or color alone is insufficient. Keep local receipts distinct from confirmed
+server saves/rewards. Review feedback under current verification permissions and
+leave unobserved runtime behavior pending.
+
 ## Reference → concept → textured model → abilities
 
 1. **Inspect the reference and base character.** Identify the grip, silhouette,

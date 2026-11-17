@@ -1,0 +1,458 @@
+{
+  "browser": "Codex in-app browser",
+  "name": "vaelrith-portrait-live",
+  "durationMs": 8800,
+  "rect": {
+    "bottom": 740.125,
+    "height": 256,
+    "left": 614.984375,
+    "right": 870.984375,
+    "top": 484.125,
+    "width": 256,
+    "x": 614.984375,
+    "y": 484.125
+  },
+  "frames": [
+    {
+      "file": "000.jpg",
+      "atMs": 0
+    },
+    {
+      "file": "001.jpg",
+      "atMs": 80
+    },
+    {
+      "file": "002.jpg",
+      "atMs": 160
+    },
+    {
+      "file": "003.jpg",
+      "atMs": 241
+    },
+    {
+      "file": "004.jpg",
+      "atMs": 320
+    },
+    {
+      "file": "005.jpg",
+      "atMs": 400
+    },
+    {
+      "file": "006.jpg",
+      "atMs": 480
+    },
+    {
+      "file": "007.jpg",
+      "atMs": 560
+    },
+    {
+      "file": "008.jpg",
+      "atMs": 640
+    },
+    {
+      "file": "009.jpg",
+      "atMs": 725
+    },
+    {
+      "file": "010.jpg",
+      "atMs": 800
+    },
+    {
+      "file": "011.jpg",
+      "atMs": 880
+    },
+    {
+      "file": "012.jpg",
+      "atMs": 961
+    },
+    {
+      "file": "013.jpg",
+      "atMs": 1041
+    },
+    {
+      "file": "014.jpg",
+      "atMs": 1120
+    },
+    {
+      "file": "015.jpg",
+      "atMs": 1200
+    },
+    {
+      "file": "016.jpg",
+      "atMs": 1280
+    },
+    {
+      "file": "017.jpg",
+      "atMs": 1359
+    },
+    {
+      "file": "018.jpg",
+      "atMs": 1440
+    },
+    {
+      "file": "019.jpg",
+      "atMs": 1520
+    },
+    {
+      "file": "020.jpg",
+      "atMs": 1600
+    },
+    {
+      "file": "021.jpg",
+      "atMs": 1680
+    },
+    {
+      "file": "022.jpg",
+      "atMs": 1761
+    },
+    {
+      "file": "023.jpg",
+      "atMs": 1863
+    },
+    {
+      "file": "024.jpg",
+      "atMs": 1939
+    },
+    {
+      "file": "025.jpg",
+      "atMs": 2016
+    },
+    {
+      "file": "026.jpg",
+      "atMs": 2080
+    },
+    {
+      "file": "027.jpg",
+      "atMs": 2160
+    },
+    {
+      "file": "028.jpg",
+      "atMs": 2266
+    },
+    {
+      "file": "029.jpg",
+      "atMs": 2364
+    },
+    {
+      "file": "030.jpg",
+      "atMs": 2423
+    },
+    {
+      "file": "031.jpg",
+      "atMs": 2486
+    },
+    {
+      "file": "032.jpg",
+      "atMs": 2560
+    },
+    {
+      "file": "033.jpg",
+      "atMs": 2640
+    },
+    {
+      "file": "034.jpg",
+      "atMs": 2720
+    },
+    {
+      "file": "035.jpg",
+      "atMs": 2800
+    },
+    {
+      "file": "036.jpg",
+      "atMs": 2880
+    },
+    {
+      "file": "037.jpg",
+      "atMs": 2960
+    },
+    {
+      "file": "038.jpg",
+      "atMs": 3041
+    },
+    {
+      "file": "039.jpg",
+      "atMs": 3170
+    },
+    {
+      "file": "040.jpg",
+      "atMs": 3319
+    },
+    {
+      "file": "041.jpg",
+      "atMs": 3397
+    },
+    {
+      "file": "042.jpg",
+      "atMs": 3460
+    },
+    {
+      "file": "043.jpg",
+      "atMs": 3516
+    },
+    {
+      "file": "044.jpg",
+      "atMs": 3569
+    },
+    {
+      "file": "045.jpg",
+      "atMs": 3640
+    },
+    {
+      "file": "046.jpg",
+      "atMs": 3704
+    },
+    {
+      "file": "047.jpg",
+      "atMs": 3768
+    },
+    {
+      "file": "048.jpg",
+      "atMs": 3840
+    },
+    {
+      "file": "049.jpg",
+      "atMs": 3920
+    },
+    {
+      "file": "050.jpg",
+      "atMs": 4000
+    },
+    {
+      "file": "051.jpg",
+      "atMs": 4080
+    },
+    {
+      "file": "052.jpg",
+      "atMs": 4160
+    },
+    {
+      "file": "053.jpg",
+      "atMs": 4240
+    },
+    {
+      "file": "054.jpg",
+      "atMs": 4320
+    },
+    {
+      "file": "055.jpg",
+      "atMs": 4400
+    },
+    {
+      "file": "056.jpg",
+      "atMs": 4484
+    },
+    {
+      "file": "057.jpg",
+      "atMs": 4560
+    },
+    {
+      "file": "058.jpg",
+      "atMs": 4640
+    },
+    {
+      "file": "059.jpg",
+      "atMs": 4730
+    },
+    {
+      "file": "060.jpg",
+      "atMs": 4800
+    },
+    {
+      "file": "061.jpg",
+      "atMs": 4880
+    },
+    {
+      "file": "062.jpg",
+      "atMs": 4961
+    },
+    {
+      "file": "063.jpg",
+      "atMs": 5041
+    },
+    {
+      "file": "064.jpg",
+      "atMs": 5120
+    },
+    {
+      "file": "065.jpg",
+      "atMs": 5200
+    },
+    {
+      "file": "066.jpg",
+      "atMs": 5280
+    },
+    {
+      "file": "067.jpg",
+      "atMs": 5360
+    },
+    {
+      "file": "068.jpg",
+      "atMs": 5440
+    },
+    {
+      "file": "069.jpg",
+      "atMs": 5583
+    },
+    {
+      "file": "070.jpg",
+      "atMs": 5661
+    },
+    {
+      "file": "071.jpg",
+      "atMs": 5722
+    },
+    {
+      "file": "072.jpg",
+      "atMs": 5794
+    },
+    {
+      "file": "073.jpg",
+      "atMs": 5856
+    },
+    {
+      "file": "074.jpg",
+      "atMs": 5920
+    },
+    {
+      "file": "075.jpg",
+      "atMs": 6000
+    },
+    {
+      "file": "076.jpg",
+      "atMs": 6080
+    },
+    {
+      "file": "077.jpg",
+      "atMs": 6160
+    },
+    {
+      "file": "078.jpg",
+      "atMs": 6240
+    },
+    {
+      "file": "079.jpg",
+      "atMs": 6320
+    },
+    {
+      "file": "080.jpg",
+      "atMs": 6400
+    },
+    {
+      "file": "081.jpg",
+      "atMs": 6480
+    },
+    {
+      "file": "082.jpg",
+      "atMs": 6559
+    },
+    {
+      "file": "083.jpg",
+      "atMs": 6641
+    },
+    {
+      "file": "084.jpg",
+      "atMs": 6721
+    },
+    {
+      "file": "085.jpg",
+      "atMs": 6800
+    },
+    {
+      "file": "086.jpg",
+      "atMs": 6880
+    },
+    {
+      "file": "087.jpg",
+      "atMs": 6961
+    },
+    {
+      "file": "088.jpg",
+      "atMs": 7040
+    },
+    {
+      "file": "089.jpg",
+      "atMs": 7120
+    },
+    {
+      "file": "090.jpg",
+      "atMs": 7200
+    },
+    {
+      "file": "091.jpg",
+      "atMs": 7280
+    },
+    {
+      "file": "092.jpg",
+      "atMs": 7360
+    },
+    {
+      "file": "093.jpg",
+      "atMs": 7440
+    },
+    {
+      "file": "094.jpg",
+      "atMs": 7522
+    },
+    {
+      "file": "095.jpg",
+      "atMs": 7600
+    },
+    {
+      "file": "096.jpg",
+      "atMs": 7680
+    },
+    {
+      "file": "097.jpg",
+      "atMs": 7760
+    },
+    {
+      "file": "098.jpg",
+      "atMs": 7840
+    },
+    {
+      "file": "099.jpg",
+      "atMs": 7920
+    },
+    {
+      "file": "100.jpg",
+      "atMs": 8000
+    },
+    {
+      "file": "101.jpg",
+      "atMs": 8080
+    },
+    {
+      "file": "102.jpg",
+      "atMs": 8160
+    },
+    {
+      "file": "103.jpg",
+      "atMs": 8240
+    },
+    {
+      "file": "104.jpg",
+      "atMs": 8320
+    },
+    {
+      "file": "105.jpg",
+      "atMs": 8400
+    },
+    {
+      "file": "106.jpg",
+      "atMs": 8480
+    },
+    {
+      "file": "107.jpg",
+      "atMs": 8560
+    },
+    {
+      "file": "108.jpg",
+      "atMs": 8641
+    },
+    {
+      "file": "109.jpg",
+      "atMs": 8720
+    }
+  ],
+  "method": "native full-viewport screenshots; cropped screenshot API excluded"
+}

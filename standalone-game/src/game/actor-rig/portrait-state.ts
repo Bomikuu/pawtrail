@@ -1,5 +1,5 @@
 export const PORTRAIT_EXPRESSIONS = ['idle', 'smile', 'happy', 'talking'] as const
-export type PortraitExpression = typeof PORTRAIT_EXPRESSIONS[number] | 'sad' | 'angry' | 'surprised'
+export type PortraitExpression = typeof PORTRAIT_EXPRESSIONS[number] | 'sad' | 'angry' | 'surprised' | 'shy'
 export type PortraitView = {
   yaw: number
   expression: PortraitExpression

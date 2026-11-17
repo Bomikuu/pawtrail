@@ -1,0 +1,804 @@
+{
+  "version": 1,
+  "frame": {
+    "width": 160,
+    "height": 192,
+    "anchor": [
+      80,
+      168
+    ]
+  },
+  "pitch": 34.5,
+  "representation": "live-textured-3d",
+  "assets": [
+    {
+      "id": "relay",
+      "model": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/model.glb",
+      "views": {
+        "0": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            37.0,
+            160.07,
+            86.0,
+            15.859
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                37.0,
+                160.07,
+                86.0,
+                15.859
+              ]
+            ],
+            "placement": [
+              [
+                37.0,
+                160.07,
+                86.0,
+                15.859
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                192.355
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "90": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            66.0,
+            143.645,
+            28.0,
+            48.711
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                66.0,
+                143.645,
+                28.0,
+                48.711
+              ]
+            ],
+            "placement": [
+              [
+                66.0,
+                143.645,
+                28.0,
+                48.711
+              ]
+            ],
+            "approaches": [
+              [
+                37.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "180": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            37.0,
+            160.07,
+            86.0,
+            15.859
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                37.0,
+                160.07,
+                86.0,
+                15.859
+              ]
+            ],
+            "placement": [
+              [
+                37.0,
+                160.07,
+                86.0,
+                15.859
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                143.645
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "270": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            66.0,
+            143.645,
+            28.0,
+            48.711
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                66.0,
+                143.645,
+                28.0,
+                48.711
+              ]
+            ],
+            "placement": [
+              [
+                66.0,
+                143.645,
+                28.0,
+                48.711
+              ]
+            ],
+            "approaches": [
+              [
+                123.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        }
+      },
+      "sourceDimensions": [
+        86,
+        100,
+        27
+      ],
+      "action": "inspect_plan",
+      "keyedNodes": [
+        "relay-rotor-0",
+        "relay-rotor-1",
+        "relay-rotor-2",
+        "relay-rotor-3",
+        "relay-rotor-4",
+        "relay-rotor-5",
+        "relay-rotor-6",
+        "relay-rotor-7",
+        "relay-rotor-8"
+      ]
+    },
+    {
+      "id": "archive",
+      "model": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/model.glb",
+      "views": {
+        "0": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            50.0,
+            158.938,
+            60.0,
+            22.656
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                50.0,
+                158.938,
+                60.0,
+                22.656
+              ]
+            ],
+            "placement": [
+              [
+                50.0,
+                158.938,
+                60.0,
+                22.656
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                194.055
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "90": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            56.0,
+            151.008,
+            40.0,
+            33.984
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                56.0,
+                151.008,
+                40.0,
+                33.984
+              ]
+            ],
+            "placement": [
+              [
+                56.0,
+                151.008,
+                40.0,
+                33.984
+              ]
+            ],
+            "approaches": [
+              [
+                34.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "180": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            50.0,
+            154.406,
+            60.0,
+            22.656
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                50.0,
+                154.406,
+                60.0,
+                22.656
+              ]
+            ],
+            "placement": [
+              [
+                50.0,
+                154.406,
+                60.0,
+                22.656
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                141.945
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "270": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            64.0,
+            151.008,
+            40.0,
+            33.984
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                64.0,
+                151.008,
+                40.0,
+                33.984
+              ]
+            ],
+            "placement": [
+              [
+                64.0,
+                151.008,
+                40.0,
+                33.984
+              ]
+            ],
+            "approaches": [
+              [
+                126.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        }
+      },
+      "sourceDimensions": [
+        60,
+        104,
+        30
+      ],
+      "action": "inspect_plan",
+      "keyedNodes": [
+        "archive-drawer"
+      ]
+    },
+    {
+      "id": "supply",
+      "model": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/model.glb",
+      "views": {
+        "0": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            46.0,
+            158.938,
+            68.0,
+            25.488
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                46.0,
+                158.938,
+                68.0,
+                25.488
+              ]
+            ],
+            "placement": [
+              [
+                46.0,
+                158.938,
+                68.0,
+                25.488
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                194.055
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "90": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            51.0,
+            148.742,
+            45.0,
+            38.516
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                51.0,
+                148.742,
+                45.0,
+                38.516
+              ]
+            ],
+            "placement": [
+              [
+                51.0,
+                148.742,
+                45.0,
+                38.516
+              ]
+            ],
+            "approaches": [
+              [
+                34.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "180": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            46.0,
+            151.574,
+            68.0,
+            25.488
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                46.0,
+                151.574,
+                68.0,
+                25.488
+              ]
+            ],
+            "placement": [
+              [
+                46.0,
+                151.574,
+                68.0,
+                25.488
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                141.945
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "270": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            64.0,
+            148.742,
+            45.0,
+            38.516
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                64.0,
+                148.742,
+                45.0,
+                38.516
+              ]
+            ],
+            "placement": [
+              [
+                64.0,
+                148.742,
+                45.0,
+                38.516
+              ]
+            ],
+            "approaches": [
+              [
+                126.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        }
+      },
+      "sourceDimensions": [
+        66,
+        82,
+        30
+      ],
+      "action": "inspect_plan",
+      "keyedNodes": [
+        "cabinet-left",
+        "cabinet-right"
+      ]
+    },
+    {
+      "id": "valve",
+      "model": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/model.glb",
+      "views": {
+        "0": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            35.0,
+            156.672,
+            90.0,
+            22.656
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                35.0,
+                156.672,
+                90.0,
+                22.656
+              ]
+            ],
+            "placement": [
+              [
+                35.0,
+                156.672,
+                90.0,
+                22.656
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                192.922
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "90": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            60.0,
+            142.512,
+            40.0,
+            50.977
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                60.0,
+                142.512,
+                40.0,
+                50.977
+              ]
+            ],
+            "placement": [
+              [
+                60.0,
+                142.512,
+                40.0,
+                50.977
+              ]
+            ],
+            "approaches": [
+              [
+                36.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "180": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            35.0,
+            156.672,
+            90.0,
+            22.656
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                35.0,
+                156.672,
+                90.0,
+                22.656
+              ]
+            ],
+            "placement": [
+              [
+                35.0,
+                156.672,
+                90.0,
+                22.656
+              ]
+            ],
+            "approaches": [
+              [
+                80.0,
+                143.078
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        },
+        "270": {
+          "width": 160,
+          "height": 192,
+          "anchor": [
+            80,
+            168
+          ],
+          "footprint": [
+            60.0,
+            142.512,
+            40.0,
+            50.977
+          ],
+          "geometry": {
+            "version": 2,
+            "ground": [
+              [
+                60.0,
+                142.512,
+                40.0,
+                50.977
+              ]
+            ],
+            "placement": [
+              [
+                60.0,
+                142.512,
+                40.0,
+                50.977
+              ]
+            ],
+            "approaches": [
+              [
+                124.0,
+                168.0
+              ]
+            ],
+            "seats": [],
+            "surfaces": [],
+            "occlusion": "base",
+            "actions": [
+              "inspect_plan"
+            ]
+          }
+        }
+      },
+      "sourceDimensions": [
+        90,
+        72,
+        40
+      ],
+      "action": "inspect_plan",
+      "keyedNodes": [
+        "valve-wheel"
+      ]
+    }
+  ]
+}

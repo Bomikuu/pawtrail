@@ -1,0 +1,74 @@
+{
+  "front-neutral-breathing-live": {
+    "frames": 110,
+    "durationMs": 8801,
+    "distinctRenderedCrops": 4,
+    "renderedCrop": [
+      288,
+      360
+    ]
+  },
+  "front-shy-combined-live": {
+    "frames": 110,
+    "durationMs": 8800,
+    "distinctRenderedCrops": 6,
+    "renderedCrop": [
+      288,
+      360
+    ]
+  },
+  "three-quarter-shy-combined-live": {
+    "frames": 110,
+    "durationMs": 8800,
+    "distinctRenderedCrops": 6,
+    "renderedCrop": [
+      288,
+      360
+    ]
+  },
+  "head-tilt-shy-combined-live": {
+    "frames": 110,
+    "durationMs": 8800,
+    "distinctRenderedCrops": 6,
+    "renderedCrop": [
+      288,
+      360
+    ]
+  },
+  "amber-illustration-live": {
+    "frames": 133,
+    "durationMs": 10640,
+    "distinctRenderedCrops": 12,
+    "renderedCrop": [
+      192,
+      320
+    ]
+  },
+  "vaelrith-illustration-live": {
+    "frames": 138,
+    "durationMs": 11040,
+    "distinctRenderedCrops": 16,
+    "renderedCrop": [
+      384,
+      256
+    ]
+  },
+  "vaelrith-portrait-live": {
+    "frames": 110,
+    "durationMs": 8800,
+    "distinctRenderedCrops": 2,
+    "renderedCrop": [
+      256,
+      256
+    ]
+  },
+  "vaelrith-portrait-paused": {
+    "frames": 15,
+    "durationMs": 1203,
+    "distinctRenderedCrops": 1,
+    "renderedCrop": [
+      256,
+      256
+    ]
+  }
+}

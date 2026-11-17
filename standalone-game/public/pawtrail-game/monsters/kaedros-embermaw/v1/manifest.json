@@ -1,0 +1,41 @@
+{
+  "id": "kaedros-embermaw",
+  "version": 1,
+  "representation": "native-layered-2d",
+  "atlas": "parts.webp",
+  "cellWidth": 128,
+  "cellHeight": 128,
+  "columns": 4,
+  "rows": 4,
+  "parts": {
+    "torso": 0,
+    "leftWing": 1,
+    "rightWing": 2,
+    "tail": 3,
+    "headClosed": 4,
+    "headRoar": 5,
+    "leg": 6,
+    "neck": 7
+  },
+  "enragedFrameOffset": 8,
+  "illustrations": {
+    "normal": "normal.webp",
+    "enraged": "enraged.webp",
+    "width": 384,
+    "height": 384
+  },
+  "icon": {
+    "url": "icon.png",
+    "width": 64,
+    "height": 64
+  },
+  "rendering": "nearest-neighbor, integer display zoom; transparent cutout margins preserved",
+  "provenance": "Built-in ImageGen; supplied hydra reference; production slicing and nearest-neighbor export only",
+  "runtimeBytes": {
+    "parts.webp": 63256,
+    "portrait.webp": 19014,
+    "icon.png": 5816,
+    "normal.webp": 42030,
+    "enraged.webp": 47198
+  }
+}

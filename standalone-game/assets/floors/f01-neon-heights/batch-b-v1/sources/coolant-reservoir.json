@@ -1,0 +1,11 @@
+{
+  "key": "coolant-reservoir",
+  "kind": "scenery",
+  "startedAt": "2026-11-15 15:36:18 UTC",
+  "completedAt": "2026-11-15 15:44:32 UTC",
+  "source": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-f5883cb8-7056-4da7-b834-fdd3873a0368.png",
+  "reference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-b-v1/04-undergrid-v1.png",
+  "transparent": true,
+  "span": null,
+  "status": "generated"
+}

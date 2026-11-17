@@ -1,0 +1,56 @@
+{
+  "familyId": "morvane",
+  "parentBoss": "morvane-ossuary-serpent",
+  "id": "grave-adder",
+  "name": "Grave Adder",
+  "title": "Marrow-Coil Adder",
+  "tier": "normal",
+  "row": 4,
+  "enragedRow": null,
+  "maxHp": 280,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 0.9,
+  "radius": 0.34,
+  "speed": 1.6,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A short coil of ivory vertebrae rests among the larger serpent’s discarded armor. Red eyes brighten before a tail lash.",
+  "weakness": "Its skull turns slowly through the tail-lash recovery.",
+  "temperament": "Cautious pack hunter",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "grave-lash",
+      "name": "Grave Lash",
+      "shape": "sector",
+      "outer": 1.8,
+      "inner": 0,
+      "angle": 155,
+      "target": "self",
+      "damage": 13,
+      "windup": 1100,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 4300,
+      "description": "A broad tail lash covers the wedge in front of the coil."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/grave-adder-model.png",
+    "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+    "phase": "Not applicable: normal mob has no boss enrage.",
+    "automatedTests": false,
+    "build": false
+  }
+}

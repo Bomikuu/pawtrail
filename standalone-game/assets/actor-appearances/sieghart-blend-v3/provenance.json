@@ -1,0 +1,53 @@
+{
+  "actor": "sieghart",
+  "revision": "blend-v3",
+  "date": "2026-11-15",
+  "style": "Refined cel + painterly",
+  "ownerFeedback": {
+    "normal": "retain normal draft",
+    "enraged": "more demonic with lightning from face"
+  },
+  "sources": {
+    "circle-generated.png": {
+      "sha256": "94f383eca0ec10a61721040cc7599117d6bf966f9e10d3e07b0e4f767129e975",
+      "bytes": 2589235
+    },
+    "enraged-generated.png": {
+      "sha256": "c2e1e59482cb521d9dbab224010914610109588597bfc5fa9248982ce7f2ce3a",
+      "bytes": 1778703
+    },
+    "enraged-lightning-generated.png": {
+      "sha256": "6810e81776171600d08294c1f35e7b4f0718aa35ef7b9306e948d885ac5b081b",
+      "bytes": 1746568
+    },
+    "enraged-underlay-generated.png": {
+      "sha256": "27908e5c2f82f47db53d14c8cb385da15048acdb727918bd9a237195ec1b6247",
+      "bytes": 1064853
+    },
+    "icon-generated.png": {
+      "sha256": "ddd703f82f68aa9e553e9b66b8c58555038ce4a8be5348a105d6c1763bdf91ad",
+      "bytes": 1295230
+    },
+    "normal-generated.png": {
+      "sha256": "5118bbc8c7c9634a3a55f52d748aba30e7ac5886ce106f4249e61c5847bfef06",
+      "bytes": 2418863
+    },
+    "normal-underlay-generated.png": {
+      "sha256": "1d1da30a1dab30cfe42327b3b9a531fdf3c78f2eef6e61ce845e9a5b7a1c32d7",
+      "bytes": 1943491
+    }
+  },
+  "references": [
+    "assets/actor-appearances/sieghart-painterly-v1/hero-generated.png",
+    "/home/micxsz/.codex/skills/pawtrail-illustrations/assets/sieg-refined-cel-reference.png",
+    "/home/micxsz/.codex/skills/pawtrail-illustrations/assets/enraged-demonic-expression-reference.png"
+  ],
+  "productionScript": "scripts/prepare-sieghart-blend.py",
+  "motion": "Pinned 2D painted parts, continuous five-second loop; original fixed body, face and sword",
+  "portrait": "Existing Refined cel collection retained; not regenerated",
+  "voice": "Skipped",
+  "preview": "/play?preview=actors&skin=sieghart&art=illustration",
+  "motionRevision": "v5",
+  "motionCorrection": "Separate crown and back-tip layers in both variants; pinned painted eye arcs deform three times per five-second loop; static bolt repaired with original artwork",
+  "runtimeIllustrations": "public/pawtrail-game/actor-studio/illustrations/sieghart/v5"
+}

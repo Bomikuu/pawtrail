@@ -1,0 +1,68 @@
+{
+  "mode": "built-in image_gen edit",
+  "prompts": "assets/maps/care-grove-v3/prompts.json",
+  "sourceHashes": {
+    "ground": "2e292a94c0b7ee363c52be4a7a301df921e0d2fc5fd71baae74beb930e9718e8",
+    "hall": "4d6b0aebfe9d355d360e494cdd2bd77b5d933ac0e448950cb42afc37fb4e46d5",
+    "pine": "bcacf589b98d42081c1ef824d63cf25932e93ce12660ac6be829365d5dc13efc",
+    "cliff": "8c7c535ad0ce9975c3c447ef6ec016bf4683d347da6e9472edaf02122b74fa70",
+    "bush": "cffed626bfe2201c929305b50a74832bced69df292c5f2c14f0c74b1d1cd3c29",
+    "bareTree": "a6d3e5380ca4c627ce4574bc28870ec85c1d99d07b3ffc970ece2c50fa601e98"
+  },
+  "geometryContract": "assets/maps/care-grove-v3/prior-registry.json",
+  "registry": "src/game/stage-editor/grove-art.json",
+  "layout": "src/game/stage-editor/maps/care-grove-v2.json",
+  "runtimeImages": {
+    "ground.png": {
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 1295217
+    },
+    "cliff.png": {
+      "dimensions": [
+        172,
+        272
+      ],
+      "bytes": 63772
+    },
+    "hall.png": {
+      "dimensions": [
+        311,
+        240
+      ],
+      "bytes": 115655
+    },
+    "pine-small.png": {
+      "dimensions": [
+        67,
+        135
+      ],
+      "bytes": 9739
+    },
+    "bush.png": {
+      "dimensions": [
+        64,
+        32
+      ],
+      "bytes": 3482
+    },
+    "pine.png": {
+      "dimensions": [
+        90,
+        180
+      ],
+      "bytes": 16295
+    },
+    "bareTree.png": {
+      "dimensions": [
+        100,
+        149
+      ],
+      "bytes": 14906
+    }
+  },
+  "scope": "Artwork-only revision; native sizes, anchors, footprints, placement IDs and furniture interactions retained",
+  "evidence": "Native artwork overview only. No tests/builds/browser verification."
+}

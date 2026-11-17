@@ -1,0 +1,89 @@
+{
+  "browser": "Codex in-app browser",
+  "name": "shy-front-speaking",
+  "durationMs": 8548,
+  "rect": {
+    "bottom": 638.75,
+    "height": 360,
+    "left": 293,
+    "right": 581,
+    "top": 278.75,
+    "width": 288,
+    "x": 293,
+    "y": 278.75
+  },
+  "frames": [
+    {
+      "file": "000.jpg",
+      "atMs": 0
+    },
+    {
+      "file": "001.jpg",
+      "atMs": 184
+    },
+    {
+      "file": "002.jpg",
+      "atMs": 345
+    },
+    {
+      "file": "003.jpg",
+      "atMs": 567
+    },
+    {
+      "file": "004.jpg",
+      "atMs": 853
+    },
+    {
+      "file": "005.jpg",
+      "atMs": 1083
+    },
+    {
+      "file": "006.jpg",
+      "atMs": 1305
+    },
+    {
+      "file": "007.jpg",
+      "atMs": 1590
+    },
+    {
+      "file": "008.jpg",
+      "atMs": 1876
+    },
+    {
+      "file": "009.jpg",
+      "atMs": 3165
+    },
+    {
+      "file": "010.jpg",
+      "atMs": 4492
+    },
+    {
+      "file": "011.jpg",
+      "atMs": 4816
+    },
+    {
+      "file": "012.jpg",
+      "atMs": 5016
+    },
+    {
+      "file": "013.jpg",
+      "atMs": 6182
+    },
+    {
+      "file": "014.jpg",
+      "atMs": 6548
+    },
+    {
+      "file": "015.jpg",
+      "atMs": 7852
+    },
+    {
+      "file": "016.jpg",
+      "atMs": 8117
+    },
+    {
+      "file": "017.jpg",
+      "atMs": 8297
+    }
+  ]
+}

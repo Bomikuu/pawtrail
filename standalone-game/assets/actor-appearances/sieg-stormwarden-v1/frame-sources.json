@@ -1,0 +1,992 @@
+[
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-neutral-rest.png",
+    "sourceSha256": "0eeee59de008af95b95cd00854f198c93f8cf1826b2562b22c2e1400ce2d249d",
+    "completeFrameIds": [
+      0,
+      1
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-neutral-half.png",
+    "sourceSha256": "1f50525f8c085ca99cc381676669741e5ef74d5d2a857d254bd3c2389a9e8960",
+    "completeFrameIds": [
+      2,
+      2
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-neutral-closed.png",
+    "sourceSha256": "e0dad51d25a6aff1f11152aa25f36f36a804c85915e0ac719531ab0059ec4863",
+    "completeFrameIds": [
+      3,
+      3
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-neutral-small.png",
+    "sourceSha256": "b20b7fb969bc8a4bafcd4e57fab8b95288a922409765ad47d517377d8f8698a6",
+    "completeFrameIds": [
+      4,
+      4
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "neutral",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-neutral-open.png",
+    "sourceSha256": "78b2e70974ec19370814ce679c062e799649cedfad0d6121692063483449f63e",
+    "completeFrameIds": [
+      5,
+      5
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-smile-rest.png",
+    "sourceSha256": "e4e344bd1b54bcffab41a141393e7ed5491e9129c0ec6524cf88d1a49c300ed8",
+    "completeFrameIds": [
+      6,
+      7
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-smile-half.png",
+    "sourceSha256": "db2f0a4c4876e1db5d55c92eaa7762777e2cadaa9309fcf72f5eefdc6aeeb92b",
+    "completeFrameIds": [
+      8,
+      8
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-smile-closed.png",
+    "sourceSha256": "d48c1250e2d8273d1cbe04ae7ee7d7c937bafe1eb0f603daf05d857c0ea9871c",
+    "completeFrameIds": [
+      9,
+      9
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-smile-small.png",
+    "sourceSha256": "e0b1ad5f8b7e12ed51de9db66652444ee5af78c27eeba783773c4e9f55100a67",
+    "completeFrameIds": [
+      10,
+      10
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "smile",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-smile-open.png",
+    "sourceSha256": "6afef06a03fdf3eccd565469c2847db1a1b65b47d17296aab9dceee70550fcaa",
+    "completeFrameIds": [
+      11,
+      11
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-happy-rest.png",
+    "sourceSha256": "38defc066cc2232e55adb0e15ad4cac9dfaf37b5192a2f4239be35b22246e2b5",
+    "completeFrameIds": [
+      12,
+      13
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-happy-half.png",
+    "sourceSha256": "615c25a4d73932d67bdc4c8da0b36df1efa78232538d869c8640bb09b489c2aa",
+    "completeFrameIds": [
+      14,
+      14
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-happy-closed.png",
+    "sourceSha256": "085e2b89b1cc9823d87a643273a0adf5d55589422d6043f6ea4053ca2f748a6b",
+    "completeFrameIds": [
+      15,
+      15
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-happy-small.png",
+    "sourceSha256": "91af084405948d6d62e7dcd40483934be523258f78741c1fd2cde73c78f33325",
+    "completeFrameIds": [
+      16,
+      16
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "happy",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-happy-open.png",
+    "sourceSha256": "6350ad82a575a25940c173cdf106e436c45abeafbc7e59e5259b9a93f8f31ff8",
+    "completeFrameIds": [
+      17,
+      17
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-sad-rest.png",
+    "sourceSha256": "02e3ff8011c664f16b9ed58f7fd06e4b8a171d754307311120f4baa8fbc5062b",
+    "completeFrameIds": [
+      18,
+      19
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-sad-half.png",
+    "sourceSha256": "62786c0fd719b1592e25cf15f3b7f30cbc5e9b1d3f1b90ba5b1d53b52414b0f9",
+    "completeFrameIds": [
+      20,
+      20
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-sad-closed.png",
+    "sourceSha256": "dd4dad2ebb0f52cdf9afdb7feea377f0961a9397056596f2b5e4ce722a0c93b0",
+    "completeFrameIds": [
+      21,
+      21
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-sad-small.png",
+    "sourceSha256": "75b1484cc08621fc0a1693cf6257a4bea15925ec9d0fd88e2233c93bb77304c3",
+    "completeFrameIds": [
+      22,
+      22
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "sad",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-sad-open.png",
+    "sourceSha256": "cf28408f108422b21915729c51cbaaafbe4f69c8efa281f91e63b1037a6652fd",
+    "completeFrameIds": [
+      23,
+      23
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-angry-rest.png",
+    "sourceSha256": "e592fd2fdead074a1c5f2199331ff70cba498815bbe89fff1595286fe073545d",
+    "completeFrameIds": [
+      24,
+      25
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-angry-half.png",
+    "sourceSha256": "eb4271ed926f9f993d3a09b0a8d0667683e65e92d61f8b6fa23f8ab0fad7f51b",
+    "completeFrameIds": [
+      26,
+      26
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-angry-closed.png",
+    "sourceSha256": "026c19cd228e8e9ef9448da6f6c5177b428f8661db9c8fbfc5e19573d36df9f1",
+    "completeFrameIds": [
+      27,
+      27
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-angry-small.png",
+    "sourceSha256": "4ea1d612858f5b6b995f693e5ea8c63c4cf1307212d65d87c0f148e552664604",
+    "completeFrameIds": [
+      28,
+      28
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "angry",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-angry-open.png",
+    "sourceSha256": "c5355d70cac0cea83712e38fcb5861822f57c3afd3e206f99bcf74ccb779660a",
+    "completeFrameIds": [
+      29,
+      29
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-surprised-rest.png",
+    "sourceSha256": "6511ab6fcca496d93d5a5ae65b6fa9a93200b88cb03a7978c4bbde08940010d2",
+    "completeFrameIds": [
+      30,
+      31
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-surprised-half.png",
+    "sourceSha256": "9f7a814f68729d26a06ec65ee687840f2c9cf40a51e3d0a581aec3e085d6b9cc",
+    "completeFrameIds": [
+      32,
+      32
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-surprised-closed.png",
+    "sourceSha256": "1ce3bfe46c193f7dd2b75031b046d22925beffb7f072170ef8903aa7df85ba74",
+    "completeFrameIds": [
+      33,
+      33
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-surprised-small.png",
+    "sourceSha256": "2ff4e63408141d49b604fe63631975cc5a7f2650d08171de7c8de1bfc4279a16",
+    "completeFrameIds": [
+      34,
+      34
+    ]
+  },
+  {
+    "pose": "front-pout",
+    "emotion": "surprised",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/front-pout-surprised-open.png",
+    "sourceSha256": "65f0aa3d9d75ef8ba9ec21108de74a12ae00c076429a25107bfff26f1617eac3",
+    "completeFrameIds": [
+      35,
+      35
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-neutral-rest.png",
+    "sourceSha256": "2db73c4ceb12a06b49d7fd57327e2e2006a382854cc798e62da60fcbae207e83",
+    "completeFrameIds": [
+      36,
+      37
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-neutral-half.png",
+    "sourceSha256": "dd022004219423bab4bbdb36e3329cb001734602f48a53ec0daf5c40192b7b2d",
+    "completeFrameIds": [
+      38,
+      38
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-neutral-closed.png",
+    "sourceSha256": "7304a8fd53cb80111159b025d6bdca3d2b7967e1f2f3ebc4fc5b24121b4fbc7d",
+    "completeFrameIds": [
+      39,
+      39
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-neutral-small.png",
+    "sourceSha256": "3e561015bdb89256b6106494545b0108d6806a040d9773bbe1f5439544415b5e",
+    "completeFrameIds": [
+      40,
+      40
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "neutral",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-neutral-open.png",
+    "sourceSha256": "7e7d1a569cc5786bbfb1fc710fbae834a4b3ea958973ae52564e0cb14c5472af",
+    "completeFrameIds": [
+      41,
+      41
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-smile-rest.png",
+    "sourceSha256": "abab445c54b41279f415fa6150d4c1e1d4c278c781a3cbc74ffa077dcd0d195f",
+    "completeFrameIds": [
+      42,
+      43
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-smile-half.png",
+    "sourceSha256": "32bc0ddf5bc4cc41f7f626a80db85cb3f552eadff9d1003b5908cd00edad9b93",
+    "completeFrameIds": [
+      44,
+      44
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-smile-closed.png",
+    "sourceSha256": "0fa4ea2551b205f77d80b88060679d52c4d5209c5c9d887f6e379b3e14e47dbe",
+    "completeFrameIds": [
+      45,
+      45
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-smile-small.png",
+    "sourceSha256": "b83f05475d813f9e2e3af1b88b651dcb355225628ed0e852f0f334b616a4fa0c",
+    "completeFrameIds": [
+      46,
+      46
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "smile",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-smile-open.png",
+    "sourceSha256": "d484d28f37458750758dcd991b456b789faaeab47269acdc52c7ba0f469b2c72",
+    "completeFrameIds": [
+      47,
+      47
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-happy-rest.png",
+    "sourceSha256": "4063ce2de27127aa7da70e177becc29ebfc1f4bb59c1c41ab1c4c9a718b46870",
+    "completeFrameIds": [
+      48,
+      49
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-happy-half.png",
+    "sourceSha256": "81c11745a5d568a828a9d548f415c39fcad4afd7c370c17aa1e979a6a5c19906",
+    "completeFrameIds": [
+      50,
+      50
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-happy-closed.png",
+    "sourceSha256": "d5957d130ed856df7bedf1f49d482bde28450d395f7a87b33b741d1090c828e9",
+    "completeFrameIds": [
+      51,
+      51
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-happy-small.png",
+    "sourceSha256": "343ba00d86ab4904120d13c3a36f5a1b1f4b15aa351cfd8a4780d1cd4d8a4353",
+    "completeFrameIds": [
+      52,
+      52
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "happy",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-happy-open.png",
+    "sourceSha256": "16e395a937f974c8ba2d50fba8b81f50e115d288b974df80558d52cb75a53cb3",
+    "completeFrameIds": [
+      53,
+      53
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-sad-rest.png",
+    "sourceSha256": "0e734147c0c15f06395308e0454e186bb604c1be73cf1413028bfcc1aad0af85",
+    "completeFrameIds": [
+      54,
+      55
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-sad-half.png",
+    "sourceSha256": "192bd1ae4a6830cb9fd67d78fd85e1d0c95586b1928adbe3ab09dfbb441d4ba9",
+    "completeFrameIds": [
+      56,
+      56
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-sad-closed.png",
+    "sourceSha256": "e0e5418834e0c78a6c1c883e9abfcb70476e2e92e58f758beea235a2134e66a4",
+    "completeFrameIds": [
+      57,
+      57
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-sad-small.png",
+    "sourceSha256": "5dfac96a0319fa6263f503852a954837e1bfb1825957f8e6c5296e271c28d348",
+    "completeFrameIds": [
+      58,
+      58
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "sad",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-sad-open.png",
+    "sourceSha256": "fa13cd334708899b75bde5110bc9253e1cd6d9a29ba3d2b63109b1b8dd312c36",
+    "completeFrameIds": [
+      59,
+      59
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-angry-rest.png",
+    "sourceSha256": "efc9ef1422d339ed1939e7ed0ddc60cfa677b36d7167dedcbf78d93e8af09924",
+    "completeFrameIds": [
+      60,
+      61
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-angry-half.png",
+    "sourceSha256": "f6656297037d47c7e43a9651d7b7c24b2cce0455c998ecb1527b6db3dbaad499",
+    "completeFrameIds": [
+      62,
+      62
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-angry-closed.png",
+    "sourceSha256": "e1a0f09021e3e8f43e98eac94652458e747e147d5013e4a52303d95b0ae28367",
+    "completeFrameIds": [
+      63,
+      63
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-angry-small.png",
+    "sourceSha256": "326eda541f49ac4b8e49711c50d425ee189a6002c62b83202f6f8a0e59b839cd",
+    "completeFrameIds": [
+      64,
+      64
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "angry",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-angry-open.png",
+    "sourceSha256": "4e596c2619c38413700b736370a43956a2e6e49f96a4b5a6036a67f67bf7dda1",
+    "completeFrameIds": [
+      65,
+      65
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-surprised-rest.png",
+    "sourceSha256": "4ae786cc9c87448daf96c74e493e8a52627312121e2ca9513ea819ce22c3a610",
+    "completeFrameIds": [
+      66,
+      67
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-surprised-half.png",
+    "sourceSha256": "2c5ddafed15899a80c5099364463754ddaea65a10358cb58528ce57e4372118c",
+    "completeFrameIds": [
+      68,
+      68
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-surprised-closed.png",
+    "sourceSha256": "22a186c526c928c212f29e793ab58439a6912e97531536374961565463efbed6",
+    "completeFrameIds": [
+      69,
+      69
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-surprised-small.png",
+    "sourceSha256": "67a414c7de578f7ca8ae926fdba68860152c4f4ebc84fd73772fdf84688ef573",
+    "completeFrameIds": [
+      70,
+      70
+    ]
+  },
+  {
+    "pose": "three-quarter-left",
+    "emotion": "surprised",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/three-quarter-left-surprised-open.png",
+    "sourceSha256": "051fbfcddce6510ca5e440402598a8775bf3f890215bd6c3a98cd9273c2aad0c",
+    "completeFrameIds": [
+      71,
+      71
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-neutral-rest.png",
+    "sourceSha256": "18d1d5753668202e85348737a946e3af308e440949945c885122ee5009c82e48",
+    "completeFrameIds": [
+      72,
+      73
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-neutral-half.png",
+    "sourceSha256": "ab9c6cc1de7647e2efa949fec47c81b2f3c0701c53b773b0ae4ca84272a8fff1",
+    "completeFrameIds": [
+      74,
+      74
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-neutral-closed.png",
+    "sourceSha256": "4486421eb80db7da7d0d336d23971bc0425bb0f1433d158854e95c8c1ab55344",
+    "completeFrameIds": [
+      75,
+      75
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-neutral-small.png",
+    "sourceSha256": "23dc4a55e32205ae0c1f750457140f7be03bdd69acfaf1bf73e5b8a88c0a1e36",
+    "completeFrameIds": [
+      76,
+      76
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "neutral",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-neutral-open.png",
+    "sourceSha256": "5dcc000c678e89d705b01c8e9580a51832bb4bb393f11b0238b198226705dfc1",
+    "completeFrameIds": [
+      77,
+      77
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-smile-rest.png",
+    "sourceSha256": "a9f99c82caee71b0c8f70d277a3577667325f298f1d0d7b35f2d01b9e74977e2",
+    "completeFrameIds": [
+      78,
+      79
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-smile-half.png",
+    "sourceSha256": "0b3f0bff18a4b1003863cae8fafe8769054244dc58b84dc9d0e08a1ac157614c",
+    "completeFrameIds": [
+      80,
+      80
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-smile-closed.png",
+    "sourceSha256": "826442b7399b78a05e203f09d06125319da83ccc4d5c978941b7984da49c0554",
+    "completeFrameIds": [
+      81,
+      81
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-smile-small.png",
+    "sourceSha256": "f33b9b8ce7cc04743054dbf8672e15af8d07f62d814c67af9bd40ae96b46bf5a",
+    "completeFrameIds": [
+      82,
+      82
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "smile",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-smile-open.png",
+    "sourceSha256": "ed3e725fc6fab4540a94626997fcfddf1823ae0765d84fdf8d8398e9ce6e0789",
+    "completeFrameIds": [
+      83,
+      83
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-happy-rest.png",
+    "sourceSha256": "06d41a7f8b4350776bec0df199060bcaa70158534e60ceac43392857c9c4e144",
+    "completeFrameIds": [
+      84,
+      85
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-happy-half.png",
+    "sourceSha256": "dcb841aac51917a8e60728123d3d39b045b0ec6da872b723c365e615c5b5f2a9",
+    "completeFrameIds": [
+      86,
+      86
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-happy-closed.png",
+    "sourceSha256": "1715df3b95a30892b39c1de0174a23b4380a59cfdacbcadec03aee25e737df4a",
+    "completeFrameIds": [
+      87,
+      87
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-happy-small.png",
+    "sourceSha256": "13443d6c585630d205c910f7a8d198a4068a1d8b3314417a15bfef82f85fd86f",
+    "completeFrameIds": [
+      88,
+      88
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "happy",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-happy-open.png",
+    "sourceSha256": "b785b36bb316044cf437d72b2e0057537eb7699f05531b6d8c2c512d4cc0ffdf",
+    "completeFrameIds": [
+      89,
+      89
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-sad-rest.png",
+    "sourceSha256": "428054f8d469dd8def15b813cea2f3126b56a4fa247693730f092c0017a26275",
+    "completeFrameIds": [
+      90,
+      91
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-sad-half.png",
+    "sourceSha256": "16b026d4b8f9f423499668d278e76a93b8729024f499e0da089de002427251fa",
+    "completeFrameIds": [
+      92,
+      92
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-sad-closed.png",
+    "sourceSha256": "b3a01daec3b9ae99b4f961ad0fcfaac7114fd882f127f8842e9f68172dcc8ae2",
+    "completeFrameIds": [
+      93,
+      93
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-sad-small.png",
+    "sourceSha256": "413276d64fd77dc317a80db3cf53326f652a7b4bb79cb4517eb93853d6deb278",
+    "completeFrameIds": [
+      94,
+      94
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "sad",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-sad-open.png",
+    "sourceSha256": "fa1fb8a0c69c419b9890bcd7e18c3029ba85a82751600b5e092e25dcba5bcc23",
+    "completeFrameIds": [
+      95,
+      95
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-angry-rest.png",
+    "sourceSha256": "8c96c656c062a4a6f2d884781fabcba396a40802b547b0c21ea703e536d64bc5",
+    "completeFrameIds": [
+      96,
+      97
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-angry-half.png",
+    "sourceSha256": "fb968e63a26bf65f0dde9129923283cff3a5f3a16453e7f6ce82dda45ac14d91",
+    "completeFrameIds": [
+      98,
+      98
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-angry-closed.png",
+    "sourceSha256": "7f51cc4708d3ff6bffaafabcd8ece9a97d5237ad3641dca079c2f653183be952",
+    "completeFrameIds": [
+      99,
+      99
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-angry-small.png",
+    "sourceSha256": "c10b0f8f3b670ccda72ac6127cd3f44a74d578be0173d6e5075651fc1e8402dc",
+    "completeFrameIds": [
+      100,
+      100
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "angry",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-angry-open.png",
+    "sourceSha256": "2c4c860e942a33f51763e41e136cb21e2c07018d1a33114a4ac6b15f32b1254a",
+    "completeFrameIds": [
+      101,
+      101
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "rest",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-surprised-rest.png",
+    "sourceSha256": "fff6b8100b42ed33aed54b5a8ec233bf5c4150f5ce4b28072841bd5eb4d00afb",
+    "completeFrameIds": [
+      102,
+      103
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "half",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-surprised-half.png",
+    "sourceSha256": "9904a5ea1ba5a7c4e8937074a9924fb83924a39c646d9047c8ac9b4847573adc",
+    "completeFrameIds": [
+      104,
+      104
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "closed",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-surprised-closed.png",
+    "sourceSha256": "e2cf1688f045e0d62ed929da6b5e5a80506864378386cec0429499e471c7dc83",
+    "completeFrameIds": [
+      105,
+      105
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "small",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-surprised-small.png",
+    "sourceSha256": "ae4d09fb6175773c2b8600188e2ada056ce5c297f08d9a662e41a638ff8cbc70",
+    "completeFrameIds": [
+      106,
+      106
+    ]
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "emotion": "surprised",
+    "state": "open",
+    "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/native/head-tilt-smile-right-surprised-open.png",
+    "sourceSha256": "dda49f60b6b980284307b0dfcc7e215a80c1cf583c890ff42568a5434f182792",
+    "completeFrameIds": [
+      107,
+      107
+    ]
+  }
+]

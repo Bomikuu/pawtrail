@@ -1,0 +1,202 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "Undergrid",
+  "width": 40,
+  "height": 28,
+  "baseTile": "tile:stone",
+  "groundArt": "f01:undergrid-ground",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "objects": [
+    {
+      "id": "return-market",
+      "asset": "f01:lift",
+      "x": 105,
+      "y": 790,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "skybridge-lift",
+      "asset": "f01:lift",
+      "x": 1130,
+      "y": 210,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pump-main",
+      "asset": "f01:pump-array",
+      "x": 220,
+      "y": 485,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "reservoir",
+      "asset": "f01:coolant-reservoir",
+      "x": 215,
+      "y": 635,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "coolant-reservoir",
+      "asset": "f01:valve",
+      "x": 365,
+      "y": 650,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "p02",
+      "asset": "f01:relay",
+      "x": 930,
+      "y": 280,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "relay-west",
+      "asset": "f01:supply",
+      "x": 800,
+      "y": 280,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "relay-east",
+      "asset": "f01:supply",
+      "x": 1050,
+      "y": 365,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "undergrid-plan",
+      "asset": "f01:planning",
+      "x": 120,
+      "y": 700,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pipe-back-0",
+      "asset": "f01:pipe-wall",
+      "x": 180,
+      "y": 100,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pipe-back-1",
+      "asset": "f01:pipe-wall",
+      "x": 500,
+      "y": 100,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pipe-back-2",
+      "asset": "f01:pipe-wall",
+      "x": 820,
+      "y": 100,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pipe-back-3",
+      "asset": "f01:pipe-wall",
+      "x": 1140,
+      "y": 100,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pipe-service",
+      "asset": "f01:pipe-wall",
+      "x": 720,
+      "y": 680,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "utility-hvac",
+      "asset": "f01:hvac",
+      "x": 470,
+      "y": 520,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pump-central",
+      "asset": "f01:pump-array",
+      "x": 730,
+      "y": 580,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "pump-spare",
+      "asset": "f01:pump-array",
+      "x": 580,
+      "y": 230,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ],
+  "walkable": [
+    [
+      22,
+      35
+    ],
+    [
+      1255,
+      35
+    ],
+    [
+      1255,
+      866
+    ],
+    [
+      22,
+      866
+    ]
+  ]
+}

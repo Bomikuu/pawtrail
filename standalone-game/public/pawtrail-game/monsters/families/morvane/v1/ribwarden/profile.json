@@ -1,0 +1,71 @@
+{
+  "familyId": "morvane",
+  "parentBoss": "morvane-ossuary-serpent",
+  "id": "ribwarden",
+  "name": "Ribwarden",
+  "title": "Keeper of the Lesser Ossuary",
+  "tier": "mini-boss",
+  "row": 0,
+  "enragedRow": 1,
+  "maxHp": 1800,
+  "hpPerBar": 300,
+  "enrageAt": 0.3,
+  "height": 2.7,
+  "radius": 0.85,
+  "speed": 1.65,
+  "hover": 0,
+  "armor": 0.8,
+  "weakMultiplier": 1.5,
+  "biography": "An armored ossuary crawler keeps a crown of old bones balanced over its segmented ribs. Its heavy bladed arms echo Morvane’s long silhouette.",
+  "weakness": "The skull binding is exposed when the blade arms recover.",
+  "temperament": "Territorial guardian",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "bone-cleave",
+      "name": "Bone Cleave",
+      "shape": "sector",
+      "outer": 2.9,
+      "inner": 0,
+      "angle": 145,
+      "target": "self",
+      "damage": 23,
+      "windup": 1150,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 5900,
+      "description": "The paired blade arms rake a wide sector. Get behind the crowned skull."
+    },
+    {
+      "id": "marrow-eruption",
+      "name": "Marrow Eruption",
+      "shape": "circle",
+      "outer": 1.8,
+      "inner": 0,
+      "angle": 105,
+      "target": "player",
+      "damage": 25,
+      "windup": 1400,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 8200,
+      "description": "A patch of bone spikes locks under you. Leave its outline before the eruption."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/ribwarden-model.png",
+    "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+    "phase": "Distinct form observed via explicitly labelled phase rehearsal; natural threshold crossing not reviewed.",
+    "automatedTests": false,
+    "build": false
+  }
+}

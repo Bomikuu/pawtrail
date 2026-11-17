@@ -1,0 +1,59 @@
+{
+  "stage": "portraits",
+  "ready": true,
+  "inputs": [
+    {
+      "id": "portrait-0",
+      "sha256": "7bdcad174551633525d21adf570a30a2a4a510809b8784dc9fe07f9fcb28141f",
+      "bytes": 2522307,
+      "files": 1,
+      "size": [
+        1145,
+        1374
+      ],
+      "contentBounds": [
+        27,
+        0,
+        1115,
+        1374
+      ],
+      "regions": {}
+    },
+    {
+      "id": "portrait-1",
+      "sha256": "9de4fc84e024a629a351205045b09508122e85081e3bb04b82710b4bcdc6cae6",
+      "bytes": 2650897,
+      "files": 1,
+      "size": [
+        1145,
+        1374
+      ],
+      "contentBounds": [
+        0,
+        0,
+        1129,
+        1374
+      ],
+      "regions": {}
+    },
+    {
+      "id": "portrait-2",
+      "sha256": "9dc84a3bde723ea4706e4b0b076b288aea82c0d5b04b42acea23d89e7e4bb206",
+      "bytes": 2608410,
+      "files": 1,
+      "size": [
+        1145,
+        1374
+      ],
+      "contentBounds": [
+        0,
+        0,
+        1115,
+        1374
+      ],
+      "regions": {}
+    }
+  ],
+  "errors": [],
+  "at": "2026-11-15T08:28:49.117448+00:00"
+}

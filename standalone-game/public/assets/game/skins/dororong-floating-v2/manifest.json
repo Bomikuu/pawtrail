@@ -1,0 +1,174 @@
+{
+  "id": "dororong-floating",
+  "version": 2,
+  "representation": "joint-attached-directional-cutouts",
+  "generator": "built-in image_gen",
+  "reference": "source/reference.png",
+  "palette": [
+    "#2b2028",
+    "#4b3542",
+    "#815a70",
+    "#a27890",
+    "#c38fab",
+    "#e6b3d0",
+    "#f4cbe3",
+    "#fffdfb",
+    "#efe9ee",
+    "#d5cbd5",
+    "#bab0bd",
+    "#f7eef3",
+    "#fffefd",
+    "#19161a",
+    "#dedadd"
+  ],
+  "surfaces": {
+    "layer-head-front": {
+      "file": "layer-head-front.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 6077
+    },
+    "layer-garment-front": {
+      "file": "layer-garment-front.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1766
+    },
+    "layer-head-right": {
+      "file": "layer-head-right.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 4946
+    },
+    "layer-garment-right": {
+      "file": "layer-garment-right.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1861
+    },
+    "layer-head-back": {
+      "file": "layer-head-back.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 3614
+    },
+    "layer-garment-back": {
+      "file": "layer-garment-back.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1593
+    },
+    "layer-head-left": {
+      "file": "layer-head-left.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 4351
+    },
+    "layer-garment-left": {
+      "file": "layer-garment-left.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1821
+    },
+    "layer-shoulder-left-front": {
+      "file": "layer-shoulder-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 453
+    },
+    "layer-elbow-left-front": {
+      "file": "layer-elbow-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 660
+    },
+    "layer-hip-left-front": {
+      "file": "layer-hip-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 548
+    },
+    "layer-knee-left-front": {
+      "file": "layer-knee-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 667
+    },
+    "layer-shoulder-left-back": {
+      "file": "layer-shoulder-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 438
+    },
+    "layer-elbow-left-back": {
+      "file": "layer-elbow-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 642
+    },
+    "layer-hip-left-back": {
+      "file": "layer-hip-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 612
+    },
+    "layer-knee-left-back": {
+      "file": "layer-knee-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 616
+    },
+    "layer-shoulder-right-front": {
+      "file": "layer-shoulder-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 471
+    },
+    "layer-elbow-right-front": {
+      "file": "layer-elbow-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 654
+    },
+    "layer-hip-right-front": {
+      "file": "layer-hip-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 549
+    },
+    "layer-knee-right-front": {
+      "file": "layer-knee-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 659
+    },
+    "layer-shoulder-right-back": {
+      "file": "layer-shoulder-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 450
+    },
+    "layer-elbow-right-back": {
+      "file": "layer-elbow-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 648
+    },
+    "layer-hip-right-back": {
+      "file": "layer-hip-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 612
+    },
+    "layer-knee-right-back": {
+      "file": "layer-knee-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 621
+    }
+  },
+  "review": {
+    "source_art": "visually inspected",
+    "browser_actions": "pending; not authorized by current workspace rules"
+  }
+}

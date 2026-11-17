@@ -1,0 +1,100 @@
+{
+  "id": "care-grove-v4",
+  "startedAt": "2026-11-15T09:42:51.941702+00:00",
+  "request": "Lessen darkness and boldness; lighter palette and finer softer outlines",
+  "phases": {
+    "art": {
+      "status": "complete",
+      "startedAt": "2026-11-15T09:42:51.941702+00:00",
+      "completedAt": "2026-11-15T09:46:23.345Z"
+    },
+    "integration": {
+      "status": "complete",
+      "completedAt": "2026-11-15T09:46:40.144945+00:00"
+    },
+    "nativeReview": {
+      "status": "complete",
+      "completedAt": "2026-11-15T09:47:04.081307+00:00",
+      "evidence": "assets/maps/care-grove-v4/native-overview.png",
+      "observations": [
+        "Palette is lighter and near-black outlines reduced to finer warm brown edges",
+        "Grass/path transitions and cobble cracks have softer contrast",
+        "Continuous ground remains free of square seams; props composite cleanly on alpha",
+        "Existing layout, native geometry and furniture interactions retained; gameplay not retested"
+      ]
+    },
+    "liveReview": {
+      "status": "pending",
+      "reason": "No automated checks/tests/builds or browser verification requested"
+    },
+    "nativeExport": {
+      "status": "complete",
+      "completedAt": "2026-11-15T09:46:40.144945+00:00",
+      "evidence": "assets/maps/care-grove-v4/native-overview.png"
+    }
+  },
+  "preserve": [
+    "Continuous ground and route layout",
+    "Native sizes, anchors, footprints and placement IDs",
+    "Current furniture interactions and local save behavior",
+    "Prior art revisions"
+  ],
+  "images": [
+    {
+      "asset": "bareTree",
+      "startedAt": "2026-11-15T09:43:01.375Z",
+      "completedAt": "2026-11-15T09:46:23.345Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-0cca1808-8b15-4c81-b935-10c7e18a6f4e.png",
+      "editTarget": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v3/sources/bareTree.png",
+      "softReference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v2/sources/bareTree.png",
+      "imageServiceSeconds": 201.97
+    },
+    {
+      "asset": "bush",
+      "startedAt": "2026-11-15T09:43:01.375Z",
+      "completedAt": "2026-11-15T09:45:43.750Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-fa4ab73d-b586-4f33-adf1-999b580a8223.png",
+      "editTarget": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v3/sources/bush.png",
+      "softReference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v2/sources/bush.png",
+      "imageServiceSeconds": 162.375
+    },
+    {
+      "asset": "cliff",
+      "startedAt": "2026-11-15T09:43:01.375Z",
+      "completedAt": "2026-11-15T09:44:12.495Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-9e76f244-e7e8-494e-85d2-2b48507bc96a.png",
+      "editTarget": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v3/sources/cliff.png",
+      "softReference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v2/sources/cliff.png",
+      "imageServiceSeconds": 71.12
+    },
+    {
+      "asset": "ground",
+      "startedAt": "2026-11-15T09:43:01.375Z",
+      "completedAt": "2026-11-15T09:45:19.805Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-a97d2677-9084-4344-9014-33fd39ce6ca8.png",
+      "editTarget": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v3/sources/ground.png",
+      "softReference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v2/sources/ground.png",
+      "imageServiceSeconds": 138.43
+    },
+    {
+      "asset": "hall",
+      "startedAt": "2026-11-15T09:43:01.375Z",
+      "completedAt": "2026-11-15T09:43:34.134Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-5fc4c2ec-ef6b-44e2-94f1-903058f8aa57.png",
+      "editTarget": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v3/sources/hall.png",
+      "softReference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v2/sources/hall.png",
+      "imageServiceSeconds": 32.759
+    },
+    {
+      "asset": "pine",
+      "startedAt": "2026-11-15T09:43:01.375Z",
+      "completedAt": "2026-11-15T09:44:46.301Z",
+      "generatedSource": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-e0c1a8e0-9dde-40dd-8951-1ac57f2ea2ad.png",
+      "editTarget": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v3/sources/pine.png",
+      "softReference": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/maps/care-grove-v2/sources/pine.png",
+      "imageServiceSeconds": 104.926
+    }
+  ],
+  "entry": "/play?preview=stage&map=care-grove",
+  "runtimeArt": "public/pawtrail-game/map-art/care-grove-v4/"
+}

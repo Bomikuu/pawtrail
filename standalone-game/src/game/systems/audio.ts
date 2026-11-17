@@ -40,7 +40,7 @@ function load() {
     return { ...DEFAULT_AUDIO }
   }
 }
-/** Original procedural score and sounds: no external recordings or silent placeholders. */
+/** Shared mixer for the procedural world score, action sounds and authored clips. */
 class AudioManager {
   settings = load()
   private attenuation = 1
@@ -62,6 +62,31 @@ class AudioManager {
   private rain: { source: AudioBufferSourceNode; gain: GainNode } | null = null
   private loadingRain = false
   private actionVoices = new Set<ActionSoundVoice>()
+  private preferenceListeners = new Set<() => void>()
+  private speech?: AbortController
+  async playSpeech(url: string, volume: number, signal: AbortSignal,
+    lifecycle: { onStart?: () => void; onEnd?: () => void }) {
+    this.speech?.abort()
+    const speech = new AbortController()
+    this.speech = speech
+    const cancel = () => speech.abort()
+    signal.addEventListener('abort', cancel, { once: true })
+    if (signal.aborted) speech.abort()
+    const release = () => {
+      signal.removeEventListener('abort', cancel)
+      if (this.speech === speech) this.speech = undefined
+    }
+    const result = await this.playSample(url, volume, false, 0, speech.signal, {
+      ...lifecycle, immediateCancel: true,
+      onEnd: () => { release(); lifecycle.onEnd?.() },
+    })
+    if (!result) release()
+    return result
+  }
+  subscribePreferences(listener: () => void) {
+    this.preferenceListeners.add(listener)
+    return () => { this.preferenceListeners.delete(listener) }
+  }
   itemEffect(kind:ItemSound){if(!this.context||this.context.state!=='running'||!this.channels.effects)return()=>{};return playItemSound(this.context,this.channels.effects,kind)}
   createActionVoice(sound: ActionSound, cat = false) {
     if (!this.context || this.context.state !== 'running' || !this.channels.effects || this.actionVoices.size >= 8) return
@@ -70,23 +95,34 @@ class AudioManager {
     this.actionVoices.add(voice)
     return voice
   }
-  async playSample(url: string, volume = .4, ambient = false, distance = 0, signal?: AbortSignal) {
+  async playSample(url: string, volume = .4, ambient = false, distance = 0, signal?: AbortSignal,
+    lifecycle?: { onStart?: () => void; onEnd?: () => void; immediateCancel?: boolean }) {
     if (signal?.aborted || !this.context || this.context.state !== 'running' || this.voices >= 2) return
     const ctx = this.context
     this.voices++
+    let counted = true
+    const releaseCount = () => {
+      if(!counted)return
+      counted=false
+      if(this.context===ctx)this.voices=Math.max(0,this.voices-1)
+    }
     try {
       if (!this.clips.has(url)) this.clips.set(url, fetch(url).then((r) => { if (!r.ok) throw new Error('Audio unavailable'); return r.arrayBuffer() }).then((data) => ctx.decodeAudioData(data)))
       const buffer = await this.clips.get(url)!
-      if (signal?.aborted || this.context !== ctx || ctx.state !== 'running') { this.voices=Math.max(0,this.voices-1);return }
+      if (signal?.aborted || this.context !== ctx || ctx.state !== 'running') { releaseCount();return }
       const source = ctx.createBufferSource(), gain = ctx.createGain()
       source.buffer = buffer; gain.gain.value = volume * Math.max(0, 1-distance/300)
       source.connect(gain);gain.connect(this.channels[ambient ? 'ambient' : 'effects']!)
-      const cancel = () => { gain.gain.setTargetAtTime(0,ctx.currentTime,.02);try{source.stop(ctx.currentTime+.09)}catch{} }
-      source.onended = () => { signal?.removeEventListener('abort',cancel);source.disconnect();gain.disconnect();this.voices=Math.max(0,this.voices-1) }
+      const cancel = () => {
+        if(lifecycle?.immediateCancel){gain.gain.setValueAtTime(0,ctx.currentTime);releaseCount()}
+        else gain.gain.setTargetAtTime(0,ctx.currentTime,.02)
+        try{source.stop(lifecycle?.immediateCancel?ctx.currentTime:ctx.currentTime+.09)}catch{}
+      }
+      source.onended = () => { signal?.removeEventListener('abort',cancel);source.disconnect();gain.disconnect();releaseCount();lifecycle?.onEnd?.() }
       signal?.addEventListener('abort',cancel,{once:true})
-      source.start();return true
+      source.start();lifecycle?.onStart?.();return true
     } catch { this.clips.delete(url) }
-    this.voices=Math.max(0,this.voices-1)
+    releaseCount()
     return false
   }
   async setRain(intensity: number, indoors: boolean) {
@@ -132,10 +168,12 @@ class AudioManager {
   }
   update(patch: Partial<AudioPreferences>) {
     this.settings = audioPreferences({ ...this.settings, ...patch })
+    if(this.settings.muted||!this.settings.master||!this.settings.effects)this.speech?.abort()
     try {
       localStorage.setItem('pawtrail:audio:v1', JSON.stringify(this.settings))
     } catch {}
     this.apply()
+    for (const listener of this.preferenceListeners) listener()
     return { ...this.settings }
   }
   private apply() {
@@ -353,6 +391,7 @@ class AudioManager {
     )
   }
   dispose() {
+    this.speech?.abort();this.speech=undefined
     for (const voice of this.actionVoices) voice.stop(true)
     this.actionVoices.clear()
     this.rain?.source.stop();this.rain=null;this.loadingRain=false;this.clips.clear();this.voices=0

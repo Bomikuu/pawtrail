@@ -1,4 +1,5 @@
 import {getSavedCharacter} from './creator/library';
+import {gameVoice} from './runtime/game-voice';
 import type {
   Activity,
   DialogueChoice,
@@ -94,6 +95,7 @@ export function chooseCharacter(appearance: CharacterId) {
     else localStorage.removeItem("pawtrail:appearance:pending");
   } catch {}
   if (!isCharacterId(appearance)) return;
+  gameVoice.action(appearance,'idle');
   persist({ ...snapshot.progress, appearance });
   send({ type: "appearance" });
 }
@@ -232,6 +234,7 @@ export function accept(id: string, fromNpc?: string) {
     p = advanceQuests(p, { type: "talk", target: fromNpc });
   persist(reconcileFacts(p));
   publish({ notice: "Quest accepted. Your journal has the next step." });
+  void gameVoice.speak(p.appearance ?? 'rescuer','encouragement','world');
 }
 export function claim(id: string) {
   const before = snapshot.progress,
@@ -242,6 +245,7 @@ export function claim(id: string) {
     achievements(log(p, "quest", "Quest completed: " + q.title, q.reward)),
   );
   publish({ notice: `Quest completed! ${q.title} · +${q.reward} Kibble` });
+  void gameVoice.speak(p.appearance ?? 'rescuer','thanks','world');
   send({ type: "refresh" });
 }
 export function track(id: string) {
@@ -298,6 +302,7 @@ export function applyCare(
     log(p, action, text, CARE[action].reward, id),
   );
   publish({ notice: `${text}. +${CARE[action].reward} Kibble` });
+  if(['feed','water','pet','play','rescue'].includes(action))void gameVoice.speak(p.appearance ?? 'rescuer','encouragement','world');
   return true;
 }
 export function discover(id: string) {

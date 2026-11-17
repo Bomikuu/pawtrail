@@ -1,0 +1,38 @@
+{
+  "mode": "built-in image_gen for missing ground/two houses; approved existing scenery reused",
+  "prompts": "assets/maps/sampaguita-village-v1/prompts.json",
+  "newSourceHashes": {
+    "ground": "fb1b854f19bbfcb51b2af90e6c401d5ca8096012419d66ee9fa69a1ebed6ac34",
+    "workshop": "4ab30310e5d03d043a763552cc18ae827db771b69bd90047236b4c80778e3d9e",
+    "townhouse": "6ff995ec2160897da4fbe27a64b2080c034ebad7b92c293d3e1504ae910e8ffc"
+  },
+  "reusedRegistry": "src/game/stage-editor/grove-art.json",
+  "layout": "src/game/stage-editor/maps/sampaguita-village-v1.json",
+  "registry": "src/game/stage-editor/village-art.json",
+  "runtimeArt": "public/pawtrail-game/map-art/sampaguita-village-v1/",
+  "dependencies": [
+    "/assets/game/community/bench.png",
+    "/assets/game/community/feeding.png",
+    "/assets/game/community/lamp.png",
+    "/assets/game/community/pot.png",
+    "/assets/game/housing/furniture/flower-pot-complete-v1.png",
+    "/pawtrail-game/map-art/care-grove-v5/bush.png",
+    "/pawtrail-game/map-art/care-grove-v5/hall.png",
+    "/pawtrail-game/map-art/care-grove-v5/pine-small.png",
+    "/pawtrail-game/map-art/care-grove-v5/village-barrels.png",
+    "/pawtrail-game/map-art/care-grove-v5/village-cart.png",
+    "/pawtrail-game/map-art/care-grove-v5/village-house.png",
+    "/pawtrail-game/map-art/care-grove-v5/village-wall-low.png",
+    "/pawtrail-game/map-art/sampaguita-village-v1/ground.png",
+    "/pawtrail-game/map-art/sampaguita-village-v1/townhouse.png",
+    "/pawtrail-game/map-art/sampaguita-village-v1/workshop.png"
+  ],
+  "houseCount": 12,
+  "buildingCount": 13,
+  "objectCount": 64,
+  "nativeDimensions": [
+    1536,
+    1024
+  ],
+  "review": "Native artwork authoring only; gameplay verification not requested"
+}

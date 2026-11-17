@@ -1,0 +1,613 @@
+{
+  "version": 1,
+  "id": "bookshelf",
+  "revision": "ca53c9e43dfd",
+  "reference": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+  "source": "src/game/furniture/reference-timber.ts",
+  "definition": {
+    "id": "bookshelf",
+    "label": "Bookshelf",
+    "model": "bookshelf",
+    "reference": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+    "description": "Shallow timber bookcase with three rows of individual books and an inset plain rear.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "referenceFrame": {
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        58
+      ]
+    },
+    "styles": [
+      {
+        "id": "original",
+        "label": "Honey oak",
+        "fabric": "#e28c4b",
+        "light": "#ffd995",
+        "shade": "#805a36",
+        "pillow": "#f7dda3",
+        "wood": "#e28c4b"
+      },
+      {
+        "id": "walnut",
+        "label": "Walnut",
+        "fabric": "#8f5c3e",
+        "light": "#b9865a",
+        "shade": "#553b2b",
+        "pillow": "#f7dda3",
+        "wood": "#8f5c3e"
+      },
+      {
+        "id": "pale",
+        "label": "Pale oak",
+        "fabric": "#d7bf8f",
+        "light": "#f5e5c0",
+        "shade": "#99815d",
+        "pillow": "#f7dda3",
+        "wood": "#d7bf8f"
+      }
+    ],
+    "price": 79,
+    "construction": {
+      "seconds": 0,
+      "materials": []
+    }
+  },
+  "item": {
+    "id": "bookshelf",
+    "label": "Bookshelf",
+    "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-0.png",
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ],
+    "footprint": [
+      26,
+      93,
+      44,
+      6
+    ],
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "read",
+    "price": 79,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          26,
+          93,
+          44,
+          6
+        ]
+      ],
+      "placement": [
+        [
+          26,
+          93,
+          44,
+          6
+        ]
+      ],
+      "approaches": [
+        [
+          48,
+          104
+        ]
+      ],
+      "seats": [],
+      "surfaces": [],
+      "occlusion": "base",
+      "actions": [
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "indicatorHeight": 59,
+    "visibleBounds": [
+      26,
+      42,
+      44,
+      56
+    ],
+    "defaultStyle": "original",
+    "renderedViews": {
+      "0": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 59,
+        "footprint": [
+          26,
+          93,
+          44,
+          6
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              26,
+              93,
+              44,
+              6
+            ]
+          ],
+          "placement": [
+            [
+              26,
+              93,
+              44,
+              6
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              104
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          26,
+          42,
+          44,
+          56
+        ]
+      },
+      "90": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 61,
+        "footprint": [
+          41,
+          95,
+          14,
+          2
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              41,
+              95,
+              14,
+              2
+            ]
+          ],
+          "placement": [
+            [
+              41,
+              95,
+              14,
+              2
+            ]
+          ],
+          "approaches": [
+            [
+              27,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          40,
+          40,
+          16,
+          57
+        ]
+      },
+      "180": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 59,
+        "footprint": [
+          26,
+          93,
+          44,
+          6
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              26,
+              93,
+              44,
+              6
+            ]
+          ],
+          "placement": [
+            [
+              26,
+              93,
+              44,
+              6
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              88
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          26,
+          42,
+          44,
+          56
+        ]
+      },
+      "270": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 61,
+        "footprint": [
+          41,
+          95,
+          14,
+          2
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              41,
+              95,
+              14,
+              2
+            ]
+          ],
+          "placement": [
+            [
+              41,
+              95,
+              14,
+              2
+            ]
+          ],
+          "approaches": [
+            [
+              69,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          40,
+          40,
+          16,
+          57
+        ]
+      }
+    },
+    "styles": [
+      {
+        "id": "original",
+        "label": "Honey oak",
+        "color": "#e28c4b",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/original-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "walnut",
+        "label": "Walnut",
+        "color": "#8f5c3e",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/walnut-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "pale",
+        "label": "Pale oak",
+        "color": "#d7bf8f",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/bookshelf/ca53c9e43dfd/pale-270-front.png",
+            "motion": []
+          }
+        }
+      }
+    ]
+  },
+  "frame": {
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ]
+  },
+  "filter": "nearest",
+  "referenceStudy": {
+    "source": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+    "sha256": "522f435a39730eb294a8dfd52c71febbe88dec7096de5aad152e68254e5ccec3",
+    "representation": "Distinct closed structural parts with canonical front paint and reviewed side/rear paint; no full-object billboard.",
+    "render": {
+      "projection": "orthographic",
+      "nativeFrame": [
+        96,
+        112
+      ],
+      "nativeAnchor": [
+        48,
+        96
+      ],
+      "sourceAnchor": [
+        32,
+        58
+      ],
+      "camera": [
+        0,
+        34.5,
+        90
+      ],
+      "facingCalibration": {
+        "sidePitchDegrees": 2,
+        "blendPower": 1
+      },
+      "filter": "nearest",
+      "toneMapping": "none"
+    },
+    "turnaround": {
+      "sheet": "assets/furniture-studio/references/bookshelf/turnaround-v1.png",
+      "sha256": "f4cc6a5d060d60a353c2772c5ea069ee2739bb0f3f61569ca9021380dbcf5cb3",
+      "views": {
+        "0": {
+          "file": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+          "width": 64,
+          "height": 64,
+          "anchor": [
+            32,
+            58
+          ],
+          "label": "Original front · canonical"
+        },
+        "45": {
+          "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-45.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated front 3/4",
+          "cellBounds": [
+            97,
+            47,
+            406,
+            459
+          ],
+          "occupiedSize": [
+            44,
+            58
+          ],
+          "footBaseline": 99
+        },
+        "90": {
+          "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-90.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated left",
+          "cellBounds": [
+            191,
+            53,
+            321,
+            447
+          ],
+          "occupiedSize": [
+            18,
+            56
+          ],
+          "footBaseline": 97
+        },
+        "135": {
+          "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-135.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated rear 3/4",
+          "cellBounds": [
+            79,
+            45,
+            390,
+            463
+          ],
+          "occupiedSize": [
+            44,
+            59
+          ],
+          "footBaseline": 99
+        },
+        "180": {
+          "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-180.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated back",
+          "cellBounds": [
+            69,
+            53,
+            379,
+            447
+          ],
+          "occupiedSize": [
+            44,
+            56
+          ],
+          "footBaseline": 99
+        },
+        "270": {
+          "file": "/pawtrail-game/furniture-references/bookshelf/4054aeebc546/reference-270.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated right",
+          "cellBounds": [
+            224,
+            52,
+            352,
+            447
+          ],
+          "occupiedSize": [
+            18,
+            56
+          ],
+          "footBaseline": 97
+        }
+      },
+      "dimensions": {
+        "width": 44,
+        "depth": 14,
+        "height": 55.5
+      },
+      "projection": {
+        "sidePitchDegrees": 2,
+        "blendPower": 1
+      },
+      "review": {
+        "state": "explicit_yes",
+        "shownAt": "2026-11-10T14:17:31.076592+00:00",
+        "responseWindowSeconds": 60,
+        "default": "Proceed under the owner-authorized no-response default; not affirmative approval",
+        "exception": "Canonical front remains authoritative, including the table source height39 versus generated native front35.",
+        "resolvedAt": "2026-11-10T14:18:49.831522+00:00",
+        "startedUnderDefaultAt": "2026-11-10T14:18:49.831522+00:00",
+        "response": "Good enough — build these three",
+        "respondedAt": "2026-11-10T14:21:14.520876+00:00"
+      },
+      "reviewFacings": [
+        45,
+        135
+      ]
+    }
+  },
+  "note": "Reference-guided authored geometry; explicit projected contacts and native foreground layers."
+}

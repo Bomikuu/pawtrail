@@ -1,0 +1,58 @@
+{
+  "id": "grave-adder",
+  "parentBoss": "morvane-ossuary-serpent",
+  "familyId": "morvane",
+  "tier": "normal",
+  "representation": "native-authored-2d-frames",
+  "atlas": "../actors.webp",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "columns": 5,
+  "rows": 5,
+  "row": 4,
+  "enragedRow": null,
+  "poses": {
+    "idle": 0,
+    "walk": 1,
+    "windup": 2,
+    "attack": 3,
+    "hurt": 4
+  },
+  "authoredPoseCount": 5,
+  "portrait": {
+    "file": "portraits.webp",
+    "cellWidth": 128,
+    "cellHeight": 128,
+    "states": [
+      "alert",
+      "threatening",
+      "hurt"
+    ]
+  },
+  "icon": {
+    "file": "icon.png",
+    "width": 64,
+    "height": 64
+  },
+  "illustration": {
+    "normal": "normal.webp",
+    "enraged": null,
+    "motion": "runtime breathing, not additional authored image frames"
+  },
+  "worldHeight": 0.9,
+  "baseline": 248,
+  "contentHeight": 172,
+  "registration": {
+    "union": [
+      1,
+      13,
+      240,
+      221
+    ],
+    "scale": 0.9707112970711297,
+    "baselinePerFrame": 248
+  },
+  "collisionRadius": 0.34,
+  "profile": "profile.json",
+  "provenance": "Built-in ImageGen derived from approved parent-boss artwork; full prompts and master retained."
+}

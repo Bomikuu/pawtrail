@@ -1,0 +1,8 @@
+{
+  "variant": "jacket-rescuer",
+  "group": "movement",
+  "rows": 8,
+  "cols": 4,
+  "prompt": "Use case: stylized-concept. PawTrail second player appearance MOVEMENT spritesheet, referenceimage STYLE and PROPORTIONS only. New consistent player design: friendly young rescuer with deep brown skin, short black curly hair, muted teal jacket over cream shirt, charcoal long pants, brown comfortable shoes, small rust backpack. Identical clothing/hair/colors/proportions allframes. Cozy16bit crisp logical32x48pixel topdown3/4 orthographic darkwarmbrownoutline upperleftlight. Genuine transparentbg no glow. EXACT4columns8rows32sprites. Rows topdown: walk down; walk up; walk left; walk right; idle down; idle up; idle left; idle right. Fourframes per row. Walk alternatelegleft/rightarm natural; idles subtlebreatheblink. Wholebody visible with generous transparentmargins including above/below canvas. Fixedbaselineineachcell, headandbody sizesunchanged. No textlabelsgridbackgroundfloorothercharactersgradientsblurisometric.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-50f3c1ae-167a-4bf6-932a-b02b03480045.png"
+}

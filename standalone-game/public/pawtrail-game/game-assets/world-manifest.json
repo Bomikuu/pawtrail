@@ -1,0 +1,6368 @@
+{
+  "version": 1,
+  "baseTile": 32,
+  "lighting": "upper-left",
+  "perspective": "top-down three-quarter",
+  "palette": [
+    "#fae8ce",
+    "#321b1f",
+    "#442628",
+    "#6a9039",
+    "#8e5641",
+    "#297f80",
+    "#4f9694",
+    "#df9850",
+    "#c2c04b",
+    "#bda193",
+    "#7d6764",
+    "#d79770",
+    "#ebb272",
+    "#605053",
+    "#47363b",
+    "#5b383a",
+    "#5e565a",
+    "#dca68a",
+    "#f0c38b",
+    "#c48358",
+    "#d38553",
+    "#c28864",
+    "#e68667",
+    "#c86856",
+    "#e2725a",
+    "#ad9085",
+    "#b79a8a",
+    "#512e2e",
+    "#5b402f",
+    "#81605a",
+    "#b76954",
+    "#87998c",
+    "#8fa99e",
+    "#73953a",
+    "#7e9f39",
+    "#442c2e",
+    "#3d3d2b",
+    "#2b8081",
+    "#5b8580",
+    "#ddbb9d",
+    "#eaceb3",
+    "#838c5d",
+    "#8cab42",
+    "#578448",
+    "#6d9340",
+    "#bb6246",
+    "#d06644",
+    "#416d3d",
+    "#55643e",
+    "#fae0b0",
+    "#fae3c0",
+    "#a65a3d",
+    "#a95e4c",
+    "#b1a89a",
+    "#b2b6ad",
+    "#86706c",
+    "#8b7775",
+    "#4c6b6c",
+    "#655f61",
+    "#7b4134",
+    "#7e4641",
+    "#51474c",
+    "#575556"
+  ],
+  "connectionBits": {
+    "north": 1,
+    "east": 2,
+    "south": 4,
+    "west": 8
+  },
+  "animation": {
+    "animals": {
+      "fps": 5,
+      "framesPerDirection": 2
+    },
+    "kibble_coin": {
+      "fps": 8,
+      "frames": 8
+    },
+    "paw_indicator": {
+      "fps": 6,
+      "frames": 8
+    }
+  },
+  "sheets": {
+    "terrain": {
+      "file": "native/terrain.png",
+      "width": 512,
+      "height": 256,
+      "cellSize": 32,
+      "columns": 16,
+      "rows": 8,
+      "margin": 0,
+      "spacing": 0,
+      "count": 127
+    },
+    "buildings": {
+      "file": "native/buildings.png",
+      "width": 392,
+      "height": 392,
+      "cellSize": 128,
+      "columns": 3,
+      "rows": 3,
+      "margin": 2,
+      "spacing": 2,
+      "count": 9
+    },
+    "environment": {
+      "file": "native/environment.png",
+      "width": 398,
+      "height": 398,
+      "cellSize": 64,
+      "columns": 6,
+      "rows": 6,
+      "margin": 2,
+      "spacing": 2,
+      "count": 36
+    },
+    "animals": {
+      "file": "native/animals.png",
+      "width": 274,
+      "height": 376,
+      "cellSize": 32,
+      "columns": 8,
+      "rows": 11,
+      "margin": 2,
+      "spacing": 2,
+      "count": 88
+    },
+    "items": {
+      "file": "native/items.png",
+      "width": 274,
+      "height": 274,
+      "cellSize": 32,
+      "columns": 8,
+      "rows": 8,
+      "margin": 2,
+      "spacing": 2,
+      "count": 64
+    },
+    "building_tiles": {
+      "file": "native/building_tiles.png",
+      "width": 512,
+      "height": 288,
+      "cellSize": 32,
+      "columns": 16,
+      "rows": 9,
+      "margin": 0,
+      "spacing": 0,
+      "count": 132
+    }
+  },
+  "sprites": {
+    "terrain/grass_0": {
+      "id": "grass_0",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 0,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_0.png"
+    },
+    "terrain/grass_1": {
+      "id": "grass_1",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 32,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_1.png"
+    },
+    "terrain/grass_2": {
+      "id": "grass_2",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 64,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_2.png"
+    },
+    "terrain/grass_3": {
+      "id": "grass_3",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 96,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_3.png"
+    },
+    "terrain/grass_4": {
+      "id": "grass_4",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 128,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_4.png"
+    },
+    "terrain/grass_5": {
+      "id": "grass_5",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 160,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_5.png"
+    },
+    "terrain/grass_6": {
+      "id": "grass_6",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 192,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_6.png"
+    },
+    "terrain/grass_7": {
+      "id": "grass_7",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 224,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_7.png"
+    },
+    "terrain/dirt": {
+      "id": "dirt",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 256,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt.png"
+    },
+    "terrain/stone": {
+      "id": "stone",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 288,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone.png"
+    },
+    "terrain/brick": {
+      "id": "brick",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 320,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick.png"
+    },
+    "terrain/concrete": {
+      "id": "concrete",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 352,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/concrete.png"
+    },
+    "terrain/asphalt": {
+      "id": "asphalt",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 384,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/asphalt.png"
+    },
+    "terrain/sand": {
+      "id": "sand",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 416,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/sand.png"
+    },
+    "terrain/gravel": {
+      "id": "gravel",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 448,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel.png"
+    },
+    "terrain/flowers_pink": {
+      "id": "flowers_pink",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 480,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/flowers_pink.png"
+    },
+    "terrain/flowers_yellow": {
+      "id": "flowers_yellow",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 0,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/flowers_yellow.png"
+    },
+    "terrain/water": {
+      "id": "water",
+      "kind": "texture",
+      "sheet": "terrain",
+      "x": 32,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water.png"
+    },
+    "terrain/dirt_path_0": {
+      "id": "dirt_path_0",
+      "kind": "path",
+      "connections": 0,
+      "sheet": "terrain",
+      "x": 64,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_0.png"
+    },
+    "terrain/dirt_path_1": {
+      "id": "dirt_path_1",
+      "kind": "path",
+      "connections": 1,
+      "sheet": "terrain",
+      "x": 96,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_1.png"
+    },
+    "terrain/dirt_path_2": {
+      "id": "dirt_path_2",
+      "kind": "path",
+      "connections": 2,
+      "sheet": "terrain",
+      "x": 128,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_2.png"
+    },
+    "terrain/dirt_path_3": {
+      "id": "dirt_path_3",
+      "kind": "path",
+      "connections": 3,
+      "sheet": "terrain",
+      "x": 160,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_3.png"
+    },
+    "terrain/dirt_path_4": {
+      "id": "dirt_path_4",
+      "kind": "path",
+      "connections": 4,
+      "sheet": "terrain",
+      "x": 192,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_4.png"
+    },
+    "terrain/dirt_path_5": {
+      "id": "dirt_path_5",
+      "kind": "path",
+      "connections": 5,
+      "sheet": "terrain",
+      "x": 224,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_5.png"
+    },
+    "terrain/dirt_path_6": {
+      "id": "dirt_path_6",
+      "kind": "path",
+      "connections": 6,
+      "sheet": "terrain",
+      "x": 256,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_6.png"
+    },
+    "terrain/dirt_path_7": {
+      "id": "dirt_path_7",
+      "kind": "path",
+      "connections": 7,
+      "sheet": "terrain",
+      "x": 288,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_7.png"
+    },
+    "terrain/dirt_path_8": {
+      "id": "dirt_path_8",
+      "kind": "path",
+      "connections": 8,
+      "sheet": "terrain",
+      "x": 320,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_8.png"
+    },
+    "terrain/dirt_path_9": {
+      "id": "dirt_path_9",
+      "kind": "path",
+      "connections": 9,
+      "sheet": "terrain",
+      "x": 352,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_9.png"
+    },
+    "terrain/dirt_path_10": {
+      "id": "dirt_path_10",
+      "kind": "path",
+      "connections": 10,
+      "sheet": "terrain",
+      "x": 384,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_10.png"
+    },
+    "terrain/dirt_path_11": {
+      "id": "dirt_path_11",
+      "kind": "path",
+      "connections": 11,
+      "sheet": "terrain",
+      "x": 416,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_11.png"
+    },
+    "terrain/dirt_path_12": {
+      "id": "dirt_path_12",
+      "kind": "path",
+      "connections": 12,
+      "sheet": "terrain",
+      "x": 448,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_12.png"
+    },
+    "terrain/dirt_path_13": {
+      "id": "dirt_path_13",
+      "kind": "path",
+      "connections": 13,
+      "sheet": "terrain",
+      "x": 480,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_13.png"
+    },
+    "terrain/dirt_path_14": {
+      "id": "dirt_path_14",
+      "kind": "path",
+      "connections": 14,
+      "sheet": "terrain",
+      "x": 0,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_14.png"
+    },
+    "terrain/dirt_path_15": {
+      "id": "dirt_path_15",
+      "kind": "path",
+      "connections": 15,
+      "sheet": "terrain",
+      "x": 32,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/dirt_path_15.png"
+    },
+    "terrain/stone_path_0": {
+      "id": "stone_path_0",
+      "kind": "path",
+      "connections": 0,
+      "sheet": "terrain",
+      "x": 64,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_0.png"
+    },
+    "terrain/stone_path_1": {
+      "id": "stone_path_1",
+      "kind": "path",
+      "connections": 1,
+      "sheet": "terrain",
+      "x": 96,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_1.png"
+    },
+    "terrain/stone_path_2": {
+      "id": "stone_path_2",
+      "kind": "path",
+      "connections": 2,
+      "sheet": "terrain",
+      "x": 128,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_2.png"
+    },
+    "terrain/stone_path_3": {
+      "id": "stone_path_3",
+      "kind": "path",
+      "connections": 3,
+      "sheet": "terrain",
+      "x": 160,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_3.png"
+    },
+    "terrain/stone_path_4": {
+      "id": "stone_path_4",
+      "kind": "path",
+      "connections": 4,
+      "sheet": "terrain",
+      "x": 192,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_4.png"
+    },
+    "terrain/stone_path_5": {
+      "id": "stone_path_5",
+      "kind": "path",
+      "connections": 5,
+      "sheet": "terrain",
+      "x": 224,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_5.png"
+    },
+    "terrain/stone_path_6": {
+      "id": "stone_path_6",
+      "kind": "path",
+      "connections": 6,
+      "sheet": "terrain",
+      "x": 256,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_6.png"
+    },
+    "terrain/stone_path_7": {
+      "id": "stone_path_7",
+      "kind": "path",
+      "connections": 7,
+      "sheet": "terrain",
+      "x": 288,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_7.png"
+    },
+    "terrain/stone_path_8": {
+      "id": "stone_path_8",
+      "kind": "path",
+      "connections": 8,
+      "sheet": "terrain",
+      "x": 320,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_8.png"
+    },
+    "terrain/stone_path_9": {
+      "id": "stone_path_9",
+      "kind": "path",
+      "connections": 9,
+      "sheet": "terrain",
+      "x": 352,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_9.png"
+    },
+    "terrain/stone_path_10": {
+      "id": "stone_path_10",
+      "kind": "path",
+      "connections": 10,
+      "sheet": "terrain",
+      "x": 384,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_10.png"
+    },
+    "terrain/stone_path_11": {
+      "id": "stone_path_11",
+      "kind": "path",
+      "connections": 11,
+      "sheet": "terrain",
+      "x": 416,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_11.png"
+    },
+    "terrain/stone_path_12": {
+      "id": "stone_path_12",
+      "kind": "path",
+      "connections": 12,
+      "sheet": "terrain",
+      "x": 448,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_12.png"
+    },
+    "terrain/stone_path_13": {
+      "id": "stone_path_13",
+      "kind": "path",
+      "connections": 13,
+      "sheet": "terrain",
+      "x": 480,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_13.png"
+    },
+    "terrain/stone_path_14": {
+      "id": "stone_path_14",
+      "kind": "path",
+      "connections": 14,
+      "sheet": "terrain",
+      "x": 0,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_14.png"
+    },
+    "terrain/stone_path_15": {
+      "id": "stone_path_15",
+      "kind": "path",
+      "connections": 15,
+      "sheet": "terrain",
+      "x": 32,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/stone_path_15.png"
+    },
+    "terrain/brick_path_0": {
+      "id": "brick_path_0",
+      "kind": "path",
+      "connections": 0,
+      "sheet": "terrain",
+      "x": 64,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_0.png"
+    },
+    "terrain/brick_path_1": {
+      "id": "brick_path_1",
+      "kind": "path",
+      "connections": 1,
+      "sheet": "terrain",
+      "x": 96,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_1.png"
+    },
+    "terrain/brick_path_2": {
+      "id": "brick_path_2",
+      "kind": "path",
+      "connections": 2,
+      "sheet": "terrain",
+      "x": 128,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_2.png"
+    },
+    "terrain/brick_path_3": {
+      "id": "brick_path_3",
+      "kind": "path",
+      "connections": 3,
+      "sheet": "terrain",
+      "x": 160,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_3.png"
+    },
+    "terrain/brick_path_4": {
+      "id": "brick_path_4",
+      "kind": "path",
+      "connections": 4,
+      "sheet": "terrain",
+      "x": 192,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_4.png"
+    },
+    "terrain/brick_path_5": {
+      "id": "brick_path_5",
+      "kind": "path",
+      "connections": 5,
+      "sheet": "terrain",
+      "x": 224,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_5.png"
+    },
+    "terrain/brick_path_6": {
+      "id": "brick_path_6",
+      "kind": "path",
+      "connections": 6,
+      "sheet": "terrain",
+      "x": 256,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_6.png"
+    },
+    "terrain/brick_path_7": {
+      "id": "brick_path_7",
+      "kind": "path",
+      "connections": 7,
+      "sheet": "terrain",
+      "x": 288,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_7.png"
+    },
+    "terrain/brick_path_8": {
+      "id": "brick_path_8",
+      "kind": "path",
+      "connections": 8,
+      "sheet": "terrain",
+      "x": 320,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_8.png"
+    },
+    "terrain/brick_path_9": {
+      "id": "brick_path_9",
+      "kind": "path",
+      "connections": 9,
+      "sheet": "terrain",
+      "x": 352,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_9.png"
+    },
+    "terrain/brick_path_10": {
+      "id": "brick_path_10",
+      "kind": "path",
+      "connections": 10,
+      "sheet": "terrain",
+      "x": 384,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_10.png"
+    },
+    "terrain/brick_path_11": {
+      "id": "brick_path_11",
+      "kind": "path",
+      "connections": 11,
+      "sheet": "terrain",
+      "x": 416,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_11.png"
+    },
+    "terrain/brick_path_12": {
+      "id": "brick_path_12",
+      "kind": "path",
+      "connections": 12,
+      "sheet": "terrain",
+      "x": 448,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_12.png"
+    },
+    "terrain/brick_path_13": {
+      "id": "brick_path_13",
+      "kind": "path",
+      "connections": 13,
+      "sheet": "terrain",
+      "x": 480,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_13.png"
+    },
+    "terrain/brick_path_14": {
+      "id": "brick_path_14",
+      "kind": "path",
+      "connections": 14,
+      "sheet": "terrain",
+      "x": 0,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_14.png"
+    },
+    "terrain/brick_path_15": {
+      "id": "brick_path_15",
+      "kind": "path",
+      "connections": 15,
+      "sheet": "terrain",
+      "x": 32,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/brick_path_15.png"
+    },
+    "terrain/gravel_path_0": {
+      "id": "gravel_path_0",
+      "kind": "path",
+      "connections": 0,
+      "sheet": "terrain",
+      "x": 64,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_0.png"
+    },
+    "terrain/gravel_path_1": {
+      "id": "gravel_path_1",
+      "kind": "path",
+      "connections": 1,
+      "sheet": "terrain",
+      "x": 96,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_1.png"
+    },
+    "terrain/gravel_path_2": {
+      "id": "gravel_path_2",
+      "kind": "path",
+      "connections": 2,
+      "sheet": "terrain",
+      "x": 128,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_2.png"
+    },
+    "terrain/gravel_path_3": {
+      "id": "gravel_path_3",
+      "kind": "path",
+      "connections": 3,
+      "sheet": "terrain",
+      "x": 160,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_3.png"
+    },
+    "terrain/gravel_path_4": {
+      "id": "gravel_path_4",
+      "kind": "path",
+      "connections": 4,
+      "sheet": "terrain",
+      "x": 192,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_4.png"
+    },
+    "terrain/gravel_path_5": {
+      "id": "gravel_path_5",
+      "kind": "path",
+      "connections": 5,
+      "sheet": "terrain",
+      "x": 224,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_5.png"
+    },
+    "terrain/gravel_path_6": {
+      "id": "gravel_path_6",
+      "kind": "path",
+      "connections": 6,
+      "sheet": "terrain",
+      "x": 256,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_6.png"
+    },
+    "terrain/gravel_path_7": {
+      "id": "gravel_path_7",
+      "kind": "path",
+      "connections": 7,
+      "sheet": "terrain",
+      "x": 288,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_7.png"
+    },
+    "terrain/gravel_path_8": {
+      "id": "gravel_path_8",
+      "kind": "path",
+      "connections": 8,
+      "sheet": "terrain",
+      "x": 320,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_8.png"
+    },
+    "terrain/gravel_path_9": {
+      "id": "gravel_path_9",
+      "kind": "path",
+      "connections": 9,
+      "sheet": "terrain",
+      "x": 352,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_9.png"
+    },
+    "terrain/gravel_path_10": {
+      "id": "gravel_path_10",
+      "kind": "path",
+      "connections": 10,
+      "sheet": "terrain",
+      "x": 384,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_10.png"
+    },
+    "terrain/gravel_path_11": {
+      "id": "gravel_path_11",
+      "kind": "path",
+      "connections": 11,
+      "sheet": "terrain",
+      "x": 416,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_11.png"
+    },
+    "terrain/gravel_path_12": {
+      "id": "gravel_path_12",
+      "kind": "path",
+      "connections": 12,
+      "sheet": "terrain",
+      "x": 448,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_12.png"
+    },
+    "terrain/gravel_path_13": {
+      "id": "gravel_path_13",
+      "kind": "path",
+      "connections": 13,
+      "sheet": "terrain",
+      "x": 480,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_13.png"
+    },
+    "terrain/gravel_path_14": {
+      "id": "gravel_path_14",
+      "kind": "path",
+      "connections": 14,
+      "sheet": "terrain",
+      "x": 0,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_14.png"
+    },
+    "terrain/gravel_path_15": {
+      "id": "gravel_path_15",
+      "kind": "path",
+      "connections": 15,
+      "sheet": "terrain",
+      "x": 32,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/gravel_path_15.png"
+    },
+    "terrain/water_shore_0": {
+      "id": "water_shore_0",
+      "kind": "shore",
+      "connections": 0,
+      "sheet": "terrain",
+      "x": 64,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_0.png"
+    },
+    "terrain/water_shore_1": {
+      "id": "water_shore_1",
+      "kind": "shore",
+      "connections": 1,
+      "sheet": "terrain",
+      "x": 96,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_1.png"
+    },
+    "terrain/water_shore_2": {
+      "id": "water_shore_2",
+      "kind": "shore",
+      "connections": 2,
+      "sheet": "terrain",
+      "x": 128,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_2.png"
+    },
+    "terrain/water_shore_3": {
+      "id": "water_shore_3",
+      "kind": "shore",
+      "connections": 3,
+      "sheet": "terrain",
+      "x": 160,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_3.png"
+    },
+    "terrain/water_shore_4": {
+      "id": "water_shore_4",
+      "kind": "shore",
+      "connections": 4,
+      "sheet": "terrain",
+      "x": 192,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_4.png"
+    },
+    "terrain/water_shore_5": {
+      "id": "water_shore_5",
+      "kind": "shore",
+      "connections": 5,
+      "sheet": "terrain",
+      "x": 224,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_5.png"
+    },
+    "terrain/water_shore_6": {
+      "id": "water_shore_6",
+      "kind": "shore",
+      "connections": 6,
+      "sheet": "terrain",
+      "x": 256,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_6.png"
+    },
+    "terrain/water_shore_7": {
+      "id": "water_shore_7",
+      "kind": "shore",
+      "connections": 7,
+      "sheet": "terrain",
+      "x": 288,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_7.png"
+    },
+    "terrain/water_shore_8": {
+      "id": "water_shore_8",
+      "kind": "shore",
+      "connections": 8,
+      "sheet": "terrain",
+      "x": 320,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_8.png"
+    },
+    "terrain/water_shore_9": {
+      "id": "water_shore_9",
+      "kind": "shore",
+      "connections": 9,
+      "sheet": "terrain",
+      "x": 352,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_9.png"
+    },
+    "terrain/water_shore_10": {
+      "id": "water_shore_10",
+      "kind": "shore",
+      "connections": 10,
+      "sheet": "terrain",
+      "x": 384,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_10.png"
+    },
+    "terrain/water_shore_11": {
+      "id": "water_shore_11",
+      "kind": "shore",
+      "connections": 11,
+      "sheet": "terrain",
+      "x": 416,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_11.png"
+    },
+    "terrain/water_shore_12": {
+      "id": "water_shore_12",
+      "kind": "shore",
+      "connections": 12,
+      "sheet": "terrain",
+      "x": 448,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_12.png"
+    },
+    "terrain/water_shore_13": {
+      "id": "water_shore_13",
+      "kind": "shore",
+      "connections": 13,
+      "sheet": "terrain",
+      "x": 480,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_13.png"
+    },
+    "terrain/water_shore_14": {
+      "id": "water_shore_14",
+      "kind": "shore",
+      "connections": 14,
+      "sheet": "terrain",
+      "x": 0,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_14.png"
+    },
+    "terrain/water_shore_15": {
+      "id": "water_shore_15",
+      "kind": "shore",
+      "connections": 15,
+      "sheet": "terrain",
+      "x": 32,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_shore_15.png"
+    },
+    "terrain/water_inner_nw": {
+      "id": "water_inner_nw",
+      "kind": "shore-inner",
+      "sheet": "terrain",
+      "x": 64,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_inner_nw.png"
+    },
+    "terrain/water_inner_ne": {
+      "id": "water_inner_ne",
+      "kind": "shore-inner",
+      "sheet": "terrain",
+      "x": 96,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_inner_ne.png"
+    },
+    "terrain/water_inner_sw": {
+      "id": "water_inner_sw",
+      "kind": "shore-inner",
+      "sheet": "terrain",
+      "x": 128,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_inner_sw.png"
+    },
+    "terrain/water_inner_se": {
+      "id": "water_inner_se",
+      "kind": "shore-inner",
+      "sheet": "terrain",
+      "x": 160,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/water_inner_se.png"
+    },
+    "terrain/road_0": {
+      "id": "road_0",
+      "kind": "road",
+      "connections": 0,
+      "sheet": "terrain",
+      "x": 192,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_0.png"
+    },
+    "terrain/road_1": {
+      "id": "road_1",
+      "kind": "road",
+      "connections": 1,
+      "sheet": "terrain",
+      "x": 224,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_1.png"
+    },
+    "terrain/road_2": {
+      "id": "road_2",
+      "kind": "road",
+      "connections": 2,
+      "sheet": "terrain",
+      "x": 256,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_2.png"
+    },
+    "terrain/road_3": {
+      "id": "road_3",
+      "kind": "road",
+      "connections": 3,
+      "sheet": "terrain",
+      "x": 288,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_3.png"
+    },
+    "terrain/road_4": {
+      "id": "road_4",
+      "kind": "road",
+      "connections": 4,
+      "sheet": "terrain",
+      "x": 320,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_4.png"
+    },
+    "terrain/road_5": {
+      "id": "road_5",
+      "kind": "road",
+      "connections": 5,
+      "sheet": "terrain",
+      "x": 352,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_5.png"
+    },
+    "terrain/road_6": {
+      "id": "road_6",
+      "kind": "road",
+      "connections": 6,
+      "sheet": "terrain",
+      "x": 384,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_6.png"
+    },
+    "terrain/road_7": {
+      "id": "road_7",
+      "kind": "road",
+      "connections": 7,
+      "sheet": "terrain",
+      "x": 416,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_7.png"
+    },
+    "terrain/road_8": {
+      "id": "road_8",
+      "kind": "road",
+      "connections": 8,
+      "sheet": "terrain",
+      "x": 448,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_8.png"
+    },
+    "terrain/road_9": {
+      "id": "road_9",
+      "kind": "road",
+      "connections": 9,
+      "sheet": "terrain",
+      "x": 480,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_9.png"
+    },
+    "terrain/road_10": {
+      "id": "road_10",
+      "kind": "road",
+      "connections": 10,
+      "sheet": "terrain",
+      "x": 0,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_10.png"
+    },
+    "terrain/road_11": {
+      "id": "road_11",
+      "kind": "road",
+      "connections": 11,
+      "sheet": "terrain",
+      "x": 32,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_11.png"
+    },
+    "terrain/road_12": {
+      "id": "road_12",
+      "kind": "road",
+      "connections": 12,
+      "sheet": "terrain",
+      "x": 64,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_12.png"
+    },
+    "terrain/road_13": {
+      "id": "road_13",
+      "kind": "road",
+      "connections": 13,
+      "sheet": "terrain",
+      "x": 96,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_13.png"
+    },
+    "terrain/road_14": {
+      "id": "road_14",
+      "kind": "road",
+      "connections": 14,
+      "sheet": "terrain",
+      "x": 128,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_14.png"
+    },
+    "terrain/road_15": {
+      "id": "road_15",
+      "kind": "road",
+      "connections": 15,
+      "sheet": "terrain",
+      "x": 160,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/road_15.png"
+    },
+    "terrain/grass_dirt_transition_0_0": {
+      "id": "grass_dirt_transition_0_0",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 192,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_0_0.png"
+    },
+    "terrain/grass_dirt_transition_1_0": {
+      "id": "grass_dirt_transition_1_0",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 224,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_1_0.png"
+    },
+    "terrain/grass_dirt_transition_2_0": {
+      "id": "grass_dirt_transition_2_0",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 256,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_2_0.png"
+    },
+    "terrain/grass_dirt_transition_0_1": {
+      "id": "grass_dirt_transition_0_1",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 288,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_0_1.png"
+    },
+    "terrain/grass_dirt_transition_1_1": {
+      "id": "grass_dirt_transition_1_1",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 320,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_1_1.png"
+    },
+    "terrain/grass_dirt_transition_2_1": {
+      "id": "grass_dirt_transition_2_1",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 352,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_2_1.png"
+    },
+    "terrain/grass_dirt_transition_0_2": {
+      "id": "grass_dirt_transition_0_2",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 384,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_0_2.png"
+    },
+    "terrain/grass_dirt_transition_1_2": {
+      "id": "grass_dirt_transition_1_2",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 416,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_1_2.png"
+    },
+    "terrain/grass_dirt_transition_2_2": {
+      "id": "grass_dirt_transition_2_2",
+      "kind": "transition",
+      "sheet": "terrain",
+      "x": 448,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/terrain/grass_dirt_transition_2_2.png"
+    },
+    "buildings/cozy_house": {
+      "id": "cozy_house",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        64,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 2,
+      "y": 2,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/cozy_house.png"
+    },
+    "buildings/mint_house": {
+      "id": "mint_house",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        64,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 132,
+      "y": 2,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/mint_house.png"
+    },
+    "buildings/coral_house": {
+      "id": "coral_house",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        64,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 262,
+      "y": 2,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/coral_house.png"
+    },
+    "buildings/rescue_shelter": {
+      "id": "rescue_shelter",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        64,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 2,
+      "y": 132,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/rescue_shelter.png"
+    },
+    "buildings/veterinary_clinic": {
+      "id": "veterinary_clinic",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        64,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 132,
+      "y": 132,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/veterinary_clinic.png"
+    },
+    "buildings/pet_supply_shop": {
+      "id": "pet_supply_shop",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        64,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 262,
+      "y": 132,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/pet_supply_shop.png"
+    },
+    "buildings/sari_sari_store": {
+      "id": "sari_sari_store",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        96,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 2,
+      "y": 262,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/sari_sari_store.png"
+    },
+    "buildings/bamboo_house": {
+      "id": "bamboo_house",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        82,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 132,
+      "y": 262,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/bamboo_house.png"
+    },
+    "buildings/resting_pavilion": {
+      "id": "resting_pavilion",
+      "anchor": [
+        64,
+        124
+      ],
+      "entrance": [
+        64,
+        120
+      ],
+      "sheet": "buildings",
+      "x": 262,
+      "y": 262,
+      "width": 128,
+      "height": 128,
+      "file": "native/buildings/resting_pavilion.png"
+    },
+    "environment/small_tree": {
+      "id": "small_tree",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 2,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/small_tree.png"
+    },
+    "environment/large_tree": {
+      "id": "large_tree",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 68,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/large_tree.png"
+    },
+    "environment/palm": {
+      "id": "palm",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 134,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/palm.png"
+    },
+    "environment/flowering_tree": {
+      "id": "flowering_tree",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 200,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/flowering_tree.png"
+    },
+    "environment/round_bush": {
+      "id": "round_bush",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 266,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/round_bush.png"
+    },
+    "environment/leafy_shrub": {
+      "id": "leafy_shrub",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 332,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/leafy_shrub.png"
+    },
+    "environment/pink_flowers": {
+      "id": "pink_flowers",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 2,
+      "y": 68,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/pink_flowers.png"
+    },
+    "environment/yellow_flowers": {
+      "id": "yellow_flowers",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 68,
+      "y": 68,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/yellow_flowers.png"
+    },
+    "environment/white_flowers": {
+      "id": "white_flowers",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 134,
+      "y": 68,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/white_flowers.png"
+    },
+    "environment/terracotta_pot": {
+      "id": "terracotta_pot",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 200,
+      "y": 68,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/terracotta_pot.png"
+    },
+    "environment/blue_pot": {
+      "id": "blue_pot",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 266,
+      "y": 68,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/blue_pot.png"
+    },
+    "environment/garden_pot": {
+      "id": "garden_pot",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 332,
+      "y": 68,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/garden_pot.png"
+    },
+    "environment/fence_straight": {
+      "id": "fence_straight",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 2,
+      "y": 134,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/fence_straight.png"
+    },
+    "environment/fence_corner": {
+      "id": "fence_corner",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 68,
+      "y": 134,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/fence_corner.png"
+    },
+    "environment/fence_gate": {
+      "id": "fence_gate",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 134,
+      "y": 134,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/fence_gate.png"
+    },
+    "environment/wooden_bench": {
+      "id": "wooden_bench",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 200,
+      "y": 134,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/wooden_bench.png"
+    },
+    "environment/street_lamp": {
+      "id": "street_lamp",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 266,
+      "y": 134,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/street_lamp.png"
+    },
+    "environment/rocks": {
+      "id": "rocks",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 332,
+      "y": 134,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/rocks.png"
+    },
+    "environment/wooden_sign": {
+      "id": "wooden_sign",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 2,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/wooden_sign.png"
+    },
+    "environment/trash_bin": {
+      "id": "trash_bin",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 68,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/trash_bin.png"
+    },
+    "environment/mailbox": {
+      "id": "mailbox",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 134,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/mailbox.png"
+    },
+    "environment/water_bowl": {
+      "id": "water_bowl",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 200,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/water_bowl.png"
+    },
+    "environment/food_bowl": {
+      "id": "food_bowl",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 266,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/food_bowl.png"
+    },
+    "environment/cardboard_box": {
+      "id": "cardboard_box",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 332,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/cardboard_box.png"
+    },
+    "environment/round_bed": {
+      "id": "round_bed",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 2,
+      "y": 266,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/round_bed.png"
+    },
+    "environment/rectangular_bed": {
+      "id": "rectangular_bed",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 68,
+      "y": 266,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/rectangular_bed.png"
+    },
+    "environment/dog_house": {
+      "id": "dog_house",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 134,
+      "y": 266,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/dog_house.png"
+    },
+    "environment/cat_feeding_station": {
+      "id": "cat_feeding_station",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 200,
+      "y": 266,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/cat_feeding_station.png"
+    },
+    "environment/dog_kennel": {
+      "id": "dog_kennel",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 266,
+      "y": 266,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/dog_kennel.png"
+    },
+    "environment/fabric_shade": {
+      "id": "fabric_shade",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 332,
+      "y": 266,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/fabric_shade.png"
+    },
+    "environment/low_shelter": {
+      "id": "low_shelter",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 2,
+      "y": 332,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/low_shelter.png"
+    },
+    "environment/bamboo_canopy": {
+      "id": "bamboo_canopy",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 68,
+      "y": 332,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/bamboo_canopy.png"
+    },
+    "environment/round_door_house": {
+      "id": "round_door_house",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 134,
+      "y": 332,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/round_door_house.png"
+    },
+    "environment/stepping_stones": {
+      "id": "stepping_stones",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 200,
+      "y": 332,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/stepping_stones.png"
+    },
+    "environment/fence_end": {
+      "id": "fence_end",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 266,
+      "y": 332,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/fence_end.png"
+    },
+    "environment/sleeping_box": {
+      "id": "sleeping_box",
+      "anchor": [
+        32,
+        60
+      ],
+      "sheet": "environment",
+      "x": 332,
+      "y": 332,
+      "width": 64,
+      "height": 64,
+      "file": "native/environment/sleeping_box.png"
+    },
+    "animals/orange_tabby_south_0": {
+      "id": "orange_tabby_south_0",
+      "animal": "orange_tabby",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_south_0.png"
+    },
+    "animals/orange_tabby_south_1": {
+      "id": "orange_tabby_south_1",
+      "animal": "orange_tabby",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_south_1.png"
+    },
+    "animals/orange_tabby_west_0": {
+      "id": "orange_tabby_west_0",
+      "animal": "orange_tabby",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_west_0.png"
+    },
+    "animals/orange_tabby_west_1": {
+      "id": "orange_tabby_west_1",
+      "animal": "orange_tabby",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_west_1.png"
+    },
+    "animals/orange_tabby_east_0": {
+      "id": "orange_tabby_east_0",
+      "animal": "orange_tabby",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_east_0.png"
+    },
+    "animals/orange_tabby_east_1": {
+      "id": "orange_tabby_east_1",
+      "animal": "orange_tabby",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_east_1.png"
+    },
+    "animals/orange_tabby_north_0": {
+      "id": "orange_tabby_north_0",
+      "animal": "orange_tabby",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_north_0.png"
+    },
+    "animals/orange_tabby_north_1": {
+      "id": "orange_tabby_north_1",
+      "animal": "orange_tabby",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/orange_tabby_north_1.png"
+    },
+    "animals/black_cat_south_0": {
+      "id": "black_cat_south_0",
+      "animal": "black_cat",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_south_0.png"
+    },
+    "animals/black_cat_south_1": {
+      "id": "black_cat_south_1",
+      "animal": "black_cat",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_south_1.png"
+    },
+    "animals/black_cat_west_0": {
+      "id": "black_cat_west_0",
+      "animal": "black_cat",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_west_0.png"
+    },
+    "animals/black_cat_west_1": {
+      "id": "black_cat_west_1",
+      "animal": "black_cat",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_west_1.png"
+    },
+    "animals/black_cat_east_0": {
+      "id": "black_cat_east_0",
+      "animal": "black_cat",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_east_0.png"
+    },
+    "animals/black_cat_east_1": {
+      "id": "black_cat_east_1",
+      "animal": "black_cat",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_east_1.png"
+    },
+    "animals/black_cat_north_0": {
+      "id": "black_cat_north_0",
+      "animal": "black_cat",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_north_0.png"
+    },
+    "animals/black_cat_north_1": {
+      "id": "black_cat_north_1",
+      "animal": "black_cat",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_cat_north_1.png"
+    },
+    "animals/white_cat_south_0": {
+      "id": "white_cat_south_0",
+      "animal": "white_cat",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_south_0.png"
+    },
+    "animals/white_cat_south_1": {
+      "id": "white_cat_south_1",
+      "animal": "white_cat",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_south_1.png"
+    },
+    "animals/white_cat_west_0": {
+      "id": "white_cat_west_0",
+      "animal": "white_cat",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_west_0.png"
+    },
+    "animals/white_cat_west_1": {
+      "id": "white_cat_west_1",
+      "animal": "white_cat",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_west_1.png"
+    },
+    "animals/white_cat_east_0": {
+      "id": "white_cat_east_0",
+      "animal": "white_cat",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_east_0.png"
+    },
+    "animals/white_cat_east_1": {
+      "id": "white_cat_east_1",
+      "animal": "white_cat",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_east_1.png"
+    },
+    "animals/white_cat_north_0": {
+      "id": "white_cat_north_0",
+      "animal": "white_cat",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_north_0.png"
+    },
+    "animals/white_cat_north_1": {
+      "id": "white_cat_north_1",
+      "animal": "white_cat",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_cat_north_1.png"
+    },
+    "animals/calico_south_0": {
+      "id": "calico_south_0",
+      "animal": "calico",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_south_0.png"
+    },
+    "animals/calico_south_1": {
+      "id": "calico_south_1",
+      "animal": "calico",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_south_1.png"
+    },
+    "animals/calico_west_0": {
+      "id": "calico_west_0",
+      "animal": "calico",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_west_0.png"
+    },
+    "animals/calico_west_1": {
+      "id": "calico_west_1",
+      "animal": "calico",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_west_1.png"
+    },
+    "animals/calico_east_0": {
+      "id": "calico_east_0",
+      "animal": "calico",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_east_0.png"
+    },
+    "animals/calico_east_1": {
+      "id": "calico_east_1",
+      "animal": "calico",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_east_1.png"
+    },
+    "animals/calico_north_0": {
+      "id": "calico_north_0",
+      "animal": "calico",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_north_0.png"
+    },
+    "animals/calico_north_1": {
+      "id": "calico_north_1",
+      "animal": "calico",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/calico_north_1.png"
+    },
+    "animals/gray_cat_south_0": {
+      "id": "gray_cat_south_0",
+      "animal": "gray_cat",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_south_0.png"
+    },
+    "animals/gray_cat_south_1": {
+      "id": "gray_cat_south_1",
+      "animal": "gray_cat",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_south_1.png"
+    },
+    "animals/gray_cat_west_0": {
+      "id": "gray_cat_west_0",
+      "animal": "gray_cat",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_west_0.png"
+    },
+    "animals/gray_cat_west_1": {
+      "id": "gray_cat_west_1",
+      "animal": "gray_cat",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_west_1.png"
+    },
+    "animals/gray_cat_east_0": {
+      "id": "gray_cat_east_0",
+      "animal": "gray_cat",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_east_0.png"
+    },
+    "animals/gray_cat_east_1": {
+      "id": "gray_cat_east_1",
+      "animal": "gray_cat",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_east_1.png"
+    },
+    "animals/gray_cat_north_0": {
+      "id": "gray_cat_north_0",
+      "animal": "gray_cat",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_north_0.png"
+    },
+    "animals/gray_cat_north_1": {
+      "id": "gray_cat_north_1",
+      "animal": "gray_cat",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/gray_cat_north_1.png"
+    },
+    "animals/siamese_south_0": {
+      "id": "siamese_south_0",
+      "animal": "siamese",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_south_0.png"
+    },
+    "animals/siamese_south_1": {
+      "id": "siamese_south_1",
+      "animal": "siamese",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_south_1.png"
+    },
+    "animals/siamese_west_0": {
+      "id": "siamese_west_0",
+      "animal": "siamese",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_west_0.png"
+    },
+    "animals/siamese_west_1": {
+      "id": "siamese_west_1",
+      "animal": "siamese",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_west_1.png"
+    },
+    "animals/siamese_east_0": {
+      "id": "siamese_east_0",
+      "animal": "siamese",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_east_0.png"
+    },
+    "animals/siamese_east_1": {
+      "id": "siamese_east_1",
+      "animal": "siamese",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_east_1.png"
+    },
+    "animals/siamese_north_0": {
+      "id": "siamese_north_0",
+      "animal": "siamese",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_north_0.png"
+    },
+    "animals/siamese_north_1": {
+      "id": "siamese_north_1",
+      "animal": "siamese",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/siamese_north_1.png"
+    },
+    "animals/aspin_south_0": {
+      "id": "aspin_south_0",
+      "animal": "aspin",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_south_0.png"
+    },
+    "animals/aspin_south_1": {
+      "id": "aspin_south_1",
+      "animal": "aspin",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_south_1.png"
+    },
+    "animals/aspin_west_0": {
+      "id": "aspin_west_0",
+      "animal": "aspin",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_west_0.png"
+    },
+    "animals/aspin_west_1": {
+      "id": "aspin_west_1",
+      "animal": "aspin",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_west_1.png"
+    },
+    "animals/aspin_east_0": {
+      "id": "aspin_east_0",
+      "animal": "aspin",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_east_0.png"
+    },
+    "animals/aspin_east_1": {
+      "id": "aspin_east_1",
+      "animal": "aspin",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_east_1.png"
+    },
+    "animals/aspin_north_0": {
+      "id": "aspin_north_0",
+      "animal": "aspin",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_north_0.png"
+    },
+    "animals/aspin_north_1": {
+      "id": "aspin_north_1",
+      "animal": "aspin",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/aspin_north_1.png"
+    },
+    "animals/brown_puppy_south_0": {
+      "id": "brown_puppy_south_0",
+      "animal": "brown_puppy",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_south_0.png"
+    },
+    "animals/brown_puppy_south_1": {
+      "id": "brown_puppy_south_1",
+      "animal": "brown_puppy",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_south_1.png"
+    },
+    "animals/brown_puppy_west_0": {
+      "id": "brown_puppy_west_0",
+      "animal": "brown_puppy",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_west_0.png"
+    },
+    "animals/brown_puppy_west_1": {
+      "id": "brown_puppy_west_1",
+      "animal": "brown_puppy",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_west_1.png"
+    },
+    "animals/brown_puppy_east_0": {
+      "id": "brown_puppy_east_0",
+      "animal": "brown_puppy",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_east_0.png"
+    },
+    "animals/brown_puppy_east_1": {
+      "id": "brown_puppy_east_1",
+      "animal": "brown_puppy",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_east_1.png"
+    },
+    "animals/brown_puppy_north_0": {
+      "id": "brown_puppy_north_0",
+      "animal": "brown_puppy",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_north_0.png"
+    },
+    "animals/brown_puppy_north_1": {
+      "id": "brown_puppy_north_1",
+      "animal": "brown_puppy",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/brown_puppy_north_1.png"
+    },
+    "animals/white_puppy_south_0": {
+      "id": "white_puppy_south_0",
+      "animal": "white_puppy",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_south_0.png"
+    },
+    "animals/white_puppy_south_1": {
+      "id": "white_puppy_south_1",
+      "animal": "white_puppy",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_south_1.png"
+    },
+    "animals/white_puppy_west_0": {
+      "id": "white_puppy_west_0",
+      "animal": "white_puppy",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_west_0.png"
+    },
+    "animals/white_puppy_west_1": {
+      "id": "white_puppy_west_1",
+      "animal": "white_puppy",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_west_1.png"
+    },
+    "animals/white_puppy_east_0": {
+      "id": "white_puppy_east_0",
+      "animal": "white_puppy",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_east_0.png"
+    },
+    "animals/white_puppy_east_1": {
+      "id": "white_puppy_east_1",
+      "animal": "white_puppy",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_east_1.png"
+    },
+    "animals/white_puppy_north_0": {
+      "id": "white_puppy_north_0",
+      "animal": "white_puppy",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_north_0.png"
+    },
+    "animals/white_puppy_north_1": {
+      "id": "white_puppy_north_1",
+      "animal": "white_puppy",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 274,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/white_puppy_north_1.png"
+    },
+    "animals/black_dog_south_0": {
+      "id": "black_dog_south_0",
+      "animal": "black_dog",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_south_0.png"
+    },
+    "animals/black_dog_south_1": {
+      "id": "black_dog_south_1",
+      "animal": "black_dog",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_south_1.png"
+    },
+    "animals/black_dog_west_0": {
+      "id": "black_dog_west_0",
+      "animal": "black_dog",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_west_0.png"
+    },
+    "animals/black_dog_west_1": {
+      "id": "black_dog_west_1",
+      "animal": "black_dog",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_west_1.png"
+    },
+    "animals/black_dog_east_0": {
+      "id": "black_dog_east_0",
+      "animal": "black_dog",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_east_0.png"
+    },
+    "animals/black_dog_east_1": {
+      "id": "black_dog_east_1",
+      "animal": "black_dog",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_east_1.png"
+    },
+    "animals/black_dog_north_0": {
+      "id": "black_dog_north_0",
+      "animal": "black_dog",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_north_0.png"
+    },
+    "animals/black_dog_north_1": {
+      "id": "black_dog_north_1",
+      "animal": "black_dog",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 308,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/black_dog_north_1.png"
+    },
+    "animals/spotted_dog_south_0": {
+      "id": "spotted_dog_south_0",
+      "animal": "spotted_dog",
+      "direction": "south",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 2,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_south_0.png"
+    },
+    "animals/spotted_dog_south_1": {
+      "id": "spotted_dog_south_1",
+      "animal": "spotted_dog",
+      "direction": "south",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 36,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_south_1.png"
+    },
+    "animals/spotted_dog_west_0": {
+      "id": "spotted_dog_west_0",
+      "animal": "spotted_dog",
+      "direction": "west",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 70,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_west_0.png"
+    },
+    "animals/spotted_dog_west_1": {
+      "id": "spotted_dog_west_1",
+      "animal": "spotted_dog",
+      "direction": "west",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 104,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_west_1.png"
+    },
+    "animals/spotted_dog_east_0": {
+      "id": "spotted_dog_east_0",
+      "animal": "spotted_dog",
+      "direction": "east",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 138,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_east_0.png"
+    },
+    "animals/spotted_dog_east_1": {
+      "id": "spotted_dog_east_1",
+      "animal": "spotted_dog",
+      "direction": "east",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 172,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_east_1.png"
+    },
+    "animals/spotted_dog_north_0": {
+      "id": "spotted_dog_north_0",
+      "animal": "spotted_dog",
+      "direction": "north",
+      "frame": 0,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 206,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_north_0.png"
+    },
+    "animals/spotted_dog_north_1": {
+      "id": "spotted_dog_north_1",
+      "animal": "spotted_dog",
+      "direction": "north",
+      "frame": 1,
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "animals",
+      "x": 240,
+      "y": 342,
+      "width": 32,
+      "height": 32,
+      "file": "native/animals/spotted_dog_north_1.png"
+    },
+    "items/cat_food_bag": {
+      "id": "cat_food_bag",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/cat_food_bag.png"
+    },
+    "items/cat_food_bag_open": {
+      "id": "cat_food_bag_open",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/cat_food_bag_open.png"
+    },
+    "items/dog_food_bag": {
+      "id": "dog_food_bag",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/dog_food_bag.png"
+    },
+    "items/dog_food_bag_open": {
+      "id": "dog_food_bag_open",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/dog_food_bag_open.png"
+    },
+    "items/cat_food_tin": {
+      "id": "cat_food_tin",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/cat_food_tin.png"
+    },
+    "items/cat_food_tin_open": {
+      "id": "cat_food_tin_open",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/cat_food_tin_open.png"
+    },
+    "items/dog_food_tin": {
+      "id": "dog_food_tin",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/dog_food_tin.png"
+    },
+    "items/dog_food_tin_open": {
+      "id": "dog_food_tin_open",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 2,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/dog_food_tin_open.png"
+    },
+    "items/fish_treat": {
+      "id": "fish_treat",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/fish_treat.png"
+    },
+    "items/fish_treat_pair": {
+      "id": "fish_treat_pair",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/fish_treat_pair.png"
+    },
+    "items/fish_pouch": {
+      "id": "fish_pouch",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/fish_pouch.png"
+    },
+    "items/fish_pouch_open": {
+      "id": "fish_pouch_open",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/fish_pouch_open.png"
+    },
+    "items/cat_food_portion": {
+      "id": "cat_food_portion",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/cat_food_portion.png"
+    },
+    "items/dog_food_portion": {
+      "id": "dog_food_portion",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/dog_food_portion.png"
+    },
+    "items/kibble_scoop": {
+      "id": "kibble_scoop",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_scoop.png"
+    },
+    "items/kibble_scoop_full": {
+      "id": "kibble_scoop_full",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 36,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_scoop_full.png"
+    },
+    "items/water_bottle_full": {
+      "id": "water_bottle_full",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/water_bottle_full.png"
+    },
+    "items/water_bottle_half": {
+      "id": "water_bottle_half",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/water_bottle_half.png"
+    },
+    "items/water_bottle_empty": {
+      "id": "water_bottle_empty",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/water_bottle_empty.png"
+    },
+    "items/water_bottles": {
+      "id": "water_bottles",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/water_bottles.png"
+    },
+    "items/feeding_bowl": {
+      "id": "feeding_bowl",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/feeding_bowl.png"
+    },
+    "items/feeding_bowl_full": {
+      "id": "feeding_bowl_full",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/feeding_bowl_full.png"
+    },
+    "items/water_bowl": {
+      "id": "water_bowl",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/water_bowl.png"
+    },
+    "items/water_bowl_full": {
+      "id": "water_bowl_full",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 70,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/water_bowl_full.png"
+    },
+    "items/first_aid_kit": {
+      "id": "first_aid_kit",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/first_aid_kit.png"
+    },
+    "items/first_aid_kit_open": {
+      "id": "first_aid_kit_open",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/first_aid_kit_open.png"
+    },
+    "items/bandage": {
+      "id": "bandage",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/bandage.png"
+    },
+    "items/first_aid_cloth": {
+      "id": "first_aid_cloth",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/first_aid_cloth.png"
+    },
+    "items/carrier_front": {
+      "id": "carrier_front",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/carrier_front.png"
+    },
+    "items/carrier_side": {
+      "id": "carrier_side",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/carrier_side.png"
+    },
+    "items/carrier_open": {
+      "id": "carrier_open",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/carrier_open.png"
+    },
+    "items/carrier_soft": {
+      "id": "carrier_soft",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 104,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/carrier_soft.png"
+    },
+    "items/red_ball": {
+      "id": "red_ball",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/red_ball.png"
+    },
+    "items/blue_ball": {
+      "id": "blue_ball",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/blue_ball.png"
+    },
+    "items/rope_toy": {
+      "id": "rope_toy",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/rope_toy.png"
+    },
+    "items/mouse_toy": {
+      "id": "mouse_toy",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/mouse_toy.png"
+    },
+    "items/chew_toy": {
+      "id": "chew_toy",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/chew_toy.png"
+    },
+    "items/feather_toy": {
+      "id": "feather_toy",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/feather_toy.png"
+    },
+    "items/ring_toy": {
+      "id": "ring_toy",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/ring_toy.png"
+    },
+    "items/fish_toy": {
+      "id": "fish_toy",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 138,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/fish_toy.png"
+    },
+    "items/rescue_blanket": {
+      "id": "rescue_blanket",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/rescue_blanket.png"
+    },
+    "items/rescue_gloves": {
+      "id": "rescue_gloves",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/rescue_gloves.png"
+    },
+    "items/rescue_towel": {
+      "id": "rescue_towel",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/rescue_towel.png"
+    },
+    "items/rescue_bag": {
+      "id": "rescue_bag",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/rescue_bag.png"
+    },
+    "items/rescue_crate": {
+      "id": "rescue_crate",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/rescue_crate.png"
+    },
+    "items/carrying_sling": {
+      "id": "carrying_sling",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/carrying_sling.png"
+    },
+    "items/rescue_mat": {
+      "id": "rescue_mat",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/rescue_mat.png"
+    },
+    "items/supply_box": {
+      "id": "supply_box",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 172,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/supply_box.png"
+    },
+    "items/kibble_coin_0": {
+      "id": "kibble_coin_0",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_0.png"
+    },
+    "items/kibble_coin_1": {
+      "id": "kibble_coin_1",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_1.png"
+    },
+    "items/kibble_coin_2": {
+      "id": "kibble_coin_2",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_2.png"
+    },
+    "items/kibble_coin_3": {
+      "id": "kibble_coin_3",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_3.png"
+    },
+    "items/kibble_coin_4": {
+      "id": "kibble_coin_4",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_4.png"
+    },
+    "items/kibble_coin_5": {
+      "id": "kibble_coin_5",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_5.png"
+    },
+    "items/kibble_coin_6": {
+      "id": "kibble_coin_6",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_6.png"
+    },
+    "items/kibble_coin_7": {
+      "id": "kibble_coin_7",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 206,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/kibble_coin_7.png"
+    },
+    "items/paw_indicator_0": {
+      "id": "paw_indicator_0",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 2,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_0.png"
+    },
+    "items/paw_indicator_1": {
+      "id": "paw_indicator_1",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 36,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_1.png"
+    },
+    "items/paw_indicator_2": {
+      "id": "paw_indicator_2",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 70,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_2.png"
+    },
+    "items/paw_indicator_3": {
+      "id": "paw_indicator_3",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 104,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_3.png"
+    },
+    "items/paw_indicator_4": {
+      "id": "paw_indicator_4",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 138,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_4.png"
+    },
+    "items/paw_indicator_5": {
+      "id": "paw_indicator_5",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 172,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_5.png"
+    },
+    "items/paw_indicator_6": {
+      "id": "paw_indicator_6",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 206,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_6.png"
+    },
+    "items/paw_indicator_7": {
+      "id": "paw_indicator_7",
+      "anchor": [
+        16,
+        28
+      ],
+      "sheet": "items",
+      "x": 240,
+      "y": 240,
+      "width": 32,
+      "height": 32,
+      "file": "native/items/paw_indicator_7.png"
+    },
+    "building_tiles/cozy_house_0_0": {
+      "id": "cozy_house_0_0",
+      "building": "cozy_house",
+      "offset": [
+        0,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_0_0.png"
+    },
+    "building_tiles/cozy_house_1_0": {
+      "id": "cozy_house_1_0",
+      "building": "cozy_house",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_1_0.png"
+    },
+    "building_tiles/cozy_house_2_0": {
+      "id": "cozy_house_2_0",
+      "building": "cozy_house",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_2_0.png"
+    },
+    "building_tiles/cozy_house_3_0": {
+      "id": "cozy_house_3_0",
+      "building": "cozy_house",
+      "offset": [
+        96,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_3_0.png"
+    },
+    "building_tiles/cozy_house_0_1": {
+      "id": "cozy_house_0_1",
+      "building": "cozy_house",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_0_1.png"
+    },
+    "building_tiles/cozy_house_1_1": {
+      "id": "cozy_house_1_1",
+      "building": "cozy_house",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_1_1.png"
+    },
+    "building_tiles/cozy_house_2_1": {
+      "id": "cozy_house_2_1",
+      "building": "cozy_house",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_2_1.png"
+    },
+    "building_tiles/cozy_house_3_1": {
+      "id": "cozy_house_3_1",
+      "building": "cozy_house",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_3_1.png"
+    },
+    "building_tiles/cozy_house_0_2": {
+      "id": "cozy_house_0_2",
+      "building": "cozy_house",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_0_2.png"
+    },
+    "building_tiles/cozy_house_1_2": {
+      "id": "cozy_house_1_2",
+      "building": "cozy_house",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_1_2.png"
+    },
+    "building_tiles/cozy_house_2_2": {
+      "id": "cozy_house_2_2",
+      "building": "cozy_house",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_2_2.png"
+    },
+    "building_tiles/cozy_house_3_2": {
+      "id": "cozy_house_3_2",
+      "building": "cozy_house",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_3_2.png"
+    },
+    "building_tiles/cozy_house_0_3": {
+      "id": "cozy_house_0_3",
+      "building": "cozy_house",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_0_3.png"
+    },
+    "building_tiles/cozy_house_1_3": {
+      "id": "cozy_house_1_3",
+      "building": "cozy_house",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_1_3.png"
+    },
+    "building_tiles/cozy_house_2_3": {
+      "id": "cozy_house_2_3",
+      "building": "cozy_house",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_2_3.png"
+    },
+    "building_tiles/cozy_house_3_3": {
+      "id": "cozy_house_3_3",
+      "building": "cozy_house",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 0,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/cozy_house_3_3.png"
+    },
+    "building_tiles/mint_house_0_0": {
+      "id": "mint_house_0_0",
+      "building": "mint_house",
+      "offset": [
+        0,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_0_0.png"
+    },
+    "building_tiles/mint_house_1_0": {
+      "id": "mint_house_1_0",
+      "building": "mint_house",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_1_0.png"
+    },
+    "building_tiles/mint_house_2_0": {
+      "id": "mint_house_2_0",
+      "building": "mint_house",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_2_0.png"
+    },
+    "building_tiles/mint_house_3_0": {
+      "id": "mint_house_3_0",
+      "building": "mint_house",
+      "offset": [
+        96,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_3_0.png"
+    },
+    "building_tiles/mint_house_0_1": {
+      "id": "mint_house_0_1",
+      "building": "mint_house",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_0_1.png"
+    },
+    "building_tiles/mint_house_1_1": {
+      "id": "mint_house_1_1",
+      "building": "mint_house",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_1_1.png"
+    },
+    "building_tiles/mint_house_2_1": {
+      "id": "mint_house_2_1",
+      "building": "mint_house",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_2_1.png"
+    },
+    "building_tiles/mint_house_3_1": {
+      "id": "mint_house_3_1",
+      "building": "mint_house",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_3_1.png"
+    },
+    "building_tiles/mint_house_0_2": {
+      "id": "mint_house_0_2",
+      "building": "mint_house",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_0_2.png"
+    },
+    "building_tiles/mint_house_1_2": {
+      "id": "mint_house_1_2",
+      "building": "mint_house",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_1_2.png"
+    },
+    "building_tiles/mint_house_2_2": {
+      "id": "mint_house_2_2",
+      "building": "mint_house",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_2_2.png"
+    },
+    "building_tiles/mint_house_3_2": {
+      "id": "mint_house_3_2",
+      "building": "mint_house",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_3_2.png"
+    },
+    "building_tiles/mint_house_0_3": {
+      "id": "mint_house_0_3",
+      "building": "mint_house",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_0_3.png"
+    },
+    "building_tiles/mint_house_1_3": {
+      "id": "mint_house_1_3",
+      "building": "mint_house",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_1_3.png"
+    },
+    "building_tiles/mint_house_2_3": {
+      "id": "mint_house_2_3",
+      "building": "mint_house",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_2_3.png"
+    },
+    "building_tiles/mint_house_3_3": {
+      "id": "mint_house_3_3",
+      "building": "mint_house",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 32,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/mint_house_3_3.png"
+    },
+    "building_tiles/coral_house_0_0": {
+      "id": "coral_house_0_0",
+      "building": "coral_house",
+      "offset": [
+        0,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_0_0.png"
+    },
+    "building_tiles/coral_house_1_0": {
+      "id": "coral_house_1_0",
+      "building": "coral_house",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_1_0.png"
+    },
+    "building_tiles/coral_house_2_0": {
+      "id": "coral_house_2_0",
+      "building": "coral_house",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_2_0.png"
+    },
+    "building_tiles/coral_house_3_0": {
+      "id": "coral_house_3_0",
+      "building": "coral_house",
+      "offset": [
+        96,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_3_0.png"
+    },
+    "building_tiles/coral_house_0_1": {
+      "id": "coral_house_0_1",
+      "building": "coral_house",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_0_1.png"
+    },
+    "building_tiles/coral_house_1_1": {
+      "id": "coral_house_1_1",
+      "building": "coral_house",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_1_1.png"
+    },
+    "building_tiles/coral_house_2_1": {
+      "id": "coral_house_2_1",
+      "building": "coral_house",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_2_1.png"
+    },
+    "building_tiles/coral_house_3_1": {
+      "id": "coral_house_3_1",
+      "building": "coral_house",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_3_1.png"
+    },
+    "building_tiles/coral_house_0_2": {
+      "id": "coral_house_0_2",
+      "building": "coral_house",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_0_2.png"
+    },
+    "building_tiles/coral_house_1_2": {
+      "id": "coral_house_1_2",
+      "building": "coral_house",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_1_2.png"
+    },
+    "building_tiles/coral_house_2_2": {
+      "id": "coral_house_2_2",
+      "building": "coral_house",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_2_2.png"
+    },
+    "building_tiles/coral_house_3_2": {
+      "id": "coral_house_3_2",
+      "building": "coral_house",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_3_2.png"
+    },
+    "building_tiles/coral_house_0_3": {
+      "id": "coral_house_0_3",
+      "building": "coral_house",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_0_3.png"
+    },
+    "building_tiles/coral_house_1_3": {
+      "id": "coral_house_1_3",
+      "building": "coral_house",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_1_3.png"
+    },
+    "building_tiles/coral_house_2_3": {
+      "id": "coral_house_2_3",
+      "building": "coral_house",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_2_3.png"
+    },
+    "building_tiles/coral_house_3_3": {
+      "id": "coral_house_3_3",
+      "building": "coral_house",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 64,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/coral_house_3_3.png"
+    },
+    "building_tiles/rescue_shelter_1_0": {
+      "id": "rescue_shelter_1_0",
+      "building": "rescue_shelter",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_1_0.png"
+    },
+    "building_tiles/rescue_shelter_2_0": {
+      "id": "rescue_shelter_2_0",
+      "building": "rescue_shelter",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_2_0.png"
+    },
+    "building_tiles/rescue_shelter_0_1": {
+      "id": "rescue_shelter_0_1",
+      "building": "rescue_shelter",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_0_1.png"
+    },
+    "building_tiles/rescue_shelter_1_1": {
+      "id": "rescue_shelter_1_1",
+      "building": "rescue_shelter",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_1_1.png"
+    },
+    "building_tiles/rescue_shelter_2_1": {
+      "id": "rescue_shelter_2_1",
+      "building": "rescue_shelter",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_2_1.png"
+    },
+    "building_tiles/rescue_shelter_3_1": {
+      "id": "rescue_shelter_3_1",
+      "building": "rescue_shelter",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_3_1.png"
+    },
+    "building_tiles/rescue_shelter_0_2": {
+      "id": "rescue_shelter_0_2",
+      "building": "rescue_shelter",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_0_2.png"
+    },
+    "building_tiles/rescue_shelter_1_2": {
+      "id": "rescue_shelter_1_2",
+      "building": "rescue_shelter",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_1_2.png"
+    },
+    "building_tiles/rescue_shelter_2_2": {
+      "id": "rescue_shelter_2_2",
+      "building": "rescue_shelter",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_2_2.png"
+    },
+    "building_tiles/rescue_shelter_3_2": {
+      "id": "rescue_shelter_3_2",
+      "building": "rescue_shelter",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_3_2.png"
+    },
+    "building_tiles/rescue_shelter_0_3": {
+      "id": "rescue_shelter_0_3",
+      "building": "rescue_shelter",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_0_3.png"
+    },
+    "building_tiles/rescue_shelter_1_3": {
+      "id": "rescue_shelter_1_3",
+      "building": "rescue_shelter",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_1_3.png"
+    },
+    "building_tiles/rescue_shelter_2_3": {
+      "id": "rescue_shelter_2_3",
+      "building": "rescue_shelter",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_2_3.png"
+    },
+    "building_tiles/rescue_shelter_3_3": {
+      "id": "rescue_shelter_3_3",
+      "building": "rescue_shelter",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/rescue_shelter_3_3.png"
+    },
+    "building_tiles/veterinary_clinic_1_0": {
+      "id": "veterinary_clinic_1_0",
+      "building": "veterinary_clinic",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_1_0.png"
+    },
+    "building_tiles/veterinary_clinic_2_0": {
+      "id": "veterinary_clinic_2_0",
+      "building": "veterinary_clinic",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_2_0.png"
+    },
+    "building_tiles/veterinary_clinic_0_1": {
+      "id": "veterinary_clinic_0_1",
+      "building": "veterinary_clinic",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_0_1.png"
+    },
+    "building_tiles/veterinary_clinic_1_1": {
+      "id": "veterinary_clinic_1_1",
+      "building": "veterinary_clinic",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_1_1.png"
+    },
+    "building_tiles/veterinary_clinic_2_1": {
+      "id": "veterinary_clinic_2_1",
+      "building": "veterinary_clinic",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_2_1.png"
+    },
+    "building_tiles/veterinary_clinic_3_1": {
+      "id": "veterinary_clinic_3_1",
+      "building": "veterinary_clinic",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_3_1.png"
+    },
+    "building_tiles/veterinary_clinic_0_2": {
+      "id": "veterinary_clinic_0_2",
+      "building": "veterinary_clinic",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_0_2.png"
+    },
+    "building_tiles/veterinary_clinic_1_2": {
+      "id": "veterinary_clinic_1_2",
+      "building": "veterinary_clinic",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_1_2.png"
+    },
+    "building_tiles/veterinary_clinic_2_2": {
+      "id": "veterinary_clinic_2_2",
+      "building": "veterinary_clinic",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_2_2.png"
+    },
+    "building_tiles/veterinary_clinic_3_2": {
+      "id": "veterinary_clinic_3_2",
+      "building": "veterinary_clinic",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_3_2.png"
+    },
+    "building_tiles/veterinary_clinic_0_3": {
+      "id": "veterinary_clinic_0_3",
+      "building": "veterinary_clinic",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_0_3.png"
+    },
+    "building_tiles/veterinary_clinic_1_3": {
+      "id": "veterinary_clinic_1_3",
+      "building": "veterinary_clinic",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_1_3.png"
+    },
+    "building_tiles/veterinary_clinic_2_3": {
+      "id": "veterinary_clinic_2_3",
+      "building": "veterinary_clinic",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_2_3.png"
+    },
+    "building_tiles/veterinary_clinic_3_3": {
+      "id": "veterinary_clinic_3_3",
+      "building": "veterinary_clinic",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/veterinary_clinic_3_3.png"
+    },
+    "building_tiles/pet_supply_shop_1_0": {
+      "id": "pet_supply_shop_1_0",
+      "building": "pet_supply_shop",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_1_0.png"
+    },
+    "building_tiles/pet_supply_shop_2_0": {
+      "id": "pet_supply_shop_2_0",
+      "building": "pet_supply_shop",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_2_0.png"
+    },
+    "building_tiles/pet_supply_shop_0_1": {
+      "id": "pet_supply_shop_0_1",
+      "building": "pet_supply_shop",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_0_1.png"
+    },
+    "building_tiles/pet_supply_shop_1_1": {
+      "id": "pet_supply_shop_1_1",
+      "building": "pet_supply_shop",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 128,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_1_1.png"
+    },
+    "building_tiles/pet_supply_shop_2_1": {
+      "id": "pet_supply_shop_2_1",
+      "building": "pet_supply_shop",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_2_1.png"
+    },
+    "building_tiles/pet_supply_shop_3_1": {
+      "id": "pet_supply_shop_3_1",
+      "building": "pet_supply_shop",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_3_1.png"
+    },
+    "building_tiles/pet_supply_shop_0_2": {
+      "id": "pet_supply_shop_0_2",
+      "building": "pet_supply_shop",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_0_2.png"
+    },
+    "building_tiles/pet_supply_shop_1_2": {
+      "id": "pet_supply_shop_1_2",
+      "building": "pet_supply_shop",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_1_2.png"
+    },
+    "building_tiles/pet_supply_shop_2_2": {
+      "id": "pet_supply_shop_2_2",
+      "building": "pet_supply_shop",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_2_2.png"
+    },
+    "building_tiles/pet_supply_shop_3_2": {
+      "id": "pet_supply_shop_3_2",
+      "building": "pet_supply_shop",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_3_2.png"
+    },
+    "building_tiles/pet_supply_shop_0_3": {
+      "id": "pet_supply_shop_0_3",
+      "building": "pet_supply_shop",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_0_3.png"
+    },
+    "building_tiles/pet_supply_shop_1_3": {
+      "id": "pet_supply_shop_1_3",
+      "building": "pet_supply_shop",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_1_3.png"
+    },
+    "building_tiles/pet_supply_shop_2_3": {
+      "id": "pet_supply_shop_2_3",
+      "building": "pet_supply_shop",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_2_3.png"
+    },
+    "building_tiles/pet_supply_shop_3_3": {
+      "id": "pet_supply_shop_3_3",
+      "building": "pet_supply_shop",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/pet_supply_shop_3_3.png"
+    },
+    "building_tiles/sari_sari_store_0_0": {
+      "id": "sari_sari_store_0_0",
+      "building": "sari_sari_store",
+      "offset": [
+        0,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_0_0.png"
+    },
+    "building_tiles/sari_sari_store_1_0": {
+      "id": "sari_sari_store_1_0",
+      "building": "sari_sari_store",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_1_0.png"
+    },
+    "building_tiles/sari_sari_store_2_0": {
+      "id": "sari_sari_store_2_0",
+      "building": "sari_sari_store",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_2_0.png"
+    },
+    "building_tiles/sari_sari_store_3_0": {
+      "id": "sari_sari_store_3_0",
+      "building": "sari_sari_store",
+      "offset": [
+        96,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_3_0.png"
+    },
+    "building_tiles/sari_sari_store_0_1": {
+      "id": "sari_sari_store_0_1",
+      "building": "sari_sari_store",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_0_1.png"
+    },
+    "building_tiles/sari_sari_store_1_1": {
+      "id": "sari_sari_store_1_1",
+      "building": "sari_sari_store",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 160,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_1_1.png"
+    },
+    "building_tiles/sari_sari_store_2_1": {
+      "id": "sari_sari_store_2_1",
+      "building": "sari_sari_store",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_2_1.png"
+    },
+    "building_tiles/sari_sari_store_3_1": {
+      "id": "sari_sari_store_3_1",
+      "building": "sari_sari_store",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_3_1.png"
+    },
+    "building_tiles/sari_sari_store_0_2": {
+      "id": "sari_sari_store_0_2",
+      "building": "sari_sari_store",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_0_2.png"
+    },
+    "building_tiles/sari_sari_store_1_2": {
+      "id": "sari_sari_store_1_2",
+      "building": "sari_sari_store",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_1_2.png"
+    },
+    "building_tiles/sari_sari_store_2_2": {
+      "id": "sari_sari_store_2_2",
+      "building": "sari_sari_store",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_2_2.png"
+    },
+    "building_tiles/sari_sari_store_3_2": {
+      "id": "sari_sari_store_3_2",
+      "building": "sari_sari_store",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_3_2.png"
+    },
+    "building_tiles/sari_sari_store_0_3": {
+      "id": "sari_sari_store_0_3",
+      "building": "sari_sari_store",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_0_3.png"
+    },
+    "building_tiles/sari_sari_store_1_3": {
+      "id": "sari_sari_store_1_3",
+      "building": "sari_sari_store",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_1_3.png"
+    },
+    "building_tiles/sari_sari_store_2_3": {
+      "id": "sari_sari_store_2_3",
+      "building": "sari_sari_store",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_2_3.png"
+    },
+    "building_tiles/sari_sari_store_3_3": {
+      "id": "sari_sari_store_3_3",
+      "building": "sari_sari_store",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/sari_sari_store_3_3.png"
+    },
+    "building_tiles/bamboo_house_1_0": {
+      "id": "bamboo_house_1_0",
+      "building": "bamboo_house",
+      "offset": [
+        32,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_1_0.png"
+    },
+    "building_tiles/bamboo_house_2_0": {
+      "id": "bamboo_house_2_0",
+      "building": "bamboo_house",
+      "offset": [
+        64,
+        0
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_2_0.png"
+    },
+    "building_tiles/bamboo_house_0_1": {
+      "id": "bamboo_house_0_1",
+      "building": "bamboo_house",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_0_1.png"
+    },
+    "building_tiles/bamboo_house_1_1": {
+      "id": "bamboo_house_1_1",
+      "building": "bamboo_house",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_1_1.png"
+    },
+    "building_tiles/bamboo_house_2_1": {
+      "id": "bamboo_house_2_1",
+      "building": "bamboo_house",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_2_1.png"
+    },
+    "building_tiles/bamboo_house_3_1": {
+      "id": "bamboo_house_3_1",
+      "building": "bamboo_house",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 192,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_3_1.png"
+    },
+    "building_tiles/bamboo_house_0_2": {
+      "id": "bamboo_house_0_2",
+      "building": "bamboo_house",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_0_2.png"
+    },
+    "building_tiles/bamboo_house_1_2": {
+      "id": "bamboo_house_1_2",
+      "building": "bamboo_house",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_1_2.png"
+    },
+    "building_tiles/bamboo_house_2_2": {
+      "id": "bamboo_house_2_2",
+      "building": "bamboo_house",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_2_2.png"
+    },
+    "building_tiles/bamboo_house_3_2": {
+      "id": "bamboo_house_3_2",
+      "building": "bamboo_house",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_3_2.png"
+    },
+    "building_tiles/bamboo_house_0_3": {
+      "id": "bamboo_house_0_3",
+      "building": "bamboo_house",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 128,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_0_3.png"
+    },
+    "building_tiles/bamboo_house_1_3": {
+      "id": "bamboo_house_1_3",
+      "building": "bamboo_house",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 160,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_1_3.png"
+    },
+    "building_tiles/bamboo_house_2_3": {
+      "id": "bamboo_house_2_3",
+      "building": "bamboo_house",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 192,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_2_3.png"
+    },
+    "building_tiles/bamboo_house_3_3": {
+      "id": "bamboo_house_3_3",
+      "building": "bamboo_house",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 224,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/bamboo_house_3_3.png"
+    },
+    "building_tiles/resting_pavilion_0_1": {
+      "id": "resting_pavilion_0_1",
+      "building": "resting_pavilion",
+      "offset": [
+        0,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 256,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_0_1.png"
+    },
+    "building_tiles/resting_pavilion_1_1": {
+      "id": "resting_pavilion_1_1",
+      "building": "resting_pavilion",
+      "offset": [
+        32,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 288,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_1_1.png"
+    },
+    "building_tiles/resting_pavilion_2_1": {
+      "id": "resting_pavilion_2_1",
+      "building": "resting_pavilion",
+      "offset": [
+        64,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 320,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_2_1.png"
+    },
+    "building_tiles/resting_pavilion_3_1": {
+      "id": "resting_pavilion_3_1",
+      "building": "resting_pavilion",
+      "offset": [
+        96,
+        32
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 352,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_3_1.png"
+    },
+    "building_tiles/resting_pavilion_0_2": {
+      "id": "resting_pavilion_0_2",
+      "building": "resting_pavilion",
+      "offset": [
+        0,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 384,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_0_2.png"
+    },
+    "building_tiles/resting_pavilion_1_2": {
+      "id": "resting_pavilion_1_2",
+      "building": "resting_pavilion",
+      "offset": [
+        32,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 416,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_1_2.png"
+    },
+    "building_tiles/resting_pavilion_2_2": {
+      "id": "resting_pavilion_2_2",
+      "building": "resting_pavilion",
+      "offset": [
+        64,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 448,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_2_2.png"
+    },
+    "building_tiles/resting_pavilion_3_2": {
+      "id": "resting_pavilion_3_2",
+      "building": "resting_pavilion",
+      "offset": [
+        96,
+        64
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 480,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_3_2.png"
+    },
+    "building_tiles/resting_pavilion_0_3": {
+      "id": "resting_pavilion_0_3",
+      "building": "resting_pavilion",
+      "offset": [
+        0,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 0,
+      "y": 256,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_0_3.png"
+    },
+    "building_tiles/resting_pavilion_1_3": {
+      "id": "resting_pavilion_1_3",
+      "building": "resting_pavilion",
+      "offset": [
+        32,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 32,
+      "y": 256,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_1_3.png"
+    },
+    "building_tiles/resting_pavilion_2_3": {
+      "id": "resting_pavilion_2_3",
+      "building": "resting_pavilion",
+      "offset": [
+        64,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 64,
+      "y": 256,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_2_3.png"
+    },
+    "building_tiles/resting_pavilion_3_3": {
+      "id": "resting_pavilion_3_3",
+      "building": "resting_pavilion",
+      "offset": [
+        96,
+        96
+      ],
+      "kind": "building-chunk",
+      "sheet": "building_tiles",
+      "x": 96,
+      "y": 256,
+      "width": 32,
+      "height": 32,
+      "file": "native/building_tiles/resting_pavilion_3_3.png"
+    }
+  }
+}

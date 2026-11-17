@@ -1,0 +1,258 @@
+{
+  "browser": "Codex in-app browser",
+  "name": "head-tilt-shy-rest-live",
+  "durationMs": 4802,
+  "rect": {
+    "bottom": 443,
+    "height": 360,
+    "left": 211,
+    "right": 499,
+    "top": 83,
+    "width": 288,
+    "x": 211,
+    "y": 83
+  },
+  "frames": [
+    {
+      "file": "000.jpg",
+      "atMs": 0
+    },
+    {
+      "file": "001.jpg",
+      "atMs": 81
+    },
+    {
+      "file": "002.jpg",
+      "atMs": 160
+    },
+    {
+      "file": "003.jpg",
+      "atMs": 240
+    },
+    {
+      "file": "004.jpg",
+      "atMs": 321
+    },
+    {
+      "file": "005.jpg",
+      "atMs": 400
+    },
+    {
+      "file": "006.jpg",
+      "atMs": 480
+    },
+    {
+      "file": "007.jpg",
+      "atMs": 561
+    },
+    {
+      "file": "008.jpg",
+      "atMs": 640
+    },
+    {
+      "file": "009.jpg",
+      "atMs": 720
+    },
+    {
+      "file": "010.jpg",
+      "atMs": 810
+    },
+    {
+      "file": "011.jpg",
+      "atMs": 881
+    },
+    {
+      "file": "012.jpg",
+      "atMs": 961
+    },
+    {
+      "file": "013.jpg",
+      "atMs": 1040
+    },
+    {
+      "file": "014.jpg",
+      "atMs": 1120
+    },
+    {
+      "file": "015.jpg",
+      "atMs": 1200
+    },
+    {
+      "file": "016.jpg",
+      "atMs": 1280
+    },
+    {
+      "file": "017.jpg",
+      "atMs": 1360
+    },
+    {
+      "file": "018.jpg",
+      "atMs": 1440
+    },
+    {
+      "file": "019.jpg",
+      "atMs": 1520
+    },
+    {
+      "file": "020.jpg",
+      "atMs": 1601
+    },
+    {
+      "file": "021.jpg",
+      "atMs": 1680
+    },
+    {
+      "file": "022.jpg",
+      "atMs": 1761
+    },
+    {
+      "file": "023.jpg",
+      "atMs": 1840
+    },
+    {
+      "file": "024.jpg",
+      "atMs": 1920
+    },
+    {
+      "file": "025.jpg",
+      "atMs": 2000
+    },
+    {
+      "file": "026.jpg",
+      "atMs": 2080
+    },
+    {
+      "file": "027.jpg",
+      "atMs": 2160
+    },
+    {
+      "file": "028.jpg",
+      "atMs": 2240
+    },
+    {
+      "file": "029.jpg",
+      "atMs": 2320
+    },
+    {
+      "file": "030.jpg",
+      "atMs": 2400
+    },
+    {
+      "file": "031.jpg",
+      "atMs": 2480
+    },
+    {
+      "file": "032.jpg",
+      "atMs": 2561
+    },
+    {
+      "file": "033.jpg",
+      "atMs": 2640
+    },
+    {
+      "file": "034.jpg",
+      "atMs": 2720
+    },
+    {
+      "file": "035.jpg",
+      "atMs": 2801
+    },
+    {
+      "file": "036.jpg",
+      "atMs": 2880
+    },
+    {
+      "file": "037.jpg",
+      "atMs": 2961
+    },
+    {
+      "file": "038.jpg",
+      "atMs": 3041
+    },
+    {
+      "file": "039.jpg",
+      "atMs": 3120
+    },
+    {
+      "file": "040.jpg",
+      "atMs": 3200
+    },
+    {
+      "file": "041.jpg",
+      "atMs": 3280
+    },
+    {
+      "file": "042.jpg",
+      "atMs": 3361
+    },
+    {
+      "file": "043.jpg",
+      "atMs": 3440
+    },
+    {
+      "file": "044.jpg",
+      "atMs": 3520
+    },
+    {
+      "file": "045.jpg",
+      "atMs": 3600
+    },
+    {
+      "file": "046.jpg",
+      "atMs": 3680
+    },
+    {
+      "file": "047.jpg",
+      "atMs": 3759
+    },
+    {
+      "file": "048.jpg",
+      "atMs": 3840
+    },
+    {
+      "file": "049.jpg",
+      "atMs": 3920
+    },
+    {
+      "file": "050.jpg",
+      "atMs": 4000
+    },
+    {
+      "file": "051.jpg",
+      "atMs": 4080
+    },
+    {
+      "file": "052.jpg",
+      "atMs": 4160
+    },
+    {
+      "file": "053.jpg",
+      "atMs": 4240
+    },
+    {
+      "file": "054.jpg",
+      "atMs": 4320
+    },
+    {
+      "file": "055.jpg",
+      "atMs": 4412
+    },
+    {
+      "file": "056.jpg",
+      "atMs": 4512
+    },
+    {
+      "file": "057.jpg",
+      "atMs": 4575
+    },
+    {
+      "file": "058.jpg",
+      "atMs": 4640
+    },
+    {
+      "file": "059.jpg",
+      "atMs": 4720
+    }
+  ],
+  "method": "native full-viewport screenshots; cropped screenshot API excluded"
+}

@@ -1,0 +1,316 @@
+{
+  "version": 3,
+  "tileSize": 32,
+  "lighting": "upper-left",
+  "perspective": "top-down-three-quarter",
+  "generation": "built-in image_gen",
+  "prompts": "assets/room-v2/prompts.json",
+  "alpha": "binary; translucent generator glow removed under prior owner authorization",
+  "assets": [
+    {
+      "id": "sage-loveseat-east",
+      "label": "Sage loveseat \u00b7 faces right",
+      "file": "/assets/game/housing/furniture/reference-v3/sage-loveseat-east.png",
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        96
+      ],
+      "footprint": [
+        16,
+        32,
+        32,
+        64
+      ],
+      "blocking": true,
+      "rotatable": false,
+      "category": "Living room",
+      "interaction": "sit",
+      "price": 95,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        0,
+        0,
+        631,
+        623
+      ],
+      "frames": 1
+    },
+    {
+      "id": "sage-loveseat-west",
+      "label": "Sage loveseat \u00b7 faces left",
+      "file": "/assets/game/housing/furniture/reference-v3/sage-loveseat-west.png",
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        96
+      ],
+      "footprint": [
+        16,
+        32,
+        32,
+        64
+      ],
+      "blocking": true,
+      "rotatable": false,
+      "category": "Living room",
+      "interaction": "sit",
+      "price": 95,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        631,
+        0,
+        1262,
+        623
+      ],
+      "frames": 1
+    },
+    {
+      "id": "round-flower-table",
+      "label": "Round daisy coffee table",
+      "file": "/assets/game/housing/furniture/reference-v3/round-flower-table.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": [
+        6,
+        36,
+        52,
+        28
+      ],
+      "blocking": true,
+      "rotatable": false,
+      "category": "Living room",
+      "interaction": "inspect",
+      "price": 65,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        0,
+        623,
+        631,
+        1246
+      ],
+      "frames": 1
+    },
+    {
+      "id": "woven-area-rug",
+      "label": "Honey woven area rug",
+      "file": "/assets/game/housing/furniture/reference-v3/woven-area-rug.png",
+      "width": 128,
+      "height": 96,
+      "anchor": [
+        64,
+        96
+      ],
+      "footprint": null,
+      "blocking": false,
+      "rotatable": false,
+      "category": "Decor",
+      "interaction": "inspect",
+      "price": 45,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        631,
+        623,
+        1262,
+        1246
+      ],
+      "frames": 1
+    },
+    {
+      "id": "sage-chaise",
+      "label": "Sage window chaise",
+      "file": "/assets/game/housing/furniture/reference-v3/sage-chaise.png",
+      "width": 96,
+      "height": 64,
+      "anchor": [
+        48,
+        64
+      ],
+      "footprint": [
+        8,
+        40,
+        80,
+        24
+      ],
+      "blocking": true,
+      "rotatable": false,
+      "category": "Living room",
+      "interaction": "sit",
+      "price": 85,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "frames": 1
+    },
+    {
+      "id": "lantern-cabinet",
+      "label": "Lantern bedside cabinet",
+      "file": "/assets/game/housing/furniture/reference-v3/lantern-cabinet.png",
+      "width": 32,
+      "height": 64,
+      "anchor": [
+        16,
+        64
+      ],
+      "footprint": [
+        3,
+        48,
+        26,
+        16
+      ],
+      "blocking": true,
+      "rotatable": false,
+      "category": "Bedroom",
+      "interaction": "inspect",
+      "price": 45,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "frames": 1
+    },
+    {
+      "id": "wicker-display-cabinet",
+      "label": "Wicker display cabinet",
+      "file": "/assets/game/housing/furniture/reference-v3/wicker-display-cabinet.png",
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        96
+      ],
+      "footprint": [
+        8,
+        72,
+        48,
+        24
+      ],
+      "blocking": true,
+      "rotatable": false,
+      "category": "Living room",
+      "interaction": "inspect",
+      "price": 85,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "frames": 1
+    },
+    {
+      "id": "bamboo-window",
+      "label": "Bamboo garden window",
+      "file": "/assets/game/housing/furniture/reference-v3/bamboo-window.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "footprint": null,
+      "blocking": false,
+      "rotatable": false,
+      "category": "Decor",
+      "interaction": "inspect",
+      "price": 35,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "frames": 1
+    },
+    {
+      "id": "woven-runner",
+      "label": "Woven welcome runner",
+      "file": "/assets/game/housing/furniture/reference-v3/woven-runner.png",
+      "width": 64,
+      "height": 128,
+      "anchor": [
+        32,
+        128
+      ],
+      "footprint": null,
+      "blocking": false,
+      "rotatable": false,
+      "category": "Decor",
+      "interaction": "inspect",
+      "price": 35,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        0,
+        1024,
+        512,
+        1536
+      ],
+      "frames": 1
+    },
+    {
+      "id": "double-feeding-tray",
+      "label": "Double feeding tray",
+      "file": "/assets/game/housing/furniture/reference-v3/double-feeding-tray.png",
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        4,
+        16,
+        56,
+        16
+      ],
+      "blocking": true,
+      "rotatable": false,
+      "category": "Pet essentials",
+      "interaction": "feed",
+      "price": 35,
+      "zones": [
+        "interior"
+      ],
+      "sourceCell": [
+        512,
+        1024,
+        1024,
+        1536
+      ],
+      "frames": 1
+    }
+  ]
+}

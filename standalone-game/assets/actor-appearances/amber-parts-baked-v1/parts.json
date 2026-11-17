@@ -1,0 +1,709 @@
+{
+  "authoring": "reference-guided Blender meshes, not neural image-to-3D",
+  "parts": [
+    {
+      "name": "Ivory_fitted_bodice",
+      "category": "bodice",
+      "joint": "spine",
+      "vertices": 120,
+      "triangles": 236
+    },
+    {
+      "name": "Neck_skin",
+      "category": "head",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Shorts_waist",
+      "category": "shorts",
+      "joint": "hips",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Jacket_panel_L",
+      "category": "jacket",
+      "joint": "spine",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Jacket_gold_lapel_L",
+      "category": "trim",
+      "joint": "spine",
+      "vertices": 32,
+      "triangles": 48
+    },
+    {
+      "name": "Round_shoulder_cap_L",
+      "category": "sleeves",
+      "joint": "upper_arm.L",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Shoulder_gold_badge_L",
+      "category": "trim",
+      "joint": "upper_arm.L",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Long_dark_sleeve_L",
+      "category": "sleeves",
+      "joint": "upper_arm.L",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Fitted_forearm_L",
+      "category": "sleeves",
+      "joint": "forearm.L",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Red_glove_cuff_L",
+      "category": "gloves",
+      "joint": "forearm.L",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Glove_hand_L",
+      "category": "gloves",
+      "joint": "forearm.L",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Glove_thumb_L",
+      "category": "gloves",
+      "joint": "forearm.L",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Shorts_leg_L",
+      "category": "shorts",
+      "joint": "thigh.L",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Visible_thigh_L",
+      "category": "legs",
+      "joint": "thigh.L",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Thigh_boot_top_L",
+      "category": "boots",
+      "joint": "thigh.L",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Red_boot_panel_L",
+      "category": "boots",
+      "joint": "thigh.L",
+      "vertices": 30,
+      "triangles": 56
+    },
+    {
+      "name": "Gold_boot_top_L",
+      "category": "trim",
+      "joint": "thigh.L",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Boot_calf_L",
+      "category": "boots",
+      "joint": "shin.L",
+      "vertices": 80,
+      "triangles": 156
+    },
+    {
+      "name": "Boot_foot_L",
+      "category": "boots",
+      "joint": "foot.L",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Boot_gold_toe_L",
+      "category": "trim",
+      "joint": "foot.L",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Boot_heel_L",
+      "category": "boots",
+      "joint": "foot.L",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Boot_gold_crest_L-1",
+      "category": "trim",
+      "joint": "thigh.L",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Boot_gold_crest_L1",
+      "category": "trim",
+      "joint": "thigh.L",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Leather_pouch_L",
+      "category": "belt",
+      "joint": "hips",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Pouch_gold_flap_L",
+      "category": "trim",
+      "joint": "hips",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Split_red_cape_L",
+      "category": "cape",
+      "joint": "cape.L",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Cape_gold_edge_L",
+      "category": "trim",
+      "joint": "cape.L",
+      "vertices": 32,
+      "triangles": 48
+    },
+    {
+      "name": "Jacket_panel_R",
+      "category": "jacket",
+      "joint": "spine",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Jacket_gold_lapel_R",
+      "category": "trim",
+      "joint": "spine",
+      "vertices": 32,
+      "triangles": 48
+    },
+    {
+      "name": "Round_shoulder_cap_R",
+      "category": "sleeves",
+      "joint": "upper_arm.R",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Shoulder_gold_badge_R",
+      "category": "trim",
+      "joint": "upper_arm.R",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Long_dark_sleeve_R",
+      "category": "sleeves",
+      "joint": "upper_arm.R",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Fitted_forearm_R",
+      "category": "sleeves",
+      "joint": "forearm.R",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Red_glove_cuff_R",
+      "category": "gloves",
+      "joint": "forearm.R",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Glove_hand_R",
+      "category": "gloves",
+      "joint": "forearm.R",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Glove_thumb_R",
+      "category": "gloves",
+      "joint": "forearm.R",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Shorts_leg_R",
+      "category": "shorts",
+      "joint": "thigh.R",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Visible_thigh_R",
+      "category": "legs",
+      "joint": "thigh.R",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Thigh_boot_top_R",
+      "category": "boots",
+      "joint": "thigh.R",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Red_boot_panel_R",
+      "category": "boots",
+      "joint": "thigh.R",
+      "vertices": 30,
+      "triangles": 56
+    },
+    {
+      "name": "Gold_boot_top_R",
+      "category": "trim",
+      "joint": "thigh.R",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Boot_calf_R",
+      "category": "boots",
+      "joint": "shin.R",
+      "vertices": 80,
+      "triangles": 156
+    },
+    {
+      "name": "Boot_foot_R",
+      "category": "boots",
+      "joint": "foot.R",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Boot_gold_toe_R",
+      "category": "trim",
+      "joint": "foot.R",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Boot_heel_R",
+      "category": "boots",
+      "joint": "foot.R",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Boot_gold_crest_R-1",
+      "category": "trim",
+      "joint": "thigh.R",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Boot_gold_crest_R1",
+      "category": "trim",
+      "joint": "thigh.R",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Leather_pouch_R",
+      "category": "belt",
+      "joint": "hips",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Pouch_gold_flap_R",
+      "category": "trim",
+      "joint": "hips",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Split_red_cape_R",
+      "category": "cape",
+      "joint": "cape.R",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Cape_gold_edge_R",
+      "category": "trim",
+      "joint": "cape.R",
+      "vertices": 32,
+      "triangles": 48
+    },
+    {
+      "name": "Utility_belt",
+      "category": "belt",
+      "joint": "hips",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Gold_belt_buckle",
+      "category": "trim",
+      "joint": "hips",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Bodice_gold_scroll_-1",
+      "category": "trim",
+      "joint": "spine",
+      "vertices": 40,
+      "triangles": 64
+    },
+    {
+      "name": "Bodice_gold_scroll_1",
+      "category": "trim",
+      "joint": "spine",
+      "vertices": 40,
+      "triangles": 64
+    },
+    {
+      "name": "Bodice_center_fastening",
+      "category": "trim",
+      "joint": "spine",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Face_skull",
+      "category": "head",
+      "joint": "head",
+      "vertices": 354,
+      "triangles": 704
+    },
+    {
+      "name": "Face_chin",
+      "category": "head",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Approved_anime_face_open",
+      "category": "face",
+      "joint": "face_open",
+      "vertices": 289,
+      "triangles": 512
+    },
+    {
+      "name": "Approved_anime_face_closed",
+      "category": "face",
+      "joint": "face_closed",
+      "vertices": 289,
+      "triangles": 512
+    },
+    {
+      "name": "Ear_L",
+      "category": "head",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Ear_R",
+      "category": "head",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Nose",
+      "category": "face",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Hair_crown",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Swept_fringe_L",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Pointed_forelock_L",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 30,
+      "triangles": 56
+    },
+    {
+      "name": "Temple_lock_L",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Fringe_highlight_L",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Swept_fringe_R",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Pointed_forelock_R",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 30,
+      "triangles": 56
+    },
+    {
+      "name": "Temple_lock_R",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Fringe_highlight_R",
+      "category": "hair",
+      "joint": "head",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Back_hair_lock_00",
+      "category": "hair",
+      "joint": "hair",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Back_hair_lock_01",
+      "category": "hair",
+      "joint": "hair",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Back_hair_lock_02",
+      "category": "hair",
+      "joint": "hair",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Back_hair_lock_03",
+      "category": "hair",
+      "joint": "hair",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Back_hair_lock_04",
+      "category": "hair",
+      "joint": "hair",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Back_hair_lock_05",
+      "category": "hair",
+      "joint": "hair",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Back_hair_lock_06",
+      "category": "hair",
+      "joint": "hair",
+      "vertices": 60,
+      "triangles": 116
+    },
+    {
+      "name": "Goggle_dark_recess_L",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Goggle_gold_rim_L",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Goggle_glass_L",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Goggle_glint_L",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 16,
+      "triangles": 16
+    },
+    {
+      "name": "Goggle_dark_recess_R",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Goggle_gold_rim_R",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Goggle_glass_R",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Goggle_glint_R",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 16,
+      "triangles": 16
+    },
+    {
+      "name": "Goggle_bridge",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Goggle_strap_-1",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Goggle_strap_1",
+      "category": "goggles",
+      "joint": "head",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Ribbon_knot",
+      "category": "ribbon",
+      "joint": "ribbon",
+      "vertices": 222,
+      "triangles": 440
+    },
+    {
+      "name": "Rabbit_ribbon_L",
+      "category": "ribbon",
+      "joint": "ribbon",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Ribbon_gold_seam_L",
+      "category": "trim",
+      "joint": "ribbon",
+      "vertices": 24,
+      "triangles": 32
+    },
+    {
+      "name": "Rabbit_ribbon_R",
+      "category": "ribbon",
+      "joint": "ribbon",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "Ribbon_gold_seam_R",
+      "category": "trim",
+      "joint": "ribbon",
+      "vertices": 24,
+      "triangles": 32
+    }
+  ],
+  "bones": [
+    "root",
+    "hips",
+    "spine",
+    "head",
+    "hair",
+    "ribbon",
+    "face_open",
+    "face_closed",
+    "upper_arm.L",
+    "forearm.L",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "cape.L",
+    "upper_arm.R",
+    "forearm.R",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "cape.R"
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "frames": 16,
+      "durationMs": 2500
+    },
+    {
+      "name": "walk",
+      "frames": 12,
+      "durationMs": 800
+    },
+    {
+      "name": "run",
+      "frames": 12,
+      "durationMs": 500
+    }
+  ]
+}

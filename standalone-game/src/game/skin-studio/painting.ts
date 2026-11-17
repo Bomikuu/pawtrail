@@ -1,7 +1,7 @@
 export type PaintTool='brush'|'eraser'|'pick'|'fill'
 export type ModelPaintHit={part:string;x:number;y:number}
 export type ModelPaintEvent={phase:'start'|'move'|'end';hits:ModelPaintHit[]}
-export type ModelPaintOptions={mode:'orbit'|'paint';tool:PaintTool;brush:number;readOnly:boolean}
+export type ModelPaintOptions={mode:'orbit'|'paint';tool:PaintTool;brush:number;readOnly:boolean;surface?:string}
 export const brushSizes=[1,2,4,8,12,16,24,32]
 
 /** Hard circular stamps: whole native pixels only, including restoration. */

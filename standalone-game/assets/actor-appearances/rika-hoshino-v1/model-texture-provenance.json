@@ -1,0 +1,109 @@
+{
+  "source": "normal-generated.png",
+  "crops": {
+    "hair": [
+      92,
+      470,
+      200,
+      645
+    ],
+    "fringe": [
+      300,
+      370,
+      360,
+      405
+    ],
+    "suit": [
+      252,
+      550,
+      335,
+      655
+    ],
+    "pilot-back": [
+      253,
+      610,
+      299,
+      685
+    ],
+    "white": [
+      194,
+      1110,
+      236,
+      1164
+    ],
+    "trim": [
+      325,
+      701,
+      359,
+      764
+    ],
+    "pink": [
+      554,
+      200,
+      720,
+      252
+    ],
+    "canopy": [
+      557,
+      293,
+      711,
+      440
+    ],
+    "metal": [
+      499,
+      863,
+      549,
+      938
+    ],
+    "mech-white": [
+      508,
+      980,
+      591,
+      1060
+    ]
+  },
+  "faceFit": {
+    "crop": [
+      40,
+      47,
+      80,
+      90
+    ],
+    "polygon": [
+      [
+        45,
+        68
+      ],
+      [
+        76,
+        66
+      ],
+      [
+        76,
+        78
+      ],
+      [
+        67,
+        86
+      ],
+      [
+        60,
+        89
+      ],
+      [
+        49,
+        85
+      ],
+      [
+        44,
+        77
+      ]
+    ],
+    "skin": "#f3c4a5",
+    "note": "Own front neutral source: face center x61 due to ponytail; eyes around y70, mouth83, chin89. Forehead room keeps eyes below separate fringe."
+  },
+  "nativeSize": [
+    64,
+    96
+  ]
+}

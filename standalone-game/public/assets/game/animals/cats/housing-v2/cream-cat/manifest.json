@@ -1,0 +1,1699 @@
+{
+  "id": "cream-cat",
+  "file": "cream-cat/cream-cat-housing-v2.png",
+  "source": "sources/cream-cat-source.png",
+  "prompt": "prompts/cream-cat.txt",
+  "dimensions": [
+    384,
+    576
+  ],
+  "visibleFrames": 92,
+  "gridCells": 96,
+  "sourceInspection": {
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "observedGrid": [
+      8,
+      12
+    ],
+    "emptyCells": [
+      92,
+      93,
+      94,
+      95
+    ]
+  },
+  "alphaValues": [
+    0,
+    255
+  ],
+  "animations": {
+    "standing": {
+      "file": "cream-cat/standing.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "atlasRects": [
+        [
+          0,
+          0,
+          48,
+          48
+        ],
+        [
+          48,
+          0,
+          48,
+          48
+        ],
+        [
+          96,
+          0,
+          48,
+          48
+        ],
+        [
+          144,
+          0,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          15,
+          14,
+          34,
+          46
+        ],
+        [
+          14,
+          14,
+          34,
+          46
+        ],
+        [
+          14,
+          14,
+          34,
+          46
+        ],
+        [
+          14,
+          14,
+          34,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "sitting": {
+      "file": "cream-cat/sitting.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "atlasRects": [
+        [
+          192,
+          0,
+          48,
+          48
+        ],
+        [
+          240,
+          0,
+          48,
+          48
+        ],
+        [
+          288,
+          0,
+          48,
+          48
+        ],
+        [
+          336,
+          0,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          14,
+          15,
+          33,
+          46
+        ],
+        [
+          15,
+          15,
+          33,
+          46
+        ],
+        [
+          15,
+          14,
+          33,
+          46
+        ],
+        [
+          14,
+          14,
+          33,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "blink": {
+      "file": "cream-cat/blink.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "atlasRects": [
+        [
+          0,
+          48,
+          48,
+          48
+        ],
+        [
+          48,
+          48,
+          48,
+          48
+        ],
+        [
+          96,
+          48,
+          48,
+          48
+        ],
+        [
+          144,
+          48,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          15,
+          15,
+          34,
+          46
+        ],
+        [
+          14,
+          15,
+          34,
+          46
+        ],
+        [
+          14,
+          15,
+          34,
+          46
+        ],
+        [
+          14,
+          15,
+          34,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "tail_swish": {
+      "file": "cream-cat/tail_swish.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "atlasRects": [
+        [
+          192,
+          48,
+          48,
+          48
+        ],
+        [
+          240,
+          48,
+          48,
+          48
+        ],
+        [
+          288,
+          48,
+          48,
+          48
+        ],
+        [
+          336,
+          48,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          14,
+          15,
+          34,
+          46
+        ],
+        [
+          15,
+          17,
+          33,
+          46
+        ],
+        [
+          15,
+          18,
+          34,
+          46
+        ],
+        [
+          14,
+          15,
+          33,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "walk_down": {
+      "file": "cream-cat/walk_down.png",
+      "frames": 4,
+      "frameRate": 8,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "atlasRects": [
+        [
+          0,
+          96,
+          48,
+          48
+        ],
+        [
+          48,
+          96,
+          48,
+          48
+        ],
+        [
+          96,
+          96,
+          48,
+          48
+        ],
+        [
+          144,
+          96,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          15,
+          15,
+          34,
+          46
+        ],
+        [
+          14,
+          15,
+          33,
+          46
+        ],
+        [
+          14,
+          16,
+          34,
+          46
+        ],
+        [
+          14,
+          15,
+          34,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "walk_up": {
+      "file": "cream-cat/walk_up.png",
+      "frames": 4,
+      "frameRate": 8,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "atlasRects": [
+        [
+          192,
+          96,
+          48,
+          48
+        ],
+        [
+          240,
+          96,
+          48,
+          48
+        ],
+        [
+          288,
+          96,
+          48,
+          48
+        ],
+        [
+          336,
+          96,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          15,
+          17,
+          33,
+          46
+        ],
+        [
+          15,
+          15,
+          33,
+          46
+        ],
+        [
+          15,
+          15,
+          33,
+          46
+        ],
+        [
+          15,
+          15,
+          33,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "walk_left": {
+      "file": "cream-cat/walk_left.png",
+      "frames": 4,
+      "frameRate": 8,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "atlasRects": [
+        [
+          0,
+          144,
+          48,
+          48
+        ],
+        [
+          48,
+          144,
+          48,
+          48
+        ],
+        [
+          96,
+          144,
+          48,
+          48
+        ],
+        [
+          144,
+          144,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          11,
+          20,
+          36,
+          46
+        ],
+        [
+          11,
+          20,
+          36,
+          46
+        ],
+        [
+          11,
+          20,
+          36,
+          46
+        ],
+        [
+          10,
+          20,
+          35,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "walk_right": {
+      "file": "cream-cat/walk_right.png",
+      "frames": 4,
+      "frameRate": 8,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "atlasRects": [
+        [
+          192,
+          144,
+          48,
+          48
+        ],
+        [
+          240,
+          144,
+          48,
+          48
+        ],
+        [
+          288,
+          144,
+          48,
+          48
+        ],
+        [
+          336,
+          144,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          13,
+          20,
+          38,
+          46
+        ],
+        [
+          13,
+          20,
+          38,
+          46
+        ],
+        [
+          13,
+          20,
+          38,
+          46
+        ],
+        [
+          13,
+          20,
+          38,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "lie_down": {
+      "file": "cream-cat/lie_down.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": false,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "atlasRects": [
+        [
+          0,
+          192,
+          48,
+          48
+        ],
+        [
+          48,
+          192,
+          48,
+          48
+        ],
+        [
+          96,
+          192,
+          48,
+          48
+        ],
+        [
+          144,
+          192,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          13,
+          15,
+          36,
+          44
+        ],
+        [
+          12,
+          16,
+          36,
+          44
+        ],
+        [
+          11,
+          18,
+          37,
+          44
+        ],
+        [
+          10,
+          20,
+          37,
+          45
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "sleep": {
+      "file": "cream-cat/sleep.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "atlasRects": [
+        [
+          192,
+          192,
+          48,
+          48
+        ],
+        [
+          240,
+          192,
+          48,
+          48
+        ],
+        [
+          288,
+          192,
+          48,
+          48
+        ],
+        [
+          336,
+          192,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          10,
+          20,
+          37,
+          45
+        ],
+        [
+          10,
+          20,
+          37,
+          45
+        ],
+        [
+          10,
+          20,
+          37,
+          45
+        ],
+        [
+          10,
+          20,
+          37,
+          45
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "stretch": {
+      "file": "cream-cat/stretch.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": false,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "atlasRects": [
+        [
+          0,
+          240,
+          48,
+          48
+        ],
+        [
+          48,
+          240,
+          48,
+          48
+        ],
+        [
+          96,
+          240,
+          48,
+          48
+        ],
+        [
+          144,
+          240,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          10,
+          15,
+          36,
+          45
+        ],
+        [
+          9,
+          18,
+          37,
+          45
+        ],
+        [
+          9,
+          16,
+          38,
+          44
+        ],
+        [
+          12,
+          14,
+          36,
+          44
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "eat": {
+      "file": "cream-cat/eat.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "atlasRects": [
+        [
+          192,
+          240,
+          48,
+          48
+        ],
+        [
+          240,
+          240,
+          48,
+          48
+        ],
+        [
+          288,
+          240,
+          48,
+          48
+        ],
+        [
+          336,
+          240,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          15,
+          14,
+          34,
+          44
+        ],
+        [
+          15,
+          15,
+          33,
+          45
+        ],
+        [
+          14,
+          17,
+          33,
+          45
+        ],
+        [
+          15,
+          14,
+          34,
+          44
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "drink": {
+      "file": "cream-cat/drink.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "atlasRects": [
+        [
+          0,
+          288,
+          48,
+          48
+        ],
+        [
+          48,
+          288,
+          48,
+          48
+        ],
+        [
+          96,
+          288,
+          48,
+          48
+        ],
+        [
+          144,
+          288,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          15,
+          14,
+          34,
+          45
+        ],
+        [
+          14,
+          14,
+          33,
+          45
+        ],
+        [
+          14,
+          16,
+          33,
+          45
+        ],
+        [
+          14,
+          14,
+          34,
+          45
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "pet": {
+      "file": "cream-cat/pet.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "atlasRects": [
+        [
+          192,
+          288,
+          48,
+          48
+        ],
+        [
+          240,
+          288,
+          48,
+          48
+        ],
+        [
+          288,
+          288,
+          48,
+          48
+        ],
+        [
+          336,
+          288,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          14,
+          14,
+          33,
+          45
+        ],
+        [
+          13,
+          14,
+          33,
+          45
+        ],
+        [
+          14,
+          14,
+          33,
+          45
+        ],
+        [
+          14,
+          14,
+          33,
+          45
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "happy": {
+      "file": "cream-cat/happy.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        56,
+        57,
+        58,
+        59
+      ],
+      "atlasRects": [
+        [
+          0,
+          336,
+          48,
+          48
+        ],
+        [
+          48,
+          336,
+          48,
+          48
+        ],
+        [
+          96,
+          336,
+          48,
+          48
+        ],
+        [
+          144,
+          336,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          15,
+          13,
+          34,
+          45
+        ],
+        [
+          14,
+          12,
+          33,
+          42
+        ],
+        [
+          14,
+          12,
+          33,
+          39
+        ],
+        [
+          15,
+          14,
+          34,
+          45
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "play": {
+      "file": "cream-cat/play.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "atlasRects": [
+        [
+          192,
+          336,
+          48,
+          48
+        ],
+        [
+          240,
+          336,
+          48,
+          48
+        ],
+        [
+          288,
+          336,
+          48,
+          48
+        ],
+        [
+          336,
+          336,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          14,
+          15,
+          34,
+          45
+        ],
+        [
+          14,
+          15,
+          36,
+          45
+        ],
+        [
+          13,
+          15,
+          36,
+          45
+        ],
+        [
+          14,
+          15,
+          33,
+          45
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "groom": {
+      "file": "cream-cat/groom.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        64,
+        65,
+        66,
+        67
+      ],
+      "atlasRects": [
+        [
+          0,
+          384,
+          48,
+          48
+        ],
+        [
+          48,
+          384,
+          48,
+          48
+        ],
+        [
+          96,
+          384,
+          48,
+          48
+        ],
+        [
+          144,
+          384,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          13,
+          14,
+          33,
+          44
+        ],
+        [
+          13,
+          14,
+          33,
+          44
+        ],
+        [
+          13,
+          14,
+          32,
+          43
+        ],
+        [
+          12,
+          16,
+          33,
+          44
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "approach": {
+      "file": "cream-cat/approach.png",
+      "frames": 4,
+      "frameRate": 8,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "atlasRects": [
+        [
+          192,
+          384,
+          48,
+          48
+        ],
+        [
+          240,
+          384,
+          48,
+          48
+        ],
+        [
+          288,
+          384,
+          48,
+          48
+        ],
+        [
+          336,
+          384,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          14,
+          15,
+          33,
+          46
+        ],
+        [
+          15,
+          15,
+          34,
+          46
+        ],
+        [
+          14,
+          15,
+          33,
+          46
+        ],
+        [
+          14,
+          15,
+          34,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "jump_sofa": {
+      "file": "cream-cat/jump_sofa.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": false,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        72,
+        73,
+        74,
+        75
+      ],
+      "atlasRects": [
+        [
+          0,
+          432,
+          48,
+          48
+        ],
+        [
+          48,
+          432,
+          48,
+          48
+        ],
+        [
+          96,
+          432,
+          48,
+          48
+        ],
+        [
+          144,
+          432,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          13,
+          17,
+          33,
+          45
+        ],
+        [
+          12,
+          19,
+          34,
+          45
+        ],
+        [
+          13,
+          13,
+          33,
+          39
+        ],
+        [
+          14,
+          15,
+          33,
+          45
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "sofa_sit": {
+      "file": "cream-cat/sofa_sit.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        76,
+        77,
+        78,
+        79
+      ],
+      "atlasRects": [
+        [
+          192,
+          432,
+          48,
+          48
+        ],
+        [
+          240,
+          432,
+          48,
+          48
+        ],
+        [
+          288,
+          432,
+          48,
+          48
+        ],
+        [
+          336,
+          432,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          14,
+          16,
+          34,
+          46
+        ],
+        [
+          14,
+          16,
+          34,
+          46
+        ],
+        [
+          14,
+          16,
+          33,
+          46
+        ],
+        [
+          14,
+          16,
+          33,
+          46
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "bed_sleep": {
+      "file": "cream-cat/bed_sleep.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "atlasRects": [
+        [
+          0,
+          480,
+          48,
+          48
+        ],
+        [
+          48,
+          480,
+          48,
+          48
+        ],
+        [
+          96,
+          480,
+          48,
+          48
+        ],
+        [
+          144,
+          480,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          12,
+          17,
+          37,
+          43
+        ],
+        [
+          11,
+          19,
+          36,
+          43
+        ],
+        [
+          10,
+          20,
+          36,
+          43
+        ],
+        [
+          11,
+          23,
+          36,
+          44
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "scratch_post": {
+      "file": "cream-cat/scratch_post.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        84,
+        85,
+        86,
+        87
+      ],
+      "atlasRects": [
+        [
+          192,
+          480,
+          48,
+          48
+        ],
+        [
+          240,
+          480,
+          48,
+          48
+        ],
+        [
+          288,
+          480,
+          48,
+          48
+        ],
+        [
+          336,
+          480,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          14,
+          13,
+          33,
+          43
+        ],
+        [
+          14,
+          13,
+          34,
+          44
+        ],
+        [
+          14,
+          13,
+          33,
+          43
+        ],
+        [
+          14,
+          13,
+          34,
+          43
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    },
+    "cat_tree_play": {
+      "file": "cream-cat/cat_tree_play.png",
+      "frames": 4,
+      "frameRate": 5,
+      "loop": true,
+      "loopVerified": false,
+      "sourceFrameIndexes": [
+        88,
+        89,
+        90,
+        91
+      ],
+      "atlasRects": [
+        [
+          0,
+          528,
+          48,
+          48
+        ],
+        [
+          48,
+          528,
+          48,
+          48
+        ],
+        [
+          96,
+          528,
+          48,
+          48
+        ],
+        [
+          144,
+          528,
+          48,
+          48
+        ]
+      ],
+      "anchorPixels": [
+        24,
+        46
+      ],
+      "bounds": [
+        [
+          11,
+          14,
+          34,
+          44
+        ],
+        [
+          12,
+          11,
+          35,
+          43
+        ],
+        [
+          12,
+          9,
+          34,
+          42
+        ],
+        [
+          12,
+          9,
+          36,
+          44
+        ]
+      ],
+      "uniqueNativeFrames": 4,
+      "motionReview": "Source action inspected; native loop requires playback/animation polish review",
+      "productionReady": false
+    }
+  },
+  "notes": [],
+  "productionReady": false,
+  "nativeChecks": {
+    "dimensionsMatch": true,
+    "binaryAlpha": true,
+    "nonemptyActionFrames": true,
+    "allFramesHaveMargins": true,
+    "walkingBaseline46": true
+  }
+}

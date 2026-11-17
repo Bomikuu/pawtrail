@@ -1,0 +1,33 @@
+{
+  "id": "f01-phase4-concepts-b-v1",
+  "status": "approved",
+  "scope": "Undergrid and Rainline Skybridge concept images only; production awaits explicit image approval",
+  "authorization": "owner: proceed after Phase 3 implementation",
+  "verification": "tests/browser/typecheck/build remain deferred by owner",
+  "jobs": [
+    {
+      "key": "04-undergrid-v1",
+      "name": "Undergrid \u2014 Pump Gallery and Relay Hall",
+      "stage": "f01.stage.undergrid",
+      "status": "generated_concept",
+      "approval": "approved",
+      "file": "docs/game-design/floors/f01-neon-heights/concepts/batch-b-v1/04-undergrid-v1.png",
+      "startedAt": "2026-11-15 15:28:02 UTC",
+      "completedAt": "2026-11-15 15:29:17 UTC"
+    },
+    {
+      "key": "05-rainline-skybridge-v1",
+      "name": "Rainline Skybridge \u2014 Courier Walk and Signal Archive",
+      "stage": "f01.stage.skybridge",
+      "status": "generated_concept",
+      "approval": "approved",
+      "file": "docs/game-design/floors/f01-neon-heights/concepts/batch-b-v1/05-rainline-skybridge-v1.png",
+      "startedAt": "2026-11-15 15:28:02 UTC",
+      "completedAt": "2026-11-15 15:30:17 UTC"
+    }
+  ],
+  "completedConceptsAt": "2026-11-15T15:31:49.812464+00:00",
+  "review": "Both generated concept images inspected for composition/style; no runtime, collision or animation acceptance inferred.",
+  "approval": "explicit owner reply: Approve both concepts",
+  "approvedAt": "2026-11-15T15:34:58.952700+00:00"
+}

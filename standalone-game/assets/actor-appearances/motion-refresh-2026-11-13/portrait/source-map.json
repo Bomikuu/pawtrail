@@ -1,0 +1,398 @@
+[
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      0,
+      0
+    ],
+    "frame": 84
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      1,
+      0
+    ],
+    "frame": 85
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      2,
+      0
+    ],
+    "frame": 86
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      3,
+      0
+    ],
+    "frame": 87
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      0,
+      1
+    ],
+    "frame": 88
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      1,
+      1
+    ],
+    "frame": 89
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      2,
+      1
+    ],
+    "frame": 90
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      3,
+      1
+    ],
+    "frame": 91
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      0,
+      2
+    ],
+    "frame": 92
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      1,
+      2
+    ],
+    "frame": 93
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      2,
+      2
+    ],
+    "frame": 94
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-front.png",
+    "cell": [
+      3,
+      2
+    ],
+    "frame": 95
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-neutral-states.png",
+    "state": "half",
+    "frame": 96
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-neutral-states.png",
+    "state": "closed",
+    "frame": 97
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-neutral-states.png",
+    "state": "small",
+    "frame": 98
+  },
+  {
+    "pose": "front-pout",
+    "source": "portrait-neutral-states.png",
+    "state": "open",
+    "frame": 99
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      0,
+      0
+    ],
+    "frame": 100
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      1,
+      0
+    ],
+    "frame": 101
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      2,
+      0
+    ],
+    "frame": 102
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      3,
+      0
+    ],
+    "frame": 103
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      0,
+      1
+    ],
+    "frame": 104
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      1,
+      1
+    ],
+    "frame": 105
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      2,
+      1
+    ],
+    "frame": 106
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      3,
+      1
+    ],
+    "frame": 107
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      0,
+      2
+    ],
+    "frame": 108
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      1,
+      2
+    ],
+    "frame": 109
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      2,
+      2
+    ],
+    "frame": 110
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-quarter.png",
+    "cell": [
+      3,
+      2
+    ],
+    "frame": 111
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-neutral-states.png",
+    "state": "half",
+    "frame": 112
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-neutral-states.png",
+    "state": "closed",
+    "frame": 113
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-neutral-states.png",
+    "state": "small",
+    "frame": 114
+  },
+  {
+    "pose": "three-quarter-left",
+    "source": "portrait-neutral-states.png",
+    "state": "open",
+    "frame": 115
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      0,
+      0
+    ],
+    "frame": 116
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      1,
+      0
+    ],
+    "frame": 117
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      2,
+      0
+    ],
+    "frame": 118
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      3,
+      0
+    ],
+    "frame": 119
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      0,
+      1
+    ],
+    "frame": 120
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      1,
+      1
+    ],
+    "frame": 121
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      2,
+      1
+    ],
+    "frame": 122
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      3,
+      1
+    ],
+    "frame": 123
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      0,
+      2
+    ],
+    "frame": 124
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      1,
+      2
+    ],
+    "frame": 125
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      2,
+      2
+    ],
+    "frame": 126
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-tilt.png",
+    "cell": [
+      3,
+      2
+    ],
+    "frame": 127
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-neutral-states.png",
+    "state": "half",
+    "frame": 128
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-neutral-states.png",
+    "state": "closed",
+    "frame": 129
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-neutral-states.png",
+    "state": "small",
+    "frame": 130
+  },
+  {
+    "pose": "head-tilt-smile-right",
+    "source": "portrait-neutral-states.png",
+    "state": "open",
+    "frame": 131
+  }
+]

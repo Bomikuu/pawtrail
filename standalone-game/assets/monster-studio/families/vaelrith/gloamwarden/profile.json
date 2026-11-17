@@ -1,0 +1,71 @@
+{
+  "familyId": "vaelrith",
+  "parentBoss": "vaelrith-riftbound",
+  "id": "gloamwarden",
+  "name": "Gloamwarden",
+  "title": "The Lesser Rift Guardian",
+  "tier": "mini-boss",
+  "row": 0,
+  "enragedRow": 1,
+  "maxHp": 1500,
+  "hpPerBar": 300,
+  "enrageAt": 0.3,
+  "height": 2.5,
+  "radius": 0.72,
+  "speed": 1.6,
+  "hover": 0,
+  "armor": 0.8,
+  "weakMultiplier": 1.5,
+  "biography": "Two young drake heads share the same cracked shrine armor. Gloamwarden guards the paths into Vaelrith’s seal and recoils when its paired breath ends.",
+  "weakness": "Stone plates soften ordinary hits; both throats are exposed after either skill.",
+  "temperament": "Territorial guardian",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "rift-fangs",
+      "name": "Twin Rift Fangs",
+      "shape": "sector",
+      "outer": 2.8,
+      "inner": 0,
+      "angle": 120,
+      "target": "self",
+      "damage": 20,
+      "windup": 950,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 5400,
+      "description": "Both heads sweep a locked violet sector. Leave the marked wedge or circle behind the drake."
+    },
+    {
+      "id": "rift-rupture",
+      "name": "Rift Rupture",
+      "shape": "circle",
+      "outer": 1.65,
+      "inner": 0,
+      "angle": 105,
+      "target": "player",
+      "damage": 24,
+      "windup": 1250,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 8500,
+      "description": "A rupture locks onto your ground position. Move away before the fissure opens."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/gloamwarden-model.png",
+    "combat": "Rift Rupture applied 24 player damage; reset observed.",
+    "phase": "Distinct form observed via explicitly labelled phase rehearsal; natural threshold crossing not reviewed.",
+    "automatedTests": false,
+    "build": false
+  }
+}

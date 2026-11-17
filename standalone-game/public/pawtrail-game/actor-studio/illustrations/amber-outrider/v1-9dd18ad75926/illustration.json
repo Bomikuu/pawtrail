@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "id": "amber-loading-refined-cel",
+  "characterId": "amber-outrider",
+  "style": "refined-cel",
+  "revision": "9dd18ad75926",
+  "usage": "loading-illustration",
+  "nativeSize": [
+    256,
+    384
+  ],
+  "anchor": [
+    128,
+    356
+  ],
+  "atlas": "atlas.webp",
+  "poster": "poster.webp",
+  "animatedImage": "sway.webp",
+  "frames": [
+    {
+      "id": 0,
+      "rect": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "contentBounds": [
+        12,
+        37,
+        209,
+        347
+      ]
+    },
+    {
+      "id": 1,
+      "rect": [
+        256,
+        0,
+        256,
+        384
+      ],
+      "contentBounds": [
+        18,
+        37,
+        209,
+        347
+      ]
+    },
+    {
+      "id": 2,
+      "rect": [
+        512,
+        0,
+        256,
+        384
+      ],
+      "contentBounds": [
+        25,
+        37,
+        209,
+        347
+      ]
+    },
+    {
+      "id": 3,
+      "rect": [
+        0,
+        384,
+        256,
+        384
+      ],
+      "contentBounds": [
+        30,
+        38,
+        212,
+        347
+      ]
+    },
+    {
+      "id": 4,
+      "rect": [
+        256,
+        384,
+        256,
+        384
+      ],
+      "contentBounds": [
+        41,
+        38,
+        227,
+        347
+      ]
+    },
+    {
+      "id": 5,
+      "rect": [
+        512,
+        384,
+        256,
+        384
+      ],
+      "contentBounds": [
+        42,
+        38,
+        244,
+        347
+      ]
+    }
+  ],
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationMs": [
+    320,
+    220,
+    220,
+    220,
+    220,
+    320,
+    220,
+    220,
+    220,
+    220
+  ],
+  "loop": true,
+  "cycleMs": 2400,
+  "motion": [
+    "loose hair below cheeks",
+    "free cape hems and tails"
+  ],
+  "expression": "fixed closed-mouth smile",
+  "audio": null,
+  "sampling": "nearest-neighbor",
+  "review": {
+    "staticArtwork": "inspected",
+    "registration": "whole-frame integer translations and common uniform scale",
+    "livePlayback": "pending; no browser verification requested"
+  },
+  "files": {
+    "atlas.webp": 94966,
+    "poster.webp": 16292,
+    "sway.webp": 162108
+  },
+  "paletteColors": 128,
+  "encoding": "lossless WebP with a shared 128-color RGBA palette and no dithering"
+}

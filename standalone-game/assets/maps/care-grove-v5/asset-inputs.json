@@ -1,0 +1,115 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": "assets/maps/care-grove-v5/prompts.json",
+  "sourceHashes": {
+    "ground": "525e88f3a1b230cc6b201849db1371382a5a714b1ef1f7e7fc7270b50d7f2edc",
+    "hall": "f515f2d9bf8af2964327bfe56eb51f3c763fe6222fa74d6264b3647ab67959a6",
+    "pine": "89cd2128de1309530edb3e205ec2c5e5f1155abeec3fdd40a79f2984cc2f2865",
+    "cliff": "e792462ac47092e82228cbc38387fb642cfbc071b5f918feaf70122682250be7",
+    "bush": "9d9a4a0baac02a4aeb2aa2becb393e42d5418e380a423bbad39362e6c86bbcfd",
+    "bareTree": "97221f43d9c8f0936171a1e2fd8cdfa3af2170790a3c2344fbe9a1971fa302be",
+    "village-house": "1f2a70523e845f2fd8013b42967b9350818a449932ef2c36e51c8dc035e4bd0e",
+    "village-barrels": "faa1a49424b99ead536e168e683d5fb4313058996d4fd5625563ddbd5071497b",
+    "village-cart": "b9036428892f855015ea99378b31bdce5c32f6a2d3cb8faafbc62511a34d771f",
+    "village-wall": "b7a98a2b8238d1ba9a6b7cedda3b8d8b614b34a68993e1168780829a4a8d1275"
+  },
+  "geometryContract": "assets/maps/care-grove-v5/prior-registry.json",
+  "registry": "src/game/stage-editor/grove-art.json",
+  "layout": "src/game/stage-editor/maps/care-grove-v5.json",
+  "runtimeArt": "public/pawtrail-game/map-art/care-grove-v5/",
+  "newAssets": [
+    "grove:village-house",
+    "grove:village-barrels",
+    "grove:village-cart",
+    "grove:village-wall",
+    "grove:village-wall-low"
+  ],
+  "runtimeImages": {
+    "ground.png": {
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 1584439
+    },
+    "village-house.png": {
+      "dimensions": [
+        240,
+        224
+      ],
+      "bytes": 78736
+    },
+    "village-wall.png": {
+      "dimensions": [
+        128,
+        80
+      ],
+      "bytes": 12040
+    },
+    "village-barrels.png": {
+      "dimensions": [
+        64,
+        64
+      ],
+      "bytes": 5183
+    },
+    "cliff.png": {
+      "dimensions": [
+        172,
+        272
+      ],
+      "bytes": 76597
+    },
+    "hall.png": {
+      "dimensions": [
+        311,
+        240
+      ],
+      "bytes": 141137
+    },
+    "village-wall-low.png": {
+      "dimensions": [
+        64,
+        40
+      ],
+      "bytes": 3454
+    },
+    "pine-small.png": {
+      "dimensions": [
+        67,
+        135
+      ],
+      "bytes": 10150
+    },
+    "village-cart.png": {
+      "dimensions": [
+        96,
+        80
+      ],
+      "bytes": 8065
+    },
+    "bush.png": {
+      "dimensions": [
+        64,
+        32
+      ],
+      "bytes": 3367
+    },
+    "pine.png": {
+      "dimensions": [
+        90,
+        180
+      ],
+      "bytes": 17478
+    },
+    "bareTree.png": {
+      "dimensions": [
+        100,
+        149
+      ],
+      "bytes": 14000
+    }
+  },
+  "scope": "Reference-led artwork revision; existing native geometry/contacts retained; declared scenery additions have independent ground footprints",
+  "evidence": "Native artwork overview only. No tests/builds/browser verification."
+}

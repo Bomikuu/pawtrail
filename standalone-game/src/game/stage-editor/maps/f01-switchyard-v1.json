@@ -1,0 +1,306 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "Neon Switchyard",
+  "width": 36,
+  "height": 28,
+  "baseTile": "tile:stone",
+  "groundArt": "f01:switchyard-ground",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "walkable": [
+    [
+      85,
+      155
+    ],
+    [
+      145,
+      132
+    ],
+    [
+      190,
+      115
+    ],
+    [
+      320,
+      125
+    ],
+    [
+      800,
+      125
+    ],
+    [
+      840,
+      110
+    ],
+    [
+      935,
+      110
+    ],
+    [
+      955,
+      75
+    ],
+    [
+      1080,
+      75
+    ],
+    [
+      1105,
+      125
+    ],
+    [
+      1090,
+      365
+    ],
+    [
+      1110,
+      400
+    ],
+    [
+      1105,
+      665
+    ],
+    [
+      1070,
+      700
+    ],
+    [
+      1070,
+      765
+    ],
+    [
+      930,
+      780
+    ],
+    [
+      915,
+      805
+    ],
+    [
+      530,
+      805
+    ],
+    [
+      485,
+      760
+    ],
+    [
+      410,
+      760
+    ],
+    [
+      375,
+      790
+    ],
+    [
+      190,
+      795
+    ],
+    [
+      160,
+      840
+    ],
+    [
+      90,
+      840
+    ],
+    [
+      90,
+      780
+    ],
+    [
+      35,
+      730
+    ],
+    [
+      35,
+      555
+    ],
+    [
+      60,
+      510
+    ],
+    [
+      35,
+      485
+    ],
+    [
+      35,
+      430
+    ],
+    [
+      65,
+      395
+    ],
+    [
+      60,
+      290
+    ],
+    [
+      40,
+      265
+    ],
+    [
+      40,
+      220
+    ],
+    [
+      80,
+      180
+    ]
+  ],
+  "objects": [
+    {
+      "id": "dispatch-cabin",
+      "asset": "f01:dispatch-cabin",
+      "x": 240,
+      "y": 280,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "sena",
+      "asset": "f01:sena",
+      "x": 315,
+      "y": 355,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "authorization",
+      "asset": "f01:authorization",
+      "x": 205,
+      "y": 350,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "dispatch-beacon",
+      "asset": "f01:planning",
+      "x": 90,
+      "y": 345,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "dispatch-supply",
+      "asset": "f01:supply",
+      "x": 395,
+      "y": 345,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "dispatch-seat",
+      "asset": "f01:camp-seat",
+      "x": 100,
+      "y": 450,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "return-skybridge",
+      "asset": "f01:lift",
+      "x": 125,
+      "y": 735,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "market-shortcut",
+      "asset": "f01:bulkhead",
+      "x": 115,
+      "y": 485,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "bastion-gate",
+      "asset": "f01:bulkhead",
+      "x": 1015,
+      "y": 175,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "marshal-entry",
+      "asset": "f01:planning",
+      "x": 650,
+      "y": 450,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "crane",
+      "asset": "f01:yard-crane",
+      "x": 505,
+      "y": 255,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "cargo-upper",
+      "asset": "f01:freight-stack",
+      "x": 800,
+      "y": 175,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "cargo-middle",
+      "asset": "f01:freight-crates",
+      "x": 480,
+      "y": 420,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "cargo-west",
+      "asset": "f01:freight-stack",
+      "x": 330,
+      "y": 570,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "cargo-bottom",
+      "asset": "f01:freight-crates",
+      "x": 600,
+      "y": 765,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ]
+}

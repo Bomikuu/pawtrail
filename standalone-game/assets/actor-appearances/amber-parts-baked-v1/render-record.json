@@ -1,0 +1,985 @@
+{
+  "width": 256,
+  "height": 320,
+  "nativeFrame": [
+    64,
+    80
+  ],
+  "nativeGroundPixel": [
+    32,
+    60
+  ],
+  "frames": [
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.0,
+      "file": "renders/idle-down-00.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.0625,
+      "file": "renders/idle-down-01.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.125,
+      "file": "renders/idle-down-02.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.1875,
+      "file": "renders/idle-down-03.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.25,
+      "file": "renders/idle-down-04.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.3125,
+      "file": "renders/idle-down-05.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.375,
+      "file": "renders/idle-down-06.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.4375,
+      "file": "renders/idle-down-07.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.5,
+      "file": "renders/idle-down-08.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.5625,
+      "file": "renders/idle-down-09.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.625,
+      "file": "renders/idle-down-10.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.6875,
+      "file": "renders/idle-down-11.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.75,
+      "file": "renders/idle-down-12.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.8125,
+      "file": "renders/idle-down-13.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.875,
+      "file": "renders/idle-down-14.png"
+    },
+    {
+      "action": "idle",
+      "direction": "down",
+      "phase": 0.9375,
+      "file": "renders/idle-down-15.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.0,
+      "file": "renders/walk-down-00.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.08333333333333333,
+      "file": "renders/walk-down-01.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.16666666666666666,
+      "file": "renders/walk-down-02.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.25,
+      "file": "renders/walk-down-03.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.3333333333333333,
+      "file": "renders/walk-down-04.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.4166666666666667,
+      "file": "renders/walk-down-05.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.5,
+      "file": "renders/walk-down-06.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.5833333333333334,
+      "file": "renders/walk-down-07.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.6666666666666666,
+      "file": "renders/walk-down-08.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.75,
+      "file": "renders/walk-down-09.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.8333333333333334,
+      "file": "renders/walk-down-10.png"
+    },
+    {
+      "action": "walk",
+      "direction": "down",
+      "phase": 0.9166666666666666,
+      "file": "renders/walk-down-11.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.0,
+      "file": "renders/run-down-00.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.08333333333333333,
+      "file": "renders/run-down-01.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.16666666666666666,
+      "file": "renders/run-down-02.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.25,
+      "file": "renders/run-down-03.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.3333333333333333,
+      "file": "renders/run-down-04.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.4166666666666667,
+      "file": "renders/run-down-05.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.5,
+      "file": "renders/run-down-06.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.5833333333333334,
+      "file": "renders/run-down-07.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.6666666666666666,
+      "file": "renders/run-down-08.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.75,
+      "file": "renders/run-down-09.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.8333333333333334,
+      "file": "renders/run-down-10.png"
+    },
+    {
+      "action": "run",
+      "direction": "down",
+      "phase": 0.9166666666666666,
+      "file": "renders/run-down-11.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.0,
+      "file": "renders/idle-left-00.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.0625,
+      "file": "renders/idle-left-01.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.125,
+      "file": "renders/idle-left-02.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.1875,
+      "file": "renders/idle-left-03.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.25,
+      "file": "renders/idle-left-04.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.3125,
+      "file": "renders/idle-left-05.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.375,
+      "file": "renders/idle-left-06.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.4375,
+      "file": "renders/idle-left-07.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.5,
+      "file": "renders/idle-left-08.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.5625,
+      "file": "renders/idle-left-09.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.625,
+      "file": "renders/idle-left-10.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.6875,
+      "file": "renders/idle-left-11.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.75,
+      "file": "renders/idle-left-12.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.8125,
+      "file": "renders/idle-left-13.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.875,
+      "file": "renders/idle-left-14.png"
+    },
+    {
+      "action": "idle",
+      "direction": "left",
+      "phase": 0.9375,
+      "file": "renders/idle-left-15.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.0,
+      "file": "renders/walk-left-00.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.08333333333333333,
+      "file": "renders/walk-left-01.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.16666666666666666,
+      "file": "renders/walk-left-02.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.25,
+      "file": "renders/walk-left-03.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.3333333333333333,
+      "file": "renders/walk-left-04.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.4166666666666667,
+      "file": "renders/walk-left-05.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.5,
+      "file": "renders/walk-left-06.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.5833333333333334,
+      "file": "renders/walk-left-07.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.6666666666666666,
+      "file": "renders/walk-left-08.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.75,
+      "file": "renders/walk-left-09.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.8333333333333334,
+      "file": "renders/walk-left-10.png"
+    },
+    {
+      "action": "walk",
+      "direction": "left",
+      "phase": 0.9166666666666666,
+      "file": "renders/walk-left-11.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.0,
+      "file": "renders/run-left-00.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.08333333333333333,
+      "file": "renders/run-left-01.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.16666666666666666,
+      "file": "renders/run-left-02.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.25,
+      "file": "renders/run-left-03.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.3333333333333333,
+      "file": "renders/run-left-04.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.4166666666666667,
+      "file": "renders/run-left-05.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.5,
+      "file": "renders/run-left-06.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.5833333333333334,
+      "file": "renders/run-left-07.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.6666666666666666,
+      "file": "renders/run-left-08.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.75,
+      "file": "renders/run-left-09.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.8333333333333334,
+      "file": "renders/run-left-10.png"
+    },
+    {
+      "action": "run",
+      "direction": "left",
+      "phase": 0.9166666666666666,
+      "file": "renders/run-left-11.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.0,
+      "file": "renders/idle-up-00.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.0625,
+      "file": "renders/idle-up-01.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.125,
+      "file": "renders/idle-up-02.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.1875,
+      "file": "renders/idle-up-03.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.25,
+      "file": "renders/idle-up-04.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.3125,
+      "file": "renders/idle-up-05.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.375,
+      "file": "renders/idle-up-06.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.4375,
+      "file": "renders/idle-up-07.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.5,
+      "file": "renders/idle-up-08.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.5625,
+      "file": "renders/idle-up-09.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.625,
+      "file": "renders/idle-up-10.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.6875,
+      "file": "renders/idle-up-11.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.75,
+      "file": "renders/idle-up-12.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.8125,
+      "file": "renders/idle-up-13.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.875,
+      "file": "renders/idle-up-14.png"
+    },
+    {
+      "action": "idle",
+      "direction": "up",
+      "phase": 0.9375,
+      "file": "renders/idle-up-15.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.0,
+      "file": "renders/walk-up-00.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.08333333333333333,
+      "file": "renders/walk-up-01.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.16666666666666666,
+      "file": "renders/walk-up-02.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.25,
+      "file": "renders/walk-up-03.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.3333333333333333,
+      "file": "renders/walk-up-04.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.4166666666666667,
+      "file": "renders/walk-up-05.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.5,
+      "file": "renders/walk-up-06.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.5833333333333334,
+      "file": "renders/walk-up-07.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.6666666666666666,
+      "file": "renders/walk-up-08.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.75,
+      "file": "renders/walk-up-09.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.8333333333333334,
+      "file": "renders/walk-up-10.png"
+    },
+    {
+      "action": "walk",
+      "direction": "up",
+      "phase": 0.9166666666666666,
+      "file": "renders/walk-up-11.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.0,
+      "file": "renders/run-up-00.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.08333333333333333,
+      "file": "renders/run-up-01.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.16666666666666666,
+      "file": "renders/run-up-02.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.25,
+      "file": "renders/run-up-03.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.3333333333333333,
+      "file": "renders/run-up-04.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.4166666666666667,
+      "file": "renders/run-up-05.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.5,
+      "file": "renders/run-up-06.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.5833333333333334,
+      "file": "renders/run-up-07.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.6666666666666666,
+      "file": "renders/run-up-08.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.75,
+      "file": "renders/run-up-09.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.8333333333333334,
+      "file": "renders/run-up-10.png"
+    },
+    {
+      "action": "run",
+      "direction": "up",
+      "phase": 0.9166666666666666,
+      "file": "renders/run-up-11.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.0,
+      "file": "renders/idle-right-00.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.0625,
+      "file": "renders/idle-right-01.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.125,
+      "file": "renders/idle-right-02.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.1875,
+      "file": "renders/idle-right-03.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.25,
+      "file": "renders/idle-right-04.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.3125,
+      "file": "renders/idle-right-05.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.375,
+      "file": "renders/idle-right-06.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.4375,
+      "file": "renders/idle-right-07.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.5,
+      "file": "renders/idle-right-08.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.5625,
+      "file": "renders/idle-right-09.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.625,
+      "file": "renders/idle-right-10.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.6875,
+      "file": "renders/idle-right-11.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.75,
+      "file": "renders/idle-right-12.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.8125,
+      "file": "renders/idle-right-13.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.875,
+      "file": "renders/idle-right-14.png"
+    },
+    {
+      "action": "idle",
+      "direction": "right",
+      "phase": 0.9375,
+      "file": "renders/idle-right-15.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.0,
+      "file": "renders/walk-right-00.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.08333333333333333,
+      "file": "renders/walk-right-01.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.16666666666666666,
+      "file": "renders/walk-right-02.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.25,
+      "file": "renders/walk-right-03.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.3333333333333333,
+      "file": "renders/walk-right-04.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.4166666666666667,
+      "file": "renders/walk-right-05.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.5,
+      "file": "renders/walk-right-06.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.5833333333333334,
+      "file": "renders/walk-right-07.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.6666666666666666,
+      "file": "renders/walk-right-08.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.75,
+      "file": "renders/walk-right-09.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.8333333333333334,
+      "file": "renders/walk-right-10.png"
+    },
+    {
+      "action": "walk",
+      "direction": "right",
+      "phase": 0.9166666666666666,
+      "file": "renders/walk-right-11.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.0,
+      "file": "renders/run-right-00.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.08333333333333333,
+      "file": "renders/run-right-01.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.16666666666666666,
+      "file": "renders/run-right-02.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.25,
+      "file": "renders/run-right-03.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.3333333333333333,
+      "file": "renders/run-right-04.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.4166666666666667,
+      "file": "renders/run-right-05.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.5,
+      "file": "renders/run-right-06.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.5833333333333334,
+      "file": "renders/run-right-07.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.6666666666666666,
+      "file": "renders/run-right-08.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.75,
+      "file": "renders/run-right-09.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.8333333333333334,
+      "file": "renders/run-right-10.png"
+    },
+    {
+      "action": "run",
+      "direction": "right",
+      "phase": 0.9166666666666666,
+      "file": "renders/run-right-11.png"
+    }
+  ],
+  "previewOnly": false,
+  "camera": {
+    "orthoScale": 8.4,
+    "target": [
+      0,
+      0,
+      2.25
+    ]
+  },
+  "threads": 2,
+  "samples": 16
+}

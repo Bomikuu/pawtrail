@@ -1,0 +1,138 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": "assets/maps/neon-heights-v1/prompts.json",
+  "sourceHashes": {
+    "ground": "da1efb10f2518324e0b277abaa1720d2cec2dea7f77a10bf4eaf58ec74e94468",
+    "spire": "e6e1df8baf930cac7454c738e90450a8e0a65710a89e34f69d9e0d213cf3f2c7",
+    "arc-tower": "50d9645fa98d7d4c0b156ddd56a6b543f738b5ece1b70678df92a73354977b7b",
+    "hab-block": "8432ac0e2658f9706a84a8a7a0a83c157a5b0c007e3b8736de820e0ad5102d1d",
+    "holo-head": "8e486f103d1f7ad96fee95bd321284f9fc51ab858226b52c146df3d379a2ed13",
+    "holo-koi": "de1a0afb12f193e9696ca1ef68995ba96933edf9289fcddd7c0485956dbee1ff",
+    "kiosk": "8212689702d2581d8c67c66473fd9459e1272a7a521beca7e7f01e615009cd32",
+    "hvac": "8c851b7fc96d31aed64b8a8d8901fe8f7b343b9ff4bb7a1e96ca6bbe3b6fbeac",
+    "railing": "a5e180bdf8b386606c6f12b361a0e2a2f245c935e591d8b54be644cb20035c91"
+  },
+  "layout": "src/game/stage-editor/maps/neon-heights-v1.json",
+  "registry": "src/game/stage-editor/neon-art.json",
+  "runtimeArt": "public/pawtrail-game/map-art/neon-heights-v1/",
+  "runtimeImages": {
+    "hab-block-large.png": {
+      "dimensions": [
+        544,
+        480
+      ],
+      "bytes": 148203
+    },
+    "hvac.png": {
+      "dimensions": [
+        96,
+        72
+      ],
+      "bytes": 10817
+    },
+    "ground.png": {
+      "dimensions": [
+        1536,
+        1152
+      ],
+      "bytes": 3419698
+    },
+    "arc-tower-large.png": {
+      "dimensions": [
+        448,
+        576
+      ],
+      "bytes": 125529
+    },
+    "railing.png": {
+      "dimensions": [
+        128,
+        48
+      ],
+      "bytes": 5783
+    },
+    "kiosk.png": {
+      "dimensions": [
+        144,
+        128
+      ],
+      "bytes": 28538
+    },
+    "spire-large.png": {
+      "dimensions": [
+        448,
+        608
+      ],
+      "bytes": 112651
+    },
+    "holo-head.png": {
+      "dimensions": [
+        160,
+        224
+      ],
+      "bytes": 57367
+    },
+    "holo-koi.png": {
+      "dimensions": [
+        160,
+        144
+      ],
+      "bytes": 26669
+    },
+    "spire.png": {
+      "dimensions": [
+        224,
+        304
+      ],
+      "bytes": 85384
+    },
+    "hab-block.png": {
+      "dimensions": [
+        272,
+        240
+      ],
+      "bytes": 115811
+    },
+    "arc-tower.png": {
+      "dimensions": [
+        224,
+        288
+      ],
+      "bytes": 96755
+    }
+  },
+  "nativeDimensions": [
+    1536,
+    1152
+  ],
+  "objects": 34,
+  "towers": 11,
+  "limits": "Static city/hologram scenery with ground collision and existing local walking; no building interiors, new E actions or vehicle controls",
+  "review": "Native artwork evidence only; no tests/checks/builds or browser verification requested",
+  "integrationEntry": "/play?preview=stage&map=cyberpunk",
+  "sourceTimingFiles": [
+    "assets/maps/neon-heights-v1/sources/arc-tower.json",
+    "assets/maps/neon-heights-v1/sources/ground.json",
+    "assets/maps/neon-heights-v1/sources/hab-block.json",
+    "assets/maps/neon-heights-v1/sources/holo-head.json",
+    "assets/maps/neon-heights-v1/sources/holo-koi.json",
+    "assets/maps/neon-heights-v1/sources/hvac.json",
+    "assets/maps/neon-heights-v1/sources/kiosk.json",
+    "assets/maps/neon-heights-v1/sources/railing.json",
+    "assets/maps/neon-heights-v1/sources/spire.json"
+  ],
+  "largeVariants": {
+    "neon:spire-large": {
+      "source": "neon:spire",
+      "integerScale": 2
+    },
+    "neon:arc-tower-large": {
+      "source": "neon:arc-tower",
+      "integerScale": 2
+    },
+    "neon:hab-block-large": {
+      "source": "neon:hab-block",
+      "integerScale": 2
+    }
+  }
+}

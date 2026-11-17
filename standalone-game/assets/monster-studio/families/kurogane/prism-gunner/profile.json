@@ -1,0 +1,47 @@
+{
+  "familyId": "kurogane",
+  "parentBoss": "kurogane-neon-bastion",
+  "id": "prism-gunner",
+  "name": "Prism Gunner",
+  "title": "Rail Security Unit",
+  "tier": "normal",
+  "row": 3,
+  "enragedRow": null,
+  "maxHp": 400,
+  "hpPerBar": 400,
+  "enrageAt": 0,
+  "height": 1.4,
+  "radius": 0.48,
+  "speed": 1.1,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A slender security robot carries a prism emitter rifle; its fixed-ground firing solution rewards moving away from the marker.",
+  "weakness": "Leave its marked shot, then close the distance during recovery.",
+  "temperament": "Programmed perimeter guardian",
+  "origin": "The Neon Switchyard, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "prism-mark",
+      "name": "Prism Mark",
+      "shape": "circle",
+      "outer": 1.4,
+      "inner": 0,
+      "angle": 360,
+      "target": "player",
+      "damage": 14,
+      "windup": 1400,
+      "active": 380,
+      "recovery": 950,
+      "cooldown": 5700,
+      "description": "A rifle emitter marks a single blast disk. Keep moving after the position locks."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: model, movement and Prism Mark 14 HP contact observed; full defeat unreviewed."
+}

@@ -1,0 +1,424 @@
+{
+  "format": "pawtrail-stage",
+  "version": 1,
+  "name": "F01 \u00b7 Lantern Landing \u00b7 v1",
+  "width": 48,
+  "height": 36,
+  "baseTile": "terrain:12",
+  "groundArt": "f01:arrival-ground",
+  "tiles": {},
+  "shell": false,
+  "wallpaper": "cream",
+  "objects": [
+    {
+      "id": "tower-north-1",
+      "asset": "f01:spire-large",
+      "x": 152,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-2",
+      "asset": "f01:hab-block-large",
+      "x": 440,
+      "y": 304,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-3",
+      "asset": "f01:arc-tower-large",
+      "x": 768,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-4",
+      "asset": "f01:spire-large",
+      "x": 1096,
+      "y": 320,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-north-5",
+      "asset": "f01:hab-block-large",
+      "x": 1384,
+      "y": 312,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-1",
+      "asset": "f01:hab-block",
+      "x": 152,
+      "y": 744,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-2",
+      "asset": "f01:arc-tower",
+      "x": 440,
+      "y": 752,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-3",
+      "asset": "f01:hab-block",
+      "x": 1096,
+      "y": 744,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-middle-4",
+      "asset": "f01:spire",
+      "x": 1384,
+      "y": 752,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-terrace-west",
+      "asset": "f01:hab-block",
+      "x": 168,
+      "y": 1128,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tower-terrace-east",
+      "asset": "f01:hab-block",
+      "x": 1368,
+      "y": 1136,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "eko",
+      "asset": "f01:eko",
+      "x": 672,
+      "y": 576,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "plaza-koi-projection",
+      "asset": "f01:holo-koi",
+      "x": 872,
+      "y": 672,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "boulevard-koi-projection",
+      "asset": "f01:holo-koi",
+      "x": 360,
+      "y": 392,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "street-kiosk-0",
+      "asset": "f01:kiosk",
+      "x": 608,
+      "y": 800,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "street-kiosk-1",
+      "asset": "f01:kiosk",
+      "x": 944,
+      "y": 800,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-0",
+      "asset": "f01:hvac",
+      "x": 400,
+      "y": 1104,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-1",
+      "asset": "f01:hvac",
+      "x": 528,
+      "y": 1048,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-2",
+      "asset": "f01:hvac",
+      "x": 1040,
+      "y": 1048,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-fan-3",
+      "asset": "f01:hvac",
+      "x": 1160,
+      "y": 1104,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-0",
+      "asset": "f01:railing",
+      "x": 64,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-1",
+      "asset": "f01:railing",
+      "x": 192,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-2",
+      "asset": "f01:railing",
+      "x": 320,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-3",
+      "asset": "f01:railing",
+      "x": 448,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-4",
+      "asset": "f01:railing",
+      "x": 576,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-5",
+      "asset": "f01:railing",
+      "x": 960,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-6",
+      "asset": "f01:railing",
+      "x": 1088,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-7",
+      "asset": "f01:railing",
+      "x": 1216,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-8",
+      "asset": "f01:railing",
+      "x": 1344,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "observation-rail-9",
+      "asset": "f01:railing",
+      "x": 1472,
+      "y": 1152,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-0",
+      "asset": "f01:railing",
+      "x": 432,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-1",
+      "asset": "f01:railing",
+      "x": 560,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-2",
+      "asset": "f01:railing",
+      "x": 976,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "terrace-edge-rail-3",
+      "asset": "f01:railing",
+      "x": 1104,
+      "y": 968,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-lift",
+      "asset": "f01:lift",
+      "x": 760,
+      "y": 1050,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "clinic",
+      "asset": "f01:clinic-canopy",
+      "x": 440,
+      "y": 850,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "mara",
+      "asset": "f01:mara",
+      "x": 400,
+      "y": 890,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "clinic-seat",
+      "asset": "f01:camp-seat",
+      "x": 490,
+      "y": 890,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "arrival-planning",
+      "asset": "f01:planning",
+      "x": 1000,
+      "y": 900,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "plaza-controller",
+      "asset": "f01:planning",
+      "x": 760,
+      "y": 610,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    },
+    {
+      "id": "plaza-koi",
+      "asset": "f01:planning",
+      "x": 740,
+      "y": 740,
+      "elevation": 0,
+      "layer": "world",
+      "bias": 0,
+      "rotation": 0
+    }
+  ]
+}

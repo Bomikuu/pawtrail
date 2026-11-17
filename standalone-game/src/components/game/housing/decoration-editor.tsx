@@ -44,6 +44,8 @@ import {
 import { editorViewport, screenPoint } from "@/game/runtime/session";
 import type { HomesState } from "@/game/housing/types";
 import { FurnitureConstruction } from './furniture-construction'
+import { SofaColorControl } from '../sofa-color-control'
+import { SOFA_DEFAULT_COLOR } from '@/game/furniture/palette-color'
 const categories = [
   { id: "all", label: "All furniture", Icon: Package, match: /.*/ },
   {
@@ -383,7 +385,7 @@ export function DecorationEditor({ state }: { state: HomesState }) {
             </div>
           </section>
         </div>
-        <div className="shrink-0 space-y-2 border-t bg-background px-3 py-3">
+        <div className="max-h-[55dvh] shrink-0 space-y-2 overflow-y-auto border-t bg-background px-3 py-3">
           <div className="flex flex-wrap items-center gap-2">
             <p className="mr-auto text-sm font-semibold">
               {definition?.label ?? "Select a placed piece"}
@@ -435,6 +437,9 @@ export function DecorationEditor({ state }: { state: HomesState }) {
               artwork.
             </p>
           )}
+          {selected?.item === 'sofa' && <SofaColorControl color={selected.upholsteryColor ?? SOFA_DEFAULT_COLOR}
+            onChange={color => scene({ type: 'upholstery-color', color })} disabled={state.busy}
+            description="Choose a color for this sofa, then Save arrangement to keep it after reloading." />}
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex gap-1">
               {[

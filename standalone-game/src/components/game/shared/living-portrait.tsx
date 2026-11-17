@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { resolvePortraitSubject, type PortraitSubject } from '@/game/actor-rig/portrait-source'
 import { PORTRAIT_EXPRESSIONS, type PortraitExpression, type PortraitView } from '@/game/actor-rig/portrait-state'
 import type { PhotoPortraitPose, PortraitBlink, PortraitMouth } from '@/game/actor-rig/photo-portrait-catalog'
+import { PHOTO_PORTRAIT_STYLES, photoPortraitEmotions } from '@/game/actor-rig/photo-portrait-catalog'
 import { fitPortraitDisplay } from '@/game/actor-rig/portrait-display'
 import { authoredActorPortrait } from '@/game/actor-rig/authored-actor-portrait'
 import { portraitForAction } from '@/game/actor-rig/action-portrait'
@@ -25,7 +26,7 @@ type PortraitProps = {
   mouth?: PortraitMouth; breathing?: boolean
 }
 
-/** Original illustrated busts with native drawn eye/mouth layers; no WebGL or rotation. */
+/** Complete authored bust frames, retaining the selected angle; no WebGL. */
 export function LivingPortrait({ subject, identity, name, fallback, className = '', expression = 'idle', talking = false, inspectable = true, collection, collectionRevision, pose, onPoseChange, blink = 'auto', paused: controlledPaused, onPausedChange, controls = true, mouth = 'auto', breathing = true }: PortraitProps) {
   const canvas = useRef<HTMLCanvasElement>(null), container = useRef<HTMLDivElement>(null)
   const wake = useRef<() => void>(() => {})
@@ -89,7 +90,7 @@ export function LivingPortrait({ subject, identity, name, fallback, className = 
           const size = renderer.nativeSize, bounds = renderer.contentBounds
           const fit = () => {
             if (!container.current || cancelled) return
-            setPixelDisplay(fitPortraitDisplay(container.current.clientWidth, container.current.clientHeight, size, bounds))
+            setPixelDisplay(fitPortraitDisplay(container.current.clientWidth, container.current.clientHeight, size, bounds,renderer?.displayRendering==='smooth'))
           }
           fit()
           if (typeof ResizeObserver !== 'undefined') {
@@ -165,13 +166,15 @@ function PortraitInspector({open,onClose,kind,initialExpression='idle',initialBl
   const [blink,setBlink]=useState<PortraitBlink>(initialBlink)
   const [talking,setTalking]=useState(false)
   const authored=portrait.collection||(portrait.subject?.kind==='actor'&&authoredActorPortrait(portrait.subject.appearance))
+  const style=PHOTO_PORTRAIT_STYLES.find(entry=>entry.id===authored)
+  const expressions=kind==='cat'?['idle','happy'] as const:style?photoPortraitEmotions(style):authored?['idle','smile','happy','sad','angry','surprised'] as const:PORTRAIT_EXPRESSIONS
   const [angle,setAngle]=useState<PhotoPortraitPose>(()=>resolvePortraitAngle(typeof authored==='string'?authored:undefined,portrait.pose??'three-quarter-left'))
   return <Dialog open={open} onOpenChange={value=>{if(!value)onClose()}}><DialogContent className="max-h-[90dvh] overflow-y-auto rounded-md bg-[#fff7e9] font-body text-[#45291e] sm:max-w-2xl"><DialogHeader><DialogTitle className="font-heading text-3xl">{portrait.name} · Portrait preview</DialogTitle><DialogDescription className="text-[#805d3c]">Original 2D artwork with blinking and drawn expressions.</DialogDescription></DialogHeader>
     <div className="grid items-start gap-5 sm:grid-cols-[minmax(0,1fr)_11rem]">
       <div className="mx-auto aspect-square w-full max-w-96 overflow-hidden rounded-md border border-[#bc8751]/40 bg-[#e3e7ce]"><LivingPortrait {...portrait} pose={angle} expression={expression} blink={blink} talking={talking} inspectable={false}/></div>
       <div className="space-y-5">
         <PortraitAngleSelect collection={typeof authored==='string'?authored:undefined} value={angle} onChange={value=>{setAngle(value);onPoseChange?.(value)}}/>
-        <section><h3 className="mb-2 font-heading text-xl font-semibold">Expression</h3><div className="grid grid-cols-2 gap-2">{(kind==='cat'?['idle','happy'] as const:authored?['idle','smile','happy','sad','angry','surprised'] as const:PORTRAIT_EXPRESSIONS).map(value=><Button key={value} variant={expression===value?'secondary':'outline'} className="rounded-md text-xs capitalize" aria-pressed={expression===value} onClick={()=>{setExpression(value);setBlink('auto')}}>{value==='idle'?'Neutral':value}</Button>)}</div></section>
+        <section><h3 className="mb-2 font-heading text-xl font-semibold">Expression</h3><div className="grid grid-cols-2 gap-2">{expressions.map(value=><Button key={value} variant={expression===value?'secondary':'outline'} className="rounded-md text-xs capitalize" aria-pressed={expression===value} onClick={()=>{setExpression(value);setBlink('auto')}}>{value==='idle'?'Neutral':value}</Button>)}</div></section>
         {authored&&<Button variant={talking?'secondary':'outline'} className="w-full rounded-md" aria-pressed={talking} onClick={()=>{setTalking(!talking);setBlink('auto')}}>Speaking preview</Button>}
         <Button variant="ghost" className="w-full justify-start rounded-md text-[#553421]" onClick={()=>{setExpression('idle');setBlink('auto');setTalking(false)}}><RotateCcw className="size-4"/>Reset expression</Button>
         <p className="text-xs leading-relaxed text-[#805d3c]">Talking follows dialogue as it appears. Pause stops the animation.</p>
@@ -180,14 +183,14 @@ function PortraitInspector({open,onClose,kind,initialExpression='idle',initialBl
   </DialogContent></Dialog>
 }
 
-export function CreatorPortrait({subject,name,collection,large=false,action,pose,onPoseChange}:{subject:PortraitSubject;name:string;collection?:string;large?:boolean;action?:string;pose?:PhotoPortraitPose;onPoseChange?:(pose:PhotoPortraitPose)=>void}){
+export function CreatorPortrait({subject,name,collection,large=false,action,pose,onPoseChange,talking=false,expression,speechLabel}:{subject:PortraitSubject;name:string;collection?:string;large?:boolean;action?:string;pose?:PhotoPortraitPose;onPoseChange?:(pose:PhotoPortraitPose)=>void;talking?:boolean;expression?:PortraitExpression;speechLabel?:string}){
   const authored = collection || (subject.kind === 'actor' && authoredActorPortrait(subject.appearance))
   const [localPose,setLocalPose]=useState<PhotoPortraitPose>('three-quarter-left')
   const angle=resolvePortraitAngle(typeof authored==='string'?authored:undefined,pose??localPose)
   const performance=portraitForAction(action,!!authored,subject.kind==='cat')
   return <section className={large?"space-y-3 rounded-md border bg-muted/30 p-3":"flex items-center gap-4 rounded-md border bg-muted/30 p-3"}>
-    <div className={(large?"mx-auto aspect-[4/5] w-full max-w-72":"h-36 w-28 shrink-0")+" overflow-hidden rounded-md border border-[#bc8751]/40 bg-[#e3e7ce]"}><LivingPortrait subject={subject} collection={collection} pose={angle} onPoseChange={onPoseChange??setLocalPose} expression={performance.expression} blink={performance.blink} name={name||'Your creation'}/></div>
+    <div className={(large?"mx-auto aspect-[4/5] w-full max-w-72":"h-36 w-28 shrink-0")+" overflow-hidden rounded-md border border-[#bc8751]/40 bg-[#e3e7ce]"}><LivingPortrait subject={subject} collection={collection} pose={angle} onPoseChange={onPoseChange??setLocalPose} expression={expression??performance.expression} talking={talking} blink={talking?'auto':performance.blink} name={name||'Your creation'}/></div>
     <PortraitAngleSelect collection={typeof authored==='string'?authored:undefined} value={angle} onChange={onPoseChange??setLocalPose}/>
-    <div><h3 className="font-heading text-xl font-semibold">Dialogue portrait</h3>{action&&<p aria-live="polite" className="mt-1 text-xs font-medium">{performance.label} · follows action{performance.fallback?' · closest available artwork':''}</p>}<p className="mt-1 text-xs leading-relaxed text-muted-foreground">{authored ? 'Original portrait artwork made for this look, with blinking, breathing and six expressions.' : 'A lightweight 2D illustration with blinking and expressions. Custom looks use the closest illustrated base; unique silhouettes and accessories need their own portrait artwork.'}</p></div>
+    <div><h3 className="font-heading text-xl font-semibold">Dialogue portrait</h3>{action&&<p aria-live="polite" className="mt-1 text-xs font-medium">{talking?'Speaking · '+(speechLabel??'Voice cue'):performance.label+' · follows action'+(performance.fallback?' · closest available artwork':'')}</p>}<p className="mt-1 text-xs leading-relaxed text-muted-foreground">{authored ? 'Original portrait artwork made for this look, with blinking, breathing and matching expressions.' : 'A lightweight 2D illustration with blinking and expressions. Custom looks use the closest illustrated base; unique silhouettes and accessories need their own portrait artwork.'}</p></div>
   </section>
 }

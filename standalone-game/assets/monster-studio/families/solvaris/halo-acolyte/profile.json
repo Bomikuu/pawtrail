@@ -1,0 +1,47 @@
+{
+  "familyId": "solvaris",
+  "parentBoss": "solvaris-solar-arbiter",
+  "id": "halo-acolyte",
+  "name": "Halo Acolyte",
+  "title": "Keeper of the Small Sun",
+  "tier": "normal",
+  "row": 2,
+  "enragedRow": null,
+  "maxHp": 320,
+  "hpPerBar": 300,
+  "enrageAt": 0,
+  "height": 1.05,
+  "radius": 0.3,
+  "speed": 1.8,
+  "hover": 0,
+  "armor": 1,
+  "weakMultiplier": 1.5,
+  "biography": "A small ivory horn-mask peers from a red-and-cream robe. The acolyte carries a little halo-disc that marks intruders for a measured flare.",
+  "weakness": "Keep moving out of the disc’s ground mark, then strike while it dims.",
+  "temperament": "Territorial observatory sentinel",
+  "origin": "The Sunken Orrery, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "halo-flare",
+      "name": "Halo Flare",
+      "shape": "circle",
+      "outer": 1.35,
+      "inner": 0,
+      "angle": 110,
+      "target": "player",
+      "damage": 12,
+      "windup": 1050,
+      "active": 360,
+      "recovery": 850,
+      "cooldown": 4300,
+      "description": "A small solar flare locks onto your ground position. Leave the circle."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: corrected artwork loaded; start/pause and Halo Flare 12 HP contact observed. Full fight unreviewed."
+}

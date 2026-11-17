@@ -19,6 +19,7 @@ import {
   UserRound,
   Armchair,
   Swords,
+  Skull,
   Layers,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,12 +35,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { navigatePlay, navigateActorComparison, navigateActorPreview, navigateSkinStudio, navigateItemStudio, navigateStageEditor, navigateActorExplainer, navigateFurnitureCreator, navigateFurnitureComparison, type PlayDestination } from "@/game/play-navigation";
+import { navigatePlay, navigateActorComparison, navigateActorPreview, navigateSkinStudio, navigateItemStudio, navigateMonsterStudio, navigateHydraArena, navigateSerpentArena, navigateReaperArena, navigateDeityArena, navigateRobotArena, navigateStageEditor, navigateFloorAdventure, navigateActorExplainer, navigateFurnitureCreator, navigateFurnitureComparison, type PlayDestination } from "@/game/play-navigation";
 import { PLAY_CONTROLS, type PlayControlActions } from "./play-controls";
 import { CatMemeWheel } from "./cat-meme-wheel";
 import type { CatMemeId } from "@/game/cat-memes";
 
-export function PlayShell({ children }: { children: ReactNode }) {
+export function PlayShell({ children, floatingAbilities = true }: { children: ReactNode; floatingAbilities?: boolean }) {
   useEffect(() => {
     document.body.dataset.pawtrailGame = "true";
     return () => {
@@ -50,7 +51,7 @@ export function PlayShell({ children }: { children: ReactNode }) {
     <TooltipProvider delayDuration={150}>
       <div className="pawtrail-game relative flex h-dvh w-full min-h-0 max-w-none flex-col overflow-hidden bg-background text-foreground">
         {children}
-        <AbilityStatus/>
+        {floatingAbilities&&<AbilityStatus/>}
       </div>
     </TooltipProvider>
   );
@@ -145,9 +146,16 @@ export function PlayHeader({
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateActorPreview}>
               <UserRound className="size-4" />Character creator
             </DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateFloorAdventure}><Compass className="size-4" />Neon Heights adventure</DropdownMenuItem>
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateStageEditor}><Map className="size-4" />Stage & room editor</DropdownMenuItem>
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateSkinStudio}><UserRound className="size-4" />Character studio</DropdownMenuItem>
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateItemStudio}><Swords className="size-4" />Item & Ability Studio</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateMonsterStudio}><Skull className="size-4" />Monster studio</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateHydraArena}><Skull className="size-4" />Kaedros boss arena</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateSerpentArena}><Skull className="size-4" />Morvane · skeleton serpent</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateReaperArena}><Skull className="size-4" />Vesper · hovering reaper</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateDeityArena}><Skull className="size-4" />Solvaris · solar colossus</DropdownMenuItem>
+            <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateRobotArena}><Swords className="size-4" />Kurogane · funnel robot</DropdownMenuItem>
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateActorExplainer}><Layers className="size-4" />How characters work</DropdownMenuItem>
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateFurnitureCreator}><Armchair className="size-4" />Furniture editor</DropdownMenuItem>
             <DropdownMenuItem className="min-h-11 text-foreground" onSelect={navigateFurnitureComparison}><Armchair className="size-4" />Furniture comparison</DropdownMenuItem>

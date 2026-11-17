@@ -1,0 +1,48 @@
+{
+  "id": "amber-refined-cel",
+  "name": "Refined cel",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    1,
+    3,
+    94,
+    116
+  ],
+  "runtimeBytes": 245949,
+  "referenceBytes": 10495,
+  "completeBytes": 256444,
+  "poseCount": 3,
+  "expressionCount": 7,
+  "uniqueFullFrames": 124,
+  "sourceImagesUsed": 109,
+  "encoding": "lossless-webp-complete-frames",
+  "styleKey": "refined-cel",
+  "characterId": "amber",
+  "characterName": "Amber",
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-calm-v3/91b6c54014fe",
+  "revision": "91b6c54014fe",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "budgetBytes": 300000,
+  "idleFrameCounts": {
+    "front-pout": 2,
+    "three-quarter-left": 4,
+    "head-tilt-smile-right": 4
+  },
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised",
+    "shy"
+  ]
+}

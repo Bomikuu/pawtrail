@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Monsters"
+  short_description: "Bosses, mini-bosses and related mob families"
+  default_prompt: "Use $pawtrail-monsters to create a reference-guided boss with matching artwork, explicit HP rules and playable encounters, plus one related mini-boss and three distinct normal mobs using the same creature workflow."

@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen",
+  "status": "style-review",
+  "productionReady": false,
+  "styleReference": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-b2568850-6e27-4471-a6cd-f4357971182b.png",
+  "processing": "Generated original sprite per file, removed faint alpha glow with threshold128, cropped actual opaque bounds, nearest-neighbor native sizing, non-dithered16color palette, preserved binary alpha. Native exports visually inspected at8x integer zoom.",
+  "assets": [
+    {
+      "id": "cat-bed_housing_v1",
+      "category": "pet-furniture",
+      "file": "/assets/game/housing/pet-furniture/cat-bed-housing-v1.png",
+      "sourceFile": "/assets/game/housing/pet-furniture/cat-bed-housing-v1-source.png",
+      "reviewFile": "/assets/game/housing/pet-furniture/cat-bed-housing-v1-review.png",
+      "width": 32,
+      "height": 32,
+      "anchorPixels": {
+        "x": 16,
+        "y": 30
+      },
+      "suggestedCollisionFootprint": {
+        "x": 3,
+        "y": 17,
+        "width": 26,
+        "height": 13
+      },
+      "frames": 1,
+      "animation": null,
+      "prompt": "Use case: stylized-concept. Asset type: single movable pet furniture sprite for PawTrail. Input image is STYLE REFERENCE ONLY: match its terracotta cream cat bed, pixel density and upper-left lighting. Generate exactly ONE EMPTY round fluffy cat bed, terracotta-brown raised rim, cream padded interior, small cream paw decoration on front. Strict orthographic top-down 3/4 RPG perspective, not isometric. Readable 32x32 logical pixel sprite enlarged by nearest-neighbor, deliberate chunky square pixel clusters and dark warm brown outline, warm cozy 16-bit aesthetic. Center complete object on genuinely transparent background, leave transparent padding around every edge. No cat, no extra object, no room, no floor, no ground cast shadow, no text, no gradients, no blur, no antialiased edges. Intended native object canvas32x32.",
+      "checks": {
+        "dimensions": "pass",
+        "binaryTransparency": "pass",
+        "pixelEdges": "pass after native export",
+        "itemSeparation": "pass single object",
+        "visualStyle": "consistent warm palette and upper-left light; awaits owner style review",
+        "collision": "suggested only; not gameplay-tested"
+      },
+      "limitations": [
+        "Static first-batch asset; no animation or occupied variant requested at this stage.",
+        "Native downsampling loses the fine paw-pad details from the high-resolution source.",
+        "Not marked production-ready until first-batch style review."
+      ]
+    },
+    {
+      "id": "scratching-post_housing_v1",
+      "category": "pet-furniture",
+      "file": "/assets/game/housing/pet-furniture/scratching-post-housing-v1.png",
+      "sourceFile": "/assets/game/housing/pet-furniture/scratching-post-housing-v1-source.png",
+      "reviewFile": "/assets/game/housing/pet-furniture/scratching-post-housing-v1-review.png",
+      "width": 32,
+      "height": 64,
+      "anchorPixels": {
+        "x": 16,
+        "y": 62
+      },
+      "suggestedCollisionFootprint": {
+        "x": 3,
+        "y": 51,
+        "width": 26,
+        "height": 11
+      },
+      "frames": 1,
+      "animation": null,
+      "prompt": "Use case: stylized-concept. Asset type: single movable pet furniture sprite for PawTrail. Input image STYLE REFERENCE ONLY. Generate exactly ONE scratching post: square honey-oak wooden base, vertical cream sisal rope-wrapped column, small sage-green upholstered top pad. Strict orthographic top-down 3/4 RPG perspective, not isometric. True low-resolution32x64 logical pixel design enlarged with square nearest-neighbor blocks, deliberate pixelclusters and warm darkbrownoutline, warm cozy16bit aesthetic, upperleftlighting. Center wholeobject with generouspadding on genuinely transparent background. No cat, no secondpost, no scenery, no floor, no text, no glow, no castshadow, no gradients, no blurry edges. Match honeyoak/sage/cream/terracotta limited palette inreference.",
+      "checks": {
+        "dimensions": "pass",
+        "binaryTransparency": "pass",
+        "pixelEdges": "pass after native export",
+        "itemSeparation": "pass single object",
+        "visualStyle": "consistent warm palette and upper-left light; awaits owner style review",
+        "collision": "suggested only; not gameplay-tested"
+      },
+      "limitations": [
+        "Static first-batch asset; no animation or occupied variant requested at this stage.",
+        "Native downsampling loses the fine paw-pad details from the high-resolution source.",
+        "Not marked production-ready until first-batch style review."
+      ]
+    },
+    {
+      "id": "feeding-bowl-full_housing_v1",
+      "category": "pet-furniture",
+      "file": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1.png",
+      "sourceFile": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1-source.png",
+      "reviewFile": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1-review.png",
+      "width": 32,
+      "height": 32,
+      "anchorPixels": {
+        "x": 16,
+        "y": 30
+      },
+      "suggestedCollisionFootprint": {
+        "x": 6,
+        "y": 20,
+        "width": 20,
+        "height": 10
+      },
+      "frames": 1,
+      "animation": null,
+      "prompt": "Use case: stylized-concept. Asset type: single movable pet accessory sprite for PawTrail. Input image STYLE REFERENCE ONLY. Exactly ONE low round terracotta feeding bowl full of chunky brown kibble; small cream paw decoration on front. Strict orthographic top-down three-quarter RPG perspective, not isometric. True32x32 logical pixel design enlarged with crisp nearest-neighbor square pixel clusters. Cozy16bit originalart, warm brown dark outline, upperleftlighting, honeyoak/cream/terracotta/sage limitedpalette. Whole objectcentered on genuinely transparent background with generousclear padding. No floor, no shadow, no glow, no cat, no otheritems, no text, no blurring, no smoothgradient, no antialiasing.",
+      "checks": {
+        "dimensions": "pass",
+        "binaryTransparency": "pass",
+        "pixelEdges": "pass after native export",
+        "itemSeparation": "pass single object",
+        "visualStyle": "consistent warm palette and upper-left light; awaits owner style review",
+        "collision": "suggested only; not gameplay-tested"
+      },
+      "limitations": [
+        "Static first-batch asset; no animation or occupied variant requested at this stage.",
+        "Native downsampling loses the fine paw-pad details from the high-resolution source.",
+        "Not marked production-ready until first-batch style review."
+      ]
+    }
+  ]
+}

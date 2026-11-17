@@ -1,0 +1,157 @@
+{
+  "version": 2,
+  "id": "amber-loading-refined-cel-pixel",
+  "characterId": "amber-outrider",
+  "style": "refined-cel",
+  "revision": "5a17b27d3162",
+  "nativeSize": [
+    160,
+    240
+  ],
+  "suggestedDisplaySize": [
+    320,
+    480
+  ],
+  "anchor": [
+    80,
+    232
+  ],
+  "atlas": "atlas.webp",
+  "poster": "poster.webp",
+  "animatedImage": "sway.webp",
+  "frames": [
+    {
+      "id": 0,
+      "rect": [
+        0,
+        0,
+        160,
+        240
+      ],
+      "contentBounds": [
+        8,
+        13,
+        143,
+        226
+      ]
+    },
+    {
+      "id": 1,
+      "rect": [
+        160,
+        0,
+        160,
+        240
+      ],
+      "contentBounds": [
+        21,
+        13,
+        141,
+        226
+      ]
+    },
+    {
+      "id": 2,
+      "rect": [
+        320,
+        0,
+        160,
+        240
+      ],
+      "contentBounds": [
+        27,
+        13,
+        141,
+        226
+      ]
+    },
+    {
+      "id": 3,
+      "rect": [
+        0,
+        240,
+        160,
+        240
+      ],
+      "contentBounds": [
+        27,
+        13,
+        141,
+        226
+      ]
+    },
+    {
+      "id": 4,
+      "rect": [
+        160,
+        240,
+        160,
+        240
+      ],
+      "contentBounds": [
+        27,
+        14,
+        143,
+        226
+      ]
+    },
+    {
+      "id": 5,
+      "rect": [
+        320,
+        240,
+        160,
+        240
+      ],
+      "contentBounds": [
+        27,
+        14,
+        152,
+        226
+      ]
+    }
+  ],
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationMs": [
+    320,
+    220,
+    220,
+    220,
+    220,
+    320,
+    220,
+    220,
+    220,
+    220
+  ],
+  "cycleMs": 2400,
+  "loop": true,
+  "motion": [
+    "loose long hair",
+    "free cape tails"
+  ],
+  "expression": "fixed closed-mouth smile",
+  "sampling": "nearest-neighbor, integer enlargement",
+  "paletteColors": 96,
+  "files": {
+    "atlas.webp": 46470,
+    "poster.webp": 8092,
+    "sway.webp": 80454
+  },
+  "review": {
+    "style": "candidate revised after owner found V1 too smooth; owner acceptance pending",
+    "artwork": "native and integer-enlarged contacts inspected",
+    "livePlayback": "pending; browser verification not requested"
+  }
+}

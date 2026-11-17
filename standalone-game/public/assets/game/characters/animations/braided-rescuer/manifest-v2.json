@@ -1,0 +1,2250 @@
+{
+  "variant": "braided-rescuer",
+  "atlas": "complete-v2.png",
+  "frameWidth": 32,
+  "frameHeight": 48,
+  "animations": [
+    {
+      "id": "walk_down",
+      "file": "walk_down-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 6,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          12,
+          256,
+          179
+        ],
+        [
+          256,
+          12,
+          512,
+          179
+        ],
+        [
+          512,
+          12,
+          768,
+          179
+        ],
+        [
+          768,
+          12,
+          1024,
+          179
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        0,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "walk_up",
+      "file": "walk_up-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 6,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          201,
+          256,
+          372
+        ],
+        [
+          256,
+          201,
+          512,
+          372
+        ],
+        [
+          512,
+          201,
+          768,
+          372
+        ],
+        [
+          768,
+          201,
+          1024,
+          372
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        48,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "walk_left",
+      "file": "walk_left-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 6,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          394,
+          256,
+          562
+        ],
+        [
+          256,
+          394,
+          512,
+          562
+        ],
+        [
+          512,
+          394,
+          768,
+          562
+        ],
+        [
+          768,
+          394,
+          1024,
+          562
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        96,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "walk_right",
+      "file": "walk_right-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 6,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          586,
+          256,
+          754
+        ],
+        [
+          256,
+          586,
+          512,
+          754
+        ],
+        [
+          512,
+          586,
+          768,
+          754
+        ],
+        [
+          768,
+          586,
+          1024,
+          754
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          6,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        144,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "idle_down",
+      "file": "idle_down-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          779,
+          256,
+          947
+        ],
+        [
+          256,
+          779,
+          512,
+          947
+        ],
+        [
+          512,
+          779,
+          768,
+          947
+        ],
+        [
+          768,
+          779,
+          1024,
+          947
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        192,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "idle_up",
+      "file": "idle_up-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          971,
+          256,
+          1137
+        ],
+        [
+          256,
+          971,
+          512,
+          1137
+        ],
+        [
+          512,
+          971,
+          768,
+          1137
+        ],
+        [
+          768,
+          971,
+          1024,
+          1137
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        240,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "idle_left",
+      "file": "idle_left-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1162,
+          256,
+          1329
+        ],
+        [
+          256,
+          1162,
+          512,
+          1329
+        ],
+        [
+          512,
+          1162,
+          768,
+          1329
+        ],
+        [
+          768,
+          1162,
+          1024,
+          1329
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          5,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ],
+        [
+          4,
+          4,
+          27,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        288,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "idle_right",
+      "file": "idle_right-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": -1,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/movement-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1354,
+          256,
+          1521
+        ],
+        [
+          256,
+          1354,
+          512,
+          1521
+        ],
+        [
+          512,
+          1354,
+          768,
+          1521
+        ],
+        [
+          768,
+          1354,
+          1024,
+          1521
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        336,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "wave",
+      "file": "wave-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          23,
+          256,
+          179
+        ],
+        [
+          256,
+          23,
+          512,
+          179
+        ],
+        [
+          512,
+          23,
+          768,
+          179
+        ],
+        [
+          768,
+          23,
+          1024,
+          179
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          5,
+          10,
+          27,
+          46
+        ],
+        [
+          5,
+          10,
+          27,
+          46
+        ],
+        [
+          5,
+          10,
+          27,
+          46
+        ],
+        [
+          2,
+          10,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        384,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "laugh",
+      "file": "laugh-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          201,
+          256,
+          364
+        ],
+        [
+          256,
+          201,
+          512,
+          364
+        ],
+        [
+          512,
+          201,
+          768,
+          364
+        ],
+        [
+          768,
+          201,
+          1024,
+          364
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        432,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "dance",
+      "file": "dance-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          385,
+          256,
+          547
+        ],
+        [
+          256,
+          385,
+          512,
+          547
+        ],
+        [
+          512,
+          385,
+          768,
+          547
+        ],
+        [
+          768,
+          385,
+          1024,
+          547
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        480,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "clap",
+      "file": "clap-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          570,
+          256,
+          733
+        ],
+        [
+          256,
+          570,
+          512,
+          733
+        ],
+        [
+          512,
+          570,
+          768,
+          733
+        ],
+        [
+          768,
+          570,
+          1024,
+          733
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          4,
+          4,
+          28,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ],
+        [
+          2,
+          4,
+          30,
+          46
+        ],
+        [
+          3,
+          4,
+          28,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        528,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "cheer",
+      "file": "cheer-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          752,
+          256,
+          916
+        ],
+        [
+          256,
+          752,
+          512,
+          916
+        ],
+        [
+          512,
+          752,
+          768,
+          916
+        ],
+        [
+          768,
+          752,
+          1024,
+          916
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          5,
+          9,
+          27,
+          46
+        ],
+        [
+          4,
+          9,
+          27,
+          46
+        ],
+        [
+          3,
+          9,
+          28,
+          46
+        ],
+        [
+          2,
+          9,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        576,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "sit",
+      "file": "sit-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          933,
+          256,
+          1088
+        ],
+        [
+          256,
+          933,
+          512,
+          1088
+        ],
+        [
+          512,
+          933,
+          768,
+          1088
+        ],
+        [
+          768,
+          933,
+          1024,
+          1088
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          4,
+          29,
+          46
+        ],
+        [
+          2,
+          5,
+          29,
+          46
+        ],
+        [
+          2,
+          10,
+          29,
+          46
+        ],
+        [
+          2,
+          11,
+          29,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        624,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "sleep",
+      "file": "sleep-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1098,
+          256,
+          1244
+        ],
+        [
+          256,
+          1098,
+          512,
+          1244
+        ],
+        [
+          512,
+          1098,
+          768,
+          1244
+        ],
+        [
+          768,
+          1098,
+          1024,
+          1244
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          8,
+          21,
+          24,
+          46
+        ],
+        [
+          5,
+          26,
+          27,
+          46
+        ],
+        [
+          4,
+          28,
+          28,
+          46
+        ],
+        [
+          2,
+          29,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        672,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "give_gift",
+      "file": "give_gift-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1252,
+          256,
+          1396
+        ],
+        [
+          256,
+          1252,
+          512,
+          1396
+        ],
+        [
+          512,
+          1252,
+          768,
+          1396
+        ],
+        [
+          768,
+          1252,
+          1024,
+          1396
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          6,
+          29,
+          46
+        ],
+        [
+          2,
+          6,
+          29,
+          46
+        ],
+        [
+          2,
+          6,
+          30,
+          46
+        ],
+        [
+          3,
+          6,
+          29,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        720,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "hold_item",
+      "file": "hold_item-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/social-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1403,
+          256,
+          1536
+        ],
+        [
+          256,
+          1403,
+          512,
+          1536
+        ],
+        [
+          512,
+          1403,
+          768,
+          1536
+        ],
+        [
+          768,
+          1403,
+          1024,
+          1536
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          2,
+          8,
+          29,
+          46
+        ],
+        [
+          2,
+          8,
+          29,
+          46
+        ],
+        [
+          2,
+          8,
+          30,
+          46
+        ],
+        [
+          2,
+          8,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": true,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        768,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "pet",
+      "file": "pet-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          28,
+          256,
+          171
+        ],
+        [
+          256,
+          28,
+          512,
+          171
+        ],
+        [
+          512,
+          28,
+          768,
+          171
+        ],
+        [
+          768,
+          28,
+          1024,
+          171
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          6,
+          13,
+          26,
+          46
+        ],
+        [
+          5,
+          13,
+          27,
+          46
+        ],
+        [
+          4,
+          19,
+          28,
+          46
+        ],
+        [
+          2,
+          19,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        816,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "feed",
+      "file": "feed-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          189,
+          256,
+          330
+        ],
+        [
+          256,
+          189,
+          512,
+          330
+        ],
+        [
+          512,
+          189,
+          768,
+          330
+        ],
+        [
+          768,
+          189,
+          1024,
+          330
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          6,
+          14,
+          26,
+          46
+        ],
+        [
+          5,
+          15,
+          27,
+          46
+        ],
+        [
+          4,
+          21,
+          28,
+          46
+        ],
+        [
+          2,
+          21,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        864,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "play",
+      "file": "play-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          349,
+          256,
+          489
+        ],
+        [
+          256,
+          349,
+          512,
+          489
+        ],
+        [
+          512,
+          349,
+          768,
+          489
+        ],
+        [
+          768,
+          349,
+          1024,
+          489
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          5,
+          20,
+          26,
+          46
+        ],
+        [
+          4,
+          20,
+          28,
+          46
+        ],
+        [
+          2,
+          23,
+          30,
+          46
+        ],
+        [
+          2,
+          25,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        912,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "refill_water",
+      "file": "refill_water-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          507,
+          256,
+          648
+        ],
+        [
+          256,
+          507,
+          512,
+          648
+        ],
+        [
+          512,
+          507,
+          768,
+          648
+        ],
+        [
+          768,
+          507,
+          1024,
+          648
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          6,
+          17,
+          25,
+          46
+        ],
+        [
+          3,
+          19,
+          28,
+          46
+        ],
+        [
+          2,
+          22,
+          29,
+          46
+        ],
+        [
+          2,
+          23,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        960,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "clean",
+      "file": "clean-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          667,
+          256,
+          808
+        ],
+        [
+          256,
+          667,
+          512,
+          808
+        ],
+        [
+          512,
+          667,
+          768,
+          808
+        ],
+        [
+          768,
+          667,
+          1024,
+          808
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          7,
+          17,
+          25,
+          46
+        ],
+        [
+          5,
+          21,
+          26,
+          46
+        ],
+        [
+          4,
+          25,
+          28,
+          46
+        ],
+        [
+          2,
+          25,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        1008,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "carry_supplies",
+      "file": "carry_supplies-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          824,
+          256,
+          963
+        ],
+        [
+          256,
+          824,
+          512,
+          963
+        ],
+        [
+          512,
+          824,
+          768,
+          963
+        ],
+        [
+          768,
+          824,
+          1024,
+          963
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          7,
+          28,
+          46
+        ],
+        [
+          2,
+          8,
+          29,
+          46
+        ],
+        [
+          2,
+          8,
+          30,
+          46
+        ],
+        [
+          2,
+          8,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        1056,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "pick_up_furniture",
+      "file": "pick_up_furniture-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          982,
+          256,
+          1113
+        ],
+        [
+          256,
+          982,
+          512,
+          1113
+        ],
+        [
+          512,
+          982,
+          768,
+          1113
+        ],
+        [
+          768,
+          982,
+          1024,
+          1113
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          2,
+          14,
+          30,
+          46
+        ],
+        [
+          3,
+          18,
+          29,
+          46
+        ],
+        [
+          3,
+          18,
+          29,
+          46
+        ],
+        [
+          4,
+          14,
+          27,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        1104,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "move_object",
+      "file": "move_object-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1126,
+          256,
+          1251
+        ],
+        [
+          256,
+          1126,
+          512,
+          1251
+        ],
+        [
+          512,
+          1126,
+          768,
+          1251
+        ],
+        [
+          768,
+          1126,
+          1024,
+          1251
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          3,
+          10,
+          28,
+          46
+        ],
+        [
+          2,
+          10,
+          29,
+          46
+        ],
+        [
+          2,
+          10,
+          30,
+          46
+        ],
+        [
+          2,
+          10,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        1152,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "place_object",
+      "file": "place_object-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1262,
+          256,
+          1390
+        ],
+        [
+          256,
+          1262,
+          512,
+          1390
+        ],
+        [
+          512,
+          1262,
+          768,
+          1390
+        ],
+        [
+          768,
+          1262,
+          1024,
+          1390
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          7,
+          20,
+          24,
+          46
+        ],
+        [
+          5,
+          24,
+          26,
+          46
+        ],
+        [
+          5,
+          25,
+          26,
+          46
+        ],
+        [
+          2,
+          25,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        1200,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    },
+    {
+      "id": "inspect_furniture",
+      "file": "inspect_furniture-v2.png",
+      "frameWidth": 32,
+      "frameHeight": 48,
+      "frames": 4,
+      "frameRate": 4,
+      "repeat": 0,
+      "anchorPixels": [
+        16,
+        46
+      ],
+      "source": "characters/animations/braided-rescuer/care-decoration-source-v2.png",
+      "sourceFrameRectsXYXY": [
+        [
+          0,
+          1402,
+          256,
+          1521
+        ],
+        [
+          256,
+          1402,
+          512,
+          1521
+        ],
+        [
+          512,
+          1402,
+          768,
+          1521
+        ],
+        [
+          768,
+          1402,
+          1024,
+          1521
+        ]
+      ],
+      "nativeOccupiedBounds": [
+        [
+          5,
+          18,
+          26,
+          46
+        ],
+        [
+          5,
+          18,
+          26,
+          46
+        ],
+        [
+          5,
+          18,
+          26,
+          46
+        ],
+        [
+          2,
+          18,
+          30,
+          46
+        ]
+      ],
+      "motionDistinctFrames": 4,
+      "sourceClippingRepaired": false,
+      "identityReview": "source images visually inspected; jacket care long trousers repaired with targeted imagegen edit",
+      "loopReview": "not playback-certified",
+      "productionReady": false,
+      "atlasRect": [
+        0,
+        1248,
+        128,
+        48
+      ],
+      "checks": {
+        "nativeDimensions": true,
+        "binaryAlpha": true,
+        "nonemptyFrames": true
+      },
+      "nativeMotionPresent": true
+    }
+  ],
+  "productionReady": false
+}

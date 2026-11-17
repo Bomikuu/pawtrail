@@ -1,0 +1,13 @@
+{
+  "name": "Amber",
+  "folder": "/pawtrail-game/actor-studio/illustrations/amber-outrider/full-body-v4-calm-ca1521e118f7",
+  "nativeSize": [
+    192,
+    320
+  ],
+  "style": "Refined cel",
+  "motion": "Full-body idle · hair, ribbon & coat sway",
+  "frames": 12,
+  "runtimeBytes": 160940,
+  "cycleMs": 4800
+}

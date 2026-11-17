@@ -1,0 +1,58 @@
+{
+  "id": "ribwarden",
+  "parentBoss": "morvane-ossuary-serpent",
+  "familyId": "morvane",
+  "tier": "mini-boss",
+  "representation": "native-authored-2d-frames",
+  "atlas": "../actors.webp",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "columns": 5,
+  "rows": 5,
+  "row": 0,
+  "enragedRow": 1,
+  "poses": {
+    "idle": 0,
+    "walk": 1,
+    "windup": 2,
+    "attack": 3,
+    "hurt": 4
+  },
+  "authoredPoseCount": 10,
+  "portrait": {
+    "file": "portraits.webp",
+    "cellWidth": 128,
+    "cellHeight": 128,
+    "states": [
+      "alert",
+      "threatening",
+      "hurt"
+    ]
+  },
+  "icon": {
+    "file": "icon.png",
+    "width": 64,
+    "height": 64
+  },
+  "illustration": {
+    "normal": "normal.webp",
+    "enraged": "enraged.webp",
+    "motion": "runtime breathing, not additional authored image frames"
+  },
+  "worldHeight": 2.7,
+  "baseline": 248,
+  "contentHeight": 189,
+  "registration": {
+    "union": [
+      0,
+      6,
+      251,
+      249
+    ],
+    "scale": 0.9243027888446215,
+    "baselinePerFrame": 248
+  },
+  "collisionRadius": 0.85,
+  "profile": "profile.json",
+  "provenance": "Built-in ImageGen derived from approved parent-boss artwork; full prompts and master retained."
+}

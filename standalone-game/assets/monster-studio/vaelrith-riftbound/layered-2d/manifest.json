@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "vaelrith-layered-2d-v1",
+  "representation": "layered-2d",
+  "generation": "built-in ImageGen, approved creature identity reference",
+  "url": "/pawtrail-game/monsters/vaelrith-riftbound/layered-2d-v1/part-atlas.png",
+  "frameWidth": 128,
+  "frameHeight": 128,
+  "columns": 3,
+  "rows": 4,
+  "frames": 12,
+  "anchor": [
+    64,
+    64
+  ],
+  "transparent": true,
+  "neckSegments": 7,
+  "parts": {
+    "alert": [
+      0,
+      1,
+      2
+    ],
+    "roar": [
+      3,
+      4,
+      5
+    ],
+    "hurt": [
+      6,
+      7,
+      8
+    ],
+    "neck": 9,
+    "socket": 10,
+    "seal": 11
+  },
+  "bytes": 341276,
+  "decodedAtlasBytes": 786432,
+  "camera": "fixed illustration view; zoom allowed, no orbit",
+  "poseSource": "shared 32-sample attack timelines, interpolated part transforms",
+  "combat": "same local MonsterEncounter and weapon runtime as the 3D preview",
+  "review": "generated artwork inspected; live comparison pending owner review"
+}

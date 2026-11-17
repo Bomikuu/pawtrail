@@ -1,0 +1,7 @@
+{
+  "group": "particles",
+  "rows": 5,
+  "cols": 8,
+  "prompt": "Use case: stylized-concept. Asset type PawTrail SPECIAL EFFECT animation atlas. Image1 style reference ONLY warmcream honeygold sage terracotta, darkwarmbrown pixeloutline upperleftlight. Actualtransparentbackground NOglows NOtext. Exact EIGHT columns FIVE rows equal square cells. Eachanimation4adjacentframes, TWOanimationsperrow exceptlastrowright4empty. Row1 left4 FLOATING HEARTS rising and shrinking; right4 SPARKLES twinkling. Row2 left4 QUESTION MARK bounce; right4 EXCLAMATION MARK bounce. Row3 left4 SMALL STARS orbit; right4 FRIENDSHIP EFFECT two linked hearts pulse. Row4 left4 PET AFFECTION EFFECT pawinsideheart bounce; right4 KIBBLE REWARD EFFECT gold pawcoin spin. Row5 left4 QUEST COMPLETION EFFECT checkmark on parchment popping with starburst; right4 EMPTYtransparentcells. Exactlynine4-frameanimations36icons plus4emptycells. Eachcellnative32x32pixel logical withcentered shapes, generousclearseparation. Crisp16bitpixelclusters, no smoothgradients/bloom/blur/scenery/UIframe/labels/numbers. DoNOTdrawcharactersorwholegame.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-667373fd-dc48-44b0-944f-5810eff21645.png"
+}

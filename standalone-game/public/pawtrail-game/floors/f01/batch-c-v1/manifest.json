@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "package": "f01-batch-c-v1",
+  "grounds": [
+    {
+      "id": "f01:switchyard-ground",
+      "label": "Neon Switchyard",
+      "file": "/pawtrail-game/floors/f01/batch-c-v1/switchyard-ground.png",
+      "width": 1152,
+      "height": 896,
+      "reflections": [
+        [
+          135,
+          610,
+          70,
+          130
+        ],
+        [
+          420,
+          485,
+          150,
+          16
+        ],
+        [
+          825,
+          330,
+          120,
+          20
+        ],
+        [
+          980,
+          170,
+          35,
+          110
+        ]
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "f01:dispatch-cabin",
+      "file": "/pawtrail-game/floors/f01/batch-c-v1/dispatch-cabin.png",
+      "width": 272,
+      "height": 224,
+      "anchor": [
+        136,
+        218
+      ],
+      "motion": {
+        "kind": "fan",
+        "cycleMs": 5200,
+        "rotors": [
+          [
+            154,
+            48,
+            20,
+            10
+          ]
+        ],
+        "lights": true
+      },
+      "representation": "animated-2d"
+    },
+    {
+      "id": "f01:freight-stack",
+      "file": "/pawtrail-game/floors/f01/batch-c-v1/freight-stack.png",
+      "width": 192,
+      "height": 160,
+      "anchor": [
+        96,
+        156
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7200
+      },
+      "representation": "animated-2d"
+    },
+    {
+      "id": "f01:freight-crates",
+      "file": "/pawtrail-game/floors/f01/batch-c-v1/freight-crates.png",
+      "width": 160,
+      "height": 128,
+      "anchor": [
+        80,
+        124
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 6300
+      },
+      "representation": "animated-2d"
+    },
+    {
+      "id": "f01:yard-crane",
+      "file": "/pawtrail-game/floors/f01/batch-c-v1/yard-crane.png",
+      "width": 224,
+      "height": 224,
+      "anchor": [
+        52,
+        218
+      ],
+      "motion": {
+        "kind": "crane",
+        "cycleMs": 8000,
+        "hook": [
+          205,
+          15
+        ],
+        "atlas": {
+          "file": "/pawtrail-game/floors/f01/batch-c-v1/crane-load.png",
+          "cell": [
+            48,
+            128
+          ],
+          "columns": 1,
+          "rows": 1
+        }
+      },
+      "representation": "animated-2d"
+    },
+    {
+      "id": "f01:bulkhead",
+      "file": "/pawtrail-game/floors/f01/batch-c-v1/models/bulkhead/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "motion": null,
+      "representation": "live-textured-3d"
+    },
+    {
+      "id": "f01:authorization",
+      "file": "/pawtrail-game/floors/f01/batch-c-v1/models/authorization/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "motion": null,
+      "representation": "live-textured-3d"
+    },
+    {
+      "id": "f01:sena",
+      "file": "/pawtrail-game/floors/f01/npcs/sena/body.png",
+      "width": 48,
+      "height": 80,
+      "anchor": [
+        24,
+        78
+      ],
+      "motion": null,
+      "representation": "shared-actor-rig"
+    }
+  ],
+  "verification": "Authoring only; runtime checks deferred by owner"
+}

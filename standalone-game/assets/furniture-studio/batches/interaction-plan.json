@@ -1,0 +1,1909 @@
+{
+  "version": 1,
+  "plannedAt": "2026-11-10T15:45:35.043714+00:00",
+  "status": "sprite_couch_pilot_installed",
+  "currentScope": "Ask for 3D + 2D renders or 2D sprites when unspecified; interaction and sitting do not require a furniture mesh. The sofa pilot uses unchanged original 2D art.",
+  "summary": {
+    "catalogIds": 110,
+    "authored3D": 9,
+    "queuedInteractive3D": 0,
+    "queuedHybrid3D": 0,
+    "queuedVolumetric3D": 0,
+    "queuedInteractive2D": 20,
+    "deferred2D": 57,
+    "awaitingRepresentationChoice": 18,
+    "installedInteractive2D": 6
+  },
+  "contracts": {
+    "seat": {
+      "actions": [
+        "sit",
+        "stand"
+      ],
+      "persistent": [],
+      "transient": [
+        "available",
+        "occupied via WorldInteraction seat lease"
+      ],
+      "actor": "Native unscaled actor docks at a reserved seat; correct facing, arm/pillow clearance and safe exit.",
+      "geometry": "Native seat sockets, foreground and collision share the sprite anchor or chosen model pivot.",
+      "acceptance": [
+        "Two actors cannot claim the same slot.",
+        "Stand, cancel, disconnect and removal release occupancy.",
+        "Rotation/style changes preserve item identity and valid contacts."
+      ],
+      "requestActions": [
+        "sit"
+      ],
+      "releaseVia": "interaction.cancel / leave; stand and wake are user-facing meanings, not new backend actions."
+    },
+    "rest": {
+      "actions": [
+        "rest",
+        "wake"
+      ],
+      "persistent": [],
+      "transient": [
+        "available",
+        "resting via WorldInteraction lease"
+      ],
+      "actor": "Actor sleep/rest pose docks to the bed, with blanket/foreground allowance and a reachable wake exit.",
+      "geometry": "Bed remains solid and occupied slot cannot be double-booked.",
+      "acceptance": [
+        "Wake/cancel restores walking and frees the slot.",
+        "Neither actor scaling nor clipping may hide bad fit."
+      ],
+      "requestActions": [
+        "rest"
+      ],
+      "releaseVia": "interaction.cancel / leave; stand and wake are user-facing meanings, not new backend actions."
+    },
+    "light": {
+      "actions": [
+        "toggle_light"
+      ],
+      "persistent": [
+        {
+          "key": "lit",
+          "type": "boolean",
+          "default": true
+        }
+      ],
+      "transient": [
+        "flame/flicker phase while lit only"
+      ],
+      "actor": "Approach a reachable side; use existing short interaction, then return to idle.",
+      "geometry": "Switching light does not change furniture collision.",
+      "acceptance": [
+        "Off removes flame/emission rather than only tinting the whole sprite.",
+        "Reload and other clients resolve the same server-owned lit state.",
+        "Repeated completion of the same actionId cannot toggle twice.",
+        "Keep reduced-motion glow steady."
+      ],
+      "artRoute": "Native 2D off/on sprites with optional flame/glow; no mesh required."
+    },
+    "door": {
+      "actions": [
+        "toggle_door"
+      ],
+      "persistent": [
+        {
+          "key": "open",
+          "type": "boolean",
+          "default": false
+        }
+      ],
+      "transient": [
+        "opening/closing presentation"
+      ],
+      "actor": "Approach outside the sweep; preserve current owner permission.",
+      "geometry": "Only the doorway passage opens; frame remains solid. Refuse closure on an actor/pet.",
+      "acceptance": [
+        "Closed blocks and open permits the actual doorway.",
+        "Rotation projects the hinge, frame and passage consistently.",
+        "Do not apply door-style collision removal to a future open cabinet or refrigerator."
+      ]
+    },
+    "food": {
+      "actions": [
+        "fill_food"
+      ],
+      "persistent": [
+        {
+          "key": "food",
+          "type": "integer",
+          "range": [
+            0,
+            3
+          ]
+        },
+        {
+          "key": "filledFoodAt",
+          "type": "server timestamp"
+        }
+      ],
+      "transient": [
+        "actor feed pose",
+        "pet consumption"
+      ],
+      "actor": "Approach bowl edge; spend an available housing food supply once.",
+      "geometry": "Distinct feed/animal access remains reachable; no seating socket.",
+      "acceptance": [
+        "0 is empty, 1-2 partial, 3 full using the same geometry across level states.",
+        "Full/duplicate requests consume no extra supplies.",
+        "Pet consumption reduces the same authoritative counter."
+      ]
+    },
+    "water": {
+      "actions": [
+        "fill_water"
+      ],
+      "persistent": [
+        {
+          "key": "water",
+          "type": "integer",
+          "range": [
+            0,
+            3
+          ]
+        },
+        {
+          "key": "filledWaterAt",
+          "type": "server timestamp"
+        }
+      ],
+      "transient": [
+        "actor refill pose",
+        "pet consumption"
+      ],
+      "actor": "Approach bowl edge; spend an available housing water supply once.",
+      "geometry": "Keep bowl/base collision independent of water level.",
+      "acceptance": [
+        "0 is empty, 1-2 partial, 3 full.",
+        "Refill, consumption, duplicate requests and reconnect use the same counter."
+      ]
+    },
+    "care_station": {
+      "actions": "Existing per-item fill_food/fill_water; double tray adds planned independent fill_water support.",
+      "persistent": "Same food/water counters and timestamps as bowl contracts, scoped to the placed item.",
+      "transient": [
+        "actor feed/refill",
+        "optional water-flow presentation"
+      ],
+      "actor": "Use separate safe approaches for each resource; do not consume both supplies for one action.",
+      "geometry": "Keep feeder/fountain/stand structure and animal access meaningful.",
+      "acceptance": [
+        "Preserve per-item capabilities; do not make a feeder a water source by accident.",
+        "Double tray keeps food and water independent; its current catalog only declares fill_food.",
+        "Do not add electricity, daily income or reward mechanics."
+      ]
+    },
+    "climb": {
+      "actions": [
+        "encourage_climb"
+      ],
+      "persistent": [],
+      "transient": [
+        "free",
+        "reserved by pet",
+        "climbing",
+        "perched",
+        "descending"
+      ],
+      "actor": "Invite an eligible cat; reuse existing native cat rig and capability/species limits.",
+      "geometry": "Surface height, capacity, landing bounds, approach and descent share the model transform.",
+      "acceptance": [
+        "Occupied surfaces cannot receive a second incompatible pet.",
+        "Rotation/removal invalidates stale surfaces and provides safe descent."
+      ]
+    },
+    "perch": {
+      "actions": [
+        "pet autonomous perch/rest; encourage_climb only where already declared"
+      ],
+      "persistent": [],
+      "transient": [
+        "free",
+        "reserved by pet",
+        "perched/resting",
+        "descending"
+      ],
+      "actor": "Cat uses existing species-limited surface lease; these are not human seats.",
+      "geometry": "Reachable top/rest surface with landing allowance and descent; retain the actual native actor scale.",
+      "acceptance": [
+        "A surface declaration needs a reachable approach and usable landing.",
+        "Do not introduce a human sit action on coffee tables or cat beds."
+      ]
+    },
+    "plant": {
+      "actions": [
+        "water_plant"
+      ],
+      "persistent": [
+        {
+          "key": "wateredAt",
+          "type": "server timestamp"
+        }
+      ],
+      "transient": [
+        "watering pose",
+        "foliage sway"
+      ],
+      "actor": "Reach pot edge and consume an actual housing water supply once.",
+      "geometry": "Simple solid pot/trunk; separate sprite foliage and sensor.",
+      "acceptance": [
+        "Watered/recent visual derives from wateredAt; do not invent stored growth or decay.",
+        "Ignore/reject generic door actions on plants."
+      ]
+    },
+    "soft_contact": {
+      "actions": [
+        "swept actor contact"
+      ],
+      "persistent": [],
+      "transient": [
+        "idle",
+        "deflected",
+        "settling"
+      ],
+      "actor": "Walking/running applies a bounded impulse; reduced motion settles it.",
+      "geometry": "Soft sensor independent of any solid structure; static window art does not create a passage.",
+      "acceptance": [
+        "Keep native 2D artwork and authored facing.",
+        "Restore rest pose after contact/teleport; never sway the whole room."
+      ]
+    },
+    "aquarium_care": {
+      "actions": [
+        "care_aquarium"
+      ],
+      "requestActions": [
+        "care_aquarium"
+      ],
+      "persistent": [
+        {
+          "key": "cleanedAt",
+          "type": "server timestamp"
+        }
+      ],
+      "transient": [
+        "actor clean pose",
+        "fish swim phase"
+      ],
+      "actor": "Reach the existing care approach and consume the existing housing care supply once.",
+      "geometry": "Keep the installed tank/cabinet footprint and bounded fish layers.",
+      "acceptance": [
+        "Reuse existing source model; no remodelling implied.",
+        "Care timestamps/cooldown remain authoritative; fish phase is transient presentation."
+      ]
+    }
+  },
+  "catalogCorrections": [
+    {
+      "id": "bedside-table",
+      "issue": "Catalog declares rest and one human seat on a small cabinet.",
+      "plan": "Remove the copied bed action/socket and leave as 2D inspection-only for now; storage interactions stay deferred.",
+      "state": "planned_not_applied"
+    },
+    {
+      "id": "small-indoor-plant",
+      "issue": "Catalog declares toggle_door.",
+      "plan": "Remove the door action; hold conversion until a proper water_plant approach/supply contract is implemented.",
+      "state": "planned_not_applied"
+    },
+    {
+      "id": "large-indoor-plant",
+      "issue": "Catalog declares toggle_door.",
+      "plan": "Remove the door action; hold conversion until a proper water_plant approach/supply contract is implemented.",
+      "state": "planned_not_applied"
+    }
+  ],
+  "existingModelReview": {
+    "items": [
+      "curtain-passage",
+      "studio-couch",
+      "table",
+      "side-table",
+      "aquarium",
+      "chair",
+      "armchair",
+      "dining-chair"
+    ],
+    "work": "Preserve source models; review current seat/perch/cloth/fish/care integrations when executing the relevant family.",
+    "note": "Bookshelf stays installed even though it is inspection-only; do not delete prior work."
+  },
+  "items": [
+    {
+      "id": "sofa",
+      "label": "Sofa",
+      "route": "installed_interactive_2d",
+      "contract": "seat",
+      "reason": "Owner chose the 2D couch trial; original native art, exact arm foreground and shared actor contacts.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "sprite-couch-pilot",
+      "representation": "sprite",
+      "revision": "3917ae976060",
+      "facings": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "review": {
+        "art": "Reused accepted 2D turnaround profiles/rear, exact native pixels; original front unchanged. No new model or generated art.",
+        "runtime": "Firefox: four seated facings, above-item rotation preserves both seats, stand/re-sit and rear safe exit, collision spot check passed. Rear seat elevation visually corrected.",
+        "scope": "Local trial only; authenticated room transactions and multiplayer were not retested.",
+        "evidence": "output/playwright/couch-seated-four-views.png"
+      }
+    },
+    {
+      "id": "armchair",
+      "label": "Armchair",
+      "route": "existing_3d",
+      "contract": "seat",
+      "reason": "Approved single-seat model installed, with actual unscaled actor art/fit evidence; live gameplay not verified.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 1,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-01",
+      "status": "installed",
+      "revision": "fb75522f53bc"
+    },
+    {
+      "id": "floor-lamp",
+      "label": "Floor Lamp",
+      "route": "queued_interactive_2d",
+      "contract": "light",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "toggle_light",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-02"
+    },
+    {
+      "id": "single-bed",
+      "label": "Single Bed",
+      "route": "awaiting_representation_choice",
+      "contract": "rest",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "rest",
+        "inspect"
+      ],
+      "declaredSeats": 1,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-07",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "wardrobe",
+      "label": "Wardrobe",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "desk",
+      "label": "Desk",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "refrigerator",
+      "label": "Refrigerator",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "stove",
+      "label": "Stove",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "sink-counter",
+      "label": "Sink Counter",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "three-seat-sofa",
+      "label": "Three Seat Sofa",
+      "route": "installed_interactive_2d",
+      "contract": "seat",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "representation": "sprite",
+      "revision": "114b8fc6c40c",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "television",
+      "label": "Television",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "tv-cabinet",
+      "label": "Tv Cabinet",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "decorative-rug",
+      "label": "Decorative Rug",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "wall-clock",
+      "label": "Wall Clock",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "double-bed",
+      "label": "Double Bed",
+      "route": "awaiting_representation_choice",
+      "contract": "rest",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "rest",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-07",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "bedside-table",
+      "label": "Bedside Table",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "rest",
+        "inspect"
+      ],
+      "declaredSeats": 1,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "chair",
+      "label": "Chair",
+      "route": "existing_3d",
+      "contract": "seat",
+      "reason": "Approved single-seat model installed, with actual unscaled actor art/fit evidence; live gameplay not verified.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 1,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-01",
+      "status": "installed",
+      "revision": "05ea6280e31e"
+    },
+    {
+      "id": "mirror",
+      "label": "Mirror",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "dresser",
+      "label": "Dresser",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "decorative-pillows",
+      "label": "Decorative Pillows",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "kitchen-counter",
+      "label": "Kitchen Counter",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "dining-table",
+      "label": "Dining Table",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "dining-chair",
+      "label": "Dining Chair",
+      "route": "existing_3d",
+      "contract": "seat",
+      "reason": "Approved single-seat model installed, with actual unscaled actor art/fit evidence; live gameplay not verified.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 1,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-01",
+      "status": "installed",
+      "revision": "88c0b6360bee"
+    },
+    {
+      "id": "cupboards",
+      "label": "Cupboards",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "kitchen-shelves",
+      "label": "Kitchen Shelves",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "food-storage-containers",
+      "label": "Food Storage Containers",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "small-indoor-plant",
+      "label": "Small Indoor Plant",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "toggle_door",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "large-indoor-plant",
+      "label": "Large Indoor Plant",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "toggle_door",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "flower-pot",
+      "label": "Flower Pot",
+      "route": "queued_interactive_2d",
+      "contract": "plant",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "water_plant",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-06"
+    },
+    {
+      "id": "painting",
+      "label": "Painting",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "picture-frame",
+      "label": "Picture Frame",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "decorative-lights",
+      "label": "Decorative Lights",
+      "route": "queued_interactive_2d",
+      "contract": "light",
+      "reason": "State/contact interaction can keep its native sprite.",
+      "declaredActions": [
+        "toggle_light",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-01"
+    },
+    {
+      "id": "candles",
+      "label": "Candles",
+      "route": "queued_interactive_2d",
+      "contract": "light",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "toggle_light",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-02"
+    },
+    {
+      "id": "wall-shelf",
+      "label": "Wall Shelf",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "storage-box",
+      "label": "Storage Box",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "books",
+      "label": "Books",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "small-rug",
+      "label": "Small Rug",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "coffee-table",
+      "label": "Coffee Table",
+      "route": "awaiting_representation_choice",
+      "contract": "perch",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-14",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "sofa-sage",
+      "label": "Sofa Sage",
+      "route": "installed_interactive_2d",
+      "contract": "seat",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "representation": "sprite",
+      "revision": "db50fd58992d",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "sofa-terracotta",
+      "label": "Sofa Terracotta",
+      "route": "installed_interactive_2d",
+      "contract": "seat",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "representation": "sprite",
+      "revision": "8cd0b76b49ed",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "sofa-cream",
+      "label": "Sofa Cream",
+      "route": "installed_interactive_2d",
+      "contract": "seat",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "representation": "sprite",
+      "revision": "ceea03b669ba",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "cat-bed",
+      "label": "Cat Bed",
+      "route": "awaiting_representation_choice",
+      "contract": "perch",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-13",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "scratching-post",
+      "label": "Scratching Post",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "feeding-bowl-full",
+      "label": "Feeding Bowl Full",
+      "route": "queued_interactive_2d",
+      "contract": "food",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_food",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "small-cat-bed",
+      "label": "Small Cat Bed",
+      "route": "awaiting_representation_choice",
+      "contract": "perch",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-13",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "round-fluffy-cat-bed",
+      "label": "Round Fluffy Cat Bed",
+      "route": "awaiting_representation_choice",
+      "contract": "perch",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-13",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "wooden-cat-house",
+      "label": "Wooden Cat House",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "cat-tree",
+      "label": "Cat Tree",
+      "route": "awaiting_representation_choice",
+      "contract": "climb",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "encourage_climb",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 2,
+      "batch": "interaction-11",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "tall-cat-climbing-tower",
+      "label": "Tall Cat Climbing Tower",
+      "route": "awaiting_representation_choice",
+      "contract": "climb",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "encourage_climb",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 2,
+      "batch": "interaction-11",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "cat-tunnel",
+      "label": "Cat Tunnel",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "window-perch",
+      "label": "Window Perch",
+      "route": "awaiting_representation_choice",
+      "contract": "perch",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-12",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "hanging-cat-hammock",
+      "label": "Hanging Cat Hammock",
+      "route": "awaiting_representation_choice",
+      "contract": "perch",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-12",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "cat-basket",
+      "label": "Cat Basket",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "cardboard-box",
+      "label": "Cardboard Box",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "cat-carrier",
+      "label": "Cat Carrier",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "automatic-feeder",
+      "label": "Automatic Feeder",
+      "route": "queued_interactive_2d",
+      "contract": "care_station",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_food",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "pet-food-storage-container",
+      "label": "Pet Food Storage Container",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "pet-food-bag",
+      "label": "Pet Food Bag",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "treat-container",
+      "label": "Treat Container",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "water-fountain",
+      "label": "Water Fountain",
+      "route": "queued_interactive_2d",
+      "contract": "care_station",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_water",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "yarn-ball",
+      "label": "Yarn Ball",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "feather-wand",
+      "label": "Feather Wand",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "toy-mouse",
+      "label": "Toy Mouse",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "rubber-ball",
+      "label": "Rubber Ball",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "fish-plush-toy",
+      "label": "Fish Plush Toy",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "interactive-track-toy",
+      "label": "Interactive Track Toy",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "toy-basket",
+      "label": "Toy Basket",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "litter-box",
+      "label": "Litter Box",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "grooming-brush",
+      "label": "Grooming Brush",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "small-towel",
+      "label": "Small Towel",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "pet-blanket",
+      "label": "Pet Blanket",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "cleaning-supplies",
+      "label": "Cleaning Supplies",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "first-aid-kit",
+      "label": "First Aid Kit",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "first-aid-pouch",
+      "label": "First Aid Pouch",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "food-bowl-empty",
+      "label": "Food Bowl Empty",
+      "route": "queued_interactive_2d",
+      "contract": "food",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_food",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "food-bowl-half",
+      "label": "Food Bowl Half",
+      "route": "queued_interactive_2d",
+      "contract": "food",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_food",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "food-bowl-full",
+      "label": "Food Bowl Full",
+      "route": "queued_interactive_2d",
+      "contract": "food",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_food",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "water-bowl-empty",
+      "label": "Water Bowl Empty",
+      "route": "queued_interactive_2d",
+      "contract": "water",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_water",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-04"
+    },
+    {
+      "id": "water-bowl-full",
+      "label": "Water Bowl Full",
+      "route": "queued_interactive_2d",
+      "contract": "water",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_water",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-04"
+    },
+    {
+      "id": "water-bowl-half",
+      "label": "Water Bowl Half",
+      "route": "queued_interactive_2d",
+      "contract": "water",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_water",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-04"
+    },
+    {
+      "id": "pet-blanket-sage",
+      "label": "Pet Blanket Sage",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "pet-blanket-terracotta",
+      "label": "Pet Blanket Terracotta",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "pet-blanket-cream",
+      "label": "Pet Blanket Cream",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "garden-bench",
+      "label": "Garden bench",
+      "route": "awaiting_representation_choice",
+      "contract": "seat",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-06",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "garden-pot",
+      "label": "Garden flower pot",
+      "route": "queued_interactive_2d",
+      "contract": "plant",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "water_plant",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-06"
+    },
+    {
+      "id": "garden-feeding",
+      "label": "Outdoor care station",
+      "route": "queued_interactive_2d",
+      "contract": "care_station",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_food",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "garden-banana",
+      "label": "Banana plant",
+      "route": "queued_interactive_2d",
+      "contract": "plant",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "water_plant",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-06"
+    },
+    {
+      "id": "garden-lamp",
+      "label": "Garden lamp",
+      "route": "queued_interactive_2d",
+      "contract": "light",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "toggle_light",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-02"
+    },
+    {
+      "id": "sage-bed",
+      "label": "Sage quilt bed",
+      "route": "awaiting_representation_choice",
+      "contract": "rest",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "rest",
+        "inspect"
+      ],
+      "declaredSeats": 1,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-07",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "basket-cat-stand",
+      "label": "Basket cat stand",
+      "route": "awaiting_representation_choice",
+      "contract": "climb",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "encourage_climb",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 2,
+      "batch": "interaction-11",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "cozy-cat-perch",
+      "label": "Cozy cat perch",
+      "route": "awaiting_representation_choice",
+      "contract": "perch",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "encourage_climb",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-12",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "sage-loveseat-east",
+      "label": "Sage loveseat \u00b7 faces right",
+      "route": "awaiting_representation_choice",
+      "contract": "seat",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-05",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "sage-loveseat-west",
+      "label": "Sage loveseat \u00b7 faces left",
+      "route": "awaiting_representation_choice",
+      "contract": "seat",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-05",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "round-flower-table",
+      "label": "Round daisy coffee table",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "woven-area-rug",
+      "label": "Honey woven area rug",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "sage-chaise",
+      "label": "Sage window chaise",
+      "route": "awaiting_representation_choice",
+      "contract": "seat",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-05",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "lantern-cabinet",
+      "label": "Lantern bedside cabinet",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "wicker-display-cabinet",
+      "label": "Wicker display cabinet",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "bamboo-window",
+      "label": "Bamboo garden window",
+      "route": "queued_interactive_2d",
+      "contract": "soft_contact",
+      "reason": "State/contact interaction can keep its native sprite.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-01"
+    },
+    {
+      "id": "woven-runner",
+      "label": "Woven welcome runner",
+      "route": "deferred_2d",
+      "contract": null,
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "double-feeding-tray",
+      "label": "Double feeding tray",
+      "route": "queued_interactive_2d",
+      "contract": "care_station",
+      "reason": "State change can use native sprites; no separate physical-volume or actor-fit need requires 3D here.",
+      "declaredActions": [
+        "fill_food",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "community-bench",
+      "label": "Neighborhood bench",
+      "route": "awaiting_representation_choice",
+      "contract": "seat",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 1,
+      "batch": "interaction-06",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "wooden-door",
+      "label": "Wooden door",
+      "route": "installed_interactive_2d",
+      "contract": "door",
+      "reason": "Fixed-facing architectural door with matching closed/open sprites, actor clearance and persistent server-owned state. No model required.",
+      "declaredActions": [
+        "toggle_door",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-03",
+      "previousRecommendation": "volumetric_3d",
+      "representation": "sprite",
+      "revision": "0d01fc443211",
+      "review": {
+        "completedAt": "2026-11-10T17:50:46.814852+00:00",
+        "art": "Existing canonical door pixels, exact 2x native export. Outer wall pixels extracted; identical frame in both states, transparent open aperture. No generated art or model.",
+        "tests": {
+          "client": {
+            "command": "node --import tsx --test tests/door-passage.test.ts",
+            "passed": 3
+          },
+          "backend": {
+            "command": "backend/.venv/bin/python backend/manage.py test housing.test_door --noinput --verbosity 1",
+            "passed": 8,
+            "data": "Generated records in isolated SQLite test database, destroyed afterward."
+          }
+        },
+        "firefox": [
+          "Closed passage blocks the actor.",
+          "Open passage permits crossing while both jambs remain solid.",
+          "Occupied doorway rejects closing; clearing it permits closing.",
+          "Cancel leaves state unchanged.",
+          "Actor fits without scaling.",
+          "Couch regression: both seats, all four directions, standing.",
+          "320px mobile width has no horizontal overflow; open action works.",
+          "Furniture editor interaction-preview round trip.",
+          "Actual stage editor: imported isolated local stage, opened door, inspected native canvas."
+        ],
+        "typecheck": {
+          "result": "Project-wide typecheck reports diagnostics outside changed files. Changed files have no diagnostics.",
+          "log": "output/playwright/door-typecheck.log"
+        },
+        "evidence": [
+          "output/playwright/door-final.png",
+          "output/playwright/door-passage-fit.png",
+          "output/playwright/door-frame-contact.png",
+          "output/playwright/door-occupied.png",
+          "output/playwright/door-mobile.png",
+          "output/playwright/door-stage-editor.png",
+          "output/playwright/door-couch-regression-board.png"
+        ],
+        "limits": "No authenticated live room/reconnect or cross-client multiplayer test. No actual player accounts, balances or placements changed."
+      }
+    },
+    {
+      "id": "garden-bush",
+      "label": "Soft garden bush",
+      "route": "queued_interactive_2d",
+      "contract": "soft_contact",
+      "reason": "State/contact interaction can keep its native sprite.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0,
+      "batch": "interaction-2d-01"
+    },
+    {
+      "id": "curtain-passage",
+      "label": "Curtained opening",
+      "route": "existing_3d",
+      "contract": "soft_contact",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "studio-couch",
+      "label": "Trail couch",
+      "route": "existing_3d",
+      "contract": "seat",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "declaredActions": [
+        "sit",
+        "inspect"
+      ],
+      "declaredSeats": 2,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "route": "existing_3d",
+      "contract": "perch",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1
+    },
+    {
+      "id": "side-table",
+      "label": "Side Table",
+      "route": "existing_3d",
+      "contract": "perch",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 1
+    },
+    {
+      "id": "bookshelf",
+      "label": "Bookshelf",
+      "route": "existing_3d",
+      "contract": null,
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "declaredActions": [
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    },
+    {
+      "id": "aquarium",
+      "label": "Little reef aquarium",
+      "route": "existing_3d",
+      "contract": "aquarium_care",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "declaredActions": [
+        "care_aquarium",
+        "inspect"
+      ],
+      "declaredSeats": 0,
+      "declaredPetSurfaces": 0
+    }
+  ],
+  "runtimeChangesApplied": true,
+  "verificationPerformed": "Isolated Firefox asset production, native art inspection and authoring seat-fit reports; no automated application checks/tests/builds or live gameplay verification.",
+  "scopeUpdatedAt": "2026-11-10T18:09:44.641953+00:00",
+  "executionScope": "Approved three-chair authoring, native exports and preview controls installed. Other state/correction tasks remain planned.",
+  "representationChoice": {
+    "requiredWhenUnspecified": true,
+    "question": "Should this use 3D + 2D renders, or 2D sprites only?",
+    "silenceChoosesRepresentation": false,
+    "choiceScope": "Agreed request or batch; reuse an already explicit choice."
+  },
+  "previousWorkflowSummary": {
+    "catalogIds": 110,
+    "authored3D": 9,
+    "queuedInteractive3D": 24,
+    "queuedHybrid3D": 0,
+    "queuedVolumetric3D": 24,
+    "queuedInteractive2D": 20,
+    "deferred2D": 57
+  },
+  "latestVerifiedBatch": "interaction-04"
+}

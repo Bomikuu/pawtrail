@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-13",
+  "preview": "/play?compare=amber-representations&mode=parts-baked",
+  "authoring": "reference-guided Blender meshes, not neural image-to-3D",
+  "parts": 95,
+  "triangles": 19480,
+  "bakedFrames": 160,
+  "sourceAnimations": [
+    "idle",
+    "run",
+    "walk"
+  ],
+  "spriteBytes": 99836,
+  "decodedAtlasBytes": 3276800,
+  "sourceModelBytes": 805964,
+  "bakeCompleted": true,
+  "generatedReferenceInspected": true,
+  "sourceAndNativeArtworkInspected": true,
+  "automatedAppTestsRun": false,
+  "typeCheckRun": false,
+  "appBuildRun": false,
+  "browserOpened": false,
+  "liveRosterChanged": false,
+  "liveReview": "pending owner comparison and complete actor acceptance"
+}

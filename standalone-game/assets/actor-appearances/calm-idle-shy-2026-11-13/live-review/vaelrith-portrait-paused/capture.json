@@ -1,0 +1,78 @@
+{
+  "browser": "Codex in-app browser",
+  "name": "vaelrith-portrait-paused",
+  "durationMs": 1203,
+  "rect": {
+    "bottom": 740.125,
+    "height": 256,
+    "left": 614.984375,
+    "right": 870.984375,
+    "top": 484.125,
+    "width": 256,
+    "x": 614.984375,
+    "y": 484.125
+  },
+  "frames": [
+    {
+      "file": "000.jpg",
+      "atMs": 0
+    },
+    {
+      "file": "001.jpg",
+      "atMs": 80
+    },
+    {
+      "file": "002.jpg",
+      "atMs": 160
+    },
+    {
+      "file": "003.jpg",
+      "atMs": 294
+    },
+    {
+      "file": "004.jpg",
+      "atMs": 396
+    },
+    {
+      "file": "005.jpg",
+      "atMs": 469
+    },
+    {
+      "file": "006.jpg",
+      "atMs": 539
+    },
+    {
+      "file": "007.jpg",
+      "atMs": 600
+    },
+    {
+      "file": "008.jpg",
+      "atMs": 657
+    },
+    {
+      "file": "009.jpg",
+      "atMs": 721
+    },
+    {
+      "file": "010.jpg",
+      "atMs": 801
+    },
+    {
+      "file": "011.jpg",
+      "atMs": 880
+    },
+    {
+      "file": "012.jpg",
+      "atMs": 960
+    },
+    {
+      "file": "013.jpg",
+      "atMs": 1040
+    },
+    {
+      "file": "014.jpg",
+      "atMs": 1120
+    }
+  ],
+  "method": "native full-viewport screenshots; cropped screenshot API excluded"
+}

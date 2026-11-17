@@ -1,0 +1,187 @@
+{
+  "revision": "v2",
+  "style": "Refined cel + painterly",
+  "nativeSize": [
+    320,
+    448
+  ],
+  "variants": [
+    {
+      "variant": "normal",
+      "frames": 60,
+      "cycleMs": 4200,
+      "blinkFrames": {
+        "half": [
+          36,
+          39
+        ],
+        "closed": [
+          37,
+          38
+        ]
+      },
+      "closedHoldMs": 140.0,
+      "sourceBounds": [
+        26,
+        5,
+        988,
+        1508
+      ],
+      "scale": 0.2821024617431803,
+      "translation": [
+        16.974051896207577,
+        10.589487691284091
+      ],
+      "runtimeBytes": 1835778,
+      "parts": [
+        {
+          "id": "left-curls",
+          "tipAmplitudePx": 7.0
+        },
+        {
+          "id": "right-curls",
+          "tipAmplitudePx": 7.8
+        },
+        {
+          "id": "outer-lock",
+          "tipAmplitudePx": 3.6
+        }
+      ]
+    },
+    {
+      "variant": "enraged",
+      "frames": 60,
+      "cycleMs": 4200,
+      "blinkFrames": {
+        "half": [
+          43,
+          46
+        ],
+        "closed": [
+          44,
+          45
+        ]
+      },
+      "closedHoldMs": 140.0,
+      "sourceBounds": [
+        4,
+        5,
+        1020,
+        1528
+      ],
+      "scale": 0.278397898883782,
+      "translation": [
+        17.460275771503603,
+        10.608010505581092
+      ],
+      "runtimeBytes": 2005977,
+      "parts": [
+        {
+          "id": "left-curls",
+          "tipAmplitudePx": 8.0
+        },
+        {
+          "id": "right-curls",
+          "tipAmplitudePx": 8.8
+        },
+        {
+          "id": "upper-lock",
+          "tipAmplitudePx": 4.0
+        }
+      ]
+    }
+  ],
+  "backgroundSource": "Aurelia moonlit garden, approved reusable context",
+  "sigilSource": "Aurelia independent sigil artwork",
+  "blinkRegistration": {
+    "normal": {
+      "target": [
+        [
+          452,
+          249,
+          496,
+          280
+        ],
+        [
+          519,
+          262,
+          561,
+          290
+        ]
+      ],
+      "half": [
+        [
+          299,
+          334,
+          352,
+          372
+        ],
+        [
+          386,
+          348,
+          430,
+          383
+        ]
+      ],
+      "closed": [
+        [
+          849,
+          335,
+          902,
+          373
+        ],
+        [
+          932,
+          348,
+          976,
+          383
+        ]
+      ]
+    },
+    "enraged": {
+      "target": [
+        [
+          459,
+          280,
+          506,
+          310
+        ],
+        [
+          533,
+          284,
+          576,
+          315
+        ]
+      ],
+      "half": [
+        [
+          290,
+          989,
+          352,
+          1031
+        ],
+        [
+          383,
+          999,
+          432,
+          1041
+        ]
+      ],
+      "closed": [
+        [
+          840,
+          993,
+          902,
+          1035
+        ],
+        [
+          926,
+          1002,
+          975,
+          1044
+        ]
+      ]
+    }
+  },
+  "liveReview": "pending; no browser verification authorized"
+}

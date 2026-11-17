@@ -1,0 +1,90 @@
+{
+  "id": "amber-anime-v3",
+  "status": "ready",
+  "authoring": "Reference-guided Blender mesh and UV authoring; not neural 3D reconstruction.",
+  "sourceModel": "/pawtrail-game/actor-studio/amber-anime-v3/amber-anime.glb",
+  "sourceModelBytes": 9589152,
+  "sourceModelSha256": "7591854c6e72c53c6e41c9947964dde6da33f951feffb276e42acbbff1f86d35",
+  "parts": 140,
+  "triangles": 44748,
+  "joints": 49,
+  "materials": 5,
+  "skinnedMeshes": 1,
+  "heightMetersWithoutRibbon": 1.7,
+  "headHeightMeters": 0.27,
+  "textures": {
+    "materialAtlas": [
+      1254,
+      1254
+    ],
+    "head": [
+      1024,
+      1024
+    ],
+    "ao": [
+      1024,
+      1024
+    ],
+    "maps": [
+      "albedo",
+      "normal",
+      "roughness",
+      "metallic",
+      "geometry AO"
+    ],
+    "aoUV": "BakeUV"
+  },
+  "viewer": {
+    "body": {
+      "height": 2.14,
+      "target": [
+        0,
+        0.94,
+        0
+      ],
+      "offset": [
+        0,
+        0.08,
+        3
+      ]
+    },
+    "face": {
+      "height": 0.39,
+      "target": [
+        0,
+        1.56,
+        0
+      ],
+      "offset": [
+        0,
+        0.03,
+        0.9
+      ]
+    }
+  },
+  "sourceViews": "/pawtrail-game/actor-studio/amber-anime-v3/source-views.webp",
+  "sourceFace": "/pawtrail-game/actor-studio/amber-anime-v3/face.png",
+  "reference": "/pawtrail-game/actor-studio/amber-anime-v3/modeling-reference.webp",
+  "clips": [
+    {
+      "name": "idle",
+      "durationMs": 2500,
+      "sourceKeys": 25
+    },
+    {
+      "name": "walk",
+      "durationMs": 800,
+      "sourceKeys": 25
+    },
+    {
+      "name": "run",
+      "durationMs": 500,
+      "sourceKeys": 25
+    }
+  ],
+  "review": "Offline source renders inspected; runtime/browser acceptance pending owner review.",
+  "limitations": [
+    "Focused source-model revision; no new full sprite bake or game-roster installation.",
+    "Idle, walk and run study; not the complete gameplay action library."
+  ]
+}

@@ -4,6 +4,141 @@ Open `/play?preview=skin` or choose **Paint a skin** in the actor creator.
 This is a local authoring tool; saving here does not install an account or
 multiplayer skin.
 
+## Floating character trial
+
+**Current owner choice: use the shared base model.** Dororong now renders the
+ordinary `createRescuer` body, hands, feet, proportions and animations. Custom
+study body volumes and the arms-out Idle override were removed. Complete image
+panels are hidden for this preset; source artwork remains available in its
+texture sheets. Shirt/Pants/Shoes retain standard base-model painting. Old
+study-only `SkinVolume_` vertex edits are omitted when importing that preset;
+the saved file is unchanged. The following paragraphs retain the experiment's
+history and describe earlier renderers that are no longer active.
+
+Dororong now defaults to **Painted 3D skin**. `volume-skin.ts` provides a curved,
+closed head/torso and template-derived arm/leg/hand/foot geometry on the existing
+bones. Hands include a thumb and finger tips; feet retain the shared foot shape
+and ankle/sole registration. Existing artwork paints the 3D surfaces with native
+sampling and stepped shading. Transparent panels show only artwork beyond each
+solid part's projected silhouette, rather than the complete character image.
+Default hand/foot canvases are clean white/transparent paint surfaces, not paw
+icons. Edited/imported source artwork is retained. The **Textured 3D skin** button
+switches to the original template for comparison; **Load current preset** resets
+unsaved textures/geometry to the clean default. Drawing guides, direct painting
+and vertex editing use the same core/texture projection. This stays local to the
+studio; no runtime appearance, gait, collision or backend schema was replaced.
+Browser review remains pending under current restrictions.
+
+The descriptions below include the earlier panel-only prototype history:
+
+The current Dororong preset uses the **registered v3** exports: 56 PNGs totaling
+51,775 bytes, reusing the approved v2 art. Hands and feet are separate wrist/ankle
+layers. Upper arms, forearms, thighs and shins are connective pieces registered
+to the actual joint spans. Every part has front/back/left/right art with the same
+pivot; the extra margins still support painted silhouette extensions. Rendered
+panels keep bone-local position and rotation. Only view visibility changes, with
+a small hysteresis band around view boundaries. There is no per-frame billboard
+or camera-orbit transform. The base rig and action/IK implementations are unchanged.
+
+The corrected reference preset is now **Dororong · Floating skin**, opened at
+`/play?preview=skin&skin=dororong-floating`. Earlier `mochi-floating` URLs and
+imported package IDs remain aliases. The v2 artwork corrects the sleepy eyes
+(not glasses), mouth, white cap, long pink side locks, belly × and mascot body
+proportions. It adds a scoped arms-out Idle presentation without changing
+skeleton anchors or the other shared clips. Its 24 runtime PNGs total 35,329
+bytes. See `assets/actor-appearances/dororong-floating-v2/README.md` for source,
+prompt, export settings and the outstanding runtime acceptance.
+
+The following records the original floating-layer prototype:
+
+Open `/play?preview=skin&skin=mochi-floating` or choose **Mochi · Floating artwork**.
+The reference-guided pink-haired character uses 24 generated/exported transparent
+surfaces (41,634 PNG bytes) on the same base joints. No per-character body geometry
+or action implementation was added. Base body and hair start hidden for this
+preset; the rest of the studio retains its normal default visibility.
+
+The **Base body** toggle hides only original body meshes. Animation bones,
+added studio geometry and action props such as bowls remain. With the body
+hidden, the skin uses one selected view per part and camera-facing artwork,
+retaining joint pitch/roll and animated joint positions. Head/torso have four
+views; limbs reuse the corresponding front/back pieces. Switching the base on
+restores the depth-attached panel layout. This is an articulated 2.5D cutout skin,
+not newly generated solid 3D volume. Existing rotation, zoom, painting and action
+selectors remain available. See the asset package's README for provenance and
+the outstanding runtime review; this is not an automatic gameplay installation.
+
+## Refined custom base and free-form silhouette artwork
+
+The studio opens on **Custom base · Refined v2**. The shared humanoid now uses
+a curved, tapered jaw with a soft face contour, rounded torso/shoulders and
+tapered limbs. Joint names, joint locations, world size, shared actions and
+collisions are unchanged. Featured actors retain their own authored body meshes;
+cats retain their separate rig. `humanoid-base.ts` owns the shared profile shapes.
+
+The **Silhouettes** surface group adds 56 initially transparent whole-image
+panels. These are real rendering surfaces attached to existing joints, rather
+than an oversized image wrapped onto the body's six UV faces:
+
+| Panels | Views | Native canvas | Physical allowance |
+| --- | --- | --- | --- |
+| Head and hair | Front, back, left, right | 128 × 160 | 22.4 × 28 |
+| Torso and loose garment | Front, back, left, right | 128 × 192 | 24 × 36 |
+| Upper arm, forearm, hand, thigh, shin and foot, both sides | Front, back, left, right per part | 64 × 96 | 8 × 12 |
+
+Physical dimensions use existing rig units, not map tiles. Choose a panel to
+align the preview to its view. Physical and canvas aspect ratios match, so
+artwork is not stretched across a narrower side view. A separate **Body guide** projects the actual
+geometry into that drawing canvas. Download its drawing reference to align art
+in an external editor. The guide/grid is never included in a texture export.
+Base hair starts hidden for Custom base; the preview has a visibility toggle.
+Limb references show the shared joint crosshair: (32,24) for upper/lower arm and
+leg pieces, (32,48) for hands, (32,32) for feet. The ankle sole artwork reaches
+native row 49. Geometry is translated around each pivot while its UVs stay native.
+References and direct painting use that same pivot mapping. PNG imports do not
+infer anatomical pivots; use the downloadable registered template.
+
+Paint directly on the canvas or choose Paint in the live model. The selected
+panel accepts strokes over its transparent margin, beyond the underlying body.
+Other empty panels do not block surface or vertex selection. Both editing views
+share the texture, undo and save data. Restore-original on an initially empty
+panel erases pixels back to transparency.
+
+Import a PNG/WebP under 2 MB with dimensions from 1 to 1024 pixels per edge. A
+silhouette import replaces the panel artwork, fitting proportionally with
+nearest-neighbor sampling and centering unused transparent space. Download the
+native blank template for exact control of scale and registration. The ordinary
+shirt/pants/shoes UV sheets still require matching dimensions.
+
+Use separate view drawings: these are depth-tested, outward-facing panels, not
+a single image that looks volumetric when rotated. Keep arm/leg artwork on their
+own joint panels so it follows animation. A single torso image spanning several
+joints cannot bend at those joints. Panels extend a silhouette but do not turn
+transparent pixels into solid volume, change collisions, or add cloth simulation.
+Use Geometry attachments for features that need thickness from every angle.
+The animation menu exposes shared body clips; this studio does not run Phaser's
+world movement or emote-effect scene.
+
+Packages now export as **version 8**, with `rescuer-uv-v2`, all panel textures,
+`baseHair`/`baseBody` flags and `panelLayout` (`joint-panels-v2` or `legacy-24`).
+The corrected default has 56 panel sheets and three UV sheets, within the
+existing 64-sheet package limit. Versions 6–7 retain their original 24-panel
+geometry, artwork and vertex registrations when imported; they are not silently
+converted. Re-export preserves their legacy layout tag. Select the current
+Dororong preset to start from corrected wrist/ankle registration.
+Version 6 packages retain their v2 geometry and
+default to a visible base body. The existing local save key is retained. Shared-base
+packages from versions 1–5 use `rescuer-uv-v1` and load the classic base geometry
+so their original UVs and saved vertex indices remain applicable. Re-exported
+classic packages retain that base tag. Named actor packages keep their native
+model/UV mapping. The appearance/account JSON schema is unchanged; texture
+packages remain studio-local and are not automatically equipped in gameplay.
+
+This revision was reviewed in source only. Automated tests/checks, builds and
+browser verification were not run under the current workspace restrictions.
+Front/three-quarter/side/back appearance, the full shared action pass, imported
+artwork alignment, direct painting, and package round trips remain runtime
+acceptance work before installing a custom character.
+
 ## Geometry and pose authoring
 
 The studio has three workspaces: **Paint textures**, **Geometry**, and
@@ -43,7 +178,7 @@ the active workspace; texture history remains per surface. W/E/R chooses Move,
 Rotate or Scale for added geometry; T applies T-pose in Pose & motion; Delete
 removes a selected attachment. Right-drag or Space+drag temporarily orbits.
 
-Skin package **version 4** includes the data-only model document (attachments,
+Skin package **version 4 and later** includes the data-only model document (attachments,
 current pose, duration/loop and keyframes) alongside the existing native texture
 sheets. Local Save and package export/import retain it. Versions 1–3 still load
 with an empty model document. Imports validate joint/shape identifiers, finite
@@ -145,8 +280,9 @@ face sheets for a consistent facial edit. Permanently hidden earlier Amber head
 study maps are excluded. Solid-color accessories remain procedural materials;
 painting a hair map cannot change hair geometry.
 
-The shared base still has three 256 × 256 authoring atlases: shirt, pants and
-shoes. Geometry clones receive the `rescuer-uv-v1` six-face mapping. Original
+The shared base retains three 256 × 256 authoring atlases: shirt, pants and
+shoes, alongside its transparent silhouette sheets. Geometry clones receive
+the existing six-face UV mapping; the v2 base changes their profile geometry. Original
 procedural garment materials remain visible until the associated sheet changes;
 reset/undo back to baseline restores the original material. The base model's
 raised geometry is retained. Geometry and palette presets reset unsaved sheets;
@@ -168,7 +304,7 @@ export first to retain edits. Shared cached game geometry is never modified.
    4×, 6×, 8× or 12× zoom. The read-only **Original** view helps compare edits.
    **Where this texture is used** lists the actual mesh bindings. Repeated meshes
    sharing a texture update together.
-5. Import an exactly matching native-size PNG/WebP under 2 MB or download the
+5. For ordinary UV sheets, import an exactly matching native-size PNG/WebP under 2 MB or download the
    original template to draw elsewhere. Transparent imported pixels retain the
    original artwork. PNG exports exclude guides/grid; **UV reference** includes
    mesh UV edges and applicable base face labels. Overlay guides are cached.
@@ -178,7 +314,7 @@ export first to retain edits. Shared cached game geometry is never modified.
 
 ## Save format and compatibility
 
-Version 3 JSON packages include character ID, validated `ActorAppearance` and
+Version 3 and later JSON packages include character ID, validated `ActorAppearance` and
 native-sized PNG sheets. Dimensions and surface IDs are validated against the
 loaded character before applying the package. Version 1 base packages and
 version 2 square-upscaled packages remain importable; older sheets resample to

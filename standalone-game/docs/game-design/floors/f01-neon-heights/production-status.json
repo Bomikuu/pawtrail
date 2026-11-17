@@ -1,0 +1,228 @@
+{
+  "id": "f01-neon-heights-phase-1",
+  "startedAt": "2026-11-15 14:01:59 UTC",
+  "planApproval": {
+    "status": "approved",
+    "instruction": "okay i approve the cyberpunk floor plan, proceed with the first phase. show me the lobby and stage concepts for approval before creating the assets",
+    "recordedAt": "2026-11-15T14:16:48.777133+00:00"
+  },
+  "phase1": {
+    "status": "foundation_checks_passed_visual_review_pending",
+    "verification": {
+      "authorization": "explicit owner reply: Yes\u2014run focused tests and typecheck",
+      "tests": {
+        "command": "node --import tsx --test tests/floor-foundation.test.ts",
+        "passed": 7,
+        "failed": 0,
+        "runnerDurationMs": 289.843896
+      },
+      "typecheck": {
+        "scope": "six new floor modules and their imported dependencies",
+        "exitCode": 0,
+        "wallSeconds": 2.073347299
+      },
+      "browser": "not requested/run",
+      "build": "not requested/run",
+      "pending": [
+        "actual browser lock/storage behavior",
+        "live actor fit/depth/alpha",
+        "prop seating and rotation",
+        "actual memory/performance"
+      ]
+    },
+    "authoredAt": "2026-11-15T14:16:48.777133+00:00",
+    "sources": [
+      "src/game/floors/state.ts",
+      "src/game/floors/neon-foundation.ts",
+      "src/game/floors/store.ts",
+      "src/game/floors/travel.ts",
+      "src/game/floors/animation-clock.ts",
+      "src/game/floors/prop-renderer.ts"
+    ],
+    "tests": "tests/floor-foundation.test.ts",
+    "contract": "docs/game-design/floors/f01-neon-heights/phase-1-runtime-contract.md",
+    "integration": "isolated modules; no existing app route or stage layout changed",
+    "checkedAt": "2026-11-15T14:22:01.727542+00:00",
+    "evidence": "docs/game-design/floors/f01-neon-heights/phase-1-verification.md",
+    "dependencyEdits": {
+      "src/game/furniture/aquarium.ts": "narrow/guard texture image dimensions for strict typing",
+      "src/game/furniture/model.ts": "fallback for optional undefined calibration blendPower"
+    }
+  },
+  "conceptReview": {
+    "status": "approved",
+    "batch": "A",
+    "concepts": [
+      {
+        "key": "01-wayfarer-concourse-v1",
+        "name": "Wayfarer Concourse \u2014 shared tower lobby",
+        "status": "approved",
+        "file": "docs/game-design/floors/f01-neon-heights/concepts/v1/01-wayfarer-concourse-v1.png",
+        "approval": "explicit user reply: Approve all three concepts"
+      },
+      {
+        "key": "02-neon-heights-arrival-v1",
+        "name": "Lantern Landing and Hologram Plaza \u2014 arrival stage",
+        "status": "approved",
+        "file": "docs/game-design/floors/f01-neon-heights/concepts/v1/02-neon-heights-arrival-v1.png",
+        "approval": "explicit user reply: Approve all three concepts"
+      },
+      {
+        "key": "03-lumen-market-v1",
+        "name": "Lumen Market \u2014 market and repair stage",
+        "status": "approved",
+        "file": "docs/game-design/floors/f01-neon-heights/concepts/v1/03-lumen-market-v1.png",
+        "approval": "explicit user reply: Approve all three concepts"
+      }
+    ],
+    "approvedAt": "2026-11-15T14:16:48.777133+00:00",
+    "review": "native concept images visually inspected; not runtime or animation proof"
+  },
+  "assetProduction": {
+    "status": "authored_installed_runtime_unverified",
+    "batch": "A",
+    "recordedAt": "2026-11-15T14:59:53.758884+00:00",
+    "job": "assets/floors/f01-neon-heights/batch-a-v1/job.json",
+    "delivery": "docs/game-design/floors/f01-neon-heights/batch-a-delivery.md",
+    "verification": {
+      "nativeReview": "static native map/model/portrait authoring sheets visually inspected",
+      "automatedTests": "not run",
+      "typecheck": "not run for Batch A",
+      "browser": "not run",
+      "build": "not run",
+      "ownerDecision": "Skip verification for now"
+    },
+    "nextPhase": "Phase 3 connected loop, subject to current runtime acceptance and verification permission"
+  },
+  "sourceHashes": {
+    "src/game/floors/state.ts": "46f9523b85c30b1feb0f42143c3de82accece993cd9522c6e79a0ed73a63dc42",
+    "src/game/floors/neon-foundation.ts": "863646d69a21c153fbddce4c3af7f8f6fd176c4e69b8ef6dc5c50dce552d742d",
+    "src/game/floors/store.ts": "8c77900a55951f219bd1c7295af96ca4cb171d6ad0b04ef272597f83131fad88",
+    "src/game/floors/travel.ts": "32f9ed054026ef73aebe6f77b388ff93821dc23e613cec02cfe6ede90db849a1",
+    "src/game/floors/animation-clock.ts": "9c7b104b25c56756bd430e59cc30280af5f7ada305b50dbb26ffad5739a53c76",
+    "src/game/floors/prop-renderer.ts": "916c7ed3a451b14422a7509ee60afd436d826fe2faab75af3e3e35f6393ed450"
+  },
+  "completedScopeAt": "2026-11-15T14:22:01.727542+00:00",
+  "phase3": {
+    "status": "implemented_runtime_verification_deferred",
+    "recordedAt": "2026-11-15T15:22:13.617793+00:00",
+    "authorization": "proceed to phase 3, connect the lobby, arrival and market with working travel, quests, shop purchases, and NPCs that remember my decisions and reputation",
+    "route": "/play?floor=neon-heights",
+    "delivery": "docs/game-design/floors/f01-neon-heights/phase-3-delivery.md",
+    "plan": "docs/game-design/floors/f01-neon-heights/phase-3-implementation.md",
+    "tests": "tests/floor-adventure.test.ts",
+    "verification": {
+      "tests": "not run",
+      "typecheck": "not run",
+      "build": "not run",
+      "browser": "not run",
+      "ownerDecision": "Skip verification for now remains in effect"
+    },
+    "scope": [
+      "three connected stages",
+      "Q01 and Q02 with once-only claims",
+      "P01 preview/confirm and both exclusive branches",
+      "free Cell and guarded recovery",
+      "finite shop purchases/sales and price rules",
+      "NPC remembered allocation and personal/faction reputation",
+      "locked local save and safe-prepared travel",
+      "inventory, free rest and explicit fresh expeditions"
+    ]
+  },
+  "phase4": {
+    "status": "authored_installed_verification_pending",
+    "recordedAt": "2026-11-15T16:19:51.044997+00:00",
+    "authorization": "owner: proceed after Phase 3 delivery",
+    "brief": "docs/game-design/floors/f01-neon-heights/phase-4-production-brief.md",
+    "conceptJob": "docs/game-design/floors/f01-neon-heights/concepts/batch-b-v1/job.json",
+    "scope": [
+      "Undergrid and Rainline editable maps",
+      "four live generated-paint interactive prop GLBs",
+      "Nyx and EKO illustrations, icons and Refined cel portraits",
+      "P02/P03 persisted puzzles and six resource nodes",
+      "bounded native normal enemies, contact sprites, hazard damage and once-per-expedition loot",
+      "safe prepared defeat return",
+      "Q03, Q08 and Q09 choices with NPC memory and separate reputation",
+      "additive local save fields, inventory and journal updates"
+    ],
+    "productionGate": "Satisfied: explicit D/E approval, later explicit prop approval and NPC design/style approval",
+    "verification": {
+      "nativeArt": "inspected source/16 prop facings/native portrait sheets/static art layout proofs",
+      "tests": "six new cases authored; not run",
+      "typecheck": "not run",
+      "build": "not run",
+      "browser": "not run",
+      "runtimeAcceptance": "pending owner request",
+      "ownerDecision": "Skip verification for now remains in effect"
+    },
+    "dependencyCorrection": "Med Patch restored HP aligned from 35 to approved 30; Q02 reward unchanged",
+    "conceptReview": "docs/game-design/floors/f01-neon-heights/concepts-batch-b-v1.md",
+    "conceptsGeneratedAt": "2026-11-15T15:31:49.812916+00:00",
+    "production": "Batch B art, five-stage travel, puzzles, normal combat/resources and private story branches installed",
+    "approval": "explicit owner reply: Approve both concepts",
+    "approvedAt": "2026-11-15T15:34:58.952994+00:00",
+    "delivery": "docs/game-design/floors/f01-neon-heights/phase-4-delivery.md"
+  },
+  "phase5": {
+    "status": "authored_installed_runtime_verification_pending",
+    "authorization": "Owner: proceed to phase 5, show Switchyard concept for approval before creating assets, then connect Sena, Iron Marshal and Kurogane",
+    "scope": [
+      "Editable 36\u00d728 Switchyard and three new travel connections",
+      "two approved live textured prop GLBs; animated crane/cabin/cargo/ground",
+      "Sena friendly shared rig, illustration, icon, 3-angle Refined cel portraits",
+      "actual Marshal encounter and guarded first/repeat loot",
+      "actual Kurogane arena, four funnels, shield and real victory claims",
+      "Q04 atomic two-key gate; Q05 report and retained Core",
+      "Dispatch checkpoint/supply; local HP and retryable victory records"
+    ],
+    "conceptJob": "docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/job.json",
+    "brief": "docs/game-design/floors/f01-neon-heights/phase-5-production-brief.md",
+    "approvedConcept": "concepts/batch-c-v1/06-neon-switchyard-v1.png",
+    "verification": {
+      "tests": "Six focused Phase 5 tests authored, not run",
+      "typecheck": "not run",
+      "build": "not run",
+      "browser": "not run",
+      "animatedRuntimeAcceptance": "pending owner authorization",
+      "decision": "Skip verification for now remains in effect"
+    },
+    "concept": "docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png",
+    "conceptGeneratedAt": "2026-11-15 16:29:25 UTC",
+    "conceptReview": "docs/game-design/floors/f01-neon-heights/concepts-batch-c-v1.md",
+    "productionAssets": "Batch C native package installed",
+    "nativeConceptReview": "generated image visually inspected; no gameplay acceptance inferred",
+    "approval": "Explicit owner: Approve concept F v1 \u2014 proceed",
+    "completedAt": "2026-11-15T17:11:05.967517+00:00",
+    "delivery": "docs/game-design/floors/f01-neon-heights/phase-5-delivery.md",
+    "assetJob": "assets/floors/f01-neon-heights/batch-c-v1/job.json",
+    "propApproval": "Explicit owner: Good enough \u2014 model both",
+    "npcApproval": "Explicit owner: Use Sena\u2019s design + Refined cel portraits"
+  },
+  "phase6": {
+    "status": "authored_installed_runtime_verification_pending",
+    "completedAt": "2026-11-15T17:53:16.450101+00:00",
+    "authorization": "Owner: proceed to phase 6, implement governance choices, optional quests and crafting, NPC decisions and reputation",
+    "plan": "docs/game-design/floors/f01-neon-heights/phase-6-implementation.md",
+    "delivery": "docs/game-design/floors/f01-neon-heights/phase-6-delivery.md",
+    "assetJob": "assets/floors/f01-neon-heights/batch-d-v1/job.json",
+    "scope": [
+      "Three confirmed exclusive governance choices, exact rewards/reputation and clear eligibility",
+      "Q07 paid Repair Bay repair and Mara report",
+      "Q10 actual normal/assisted Koi puzzle and recipe unlock",
+      "Q11 expedition contract and selected supply claims",
+      "Four atomic, receipt-aware recipes",
+      "Two approved live 3D craft outputs, two seats, four facings, saved deployment/rotation/light/reclaim",
+      "Five NPC ending callbacks, private/public history topics and personal-tier fallbacks",
+      "Journal, recipes, furnishing controls and refreshed expedition integration"
+    ],
+    "verification": {
+      "tests": "Nine focused cases authored; not run",
+      "typecheck": "not run",
+      "build": "not run",
+      "browser": "not run",
+      "nativeActorFit": "not observed",
+      "animationAndInteractions": "not observed",
+      "ownerDecision": "Skip verification for now remains in effect"
+    }
+  }
+}

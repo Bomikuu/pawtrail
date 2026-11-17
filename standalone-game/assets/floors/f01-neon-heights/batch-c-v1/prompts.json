@@ -1,0 +1,59 @@
+[
+  {
+    "key": "switchyard-ground",
+    "kind": "ground",
+    "transparent": false,
+    "prompt": "PawTrail fine textured painted pixel art, fixed top-down three-quarter view, visible tops and south-facing fronts. Match this approved Neon Switchyard concept: weathered graphite/steel-blue metal, muted burgundy, brass edges, narrow cyan/magenta emitters and warm amber lamps. Precise fine stepped outlines, not chunky/cartoon black outlines. No bloom wash, gradients outside the subject, logos, HUD, labels or text. Generate the FLOOR/BACKDROP ONLY for the approved complete map, approximately 1152 by 896 native pixels (landscape). Preserve the concept\u2019s EXACT ground plan: broad southwest landing, curving central service loop, safe upper-left dispatch apron, west shortcut spur, upper-right gate apron, separate large flat southeast combat pad and its worn yellow edge markings. KEEP the damp fine pavement, flat recessed rails, restrained cyan/amber/magenta reflections and dim distant city below the perimeter deck. REMOVE all elevated objects: cabins, buildings on the deck, fences, railings, gate bodies, terminals, crates, cargo, crane, people, robots, lamps and barrels. Those will be separate assets. Do not leave ghost shadows of removed props. Keep the deck silhouette and continuous walkable surface, not a repeating square grid, blank flat swatch or atlas. No bridge crossing overhead. One flat ground plane; no holes inside the deck.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  },
+  {
+    "key": "dispatch-cabin",
+    "kind": "scenery",
+    "transparent": true,
+    "prompt": "PawTrail fine textured painted pixel art, fixed top-down three-quarter view, visible tops and south-facing fronts. Match this approved Neon Switchyard concept: weathered graphite/steel-blue metal, muted burgundy, brass edges, narrow cyan/magenta emitters and warm amber lamps. Precise fine stepped outlines, not chunky/cartoon black outlines. No bloom wash, gradients outside the subject, logos, HUD, labels or text. Generate ONE isolated Freight Dispatch cabin from the upper-left concept, with a shallow worn burgundy metal roof, attached conduit pipes, small roof fan, framed amber service windows, a narrow closed personnel door and small work light. Complete front and visible right side, grounded dark base. NO people, outside service desk, terminals, crates, fences, sidewalk or solid ground/background. The actual outside desk will be a separate interactive 3D object. Transparent cutout, designed for a 272 by 224 native frame.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  },
+  {
+    "key": "freight-stack",
+    "kind": "scenery",
+    "transparent": true,
+    "prompt": "PawTrail fine textured painted pixel art, fixed top-down three-quarter view, visible tops and south-facing fronts. Match this approved Neon Switchyard concept: weathered graphite/steel-blue metal, muted burgundy, brass edges, narrow cyan/magenta emitters and warm amber lamps. Precise fine stepped outlines, not chunky/cartoon black outlines. No bloom wash, gradients outside the subject, logos, HUD, labels or text. Generate ONE isolated asymmetrical freight container stack: three weathered ribbed rail cargo containers, lower two offset graphite blue, upper shorter muted burgundy container, corner reinforcement and narrow small signal strips. Complete visible fronts and tops. No people, machine enemies, crane, ground, fences, extra detached clutter or background. Dark contact shadow may be a separate transparent edge. Designed for native 192 by 160.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  },
+  {
+    "key": "freight-crates",
+    "kind": "scenery",
+    "transparent": true,
+    "prompt": "PawTrail fine textured painted pixel art, fixed top-down three-quarter view, visible tops and south-facing fronts. Match this approved Neon Switchyard concept: weathered graphite/steel-blue metal, muted burgundy, brass edges, narrow cyan/magenta emitters and warm amber lamps. Precise fine stepped outlines, not chunky/cartoon black outlines. No bloom wash, gradients outside the subject, logos, HUD, labels or text. Generate ONE compact isolated cargo grouping: one closed graphite-blue ribbed rail container and a shorter burgundy utility crate with a small cable spool beside it. Small amber/cyan status strip, brass edge wear. Complete tops/fronts, coherent perspective. No people, robots, crane, ground, fences or background. Transparent cutout for native 160 by 128.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  },
+  {
+    "key": "yard-crane-layers",
+    "kind": "scenery-layers",
+    "transparent": true,
+    "prompt": "PawTrail fine textured painted pixel art, fixed top-down three-quarter view, visible tops and south-facing fronts. Match this approved Neon Switchyard concept: weathered graphite/steel-blue metal, muted burgundy, brass edges, narrow cyan/magenta emitters and warm amber lamps. Precise fine stepped outlines, not chunky/cartoon black outlines. No bloom wash, gradients outside the subject, logos, HUD, labels or text. Generate exactly TWO isolated separate production layers side by side on one transparent sheet. LEFT HALF: the complete fixed small freight crane from the concept, grounded plinth, glass operator pod, hydraulic pivot and diagonal segmented boom with magenta warning lamps, ending at an EMPTY pulley tip. NO cable, hook, suspended load or background on this left layer. RIGHT HALF: one isolated vertical black hoist cable, a brass hook and the small burgundy freight container hanging from it; NO crane body or ground. The cable must visibly reach the top of this separate right silhouette. Both layers share the same perspective, lighting and scale and have transparent space around them. This is not two views of one object: fixed crane body left, moving suspended cable/hook/load right. No text, labels or panel outlines.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  },
+  {
+    "key": "bulkhead-reference",
+    "kind": "model-reference",
+    "transparent": true,
+    "prompt": "PawTrail fine textured painted pixel art, fixed top-down three-quarter view, visible tops and south-facing fronts. Match this approved Neon Switchyard concept: weathered graphite/steel-blue metal, muted burgundy, brass edges, narrow cyan/magenta emitters and warm amber lamps. Precise fine stepped outlines, not chunky/cartoon black outlines. No bloom wash, gradients outside the subject, logos, HUD, labels or text. ONE transparent turnaround sheet, SIX equally sized panels arranged 3 columns by 2 rows: FRONT, LEFT SIDE, BACK in top row; RIGHT SIDE, FRONT THREE-QUARTER, REAR THREE-QUARTER in bottom row. Do not write labels. Same constructible object, scale, proportions and parts in all six panels, complete silhouettes, orthographic reference camera with slight top visible. Full true alpha transparency and generous clean gutters.  Turnaround of the approved northeast BASTION BULKHEAD GATE as a standalone usable model. Broad graphite reinforced two-column frame, chunky beveled top arch, two CLOSED sliding metal door leaves, inset service ribs and worn yellow-black hazard stripe along the sill. Warm amber inner jamb lamps, thin magenta top warning indicator. Real thickness and reverse service panel, separate doors visibly constructed, not a flat facade. Native physical proportions width124 height120 depth30 with human actor40 tall; opening must allow actor plus outfit clearance. Do not include building wall extending out from the gate or ground. Keep the gate identical in every panel.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  },
+  {
+    "key": "authorization-reference",
+    "kind": "model-reference",
+    "transparent": true,
+    "prompt": "PawTrail fine textured painted pixel art, fixed top-down three-quarter view, visible tops and south-facing fronts. Match this approved Neon Switchyard concept: weathered graphite/steel-blue metal, muted burgundy, brass edges, narrow cyan/magenta emitters and warm amber lamps. Precise fine stepped outlines, not chunky/cartoon black outlines. No bloom wash, gradients outside the subject, logos, HUD, labels or text. ONE transparent turnaround sheet, SIX equally sized panels arranged 3 columns by 2 rows: FRONT, LEFT SIDE, BACK in top row; RIGHT SIDE, FRONT THREE-QUARTER, REAR THREE-QUARTER in bottom row. Do not write labels. Same constructible object, scale, proportions and parts in all six panels, complete silhouettes, orthographic reference camera with slight top visible. Full true alpha transparency and generous clean gutters.  Turnaround of Sena\u2019s standalone TWO-RECORD AUTHORIZATION DESK. A low wide graphite service pedestal with sloped work surface, two physically distinct recessed authorization slots at the top-left/top-right, a central small upright screen with cyan UI blocks (no words), brass trim, amber busy lamp and a lockable lower service panel. Both slots initially empty and unlit. Thick constructible pedestal, rounded/beveled corners, cable plugs on the reverse and small cooling vents on sides. Width92 height72 depth38; human actor40 tall, comfortable open approach on front. No person, loose floating tokens, ground or background.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  },
+  {
+    "key": "sena-valez",
+    "kind": "npc-illustration",
+    "transparent": true,
+    "span": "44d8dee94a244ab3b1fd26d37b323bc5",
+    "prompt": "Create an approved-style PawTrail friendly NPC design/animated illustration sheet for SENA VALEZ, the procedural Grid Warden of Neon Switchyard. One transparent PNG, SIX equal full-body frames in 3 columns by 2 rows. Refined cel + painterly illustration finish: mature natural adult anime proportions, fine pixel texture, restrained stepped dark outlines, painted cloth and metal detail. Woman about 34, medium brown Filipina skin, neat close-cropped black hair with tidy side part (no long ponytail/bun), gray-green eyes, firm calm eyebrows, practical serious expression. Navy/slate short structured utility coat with subtle pale brass piping over an ivory high-collar shirt, charcoal trousers, sturdy ankle boots, a compact belt radio, no hat or glasses. No weapon, cape, armor wings, flirty pose or exaggerated curves. Frames: relaxed open-eyed rest; half-lid blink; fully closed blink; open-eyed return; subtle shoulder inhale/coat hem shift; relaxed settle. Same body/head position, feet grounded at identical baseline, no walking, waving or large pose changes. Natural quiet 4.8-second performance with complete lower body and shoes visible in every cell. Tiny mouth held neutral, no text. True transparent background; no broad dark gradient, scenery, aura or other character. The supplied map is context/palette only; the tiny cabin figure is not an exact character reference.",
+    "ref": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png"
+  }
+]

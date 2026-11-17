@@ -9,6 +9,8 @@ import type { ModelPaintEvent, ModelPaintHit, ModelPaintOptions } from './painti
 import { faceRect, skinParts, describeSurface, type SkinSheet, type SkinPart } from './textures'
 import {StudioModelEditor} from './model-editor'
 import type {ModelDocument,ModelEditorView,ModelEditorEvent,Triple} from './model-document'
+import {attachSilhouetteLayers,silhouetteSheet,drawSilhouetteGuide,type SilhouetteLayer,type PanelLayout} from './silhouette-layers'
+import {FloatingSkinViews} from './floating-views'
 /** Preview-only UVs: clone shared geometry before assigning the painting atlas. */
 function unwrap(mesh: T.Mesh, piece: number) {
   const geometry = mesh.geometry.index ? mesh.geometry.toNonIndexed() : mesh.geometry.clone()
@@ -77,9 +79,15 @@ export class SkinStudioScene {
   private playing = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   private modeling:StudioModelEditor
   private geometryDocument:ModelDocument['geometry']|undefined
-  constructor(private host: HTMLElement, textures: Record<SkinPart, HTMLCanvasElement>, appearance: ActorAppearance = defaultAppearance(), model: CreatorPreviewModel = 'shared', onSheets?: (sheets: SkinSheet[], canvases: Record<SkinPart, HTMLCanvasElement>) => void, onPick?: (part:string, x:number, y:number) => void, onPaint?:(event:ModelPaintEvent)=>void, onModelEdit?:(event:ModelEditorEvent)=>void) {
+  private silhouetteLayers:SilhouetteLayer[]=[]
+  private baseVisibility=new Map<T.Mesh,boolean>()
+  private baseBodyVisible=true
+  private baseHairVisible=true
+  private floatingViews?:FloatingSkinViews
+  constructor(private host: HTMLElement, textures: Record<SkinPart, HTMLCanvasElement>, appearance: ActorAppearance = defaultAppearance(), model: CreatorPreviewModel = 'shared', onSheets?: (sheets: SkinSheet[], canvases: Record<SkinPart, HTMLCanvasElement>) => void, onPick?: (part:string, x:number, y:number) => void, onPaint?:(event:ModelPaintEvent)=>void, onModelEdit?:(event:ModelEditorEvent)=>void, classicBase=false,panelLayout:PanelLayout='joint-panels-v2',private baseOnly=false) {
     this.onPaint=onPaint
-    this.rig = (creatorModelFactory(model) ?? createRescuer)(fittedAppearance(appearance))
+    const factory=creatorModelFactory(model)
+    this.rig = factory?factory(fittedAppearance(appearance)):createRescuer({...fittedAppearance(appearance),baseModel:classicBase?'classic':'refined-v2'})
     this.palette = appearancePalette(appearance)
     this.finish = new PixelFinish(this.palette)
     const sheets: SkinSheet[] = model === 'shared' ? skinParts.map(sheet => ({...sheet, meshes:[]})) : []
@@ -115,9 +123,15 @@ export class SkinStudioScene {
     this.controls.maxPolarAngle = Math.PI * .85
     this.controls.addEventListener('change', () => {this.dirty = true})
     if (model === 'shared') for (const part of ['shirt','pants','shoes']) this.maps.set(part, this.texture(textures[part]))
+    if(model==='shared'&&!classicBase){
+      this.silhouetteLayers=attachSilhouetteLayers(this.rig,panelLayout)
+      for(const layer of this.silhouetteLayers){this.maps.set(layer.spec.id,layer.map);this.canvases[layer.spec.id]=layer.canvas;this.bindings.set(layer.mesh,[layer.spec.id]);sheets.push(silhouetteSheet(layer))}
+      this.floatingViews=new FloatingSkinViews(this.silhouetteLayers)
+    }
     this.rig.root.traverse(object => {
       if (!(object instanceof T.Mesh)) return
       for (const material of Array.isArray(object.material) ? object.material : [object.material]) this.sourceMaterials.add(material)
+      if(object.userData.silhouetteLayer)return
       let ancestor:T.Object3D|null = object
       while (ancestor) {if (/Archive/.test(ancestor.name)) return; ancestor = ancestor.parent}
       if (model !== 'shared') {
@@ -237,7 +251,11 @@ export class SkinStudioScene {
     if(!rect.width||!rect.height||clientX<rect.left||clientX>rect.right||clientY<rect.top||clientY>rect.bottom)return null
     this.camera.updateMatrixWorld(true)
     const ray=new T.Raycaster();ray.setFromCamera(new T.Vector2((clientX-rect.left)/rect.width*2-1,1-(clientY-rect.top)/rect.height*2),this.camera)
-    for(const intersection of ray.intersectObject(this.rig.root,true)){
+    const hits=ray.intersectObject(this.rig.root,true)
+    // A selected blank panel remains paintable outside the body. Other empty
+    // panels let rays reach the body instead of swallowing every paint stroke.
+    if(this.paintOptions.surface?.startsWith('layer-'))hits.sort((a,b)=>Number(b.object.userData.silhouetteLayer===this.paintOptions.surface)-Number(a.object.userData.silhouetteLayer===this.paintOptions.surface))
+    for(const intersection of hits){
       let node:T.Object3D|null=intersection.object,visible=true
       while(node){if(!node.visible||/Archive/.test(node.name))visible=false;node=node.parent}
       if(!visible)continue
@@ -245,7 +263,9 @@ export class SkinStudioScene {
       if(!id||!intersection.uv)return null
       const uv=intersection.uv.clone();this.maps.get(id)!.transformUv(uv)
       const canvas=this.canvases[id]
-      return {hit:{part:id,x:Math.min(canvas.width-1,Math.max(0,Math.floor(uv.x*canvas.width))),y:Math.min(canvas.height-1,Math.max(0,Math.floor(uv.y*canvas.height)))},intersection,uv}
+      const x=Math.min(canvas.width-1,Math.max(0,Math.floor(uv.x*canvas.width))),y=Math.min(canvas.height-1,Math.max(0,Math.floor(uv.y*canvas.height)))
+      if(mesh.userData.silhouetteLayer&&id!==this.paintOptions.surface&&canvas.getContext('2d')!.getImageData(x,y,1,1).data[3]<128)continue
+      return {hit:{part:id,x,y},intersection,uv}
     }
     return null
   }
@@ -304,6 +324,7 @@ export class SkinStudioScene {
         const duration=count/clip.fps,phase=clip.repeat===0?Math.min(1,this.elapsed/duration):(this.elapsed/duration)%1
         if(!this.modeling.dragging){this.modeling.poseRig(this.modeling.posing?'idle':this.clip,this.modeling.posing?0:Math.floor(phase*32)/32,{secondaryMotion:{phase:this.modeling.posing?0:Math.floor((this.elapsed%2.4)/2.4*32)/32,locomotion:!this.modeling.posing&&['walk','run'].includes(this.clip)?1:0}})}
         this.modeling.applyPose()
+        this.floatingViews?.update(this.camera,this.rig.root)
         this.renderer.render(this.scene,this.camera)
         this.context.clearRect(0,0,CREATOR_FRAME.width,CREATOR_FRAME.height);this.context.drawImage(this.renderer.domElement,0,0)
         this.output.putImageData(this.finish.finish(this.context.getImageData(0,0,CREATOR_FRAME.width,CREATOR_FRAME.height),CREATOR_FRAME.density),0,0)
@@ -325,6 +346,40 @@ export class SkinStudioScene {
         ;(binding.mesh.material as T.Material).dispose();binding.mesh.material=binding.original;binding.applied=false
       }
     }
+    this.rebuildFinish()
+  }
+  setBaseVisibility(body:boolean,hair:boolean){
+    if(this.baseOnly)body=true
+    this.baseBodyVisible=body;this.baseHairVisible=hair
+    this.rig.root.traverse(node=>{
+      if(!(node instanceof T.Mesh)||node.userData.silhouetteLayer)return
+      for(let p:T.Object3D|null=node;p;p=p.parent)if(/Archive/.test(p.name)||p.userData.studioGeometryId||/^(OfferedFood|HeldWaterBottle|HeldSupplies|CleaningCloth|SleepPillow|SleepBlanket|JetpackEquipment|PowerAura|CarRide|RainCloud)/.test(p.name))return
+      if(!this.baseVisibility.has(node))this.baseVisibility.set(node,node.visible)
+      node.visible=this.baseVisibility.get(node)!&&body&&(hair||!/hair|fringe|lock|crown|spike/i.test(node.name))
+    })
+    this.floatingViews?.setEnabled(!body)
+    if(this.baseOnly)for(const layer of this.silhouetteLayers)layer.mesh.visible=false
+    this.dirty=true
+  }
+  setBaseHairVisible(visible:boolean){
+    this.setBaseVisibility(this.baseBodyVisible,visible)
+  }
+  drawSilhouetteReference(part:string,context:CanvasRenderingContext2D){
+    const layer=this.silhouetteLayers.find(row=>row.spec.id===part);if(!layer)return
+    const position=layer.mesh.position.clone(),rotation=layer.mesh.quaternion.clone(),visibility=new Map<T.Mesh,boolean>()
+    try{
+      // The downloadable body guide stays available when the base is hidden.
+      for(const [mesh,visible]of this.baseVisibility){visibility.set(mesh,mesh.visible);mesh.visible=visible&&(this.baseHairVisible||!/hair|fringe|lock|crown|spike/i.test(mesh.name))}
+      layer.mesh.position.set(...layer.spec.position);layer.mesh.rotation.set(0,layer.spec.yaw,0)
+      drawSilhouetteGuide(layer,context,this.rig)
+    }finally{
+      layer.mesh.position.copy(position);layer.mesh.quaternion.copy(rotation)
+      for(const [mesh,visible]of visibility)mesh.visible=visible
+      this.rig.root.updateMatrixWorld(true)
+    }
+  }
+  refreshTextures(){
+    for(const map of this.maps.values())map.needsUpdate=true
     this.rebuildFinish()
   }
   private rebuildFinish(){

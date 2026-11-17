@@ -1,0 +1,25 @@
+{
+  "id": "aurelia-weiss",
+  "name": "Aurelia Weiss",
+  "age": 26,
+  "title": "Moonfeather Warden",
+  "origin": "Lunewick Sanctuary (fictional)",
+  "personality": [
+    "compassionate",
+    "composed",
+    "quietly playful",
+    "fiercely protective"
+  ],
+  "tone": "Warm, measured, softly confident; crisp and forceful when protecting others",
+  "illustrationStyle": "Refined cel + painterly",
+  "portraitStyle": "Refined cel",
+  "portraitDefaultAngle": "three-quarter",
+  "iconAngle": "three-quarter-left",
+  "appearance": "Long rose-pink hair, violet eyes, asymmetric crescent-feather crest, pearl feather armor, champagne-gold trim, lilac skirt, white boots and feather cape panels",
+  "installation": "Actor preview only; no live roster or account promotion",
+  "motion": "Continuous pinned hair and feather/cape motion; separate moving facial energy for enraged",
+  "voice": {
+    "status": "omitted-by-owner"
+  },
+  "illustrationFeedback": "Both designs approved by owner"
+}

@@ -1,0 +1,71 @@
+{
+  "familyId": "kaedros",
+  "parentBoss": "kaedros-embermaw",
+  "id": "cindervane",
+  "name": "Cindervane",
+  "title": "The Young Embermaw",
+  "tier": "mini-boss",
+  "row": 0,
+  "enragedRow": 1,
+  "maxHp": 1800,
+  "hpPerBar": 300,
+  "enrageAt": 0.3,
+  "height": 2.65,
+  "radius": 0.8,
+  "speed": 1.5,
+  "hover": 0,
+  "armor": 0.8,
+  "weakMultiplier": 1.5,
+  "biography": "A two-headed juvenile hydra patrols the volcanic riverbanks beneath Kaedros’s watch. It overcommits both necks when breathing fire.",
+  "weakness": "Its throat scales open after either attack; ordinary armored hits deal less damage.",
+  "temperament": "Territorial guardian",
+  "origin": "Original PawTrail fictional creature",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "forked-embers",
+      "name": "Forked Embers",
+      "shape": "sector",
+      "outer": 3.0,
+      "inner": 0,
+      "angle": 135,
+      "target": "self",
+      "damage": 22,
+      "windup": 1200,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 6200,
+      "description": "Two heads breathe across a locked sector. Dodge behind the necks or leave the marked edge."
+    },
+    {
+      "id": "cinder-ring",
+      "name": "Cinder Ring",
+      "shape": "ring",
+      "outer": 3.4,
+      "inner": 1.05,
+      "angle": 105,
+      "target": "self",
+      "damage": 26,
+      "windup": 1450,
+      "active": 360,
+      "recovery": 800,
+      "cooldown": 9000,
+      "description": "An ember ring blooms around the hydra. The clear center and space outside the ring stay safe."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": {
+    "date": "2026-11-12",
+    "browser": "Firefox",
+    "modelAndScale": "loaded, started/paused and screenshot inspected",
+    "capture": "output/playwright/boss-families/cindervane-model.png",
+    "combat": "Implemented using shared family controller; complete individual fight not replayed.",
+    "phase": "Distinct form observed via explicitly labelled phase rehearsal; natural threshold crossing not reviewed.",
+    "automatedTests": false,
+    "build": false
+  }
+}

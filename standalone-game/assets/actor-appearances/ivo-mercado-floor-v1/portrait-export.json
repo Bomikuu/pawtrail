@@ -1,0 +1,43 @@
+{
+  "id": "ivo-mercado-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "ivo-mercado",
+  "characterName": "Ivo Mercado",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    20,
+    90,
+    99
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/ivo-mercado-refined-cel-v1/134f1211f211",
+  "revision": "134f1211f211",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 264432,
+  "referenceBytes": 11519,
+  "runtimeBytes": 252913,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

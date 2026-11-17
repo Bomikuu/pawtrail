@@ -1,0 +1,63 @@
+{
+  "actor": "sieghart",
+  "revision": "v2",
+  "date": "2026-11-15",
+  "scope": "Actor preview revision; existing roster and voices unchanged",
+  "illustration": {
+    "style": "Painterly anime fantasy",
+    "outline": "Semi-bold outer contours, finer face/internal lines",
+    "variants": [
+      "normal",
+      "enraged"
+    ],
+    "enragedPose": "Two-handed diagonal sword grip, low attack-ready stance",
+    "enragedExpression": "Narrowed cool eyes and restrained crooked smile; controlled anger and unsettling confidence",
+    "ownerFeedback": "Yes, keep this version",
+    "feedbackStatus": "explicitly accepted revised facial expression"
+  },
+  "portrait": {
+    "style": "Refined cel",
+    "defaultAngle": "three-quarter-left",
+    "angles": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotions": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "existingPainterlyChoice": "sieghart-painterly preserved",
+    "sourceStatePolicy": "90 complete authored face drawings plus complete offline torso-breath variants; no runtime feature patches"
+  },
+  "icon": {
+    "actor": "sieghart",
+    "style": "Refined cel",
+    "angle": "three-quarter-left",
+    "nativeSize": [
+      40,
+      40
+    ],
+    "displaySize": [
+      48,
+      48
+    ],
+    "frame": "shared woody frame and active glow",
+    "source": "icon-generated.png",
+    "file": "/pawtrail-game/actor-studio/icons/sieghart/v3/icon.png",
+    "bytes": 698
+  },
+  "model": {
+    "rig": "existing shared articulated rig and all 34 human actions",
+    "hair": "Existing shaped layered locks and directional textures retained and inspected",
+    "cloth": "Curved outer surfaces, separately mapped reverse linings, closed textured perimeter and hem; scarf trim visible on reverse",
+    "circle": "Separate ground-level purple sigil retained"
+  },
+  "voice": "omitted-by-owner",
+  "reviewStatus": "preview-installed-and-visually-reviewed",
+  "reviewRecord": "REVIEW.md"
+}

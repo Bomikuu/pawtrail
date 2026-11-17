@@ -1,0 +1,160 @@
+{
+  "id": "amber-parts-detail-v2",
+  "frameWidth": 256,
+  "frameHeight": 320,
+  "status": "ready",
+  "groundPixel": {
+    "x": 128,
+    "y": 240
+  },
+  "displayFrame": {
+    "width": 64,
+    "height": 80
+  },
+  "faceCrop": {
+    "x": 88,
+    "y": 48,
+    "width": 80,
+    "height": 88
+  },
+  "clips": {
+    "idle": {
+      "down": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/idle-down.webp",
+        "frames": 16,
+        "columns": 4,
+        "rows": 4,
+        "durationMs": 2500,
+        "bytes": 303760,
+        "decodedBytes": 5242880
+      },
+      "left": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/idle-left.webp",
+        "frames": 16,
+        "columns": 4,
+        "rows": 4,
+        "durationMs": 2500,
+        "bytes": 171650,
+        "decodedBytes": 5242880
+      },
+      "up": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/idle-up.webp",
+        "frames": 16,
+        "columns": 4,
+        "rows": 4,
+        "durationMs": 2500,
+        "bytes": 243718,
+        "decodedBytes": 5242880
+      },
+      "right": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/idle-right.webp",
+        "frames": 16,
+        "columns": 4,
+        "rows": 4,
+        "durationMs": 2500,
+        "bytes": 172574,
+        "decodedBytes": 5242880
+      }
+    },
+    "walk": {
+      "down": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/walk-down.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 800,
+        "bytes": 251124,
+        "decodedBytes": 3932160
+      },
+      "left": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/walk-left.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 800,
+        "bytes": 156900,
+        "decodedBytes": 3932160
+      },
+      "up": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/walk-up.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 800,
+        "bytes": 193792,
+        "decodedBytes": 3932160
+      },
+      "right": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/walk-right.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 800,
+        "bytes": 159434,
+        "decodedBytes": 3932160
+      }
+    },
+    "run": {
+      "down": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/run-down.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 500,
+        "bytes": 245438,
+        "decodedBytes": 3932160
+      },
+      "left": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/run-left.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 500,
+        "bytes": 178366,
+        "decodedBytes": 3932160
+      },
+      "up": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/run-up.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 500,
+        "bytes": 191592,
+        "decodedBytes": 3932160
+      },
+      "right": {
+        "url": "/pawtrail-game/actor-studio/amber-parts-detail-v2/run-right.webp",
+        "frames": 12,
+        "columns": 4,
+        "rows": 3,
+        "durationMs": 500,
+        "bytes": 181884,
+        "decodedBytes": 3932160
+      }
+    }
+  },
+  "frames": 160,
+  "maximumLoadedClips": 1,
+  "maximumDecodedClipBytes": 5242880,
+  "totalClipBytes": 2450232,
+  "sourceModel": "/pawtrail-game/actor-studio/amber-parts-detail-v2/amber-parts.glb",
+  "sourceModelBytes": 2154564,
+  "parts": 95,
+  "triangles": 24056,
+  "faceTexture": {
+    "width": 2172,
+    "height": 724,
+    "expressions": 3
+  },
+  "sourceViews": "/pawtrail-game/actor-studio/amber-parts-detail-v2/source-views.webp",
+  "sourceFace": "/pawtrail-game/actor-studio/amber-parts-detail-v2/face-detail.png",
+  "facePreview": "actual source-model close-up",
+  "sourceFrame": [
+    512,
+    640
+  ],
+  "sourceModelSha256": "4fc569d24625df35684faea85b18f86e26d5c1890f550b6d341c24359c7f8558",
+  "sourceScriptSha256": "ae1fbd9604349bd10fa756473fa9737ce382973c648f524158666813c4923460",
+  "filter": "smooth detail rendering; native pixel edition remains separate",
+  "review": "source/detail artwork inspected; live browser review pending"
+}

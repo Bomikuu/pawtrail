@@ -1,0 +1,119 @@
+{
+  "id": "f01-batch-a-v1",
+  "startedAt": "2026-11-15 14:27:57 UTC",
+  "status": "authored_installed_runtime_unverified",
+  "approval": "All concepts A/B/C explicitly approved; proceed instruction authorizes first asset batch",
+  "scope": [
+    "reusable animated city scenery",
+    "lobby/arrival/market editable stages",
+    "3D interactive lift/console/board/counter",
+    "reuse existing approved 3D camp seat",
+    "Mara/Ivo first-loop presentation"
+  ],
+  "verification": {
+    "nativeReview": "static native map/model/portrait authoring sheets visually inspected",
+    "automatedTests": "not run",
+    "typecheck": "not run for Batch A",
+    "browser": "not run",
+    "build": "not run",
+    "ownerDecision": "Skip verification for now"
+  },
+  "jobs": [
+    {
+      "key": "lobby-ground",
+      "kind": "scenery",
+      "reference": "01-wayfarer-concourse-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.305Z",
+      "sourceCompletedAt": "2026-11-15T14:28:49.265Z"
+    },
+    {
+      "key": "lobby-wall",
+      "kind": "scenery",
+      "reference": "01-wayfarer-concourse-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:29:26.304Z"
+    },
+    {
+      "key": "market-ground",
+      "kind": "scenery",
+      "reference": "03-lumen-market-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:30:08.711Z"
+    },
+    {
+      "key": "repair-bay",
+      "kind": "scenery",
+      "reference": "03-lumen-market-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:30:56.382Z"
+    },
+    {
+      "key": "awning-stall",
+      "kind": "scenery",
+      "reference": "03-lumen-market-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:31:36.955Z"
+    },
+    {
+      "key": "clinic-canopy",
+      "kind": "scenery",
+      "reference": "02-neon-heights-arrival-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:32:21.935Z"
+    },
+    {
+      "key": "lift-reference",
+      "kind": "model-reference",
+      "reference": "01-wayfarer-concourse-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:32:59.094Z"
+    },
+    {
+      "key": "allocation-reference",
+      "kind": "model-reference",
+      "reference": "03-lumen-market-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:33:55.268Z"
+    },
+    {
+      "key": "planning-reference",
+      "kind": "model-reference",
+      "reference": "01-wayfarer-concourse-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:34:43.518Z"
+    },
+    {
+      "key": "counter-reference",
+      "kind": "model-reference",
+      "reference": "03-lumen-market-v1",
+      "status": "authored",
+      "sourceStartedAt": "2026-11-15T14:28:19.306Z",
+      "sourceCompletedAt": "2026-11-15T14:35:31.552Z"
+    }
+  ],
+  "completedAt": "2026-11-15T14:59:53.758884+00:00",
+  "approvals": {
+    "maps": "explicit: Approve all three concepts",
+    "props": "explicit: Good enough \u2014 model all four",
+    "npcs": "explicit: Use both designs + Refined cel portraits"
+  },
+  "delivery": "docs/game-design/floors/f01-neon-heights/batch-a-delivery.md",
+  "authoredOutputs": [
+    "src/game/stage-editor/f01-art.json",
+    "src/game/stage-editor/maps/f01-lobby-v1.json",
+    "src/game/stage-editor/maps/f01-arrival-v1.json",
+    "src/game/stage-editor/maps/f01-market-v1.json",
+    "public/pawtrail-game/floors/f01/batch-a-v1/model-manifest.json",
+    "public/pawtrail-game/floors/f01/npcs/mara/presentation.json",
+    "public/pawtrail-game/floors/f01/npcs/ivo/presentation.json"
+  ]
+}

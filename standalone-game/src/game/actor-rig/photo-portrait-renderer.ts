@@ -20,9 +20,12 @@ type CompleteExpression = {
   blinkPerformance: BlinkPerformance
   speechPerformance: SpeechPerformance
   breathPerformance: SpeechPerformance
+  /** Whole authored head/shoulder motion, scoped to this expression and angle. */
+  idlePerformance?: SpeechPerformance
 }
 type PoseLayers = { expressions: Record<string, ExpressionLayers> }
 type ManifestBase = {
+  filter?: 'smooth'|'nearest'
   atlas?: string
   nativeCell: [number, number]
   contentBounds?: [number, number, number, number]
@@ -59,7 +62,7 @@ async function bundleFor(id: string, revision?: string) {
     const supported = (manifest.version === 2 && manifest.kind === 'authored-expression-portrait')
       || (manifest.version === 3 && manifest.kind === 'authored-frame-portrait')
     const supportedAtlas = (manifest.kind === 'authored-frame-portrait' && manifest.pixelData) || manifest.atlas === 'portrait.png'
-      || (manifest.kind === 'authored-frame-portrait' && manifest.atlas === 'portrait.webp')
+      || (manifest.kind === 'authored-frame-portrait' && ['portrait.webp','portrait.avif'].includes(manifest.atlas??''))
     if (!supported || !supportedAtlas
       || !Array.isArray(manifest.nativeCell) || !style.nativeCell.every((n, i) => n === manifest.nativeCell[i])
       || !Array.isArray(manifest.frames) || !manifest.frames.length
@@ -148,7 +151,14 @@ export async function completePortraitFrameImages(id: string, revision: string, 
   ;[canvas.width, canvas.height] = manifest.nativeCell
   const context = canvas.getContext('2d')!
   return (['rest', 'half', 'closed', 'small', 'open'] as const).map(state => {
-    context.putImageData(decodeCompleteFrame(bundle, performance.states[state][0]), 0, 0)
+    const id = performance.states[state][0]
+    if (manifest.pixelData) context.putImageData(decodeCompleteFrame(bundle, id), 0, 0)
+    else {
+      const rect = manifest.frames[id]
+      if (!bundle.image || !rect) throw new Error('A complete portrait frame is missing.')
+      context.clearRect(0, 0, canvas.width, canvas.height)
+      context.drawImage(bundle.image, ...rect, 0, 0, canvas.width, canvas.height)
+    }
     return { state, png: canvas.toDataURL(), width: canvas.width, height: canvas.height }
   })
 }
@@ -162,6 +172,7 @@ class PhotoPortraitRenderer implements DialoguePortraitRenderer {
   readonly assetSource = 'authored' as const
   readonly nativeSize: [number, number]
   readonly contentBounds?: [number, number, number, number]
+  readonly displayRendering:'smooth'|'pixelated'
   private canvas = document.createElement('canvas')
   private context: CanvasRenderingContext2D
   private output = document.createElement('canvas')
@@ -172,6 +183,7 @@ class PhotoPortraitRenderer implements DialoguePortraitRenderer {
   constructor(private bundle: Bundle) {
     this.nativeSize = bundle.manifest.nativeCell
     this.contentBounds = bundle.manifest.contentBounds
+    this.displayRendering=bundle.manifest.filter==='smooth'?'smooth':'pixelated'
     this.canvas.width = this.nativeSize[0]
     this.canvas.height = this.nativeSize[1]
     const context = this.canvas.getContext('2d', { willReadFrequently: true })
@@ -272,10 +284,12 @@ class PhotoPortraitRenderer implements DialoguePortraitRenderer {
         }
       }
     }
-    const breath = performance.breathPerformance
+    const breath = state === 'rest' && performance.idlePerformance
+      ? performance.idlePerformance : performance.breathPerformance
     const breathingFrame = !view.steady && view.breathing !== false
       ? phase(time, breath.sequence, breath.durationsMs) : 0
-    const id = performance.states[state][breathingFrame]
+    const stateFrames = performance.states[state]
+    const id = stateFrames[breathingFrame] ?? stateFrames[0]
     const key = `complete:${id}`
     const cached = this.cache.get(key)
     if (cached) return cached

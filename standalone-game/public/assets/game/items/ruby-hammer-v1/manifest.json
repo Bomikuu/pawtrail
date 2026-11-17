@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "reference": "User-uploaded oversized red and gold back-carried hammer",
+  "generator": "built-in image_gen",
+  "generated_source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-03df0c75-a86b-445c-a721-0741872ce5cb.png",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "native_size": [
+    128,
+    128
+  ],
+  "palette_colors": 64,
+  "processing": "Nearest-neighbor resize and 64-color quantization; four aligned 64px regions",
+  "regions": {
+    "front": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "side": [
+      64,
+      0,
+      128,
+      64
+    ],
+    "end": [
+      0,
+      64,
+      64,
+      128
+    ],
+    "handle": [
+      64,
+      64,
+      128,
+      128
+    ]
+  },
+  "uv_faces": {
+    "positive_z": "front",
+    "negative_z": "front",
+    "positive_x": "side",
+    "negative_x": "side",
+    "positive_y": "end",
+    "negative_y": "end"
+  },
+  "runtime_bytes": {
+    "end.png": 2321,
+    "handle.png": 2405,
+    "front.png": 2717,
+    "texture-atlas.png": 9343,
+    "side.png": 2506
+  },
+  "storage": "64-color indexed PNG",
+  "generation_prompt": "generation-prompt.txt"
+}

@@ -1,5 +1,6 @@
 import * as T from "three";
 import { PixelFinish } from "../actor-rig/pixel-renderer";
+import { furnitureOutline } from './pixel-outline';
 import {
   createRescuer,
   disposeRig,
@@ -69,6 +70,7 @@ export class PixelFurniture {
       ...appearancePalette(this.appearance),
     ]);
   }
+  get seatCount() { return this.couch.seats.length; }
   frame(rotation: number, seat = -1, foreground = false, phase = 0, force = 0) {
     this.camera = furnitureCamera(rotation, this.definition);
     this.couch.whole();
@@ -119,6 +121,7 @@ export class PixelFurniture {
         ctx.drawImage(this.renderer.domElement, 0, 0);
         if (this.definition.model === "couch")
           ctx.putImageData(this.finish.finish(ctx.getImageData(0, 0, 96, 112)), 0, 0);
+        else ctx.putImageData(furnitureOutline(ctx.getImageData(0, 0, 96, 112)), 0, 0);
         this.couch.root.visible = false;
         actors.forEach((actor, index) => (actor.root.visible = visible[index]));
         const nativeCos = 90 / Math.hypot(90, 34.5);
@@ -147,6 +150,7 @@ export class PixelFurniture {
           layer.drawImage(this.renderer.domElement, 0, 0);
           if (this.definition.model === "couch")
             layer.putImageData(this.finish.finish(layer.getImageData(0, 0, 96, 112)), 0, 0);
+          else layer.putImageData(furnitureOutline(layer.getImageData(0, 0, 96, 112)), 0, 0);
           ctx.drawImage(this.layer, 0, 0);
         }
         return this.canvas;
@@ -164,11 +168,49 @@ export class PixelFurniture {
     if (!this.couch.preservePaint || this.definition.model === "couch" || this.actor.root.visible) {
       const finished = this.finish.finish(context.getImageData(0, 0, 96, 112));
       context.putImageData(finished, 0, 0);
-    }
+    } else context.putImageData(furnitureOutline(context.getImageData(0, 0, 96, 112)), 0, 0);
     return this.canvas;
   }
   /** Authoring measurement of the actual visible Sit rig, including its clothing/hat. */
   seatFit() {
+    if (this.couch.seats.length === 1 && this.couch.seatClearance) {
+      const clearance = this.couch.seatClearance, socket = this.couch.seats[0], samples = [];
+      const previousRotation = this.couch.root.rotation.y;
+      this.couch.root.rotation.y = 0;
+      this.couch.whole();
+      this.couch.root.updateMatrixWorld(true);
+      for (const phase of [0, 0.25, 0.5, 0.75]) {
+        this.actor.pose('sit', phase);
+        this.actor.root.rotation.y = 0;
+        this.actor.root.position.set(socket.point[0], socket.point[1] - 5.8, socket.point[2]);
+        this.actor.root.updateMatrixWorld(true);
+        const all = new T.Box3(), pelvis = new T.Box3(), atArms = new T.Box3(), upper = new T.Box3();
+        this.actor.root.traverse(node => {
+          if (!(node instanceof T.Mesh)) return;
+          const scale = node.getWorldScale(new T.Vector3());
+          if (Math.max(Math.abs(scale.x), Math.abs(scale.y), Math.abs(scale.z)) < .01) return;
+          let parent: T.Object3D | null = node;
+          while (parent) { if (!parent.visible) return; parent = parent.parent; }
+          const bounds = new T.Box3().setFromObject(node);
+          all.union(bounds);
+          if (node.name.startsWith('ContinuousShortsWaist')) pelvis.union(bounds);
+          if (bounds.max.y >= socket.point[1] && bounds.min.y <= clearance.armTop && bounds.min.z < 12) atArms.union(bounds);
+          if (bounds.max.y >= socket.point[1]) upper.union(bounds);
+        });
+        const widthAllowance = pelvis.isEmpty() ? null : Math.min(pelvis.min.x - clearance.left, clearance.right - pelvis.max.x);
+        const pillow = this.couch.groups['Flower pillow 1'];
+        const pillowFront = pillow ? new T.Box3().setFromObject(pillow).max.z : null;
+        samples.push({phase, actorScale: this.actor.root.scale.toArray(), actorWidth: all.max.x - all.min.x,
+          pelvisSideClearance: widthAllowance,
+          armClearance: atArms.isEmpty() ? null : Math.min(atArms.min.x - clearance.left, clearance.right - atArms.max.x),
+          seatSupportFrontClearance: pelvis.isEmpty() ? null : clearance.front - pelvis.max.z,
+          backClearance: upper.min.z - clearance.back,
+          pillowClearance: pillowFront === null ? null : upper.min.z - pillowFront,
+          floorClearance: all.min.y});
+      }
+      this.couch.root.rotation.y = previousRotation;
+      return {units:'native world units',appearance:'actual shared rescuer; no scaling',seats:1,clearance,samples};
+    }
     if (this.couch.seats.length < 2) return null;
     const samples = [];
     const previous = this.couch.root.rotation.y;

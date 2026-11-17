@@ -608,6 +608,11 @@ export function editCancel() {
 }
 export async function editSave() {
   if (!state.data || state.busy || state.status !== "online") return;
+  // Include the visible color/position of the last edited piece in the saved layout.
+  if (state.placementPreview) {
+    scene({ type: 'commit' })
+    if (state.placementPreview) return
+  }
   try {
     await act({
       type: state.data.house.zone === "yard" ? "yard-layout" : "layout",

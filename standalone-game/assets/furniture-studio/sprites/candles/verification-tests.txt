@@ -1,0 +1,17 @@
+✔ closed panel blocks passage; open doorway allows a full foot body through (4.113306ms)
+✔ opening preserves solid jambs on both sides instead of deleting the object collider (2.507417ms)
+✔ an open flag cannot make furniture without authored passage states traversable (1.387283ms)
+✔ candles default lit, toggle to real off art and restore canonical on art (1.903966ms)
+✔ legacy lights and door passage retain their existing selection/geometry (0.212757ms)
+✔ frontend/backend candle contracts agree; states use existing lit authority (9.117097ms)
+✔ seated poses use all four seat headings regardless of arrival direction or alignment jitter (3.847568ms)
+✔ walking cosmetic emotes keep their movement heading without an authoritative pose (0.604521ms)
+✔ clearing the pose releases its heading to locomotion, and invalid locks are ignored (0.976378ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 632.598879

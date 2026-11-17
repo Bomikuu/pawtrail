@@ -1,0 +1,25 @@
+{
+  "normalIllustration": {
+    "bytes": 382226,
+    "files": 7
+  },
+  "enragedIllustration": {
+    "bytes": 371771,
+    "files": 7
+  },
+  "portrait": {
+    "bytes": 289795,
+    "files": 5
+  },
+  "icon": {
+    "bytes": 3283,
+    "files": 2
+  },
+  "modelTexturesAndCircle": {
+    "bytes": 151794,
+    "files": 15
+  },
+  "totalBytes": 1198869,
+  "sourceAuthoringBytes": 34882134,
+  "voice": "omitted-by-owner"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "nyx",
+  "name": "Nyx Tal",
+  "portraitCollection": "nyx-tal-refined-cel",
+  "illustration": {
+    "name": "Nyx Tal",
+    "folder": "/pawtrail-game/floors/f01/npcs/nyx/illustration",
+    "nativeSize": [
+      192,
+      320
+    ],
+    "style": "Refined cel + painterly",
+    "motion": "Authored full-body idle and blink"
+  },
+  "icon": "/pawtrail-game/floors/f01/npcs/nyx/icon.png",
+  "portraitBytes": 243031,
+  "scope": "friendly NPC · normal only · no voices"
+}

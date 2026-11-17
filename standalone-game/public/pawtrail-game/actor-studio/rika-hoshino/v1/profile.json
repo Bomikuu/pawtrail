@@ -1,0 +1,30 @@
+{
+  "id": "rika-hoshino",
+  "name": "Rika Hoshino",
+  "title": "Asterport Rescue Pilot",
+  "age": 24,
+  "origin": "Asterport Rescue Hangar",
+  "nationality": "Fictional Asterport Coalition",
+  "personality": [
+    "confident",
+    "inventive",
+    "protective",
+    "playfully competitive"
+  ],
+  "biography": "Rika rebuilt a retired security walker into Peony-7, a rescue partner that carries supplies and clears safe routes after storms. She keeps a quiet berth in the hangar for animals brought home after each patrol.",
+  "tone": "Bright, precise and reassuring; quick humor between missions, firm calm in danger.",
+  "authorship": "Original fictional adaptation inspired by the supplied pilot/mech reference; biography and age are authored choices.",
+  "voice": {
+    "status": "omitted-by-owner"
+  },
+  "mech": {
+    "id": "peony-7",
+    "name": "Peony-7",
+    "role": "Articulated rescue walker",
+    "pilot": "Rika Hoshino"
+  },
+  "illustrationStyle": "Refined cel + painterly",
+  "portraitStyle": "Refined cel",
+  "runtimeScope": "Actor preview, local stage play mode and selectable neighborhood roster; no platform reward/account writes",
+  "illustrationFeedback": "Both designs explicitly approved by owner"
+}

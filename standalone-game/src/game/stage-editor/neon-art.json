@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "grounds": [
+    {
+      "id": "neon:terrain",
+      "label": "Neon Heights \u00b7 reflective streets",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/ground.png",
+      "width": 1536,
+      "height": 1152
+    }
+  ],
+  "assets": [
+    {
+      "id": "neon:spire",
+      "label": "Cyan skyline spire",
+      "category": "Cyberpunk \u00b7 skyline",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/spire.png",
+      "width": 224,
+      "height": 304,
+      "anchor": [
+        112,
+        298
+      ],
+      "footprint": [
+        47,
+        265,
+        130,
+        33
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:arc-tower",
+      "label": "Magenta arc tower",
+      "category": "Cyberpunk \u00b7 skyline",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/arc-tower.png",
+      "width": 224,
+      "height": 288,
+      "anchor": [
+        112,
+        282
+      ],
+      "footprint": [
+        38,
+        249,
+        150,
+        33
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:hab-block",
+      "label": "Neon habitat block",
+      "category": "Cyberpunk \u00b7 skyline",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/hab-block.png",
+      "width": 272,
+      "height": 240,
+      "anchor": [
+        136,
+        234
+      ],
+      "footprint": [
+        14,
+        196,
+        244,
+        38
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:holo-head",
+      "label": "Android hologram",
+      "category": "Cyberpunk \u00b7 holograms",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/holo-head.png",
+      "width": 160,
+      "height": 224,
+      "anchor": [
+        80,
+        218
+      ],
+      "footprint": [
+        26,
+        184,
+        108,
+        34
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:holo-koi",
+      "label": "Holographic koi emitter",
+      "category": "Cyberpunk \u00b7 holograms",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/holo-koi.png",
+      "width": 160,
+      "height": 144,
+      "anchor": [
+        80,
+        138
+      ],
+      "footprint": [
+        37,
+        119,
+        86,
+        19
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:kiosk",
+      "label": "Neon street kiosk",
+      "category": "Cyberpunk \u00b7 street props",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/kiosk.png",
+      "width": 144,
+      "height": 128,
+      "anchor": [
+        72,
+        122
+      ],
+      "footprint": [
+        23,
+        105,
+        98,
+        17
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:hvac",
+      "label": "Rooftop fan and duct",
+      "category": "Cyberpunk \u00b7 street props",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/hvac.png",
+      "width": 96,
+      "height": 72,
+      "anchor": [
+        48,
+        68
+      ],
+      "footprint": [
+        8,
+        48,
+        80,
+        20
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:railing",
+      "label": "Steel observation railing",
+      "category": "Cyberpunk \u00b7 street props",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/railing.png",
+      "width": 128,
+      "height": 48,
+      "anchor": [
+        64,
+        44
+      ],
+      "footprint": [
+        4,
+        30,
+        120,
+        14
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:spire-large",
+      "label": "Cyan skyline spire \u00b7 large",
+      "category": "Cyberpunk \u00b7 skyline",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/spire-large.png",
+      "width": 448,
+      "height": 608,
+      "anchor": [
+        224,
+        596
+      ],
+      "footprint": [
+        94,
+        530,
+        260,
+        66
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:arc-tower-large",
+      "label": "Magenta arc tower \u00b7 large",
+      "category": "Cyberpunk \u00b7 skyline",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/arc-tower-large.png",
+      "width": 448,
+      "height": 576,
+      "anchor": [
+        224,
+        564
+      ],
+      "footprint": [
+        76,
+        498,
+        300,
+        66
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    {
+      "id": "neon:hab-block-large",
+      "label": "Neon habitat block \u00b7 large",
+      "category": "Cyberpunk \u00b7 skyline",
+      "kind": "object",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/hab-block-large.png",
+      "width": 544,
+      "height": 480,
+      "anchor": [
+        272,
+        468
+      ],
+      "footprint": [
+        28,
+        392,
+        488,
+        76
+      ],
+      "rotations": [
+        0
+      ]
+    }
+  ]
+}

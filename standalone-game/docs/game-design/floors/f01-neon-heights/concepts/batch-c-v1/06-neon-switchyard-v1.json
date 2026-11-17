@@ -1,0 +1,17 @@
+{
+  "key": "06-neon-switchyard-v1",
+  "source": "/home/micxsz/.codex/generated_images/01a1b00f-0e2a-7211-a1a5-4b35d704dc9b/exec-4f230348-b46b-4ccc-9d01-f9024f37a9a0.png",
+  "file": "docs/game-design/floors/f01-neon-heights/concepts/batch-c-v1/06-neon-switchyard-v1.png",
+  "kind": "map-concept",
+  "generatedWith": "built-in ImageGen",
+  "references": [
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/floors/f01-neon-heights/batch-b-v1/undergrid-native-art-layout.png",
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/docs/game-design/floors/f01-neon-heights/concepts/batch-b-v1/05-rainline-skybridge-v1.png",
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/monsters/families/kurogane/v1/iron-marshal/normal.webp",
+    "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/public/pawtrail-game/monsters/families/kurogane/v1/prism-gunner/normal.webp"
+  ],
+  "startedAt": "2026-11-15 16:27:40 UTC",
+  "completedAt": "2026-11-15 16:29:25 UTC",
+  "approval": "Explicit owner: Approve concept F v1 \u2014 proceed",
+  "status": "approved"
+}

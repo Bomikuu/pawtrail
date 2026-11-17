@@ -1,0 +1,44 @@
+{
+  "id": "ivory-twin-scythes-v1",
+  "reference": "/tmp/codex-clipboard-a151abfd-83da-47d8-8dad-d32fe2b90c88.png",
+  "conceptSource": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-c2a169a5-d8bd-4991-aec6-4335cdc12138.png",
+  "conceptNative": [
+    384,
+    351
+  ],
+  "textureSource": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-ded8d1e0-57ab-46b2-b170-4848e2d9fb41.png",
+  "textureTile": [
+    64,
+    64
+  ],
+  "atlas": [
+    128,
+    128
+  ],
+  "iconSources": {
+    "primary": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-76288a62-bbe9-4372-ac90-1147d60194c8.png",
+    "running": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-133ae712-d3e7-4c7d-9fcf-66c123085011.png",
+    "extend": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-785c73d4-ae8b-4fd8-9e89-9782ec69d8f8.png",
+    "special": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-083522e4-cdf4-48af-8032-cab9689f2c2a.png"
+  },
+  "iconNative": [
+    64,
+    64
+  ],
+  "filter": "nearest",
+  "model": "Thin extruded crescent, star collar, segmented pole and shared paired geometry; editable item parts",
+  "stance": "Low crescent guard; upper-body carry angles retain shared breathing and planted feet",
+  "nativePNGBytes": 108978,
+  "review": "Native art inspected; browser/gameplay review pending per owner permissions",
+  "weaponIcon": {
+    "source": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-4965d872-faa6-4147-85f9-04dbee2ff430.png",
+    "file": "weapon-icon.png",
+    "native": [
+      64,
+      64
+    ],
+    "purpose": "Equipment/selection image, separate from skill icons",
+    "processing": "Nearest-neighbor native export, crisp transparent alpha and 48-color palette",
+    "bytes": 1034
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "generationMode": "built-in image_gen",
+  "palette": [
+    "33251c",
+    "4a3324",
+    "63452e",
+    "805a36",
+    "9b6a3b",
+    "b47c40",
+    "ce9148",
+    "e8aa57",
+    "f4c778",
+    "f7dda3",
+    "fff0c8",
+    "fff8e5",
+    "504d2a",
+    "656238",
+    "77763e",
+    "898a4a",
+    "9da05c",
+    "b1b771",
+    "c6cd8a",
+    "d8dda5",
+    "985037",
+    "b56a47",
+    "ce8659",
+    "e3a776",
+    "b9aa86",
+    "cfbf9c",
+    "e5d5b2",
+    "f2e3c5",
+    "b15431",
+    "cf6d3b",
+    "e28c4b",
+    "f6b868"
+  ],
+  "postprocessing": "Alpha threshold128, silhouette crop, nearest-neighbor fitting into native cells, exact first-batch32color palette mapping without dithering, binary alpha; original sources retained.",
+  "assets": [
+    {
+      "id": "refrigerator",
+      "file": "refrigerator-housing-v1.png",
+      "source": "refrigerator-housing-v1-source.png",
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        3,
+        44,
+        26,
+        16
+      ],
+      "collisionStatus": "Proposed placement footprint, not tested in game",
+      "occupiedBounds": [
+        2,
+        6,
+        30,
+        60
+      ],
+      "sourceBounds": [
+        201,
+        452,
+        686,
+        1379
+      ],
+      "nativeColors": 20,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteMatches": true,
+      "productionReady": false,
+      "reviewStatus": "Native silhouette, cream/sage palette, top-down three-quarter perspective and crisp pixels visually reviewed; in-engine placement/art-direction approval pending"
+    },
+    {
+      "id": "stove",
+      "file": "stove-housing-v1.png",
+      "source": "stove-housing-v1-source.png",
+      "frameWidth": 32,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        16,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        3,
+        44,
+        26,
+        16
+      ],
+      "collisionStatus": "Proposed placement footprint, not tested in game",
+      "occupiedBounds": [
+        2,
+        25,
+        30,
+        60
+      ],
+      "sourceBounds": [
+        522,
+        269,
+        1014,
+        888
+      ],
+      "nativeColors": 20,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteMatches": true,
+      "productionReady": false,
+      "reviewStatus": "Native silhouette, cream/sage palette, top-down three-quarter perspective and crisp pixels visually reviewed; in-engine placement/art-direction approval pending"
+    },
+    {
+      "id": "sink-counter",
+      "file": "sink-counter-housing-v1.png",
+      "source": "sink-counter-housing-v1-source.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        4,
+        44,
+        55,
+        16
+      ],
+      "collisionStatus": "Proposed placement footprint, not tested in game",
+      "occupiedBounds": [
+        3,
+        6,
+        60,
+        60
+      ],
+      "sourceBounds": [
+        417,
+        203,
+        1117,
+        863
+      ],
+      "nativeColors": 27,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "paletteMatches": true,
+      "productionReady": false,
+      "reviewStatus": "Native silhouette, cream/sage palette, top-down three-quarter perspective and crisp pixels visually reviewed; in-engine placement/art-direction approval pending"
+    }
+  ],
+  "promptFile": "kitchen-batch-2-prompts.json",
+  "prompts": {
+    "refrigerator": "Use case: stylized-concept. Asset type: one PawTrail kitchen refrigerator sprite. Image1 STYLE REFERENCE only, Image2 scale/pixel-outline reference only. Generate one isolated small cream refrigerator, closed upper freezer and lower fridge door, warm brown handles and soft sage accents, visible shallow top surface from above, FRONT FACING top-down three-quarter orthographic classic 16bit RPG perspective, NOT isometric. Single object no other props. Pixel art with deliberate square clusters suitable native32x64 cell, rendered enlarged with crisp nearest-neighbor logical pixels, upper-left light, dark warmbrown outlines, cream highlights honeywarm shading, limited flat palette. Centered full object in transparent canvas with empty margin. No background, no glow, no ground shadow, no antialiasing, no gradients, no painterly texture, no text labels logos or watermarks. Original cozy animal-friendly housing game art, not existing game assets.",
+    "stove": "Use case: stylized-concept. Asset type: one PawTrail kitchen stove sprite. Image1 STYLE REFERENCE only; Image2 outline/scale reference only. One isolated cream stove with four small dark warmbrown cooking rings on visible top, oven door on front, tiny round knobs and a warmbrown handle, subtle sage trim. No pot, no food or otherprops. Front-facing top-down three-quarter ORTHOGRAPHIC classic farming RPG perspective, not isometric. Logical32x64 cell intended; compact square-bodied appliance occupying lower40ish pixels, feet aligned bottom. Crisp 16bit actual square pixelclusters enlarged nearest-neighbor, flat limited warm cream honeyoak sage darkbrown palette, upperleft lighting, consistent bold darkwarmbrown outline. Transparent blank background with generous margin. No cast glow, no floor shadow, no blur or antialiasing, no smooth gradients, no painterly textures, no scenery, no text/logo/watermark. Original reusable cozy housing sprite matching reference.",
+    "sink-counter": "Use case: stylized-concept. Asset type: one PawTrail kitchen sink-counter sprite. Image1 STYLE REFERENCE only, Image2 outline/scale reference only. Generate one isolated honeyoak wooden two-door sink cabinet, rectangular cream countertop, one inset basin colored warmbrown/taupe (not blue), simple arch faucet, two small warmbrown knobs. No dishes or other props. Front-facing top-down three-quarter ORTHOGRAPHIC classic farming RPG perspective, NOT isometric. Horizontal64x64 native sprite cell intended, object about58logical pixels wide and42high with visible countertop from above. Crisp deliberate16bit square pixelclusters enlarged nearest-neighbor. Upperleft lighting, dark warmbrown outlines, cream highlights honeyoak tones sage accent, limited flat colors. Centered full silhouette generous transparent margin. No background no glow no floor shadow no smooth gradients no blur/antialiasing no painterlytexture no scenery no people no labels/logos/watermarks. Original cozy reusable furniture art matching established PawTrail scale."
+  },
+  "limitations": [
+    "Static sprites only; no animations or gameplay changes.",
+    "Source glow/soft alpha removed in native exports.",
+    "Placement/collision and final art approval remain pending."
+  ],
+  "reviewFile": "kitchen-batch-2-review.png"
+}

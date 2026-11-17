@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "package": "f01-batch-b-v1",
+  "grounds": [
+    {
+      "id": "f01:undergrid-ground",
+      "label": "Undergrid",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/undergrid-ground.png",
+      "width": 1280,
+      "height": 896,
+      "reflections": [
+        [
+          470,
+          350,
+          180,
+          45
+        ],
+        [
+          970,
+          650,
+          140,
+          35
+        ],
+        [
+          650,
+          790,
+          160,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "f01:skybridge-ground",
+      "label": "Rainline Skybridge",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/skybridge-ground.png",
+      "width": 1280,
+      "height": 768,
+      "reflections": [
+        [
+          700,
+          285,
+          260,
+          25
+        ],
+        [
+          300,
+          500,
+          120,
+          22
+        ],
+        [
+          20,
+          10,
+          230,
+          40
+        ],
+        [
+          1040,
+          20,
+          200,
+          30
+        ]
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "f01:pump-array",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/pump-array.png",
+      "width": 224,
+      "height": 176,
+      "anchor": [
+        112,
+        169
+      ],
+      "motion": {
+        "kind": "fan",
+        "cycleMs": 4600,
+        "rotors": [
+          [
+            96,
+            22,
+            15,
+            8
+          ],
+          [
+            138,
+            22,
+            15,
+            8
+          ]
+        ]
+      },
+      "representation": "animated-2d"
+    },
+    {
+      "id": "f01:coolant-reservoir",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/coolant-reservoir.png",
+      "width": 176,
+      "height": 128,
+      "anchor": [
+        88,
+        122
+      ],
+      "motion": {
+        "kind": "flow",
+        "cycleMs": 6600,
+        "flow": [
+          32,
+          54,
+          118,
+          41
+        ]
+      },
+      "representation": "animated-2d"
+    },
+    {
+      "id": "f01:pipe-wall",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/pipe-wall.png",
+      "width": 320,
+      "height": 144,
+      "anchor": [
+        160,
+        138
+      ],
+      "motion": {
+        "kind": "lights",
+        "cycleMs": 7800
+      },
+      "representation": "animated-2d"
+    },
+    {
+      "id": "f01:relay",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/relay/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "motion": null,
+      "representation": "live-textured-3d"
+    },
+    {
+      "id": "f01:archive",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/archive/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "motion": null,
+      "representation": "live-textured-3d"
+    },
+    {
+      "id": "f01:supply",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/supply/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "motion": null,
+      "representation": "live-textured-3d"
+    },
+    {
+      "id": "f01:valve",
+      "file": "/pawtrail-game/floors/f01/batch-b-v1/models/valve/0.png",
+      "width": 160,
+      "height": 192,
+      "anchor": [
+        80,
+        168
+      ],
+      "motion": null,
+      "representation": "live-textured-3d"
+    },
+    {
+      "id": "f01:nyx",
+      "file": "/pawtrail-game/floors/f01/npcs/nyx/body.png",
+      "width": 48,
+      "height": 80,
+      "anchor": [
+        24,
+        78
+      ],
+      "motion": null,
+      "representation": "shared-actor-rig"
+    },
+    {
+      "id": "f01:eko",
+      "file": "/pawtrail-game/map-art/neon-heights-v1/holo-head.png",
+      "width": 160,
+      "height": 224,
+      "anchor": [
+        80,
+        218
+      ],
+      "motion": {
+        "kind": "holo-head",
+        "cycleMs": 7200,
+        "projectionBottom": 173
+      },
+      "representation": "animated-2d"
+    }
+  ],
+  "verification": "Native artwork inspected; runtime verification deferred by owner"
+}

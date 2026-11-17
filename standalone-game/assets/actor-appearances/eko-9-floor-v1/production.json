@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "id": "eko-9",
+  "projectRoot": "../../..",
+  "actors": [
+    {
+      "id": "eko-9",
+      "name": "EKO-9",
+      "modelKind": "hologram-projection",
+      "previewUrl": "http://127.0.0.1:3000/play?preview=stage&map=f01-arrival",
+      "voices": "omitted",
+      "voiceOmissionReason": "Explicitly omitted for this job by the owner",
+      "installInGame": true,
+      "illustrationName": "EKO-9",
+      "illustrationVariants": [
+        "normal"
+      ],
+      "illustrationCycleMs": 4800,
+      "portrait": {
+        "collection": "eko-9-refined-cel",
+        "poses": [
+          "front-pout",
+          "three-quarter-left",
+          "head-tilt-smile-right"
+        ],
+        "emotions": [
+          "idle",
+          "smile",
+          "happy",
+          "sad",
+          "angry",
+          "surprised"
+        ]
+      },
+      "dependencies": {
+        "model": [
+          "src/game/floors/scenery-motion.ts",
+          "public/pawtrail-game/map-art/neon-heights-v1/holo-head.png"
+        ],
+        "portrait": [
+          "public/pawtrail-game/game-assets/dialogue-portraits/eko-9-refined-cel-v1/de543c13b4e4",
+          "src/game/actor-rig/photo-portrait-renderer.ts"
+        ],
+        "illustration": [
+          "public/pawtrail-game/floors/f01/npcs/eko/illustration",
+          "src/game/creator/illustration-motion.ts",
+          "src/game/creator/illustration-assets.ts"
+        ],
+        "icon": [
+          "public/pawtrail-game/floors/f01/npcs/eko/icon.png",
+          "src/components/game/shared/character-icon.tsx"
+        ],
+        "preview": [
+          "src/game/floors/npcs.ts",
+          "src/game/stage-editor/canvas.ts",
+          "src/components/game/floor-npc-panel.tsx"
+        ],
+        "gameplay": [
+          "src/game/runtime/actors.ts",
+          "src/game/models3d/phaser-bridge.ts",
+          "src/game/stage-editor/playtest.ts",
+          "src/components/game/stage-editor.tsx"
+        ]
+      },
+      "scope": "friendly-floor-npc-phase4",
+      "portraitStyle": "Refined cel",
+      "portraitDefaultAngle": "three-quarter-left",
+      "iconAngle": "three-quarter-left",
+      "scopeOmissions": [
+        "enraged illustration and combat kit: friendly NPC, not requested",
+        "voice: deferred by approved floor plan",
+        "full hero/comparison acceptance: outside this batch",
+        "Humanoid full-body rig: EKO is the canonical anchored holographic head/shoulders and full emitter, not a walking biological actor"
+      ],
+      "representation": "existing-animated-2d-projection",
+      "illustrationStyle": "Refined cel + painterly",
+      "artApproval": "Explicit owner approved designs + Refined cel portraits"
+    }
+  ],
+  "assets": [
+    {
+      "id": "normal",
+      "path": "assets/actor-appearances/eko-9-floor-v1/normal-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "portrait-0",
+      "path": "assets/actor-appearances/eko-9-floor-v1/portrait-0-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "portrait-1",
+      "path": "assets/actor-appearances/eko-9-floor-v1/portrait-1-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "portrait-2",
+      "path": "assets/actor-appearances/eko-9-floor-v1/portrait-2-generated.png",
+      "kind": "image",
+      "alpha": true
+    },
+    {
+      "id": "icon",
+      "path": "assets/actor-appearances/eko-9-floor-v1/icon-generated.png",
+      "kind": "image",
+      "alpha": true
+    }
+  ],
+  "exports": {}
+}

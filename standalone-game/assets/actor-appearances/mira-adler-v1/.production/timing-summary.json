@@ -1,0 +1,83 @@
+{
+  "job": "mira-adler",
+  "spans": [
+    {
+      "id": "87e3ff417cf6481d9be55a99b1c0ab2c",
+      "name": "illustrations",
+      "actor": "mira-adler",
+      "kind": "stage",
+      "at": "2026-11-15T08:03:35.164944+00:00",
+      "status": "complete",
+      "elapsedMs": 617874,
+      "note": "Both illustration candidates exported; live motion review remains pending",
+      "finishedAt": "2026-11-15T08:13:53.039027+00:00"
+    },
+    {
+      "id": "6f64335850fd4dd7a43d42c78b07acc6",
+      "name": "normal",
+      "actor": "mira-adler",
+      "kind": "generation",
+      "at": "2026-11-15T08:03:35.296370+00:00",
+      "status": "complete",
+      "elapsedMs": 187212,
+      "note": "",
+      "finishedAt": "2026-11-15T08:06:42.508123+00:00"
+    },
+    {
+      "id": "4bca7fef19b2474fb910cec19b0905f1",
+      "name": "Enraged illustration generation",
+      "actor": "mira-adler",
+      "kind": "generation",
+      "at": "2026-11-15T08:06:42.705712+00:00",
+      "status": "complete",
+      "elapsedMs": 79014,
+      "note": "",
+      "finishedAt": "2026-11-15T08:08:01.719872+00:00"
+    },
+    {
+      "id": "eb4f4765a29d4ca9b149c69095092766",
+      "name": "Illustration motion and authored eyelids",
+      "actor": "mira-adler",
+      "kind": "work",
+      "at": "2026-11-15T08:08:46.842223+00:00",
+      "status": "complete",
+      "elapsedMs": 232942,
+      "note": "",
+      "finishedAt": "2026-11-15T08:12:39.783862+00:00"
+    },
+    {
+      "id": "7d7007c1ae35414598d43a8daa8f3ff3",
+      "name": "Authored illustration blink drawings",
+      "actor": "mira-adler",
+      "kind": "generation",
+      "at": "2026-11-15T08:08:57.285957+00:00",
+      "status": "complete",
+      "elapsedMs": 107967,
+      "note": "",
+      "finishedAt": "2026-11-15T08:10:45.253049+00:00"
+    },
+    {
+      "id": "7550af634c354e498d639c61e63efefc",
+      "name": "Native illustration export",
+      "actor": "mira-adler",
+      "kind": "export",
+      "at": "2026-11-15T08:11:53.152757+00:00",
+      "status": "complete",
+      "elapsedMs": 46499,
+      "note": "Asset export complete; source art inspection separate from live review",
+      "finishedAt": "2026-11-15T08:12:39.651760+00:00"
+    },
+    {
+      "id": "1e2f3447b43b4fff8095af5eb40b9fe3",
+      "name": "Dedicated compact icon after unreadable crop",
+      "actor": "mira-adler",
+      "kind": "generation",
+      "at": "2026-11-15T08:12:54.376319+00:00",
+      "status": "open — duration unknown",
+      "elapsedMs": null,
+      "note": "",
+      "finishedAt": null
+    }
+  ],
+  "note": "Durations overlap. Open/interrupted spans have no inferred duration. Stage intervals include their waits; they are not CPU or active-coding time."
+}

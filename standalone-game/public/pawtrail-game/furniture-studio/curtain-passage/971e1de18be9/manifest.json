@@ -1,0 +1,981 @@
+{
+  "version": 1,
+  "id": "curtain-passage",
+  "revision": "971e1de18be9",
+  "reference": "/assets/game/housing/tilesets/curtained-window-housing-v1.png",
+  "source": "src/game/furniture/model.ts",
+  "definition": {
+    "id": "curtain-passage",
+    "label": "Curtained opening",
+    "model": "curtain",
+    "reference": "/assets/game/housing/tilesets/curtained-window-housing-v1.png",
+    "description": "Authored 3D curtain with four facings and native animated detail.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "referenceFrame": {
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ]
+    },
+    "styles": [
+      {
+        "id": "sage",
+        "label": "Cream linen",
+        "fabric": "#f2e3c5",
+        "light": "#fff0d1",
+        "shade": "#cfbf9c",
+        "pillow": "#f6e7bc",
+        "wood": "#985037"
+      },
+      {
+        "id": "terracotta",
+        "label": "Terracotta",
+        "fabric": "#b97353",
+        "light": "#f3d5a1",
+        "shade": "#98653d",
+        "pillow": "#f4e2bb",
+        "wood": "#8c572d"
+      },
+      {
+        "id": "oat",
+        "label": "Oat",
+        "fabric": "#d6c5a2",
+        "light": "#f3d5a1",
+        "shade": "#98653d",
+        "pillow": "#a7ba7d",
+        "wood": "#8c572d"
+      }
+    ],
+    "price": 55,
+    "construction": {
+      "seconds": 60,
+      "materials": [
+        {
+          "id": "timber",
+          "label": "Timber",
+          "amount": 6,
+          "price": 3
+        },
+        {
+          "id": "fabric",
+          "label": "Fabric",
+          "amount": 4,
+          "price": 4
+        }
+      ]
+    }
+  },
+  "item": {
+    "id": "curtain-passage",
+    "label": "Curtained opening",
+    "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0.png",
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ],
+    "indicatorHeight": 60,
+    "footprint": [
+      16,
+      94,
+      64,
+      4
+    ],
+    "reaction": {
+      "kind": "sway",
+      "fps": 10,
+      "sensor": [
+        23,
+        93,
+        50,
+        6
+      ]
+    },
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          16,
+          94,
+          6,
+          4
+        ],
+        [
+          74,
+          94,
+          6,
+          4
+        ]
+      ],
+      "placement": [
+        [
+          16,
+          94,
+          64,
+          4
+        ]
+      ],
+      "approaches": [
+        [
+          48,
+          110
+        ],
+        [
+          48,
+          82
+        ]
+      ],
+      "seats": [],
+      "surfaces": [],
+      "occlusion": "base",
+      "actions": [
+        "inspect"
+      ]
+    },
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "inspect",
+    "price": 55,
+    "zones": [
+      "interior"
+    ],
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "defaultStyle": "sage",
+    "renderedViews": {
+      "0": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 60,
+        "footprint": [
+          16,
+          94,
+          64,
+          4
+        ],
+        "reaction": {
+          "kind": "sway",
+          "fps": 10,
+          "sensor": [
+            23,
+            93,
+            50,
+            6
+          ]
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              16,
+              94,
+              6,
+              4
+            ],
+            [
+              74,
+              94,
+              6,
+              4
+            ]
+          ],
+          "placement": [
+            [
+              16,
+              94,
+              64,
+              4
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              110
+            ],
+            [
+              48,
+              82
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        }
+      },
+      "90": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 70,
+        "footprint": [
+          43,
+          85,
+          10,
+          22
+        ],
+        "reaction": {
+          "kind": "sway",
+          "fps": 10,
+          "sensor": [
+            40,
+            87,
+            16,
+            18
+          ]
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              43,
+              85,
+              10,
+              2
+            ],
+            [
+              43,
+              105,
+              10,
+              2
+            ]
+          ],
+          "placement": [
+            [
+              43,
+              85,
+              10,
+              22
+            ]
+          ],
+          "approaches": [
+            [
+              10,
+              96
+            ],
+            [
+              86,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        }
+      },
+      "180": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 60,
+        "footprint": [
+          16,
+          94,
+          64,
+          4
+        ],
+        "reaction": {
+          "kind": "sway",
+          "fps": 10,
+          "sensor": [
+            23,
+            93,
+            50,
+            6
+          ]
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              74,
+              94,
+              6,
+              4
+            ],
+            [
+              16,
+              94,
+              6,
+              4
+            ]
+          ],
+          "placement": [
+            [
+              16,
+              94,
+              64,
+              4
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              82
+            ],
+            [
+              48,
+              110
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        }
+      },
+      "270": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 70,
+        "footprint": [
+          43,
+          85,
+          10,
+          22
+        ],
+        "reaction": {
+          "kind": "sway",
+          "fps": 10,
+          "sensor": [
+            40,
+            87,
+            16,
+            18
+          ]
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              43,
+              105,
+              10,
+              2
+            ],
+            [
+              43,
+              85,
+              10,
+              2
+            ]
+          ],
+          "placement": [
+            [
+              43,
+              85,
+              10,
+              22
+            ]
+          ],
+          "approaches": [
+            [
+              86,
+              96
+            ],
+            [
+              10,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "inspect"
+          ]
+        }
+      }
+    },
+    "styles": [
+      {
+        "id": "sage",
+        "label": "Cream linen",
+        "color": "#f2e3c5",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-0-motion-8-front.png"
+              }
+            ]
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-90-motion-8-front.png"
+              }
+            ]
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-180-motion-8-front.png"
+              }
+            ]
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/sage-270-motion-8-front.png"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "terracotta",
+        "label": "Terracotta",
+        "color": "#b97353",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-0-motion-8-front.png"
+              }
+            ]
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-90-motion-8-front.png"
+              }
+            ]
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-180-motion-8-front.png"
+              }
+            ]
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/terracotta-270-motion-8-front.png"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "oat",
+        "label": "Oat",
+        "color": "#d6c5a2",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-0-motion-8-front.png"
+              }
+            ]
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-90-motion-8-front.png"
+              }
+            ]
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-180-motion-8-front.png"
+              }
+            ]
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/curtain-passage/971e1de18be9/oat-270-motion-8-front.png"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "construction": {
+      "seconds": 60,
+      "materials": [
+        {
+          "id": "timber",
+          "label": "Timber",
+          "amount": 6,
+          "price": 3
+        },
+        {
+          "id": "fabric",
+          "label": "Fabric",
+          "amount": 4,
+          "price": 4
+        }
+      ]
+    }
+  },
+  "frame": {
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ]
+  },
+  "filter": "nearest",
+  "note": "Reference-guided authored geometry; explicit projected contacts and native foreground layers."
+}

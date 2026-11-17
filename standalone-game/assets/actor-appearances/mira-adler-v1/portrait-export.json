@@ -1,0 +1,43 @@
+{
+  "id": "mira-adler-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "mira-adler",
+  "characterName": "Mira Adler",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    14,
+    90,
+    105
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/mira-adler-refined-cel-v1/1a0ba1086171",
+  "revision": "1a0ba1086171",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 279067,
+  "referenceBytes": 12465,
+  "runtimeBytes": 266602,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

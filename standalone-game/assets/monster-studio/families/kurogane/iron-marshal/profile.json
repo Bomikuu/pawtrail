@@ -1,0 +1,62 @@
+{
+  "familyId": "kurogane",
+  "parentBoss": "kurogane-neon-bastion",
+  "id": "iron-marshal",
+  "name": "Iron Marshal",
+  "title": "Switchyard Command Unit",
+  "tier": "mini-boss",
+  "row": 0,
+  "enragedRow": 1,
+  "maxHp": 3000,
+  "hpPerBar": 500,
+  "enrageAt": 0.3,
+  "height": 3.4,
+  "radius": 0.95,
+  "speed": 1.35,
+  "hover": 0,
+  "armor": 0.8,
+  "weakMultiplier": 1.5,
+  "biography": "A heavy command robot with a cyan riot shield coordinates the smaller switchyard machines. Its enrage opens the magenta reactor vents and accelerates both firing patterns. Decorative shoulder emitters are part of its authored silhouette; this mini-boss uses recovery armor rather than the parent’s destructible-funnel gate.",
+  "weakness": "Counterattack after either skill for ×1.5 damage; armor otherwise reduces damage to ×0.8.",
+  "temperament": "Programmed perimeter guardian",
+  "origin": "The Neon Switchyard, an original fictional PawTrail location",
+  "sounds": {
+    "source": "shared item/contact audio",
+    "dedicatedVocals": "not generated"
+  },
+  "skills": [
+    {
+      "id": "riot-sweep",
+      "name": "Riot Sweep",
+      "shape": "sector",
+      "outer": 3.2,
+      "inner": 0,
+      "angle": 140,
+      "target": "self",
+      "damage": 23,
+      "windup": 1400,
+      "active": 380,
+      "recovery": 950,
+      "cooldown": 6500,
+      "description": "The shield arm marks a broad forward wedge. Circle behind the command unit."
+    },
+    {
+      "id": "siege-lock",
+      "name": "Siege Lock",
+      "shape": "circle",
+      "outer": 2,
+      "inner": 0,
+      "angle": 360,
+      "target": "player",
+      "damage": 25,
+      "windup": 1650,
+      "active": 380,
+      "recovery": 950,
+      "cooldown": 9800,
+      "description": "A shoulder emitter locks a blast disk at your last position. Leave it before contact."
+    }
+  ],
+  "scope": "local-fictional-combat-preview",
+  "representation": "native-authored-2d-frames",
+  "review": "Firefox 2026-11-12: model/pose scale, Riot Sweep 23 HP, Siege Lock 25 HP and 900-HP enrage art/cut-in observed. Full defeat and natural phase threshold unreviewed."
+}

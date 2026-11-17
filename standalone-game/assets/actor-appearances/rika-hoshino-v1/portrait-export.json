@@ -1,0 +1,43 @@
+{
+  "id": "rika-hoshino-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "rika-hoshino",
+  "characterName": "Rika Hoshino",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    26,
+    90,
+    93
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/rika-hoshino-refined-cel-v1/0e239e215acc",
+  "revision": "0e239e215acc",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 202880,
+  "referenceBytes": 10133,
+  "runtimeBytes": 192747,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

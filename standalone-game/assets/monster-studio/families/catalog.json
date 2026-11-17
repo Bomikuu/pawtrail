@@ -1,0 +1,1219 @@
+{
+  "version": 1,
+  "families": [
+    {
+      "id": "vaelrith",
+      "name": "Vaelrith",
+      "bossId": "vaelrith-riftbound",
+      "bossQuery": "",
+      "palette": {
+        "floor": "#6e637b",
+        "backdrop": "#282436",
+        "path": "#8a7e94",
+        "grid": "#a193ac"
+      },
+      "creatures": [
+        {
+          "id": "gloamwarden",
+          "name": "Gloamwarden",
+          "title": "The Lesser Rift Guardian",
+          "tier": "mini-boss",
+          "row": 0,
+          "enragedRow": 1,
+          "maxHp": 1500,
+          "hpPerBar": 300,
+          "enrageAt": 0.3,
+          "height": 2.5,
+          "radius": 0.72,
+          "speed": 1.6,
+          "hover": 0,
+          "armor": 0.8,
+          "weakMultiplier": 1.5,
+          "biography": "Two young drake heads share the same cracked shrine armor. Gloamwarden guards the paths into Vaelrith’s seal and recoils when its paired breath ends.",
+          "weakness": "Stone plates soften ordinary hits; both throats are exposed after either skill.",
+          "temperament": "Territorial guardian",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "rift-fangs",
+              "name": "Twin Rift Fangs",
+              "shape": "sector",
+              "outer": 2.8,
+              "inner": 0,
+              "angle": 120,
+              "target": "self",
+              "damage": 20,
+              "windup": 950,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 5400,
+              "description": "Both heads sweep a locked violet sector. Leave the marked wedge or circle behind the drake."
+            },
+            {
+              "id": "rift-rupture",
+              "name": "Rift Rupture",
+              "shape": "circle",
+              "outer": 1.65,
+              "inner": 0,
+              "angle": 105,
+              "target": "player",
+              "damage": 24,
+              "windup": 1250,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 8500,
+              "description": "A rupture locks onto your ground position. Move away before the fissure opens."
+            }
+          ]
+        },
+        {
+          "id": "riftling",
+          "name": "Riftling",
+          "title": "Violet Hatchling",
+          "tier": "normal",
+          "row": 2,
+          "enragedRow": null,
+          "maxHp": 260,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.95,
+          "radius": 0.3,
+          "speed": 1.9,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A violet hatchling drawn to the warmth of the broken seal. Its short horns glow just before it snaps.",
+          "weakness": "Step around its short bite and counterattack during recovery.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "rift-snap",
+              "name": "Rift Snap",
+              "shape": "sector",
+              "outer": 1.35,
+              "inner": 0,
+              "angle": 85,
+              "target": "self",
+              "damage": 10,
+              "windup": 850,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 3500,
+              "description": "A small forward bite; step behind its horns."
+            }
+          ]
+        },
+        {
+          "id": "shardback",
+          "name": "Shardback",
+          "title": "Crystal-Armored Crawler",
+          "tier": "normal",
+          "row": 3,
+          "enragedRow": null,
+          "maxHp": 360,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.85,
+          "radius": 0.38,
+          "speed": 1.25,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A low stone-backed reptile that nests among fragments of Vaelrith’s shattered shrine.",
+          "weakness": "Its crystal burst leaves the soft underside exposed.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "shard-pulse",
+              "name": "Shard Pulse",
+              "shape": "circle",
+              "outer": 1.6,
+              "inner": 0,
+              "angle": 105,
+              "target": "self",
+              "damage": 12,
+              "windup": 1150,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 4800,
+              "description": "The crystal shell pulses in a marked circle. Leave its edge before the burst."
+            }
+          ]
+        },
+        {
+          "id": "ashwing",
+          "name": "Ashwing",
+          "title": "Rift-Cinder Flier",
+          "tier": "normal",
+          "row": 4,
+          "enragedRow": null,
+          "maxHp": 220,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 1.05,
+          "radius": 0.3,
+          "speed": 2.15,
+          "hover": 0.18,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A small winged drake that carries luminous ash between the seal’s ruined pillars.",
+          "weakness": "The flier drops within sword reach after its dive.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "ash-dive",
+              "name": "Ash Dive",
+              "shape": "circle",
+              "outer": 1.1,
+              "inner": 0,
+              "angle": 105,
+              "target": "player",
+              "damage": 11,
+              "windup": 1000,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 4100,
+              "description": "A dive marks your last location; keep moving to avoid the contact."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kaedros",
+      "name": "Kaedros",
+      "bossId": "kaedros-embermaw",
+      "bossQuery": "kaedros",
+      "palette": {
+        "floor": "#829b63",
+        "backdrop": "#304c53",
+        "path": "#c4b77e",
+        "grid": "#9da878"
+      },
+      "creatures": [
+        {
+          "id": "cindervane",
+          "name": "Cindervane",
+          "title": "The Young Embermaw",
+          "tier": "mini-boss",
+          "row": 0,
+          "enragedRow": 1,
+          "maxHp": 1800,
+          "hpPerBar": 300,
+          "enrageAt": 0.3,
+          "height": 2.65,
+          "radius": 0.8,
+          "speed": 1.5,
+          "hover": 0,
+          "armor": 0.8,
+          "weakMultiplier": 1.5,
+          "biography": "A two-headed juvenile hydra patrols the volcanic riverbanks beneath Kaedros’s watch. It overcommits both necks when breathing fire.",
+          "weakness": "Its throat scales open after either attack; ordinary armored hits deal less damage.",
+          "temperament": "Territorial guardian",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "forked-embers",
+              "name": "Forked Embers",
+              "shape": "sector",
+              "outer": 3.0,
+              "inner": 0,
+              "angle": 135,
+              "target": "self",
+              "damage": 22,
+              "windup": 1200,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 6200,
+              "description": "Two heads breathe across a locked sector. Dodge behind the necks or leave the marked edge."
+            },
+            {
+              "id": "cinder-ring",
+              "name": "Cinder Ring",
+              "shape": "ring",
+              "outer": 3.4,
+              "inner": 1.05,
+              "angle": 105,
+              "target": "self",
+              "damage": 26,
+              "windup": 1450,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 9000,
+              "description": "An ember ring blooms around the hydra. The clear center and space outside the ring stay safe."
+            }
+          ]
+        },
+        {
+          "id": "ember-whelp",
+          "name": "Ember Whelp",
+          "title": "Riverbank Hatchling",
+          "tier": "normal",
+          "row": 2,
+          "enragedRow": null,
+          "maxHp": 280,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 1.0,
+          "radius": 0.32,
+          "speed": 1.8,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A green hatchling with amber cheeks practices small bursts of breath beside the warm river.",
+          "weakness": "Its cheek glow gives the short breath away.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "warm-breath",
+              "name": "Warm Breath",
+              "shape": "sector",
+              "outer": 1.7,
+              "inner": 0,
+              "angle": 90,
+              "target": "self",
+              "damage": 11,
+              "windup": 950,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 3700,
+              "description": "A short cone of hot breath; move to the side."
+            }
+          ]
+        },
+        {
+          "id": "cinder-imp",
+          "name": "Cinder Imp",
+          "title": "Scurrying Emberling",
+          "tier": "normal",
+          "row": 3,
+          "enragedRow": null,
+          "maxHp": 240,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 1.05,
+          "radius": 0.28,
+          "speed": 2.3,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A quick upright lizard darts between cooled lava stones, leaving tiny embers in its wake.",
+          "weakness": "It pauses to recover after striking the marked ground.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "cinder-pop",
+              "name": "Cinder Pop",
+              "shape": "circle",
+              "outer": 1.05,
+              "inner": 0,
+              "angle": 105,
+              "target": "player",
+              "damage": 10,
+              "windup": 900,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 3400,
+              "description": "An ember pops at your marked position. Keep walking."
+            }
+          ]
+        },
+        {
+          "id": "coalback",
+          "name": "Coalback",
+          "title": "Smoldering Plateback",
+          "tier": "normal",
+          "row": 4,
+          "enragedRow": null,
+          "maxHp": 420,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.9,
+          "radius": 0.42,
+          "speed": 1.15,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "This broad plated reptile stores riverbank heat beneath charcoal armor and releases it when startled.",
+          "weakness": "Back away from the shell, then strike during its cooling pause.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "coal-burst",
+              "name": "Coal Burst",
+              "shape": "ring",
+              "outer": 1.9,
+              "inner": 0.6,
+              "angle": 105,
+              "target": "self",
+              "damage": 13,
+              "windup": 1300,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 5000,
+              "description": "Heat escapes around the shell; the tiny inner circle is safe."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morvane",
+      "name": "Morvane",
+      "bossId": "morvane-ossuary-serpent",
+      "bossQuery": "morvane",
+      "palette": {
+        "floor": "#766a70",
+        "backdrop": "#29232e",
+        "path": "#968b88",
+        "grid": "#8f8288"
+      },
+      "creatures": [
+        {
+          "id": "ribwarden",
+          "name": "Ribwarden",
+          "title": "Keeper of the Lesser Ossuary",
+          "tier": "mini-boss",
+          "row": 0,
+          "enragedRow": 1,
+          "maxHp": 1800,
+          "hpPerBar": 300,
+          "enrageAt": 0.3,
+          "height": 2.7,
+          "radius": 0.85,
+          "speed": 1.65,
+          "hover": 0,
+          "armor": 0.8,
+          "weakMultiplier": 1.5,
+          "biography": "An armored ossuary crawler keeps a crown of old bones balanced over its segmented ribs. Its heavy bladed arms echo Morvane’s long silhouette.",
+          "weakness": "The skull binding is exposed when the blade arms recover.",
+          "temperament": "Territorial guardian",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "bone-cleave",
+              "name": "Bone Cleave",
+              "shape": "sector",
+              "outer": 2.9,
+              "inner": 0,
+              "angle": 145,
+              "target": "self",
+              "damage": 23,
+              "windup": 1150,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 5900,
+              "description": "The paired blade arms rake a wide sector. Get behind the crowned skull."
+            },
+            {
+              "id": "marrow-eruption",
+              "name": "Marrow Eruption",
+              "shape": "circle",
+              "outer": 1.8,
+              "inner": 0,
+              "angle": 105,
+              "target": "player",
+              "damage": 25,
+              "windup": 1400,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 8200,
+              "description": "A patch of bone spikes locks under you. Leave its outline before the eruption."
+            }
+          ]
+        },
+        {
+          "id": "bone-crawler",
+          "name": "Bone Crawler",
+          "title": "Lesser Rib Crawler",
+          "tier": "normal",
+          "row": 2,
+          "enragedRow": null,
+          "maxHp": 300,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.8,
+          "radius": 0.34,
+          "speed": 1.95,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A compact procession of ribs and little bony legs follows the vibrations of living footsteps.",
+          "weakness": "Its low skull is vulnerable after a forward bite.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "rib-bite",
+              "name": "Rib Bite",
+              "shape": "sector",
+              "outer": 1.45,
+              "inner": 0,
+              "angle": 95,
+              "target": "self",
+              "damage": 11,
+              "windup": 900,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 3800,
+              "description": "A short snapping bite; circle behind the skull."
+            }
+          ]
+        },
+        {
+          "id": "skull-skitter",
+          "name": "Skull Skitter",
+          "title": "Eight-Legged Ossuary Scout",
+          "tier": "normal",
+          "row": 3,
+          "enragedRow": null,
+          "maxHp": 240,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.85,
+          "radius": 0.32,
+          "speed": 2.4,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A broad skull scuttles on eight mismatched bone legs, scouting gaps in the forgotten ossuary.",
+          "weakness": "It stays still briefly after the pounce.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "skull-pounce",
+              "name": "Skull Pounce",
+              "shape": "circle",
+              "outer": 1.15,
+              "inner": 0,
+              "angle": 105,
+              "target": "player",
+              "damage": 12,
+              "windup": 900,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 3600,
+              "description": "The skitter marks your position before pouncing. Leave the marked circle."
+            }
+          ]
+        },
+        {
+          "id": "grave-adder",
+          "name": "Grave Adder",
+          "title": "Marrow-Coil Adder",
+          "tier": "normal",
+          "row": 4,
+          "enragedRow": null,
+          "maxHp": 280,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.9,
+          "radius": 0.34,
+          "speed": 1.6,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A short coil of ivory vertebrae rests among the larger serpent’s discarded armor. Red eyes brighten before a tail lash.",
+          "weakness": "Its skull turns slowly through the tail-lash recovery.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "grave-lash",
+              "name": "Grave Lash",
+              "shape": "sector",
+              "outer": 1.8,
+              "inner": 0,
+              "angle": 155,
+              "target": "self",
+              "damage": 13,
+              "windup": 1100,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 4300,
+              "description": "A broad tail lash covers the wedge in front of the coil."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "bossId": "vesper-hollow-reaper",
+      "bossQuery": "vesper",
+      "palette": {
+        "floor": "#757987",
+        "backdrop": "#282a3c",
+        "path": "#8b8a99",
+        "grid": "#9393a5"
+      },
+      "creatures": [
+        {
+          "id": "bellwarden",
+          "name": "Bellwarden",
+          "title": "Keeper of the Hollow Chime",
+          "tier": "mini-boss",
+          "row": 0,
+          "enragedRow": 1,
+          "maxHp": 1500,
+          "hpPerBar": 300,
+          "enrageAt": 0.3,
+          "height": 2.45,
+          "radius": 0.66,
+          "speed": 1.75,
+          "hover": 0.22,
+          "armor": 0.8,
+          "weakMultiplier": 1.5,
+          "biography": "A bronze bell hangs over this lesser reaper’s skeletal binding. It drifts through the chapel’s lower halls, gathering echoes for Vesper.",
+          "weakness": "Its binding is exposed after the heavy scythe or bell ring settles.",
+          "temperament": "Territorial guardian",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "bell-reap",
+              "name": "Bell Reap",
+              "shape": "sector",
+              "outer": 2.9,
+              "inner": 0,
+              "angle": 145,
+              "target": "self",
+              "damage": 22,
+              "windup": 1200,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 5900,
+              "description": "The broad silver scythe sweeps a locked sector. Move behind the keeper."
+            },
+            {
+              "id": "hollow-chime",
+              "name": "Hollow Chime",
+              "shape": "ring",
+              "outer": 3.6,
+              "inner": 1.15,
+              "angle": 105,
+              "target": "self",
+              "damage": 26,
+              "windup": 1550,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 9000,
+              "description": "A ringing annulus spreads from the bell. Stay in the clear center or outside its edge."
+            }
+          ]
+        },
+        {
+          "id": "lantern-wisp",
+          "name": "Lantern Wisp",
+          "title": "Lost Chapel Light",
+          "tier": "normal",
+          "row": 2,
+          "enragedRow": null,
+          "maxHp": 220,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.85,
+          "radius": 0.25,
+          "speed": 1.7,
+          "hover": 0.16,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A pale skull carries a small brass lantern through the chapel’s abandoned passages. Its green flame bends toward nearby footsteps.",
+          "weakness": "Its lantern cast leaves it within sword reach.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "lantern-flare",
+              "name": "Lantern Flare",
+              "shape": "circle",
+              "outer": 1.25,
+              "inner": 0,
+              "angle": 105,
+              "target": "player",
+              "damage": 10,
+              "windup": 1050,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 4000,
+              "description": "A lantern flare marks your last position; step away."
+            }
+          ]
+        },
+        {
+          "id": "huskling",
+          "name": "Huskling",
+          "title": "Talisman-Bound Shade",
+          "tier": "normal",
+          "row": 3,
+          "enragedRow": null,
+          "maxHp": 250,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.95,
+          "radius": 0.28,
+          "speed": 1.8,
+          "hover": 0.12,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A small indigo hood surrounds a skull and a fluttering red talisman. It gathers near the reaper’s bell.",
+          "weakness": "The talisman dims after a grasp, creating a recovery opening.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "hollow-grasp",
+              "name": "Hollow Grasp",
+              "shape": "sector",
+              "outer": 1.5,
+              "inner": 0,
+              "angle": 100,
+              "target": "self",
+              "damage": 11,
+              "windup": 1000,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 3700,
+              "description": "Two skeletal hands reach through a short wedge. Move behind the hood."
+            }
+          ]
+        },
+        {
+          "id": "sickle-shade",
+          "name": "Sickle Shade",
+          "title": "Lesser Harvest Shade",
+          "tier": "normal",
+          "row": 4,
+          "enragedRow": null,
+          "maxHp": 300,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 1.1,
+          "radius": 0.3,
+          "speed": 1.95,
+          "hover": 0.14,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A plum-robed shade carries a short silver sickle, imitating Vesper’s sweeping movements on a smaller scale.",
+          "weakness": "The sickle has a readable windup and a long recovery.",
+          "temperament": "Cautious pack hunter",
+          "origin": "Original PawTrail fictional creature",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "little-reap",
+              "name": "Little Reap",
+              "shape": "sector",
+              "outer": 1.85,
+              "inner": 0,
+              "angle": 140,
+              "target": "self",
+              "damage": 13,
+              "windup": 1150,
+              "active": 360,
+              "recovery": 800,
+              "cooldown": 4300,
+              "description": "The short sickle sweeps a wide forward wedge; leave its edge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "solvaris",
+      "name": "Solvaris",
+      "bossId": "solvaris-solar-arbiter",
+      "bossQuery": "solvaris",
+      "palette": {
+        "floor": "#8c8170",
+        "backdrop": "#252439",
+        "path": "#b6a57f",
+        "grid": "#baab8f"
+      },
+      "creatures": [
+        {
+          "id": "dawnwarden",
+          "name": "Dawnwarden",
+          "title": "Herald of the Solar Mandate",
+          "tier": "mini-boss",
+          "row": 0,
+          "enragedRow": 1,
+          "maxHp": 2400,
+          "hpPerBar": 300,
+          "enrageAt": 0.3,
+          "height": 3.1,
+          "radius": 0.85,
+          "speed": 1.55,
+          "hover": 0.1,
+          "armor": 0.8,
+          "weakMultiplier": 1.5,
+          "biography": "A horn-masked herald tends the lower terraces of Solvaris’s observatory. Its smaller golden halo answers the same celestial order, but its hands reveal vulnerable seals after every edict.",
+          "weakness": "Counterattack during the edict’s recovery; ordinary armored hits deal less damage.",
+          "temperament": "Solemn guardian",
+          "origin": "The Sunken Orrery, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "dawn-edict",
+              "name": "Dawn Edict",
+              "shape": "sector",
+              "outer": 3.5,
+              "inner": 0,
+              "angle": 135,
+              "target": "self",
+              "damage": 24,
+              "windup": 1250,
+              "active": 360,
+              "recovery": 850,
+              "cooldown": 6500,
+              "description": "A broad golden hand-sweep locks a forward wedge. Circle behind the herald."
+            },
+            {
+              "id": "sanctum-ring",
+              "name": "Sanctum Ring",
+              "shape": "ring",
+              "outer": 4.2,
+              "inner": 1.3,
+              "angle": 110,
+              "target": "self",
+              "damage": 28,
+              "windup": 1550,
+              "active": 360,
+              "recovery": 850,
+              "cooldown": 9400,
+              "description": "The halo sends out a marked annulus. Its clear center and outer edge stay safe."
+            }
+          ],
+          "review": "Firefox 2026-11-12: corrected artwork loaded; movement/start/pause, Dawn Edict 24 HP and Sanctum Ring 28 HP contact, 720-HP enrage rehearsal and reset observed. Full defeat unreviewed."
+        },
+        {
+          "id": "halo-acolyte",
+          "name": "Halo Acolyte",
+          "title": "Keeper of the Small Sun",
+          "tier": "normal",
+          "row": 2,
+          "enragedRow": null,
+          "maxHp": 320,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 1.05,
+          "radius": 0.3,
+          "speed": 1.8,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A small ivory horn-mask peers from a red-and-cream robe. The acolyte carries a little halo-disc that marks intruders for a measured flare.",
+          "weakness": "Keep moving out of the disc’s ground mark, then strike while it dims.",
+          "temperament": "Territorial observatory sentinel",
+          "origin": "The Sunken Orrery, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "halo-flare",
+              "name": "Halo Flare",
+              "shape": "circle",
+              "outer": 1.35,
+              "inner": 0,
+              "angle": 110,
+              "target": "player",
+              "damage": 12,
+              "windup": 1050,
+              "active": 360,
+              "recovery": 850,
+              "cooldown": 4300,
+              "description": "A small solar flare locks onto your ground position. Leave the circle."
+            }
+          ],
+          "review": "Firefox 2026-11-12: corrected artwork loaded; start/pause and Halo Flare 12 HP contact observed. Full fight unreviewed."
+        },
+        {
+          "id": "gilded-sentinel",
+          "name": "Gilded Sentinel",
+          "title": "Orrery Plate Guard",
+          "tier": "normal",
+          "row": 3,
+          "enragedRow": null,
+          "maxHp": 420,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 1.15,
+          "radius": 0.42,
+          "speed": 1.3,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "An ivory-and-gold construct keeps silent watch beneath broad shoulder plates. A single dark face slit brightens before its heavy fist falls.",
+          "weakness": "Dodge the frontal fist, then counterattack during its heavy recovery.",
+          "temperament": "Territorial observatory sentinel",
+          "origin": "The Sunken Orrery, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "gilded-slam",
+              "name": "Gilded Slam",
+              "shape": "sector",
+              "outer": 2.0,
+              "inner": 0,
+              "angle": 110,
+              "target": "self",
+              "damage": 14,
+              "windup": 1250,
+              "active": 360,
+              "recovery": 850,
+              "cooldown": 4700,
+              "description": "A heavy fist covers the forward wedge. Move around its side."
+            }
+          ],
+          "review": "Firefox 2026-11-12: corrected artwork loaded, started, paused and captured. Full attack/contact/defeat sequence unreviewed."
+        },
+        {
+          "id": "sun-mote",
+          "name": "Sun Mote",
+          "title": "Ribbon-Tailed Solar Wisp",
+          "tier": "normal",
+          "row": 4,
+          "enragedRow": null,
+          "maxHp": 260,
+          "hpPerBar": 300,
+          "enrageAt": 0,
+          "height": 0.85,
+          "radius": 0.25,
+          "speed": 2.0,
+          "hover": 0.2,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A faceted ivory core floats inside eight golden rays. Two red ribbons trail behind this small remnant of the broken celestial mechanism.",
+          "weakness": "Its pulsing rays leave a small safe center and a recovery opening.",
+          "temperament": "Territorial observatory sentinel",
+          "origin": "The Sunken Orrery, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "mote-pulse",
+              "name": "Mote Pulse",
+              "shape": "ring",
+              "outer": 1.9,
+              "inner": 0.6,
+              "angle": 110,
+              "target": "self",
+              "damage": 11,
+              "windup": 1100,
+              "active": 360,
+              "recovery": 850,
+              "cooldown": 4100,
+              "description": "A golden pulse forms around the core. Stand in the clear center or outside its rim."
+            }
+          ],
+          "review": "Firefox 2026-11-12: corrected artwork loaded, started, paused and captured. Full attack/contact/defeat sequence unreviewed."
+        }
+      ],
+      "sourceRows": [
+        0,
+        256,
+        541,
+        775,
+        999,
+        1286
+      ]
+    },
+    {
+      "id": "kurogane",
+      "name": "Kurogane",
+      "bossId": "kurogane-neon-bastion",
+      "bossQuery": "kurogane",
+      "palette": {
+        "floor": "#344451",
+        "backdrop": "#181e30",
+        "path": "#46586a",
+        "grid": "#678397"
+      },
+      "sourceRows": [
+        0,
+        258,
+        532,
+        729,
+        1006,
+        1224
+      ],
+      "creatures": [
+        {
+          "id": "iron-marshal",
+          "name": "Iron Marshal",
+          "title": "Switchyard Command Unit",
+          "tier": "mini-boss",
+          "row": 0,
+          "enragedRow": 1,
+          "maxHp": 3000,
+          "hpPerBar": 500,
+          "enrageAt": 0.3,
+          "height": 3.4,
+          "radius": 0.95,
+          "speed": 1.35,
+          "hover": 0,
+          "armor": 0.8,
+          "weakMultiplier": 1.5,
+          "biography": "A heavy command robot with a cyan riot shield coordinates the smaller switchyard machines. Its enrage opens the magenta reactor vents and accelerates both firing patterns. Decorative shoulder emitters are part of its authored silhouette; this mini-boss uses recovery armor rather than the parent’s destructible-funnel gate.",
+          "weakness": "Counterattack after either skill for ×1.5 damage; armor otherwise reduces damage to ×0.8.",
+          "temperament": "Programmed perimeter guardian",
+          "origin": "The Neon Switchyard, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "riot-sweep",
+              "name": "Riot Sweep",
+              "shape": "sector",
+              "outer": 3.2,
+              "inner": 0,
+              "angle": 140,
+              "target": "self",
+              "damage": 23,
+              "windup": 1400,
+              "active": 380,
+              "recovery": 950,
+              "cooldown": 6500,
+              "description": "The shield arm marks a broad forward wedge. Circle behind the command unit."
+            },
+            {
+              "id": "siege-lock",
+              "name": "Siege Lock",
+              "shape": "circle",
+              "outer": 2,
+              "inner": 0,
+              "angle": 360,
+              "target": "player",
+              "damage": 25,
+              "windup": 1650,
+              "active": 380,
+              "recovery": 950,
+              "cooldown": 9800,
+              "description": "A shoulder emitter locks a blast disk at your last position. Leave it before contact."
+            }
+          ],
+          "scope": "local-fictional-combat-preview",
+          "representation": "native-authored-2d-frames",
+          "review": "Firefox 2026-11-12: model/pose scale, Riot Sweep 23 HP, Siege Lock 25 HP and 900-HP enrage art/cut-in observed. Full defeat and natural phase threshold unreviewed."
+        },
+        {
+          "id": "rivet-hound",
+          "name": "Rivet Hound",
+          "title": "Quadruped Pursuit Unit",
+          "tier": "normal",
+          "row": 2,
+          "enragedRow": null,
+          "maxHp": 360,
+          "hpPerBar": 360,
+          "enrageAt": 0,
+          "height": 1.05,
+          "radius": 0.45,
+          "speed": 2.05,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A low four-legged machine tracks intruders through the power yard using a cyan jaw sensor.",
+          "weakness": "Sidestep its committed jaw lunge, then strike during recovery.",
+          "temperament": "Programmed perimeter guardian",
+          "origin": "The Neon Switchyard, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "rivet-lunge",
+              "name": "Rivet Lunge",
+              "shape": "sector",
+              "outer": 1.9,
+              "inner": 0,
+              "angle": 80,
+              "target": "self",
+              "damage": 12,
+              "windup": 950,
+              "active": 380,
+              "recovery": 950,
+              "cooldown": 4700,
+              "description": "The hound lowers its armored jaw and locks a short forward lunge. Sidestep the wedge."
+            }
+          ],
+          "scope": "local-fictional-combat-preview",
+          "representation": "native-authored-2d-frames",
+          "review": "Firefox 2026-11-12: model, movement, Rivet Lunge 12 HP, accepted sword damage and zero-HP defeat observed."
+        },
+        {
+          "id": "prism-gunner",
+          "name": "Prism Gunner",
+          "title": "Rail Security Unit",
+          "tier": "normal",
+          "row": 3,
+          "enragedRow": null,
+          "maxHp": 400,
+          "hpPerBar": 400,
+          "enrageAt": 0,
+          "height": 1.4,
+          "radius": 0.48,
+          "speed": 1.1,
+          "hover": 0,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A slender security robot carries a prism emitter rifle; its fixed-ground firing solution rewards moving away from the marker.",
+          "weakness": "Leave its marked shot, then close the distance during recovery.",
+          "temperament": "Programmed perimeter guardian",
+          "origin": "The Neon Switchyard, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "prism-mark",
+              "name": "Prism Mark",
+              "shape": "circle",
+              "outer": 1.4,
+              "inner": 0,
+              "angle": 360,
+              "target": "player",
+              "damage": 14,
+              "windup": 1400,
+              "active": 380,
+              "recovery": 950,
+              "cooldown": 5700,
+              "description": "A rifle emitter marks a single blast disk. Keep moving after the position locks."
+            }
+          ],
+          "scope": "local-fictional-combat-preview",
+          "representation": "native-authored-2d-frames",
+          "review": "Firefox 2026-11-12: model, movement and Prism Mark 14 HP contact observed; full defeat unreviewed."
+        },
+        {
+          "id": "arc-wisp",
+          "name": "Arc Wisp",
+          "title": "Electrical Service Drone",
+          "tier": "normal",
+          "row": 4,
+          "enragedRow": null,
+          "maxHp": 280,
+          "hpPerBar": 280,
+          "enrageAt": 0,
+          "height": 0.9,
+          "radius": 0.45,
+          "speed": 1.55,
+          "hover": 0.24,
+          "armor": 1,
+          "weakMultiplier": 1.5,
+          "biography": "A compact round service drone with four cyan blades discharges a defensive electrical annulus when approached.",
+          "weakness": "Stay inside the clear center or outside its ring, then attack as it cools down.",
+          "temperament": "Programmed perimeter guardian",
+          "origin": "The Neon Switchyard, an original fictional PawTrail location",
+          "sounds": {
+            "source": "shared item/contact audio",
+            "dedicatedVocals": "not generated"
+          },
+          "skills": [
+            {
+              "id": "arc-pulse",
+              "name": "Arc Pulse",
+              "shape": "ring",
+              "outer": 2,
+              "inner": 0.55,
+              "angle": 360,
+              "target": "self",
+              "damage": 11,
+              "windup": 1200,
+              "active": 380,
+              "recovery": 950,
+              "cooldown": 5300,
+              "description": "The drone charges an electrical ring. Its clear center and outside edge remain safe."
+            }
+          ],
+          "scope": "local-fictional-combat-preview",
+          "representation": "native-authored-2d-frames",
+          "review": "Firefox 2026-11-12: model, hovering movement and Arc Pulse 11 HP contact observed; full defeat unreviewed."
+        }
+      ]
+    }
+  ]
+}

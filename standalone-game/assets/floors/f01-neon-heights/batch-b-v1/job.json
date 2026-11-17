@@ -1,0 +1,104 @@
+{
+  "id": "f01-batch-b-v1",
+  "status": "authored_installed_verification_pending",
+  "approval": "Explicit owner: Approve both concepts D/E",
+  "verification": "tests, typecheck, builds and browser verification deferred",
+  "jobs": [
+    {
+      "key": "undergrid-ground",
+      "kind": "ground",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "skybridge-ground",
+      "kind": "ground",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "pump-array",
+      "kind": "scenery",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "coolant-reservoir",
+      "kind": "scenery",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "pipe-wall",
+      "kind": "scenery",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "relay-reference",
+      "kind": "model-reference",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "archive-reference",
+      "kind": "model-reference",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "supply-reference",
+      "kind": "model-reference",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "valve-reference",
+      "kind": "model-reference",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "nyx-tal",
+      "kind": "npc-illustration",
+      "status": "authored_installed_source_retained"
+    },
+    {
+      "key": "eko-9",
+      "kind": "npc-illustration",
+      "status": "authored_installed_source_retained"
+    }
+  ],
+  "propReview": {
+    "status": "no_response_default",
+    "presentedAt": "2026-11-15T15:50:33Z",
+    "proceededAt": "2026-11-15T15:52:31.932483+00:00",
+    "waitSecondsMinimum": 60,
+    "basis": "Existing owner furniture angle-review default; no reply received during review window",
+    "assets": [
+      "relay-reference",
+      "archive-reference",
+      "supply-reference",
+      "valve-reference"
+    ],
+    "laterExplicitApproval": "Good enough \u2014 model all four"
+  },
+  "npcReview": {
+    "status": "approved",
+    "designs": [
+      "nyx-tal",
+      "eko-9"
+    ],
+    "portraitStyle": "Refined cel",
+    "reply": "Use both designs + Refined cel portraits",
+    "at": "2026-11-15T15:56:05.832900+00:00"
+  },
+  "completedAt": "2026-11-15T16:19:51.044997+00:00",
+  "delivery": "docs/game-design/floors/f01-neon-heights/phase-4-delivery.md",
+  "runtimeReview": "not run; deferred by owner",
+  "nativeReview": {
+    "propFacings": 16,
+    "portraitAnglesPerNpc": 3,
+    "emotionRowsPerAngle": 6,
+    "review": "native images inspected; animation and in-game acceptance unobserved"
+  },
+  "outputs": [
+    "public/pawtrail-game/floors/f01/batch-b-v1",
+    "src/game/stage-editor/f01-batch-b-art.json",
+    "src/game/stage-editor/maps/f01-undergrid-v1.json",
+    "src/game/stage-editor/maps/f01-skybridge-v1.json",
+    "public/pawtrail-game/floors/f01/npcs/nyx",
+    "public/pawtrail-game/floors/f01/npcs/eko"
+  ]
+}

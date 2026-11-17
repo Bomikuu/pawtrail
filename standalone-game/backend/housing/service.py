@@ -13,6 +13,7 @@ from .presets import PRESETS,plan,floor_spec,active_revision,entry_tile
 from .community import DATA,EXTERIORS,is_hub,zone_spec,active_layout,room_key,hub_id,block_number,starter_yard,SAMPLE_HOME_IDS
 
 PERMISSIONS=dict(pets=True,help=True,furniture=True,guestbook=True,chat=True,decorators=[],invitations=True)
+FEATURED_APPEARANCES={'amber-outrider','yae-miko'}  # Existing client-rendered featured rigs; no extra sprite-sheet files.
 QUESTS=[dict(id='curious-neighbor',title='A Curious Neighbor',facts=['world-find:care-cache','world-find:community-letter','world-find:hidden-token'],reward=50),dict(id='welcome-home',title='Welcome Home',facts=['enter','meet-pet','place','feed','friends-panel'],reward=100),dict(id='first-visitor',title='First Visitor',facts=['friend','invite','greet','show-pet'],reward=150),dict(id='helping-paws',title='Helping Paws',facts=['visit','water-friend'],reward=100),dict(id='cozy-corner',title='Cozy Corner',facts=['buy-bed','decorate','place-bed','pet-bed'],reward=0,item='decorative-rug'),dict(id='housewarming',title='Housewarming',facts=['invite-two','gather','group-photo'],reward=0,badge='Housewarming')]
 def fail(message):raise ValidationError(message)
 def text(value,limit=280):
@@ -319,7 +320,7 @@ def mutation(p,body,key):
             if q.get('item'):p.inventory[q['item']]=p.inventory.get(q['item'],0)+1
             p.save(update_fields=['wallet','claimed','inventory'])
         elif kind=='profile':
-            if body.get('appearance') not in CATALOG['players']:
+            if body.get('appearance') not in CATALOG['players'] and body.get('appearance') not in FEATURED_APPEARANCES:
                 from .models import PlayerCharacter
                 if not PlayerCharacter.objects.filter(pk=body.get('appearance'),owner=p).exists():fail('Choose an available appearance.')
             from .abilities import cancel as cancel_ability

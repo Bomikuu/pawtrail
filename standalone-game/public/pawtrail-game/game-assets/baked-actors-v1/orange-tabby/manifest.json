@@ -1,0 +1,159 @@
+{
+  "status": "art-direction-approval-draft",
+  "frameWidth": 32,
+  "frameHeight": 32,
+  "columns": 8,
+  "rows": 16,
+  "spacing": 0,
+  "margin": 0,
+  "filter": "nearest",
+  "groundPixel": {
+    "x": 16,
+    "y": 28
+  },
+  "anchor": {
+    "x": 0.5,
+    "y": 0.875
+  },
+  "palette": [
+    "#247273",
+    "#27797a",
+    "#297f80",
+    "#32221a",
+    "#35251c",
+    "#38271e",
+    "#478786",
+    "#4b8f8d",
+    "#4f9694",
+    "#523234",
+    "#563537",
+    "#5b383a",
+    "#5d3a2d",
+    "#623e30",
+    "#674133",
+    "#804d3a",
+    "#87523e",
+    "#8e5641",
+    "#965136",
+    "#9e563a",
+    "#a65a3d",
+    "#a65e4b",
+    "#af6450",
+    "#b07b5a",
+    "#b76954",
+    "#b9825f",
+    "#c28864",
+    "#ca8948",
+    "#d5914c",
+    "#d5a167",
+    "#d9b07d",
+    "#df9850",
+    "#e0aa6d",
+    "#e3d2ba",
+    "#e5ba84",
+    "#ebb272",
+    "#efddc5",
+    "#f0c38b",
+    "#fae8ce"
+  ],
+  "animations": {
+    "idle-down": {
+      "start": 0,
+      "end": 7,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-down": {
+      "start": 8,
+      "end": 15,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "idle-down_left": {
+      "start": 16,
+      "end": 23,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-down_left": {
+      "start": 24,
+      "end": 31,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "idle-left": {
+      "start": 32,
+      "end": 39,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-left": {
+      "start": 40,
+      "end": 47,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "idle-up_left": {
+      "start": 48,
+      "end": 55,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-up_left": {
+      "start": 56,
+      "end": 63,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "idle-up": {
+      "start": 64,
+      "end": 71,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-up": {
+      "start": 72,
+      "end": 79,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "idle-up_right": {
+      "start": 80,
+      "end": 87,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-up_right": {
+      "start": 88,
+      "end": 95,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "idle-right": {
+      "start": 96,
+      "end": 103,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-right": {
+      "start": 104,
+      "end": 111,
+      "frameRate": 10,
+      "repeat": -1
+    },
+    "idle-down_right": {
+      "start": 112,
+      "end": 119,
+      "frameRate": 4,
+      "repeat": -1
+    },
+    "walk-down_right": {
+      "start": 120,
+      "end": 127,
+      "frameRate": 10,
+      "repeat": -1
+    }
+  },
+  "source": "source-rig.glb",
+  "notes": "Fixed orthographic camera and cell alignment; no per-frame recentering."
+}

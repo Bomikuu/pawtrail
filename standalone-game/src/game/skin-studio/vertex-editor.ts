@@ -115,7 +115,19 @@ export class StudioVertexEditor{
       if(distance<best-.1||Math.abs(distance-best)<=.1&&projected.z<depth){best=distance;depth=projected.z;result=index}
     });return result
   }
-  meshAt(x:number,y:number){const hit=this.ray(x,y).intersectObject(this.rig.root,true).find(hit=>visible(hit.object));if(!hit)return;return [...this.entries.values()].find(entry=>entry.meshes.includes(hit.object as T.Mesh))?.id}
+  meshAt(x:number,y:number){
+    const hit=this.ray(x,y).intersectObject(this.rig.root,true).find(hit=>{
+      if(!visible(hit.object))return false
+      // Empty silhouette artwork must not obstruct picking the real body.
+      if(hit.object.userData.silhouetteLayer&&hit.uv){
+        const mesh=hit.object as T.Mesh,material=(Array.isArray(mesh.material)?mesh.material[hit.face?.materialIndex??0]:mesh.material)as T.MeshBasicMaterial,map=material.map
+        if(map){const canvas=map.image as HTMLCanvasElement,uv=hit.uv.clone();map.transformUv(uv);const x=Math.max(0,Math.min(canvas.width-1,Math.floor(uv.x*canvas.width))),y=Math.max(0,Math.min(canvas.height-1,Math.floor(uv.y*canvas.height)));if(canvas.getContext('2d')!.getImageData(x,y,1,1).data[3]<128)return false}
+      }
+      return true
+    })
+    if(!hit)return
+    return [...this.entries.values()].find(entry=>entry.meshes.includes(hit.object as T.Mesh))?.id
+  }
   select(point:number){if(!this.view)return;this.view={...this.view,vertex:point};this.updateFrame();this.emitSelection();this.onSelection();this.invalidate()}
   moveLocal(position:Triple){const entry=this.entry;if(entry)this.moveWorld(this.currentMesh(entry).localToWorld(new T.Vector3().fromArray(position)))}
   moveWorld(world:T.Vector3){

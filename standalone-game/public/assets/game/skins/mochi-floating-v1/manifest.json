@@ -1,0 +1,174 @@
+{
+  "id": "mochi-floating",
+  "version": 1,
+  "representation": "joint-attached-directional-cutouts",
+  "generator": "built-in image_gen",
+  "reference": "source/reference.png",
+  "palette": [
+    "#34232f",
+    "#59414f",
+    "#806377",
+    "#a17b95",
+    "#c993b6",
+    "#e5b1cc",
+    "#f5d9e5",
+    "#fcf9f6",
+    "#eee4ee",
+    "#d1bed6",
+    "#c2a9c7",
+    "#f2d9d7",
+    "#eec4c8",
+    "#fffefd",
+    "#1f1723"
+  ],
+  "surfaces": {
+    "layer-head-front": {
+      "file": "layer-head-front.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 6621
+    },
+    "layer-garment-front": {
+      "file": "layer-garment-front.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1799
+    },
+    "layer-head-right": {
+      "file": "layer-head-right.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 5933
+    },
+    "layer-garment-right": {
+      "file": "layer-garment-right.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1612
+    },
+    "layer-head-back": {
+      "file": "layer-head-back.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 4358
+    },
+    "layer-garment-back": {
+      "file": "layer-garment-back.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1687
+    },
+    "layer-head-left": {
+      "file": "layer-head-left.png",
+      "width": 128,
+      "height": 160,
+      "bytes": 5960
+    },
+    "layer-garment-left": {
+      "file": "layer-garment-left.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 1644
+    },
+    "layer-shoulder-left-front": {
+      "file": "layer-shoulder-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 802
+    },
+    "layer-elbow-left-front": {
+      "file": "layer-elbow-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 852
+    },
+    "layer-hip-left-front": {
+      "file": "layer-hip-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 782
+    },
+    "layer-knee-left-front": {
+      "file": "layer-knee-left-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 663
+    },
+    "layer-shoulder-left-back": {
+      "file": "layer-shoulder-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 773
+    },
+    "layer-elbow-left-back": {
+      "file": "layer-elbow-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 772
+    },
+    "layer-hip-left-back": {
+      "file": "layer-hip-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 740
+    },
+    "layer-knee-left-back": {
+      "file": "layer-knee-left-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 625
+    },
+    "layer-shoulder-right-front": {
+      "file": "layer-shoulder-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 835
+    },
+    "layer-elbow-right-front": {
+      "file": "layer-elbow-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 854
+    },
+    "layer-hip-right-front": {
+      "file": "layer-hip-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 783
+    },
+    "layer-knee-right-front": {
+      "file": "layer-knee-right-front.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 661
+    },
+    "layer-shoulder-right-back": {
+      "file": "layer-shoulder-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 738
+    },
+    "layer-elbow-right-back": {
+      "file": "layer-elbow-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 772
+    },
+    "layer-hip-right-back": {
+      "file": "layer-hip-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 756
+    },
+    "layer-knee-right-back": {
+      "file": "layer-knee-right-back.png",
+      "width": 64,
+      "height": 96,
+      "bytes": 612
+    }
+  },
+  "review": {
+    "source_art": "visually inspected",
+    "browser_actions": "pending; not authorized by current workspace rules"
+  }
+}

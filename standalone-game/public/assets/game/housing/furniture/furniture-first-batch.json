@@ -1,0 +1,119 @@
+{
+  "generationMode": "built-in image_gen",
+  "nativeScale": "32px world tiles; 64x64 furniture cells",
+  "postprocessing": "Source alpha threshold128 removes generated soft halos, crop to silhouette, fit once using nearest-neighbor, remap without dithering to shared32color warm wood/sage/cream palette, binary alpha, fixed cell and anchor. Not a claim that resizing alone made production art.",
+  "palette": [
+    "33251c",
+    "4a3324",
+    "63452e",
+    "805a36",
+    "9b6a3b",
+    "b47c40",
+    "ce9148",
+    "e8aa57",
+    "f4c778",
+    "f7dda3",
+    "fff0c8",
+    "fff8e5",
+    "504d2a",
+    "656238",
+    "77763e",
+    "898a4a",
+    "9da05c",
+    "b1b771",
+    "c6cd8a",
+    "d8dda5",
+    "985037",
+    "b56a47",
+    "ce8659",
+    "e3a776",
+    "b9aa86",
+    "cfbf9c",
+    "e5d5b2",
+    "f2e3c5",
+    "b15431",
+    "cf6d3b",
+    "e28c4b",
+    "f6b868"
+  ],
+  "assets": [
+    {
+      "id": "sofa",
+      "file": "sofa-housing-v1.png",
+      "source": "sofa-housing-v1-source.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        60
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.9375
+      ],
+      "collisionFootprintPixels": [
+        5,
+        43,
+        54,
+        17
+      ],
+      "collisionStatus": "proposed placement footprint; not tested in gameplay",
+      "occupiedBounds": [
+        3,
+        13,
+        61,
+        60
+      ],
+      "nativeColors": 23,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "productionReady": false,
+      "reviewStatus": "native export prepared; perspective and silhouette visually reviewed; in-engine placement and art-direction approval pending"
+    },
+    {
+      "id": "table",
+      "file": "table-housing-v1.png",
+      "source": "table-housing-v1-source.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 1,
+      "anchorPixels": [
+        32,
+        58
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.90625
+      ],
+      "collisionFootprintPixels": [
+        6,
+        34,
+        52,
+        24
+      ],
+      "collisionStatus": "proposed placement footprint; not tested in gameplay",
+      "occupiedBounds": [
+        5,
+        19,
+        59,
+        58
+      ],
+      "nativeColors": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "productionReady": false,
+      "reviewStatus": "native export prepared; perspective and silhouette visually reviewed; in-engine placement and art-direction approval pending"
+    }
+  ],
+  "limitations": [
+    "High-resolution generated sources contain soft halo alpha and color gradients; preserve as sources only.",
+    "Native exports remove those halos and gradients, but need final art-direction approval and in-engine collision/occlusion review.",
+    "Static furniture only; no interaction animation or runtime integration included."
+  ],
+  "promptFile": "furniture-first-batch-prompts.json"
+}

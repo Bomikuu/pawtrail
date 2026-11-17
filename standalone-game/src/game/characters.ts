@@ -1,5 +1,7 @@
 import {customCharacterId} from './actor-rig/appearance'
 export const CHARACTER_OPTIONS = [
+  {id:'rika-hoshino',name:'Rika Hoshino',description:'Asterport rescue pilot, with her own animated portrait and Peony-7 partner.'},
+  {id:'peony-7',name:'Peony-7',description:'Rika’s articulated pink rescue mech. Select to pilot it around the neighborhood.'},
   { id: 'rescuer', name: 'Trail rescuer', description: 'Brown hair, a teal shirt and a little backpack. Ready to explore, care and rest.' },
   { id: 'jacket-rescuer', name: 'Jacket rescuer', description: 'Ready for a day outdoors.' },
   { id: 'braided-rescuer', name: 'Braided rescuer', description: 'A sunhat and a curious spirit.' },
@@ -10,6 +12,8 @@ export const CHARACTER_OPTIONS = [
   { id: 'male-blonde-scout', name: 'Blonde scout', description: 'A man with tousled blonde hair, a denim jacket, and a sage backpack.' },
   { id: 'male-violet-volunteer', name: 'Violet volunteer', description: 'A man with curly violet hair, round glasses, and a mustard hoodie.' },
   { id: 'male-red-gardener', name: 'Copper gardener', description: 'A man with copper-red hair, a terracotta tee, and green overalls.' },
+  { id: 'amber-outrider', name: 'Amber', description: 'Bright and courageous, with her own Japanese voice and illustrated portrait.' },
+  { id: 'yae-miko', name: 'Yae Miko', description: 'Composed and perceptive, with her own Japanese voice and illustrated portrait.' },
 ] as const
 
 export type CharacterId = (typeof CHARACTER_OPTIONS)[number]['id'] | `custom_${string}`

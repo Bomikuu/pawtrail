@@ -1,0 +1,46 @@
+{
+  "id": "kurogane-neon-bastion",
+  "name": "Kurogane",
+  "title": "The Neon Bastion",
+  "description": "An armored cyberpunk command robot whose four remote weapon funnels project an interlocked shield.",
+  "biography": "Kurogane guards the power conduits of a deserted neon transit yard. Its remote funnels once guided freight through the city; a corrupted siege directive has turned their navigation lattice into a shield and crossfire grid. Break the four independent relays to expose the main body.",
+  "origin": "The Neon Switchyard, an original fictional PawTrail location",
+  "temperament": [
+    "methodical",
+    "unyielding",
+    "tactical"
+  ],
+  "motivation": "Enforce the abandoned yard’s corrupted perimeter directive.",
+  "representation": "native-articulated-2d, fixed three-quarter WebGL arena",
+  "reference": {
+    "mechanic": "Owner requested remote weapon funnels like a mecha anime; original robot armor and artwork, no copied franchise model.",
+    "art": "Generated original charcoal/ivory cyberpunk armor with cyan emitters and magenta reactor."
+  },
+  "scale": {
+    "nominalHeightInPlayerUnits": 7.5,
+    "playerScaleChanged": false
+  },
+  "health": {
+    "maxHp": 8400,
+    "hpPerBar": 600,
+    "barCount": 14,
+    "enrageAt": 0.3
+  },
+  "components": {
+    "count": 4,
+    "maxHpEach": 360,
+    "required": "All four must be destroyed before main-body HP can decrease.",
+    "reset": "All four and their HP return only on encounter reset.",
+    "targetShape": "1.24 by 1.24 world-unit square hurtboxes at live funnel positions."
+  },
+  "weaknesses": [
+    "Destroy independent funnels A–D to disable the body shield.",
+    "With the shield down, recovery hits deal ×1.5 damage."
+  ],
+  "scope": "local-fictional-combat-preview",
+  "sounds": {
+    "shared": "Existing confirmed contact/item audio and mute.",
+    "dedicatedVocals": "Pending; no voice-model download authorized."
+  },
+  "review": "Firefox 2026-11-12: body shield blocked real hits with four and one funnels alive; all four destroyed by sword/wave; body then accepted 270 HP (8400 to 8130); reset restored four 360-HP funnels, shield and full HP. Enrage rehearsal, five-disk dodge and all three normal attacks observed. Full boss defeat/natural threshold crossing unreviewed. See docs/implementation/kurogane-neon-bastion.md."
+}

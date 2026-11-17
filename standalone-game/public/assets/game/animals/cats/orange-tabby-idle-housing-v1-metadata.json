@@ -1,0 +1,73 @@
+{
+  "id": "orange-tabby-idle-housing-v1",
+  "file": "/assets/game/animals/cats/orange-tabby-idle-housing-v1.png",
+  "width": 32,
+  "height": 32,
+  "frameCount": 1,
+  "pose": "idle_down",
+  "anchor": {
+    "x": 16.0,
+    "y": 30
+  },
+  "collision": {
+    "x": 11.0,
+    "y": 26,
+    "width": 10,
+    "height": 4
+  },
+  "sourceRender": "orange-tabby-idle-housing-v1-source.png",
+  "processing": {
+    "sourceOpaqueBounds": [
+      369,
+      101,
+      886,
+      1129
+    ],
+    "alphaThreshold": 128,
+    "nearestNeighborFit": [
+      14,
+      28
+    ],
+    "palette": [
+      "#352219",
+      "#4a2d23",
+      "#654033",
+      "#84533b",
+      "#a86e43",
+      "#c98a4c",
+      "#e5a75c",
+      "#f6bf6a",
+      "#f5d59a",
+      "#fff0cf",
+      "#efa944",
+      "#cf7d2a",
+      "#a35e28",
+      "#d98d81",
+      "#4d5c35",
+      "#768449",
+      "#a1ab68",
+      "#9c4e32",
+      "#be6740",
+      "#dc8753",
+      "#3f2b28",
+      "#634039",
+      "#805247",
+      "#bca06b"
+    ],
+    "dither": false,
+    "manualPixelCleanup": "Restored one pink nose pixel lost during reduction."
+  },
+  "checks": {
+    "dimensions": "pass",
+    "transparentBackground": "pass; binary alpha after cleanup",
+    "animationContinuity": "not applicable: single pose",
+    "pixelEdges": "pass: native silhouette, palette and enlarged nearest-neighbor preview inspected",
+    "appearance": "pass: warm tabby / sage-shirt rescuer match the shared style reference",
+    "placement": "anchor and suggested collision footprint provided; not tested inside gameplay"
+  },
+  "productionReady": false,
+  "readiness": "native first-batch sprite prepared; needs whole-pack style review and in-engine placement acceptance before production approval",
+  "prompt": "Use case: stylized-concept. Asset type: isolated PawTrail orange tabby cat idle sprite, not an illustration. Input image 1 is STYLE REFERENCE ONLY: match the bottom-middle orange cat, warm palette and upper-left light, NOT the backdrop. Generate one full-body small orange tabby cat standing idle facing DOWN toward viewer, seen from top-down three-quarter orthographic RPG perspective, ears, warm ginger fur, dark orange stripes, cream muzzle and paws, expressive tiny dark eyes, upright curved tail. Draw at exactly 32 by 32 logical pixels, shown as large sharp nearest-neighbor square pixel blocks. Sprite occupies at most 26 pixels width and 28 pixels height, centered with paws at row 29. Warm brown one-logical-pixel outline, limited 16-color cozy 16-bit palette, clear intentional square clusters, no tiny smooth details. Genuine transparent alpha everywhere outside this ONE cat. Absolutely NO background, no brown glow, no drop shadow, no floor, no frames, no text, no labels, no other poses, no isometric camera, no anti-aliasing. Preserve recognizable cat anatomy and same cozy style as reference. One idle frame only.",
+  "generationMode": "built-in image_gen",
+  "styleReference": "/home/micxsz/.codex/generated_images/01a19a5c-6747-7123-9ce4-c6c0d6649969/exec-b2568850-6e27-4471-a6cd-f4357971182b.png"
+}

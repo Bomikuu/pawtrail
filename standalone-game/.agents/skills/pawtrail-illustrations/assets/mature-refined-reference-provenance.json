@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-15",
+  "references": [
+    {
+      "file": "enraged-demonic-expression-reference.png",
+      "source": "/tmp/codex-clipboard-e06b2e82-6661-4c6f-9400-af49c2ca1596.png",
+      "role": "Owner-provided expression/gesture reference, 2026-11-15; not a character identity or maturity reference.",
+      "sha256": "4b574fa3673003f365fcf137fd828d61d748b5f4c2d3d03057b546a40eab2606"
+    },
+    {
+      "file": "sieg-refined-cel-reference.png",
+      "source": "/run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/sieg-stormwarden-v1/illustration-adult-v2-generated.png",
+      "role": "Original Sieg Refined cel source sheet; visual style only, not a motion/timing template.",
+      "sha256": "bc1b1f565891ac0e76ed9c01b81a170c329b38c6314a7dd6def7da5a5f39d97b"
+    }
+  ]
+}

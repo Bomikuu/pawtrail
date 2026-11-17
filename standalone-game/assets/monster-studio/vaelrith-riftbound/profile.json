@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "id": "vaelrith-riftbound",
+  "name": "Vaelrith",
+  "title": "The Riftbound",
+  "kind": "boss",
+  "status": "preview_installed_runtime_review_pending",
+  "description": "Three colossal armored heads force their way through a fractured sanctuary wall. Cyan seams trace their obsidian plates; magenta light burns in their eyes and throats.",
+  "biography": "Once the guardian of an ancient rift gate, Vaelrith was sealed into its own sanctuary when the passage fractured. Its enormous body remains behind the stone, while three heads reach through the failing bindings. It mistakes approaching travelers for those who imprisoned it and lashes out whenever the seal draws fresh energy.",
+  "loreProvenance": "Original authored PawTrail fiction; not source-game canon.",
+  "temperament": [
+    "territorial",
+    "watchful",
+    "furious when the seal flares"
+  ],
+  "habitat": "A ruined rift sanctuary; proposed fictional combat arena.",
+  "art": {
+    "concept": "art/concept-v1.png",
+    "generationMode": "built-in image_gen",
+    "reference": "references/owner-wall-boss.png",
+    "referenceRole": "User-supplied silhouette, color, scale and wall-attachment inspiration; logos and text excluded.",
+    "artStyle": "PawTrail-adapted pixel-fantasy design",
+    "ownerApproved": true,
+    "approval": "Owner approved the visual design and requested different HP."
+  },
+  "scaleProposal": {
+    "playerScale": 1,
+    "bossHeightInPlayerHeights": 8,
+    "spanInPlayerHeights": 15,
+    "anchor": "fixed vertical wall; three independent neck/head chains",
+    "basis": "Measure the actual selected player rig during implementation; do not resize the player.",
+    "ownerApproved": false
+  },
+  "healthProposal": {
+    "mode": "stacked",
+    "barCount": 50,
+    "hpPerBar": 1000,
+    "maxHp": 50000,
+    "ownerApproved": false,
+    "balance": "Proposed prototype values. Health bars, HP multiplier and visual scale are independent.",
+    "status": "rejected_awaiting_replacement"
+  },
+  "defensesProposal": {
+    "armoredDamageMultiplier": 0.5,
+    "rule": "An exposed weak point replaces the armor multiplier with its vulnerability multiplier; do not apply both."
+  },
+  "weaknessesProposal": [
+    {
+      "id": "spent-throat",
+      "part": "head.throat",
+      "condition": "The corresponding head is recovering after its committed breath/bite attack.",
+      "damageMultiplier": 2,
+      "ignoresArmor": true,
+      "tell": "The mouth remains open and its throat brightens during the recovery window."
+    },
+    {
+      "id": "fractured-seal",
+      "part": "wall.seal-crystals",
+      "condition": "The combined rupture attack has finished.",
+      "effect": "A successful eligible hit briefly staggers the corresponding head.",
+      "staggerMs": 2200,
+      "tell": "The socket crystal becomes exposed after the warning pulse."
+    }
+  ],
+  "phasesProposal": [
+    {
+      "id": "bound",
+      "hpFractionAbove": 0.65,
+      "description": "One head commits at a time, teaching bite and breath tells."
+    },
+    {
+      "id": "fracturing",
+      "hpFractionAtOrBelow": 0.65,
+      "description": "Side-head sweeps alternate with central breath; preserve a visible safe lane.",
+      "hpFractionAbove": 0.3
+    },
+    {
+      "id": "riftstorm",
+      "hpFractionAtOrBelow": 0.3,
+      "description": "The combined seal-rupture move joins the rotation. No new roaming body; the boss remains anchored."
+    }
+  ],
+  "attacksProposal": [
+    {
+      "id": "rift-fang",
+      "name": "Rift Fang",
+      "head": "left",
+      "description": "An aimed bite locks onto a marked ground position, then lunges and recovers.",
+      "preparationMs": 900,
+      "activeMs": 220,
+      "recoveryMs": 1600,
+      "cooldownMs": 6000,
+      "damage": 30
+    },
+    {
+      "id": "obsidian-sweep",
+      "name": "Obsidian Sweep",
+      "head": "right",
+      "description": "A broad horizontal sweep threatens a marked arc while leaving an escape route.",
+      "preparationMs": 1100,
+      "activeMs": 450,
+      "recoveryMs": 1800,
+      "cooldownMs": 9000,
+      "damage": 25
+    },
+    {
+      "id": "violet-exhalation",
+      "name": "Violet Exhalation",
+      "head": "center",
+      "description": "A narrowing warning cone precedes a sustained breath. The throat is exposed afterward.",
+      "preparationMs": 1400,
+      "activeMs": 1200,
+      "recoveryMs": 2500,
+      "cooldownMs": 12000,
+      "damage": 15,
+      "hitPolicy": "One hit per target per 400ms authored tick (three ticks), only while inside the visible danger region.",
+      "tickMs": 400
+    },
+    {
+      "id": "seal-rupture",
+      "name": "Seal Rupture",
+      "head": "coordinated",
+      "description": "Three wall seals warn before emitting separated ground lanes of rift energy.",
+      "preparationMs": 2600,
+      "activeMs": 1400,
+      "recoveryMs": 3200,
+      "cooldownMs": 24000,
+      "damage": 40,
+      "phase": "riftstorm"
+    },
+    {
+      "id": "riftfire-rain",
+      "name": "Riftfire Rain",
+      "head": "coordinated",
+      "description": "Eight distinct random floor tiles warn, ignite with generated full-frame fire animation, then fade. Tile positions lock at cast time.",
+      "preparationMs": 1500,
+      "activeMs": 3200,
+      "recoveryMs": 1900,
+      "cooldownMs": 16000,
+      "damage": 10,
+      "tickMs": 600,
+      "maximumTicks": 6,
+      "maximumSimultaneousFires": 8,
+      "availablePhase": "all"
+    }
+  ],
+  "implementation": {
+    "profile": "authored; 10 bars x 1000 HP selected by owner",
+    "concept": "approved",
+    "portrait": "native six-frame sheet installed; motion review pending",
+    "icon": "48px native icon installed",
+    "animatedIllustration": "four complete frames installed; live seam review pending",
+    "creatureRig": "articulated necks, heads, jaws, layered plates, horns and sockets installed in monster preview",
+    "textureSkin": "four generated 128px material skins installed",
+    "encounter": "local preview implementation; runtime review pending",
+    "audio": "six original synthesized cues installed; listening review pending",
+    "previewUrl": "/play?preview=monsters",
+    "installedInLiveGame": false,
+    "movement": "32 pose samples per attack, 30fps active cap, damped head/jaw and continuous neck bends; numeric continuity reviewed, live visual review pending",
+    "riftfire": "16 generated 64x96 frames; eight pooled sprites; exact tile damage and cancellation checked without WebGL"
+  },
+  "proposedSoundIntents": [
+    "awakening",
+    "warning",
+    "breath",
+    "hurt",
+    "stagger",
+    "defeat"
+  ],
+  "authority": "Fictional game prototype only. No community-animal records, verified Kibble, account inventory or rewards are mutated.",
+  "health": {
+    "status": "owner_selected",
+    "maxHp": 10000,
+    "hpPerBar": 1000,
+    "barCount": 10,
+    "interpretation": "Owner answered 10x in response to the stacked-bar HP question; retain 1,000 HP per bar."
+  },
+  "runtimeSources": {
+    "catalog": "src/game/monsters/vaelrith.ts",
+    "rig": "src/game/monsters/rig.ts",
+    "encounter": "src/game/monsters/encounter.ts",
+    "scene": "src/game/monsters/scene.ts",
+    "page": "src/components/game/monster-studio.tsx"
+  }
+}

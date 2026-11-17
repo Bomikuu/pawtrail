@@ -1,0 +1,74 @@
+{
+  "units": "native world units",
+  "appearance": "actual shared rescuer; no scaling",
+  "seats": 1,
+  "clearance": {
+    "left": -11,
+    "right": 11,
+    "back": -6,
+    "front": 10,
+    "armTop": 0
+  },
+  "samples": [
+    {
+      "phase": 0,
+      "actorScale": [
+        1,
+        1,
+        1
+      ],
+      "actorWidth": 15.200000047683716,
+      "pelvisSideClearance": 6.199999809265137,
+      "armClearance": null,
+      "seatSupportFrontClearance": 3.8563711075956455,
+      "backClearance": 3.4894486990979936,
+      "pillowClearance": null,
+      "floorClearance": 5.970045190762616
+    },
+    {
+      "phase": 0.25,
+      "actorScale": [
+        1,
+        1,
+        1
+      ],
+      "actorWidth": 15.200000047683716,
+      "pelvisSideClearance": 6.199999809265137,
+      "armClearance": null,
+      "seatSupportFrontClearance": 3.846194771957334,
+      "backClearance": 3.6251623390571877,
+      "pillowClearance": null,
+      "floorClearance": 5.970045190762616
+    },
+    {
+      "phase": 0.5,
+      "actorScale": [
+        1,
+        1,
+        1
+      ],
+      "actorWidth": 15.200000047683716,
+      "pelvisSideClearance": 6.199999809265137,
+      "armClearance": null,
+      "seatSupportFrontClearance": 3.8563711075956455,
+      "backClearance": 3.4894486990979936,
+      "pillowClearance": null,
+      "floorClearance": 5.970045190762616
+    },
+    {
+      "phase": 0.75,
+      "actorScale": [
+        1,
+        1,
+        1
+      ],
+      "actorWidth": 15.200000047683716,
+      "pelvisSideClearance": 6.199999809265137,
+      "armClearance": null,
+      "seatSupportFrontClearance": 3.8681996252378745,
+      "backClearance": 3.3087536503915302,
+      "pillowClearance": null,
+      "floorClearance": 5.970045190762616
+    }
+  ]
+}

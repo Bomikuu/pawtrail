@@ -1,0 +1,888 @@
+{
+  "version": 1,
+  "id": "armchair",
+  "revision": "c68a90d2eaf4",
+  "reference": "/assets/game/housing/furniture/armchair-housing-v1.png",
+  "source": "src/game/furniture/reference-chairs.ts",
+  "definition": {
+    "id": "armchair",
+    "label": "Armchair",
+    "model": "armchair",
+    "reference": "/assets/game/housing/furniture/armchair-housing-v1.png",
+    "description": "Reference-guided single-seat armchair with physical actor docking, clearance and matching native facings.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "referenceFrame": {
+      "width": 32,
+      "height": 64,
+      "anchor": [
+        16,
+        60
+      ]
+    },
+    "styles": [
+      {
+        "id": "original",
+        "label": "Sage",
+        "fabric": "#8b9050",
+        "light": "#b7bf78",
+        "shade": "#535c31",
+        "pillow": "#f7dda3",
+        "wood": "#ce9148"
+      },
+      {
+        "id": "terracotta",
+        "label": "Terracotta",
+        "fabric": "#b86443",
+        "light": "#df9c70",
+        "shade": "#704331",
+        "pillow": "#f7dda3",
+        "wood": "#ce9148"
+      },
+      {
+        "id": "cream",
+        "label": "Cream",
+        "fabric": "#d7c9a8",
+        "light": "#f8e9c9",
+        "shade": "#95866b",
+        "pillow": "#f7dda3",
+        "wood": "#ce9148"
+      }
+    ],
+    "price": 47,
+    "construction": {
+      "seconds": 0,
+      "materials": []
+    }
+  },
+  "item": {
+    "id": "armchair",
+    "label": "Armchair",
+    "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-0.png",
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ],
+    "footprint": [
+      32,
+      91,
+      33,
+      10
+    ],
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "sit",
+    "price": 47,
+    "zones": [
+      "interior"
+    ],
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          32,
+          91,
+          33,
+          10
+        ]
+      ],
+      "placement": [
+        [
+          32,
+          91,
+          33,
+          10
+        ]
+      ],
+      "approaches": [
+        [
+          48.5,
+          115
+        ],
+        [
+          18,
+          96
+        ],
+        [
+          48.5,
+          77
+        ],
+        [
+          79,
+          96
+        ]
+      ],
+      "seats": [
+        {
+          "id": "seat-1",
+          "point": [
+            48,
+            98
+          ],
+          "facing": "down",
+          "elevation": 6,
+          "exit": [
+            48.5,
+            115
+          ]
+        }
+      ],
+      "surfaces": [
+        {
+          "id": "perch-1",
+          "point": [
+            48,
+            97
+          ],
+          "elevation": 12,
+          "landingBounds": [
+            40,
+            95,
+            16,
+            4
+          ],
+          "approach": [
+            48.5,
+            115
+          ],
+          "descent": [
+            48.5,
+            115
+          ],
+          "species": [
+            "cat"
+          ],
+          "capacity": 1,
+          "links": []
+        }
+      ],
+      "occlusion": "base",
+      "actions": [
+        "sit",
+        "inspect"
+      ]
+    },
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "indicatorHeight": 38,
+    "visibleBounds": [
+      30,
+      64,
+      35,
+      37
+    ],
+    "defaultStyle": "original",
+    "renderedViews": {
+      "0": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 38,
+        "footprint": [
+          32,
+          91,
+          33,
+          10
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              32,
+              91,
+              33,
+              10
+            ]
+          ],
+          "placement": [
+            [
+              32,
+              91,
+              33,
+              10
+            ]
+          ],
+          "approaches": [
+            [
+              48.5,
+              115
+            ],
+            [
+              18,
+              96
+            ],
+            [
+              48.5,
+              77
+            ],
+            [
+              79,
+              96
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                48,
+                98
+              ],
+              "facing": "down",
+              "elevation": 6,
+              "exit": [
+                48.5,
+                115
+              ]
+            }
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                97
+              ],
+              "elevation": 12,
+              "landingBounds": [
+                40,
+                95,
+                16,
+                4
+              ],
+              "approach": [
+                48.5,
+                115
+              ],
+              "descent": [
+                48.5,
+                115
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          30,
+          64,
+          35,
+          37
+        ]
+      },
+      "90": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 37,
+        "footprint": [
+          35,
+          94,
+          26,
+          4
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              35,
+              94,
+              26,
+              4
+            ]
+          ],
+          "placement": [
+            [
+              35,
+              94,
+              26,
+              4
+            ]
+          ],
+          "approaches": [
+            [
+              21,
+              96
+            ],
+            [
+              48,
+              112
+            ],
+            [
+              48,
+              80
+            ],
+            [
+              75,
+              96
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                43,
+                96
+              ],
+              "facing": "down",
+              "elevation": 7,
+              "exit": [
+                21,
+                96
+              ]
+            }
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                45,
+                96
+              ],
+              "elevation": 12,
+              "landingBounds": [
+                40,
+                95,
+                12,
+                2
+              ],
+              "approach": [
+                21,
+                96
+              ],
+              "descent": [
+                21,
+                96
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          35,
+          65,
+          26,
+          34
+        ]
+      },
+      "180": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 38,
+        "footprint": [
+          32,
+          91,
+          33,
+          10
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              32,
+              91,
+              33,
+              10
+            ]
+          ],
+          "placement": [
+            [
+              32,
+              91,
+              33,
+              10
+            ]
+          ],
+          "approaches": [
+            [
+              48.5,
+              77
+            ],
+            [
+              48.5,
+              115
+            ],
+            [
+              18,
+              96
+            ],
+            [
+              79,
+              96
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                48,
+                94
+              ],
+              "facing": "down",
+              "elevation": 6,
+              "exit": [
+                48.5,
+                77
+              ]
+            }
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                48,
+                95
+              ],
+              "elevation": 12,
+              "landingBounds": [
+                40,
+                93,
+                16,
+                4
+              ],
+              "approach": [
+                48.5,
+                77
+              ],
+              "descent": [
+                48.5,
+                77
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          30,
+          70,
+          35,
+          31
+        ]
+      },
+      "270": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 37,
+        "footprint": [
+          35,
+          94,
+          26,
+          4
+        ],
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              35,
+              94,
+              26,
+              4
+            ]
+          ],
+          "placement": [
+            [
+              35,
+              94,
+              26,
+              4
+            ]
+          ],
+          "approaches": [
+            [
+              75,
+              96
+            ],
+            [
+              48,
+              112
+            ],
+            [
+              21,
+              96
+            ],
+            [
+              48,
+              80
+            ]
+          ],
+          "seats": [
+            {
+              "id": "seat-1",
+              "point": [
+                54,
+                96
+              ],
+              "facing": "down",
+              "elevation": 7,
+              "exit": [
+                75,
+                96
+              ]
+            }
+          ],
+          "surfaces": [
+            {
+              "id": "perch-1",
+              "point": [
+                51,
+                96
+              ],
+              "elevation": 12,
+              "landingBounds": [
+                44,
+                95,
+                12,
+                2
+              ],
+              "approach": [
+                75,
+                96
+              ],
+              "descent": [
+                75,
+                96
+              ],
+              "species": [
+                "cat"
+              ],
+              "capacity": 1,
+              "links": []
+            }
+          ],
+          "occlusion": "base",
+          "actions": [
+            "sit",
+            "inspect"
+          ]
+        },
+        "visibleBounds": [
+          35,
+          65,
+          26,
+          34
+        ]
+      }
+    },
+    "styles": [
+      {
+        "id": "original",
+        "label": "Sage",
+        "color": "#8b9050",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/original-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "terracotta",
+        "label": "Terracotta",
+        "color": "#b86443",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/terracotta-270-front.png",
+            "motion": []
+          }
+        }
+      },
+      {
+        "id": "cream",
+        "label": "Cream",
+        "color": "#d7c9a8",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-0-front.png",
+            "motion": []
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-90-front.png",
+            "motion": []
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-180-front.png",
+            "motion": []
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/armchair/c68a90d2eaf4/cream-270-front.png",
+            "motion": []
+          }
+        }
+      }
+    ]
+  },
+  "frame": {
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ]
+  },
+  "filter": "nearest",
+  "referenceStudy": {
+    "source": "/assets/game/housing/furniture/armchair-housing-v1.png",
+    "sha256": "5529d12ee5dedaf22830e2ac635ad9429f605050b481af13ee11e3c034ba43e9",
+    "representation": "Closed individual chair frame/cushion volumes, canonical material patches and approved hidden-face painting. No full-object billboard.",
+    "render": {
+      "projection": "orthographic",
+      "nativeFrame": [
+        96,
+        112
+      ],
+      "nativeAnchor": [
+        48,
+        96
+      ],
+      "sourceAnchor": [
+        16,
+        60
+      ],
+      "camera": [
+        0,
+        34.5,
+        90
+      ],
+      "facingCalibration": {
+        "sidePitchDegrees": 8,
+        "blendPower": 2
+      },
+      "filter": "nearest",
+      "toneMapping": "none"
+    },
+    "turnaround": {
+      "sheet": "assets/furniture-studio/references/armchair/turnaround-v1.png",
+      "sha256": "a459b71b1df3bc62f59992b977c6f0a145b5d804193cb57badf8c1394846e169",
+      "views": {
+        "0": {
+          "file": "/assets/game/housing/furniture/armchair-housing-v1.png",
+          "width": 32,
+          "height": 64,
+          "anchor": [
+            16,
+            60
+          ],
+          "label": "Original front · canonical"
+        },
+        "45": {
+          "file": "/pawtrail-game/furniture-references/armchair/243064e164f9/reference-45.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated front 3/4",
+          "cellBounds": [
+            72,
+            75,
+            403,
+            441
+          ],
+          "occupiedSize": [
+            31,
+            34
+          ],
+          "footBaseline": 104
+        },
+        "90": {
+          "file": "/pawtrail-game/furniture-references/armchair/243064e164f9/reference-90.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated left",
+          "cellBounds": [
+            119,
+            107,
+            393,
+            464
+          ],
+          "occupiedSize": [
+            26,
+            34
+          ],
+          "footBaseline": 102
+        },
+        "135": {
+          "file": "/pawtrail-game/furniture-references/armchair/243064e164f9/reference-135.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated rear 3/4",
+          "cellBounds": [
+            87,
+            98,
+            404,
+            440
+          ],
+          "occupiedSize": [
+            30,
+            32
+          ],
+          "footBaseline": 104
+        },
+        "180": {
+          "file": "/pawtrail-game/furniture-references/armchair/243064e164f9/reference-180.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated back",
+          "cellBounds": [
+            63,
+            110,
+            407,
+            463
+          ],
+          "occupiedSize": [
+            32,
+            33
+          ],
+          "footBaseline": 101
+        },
+        "270": {
+          "file": "/pawtrail-game/furniture-references/armchair/243064e164f9/reference-270.png",
+          "width": 96,
+          "height": 112,
+          "anchor": [
+            48,
+            96
+          ],
+          "label": "Generated right",
+          "cellBounds": [
+            121,
+            75,
+            395,
+            436
+          ],
+          "occupiedSize": [
+            26,
+            34
+          ],
+          "footBaseline": 102
+        }
+      },
+      "dimensions": {
+        "width": 33,
+        "depth": 26,
+        "height": 30
+      },
+      "projection": {
+        "sidePitchDegrees": 8,
+        "blendPower": 2
+      },
+      "review": {
+        "state": "explicit_yes",
+        "responseWindowSeconds": 60,
+        "default": "Proceed under owner-authorized no-response default; not affirmative approval",
+        "shownAt": "2026-11-10T16:00:33.188214+00:00",
+        "exception": "Original fronts remain canonical; dining generated proportions remain taller, so original compact proportions take precedence.",
+        "resolvedAt": "2026-11-10T16:01:47.943729+00:00",
+        "response": "Good enough — build these three",
+        "respondedAt": "2026-11-10T16:03:24.653301+00:00",
+        "startedUnderDefaultAt": "2026-11-10T16:01:47.943729+00:00"
+      },
+      "reviewFacings": [
+        45,
+        135
+      ]
+    }
+  },
+  "note": "Reference-guided authored geometry; explicit projected contacts and native foreground layers."
+}

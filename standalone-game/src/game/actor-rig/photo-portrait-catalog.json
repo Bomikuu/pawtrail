@@ -287,24 +287,505 @@
       94,
       116
     ],
-    "runtimeBytes": 167953,
+    "runtimeBytes": 245949,
     "referenceBytes": 10495,
-    "completeBytes": 178448,
+    "completeBytes": 256444,
     "poseCount": 3,
-    "expressionCount": 6,
-    "uniqueFullFrames": 102,
-    "sourceImagesUsed": 84,
-    "encoding": "lossless-indexed-brotli",
+    "expressionCount": 7,
+    "uniqueFullFrames": 124,
+    "sourceImagesUsed": 109,
+    "encoding": "lossless-webp-complete-frames",
     "styleKey": "refined-cel",
     "characterId": "amber",
     "characterName": "Amber",
-    "folder": "/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-v1/amber-refined-cel",
-    "revision": "c82763e7818b",
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/amber-refined-cel-calm-v3/91b6c54014fe",
+    "revision": "91b6c54014fe",
     "poseIds": [
       "front-pout",
       "three-quarter-left",
       "head-tilt-smile-right"
     ],
-    "budgetBytes": 300000
+    "budgetBytes": 300000,
+    "idleFrameCounts": {
+      "front-pout": 2,
+      "three-quarter-left": 4,
+      "head-tilt-smile-right": 4
+    },
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised",
+      "shy"
+    ]
+  },
+  {
+    "id": "sieg-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "sieg",
+    "characterName": "Sieg",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      14,
+      90,
+      105
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/sieg-refined-cel-v2/7611bb492417",
+    "revision": "7611bb492417",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 278116,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "encoding": "lossless-webp-complete-frames"
+  },
+  {
+    "id": "sieghart-painterly",
+    "name": "Painterly anime fantasy",
+    "styleKey": "painterly-anime",
+    "characterId": "sieghart",
+    "characterName": "Sieghart",
+    "playback": "complete-frames",
+    "nativeCell": [
+      144,
+      180
+    ],
+    "contentBounds": [
+      4,
+      43,
+      136,
+      136
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/sieghart-painterly-v1/76f25abadbd2",
+    "revision": "76f25abadbd2",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "rendering": "smooth",
+    "budgetBytes": 300000,
+    "completeBytes": 289411,
+    "runtimeBytes": 265721,
+    "referenceBytes": 23690,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "encoding": "avif-complete-frames",
+    "quality": 38
+  },
+  {
+    "id": "sieghart-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "sieghart",
+    "characterName": "Sieghart",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      26,
+      90,
+      93
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/sieghart-refined-cel-v1/75914160c2fc",
+    "revision": "75914160c2fc",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 217929,
+    "referenceBytes": 18622,
+    "runtimeBytes": 199307,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "aurelia-weiss-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "aurelia-weiss",
+    "characterName": "Aurelia Weiss",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      19,
+      90,
+      100
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/aurelia-weiss-refined-cel-v1/1597a05be466",
+    "revision": "1597a05be466",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 289795,
+    "referenceBytes": 12821,
+    "runtimeBytes": 276974,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "rika-hoshino-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "rika-hoshino",
+    "characterName": "Rika Hoshino",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      26,
+      90,
+      93
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/rika-hoshino-refined-cel-v1/0e239e215acc",
+    "revision": "0e239e215acc",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 202880,
+    "referenceBytes": 10133,
+    "runtimeBytes": 192747,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "mira-adler-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "mira-adler",
+    "characterName": "Mira Adler",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      14,
+      90,
+      105
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/mira-adler-refined-cel-v1/1a0ba1086171",
+    "revision": "1a0ba1086171",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 279067,
+    "referenceBytes": 12465,
+    "runtimeBytes": 266602,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "mara-solis-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "mara-solis",
+    "characterName": "Mara Solis",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      17,
+      90,
+      102
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/mara-solis-refined-cel-v1/8f6e4c189903",
+    "revision": "8f6e4c189903",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 264790,
+    "referenceBytes": 11676,
+    "runtimeBytes": 253114,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "ivo-mercado-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "ivo-mercado",
+    "characterName": "Ivo Mercado",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      20,
+      90,
+      99
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/ivo-mercado-refined-cel-v1/134f1211f211",
+    "revision": "134f1211f211",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 264432,
+    "referenceBytes": 11519,
+    "runtimeBytes": 252913,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "nyx-tal-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "nyx-tal",
+    "characterName": "Nyx Tal",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      24,
+      90,
+      95
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/nyx-tal-refined-cel-v1/71e2e2c2d39b",
+    "revision": "71e2e2c2d39b",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 243031,
+    "referenceBytes": 11264,
+    "runtimeBytes": 231767,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "eko-9-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "eko-9",
+    "characterName": "EKO-9",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      18,
+      90,
+      101
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/eko-9-refined-cel-v1/de543c13b4e4",
+    "revision": "de543c13b4e4",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 228219,
+    "referenceBytes": 10903,
+    "runtimeBytes": 217316,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
+  },
+  {
+    "id": "sena-valez-refined-cel",
+    "name": "Refined cel",
+    "styleKey": "refined-cel",
+    "characterId": "sena-valez",
+    "characterName": "Sena Valez",
+    "playback": "complete-frames",
+    "nativeCell": [
+      96,
+      120
+    ],
+    "contentBounds": [
+      3,
+      22,
+      90,
+      97
+    ],
+    "folder": "/pawtrail-game/game-assets/dialogue-portraits/sena-valez-refined-cel-v1/a82603a34519",
+    "revision": "a82603a34519",
+    "poseIds": [
+      "front-pout",
+      "three-quarter-left",
+      "head-tilt-smile-right"
+    ],
+    "emotionIds": [
+      "idle",
+      "smile",
+      "happy",
+      "sad",
+      "angry",
+      "surprised"
+    ],
+    "budgetBytes": 300000,
+    "completeBytes": 213502,
+    "referenceBytes": 10053,
+    "runtimeBytes": 203449,
+    "poseCount": 3,
+    "expressionCount": 6,
+    "uniqueFullFrames": 180,
+    "sourceImagesUsed": 90,
+    "encoding": "lossless-webp-complete-frames",
+    "paletteLimitIncludingTransparency": 48
   }
 ]

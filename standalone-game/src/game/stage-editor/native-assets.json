@@ -1,0 +1,4482 @@
+{
+  "version": 1,
+  "source": "public/pawtrail-game/game-assets/world-manifest.json",
+  "assets": [
+    {
+      "id": "terrain:0",
+      "label": "Grass 0",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 0,
+      "blocking": false
+    },
+    {
+      "id": "terrain:1",
+      "label": "Grass 1",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 1,
+      "blocking": false
+    },
+    {
+      "id": "terrain:2",
+      "label": "Grass 2",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 2,
+      "blocking": false
+    },
+    {
+      "id": "terrain:3",
+      "label": "Grass 3",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 3,
+      "blocking": false
+    },
+    {
+      "id": "terrain:4",
+      "label": "Grass 4",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 4,
+      "blocking": false
+    },
+    {
+      "id": "terrain:5",
+      "label": "Grass 5",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 5,
+      "blocking": false
+    },
+    {
+      "id": "terrain:6",
+      "label": "Grass 6",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 6,
+      "blocking": false
+    },
+    {
+      "id": "terrain:7",
+      "label": "Grass 7",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 7,
+      "blocking": false
+    },
+    {
+      "id": "terrain:8",
+      "label": "Dirt",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 8,
+      "blocking": false
+    },
+    {
+      "id": "terrain:9",
+      "label": "Stone",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 9,
+      "blocking": false
+    },
+    {
+      "id": "terrain:10",
+      "label": "Brick",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 10,
+      "blocking": false
+    },
+    {
+      "id": "terrain:11",
+      "label": "Concrete",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 11,
+      "blocking": false
+    },
+    {
+      "id": "terrain:12",
+      "label": "Asphalt",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 12,
+      "blocking": false
+    },
+    {
+      "id": "terrain:13",
+      "label": "Sand",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 13,
+      "blocking": false
+    },
+    {
+      "id": "terrain:14",
+      "label": "Gravel",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 14,
+      "blocking": false
+    },
+    {
+      "id": "terrain:15",
+      "label": "Flowers pink",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 15,
+      "blocking": false
+    },
+    {
+      "id": "terrain:16",
+      "label": "Flowers yellow",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 16,
+      "blocking": false
+    },
+    {
+      "id": "terrain:17",
+      "label": "Water",
+      "category": "Terrain",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 17,
+      "blocking": true
+    },
+    {
+      "id": "terrain:18",
+      "label": "Dirt path 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 18,
+      "blocking": false
+    },
+    {
+      "id": "terrain:19",
+      "label": "Dirt path 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 19,
+      "blocking": false
+    },
+    {
+      "id": "terrain:20",
+      "label": "Dirt path 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 20,
+      "blocking": false
+    },
+    {
+      "id": "terrain:21",
+      "label": "Dirt path 3",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 21,
+      "blocking": false
+    },
+    {
+      "id": "terrain:22",
+      "label": "Dirt path 4",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 22,
+      "blocking": false
+    },
+    {
+      "id": "terrain:23",
+      "label": "Dirt path 5",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 23,
+      "blocking": false
+    },
+    {
+      "id": "terrain:24",
+      "label": "Dirt path 6",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 24,
+      "blocking": false
+    },
+    {
+      "id": "terrain:25",
+      "label": "Dirt path 7",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 25,
+      "blocking": false
+    },
+    {
+      "id": "terrain:26",
+      "label": "Dirt path 8",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 26,
+      "blocking": false
+    },
+    {
+      "id": "terrain:27",
+      "label": "Dirt path 9",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 27,
+      "blocking": false
+    },
+    {
+      "id": "terrain:28",
+      "label": "Dirt path 10",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 28,
+      "blocking": false
+    },
+    {
+      "id": "terrain:29",
+      "label": "Dirt path 11",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 29,
+      "blocking": false
+    },
+    {
+      "id": "terrain:30",
+      "label": "Dirt path 12",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 30,
+      "blocking": false
+    },
+    {
+      "id": "terrain:31",
+      "label": "Dirt path 13",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 31,
+      "blocking": false
+    },
+    {
+      "id": "terrain:32",
+      "label": "Dirt path 14",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 32,
+      "blocking": false
+    },
+    {
+      "id": "terrain:33",
+      "label": "Dirt path 15",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 33,
+      "blocking": false
+    },
+    {
+      "id": "terrain:34",
+      "label": "Stone path 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 34,
+      "blocking": false
+    },
+    {
+      "id": "terrain:35",
+      "label": "Stone path 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 35,
+      "blocking": false
+    },
+    {
+      "id": "terrain:36",
+      "label": "Stone path 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 36,
+      "blocking": false
+    },
+    {
+      "id": "terrain:37",
+      "label": "Stone path 3",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 37,
+      "blocking": false
+    },
+    {
+      "id": "terrain:38",
+      "label": "Stone path 4",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 38,
+      "blocking": false
+    },
+    {
+      "id": "terrain:39",
+      "label": "Stone path 5",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 39,
+      "blocking": false
+    },
+    {
+      "id": "terrain:40",
+      "label": "Stone path 6",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 40,
+      "blocking": false
+    },
+    {
+      "id": "terrain:41",
+      "label": "Stone path 7",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 41,
+      "blocking": false
+    },
+    {
+      "id": "terrain:42",
+      "label": "Stone path 8",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 42,
+      "blocking": false
+    },
+    {
+      "id": "terrain:43",
+      "label": "Stone path 9",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 43,
+      "blocking": false
+    },
+    {
+      "id": "terrain:44",
+      "label": "Stone path 10",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 44,
+      "blocking": false
+    },
+    {
+      "id": "terrain:45",
+      "label": "Stone path 11",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 45,
+      "blocking": false
+    },
+    {
+      "id": "terrain:46",
+      "label": "Stone path 12",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 46,
+      "blocking": false
+    },
+    {
+      "id": "terrain:47",
+      "label": "Stone path 13",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 47,
+      "blocking": false
+    },
+    {
+      "id": "terrain:48",
+      "label": "Stone path 14",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 48,
+      "blocking": false
+    },
+    {
+      "id": "terrain:49",
+      "label": "Stone path 15",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 49,
+      "blocking": false
+    },
+    {
+      "id": "terrain:50",
+      "label": "Brick path 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 50,
+      "blocking": false
+    },
+    {
+      "id": "terrain:51",
+      "label": "Brick path 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 51,
+      "blocking": false
+    },
+    {
+      "id": "terrain:52",
+      "label": "Brick path 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 52,
+      "blocking": false
+    },
+    {
+      "id": "terrain:53",
+      "label": "Brick path 3",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 53,
+      "blocking": false
+    },
+    {
+      "id": "terrain:54",
+      "label": "Brick path 4",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 54,
+      "blocking": false
+    },
+    {
+      "id": "terrain:55",
+      "label": "Brick path 5",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 55,
+      "blocking": false
+    },
+    {
+      "id": "terrain:56",
+      "label": "Brick path 6",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 56,
+      "blocking": false
+    },
+    {
+      "id": "terrain:57",
+      "label": "Brick path 7",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 57,
+      "blocking": false
+    },
+    {
+      "id": "terrain:58",
+      "label": "Brick path 8",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 58,
+      "blocking": false
+    },
+    {
+      "id": "terrain:59",
+      "label": "Brick path 9",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 59,
+      "blocking": false
+    },
+    {
+      "id": "terrain:60",
+      "label": "Brick path 10",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 60,
+      "blocking": false
+    },
+    {
+      "id": "terrain:61",
+      "label": "Brick path 11",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 61,
+      "blocking": false
+    },
+    {
+      "id": "terrain:62",
+      "label": "Brick path 12",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 62,
+      "blocking": false
+    },
+    {
+      "id": "terrain:63",
+      "label": "Brick path 13",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 63,
+      "blocking": false
+    },
+    {
+      "id": "terrain:64",
+      "label": "Brick path 14",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 64,
+      "blocking": false
+    },
+    {
+      "id": "terrain:65",
+      "label": "Brick path 15",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 65,
+      "blocking": false
+    },
+    {
+      "id": "terrain:66",
+      "label": "Gravel path 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 66,
+      "blocking": false
+    },
+    {
+      "id": "terrain:67",
+      "label": "Gravel path 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 67,
+      "blocking": false
+    },
+    {
+      "id": "terrain:68",
+      "label": "Gravel path 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 68,
+      "blocking": false
+    },
+    {
+      "id": "terrain:69",
+      "label": "Gravel path 3",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 69,
+      "blocking": false
+    },
+    {
+      "id": "terrain:70",
+      "label": "Gravel path 4",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 70,
+      "blocking": false
+    },
+    {
+      "id": "terrain:71",
+      "label": "Gravel path 5",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 71,
+      "blocking": false
+    },
+    {
+      "id": "terrain:72",
+      "label": "Gravel path 6",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 72,
+      "blocking": false
+    },
+    {
+      "id": "terrain:73",
+      "label": "Gravel path 7",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 73,
+      "blocking": false
+    },
+    {
+      "id": "terrain:74",
+      "label": "Gravel path 8",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 74,
+      "blocking": false
+    },
+    {
+      "id": "terrain:75",
+      "label": "Gravel path 9",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 75,
+      "blocking": false
+    },
+    {
+      "id": "terrain:76",
+      "label": "Gravel path 10",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 76,
+      "blocking": false
+    },
+    {
+      "id": "terrain:77",
+      "label": "Gravel path 11",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 77,
+      "blocking": false
+    },
+    {
+      "id": "terrain:78",
+      "label": "Gravel path 12",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 78,
+      "blocking": false
+    },
+    {
+      "id": "terrain:79",
+      "label": "Gravel path 13",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 79,
+      "blocking": false
+    },
+    {
+      "id": "terrain:80",
+      "label": "Gravel path 14",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 80,
+      "blocking": false
+    },
+    {
+      "id": "terrain:81",
+      "label": "Gravel path 15",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 81,
+      "blocking": false
+    },
+    {
+      "id": "terrain:82",
+      "label": "Water shore 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 82,
+      "blocking": true
+    },
+    {
+      "id": "terrain:83",
+      "label": "Water shore 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 83,
+      "blocking": true
+    },
+    {
+      "id": "terrain:84",
+      "label": "Water shore 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 84,
+      "blocking": true
+    },
+    {
+      "id": "terrain:85",
+      "label": "Water shore 3",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 85,
+      "blocking": true
+    },
+    {
+      "id": "terrain:86",
+      "label": "Water shore 4",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 86,
+      "blocking": true
+    },
+    {
+      "id": "terrain:87",
+      "label": "Water shore 5",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 87,
+      "blocking": true
+    },
+    {
+      "id": "terrain:88",
+      "label": "Water shore 6",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 88,
+      "blocking": true
+    },
+    {
+      "id": "terrain:89",
+      "label": "Water shore 7",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 89,
+      "blocking": true
+    },
+    {
+      "id": "terrain:90",
+      "label": "Water shore 8",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 90,
+      "blocking": true
+    },
+    {
+      "id": "terrain:91",
+      "label": "Water shore 9",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 91,
+      "blocking": true
+    },
+    {
+      "id": "terrain:92",
+      "label": "Water shore 10",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 92,
+      "blocking": true
+    },
+    {
+      "id": "terrain:93",
+      "label": "Water shore 11",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 93,
+      "blocking": true
+    },
+    {
+      "id": "terrain:94",
+      "label": "Water shore 12",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 94,
+      "blocking": true
+    },
+    {
+      "id": "terrain:95",
+      "label": "Water shore 13",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 95,
+      "blocking": true
+    },
+    {
+      "id": "terrain:96",
+      "label": "Water shore 14",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 96,
+      "blocking": true
+    },
+    {
+      "id": "terrain:97",
+      "label": "Water shore 15",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 97,
+      "blocking": true
+    },
+    {
+      "id": "terrain:98",
+      "label": "Water inner nw",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 98,
+      "blocking": true
+    },
+    {
+      "id": "terrain:99",
+      "label": "Water inner ne",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 99,
+      "blocking": true
+    },
+    {
+      "id": "terrain:100",
+      "label": "Water inner sw",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 100,
+      "blocking": true
+    },
+    {
+      "id": "terrain:101",
+      "label": "Water inner se",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 101,
+      "blocking": true
+    },
+    {
+      "id": "terrain:102",
+      "label": "Road 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 102,
+      "blocking": false
+    },
+    {
+      "id": "terrain:103",
+      "label": "Road 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 103,
+      "blocking": false
+    },
+    {
+      "id": "terrain:104",
+      "label": "Road 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 104,
+      "blocking": false
+    },
+    {
+      "id": "terrain:105",
+      "label": "Road 3",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 105,
+      "blocking": false
+    },
+    {
+      "id": "terrain:106",
+      "label": "Road 4",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 106,
+      "blocking": false
+    },
+    {
+      "id": "terrain:107",
+      "label": "Road 5",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 107,
+      "blocking": false
+    },
+    {
+      "id": "terrain:108",
+      "label": "Road 6",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 108,
+      "blocking": false
+    },
+    {
+      "id": "terrain:109",
+      "label": "Road 7",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 109,
+      "blocking": false
+    },
+    {
+      "id": "terrain:110",
+      "label": "Road 8",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 110,
+      "blocking": false
+    },
+    {
+      "id": "terrain:111",
+      "label": "Road 9",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 111,
+      "blocking": false
+    },
+    {
+      "id": "terrain:112",
+      "label": "Road 10",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 112,
+      "blocking": false
+    },
+    {
+      "id": "terrain:113",
+      "label": "Road 11",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 113,
+      "blocking": false
+    },
+    {
+      "id": "terrain:114",
+      "label": "Road 12",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 114,
+      "blocking": false
+    },
+    {
+      "id": "terrain:115",
+      "label": "Road 13",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 115,
+      "blocking": false
+    },
+    {
+      "id": "terrain:116",
+      "label": "Road 14",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 116,
+      "blocking": false
+    },
+    {
+      "id": "terrain:117",
+      "label": "Road 15",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 117,
+      "blocking": false
+    },
+    {
+      "id": "terrain:118",
+      "label": "Grass dirt transition 0 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 118,
+      "blocking": false
+    },
+    {
+      "id": "terrain:119",
+      "label": "Grass dirt transition 1 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 119,
+      "blocking": false
+    },
+    {
+      "id": "terrain:120",
+      "label": "Grass dirt transition 2 0",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 120,
+      "blocking": false
+    },
+    {
+      "id": "terrain:121",
+      "label": "Grass dirt transition 0 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 121,
+      "blocking": false
+    },
+    {
+      "id": "terrain:122",
+      "label": "Grass dirt transition 1 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 122,
+      "blocking": false
+    },
+    {
+      "id": "terrain:123",
+      "label": "Grass dirt transition 2 1",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 123,
+      "blocking": false
+    },
+    {
+      "id": "terrain:124",
+      "label": "Grass dirt transition 0 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 124,
+      "blocking": false
+    },
+    {
+      "id": "terrain:125",
+      "label": "Grass dirt transition 1 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 125,
+      "blocking": false
+    },
+    {
+      "id": "terrain:126",
+      "label": "Grass dirt transition 2 2",
+      "category": "Paths & shores",
+      "kind": "tile",
+      "file": "/pawtrail-game/game-assets/terrain.png",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        32
+      ],
+      "footprint": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "rotations": [
+        0
+      ],
+      "frame": 126,
+      "blocking": false
+    },
+    {
+      "id": "native:cozy_house",
+      "label": "Cozy house",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:mint_house",
+      "label": "Mint house",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        132,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:coral_house",
+      "label": "Coral house",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        262,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:rescue_shelter",
+      "label": "Rescue shelter",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        132,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:rescue_shelter:2x",
+      "label": "Rescue shelter · large",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        128,
+        248
+      ],
+      "footprint": [
+        34,
+        160,
+        188,
+        84
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        132,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:veterinary_clinic",
+      "label": "Veterinary clinic",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        132,
+        132,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:pet_supply_shop",
+      "label": "Pet supply shop",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        262,
+        132,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:sari_sari_store",
+      "label": "Sari sari store",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        262,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:bamboo_house",
+      "label": "Bamboo house",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        132,
+        262,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:resting_pavilion",
+      "label": "Resting pavilion",
+      "category": "Landmarks",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/buildings.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        124
+      ],
+      "footprint": [
+        17,
+        80,
+        94,
+        42
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        262,
+        262,
+        128,
+        128
+      ]
+    },
+    {
+      "id": "native:small_tree",
+      "label": "Small tree",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        23,
+        47,
+        18,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:small_tree:2x",
+      "label": "Small tree · large",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        120
+      ],
+      "footprint": [
+        46,
+        94,
+        36,
+        24
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:large_tree",
+      "label": "Large tree",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        23,
+        47,
+        18,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        68,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:large_tree:2x",
+      "label": "Large tree · large",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        120
+      ],
+      "footprint": [
+        46,
+        94,
+        36,
+        24
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        68,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:palm",
+      "label": "Palm",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        23,
+        47,
+        18,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        134,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:palm:2x",
+      "label": "Palm · large",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        120
+      ],
+      "footprint": [
+        46,
+        94,
+        36,
+        24
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        134,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:flowering_tree",
+      "label": "Flowering tree",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        23,
+        47,
+        18,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        200,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:flowering_tree:2x",
+      "label": "Flowering tree · large",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        120
+      ],
+      "footprint": [
+        46,
+        94,
+        36,
+        24
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        200,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:round_bush",
+      "label": "Round bush",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        266,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:leafy_shrub",
+      "label": "Leafy shrub",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        332,
+        2,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:pink_flowers",
+      "label": "Pink flowers",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        68,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:yellow_flowers",
+      "label": "Yellow flowers",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        68,
+        68,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:white_flowers",
+      "label": "White flowers",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        134,
+        68,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:terracotta_pot",
+      "label": "Terracotta pot",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        200,
+        68,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:blue_pot",
+      "label": "Blue pot",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        266,
+        68,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:garden_pot",
+      "label": "Garden pot",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        332,
+        68,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:fence_straight",
+      "label": "Fence straight",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        4,
+        44,
+        56,
+        16
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        134,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:fence_corner",
+      "label": "Fence corner",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        4,
+        44,
+        56,
+        16
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        68,
+        134,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:fence_gate",
+      "label": "Fence gate",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        4,
+        44,
+        56,
+        16
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        134,
+        134,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:wooden_bench",
+      "label": "Wooden bench",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        200,
+        134,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:street_lamp",
+      "label": "Street lamp",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        23,
+        47,
+        18,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        266,
+        134,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:rocks",
+      "label": "Rocks",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        21,
+        47,
+        22,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        332,
+        134,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:rocks:2x",
+      "label": "Rocks · large",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 128,
+      "height": 128,
+      "anchor": [
+        64,
+        120
+      ],
+      "footprint": [
+        42,
+        94,
+        44,
+        24
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        332,
+        134,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:wooden_sign",
+      "label": "Wooden sign",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        200,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:trash_bin",
+      "label": "Trash bin",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        68,
+        200,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:mailbox",
+      "label": "Mailbox",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        134,
+        200,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:water_bowl",
+      "label": "Water bowl",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        200,
+        200,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:food_bowl",
+      "label": "Food bowl",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        266,
+        200,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:cardboard_box",
+      "label": "Cardboard box",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        332,
+        200,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:round_bed",
+      "label": "Round bed",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        266,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:rectangular_bed",
+      "label": "Rectangular bed",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        68,
+        266,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:dog_house",
+      "label": "Dog house",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        134,
+        266,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:cat_feeding_station",
+      "label": "Cat feeding station",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        200,
+        266,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:dog_kennel",
+      "label": "Dog kennel",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        266,
+        266,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:fabric_shade",
+      "label": "Fabric shade",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        332,
+        266,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:low_shelter",
+      "label": "Low shelter",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        2,
+        332,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:bamboo_canopy",
+      "label": "Bamboo canopy",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        68,
+        332,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:round_door_house",
+      "label": "Round door house",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        134,
+        332,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:stepping_stones",
+      "label": "Stepping stones",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        200,
+        332,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:fence_end",
+      "label": "Fence end",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        4,
+        44,
+        56,
+        16
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        266,
+        332,
+        64,
+        64
+      ]
+    },
+    {
+      "id": "native:sleeping_box",
+      "label": "Sleeping box",
+      "category": "Woodland scenery",
+      "kind": "object",
+      "file": "/pawtrail-game/game-assets/environment.png",
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        60
+      ],
+      "footprint": [
+        20,
+        47,
+        24,
+        12
+      ],
+      "rotations": [
+        0
+      ],
+      "sourceRect": [
+        332,
+        332,
+        64,
+        64
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "built-in ImageGen",
+  "purpose": "genuine higher-resolution facial albedo aligned to existing expression UVs",
+  "references": [
+    "public/pawtrail-game/actor-studio/amber-study-v3/anime-face.png",
+    "assets/actor-appearances/amber-parts-baked-v1/modeling-reference.png"
+  ],
+  "prompt": "Precise production edit: create a HIGH-DETAIL facial ALBEDO TEXTURE ATLAS for the same Amber character. FIRST reference is the existing low-resolution UV texture and locks the exact feature registration/layout. SECOND reference locks Amber's face identity and appealing anime style. Output a single landscape 3:1 atlas with THREE equal SQUARE tiles left-to-right: OPEN EYES, HALF BLINK, CLOSED EYES. Re-draw the fine facial features cleanly with genuine higher-resolution cel illustration detail, not enlarged pixel blocks. Each tile is a flat uninterrupted pale warm skin-colored square, NO head outline, ears, hair, goggles, body, neck, border, background scenery, labels or lighting shadows. This is an unwrapped texture surface, NOT portraits of heads. Preserve registration from the first reference: within each square left/right amber eyes centered at about x=25%/75%, y=50%; slim brown eyebrows near y=33%; subtle tiny nose near y=66%; small friendly mouth near y=80%. Consistent facial landmark positions and skin tone across all three tiles. Amber eyes need detailed golden-brown irises, dark upper lashes, white catchlights and clear shape like the second reference; friendly relaxed expression, restrained soft cheek blush and delicate lip line. Upper third stays mostly empty skin. Lower chin area stays skin with no chin silhouette. Neutral even albedo, no directional light baked into it. No pixelation, no artificial texture noise, no pores, no gradient backdrop. Opaque skin surface, no transparent holes. Exactly three aligned square panels without visible dividers, retain smooth clean hand-painted feature edges for close-up 3D rendering."
+}

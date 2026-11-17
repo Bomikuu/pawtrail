@@ -1,0 +1,43 @@
+{
+  "id": "sena-valez-refined-cel",
+  "name": "Refined cel",
+  "styleKey": "refined-cel",
+  "characterId": "sena-valez",
+  "characterName": "Sena Valez",
+  "playback": "complete-frames",
+  "nativeCell": [
+    96,
+    120
+  ],
+  "contentBounds": [
+    3,
+    22,
+    90,
+    97
+  ],
+  "folder": "/pawtrail-game/game-assets/dialogue-portraits/sena-valez-refined-cel-v1/a82603a34519",
+  "revision": "a82603a34519",
+  "poseIds": [
+    "front-pout",
+    "three-quarter-left",
+    "head-tilt-smile-right"
+  ],
+  "emotionIds": [
+    "idle",
+    "smile",
+    "happy",
+    "sad",
+    "angry",
+    "surprised"
+  ],
+  "budgetBytes": 300000,
+  "completeBytes": 213502,
+  "referenceBytes": 10053,
+  "runtimeBytes": 203449,
+  "poseCount": 3,
+  "expressionCount": 6,
+  "uniqueFullFrames": 180,
+  "sourceImagesUsed": 90,
+  "encoding": "lossless-webp-complete-frames",
+  "paletteLimitIncludingTransparency": 48
+}

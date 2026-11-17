@@ -1,4 +1,7 @@
-@import 'tailwindcss';
+/* Only application code supplies utility classes; authoring exports and traces do not. */
+@import 'tailwindcss' source(none);
+@source './';
+@source '../index.html';
 @import 'tw-animate-css';
 @custom-variant dark (&:is(.dark *));
 @theme inline {

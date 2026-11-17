@@ -200,6 +200,23 @@ export function furnitureKit() {
     box,
     round,
     referenceMesh,
+    outline(parent: T.Object3D, name: string, geometry: T.BufferGeometry, position: [number, number, number]) {
+      const edges = new T.EdgesGeometry(geometry, 35);
+      const material = new T.LineBasicMaterial({ color: '#3a261d', toneMapped: false, depthWrite: false });
+      const lines = new T.LineSegments(edges, material);
+      lines.name = name;
+      lines.position.set(...position);
+      lines.renderOrder = 2;
+      parent.add(lines);
+      geometries.add(edges);
+      materials.add(material);
+      colors.add('#3a261d');
+      return lines;
+    },
+    ownTexture(texture: T.Texture) {
+      textures.set('reference:' + texture.uuid, texture);
+      return texture;
+    },
     whole() {
       for (const g of Object.values(groups)) g.visible = true;
     },

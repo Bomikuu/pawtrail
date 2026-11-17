@@ -1,0 +1,1398 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-11-10T15:08:37.543261+00:00",
+  "scope": "Representation planning plus installed sofa sprite pilot; local Firefox contact review is recorded separately.",
+  "summary": {
+    "catalogIds": 110,
+    "authored3D": 9,
+    "queuedInteractive3D": 0,
+    "queuedHybrid3D": 0,
+    "queuedVolumetric3D": 0,
+    "queuedInteractive2D": 20,
+    "deferred2D": 57,
+    "awaitingRepresentationChoice": 18,
+    "installedInteractive2D": 6
+  },
+  "rules": [
+    "Retained 2D is a deliberate representation choice, not a completed 3D conversion.",
+    "Keep collision/actions independent of art representation; existing IDs/prices/placements stay unchanged.",
+    "Fixed-facing props do not acquire hidden faces by spinning their sprite.",
+    "Pending 3D and hybrid models still require multi-angle reference review."
+  ],
+  "familyReuseCandidates": [
+    {
+      "items": [
+        "sofa",
+        "sofa-sage",
+        "sofa-terracotta",
+        "sofa-cream"
+      ],
+      "approach": "One matched structure with separate upholstery palettes; compare against existing studio-couch before building another shape.",
+      "state": "candidate"
+    },
+    {
+      "items": [
+        "food-bowl-empty",
+        "food-bowl-half",
+        "food-bowl-full"
+      ],
+      "approach": "One bowl mesh with food-level state materials/layers.",
+      "state": "candidate"
+    },
+    {
+      "items": [
+        "water-bowl-empty",
+        "water-bowl-half",
+        "water-bowl-full"
+      ],
+      "approach": "One bowl mesh with water-level states.",
+      "state": "candidate"
+    },
+    {
+      "items": [
+        "pet-blanket",
+        "pet-blanket-sage",
+        "pet-blanket-terracotta",
+        "pet-blanket-cream"
+      ],
+      "approach": "One folded blanket volume with palette variants; current art is not a flat ground decal.",
+      "state": "candidate"
+    },
+    {
+      "items": [
+        "sage-loveseat-east",
+        "sage-loveseat-west"
+      ],
+      "approach": "Compare as facing variants of one loveseat structure while retaining IDs.",
+      "state": "candidate"
+    }
+  ],
+  "items": [
+    {
+      "id": "sofa",
+      "label": "Sofa",
+      "representation": "sprite",
+      "state": "installed_interactive_2d",
+      "reason": "Owner chose the 2D couch trial; original native art, exact arm foreground and shared actor contacts.",
+      "sourceSprite": "/assets/game/housing/furniture/sofa-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "sprite-couch-pilot",
+      "revision": "3917ae976060",
+      "facings": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "review": {
+        "art": "Reused accepted 2D turnaround profiles/rear, exact native pixels; original front unchanged. No new model or generated art.",
+        "runtime": "Firefox: four seated facings, above-item rotation preserves both seats, stand/re-sit and rear safe exit, collision spot check passed. Rear seat elevation visually corrected.",
+        "scope": "Local trial only; authenticated room transactions and multiplayer were not retested.",
+        "evidence": "output/playwright/couch-seated-four-views.png"
+      }
+    },
+    {
+      "id": "armchair",
+      "label": "Armchair",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Approved single-seat model installed, with actual unscaled actor art/fit evidence; live gameplay not verified.",
+      "sourceSprite": "/assets/game/housing/furniture/armchair-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-01",
+      "revision": "fb75522f53bc"
+    },
+    {
+      "id": "floor-lamp",
+      "label": "Floor Lamp",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/furniture/floor-lamp-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "light",
+      "batch": "interaction-2d-02"
+    },
+    {
+      "id": "single-bed",
+      "label": "Single Bed",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/single-bed-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "rest",
+      "batch": "interaction-07",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "wardrobe",
+      "label": "Wardrobe",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/wardrobe-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "desk",
+      "label": "Desk",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/desk-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "refrigerator",
+      "label": "Refrigerator",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/refrigerator-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "stove",
+      "label": "Stove",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/stove-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "sink-counter",
+      "label": "Sink Counter",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/sink-counter-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "three-seat-sofa",
+      "label": "Three Seat Sofa",
+      "representation": "sprite",
+      "state": "installed_interactive_2d",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "sourceSprite": "/assets/game/housing/furniture/three-seat-sofa-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "revision": "114b8fc6c40c",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "television",
+      "label": "Television",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/television-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "tv-cabinet",
+      "label": "Tv Cabinet",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/tv-cabinet-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "decorative-rug",
+      "label": "Decorative Rug",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/decorative-rug-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "wall-clock",
+      "label": "Wall Clock",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/wall-clock-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "double-bed",
+      "label": "Double Bed",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/double-bed-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "rest",
+      "batch": "interaction-07",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "bedside-table",
+      "label": "Bedside Table",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/bedside-table-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "chair",
+      "label": "Chair",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Approved single-seat model installed, with actual unscaled actor art/fit evidence; live gameplay not verified.",
+      "sourceSprite": "/assets/game/housing/furniture/chair-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-01",
+      "revision": "05ea6280e31e"
+    },
+    {
+      "id": "mirror",
+      "label": "Mirror",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/mirror-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "dresser",
+      "label": "Dresser",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/dresser-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "decorative-pillows",
+      "label": "Decorative Pillows",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/decorative-pillows-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "kitchen-counter",
+      "label": "Kitchen Counter",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/kitchen-counter-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "dining-table",
+      "label": "Dining Table",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/dining-table-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "dining-chair",
+      "label": "Dining Chair",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Approved single-seat model installed, with actual unscaled actor art/fit evidence; live gameplay not verified.",
+      "sourceSprite": "/assets/game/housing/furniture/dining-chair-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-01",
+      "revision": "88c0b6360bee"
+    },
+    {
+      "id": "cupboards",
+      "label": "Cupboards",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/cupboards-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "kitchen-shelves",
+      "label": "Kitchen Shelves",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/kitchen-shelves-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "food-storage-containers",
+      "label": "Food Storage Containers",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/food-storage-containers-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "small-indoor-plant",
+      "label": "Small Indoor Plant",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/small-indoor-plant-complete-v1.png",
+      "previousRecommendedRepresentation": "hybrid_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "large-indoor-plant",
+      "label": "Large Indoor Plant",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/large-indoor-plant-complete-v1.png",
+      "previousRecommendedRepresentation": "hybrid_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "flower-pot",
+      "label": "Flower Pot",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/furniture/flower-pot-complete-v1.png",
+      "previousRecommendedRepresentation": "hybrid_3d",
+      "interactionContract": "plant",
+      "batch": "interaction-2d-06"
+    },
+    {
+      "id": "painting",
+      "label": "Painting",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/painting-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "picture-frame",
+      "label": "Picture Frame",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/picture-frame-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "decorative-lights",
+      "label": "Decorative Lights",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "State/contact interaction can keep its native sprite.",
+      "sourceSprite": "/assets/game/housing/furniture/decorative-lights-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": "light",
+      "batch": "interaction-2d-01"
+    },
+    {
+      "id": "candles",
+      "label": "Candles",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/furniture/candles-complete-v1.png",
+      "previousRecommendedRepresentation": "hybrid_3d",
+      "interactionContract": "light",
+      "batch": "interaction-2d-02"
+    },
+    {
+      "id": "wall-shelf",
+      "label": "Wall Shelf",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/wall-shelf-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "storage-box",
+      "label": "Storage Box",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/storage-box-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "books",
+      "label": "Books",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/books-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "small-rug",
+      "label": "Small Rug",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/small-rug-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "coffee-table",
+      "label": "Coffee Table",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/coffee-table-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "perch",
+      "batch": "interaction-14",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "sofa-sage",
+      "label": "Sofa Sage",
+      "representation": "sprite",
+      "state": "installed_interactive_2d",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "sourceSprite": "/assets/game/housing/furniture/sofa-sage-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "revision": "db50fd58992d",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "sofa-terracotta",
+      "label": "Sofa Terracotta",
+      "representation": "sprite",
+      "state": "installed_interactive_2d",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "sourceSprite": "/assets/game/housing/furniture/sofa-terracotta-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "revision": "8cd0b76b49ed",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "sofa-cream",
+      "label": "Sofa Cream",
+      "representation": "sprite",
+      "state": "installed_interactive_2d",
+      "reason": "Complete native 2D facings with actor contacts; original front retained.",
+      "sourceSprite": "/assets/game/housing/furniture/sofa-cream-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-04",
+      "previousRecommendation": "volumetric_3d",
+      "revision": "ceea03b669ba",
+      "review": {
+        "completedAt": "2026-11-10T18:09:44.641953+00:00",
+        "tests": {
+          "clientPassed": 9,
+          "backendPassed": 3,
+          "commands": [
+            "node --import tsx --test tests/sofa-family.test.ts",
+            "backend/.venv/bin/python backend/manage.py test housing.test_sofa_family --noinput --verbosity 1"
+          ],
+          "database": "Generated records only in isolated test DB; destroyed after tests."
+        },
+        "firefox": "Current batch only: 16 seated views, each item sit/stand; collision for two structural shapes; three-seat direct slot selection and occupied-seat rejection.",
+        "evidence": "output/playwright/sofa-family/visual-review.png",
+        "visualResult": "All four original fronts preserved. Color variants retain normal actor allowance. Three-seat front/profiles fit three unscaled actors; its original tall back naturally occludes seated actors in the rear view.",
+        "scope": "No mobile sweep, old furniture regression, editor tour or project-wide typecheck. No authenticated live-room/multiplayer test.",
+        "timing": "assets/furniture-studio/batches/interaction-04-timing.json"
+      }
+    },
+    {
+      "id": "cat-bed",
+      "label": "Cat Bed",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/cat-bed-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "perch",
+      "batch": "interaction-13",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "scratching-post",
+      "label": "Scratching Post",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/scratching-post-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "feeding-bowl-full",
+      "label": "Feeding Bowl Full",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/feeding-bowl-full-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "food",
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "small-cat-bed",
+      "label": "Small Cat Bed",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/small-cat-bed-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "perch",
+      "batch": "interaction-13",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "round-fluffy-cat-bed",
+      "label": "Round Fluffy Cat Bed",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/round-fluffy-cat-bed-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "perch",
+      "batch": "interaction-13",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "wooden-cat-house",
+      "label": "Wooden Cat House",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/wooden-cat-house-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "cat-tree",
+      "label": "Cat Tree",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/cat-tree-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "climb",
+      "batch": "interaction-11",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "tall-cat-climbing-tower",
+      "label": "Tall Cat Climbing Tower",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/tall-cat-climbing-tower-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "climb",
+      "batch": "interaction-11",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "cat-tunnel",
+      "label": "Cat Tunnel",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/cat-tunnel-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "window-perch",
+      "label": "Window Perch",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/window-perch-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "perch",
+      "batch": "interaction-12",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "hanging-cat-hammock",
+      "label": "Hanging Cat Hammock",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/hanging-cat-hammock-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "perch",
+      "batch": "interaction-12",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "cat-basket",
+      "label": "Cat Basket",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/cat-basket-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "cardboard-box",
+      "label": "Cardboard Box",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/cardboard-box-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "cat-carrier",
+      "label": "Cat Carrier",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/cat-carrier-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "automatic-feeder",
+      "label": "Automatic Feeder",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/automatic-feeder-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "care_station",
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "pet-food-storage-container",
+      "label": "Pet Food Storage Container",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/pet-food-storage-container-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "pet-food-bag",
+      "label": "Pet Food Bag",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/pet-food-bag-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "treat-container",
+      "label": "Treat Container",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/treat-container-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "water-fountain",
+      "label": "Water Fountain",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/water-fountain-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "care_station",
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "yarn-ball",
+      "label": "Yarn Ball",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/yarn-ball-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "feather-wand",
+      "label": "Feather Wand",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/feather-wand-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "toy-mouse",
+      "label": "Toy Mouse",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/toy-mouse-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "rubber-ball",
+      "label": "Rubber Ball",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/rubber-ball-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "fish-plush-toy",
+      "label": "Fish Plush Toy",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/fish-plush-toy-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "interactive-track-toy",
+      "label": "Interactive Track Toy",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/interactive-track-toy-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "toy-basket",
+      "label": "Toy Basket",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/toy-basket-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "litter-box",
+      "label": "Litter Box",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/litter-box-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "grooming-brush",
+      "label": "Grooming Brush",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/grooming-brush-complete-v1.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "small-towel",
+      "label": "Small Towel",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/small-towel-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "pet-blanket",
+      "label": "Pet Blanket",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/pet-blanket-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "cleaning-supplies",
+      "label": "Cleaning Supplies",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/cleaning-supplies-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "first-aid-kit",
+      "label": "First Aid Kit",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/first-aid-kit-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "first-aid-pouch",
+      "label": "First Aid Pouch",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/first-aid-pouch-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "food-bowl-empty",
+      "label": "Food Bowl Empty",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/food-bowl-empty-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "food",
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "food-bowl-half",
+      "label": "Food Bowl Half",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/food-bowl-half-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "food",
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "food-bowl-full",
+      "label": "Food Bowl Full",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/food-bowl-full-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "food",
+      "batch": "interaction-2d-03"
+    },
+    {
+      "id": "water-bowl-empty",
+      "label": "Water Bowl Empty",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/water-bowl-empty-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "water",
+      "batch": "interaction-2d-04"
+    },
+    {
+      "id": "water-bowl-full",
+      "label": "Water Bowl Full",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/water-bowl-full-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "water",
+      "batch": "interaction-2d-04"
+    },
+    {
+      "id": "water-bowl-half",
+      "label": "Water Bowl Half",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/water-bowl-half-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "water",
+      "batch": "interaction-2d-04"
+    },
+    {
+      "id": "pet-blanket-sage",
+      "label": "Pet Blanket Sage",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/pet-blanket-sage-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "pet-blanket-terracotta",
+      "label": "Pet Blanket Terracotta",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/pet-blanket-terracotta-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "pet-blanket-cream",
+      "label": "Pet Blanket Cream",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/pet-furniture/pet-blanket-cream-complete-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "garden-bench",
+      "label": "Garden bench",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/community/bench.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-06",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "garden-pot",
+      "label": "Garden flower pot",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/community/pot.png",
+      "previousRecommendedRepresentation": "hybrid_3d",
+      "interactionContract": "plant",
+      "batch": "interaction-2d-06"
+    },
+    {
+      "id": "garden-feeding",
+      "label": "Outdoor care station",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/community/feeding.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "care_station",
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "garden-banana",
+      "label": "Banana plant",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/community/banana.png",
+      "previousRecommendedRepresentation": "hybrid_3d",
+      "interactionContract": "plant",
+      "batch": "interaction-2d-06"
+    },
+    {
+      "id": "garden-lamp",
+      "label": "Garden lamp",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/community/lamp.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "light",
+      "batch": "interaction-2d-02"
+    },
+    {
+      "id": "sage-bed",
+      "label": "Sage quilt bed",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/cozy-room-v1/sage-bed-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "rest",
+      "batch": "interaction-07",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "basket-cat-stand",
+      "label": "Basket cat stand",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/cozy-room-v1/basket-cat-stand-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "climb",
+      "batch": "interaction-11",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "cozy-cat-perch",
+      "label": "Cozy cat perch",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/cozy-room-v1/cozy-cat-perch-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "perch",
+      "batch": "interaction-12",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "sage-loveseat-east",
+      "label": "Sage loveseat \u00b7 faces right",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/sage-loveseat-east.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-05",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "sage-loveseat-west",
+      "label": "Sage loveseat \u00b7 faces left",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/sage-loveseat-west.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-05",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "round-flower-table",
+      "label": "Round daisy coffee table",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/round-flower-table.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "woven-area-rug",
+      "label": "Honey woven area rug",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/woven-area-rug.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "sage-chaise",
+      "label": "Sage window chaise",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/sage-chaise.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-05",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "lantern-cabinet",
+      "label": "Lantern bedside cabinet",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/lantern-cabinet.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "wicker-display-cabinet",
+      "label": "Wicker display cabinet",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/wicker-display-cabinet.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "bamboo-window",
+      "label": "Bamboo garden window",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "State/contact interaction can keep its native sprite.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/bamboo-window.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": "soft_contact",
+      "batch": "interaction-2d-01"
+    },
+    {
+      "id": "woven-runner",
+      "label": "Woven welcome runner",
+      "representation": "retain_2d",
+      "state": "deferred_noninteractive",
+      "reason": "Keep present sprite for now; inspect, placement rotation, color and collision alone do not qualify for new 3D work.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/woven-runner.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": null
+    },
+    {
+      "id": "double-feeding-tray",
+      "label": "Double feeding tray",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "On/off, resource level or care state can remain native 2D.",
+      "sourceSprite": "/assets/game/housing/furniture/reference-v3/double-feeding-tray.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "care_station",
+      "batch": "interaction-2d-05"
+    },
+    {
+      "id": "community-bench",
+      "label": "Neighborhood bench",
+      "representation": "awaiting_owner_choice",
+      "state": "awaiting_representation_choice",
+      "reason": "Pending owner representation choice; interaction alone does not require 3D.",
+      "sourceSprite": "/assets/game/community/bench.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "seat",
+      "batch": "interaction-06",
+      "previousRecommendation": "volumetric_3d"
+    },
+    {
+      "id": "wooden-door",
+      "label": "Wooden door",
+      "representation": "sprite",
+      "state": "installed_interactive_2d",
+      "reason": "Fixed-facing architectural door with matching closed/open sprites, actor clearance and persistent server-owned state. No model required.",
+      "sourceSprite": "/assets/game/housing/tilesets/door-closed-housing-v1.png",
+      "previousRecommendedRepresentation": "volumetric_3d",
+      "interactionContract": "door",
+      "batch": "interaction-03",
+      "previousRecommendation": "volumetric_3d",
+      "revision": "0d01fc443211",
+      "review": {
+        "completedAt": "2026-11-10T17:50:46.814852+00:00",
+        "art": "Existing canonical door pixels, exact 2x native export. Outer wall pixels extracted; identical frame in both states, transparent open aperture. No generated art or model.",
+        "tests": {
+          "client": {
+            "command": "node --import tsx --test tests/door-passage.test.ts",
+            "passed": 3
+          },
+          "backend": {
+            "command": "backend/.venv/bin/python backend/manage.py test housing.test_door --noinput --verbosity 1",
+            "passed": 8,
+            "data": "Generated records in isolated SQLite test database, destroyed afterward."
+          }
+        },
+        "firefox": [
+          "Closed passage blocks the actor.",
+          "Open passage permits crossing while both jambs remain solid.",
+          "Occupied doorway rejects closing; clearing it permits closing.",
+          "Cancel leaves state unchanged.",
+          "Actor fits without scaling.",
+          "Couch regression: both seats, all four directions, standing.",
+          "320px mobile width has no horizontal overflow; open action works.",
+          "Furniture editor interaction-preview round trip.",
+          "Actual stage editor: imported isolated local stage, opened door, inspected native canvas."
+        ],
+        "typecheck": {
+          "result": "Project-wide typecheck reports diagnostics outside changed files. Changed files have no diagnostics.",
+          "log": "output/playwright/door-typecheck.log"
+        },
+        "evidence": [
+          "output/playwright/door-final.png",
+          "output/playwright/door-passage-fit.png",
+          "output/playwright/door-frame-contact.png",
+          "output/playwright/door-occupied.png",
+          "output/playwright/door-mobile.png",
+          "output/playwright/door-stage-editor.png",
+          "output/playwright/door-couch-regression-board.png"
+        ],
+        "limits": "No authenticated live room/reconnect or cross-client multiplayer test. No actual player accounts, balances or placements changed."
+      }
+    },
+    {
+      "id": "garden-bush",
+      "label": "Soft garden bush",
+      "representation": "retain_2d",
+      "state": "queued_interactive_2d",
+      "reason": "State/contact interaction can keep its native sprite.",
+      "sourceSprite": "/assets/game/community/bush.png",
+      "previousRecommendedRepresentation": "retain_2d",
+      "interactionContract": "soft_contact",
+      "batch": "interaction-2d-01"
+    },
+    {
+      "id": "curtain-passage",
+      "label": "Curtained opening",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "sourceSprite": "/assets/game/housing/tilesets/curtained-window-housing-v1.png",
+      "previousRecommendedRepresentation": "existing_3d",
+      "interactionContract": "soft_contact"
+    },
+    {
+      "id": "studio-couch",
+      "label": "Trail couch",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "sourceSprite": "/assets/game/housing/furniture/sofa-housing-v1.png",
+      "previousRecommendedRepresentation": "existing_3d",
+      "interactionContract": "seat"
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "sourceSprite": "/assets/game/housing/furniture/table-housing-v1.png",
+      "previousRecommendedRepresentation": "existing_3d",
+      "interactionContract": "perch"
+    },
+    {
+      "id": "side-table",
+      "label": "Side Table",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "sourceSprite": "/assets/game/housing/furniture/side-table-complete-v1.png",
+      "previousRecommendedRepresentation": "existing_3d",
+      "interactionContract": "perch"
+    },
+    {
+      "id": "bookshelf",
+      "label": "Bookshelf",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "sourceSprite": "/assets/game/housing/furniture/bookshelf-housing-v1.png",
+      "previousRecommendedRepresentation": "existing_3d",
+      "interactionContract": null
+    },
+    {
+      "id": "aquarium",
+      "label": "Little reef aquarium",
+      "representation": "existing_3d",
+      "state": "installed",
+      "reason": "Preserve installed model. Review existing interaction integration separately; no remodelling implied.",
+      "sourceSprite": "/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+      "previousRecommendedRepresentation": "existing_3d",
+      "interactionContract": "aquarium_care"
+    }
+  ],
+  "previousAuditSummary": {
+    "catalogIds": 110,
+    "authored3D": 6,
+    "retain2D": 16,
+    "plannedHybrid3D": 6,
+    "plannedVolumetric3D": 82,
+    "remaining3D": 88,
+    "remainingSpriteReview": 16
+  },
+  "currentScope": "Ask for 3D + 2D renders or 2D sprites when unspecified; interaction and sitting do not require a furniture mesh. The sofa pilot uses unchanged original 2D art.",
+  "interactionPlan": "assets/furniture-studio/batches/interaction-plan.json",
+  "scopeUpdatedAt": "2026-11-10T18:09:44.641953+00:00",
+  "representationChoice": {
+    "requiredWhenUnspecified": true,
+    "question": "Should this use 3D + 2D renders, or 2D sprites only?",
+    "silenceChoosesRepresentation": false,
+    "choiceScope": "Agreed request or batch; reuse an already explicit choice."
+  },
+  "previousWorkflowSummary": {
+    "catalogIds": 110,
+    "authored3D": 9,
+    "queuedInteractive3D": 24,
+    "queuedHybrid3D": 0,
+    "queuedVolumetric3D": 24,
+    "queuedInteractive2D": 20,
+    "deferred2D": 57
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source": "approved normal-generated.png",
+  "crops": {
+    "hair": [
+      720,
+      900,
+      820,
+      1080
+    ],
+    "suit": [
+      452,
+      480,
+      580,
+      590
+    ],
+    "stocking": [
+      393,
+      950,
+      443,
+      1110
+    ],
+    "cuff": [
+      515,
+      710,
+      530,
+      725
+    ],
+    "ear": [
+      479,
+      85,
+      504,
+      129
+    ],
+    "metal": [
+      275,
+      650,
+      310,
+      690
+    ]
+  },
+  "nativeSize": [
+    64,
+    96
+  ],
+  "projection": "Original shared-body UVs; cosmetic accessories have their own UVs",
+  "body": "Canonical createRescuer anatomy, pivots and actions retained"
+}

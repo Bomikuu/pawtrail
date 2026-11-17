@@ -1,0 +1,54 @@
+{
+  "id": "amber-blender-mcp-v1",
+  "actor": "amber-outrider",
+  "status": "comparison-only",
+  "authoring": {
+    "software": "Blender 5.2.4 LTS",
+    "transport": "Official Blender Lab MCP / execute_blender_code",
+    "script": "tools/actors/refine_amber_blender.py"
+  },
+  "baseFactory": "createAmberVolumeStudy",
+  "currentFactory": "createAmberShoulderStudy",
+  "meshes": 18,
+  "meshFile": "/pawtrail-game/actor-studio/amber-blender-mcp-v1/mesh-patches.json",
+  "meshBytes": 358327,
+  "textures": "Existing approved Amber painted surfaces; no new runtime image downloads",
+  "frame": {
+    "width": 128,
+    "height": 160,
+    "density": 2,
+    "filter": "nearest",
+    "paletteAndContour": "shared PixelFinish"
+  },
+  "animation": "Existing live pose functions and secondary-motion closures; not baked or replaced",
+  "preview": "/play?preview=actors&skin=amber-outrider&model=blender",
+  "review": {
+    "browser": "Firefox: scoped browser verification requested by owner",
+    "offlineFrontThreeQuarterSide": "inspected",
+    "motion": "idle/walk/run browser sequences inspected; continuous secondary hair/cape motion",
+    "poses": "care/rest/emotes and remaining action controls exercised; power-up revisited after cooldown",
+    "controls": {
+      "dragRotationDegrees": [
+        45,
+        111
+      ],
+      "wheelZoom": "confirmed",
+      "expandAndFit": "confirmed",
+      "legacyComparison": "confirmed",
+      "movingAction": "Pet retained"
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 390
+    },
+    "javascriptErrors": [],
+    "evidence": "output/playwright/amber-blender-motion",
+    "automatedTestsBuilds": "not run",
+    "ownerVisualApproval": "pending",
+    "promotionToGameplay": false
+  },
+  "gamePromotion": false
+}

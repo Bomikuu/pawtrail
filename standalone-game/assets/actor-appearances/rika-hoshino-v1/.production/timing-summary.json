@@ -1,0 +1,72 @@
+{
+  "job": "rika-hoshino",
+  "spans": [
+    {
+      "id": "120194190a2945a8a8f00c4f02798b1b",
+      "name": "Tooling adoption and source review",
+      "actor": "shared",
+      "kind": "work",
+      "at": "2026-11-15T04:09:56.144448+00:00",
+      "status": "complete",
+      "elapsedMs": 382305,
+      "note": "Production manifest/readiness and persistent review queue exercised on existing approved assets. Firefox idle captured and explicitly visually approved; portrait and illustration captures remain pending full observation. No automated tests/builds or agents.",
+      "finishedAt": "2026-11-15T04:16:18.449456+00:00"
+    },
+    {
+      "id": "ffd041295d704682aa92f4465ffb00e6",
+      "name": "capture rika-hoshino/action/idle",
+      "actor": "rika-hoshino",
+      "kind": "review",
+      "at": "2026-11-15T04:10:28.298823+00:00",
+      "status": "failed",
+      "elapsedMs": 4173,
+      "note": "Firefox capture failed; inspect /run/media/micxsz/Drive/Workspaces/Documents/ChatGPT/pawtrail/assets/actor-appearances/rika-hoshino-v1/.production/evidence/rika-hoshino/action-idle/779ad1718c18466692b537789a395709/capture-log.txt",
+      "finishedAt": "2026-11-15T04:10:32.471680+00:00"
+    },
+    {
+      "id": "9032ce1ce87847e3b23257863c85159a",
+      "name": "capture rika-hoshino/action/idle",
+      "actor": "rika-hoshino",
+      "kind": "review",
+      "at": "2026-11-15T04:11:12.347610+00:00",
+      "status": "complete",
+      "elapsedMs": 7410,
+      "note": "Captured, awaiting visual observation; no automatic approval",
+      "finishedAt": "2026-11-15T04:11:19.757802+00:00"
+    },
+    {
+      "id": "35d1556081ed439e9e6756d97a17b660",
+      "name": "capture rika-hoshino/action/idle",
+      "actor": "rika-hoshino",
+      "kind": "review",
+      "at": "2026-11-15T04:12:43.624996+00:00",
+      "status": "complete",
+      "elapsedMs": 9594,
+      "note": "Captured, awaiting visual observation; no automatic approval",
+      "finishedAt": "2026-11-15T04:12:53.218832+00:00"
+    },
+    {
+      "id": "410ee383891a47a1a5c99967ad735530",
+      "name": "capture rika-hoshino/portrait/three-quarter-left/smile",
+      "actor": "rika-hoshino",
+      "kind": "review",
+      "at": "2026-11-15T04:13:28.733542+00:00",
+      "status": "complete",
+      "elapsedMs": 8852,
+      "note": "Captured, awaiting visual observation; no automatic approval",
+      "finishedAt": "2026-11-15T04:13:37.585300+00:00"
+    },
+    {
+      "id": "024b41c3054a4f98abbf187e3e7bca04",
+      "name": "capture rika-hoshino/illustration/normal",
+      "actor": "rika-hoshino",
+      "kind": "review",
+      "at": "2026-11-15T04:14:16.204970+00:00",
+      "status": "complete",
+      "elapsedMs": 17682,
+      "note": "Captured, awaiting visual observation; no automatic approval",
+      "finishedAt": "2026-11-15T04:14:33.886454+00:00"
+    }
+  ],
+  "note": "Durations overlap. Open/interrupted spans have no inferred duration. Stage intervals include their waits; they are not CPU or active-coding time."
+}

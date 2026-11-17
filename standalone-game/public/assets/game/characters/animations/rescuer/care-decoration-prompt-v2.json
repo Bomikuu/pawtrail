@@ -1,0 +1,8 @@
+{
+  "variant": "rescuer",
+  "group": "care-decoration",
+  "rows": 10,
+  "cols": 4,
+  "prompt": "Use case: stylized-concept. PawTrail rescuer CARE AND DECORATION animation spritesheet. Referenceimage exactpersonmediumbrownskin shortdarkbrownhairstyle sageshirt rustshorts brownshoes tanbackpack. IDENTICAL throughout. Native32x48 logicalsprite cozy16bit crispclusters darkwarmbrown outlines topdown3/4. Transparentbackground no glow. EXACT4columns10rows, eachrow4sequentialposes ofaction,40separate fullbody sprites. VERY SMALL characters with generous clear transparent margins: topandbottom marginsatleast40px and allfeetvisible, no character can touch canvas edges. Rows pet animal gently crouching hand low; feed animal offering food low; play waving feather wand; refill water pouring bottle; clean floor wiping with cloth; carry small supply crate; pick up furniture bending and lifting; move furniture carrying a small stool; place object carefully lowering stool; inspect furniture holding magnifying glass. Every row preservebodyproportions and meaningful actionmovement. Fixedfootbaselinepercells. Props mayincludebottleclothcrateandstool but NO animals or rooms or actualfurniturebackground. No textlabelsgridlinesisometricgradientsblur.",
+  "source": "/home/micxsz/.codex/generated_images/01a1b2b7-93f7-7e60-9c33-77594caf545e/exec-17d2eda4-b6e3-459c-a162-5ed83797d920.png"
+}

@@ -169,6 +169,9 @@ export type DialogueChoice = {
   target: string;
 };
 export type Dialogue = {
+  expression?: import('./actor-rig/portrait-state').PortraitExpression;
+  voiceActorId?: string;
+  voiceCue?: import('./runtime/actor-preview-voice').ActorVoiceCueId;
   name: string;
   text: string;
   npcId?: string;

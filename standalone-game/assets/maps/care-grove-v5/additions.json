@@ -1,0 +1,112 @@
+[
+  {
+    "id": "grove:village-house",
+    "label": "Slate-roof timber cottage",
+    "category": "Village scenery \u00b7 reference pack",
+    "kind": "object",
+    "file": "/pawtrail-game/map-art/care-grove-v5/village-house.png",
+    "width": 240,
+    "height": 224,
+    "anchor": [
+      120,
+      218
+    ],
+    "footprint": [
+      20,
+      170,
+      200,
+      44
+    ],
+    "rotations": [
+      0
+    ]
+  },
+  {
+    "id": "grove:village-barrels",
+    "label": "Barrels and supply crate",
+    "category": "Village scenery \u00b7 reference pack",
+    "kind": "object",
+    "file": "/pawtrail-game/map-art/care-grove-v5/village-barrels.png",
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      60
+    ],
+    "footprint": [
+      7,
+      42,
+      50,
+      18
+    ],
+    "rotations": [
+      0
+    ]
+  },
+  {
+    "id": "grove:village-cart",
+    "label": "Wooden handcart",
+    "category": "Village scenery \u00b7 reference pack",
+    "kind": "object",
+    "file": "/pawtrail-game/map-art/care-grove-v5/village-cart.png",
+    "width": 96,
+    "height": 80,
+    "anchor": [
+      48,
+      76
+    ],
+    "footprint": [
+      10,
+      54,
+      76,
+      22
+    ],
+    "rotations": [
+      0
+    ]
+  },
+  {
+    "id": "grove:village-wall",
+    "label": "Ivy-covered stone wall",
+    "category": "Village scenery \u00b7 reference pack",
+    "kind": "object",
+    "file": "/pawtrail-game/map-art/care-grove-v5/village-wall.png",
+    "width": 128,
+    "height": 80,
+    "anchor": [
+      64,
+      76
+    ],
+    "footprint": [
+      5,
+      60,
+      118,
+      16
+    ],
+    "rotations": [
+      0
+    ]
+  },
+  {
+    "id": "grove:village-wall-low",
+    "label": "Low ivy stone boundary",
+    "category": "Village scenery \u00b7 reference pack",
+    "kind": "object",
+    "file": "/pawtrail-game/map-art/care-grove-v5/village-wall-low.png",
+    "width": 64,
+    "height": 40,
+    "anchor": [
+      32,
+      36
+    ],
+    "footprint": [
+      4,
+      20,
+      56,
+      16
+    ],
+    "rotations": [
+      0
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "id": "sieg",
+  "name": "Sieg",
+  "title": "Stormwarden",
+  "style": "Refined cel",
+  "age": 27,
+  "origin": "Fictional coastal town of Bracken Quay",
+  "nationality": "Fictional Bracken Coast",
+  "personality": [
+    "quietly protective",
+    "observant",
+    "dry humor",
+    "patient with frightened animals"
+  ],
+  "biography": "A former harbor courier, Sieg keeps a storm shelter at Bracken Quay. He learned to read the weather before he learned to wield a blade. His rounds now include stranded travelers and the animals that shelter under the docks.",
+  "tone": "Short, grounded sentences; gentle reassurance rather than heroic speeches.",
+  "values": [
+    "kindness without spectacle",
+    "safety before pride",
+    "keeping promises"
+  ],
+  "voice": {
+    "status": "omitted-by-owner"
+  },
+  "authorship": "Fictional identity authored for PawTrail. Age, origin and biography are creative design choices, not claims inferred about a real person.",
+  "designChanges": [
+    "Copper forelock and amber eyes",
+    "Short navy cape with teal lining",
+    "Single brass pauldron and ivory shirt",
+    "Charcoal tapered trousers and calf boots",
+    "Short broad saber with forked brass guard"
+  ],
+  "runtimeScope": "Actor preview only; shares existing movement and action rig. No live roster or combat ability installation."
+}

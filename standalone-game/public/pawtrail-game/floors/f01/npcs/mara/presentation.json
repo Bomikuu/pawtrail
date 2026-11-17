@@ -1,0 +1,18 @@
+{
+  "id": "mara",
+  "name": "Mara Solis",
+  "portraitCollection": "mara-solis-refined-cel",
+  "illustration": {
+    "name": "Mara Solis",
+    "folder": "/pawtrail-game/floors/f01/npcs/mara/illustration",
+    "nativeSize": [
+      192,
+      320
+    ],
+    "style": "Refined cel + painterly",
+    "motion": "Authored full-body idle and blink"
+  },
+  "icon": "/pawtrail-game/floors/f01/npcs/mara/icon.png",
+  "portraitBytes": 264790,
+  "scope": "friendly NPC · normal only · no voices"
+}

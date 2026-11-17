@@ -3,10 +3,12 @@ import definitions from "./definitions.json";
 import { furnitureKit } from "./model-kit";
 import { createReferenceAquarium } from "./aquarium";
 import { createReferenceCouch } from "./couch";
-import couchTurnaround from "./references/couch-turnaround.json";
-import aquariumTurnaround from "./references/aquarium-turnaround.json";
+import { createReferenceTimber, isReferenceTimber } from './reference-timber';
+import { createReferenceChair, isReferenceChair } from './reference-chairs';
+import { furnitureTurnaround } from './references/turnarounds';
 export const furnitureDefinitions = definitions.items;
 export type FurnitureDefinition = (typeof definitions.items)[number];
+export const furnitureSeatCount = (definition: FurnitureDefinition) => definition.model === 'couch' ? 2 : isReferenceChair(definition.model) ? 1 : 0;
 export type CouchStyle = FurnitureDefinition["styles"][number];
 export const FACINGS = [0, 90, 180, 270] as const;
 export const facingLabel = (rotation: number) =>
@@ -32,8 +34,10 @@ export function createFurniture(
     top = 40,
     approach = [0, 0, 54],
     sensor: Rect3 | undefined,
-    seatSupport: { height: number; front: number } | undefined;
+    seatSupport: { height: number; front: number } | undefined,
+    seatClearance: { left: number; right: number; back: number; front: number; armTop: number } | undefined;
   let animate = (_phase: number, _force: number) => {};
+  let surfaces: { id: string; point: number[]; rect: number[]; capacity: number }[] = [];
   const palette = [
     ink,
     style.fabric,
@@ -157,6 +161,23 @@ export function createFurniture(
     approach = aquarium.approach;
     palette.push(...aquarium.palette);
     animate = aquarium.animate;
+  } else if (isReferenceChair(definition.model)) {
+    const chair = createReferenceChair(k, style, definition.model);
+    top = chair.top;
+    grounds = chair.grounds;
+    approach = chair.approach;
+    seats = chair.seats;
+    surfaces = chair.surfaces;
+    seatSupport = chair.seatSupport;
+    seatClearance = chair.seatClearance;
+    palette.push(...chair.palette);
+  } else if (isReferenceTimber(definition.model)) {
+    const timber = createReferenceTimber(k, style, definition.model);
+    top = timber.top;
+    grounds = timber.grounds;
+    approach = timber.approach;
+    surfaces = timber.surfaces;
+    palette.push(...timber.palette);
   } else {
     k.dispose();
     throw new Error("Furniture model is not registered.");
@@ -175,12 +196,14 @@ export function createFurniture(
     top,
     approach,
     sensor,
+    surfaces,
     animate,
     preservePaint:
-      definition.model === "aquarium" || definition.model === "couch",
+      definition.model === "aquarium" || definition.model === "couch" || isReferenceTimber(definition.model) || isReferenceChair(definition.model),
     seatSupport,
+    seatClearance,
     foreground(rotation: number) {
-      if (definition.model !== "couch") {
+      if (definition.model !== "couch" && !isReferenceChair(definition.model)) {
         for (const g of Object.values(k.groups)) g.visible = false;
         return;
       }
@@ -203,11 +226,10 @@ export const createCouch = (style: CouchStyle) =>
   createFurniture(furnitureDefinitions[0], style);
 export function furnitureCamera(rotation = 0, definition?: FurnitureDefinition) {
   const camera = new T.OrthographicCamera(-48, 48, 96, -16, 0.1, 300);
-  const calibration = definition?.model === "couch" ? couchTurnaround.projection
-      : definition?.model === "aquarium" ? aquariumTurnaround.projection : undefined,
-    power = calibration && "blendPower" in calibration ? calibration.blendPower : 4,
+  const calibration = definition ? furnitureTurnaround(definition.model)?.projection : undefined,
+    power = calibration && "blendPower" in calibration ? calibration.blendPower ?? 4 : 4,
     basePitch = Math.atan2(34.5, 90),
-    profileWeight = Math.sin(rotation * Math.PI / 180) ** power,
+    profileWeight = Math.abs(Math.sin(rotation * Math.PI / 180)) ** power,
     pitch = calibration
       ? basePitch + (calibration.sidePitchDegrees * Math.PI / 180 - basePitch) * profileWeight
       : basePitch;
@@ -226,7 +248,7 @@ export function projectedGeometry(
   // the couch's projected seat instead of changing the actor's sprite/camera.
   const nativeCos = 90 / Math.hypot(90, 34.5),
     viewCos = 90 / Math.hypot(90, camera.position.y),
-    hipHeight = definition.model === "couch" ? 5.8 * nativeCos / viewCos : 5.8;
+    hipHeight = definition.model === "couch" || isReferenceChair(definition.model) ? 5.8 * nativeCos / viewCos : 5.8;
   const project = (p: number[]) => {
     const v = new T.Vector3(...(p as [number, number, number]))
       .applyMatrix4(turn)
@@ -253,7 +275,7 @@ export function projectedGeometry(
       ];
     };
     const ground = model.grounds.map(rect),
-      exit = project(model.approach),
+      projectedExit = project(model.approach),
       all = model.grounds.flatMap((r) => [
         [r[0], r[1]],
         [r[0] + r[2], r[1] + r[3]],
@@ -269,12 +291,21 @@ export function projectedGeometry(
           [zz, zz + dd].map((z) => project([x, model.top, z])[1]),
         ),
       );
+    const center = [footprint[0] + footprint[2] / 2, footprint[1] + footprint[3] / 2];
+    const around = [
+      [center[0], footprint[1] + footprint[3] + 14],
+      [footprint[0] - 14, center[1]],
+      [center[0], footprint[1] - 14],
+      [footprint[0] + footprint[2] + 14, center[1]],
+    ];
+    const dx = projectedExit[0] - anchor[0], dy = projectedExit[1] - anchor[1];
+    const front = Math.abs(dx) > Math.abs(dy) ? dx < 0 ? 1 : 3 : dy < 0 ? 2 : 0;
+    const multiApproach = isReferenceTimber(definition.model) || isReferenceChair(definition.model);
+    const exit = multiApproach ? around[front] : projectedExit;
     const reaction =
-      definition.model === "couch"
-        ? undefined
-        : definition.model === "curtain"
+      definition.model === "curtain"
           ? { kind: "sway", fps: 10, sensor: rect(model.sensor!) }
-          : { kind: "loop", fps: 6 };
+          : definition.model === "aquarium" ? { kind: "loop", fps: 6 } : undefined;
     return {
       width: 96,
       height: 112,
@@ -287,7 +318,7 @@ export function projectedGeometry(
         ground,
         placement: [footprint],
         approaches:
-          definition.model === "curtain"
+          multiApproach ? [exit, ...around.filter(point => point !== exit)] : definition.model === "curtain"
             ? [exit, project([0, 0, -38])]
             : [exit],
         seats: model.seats.map((s) => ({
@@ -299,10 +330,20 @@ export function projectedGeometry(
             project([s.point[0], s.point[1] - hipHeight, s.point[2]])[1],
           exit,
         })),
-        surfaces: [],
+        surfaces: model.surfaces.map(surface => ({
+          id: surface.id,
+          point: project([surface.point[0], 0, surface.point[2]]),
+          elevation: project([surface.point[0], 0, surface.point[2]])[1] - project(surface.point)[1],
+          landingBounds: rect(surface.rect as Rect3),
+          approach: exit,
+          descent: exit,
+          species: ['cat'],
+          capacity: surface.capacity,
+          links: [],
+        })),
         occlusion: "base",
         actions:
-          definition.model === "couch"
+          definition.model === "couch" || isReferenceChair(definition.model)
             ? ["sit", "inspect"]
             : definition.model === "aquarium"
               ? ["care_aquarium", "inspect"]

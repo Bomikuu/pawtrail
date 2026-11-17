@@ -192,3 +192,177 @@ All interactions are disposable rehearsal state. Returning to Edit, respawning,
 replacing the actor or unmounting releases the interaction. Authored stage data
 and undo history remain unchanged. This addition was source-reviewed only; no
 agents, automated tests/checks, builds or browser verification were run.
+
+
+## Sampaguita Care Grove
+
+Open `/play?preview=stage&map=care-grove`, or use **Files → Sampaguita Care Grove
+map** in the existing editor. Choose a character, then **Play map**. The template
+enters undo history; opening it does not overwrite the explicitly saved device
+draft. **Save locally** persists your current edited layout under the existing
+stage-editor save key.
+
+This first outdoor map is 32 × 24 native tiles (1024 × 768 px), with 79 editable
+objects. A shelter anchors the upper-right stone courtyard; woodland and rocks
+frame the edges, while crossing dirt paths connect a planted care garden,
+quiet resting corner and lower-center arrival. The shelter is a scenery landmark;
+its interior and a connection to the main overworld are outside this stage.
+
+In Play, use WASD/arrows, Shift to run and E or the contextual action button:
+
+- Three benches support sitting, standing and approach/exit collision.
+- The wooden garden door changes to its actual open artwork and passage geometry.
+  Its frame remains solid; closing waits for the doorway to clear.
+- Two garden lamps change local on/off state with a visible glow and state badge.
+- The feeding station accepts a local food refill, with a completed-state badge.
+- Two planters accept watering, with an actor care gesture and completed-state badge.
+
+The contextual prompt and E key select the same nearest supported target. Walking,
+performing, completion and blocked approaches have visible text feedback. Care
+state is disposable rehearsal data: no supplies, inventory, accounts, animals or
+Kibble change, and leaving Play resets it. The actor, seat contacts, paths and
+interaction controller reuse the installed game systems.
+
+`native-assets.json` now registers all 127 existing terrain cells with their real
+labels, plus 51 scenery/building entries, using source atlas rectangles and native
+anchors. Six large scenery variants use integer 2× nearest-neighbor scaling. Existing
+terrain IDs keep their original frames; previously incorrect material labels are
+corrected. Water/shore navigation reads blocking metadata. Rendering and hit testing
+crop atlas objects correctly, cull offscreen scenery/terrain, and keep PNG exports
+free of playtest state.
+
+Authoring sources: `scripts/prepare-care-grove.py`,
+`src/game/stage-editor/maps/care-grove.json` and
+`assets/maps/care-grove-v1/`. The served import is
+`/pawtrail-game/stages/care-grove-v1.json`. The scoped exporter reuses installed
+art and does not regenerate unrelated world maps. Its native overview was visually
+inspected and broad dirt paths were repaired to remove repeating grassy holes.
+Runtime walking, contact alignment and interaction outcomes remain unverified;
+no automated checks/tests/builds or browser verification were run for this task.
+
+
+## Generated Care Grove art revision
+
+The Care Grove query/template now uses the version-two reference-led package:
+`src/game/stage-editor/maps/care-grove-v2.json` and `grove-art.json`. New terrain,
+stone hall, fir trees, mossy cliff, dry scrub and bare trees use a subdued,
+weathered style closer to the supplied screenshot. Source prompts, raw images,
+export manifest and production record live in `assets/maps/care-grove-v2/`.
+
+`StageDocument.groundArt` is an optional registered continuous terrain painting.
+The importer rejects unknown painting IDs; raw file paths are not accepted.
+The renderer draws it at native size beneath explicitly painted tile overrides.
+Erase restores the painting beneath a cell; selecting a different Base floor
+clears the painting, while Painted terrain can restore/change it. Resizing clips
+or exposes base floor instead of stretching the art. Saves, JSON and PNG export
+preserve this terrain layer. Collision still uses semantic base/override tiles
+and separate scenery/furniture ground geometry, not the painted pixels.
+
+Grid is hidden by default and disabled in Play; Edit retains an explicit Grid
+button/G shortcut. This removes authoring lines as well as the repeating tile
+boundaries the previous ground textures exposed. The version-one layout/art and
+all existing user saves remain available. No global world maps are overwritten.
+This revision includes native art inspection; live browser/gameplay checks were
+not requested and remain pending.
+
+
+## Character-style darker outline revision
+
+Care Grove now resolves the same registered IDs to the v3 art under
+`public/pawtrail-game/map-art/care-grove-v3/`. Built-in ImageGen edits use the
+installed character sheet for dark espresso contours and stepped shading, with
+slightly deeper material colors. The ground retains its continuous painting
+and route composition; the editor grid remains hidden by default.
+
+`scripts/prepare-care-grove-v3.py` normalizes the edited sources to the previous
+native canvases and preserves existing sizes, anchors, footprints, placement IDs
+and furniture interaction behavior. `assets/maps/care-grove-v3/` keeps exact
+prompts, per-image service timings, geometry snapshot, output manifest and native
+overview. The v2 artwork/layout remains available; no actor models or interaction
+controllers change for this artwork revision. Live gameplay verification remains
+pending under the current owner instructions.
+
+
+## Softer outline and color adjustment
+
+Care Grove's registered art now uses `care-grove-v4`: lighter material midtones,
+finer warm brown outlines, softer path transitions and lower contrast in ground
+accents. This is a built-in ImageGen art edit using v3 as the target and v2 as a
+softer reference. Prior files remain intact. The same shared native exporter
+accepts `--revision 4`; it retains native dimensions, geometry and existing local
+interactions. Prompts, source images, service timings and the reviewed native
+overview are kept in `assets/maps/care-grove-v4/`. No app tests/checks/builds or
+browser review are included in this art adjustment.
+
+
+## Latest village-reference pack
+
+Care Grove v5 matches the owner's newer medieval village screenshot through
+asset-level material shading/detail: subdued greens/wood/stone, blue-grey slate,
+deep colored recesses and fine contours. Six existing terrain/scenery sources
+are restyled; four newly generated placeables add a timber cottage, barrels and
+crate, handcart and ivy stone wall. The library category is **Village scenery ·
+reference pack**. The default map template uses `maps/care-grove-v5.json`; prior
+layouts, asset revisions and user saves remain intact.
+
+New scenery uses declared native frames, ground anchors and solid footprints.
+Existing furniture contacts/actions remain owned by the housing catalogue and
+controller. The cottage is a scenery landmark, without an enterable interior;
+the cart is not a new driving interaction. No combat or backend records are
+added from the reference image. The continuous ground and hidden default grid
+remain. The shared exporter accepts `--revision 5` and optional per-job
+`additions.json` / `layout-source.json`; production records and exact prompts
+are in `assets/maps/care-grove-v5/`.
+
+The native overview/new-scenery sheet are artwork evidence only. No automated
+app tests/checks/builds or browser verification are part of this authoring task;
+live actor scale/contact/navigation/interaction review remains pending.
+
+
+## Sampaguita Old Quarter village
+
+`/play?preview=stage&map=village` and **Files → Sampaguita Old Quarter village**
+open the 48 × 32 editable village template. It includes 12 houses using approved
+cottage art and two new workshop/townhouse silhouettes, a community hall,
+connected cobbled streets, a market courtyard, side alleys and clear arrival.
+The new registry `village-art.json` adds only the missing two buildings and ground;
+Care Grove's existing art registry is reused without replacement. Both ground
+paintings are registered for the existing inspector/JSON/PNG/local-save path.
+
+Stage data: `maps/sampaguita-village-v1.json`; production inputs/evidence:
+`assets/maps/sampaguita-village-v1/`; scoped native export:
+`scripts/prepare-sampaguita-village.py`. All houses are separate editable scenery
+with ground collision. There are no enterable interiors or new world portals.
+The current actor, navigation, depth and furniture controller provide walking
+and local bench/light/food/plant actions. User saves and Care Grove remain intact.
+Native composition inspected; live navigation, actor/roof visibility and action
+playback are unverified. No automated app checks/tests/builds or browser review
+were requested.
+
+## Sampaguita Neon Heights
+
+`/play?preview=stage&map=cyberpunk` and **Files → Neon Heights cyberpunk district**
+open a separate 48 × 36 editable cyberpunk map. The owner's neon skyline reference
+provides cyan/magenta glass towers, android and koi holograms, reflective streets
+and an observation/maintenance terrace, rendered as textured 2D pixel art.
+Eleven tower blocks, two kiosks, three projection emitters, four rooftop fans
+and fourteen steel rail sections are independent movable stage objects. Larger
+north-edge towers use integer 2× variants; upper stories intentionally extend
+beyond the stage edge. Ground collision follows bases, not full tower heights.
+
+`neon-art.json` registers the continuous ground, eight native props and three
+large skyline variants. Authoring sources, prompts, timing/provenance and native
+overviews live in `assets/maps/neon-heights-v1/`; only the PNG exports under
+`public/pawtrail-game/map-art/neon-heights-v1/` are served. The scoped producer is
+`scripts/prepare-neon-heights.py`; the canonical layout is
+`maps/neon-heights-v1.json`. The new reference overrides the palette for this
+map, while Care Grove and Old Quarter retain their approved finish.
+
+Choose **Play map** for the shared actor and walking/collision controller;
+WASD/arrows move and Shift runs. Holograms and kiosks are static scenery, with
+no new E actions, interiors, NPCs, vehicles or multi-level terrace physics.
+The existing local save, undo and JSON/PNG export paths apply. Loading this
+template does not overwrite the user's saved draft. Native composition and
+cutouts were inspected; no automated app checks/tests/builds or live browser
+verification were requested. Actor occlusion, collision and asset loading in
+the running application remain unverified.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PawTrail Maps"
+  short_description: "Approve a map concept, then build animated environments"
+  default_prompt: "Use $pawtrail-maps to generate a map concept from my description or reference, wait for my approval, then build it with PawTrail Assets, animated scenery and 3D interactive props."

@@ -84,6 +84,11 @@ export function navigateStageEditor(){
   window.history.pushState(null,'',path+'?preview=stage')
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
+export function navigateFloorAdventure(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?floor=neon-heights')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
 
 export function navigateActorExplainer(){
   const path=window.location.pathname==='/'?'/':'/play'
@@ -94,5 +99,52 @@ export function navigateActorExplainer(){
 export function navigateItemStudio(){
   const path=window.location.pathname==='/'?'/':'/play'
   window.history.pushState(null,'',path+'?preview=items')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateMonsterStudio(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=monsters')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateHydraArena(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=monsters&boss=kaedros')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateSerpentArena(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=monsters&boss=morvane')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateReaperArena(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=monsters&boss=vesper')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateDeityArena(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=monsters&boss=solvaris')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateRobotArena(){
+  const path=window.location.pathname==='/'?'/':'/play'
+  window.history.pushState(null,'',path+'?preview=monsters&boss=kurogane')
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function navigateMonsterFamily(bossQuery: string, creatureId?: string) {
+  const path = window.location.pathname === '/' ? '/' : '/play'
+  const query = new URLSearchParams({ preview: 'monsters' })
+  if (bossQuery) query.set('boss', bossQuery)
+  if (creatureId) query.set('creature', creatureId)
+  const href = path + '?' + query.toString()
+  if (href === window.location.pathname + window.location.search) return
+  window.history.pushState(null, '', href)
   window.dispatchEvent(new PopStateEvent('popstate'))
 }

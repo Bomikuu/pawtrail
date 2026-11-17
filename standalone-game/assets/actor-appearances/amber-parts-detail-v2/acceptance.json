@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-13",
+  "status": "asset production complete; live review pending",
+  "frames": 160,
+  "sourceFrame": [
+    512,
+    640
+  ],
+  "hdFrame": [
+    256,
+    320
+  ],
+  "faceTexture": {
+    "width": 2172,
+    "height": 724,
+    "expressions": 3
+  },
+  "totalClipBytes": 2450232,
+  "maximumDecodedClipBytes": 5242880,
+  "modelBytes": 2154564,
+  "actualSourceCloseupRendered": true,
+  "sourceAndExportArtworkInspected": true,
+  "appTestsRun": false,
+  "typecheckRun": false,
+  "appBuildRun": false,
+  "browserVerificationRun": false,
+  "liveAcceptance": "pending owner review"
+}

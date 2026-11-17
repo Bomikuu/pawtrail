@@ -1,0 +1,14 @@
+{
+  "id": "sieghart",
+  "name": "Sieghart",
+  "style": "Painterly anime fantasy",
+  "status": "preview-installed-and-visually-reviewed",
+  "voice": {
+    "status": "omitted-by-owner"
+  },
+  "scope": "Separate actor preview choice; keep Sieg and all other actors intact",
+  "identity": "Adult swordsman, black-violet swept spiky hair, cool gray-blue eyes, silver-white waistcoat, layered charcoal-purple split coat, long silver-trimmed black scarf, purple/silver boots, broadsword",
+  "styleReference": "Owner video -H9U0JBy.mp4: mature painterly anime fantasy splash art, adult proportions, smooth shading and restrained layered idle motion",
+  "modelContract": "Shared rig and actions at existing world scale; character-specific curved anatomy, volumetric hair, separate coat/scarf layers, fitted painted textures; compare actual front/three-quarter/side/back model with own illustration",
+  "portraitEncoding": "144x180 complete frames, AVIF, 289411-byte style"
+}

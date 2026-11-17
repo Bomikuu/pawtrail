@@ -1,0 +1,1011 @@
+{
+  "version": 1,
+  "id": "aquarium",
+  "revision": "d404e22b58f8",
+  "reference": "/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+  "source": "src/game/furniture/model.ts",
+  "definition": {
+    "id": "aquarium",
+    "label": "Little reef aquarium",
+    "model": "aquarium",
+    "reference": "/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+    "description": "Authored 3D aquarium with four facings and native animated detail.",
+    "frame": {
+      "width": 96,
+      "height": 112,
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "referenceFrame": {
+      "width": 96,
+      "height": 64,
+      "anchor": [
+        48,
+        64
+      ]
+    },
+    "styles": [
+      {
+        "id": "sage",
+        "label": "Honey oak",
+        "fabric": "#ad591e",
+        "light": "#de8a2e",
+        "shade": "#713810",
+        "pillow": "#f6e7bc",
+        "wood": "#a34e18"
+      },
+      {
+        "id": "terracotta",
+        "label": "Walnut",
+        "fabric": "#965137",
+        "light": "#e2b258",
+        "shade": "#784324",
+        "pillow": "#f4e2bb",
+        "wood": "#92552b"
+      },
+      {
+        "id": "oat",
+        "label": "Pale oak",
+        "fabric": "#c2a474",
+        "light": "#e2b258",
+        "shade": "#784324",
+        "pillow": "#a7ba7d",
+        "wood": "#92552b"
+      }
+    ],
+    "price": 160,
+    "construction": {
+      "seconds": 90,
+      "materials": [
+        {
+          "id": "timber",
+          "label": "Timber",
+          "amount": 6,
+          "price": 3
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "amount": 4,
+          "price": 5
+        }
+      ]
+    }
+  },
+  "item": {
+    "id": "aquarium",
+    "label": "Little reef aquarium",
+    "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0.png",
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ],
+    "indicatorHeight": 63,
+    "footprint": [
+      3,
+      88,
+      90,
+      8
+    ],
+    "reaction": {
+      "kind": "loop",
+      "fps": 6
+    },
+    "geometry": {
+      "version": 2,
+      "ground": [
+        [
+          3,
+          88,
+          90,
+          8
+        ]
+      ],
+      "placement": [
+        [
+          3,
+          88,
+          90,
+          8
+        ]
+      ],
+      "approaches": [
+        [
+          48,
+          103
+        ]
+      ],
+      "seats": [],
+      "surfaces": [],
+      "occlusion": "base",
+      "actions": [
+        "care_aquarium",
+        "inspect"
+      ]
+    },
+    "blocking": true,
+    "rotatable": true,
+    "category": "Living room",
+    "interaction": "inspect",
+    "price": 160,
+    "zones": [
+      "interior"
+    ],
+    "supportedRotations": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "defaultStyle": "sage",
+    "renderedViews": {
+      "0": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 63,
+        "footprint": [
+          3,
+          88,
+          90,
+          8
+        ],
+        "reaction": {
+          "kind": "loop",
+          "fps": 6
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              3,
+              88,
+              90,
+              8
+            ]
+          ],
+          "placement": [
+            [
+              3,
+              88,
+              90,
+              8
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              103
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "care_aquarium",
+            "inspect"
+          ]
+        }
+      },
+      "90": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 75,
+        "footprint": [
+          48,
+          80,
+          22,
+          32
+        ],
+        "reaction": {
+          "kind": "loop",
+          "fps": 6
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              48,
+              80,
+              22,
+              32
+            ]
+          ],
+          "placement": [
+            [
+              48,
+              80,
+              22,
+              32
+            ]
+          ],
+          "approaches": [
+            [
+              28,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "care_aquarium",
+            "inspect"
+          ]
+        }
+      },
+      "180": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 63,
+        "footprint": [
+          3,
+          96,
+          90,
+          8
+        ],
+        "reaction": {
+          "kind": "loop",
+          "fps": 6
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              3,
+              96,
+              90,
+              8
+            ]
+          ],
+          "placement": [
+            [
+              3,
+              96,
+              90,
+              8
+            ]
+          ],
+          "approaches": [
+            [
+              48,
+              89
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "care_aquarium",
+            "inspect"
+          ]
+        }
+      },
+      "270": {
+        "width": 96,
+        "height": 112,
+        "anchor": [
+          48,
+          96
+        ],
+        "indicatorHeight": 75,
+        "footprint": [
+          26,
+          80,
+          22,
+          32
+        ],
+        "reaction": {
+          "kind": "loop",
+          "fps": 6
+        },
+        "geometry": {
+          "version": 2,
+          "ground": [
+            [
+              26,
+              80,
+              22,
+              32
+            ]
+          ],
+          "placement": [
+            [
+              26,
+              80,
+              22,
+              32
+            ]
+          ],
+          "approaches": [
+            [
+              68,
+              96
+            ]
+          ],
+          "seats": [],
+          "surfaces": [],
+          "occlusion": "base",
+          "actions": [
+            "care_aquarium",
+            "inspect"
+          ]
+        }
+      }
+    },
+    "styles": [
+      {
+        "id": "sage",
+        "label": "Honey oak",
+        "color": "#ad591e",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-0-motion-8-front.png"
+              }
+            ]
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-90-motion-8-front.png"
+              }
+            ]
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-180-motion-8-front.png"
+              }
+            ]
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/sage-270-motion-8-front.png"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "terracotta",
+        "label": "Walnut",
+        "color": "#965137",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-0-motion-8-front.png"
+              }
+            ]
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-90-motion-8-front.png"
+              }
+            ]
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-180-motion-8-front.png"
+              }
+            ]
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/terracotta-270-motion-8-front.png"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "oat",
+        "label": "Pale oak",
+        "color": "#c2a474",
+        "views": {
+          "0": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-0-motion-8-front.png"
+              }
+            ]
+          },
+          "90": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-90-motion-8-front.png"
+              }
+            ]
+          },
+          "180": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-180-motion-8-front.png"
+              }
+            ]
+          },
+          "270": {
+            "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270.png",
+            "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-front.png",
+            "motion": [
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-0.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-0-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-1.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-1-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-2.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-2-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-3.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-3-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-4.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-4-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-5.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-5-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-6.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-6-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-7.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-7-front.png"
+              },
+              {
+                "file": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-8.png",
+                "frontFile": "/pawtrail-game/furniture-studio/aquarium/d404e22b58f8/oat-270-motion-8-front.png"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "construction": {
+      "seconds": 90,
+      "materials": [
+        {
+          "id": "timber",
+          "label": "Timber",
+          "amount": 6,
+          "price": 3
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "amount": 4,
+          "price": 5
+        }
+      ]
+    }
+  },
+  "frame": {
+    "width": 96,
+    "height": 112,
+    "anchor": [
+      48,
+      96
+    ]
+  },
+  "filter": "nearest",
+  "referenceStudy": {
+    "source": "/assets/game/housing/furniture/cozy-room-v1/aquarium-v1.png",
+    "sha256": "f3c1636e866730e475fe17c6aed3ccc6094267532cc3fe24598c4a98651d1bcf",
+    "render": {
+      "projection": "orthographic",
+      "nativeFrame": [
+        96,
+        112
+      ],
+      "nativeAnchor": [
+        48,
+        96
+      ],
+      "cameraPosition": [
+        0,
+        34.5,
+        90
+      ],
+      "cameraTarget": [
+        0,
+        0,
+        0
+      ],
+      "frustum": [
+        -48,
+        48,
+        96,
+        -16,
+        0.1,
+        300
+      ],
+      "origin": "front floor edge at source (48,64)",
+      "toneMapping": "none",
+      "outputColorSpace": "srgb",
+      "filter": "nearest",
+      "antialias": false,
+      "referenceFacing": 0,
+      "referencePhase": 0
+    },
+    "landmarks": {
+      "opaqueBounds": [
+        3,
+        2,
+        90,
+        62
+      ],
+      "hoodTop": [
+        4,
+        2,
+        88,
+        8
+      ],
+      "hoodFront": [
+        4,
+        10,
+        88,
+        4
+      ],
+      "water": [
+        7,
+        14,
+        82,
+        29
+      ],
+      "tankBase": [
+        3,
+        43,
+        90,
+        5
+      ],
+      "cabinet": [
+        4,
+        48,
+        88,
+        14
+      ],
+      "feet": [
+        5,
+        62,
+        86,
+        2
+      ],
+      "fish": [
+        [
+          29,
+          21,
+          12,
+          6
+        ],
+        [
+          49,
+          25,
+          11,
+          6
+        ]
+      ]
+    },
+    "normalizedLandmarks": {
+      "hoodBottom": 0.21875,
+      "waterBottom": 0.671875,
+      "cabinetTop": 0.75,
+      "cabinetBottom": 0.96875
+    },
+    "approach": "Source-painted volumetric cabinet/hood/tank with layered plants and two independent animated fish profiles. Unseen sides/rear are authored interpretations."
+  },
+  "note": "Reference-guided authored geometry; explicit projected contacts and native foreground layers."
+}

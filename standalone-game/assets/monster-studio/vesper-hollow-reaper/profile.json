@@ -1,0 +1,24 @@
+{
+  "id": "vesper-hollow-reaper",
+  "name": "Vesper",
+  "title": "The Hollow Reaper",
+  "reference": "/home/micxsz/pawtrail-scythe-skeleton-reference.jpg",
+  "referenceFeatures": ["Pointed midnight-blue hood", "Grinning pale skull", "Ragged purple-lined robe with no feet", "Two skeletal hands", "Twisted shaft and broad curved silver-blue scythe"],
+  "originalAdaptation": ["Vesper name and bell-chapel biography", "Hovering pursuit and combat timings", "Hollow Ascension appearance and expanded attack pattern"],
+  "origin": "An abandoned bell chapel; original fantasy lore",
+  "temperament": "Patient, watchful, relentless when its binding is threatened",
+  "motivation": "Gather the names that no one remembers",
+  "representation": "Registered native 2D robe/hood/arm/scythe cutouts in the shared roaming-boss arena",
+  "scale": { "hoodTopInPlayerHeights": 4.4, "scytheSpriteSizeInPlayerHeights": 4.4, "baselineHover": 0.37, "highEclipseHover": 1.27 },
+  "health": { "maxHp": 4800, "hpPerBar": 600, "bars": 8, "enrageThreshold": 0.3 },
+  "weaknesses": ["Spectral shroud takes 0.7x damage", "Low recovery binding takes 1.65x damage", "High Eclipse hover is out of sword reach"],
+  "attacks": {
+    "reaping-arc": { "warningMs": 1150, "contactMs": 1400, "normalRadius": 3.1, "enragedRadius": 4, "normalAngleDegrees": 150, "enragedAngleDegrees": 195, "normalCooldownMs": 7200, "enragedCooldownMs": 4300 },
+    "hollow-eclipse": { "warningMs": 1650, "contactMs": 1900, "normalInnerRadius": 1.4, "normalOuterRadius": 4.4, "enragedInnerRadius": 1.1, "enragedOuterRadius": 5.4, "normalCooldownMs": 11200, "enragedCooldownMs": 6800 }
+  },
+  "equipment": "Boss-owned illustrated scythe with a registered hand grip and shoulder pivot; not a player-loot or Item Studio weapon export",
+  "authority": "Local fictional combat only; no animal records, account inventory or verified Kibble changes",
+  "audio": "Shared contact/item effects and mute; dedicated creature vocal cues not produced",
+  "installation": "/play?preview=monsters&boss=vesper",
+  "review": "See docs/implementation/vesper-hovering-reaper.md for observed visual review and limits"
+}

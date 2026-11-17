@@ -3,7 +3,7 @@ import { PixelActor, humanClips } from '../actor-rig/pixel-renderer'
 import type { StudyModels } from './model-study-definition'
 import { rendererConfig } from '../renderer'
 
-export type AmberStudyOptions={action:'idle'|'walk'|'run';direction:string;paused:boolean;zoom:number;speed:number}
+export type AmberStudyOptions={action:'idle'|'walk'|'run';direction:string;rotation:number|null;paused:boolean;zoom:number;speed:number}
 const clipDuration=(action:AmberStudyOptions['action'])=>action==='idle'?2500:(humanClips[action].frames??12)/humanClips[action].fps*1000
 
 /** One Phaser field, two models at the same native density, feet anchor and clock. */
@@ -51,12 +51,12 @@ export function mountAmberStudy(host:HTMLElement,read:()=>AmberStudyOptions,read
       // Same body phase on both sides; additional samples expose the cloth's smooth deformation.
       const duration=clipDuration(o.action),phase=Math.floor((this.elapsed%duration)/duration*64)/64
       const secondaryMotion=this.secondaryMotion()
-      const signature=[phase,o.action,o.direction,o.zoom,secondaryMotion.phase,secondaryMotion.locomotion].join(':')
+      const signature=[phase,o.action,o.direction,o.rotation,o.zoom,secondaryMotion.phase,secondaryMotion.locomotion].join(':')
       if(signature===this.signature)return;this.signature=signature;this.layout()
       try{
         const clip=humanClips[o.action],index=Math.floor(phase*(clip.frames??8))
         for(let i=0;i<2;i++){
-          this.textures2d[i].context.putImageData(this.actors[i].frame(o.action,o.direction,index,undefined,o.action==='run'?'run':'walk',phase,secondaryMotion),0,0)
+          this.textures2d[i].context.putImageData(this.actors[i].frame(o.action,o.direction,index,undefined,o.action==='run'?'run':'walk',phase,secondaryMotion,{yaw:o.rotation===null?undefined:-o.rotation*Math.PI/180}),0,0)
           this.textures2d[i].refresh()
         }
       }catch(error){this.actors.forEach(a=>a.dispose());this.actors=[];failed(error instanceof Error?error.message:'The character renderer stopped.')}
@@ -66,7 +66,7 @@ export function mountAmberStudy(host:HTMLElement,read:()=>AmberStudyOptions,read
       const o=read(),clip=humanClips[o.action],duration=clipDuration(o.action),phase=Math.floor((this.elapsed%duration)/duration*64)/64
       const canvas=document.createElement('canvas');canvas.width=256;canvas.height=160
       const c=canvas.getContext('2d')!;c.imageSmoothingEnabled=false
-      this.actors.forEach((a,i)=>c.putImageData(a.frame(o.action,o.direction,Math.floor(phase*(clip.frames??8)),undefined,o.action==='run'?'run':'walk',phase,this.secondaryMotion()),i*128,0))
+      this.actors.forEach((a,i)=>c.putImageData(a.frame(o.action,o.direction,Math.floor(phase*(clip.frames??8)),undefined,o.action==='run'?'run':'walk',phase,this.secondaryMotion(),{yaw:o.rotation===null?undefined:-o.rotation*Math.PI/180}),i*128,0))
       return canvas.toDataURL('image/png')
     }
   }

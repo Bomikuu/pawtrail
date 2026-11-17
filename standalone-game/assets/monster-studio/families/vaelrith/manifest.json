@@ -1,0 +1,26 @@
+{
+  "familyId": "vaelrith",
+  "parentBoss": "vaelrith-riftbound",
+  "atlas": "actors.webp",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "columns": 5,
+  "rows": 5,
+  "baseline": 248,
+  "contentHeight": 232,
+  "poses": {
+    "idle": 0,
+    "walk": 1,
+    "windup": 2,
+    "attack": 3,
+    "hurt": 4
+  },
+  "decodedAtlasBytes": 6553600,
+  "members": [
+    "gloamwarden",
+    "riftling",
+    "shardback",
+    "ashwing"
+  ],
+  "runtimeArtworkBytes": 604272
+}

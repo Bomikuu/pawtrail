@@ -1,0 +1,815 @@
+{
+  "complete": false,
+  "omissions": [
+    {
+      "actor": "rika-hoshino",
+      "voices": "omitted",
+      "reason": "Explicitly omitted for this job by the owner"
+    },
+    {
+      "actor": "peony-7",
+      "voices": "omitted",
+      "reason": "Explicitly omitted for this job by the owner"
+    }
+  ],
+  "cases": [
+    {
+      "id": "rika-hoshino/action/idle",
+      "kind": "action",
+      "state": "pass",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/walk",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/feed",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/pet",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/sit",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/sleep",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/pick_up",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/water",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/play",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/clean",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/wave",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/laugh",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/dance",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/clap",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/cheer",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/hold_item",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/give_gift",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/inspect",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/sad",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/happy",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/angry",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/float",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/tired",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/surprised",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/sick",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/ride",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/power_up",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/jetpack",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/jetpack_takeoff",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/jetpack_land",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/run",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/power_run",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/rescue_dash",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/action/gentle_approach",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "rika-hoshino/heading/down",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "rika-hoshino/heading/down_left",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "rika-hoshino/heading/left",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "rika-hoshino/heading/up",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/idle",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/smile",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/happy",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/sad",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/angry",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/front-pout/surprised",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/idle",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/smile",
+      "kind": "portrait",
+      "state": "captured — needs visual review",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/happy",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/sad",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/angry",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/three-quarter-left/surprised",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/idle",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/smile",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/happy",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/sad",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/angry",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/portrait/head-tilt-smile-right/surprised",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "rika-hoshino/illustration/normal",
+      "kind": "illustration",
+      "state": "captured — needs visual review",
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement."
+    },
+    {
+      "id": "rika-hoshino/illustration/enraged",
+      "kind": "illustration",
+      "state": "pending",
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement."
+    },
+    {
+      "id": "rika-hoshino/icon",
+      "kind": "icon",
+      "state": "pending",
+      "instructions": "Inspect native 40px artwork and integer enlargement: readable face, three-quarter identity, hair/accessories, woody default border and distinct active glow."
+    },
+    {
+      "id": "rika-hoshino/dialogue",
+      "kind": "dialogue",
+      "state": "pending",
+      "instructions": "Inspect selected angle in the compact wood HUD, typewriter speech/rest, all pages/choices, emotion transitions, pause/restoration and close behavior."
+    },
+    {
+      "id": "rika-hoshino/lifecycle",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "In Firefox: move while acting, turn, pause/resume, replace/cancel, complete one-shots, expire timed actions, return to idle, leave/re-enter the scene, and inspect effects/audio cleanup. Keep sound, shadow and ground circle attached and separate."
+    },
+    {
+      "id": "rika-hoshino/illustration-controls",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "In Firefox: pause, resume, restart, visibility return and reduced-motion still for both variants. Check independent background/aura controls and subdued composition."
+    },
+    {
+      "id": "rika-hoshino/likeness",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "Side by side with approved art: identity, mature illustration anatomy, own face fitting and materials, curved/tapered geometry, textured long hair/cloth fronts/reverses/edges and maximum swing. Inspect native and enlarged sizes."
+    },
+    {
+      "id": "rika-hoshino/sound-shadow",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "Listen to applicable shared action sounds, check floating ground shadow and drawn ground circle, mute/interruption/cleanup. Omitted speech does not omit action-SFX review."
+    },
+    {
+      "id": "rika-hoshino/mobile",
+      "kind": "mobile",
+      "state": "pending",
+      "instructions": "Inspect portrait, controls, model and keyboard/touch alternatives at 390px, without horizontal overflow."
+    },
+    {
+      "id": "rika-hoshino/gameplay",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "Use the real roster in an isolated Firefox profile. Walk/run/turn, test collision/depth and care/interactions, verify portrait and return/cleanup. No authoritative rewards/account writes."
+    },
+    {
+      "id": "peony-7/action/idle",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/walk",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/feed",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/pet",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/sit",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/sleep",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/pick_up",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/water",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/play",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/clean",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/wave",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/laugh",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/dance",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/clap",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/cheer",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/hold_item",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/give_gift",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/inspect",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/sad",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/happy",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/angry",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/float",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/tired",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/surprised",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/sick",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/ride",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/power_up",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/jetpack",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/jetpack_takeoff",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/jetpack_land",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/run",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/power_run",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/rescue_dash",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/action/gentle_approach",
+      "kind": "action",
+      "state": "pending",
+      "instructions": "Inspect entry, two motion phases, limbs/contacts, props, hair/cloth fit, matching portrait intent, effects/shadow and return. Capture alone does not pass this action."
+    },
+    {
+      "id": "peony-7/heading/down",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "peony-7/heading/down_left",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "peony-7/heading/left",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "peony-7/heading/up",
+      "kind": "heading",
+      "state": "pending",
+      "instructions": "Compare silhouette and actual textured volume to the approved illustration: face/eye UVs, fringe, shoulders, garment fronts/reverses and full swing clearance."
+    },
+    {
+      "id": "peony-7/portrait/front-pout/idle",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/front-pout/smile",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/front-pout/happy",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/front-pout/sad",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/front-pout/angry",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/front-pout/surprised",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/idle",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/smile",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/happy",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/sad",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/angry",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/three-quarter-left/surprised",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/idle",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/smile",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/happy",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/sad",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/angry",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/portrait/head-tilt-smile-right/surprised",
+      "kind": "portrait",
+      "state": "pending",
+      "instructions": "Compare this angle/emotion to its own source drawings. Inspect authored rest/half/closed blink, both mouth states, breathing below the chin, stable identity and natural transitions."
+    },
+    {
+      "id": "peony-7/illustration/normal",
+      "kind": "illustration",
+      "state": "pending",
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement."
+    },
+    {
+      "id": "peony-7/illustration/enraged",
+      "kind": "illustration",
+      "state": "pending",
+      "instructions": "Inspect multiple full loops with background/aura hidden, then restored. Hair must visibly move from pinned roots; inspect cloth, underlays, steady face/grip, outlines and evolving facial effects. Reject frozen lightning or pulse-only movement."
+    },
+    {
+      "id": "peony-7/icon",
+      "kind": "icon",
+      "state": "pending",
+      "instructions": "Inspect native 40px artwork and integer enlargement: readable face, three-quarter identity, hair/accessories, woody default border and distinct active glow."
+    },
+    {
+      "id": "peony-7/dialogue",
+      "kind": "dialogue",
+      "state": "pending",
+      "instructions": "Inspect selected angle in the compact wood HUD, typewriter speech/rest, all pages/choices, emotion transitions, pause/restoration and close behavior."
+    },
+    {
+      "id": "peony-7/lifecycle",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "In Firefox: move while acting, turn, pause/resume, replace/cancel, complete one-shots, expire timed actions, return to idle, leave/re-enter the scene, and inspect effects/audio cleanup. Keep sound, shadow and ground circle attached and separate."
+    },
+    {
+      "id": "peony-7/illustration-controls",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "In Firefox: pause, resume, restart, visibility return and reduced-motion still for both variants. Check independent background/aura controls and subdued composition."
+    },
+    {
+      "id": "peony-7/likeness",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "Side by side with approved art: identity, mature illustration anatomy, own face fitting and materials, curved/tapered geometry, textured long hair/cloth fronts/reverses/edges and maximum swing. Inspect native and enlarged sizes."
+    },
+    {
+      "id": "peony-7/sound-shadow",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "Listen to applicable shared action sounds, check floating ground shadow and drawn ground circle, mute/interruption/cleanup. Omitted speech does not omit action-SFX review."
+    },
+    {
+      "id": "peony-7/mobile",
+      "kind": "mobile",
+      "state": "pending",
+      "instructions": "Inspect portrait, controls, model and keyboard/touch alternatives at 390px, without horizontal overflow."
+    },
+    {
+      "id": "peony-7/gameplay",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "Use the real roster in an isolated Firefox profile. Walk/run/turn, test collision/depth and care/interactions, verify portrait and return/cleanup. No authoritative rewards/account writes."
+    },
+    {
+      "id": "peony-7/vehicle",
+      "kind": "manual",
+      "state": "pending",
+      "instructions": "Enter/exit cockpit, preserve a safe handoff position, inspect canopy opening and vehicle footprint, test narrow gaps and blocked human furniture. Check parked sit/sleep/float/ride with all limbs visible."
+    }
+  ]
+}
